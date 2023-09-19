@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/smartorderapp/static/css/main.ef80ccf8.css",
+    "main.js": "/smartorderapp/static/js/main.521088a2.js",
+    "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
+    "static/media/Pretendard-ExtraBold.woff": "/smartorderapp/static/media/Pretendard-ExtraBold.88651b953c5d967d1db9.woff",
+    "static/media/Pretendard-Bold.woff": "/smartorderapp/static/media/Pretendard-Bold.dd56301118da9e158ce9.woff",
+    "static/media/Pretendard-SemiBold.woff": "/smartorderapp/static/media/Pretendard-SemiBold.86ffe3f48b7881c55a2c.woff",
+    "static/media/Pretendard-Medium.woff": "/smartorderapp/static/media/Pretendard-Medium.f0cc544dcc84cf9f03b3.woff",
+    "static/media/Pretendard-Regular.woff": "/smartorderapp/static/media/Pretendard-Regular.21b4bbcb93a4b1214f7d.woff",
+    "static/media/Pretendard-ExtraBold.woff2": "/smartorderapp/static/media/Pretendard-ExtraBold.d96f7e46d4ca0cdd4912.woff2",
+    "static/media/Pretendard-Bold.woff2": "/smartorderapp/static/media/Pretendard-Bold.14a8579db02dbe10e1c0.woff2",
+    "static/media/Pretendard-SemiBold.woff2": "/smartorderapp/static/media/Pretendard-SemiBold.4eb0b2ea1a7a6cb1a342.woff2",
+    "static/media/Pretendard-Medium.woff2": "/smartorderapp/static/media/Pretendard-Medium.a0797964917555a35cc4.woff2",
+    "static/media/Pretendard-Regular.woff2": "/smartorderapp/static/media/Pretendard-Regular.78a54f1fe75272411bb2.woff2",
+    "index.html": "/smartorderapp/index.html",
+    "main.ef80ccf8.css.map": "/smartorderapp/static/css/main.ef80ccf8.css.map",
+    "main.521088a2.js.map": "/smartorderapp/static/js/main.521088a2.js.map",
+    "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef80ccf8.css",
+    "static/js/main.521088a2.js"
+  ]
+}
