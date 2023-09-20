@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from '../layout/DefaultLayout'
 
-function Main() {
+function MainPage() {
   return (
     <Layout>
       <div>main</div>
@@ -9,4 +9,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainPage;
