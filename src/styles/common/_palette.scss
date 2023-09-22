@@ -1,0 +1,35 @@
+// 컬러 변수 명 규칙은 global > color.scss 를 따랐습니다.
+
+:root {
+  // 컬러 시스템 규정 : primary
+  --primary: #1F1F1F;
+  // 컬러 시스템 규정 : point
+  --point: #F95729;
+  // state
+  --blue: #4075F3;
+  --red: #FF3B4F;
+  //Gray Scale
+  --c00: #000;
+  --c11: #111;
+  --c22: #222;
+  --c33: #333;
+  --c44: #444;
+  --c55: #555;
+  --c66: #666;
+  --c77: #777;
+  --c88: #888;
+  --c99: #999;
+  --caa: #aaa;
+  --cbb: #bbb;
+  --ccc: #ccc;
+  --cdd: #ddd;
+  --cee: #eee;
+  --ce7: #e7e7e7;
+  --cff: #fff;
+
+  //BG 
+  --bgf5: #f5f5f5;
+  --bgf8: #f8f8f8;
+  --bgfa: #F5F6FA;
+
+}

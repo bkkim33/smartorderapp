@@ -1,0 +1,152 @@
+.primary{
+  color: var(--primary);
+}
+
+.primary_bg{
+  background-color: var(--primary);
+}
+
+.point{
+  color: var(--point);
+}
+
+.point_bg{
+  background-color: var(--point);
+}
+
+.blue{
+  color: var(--blue);
+}
+
+.blue_bg{
+  background-color: var(--blue);
+}
+
+.red{
+  color: var(--red);
+}
+
+.red_bg{
+  background-color: var(--red);
+}
+
+.color{
+  &_t{
+    &_00 {
+      color: var(--c00);
+    }
+    &_11 {
+      color: var(--c11);
+    }
+    &_22 {
+      color: var(--c22);
+    }
+    &_33 {
+      color: var(--c33);
+    }
+    &_44 {
+      color: var(--c44);
+    }
+    &_55 {
+      color: var(--c55);
+    }
+    &_66 {
+      color: var(--c66);
+    }
+    &_77 {
+      color: var(--c77);
+    }
+    &_88 {
+      color: var(--c88);
+    }
+    &_99 {
+      color: var(--c99);
+    }
+    &_aa {
+      color: var(--caa);
+    }
+    &_bb {
+      color: var(--cbb);
+    }
+    &_cc {
+      color: var(--ccc);
+    }
+    &_dd {
+      color: var(--cdd);
+    }
+    &_ee {
+      color: var(--cee);
+    }
+    &_e7 {
+      color: var(--ce7);
+    }
+    &_ff {
+      color: var(--cff);
+    }
+  }
+  &_bg{
+    &_00 {
+      background-color: var(--c00);
+    }
+    &_11 {
+      background-color: var(--c11);
+    }
+    &_22 {
+      background-color: var(--c22);
+    }
+    &_33 {
+      background-color: var(--c33);
+    }
+    &_44 {
+      background-color: var(--c44);
+    }
+    &_55 {
+      background-color: var(--c55);
+    }
+    &_66 {
+      background-color: var(--c66);
+    }
+    &_77 {
+      background-color: var(--c77);
+    }
+    &_88 {
+      background-color: var(--c88);
+    }
+    &_99 {
+      background-color: var(--c99);
+    }
+    &_aa {
+      background-color: var(--caa);
+    }
+    &_bb {
+      background-color: var(--cbb);
+    }
+    &_cc {
+      background-color: var(--ccc);
+    }
+    &_dd {
+      background-color: var(--cdd);
+    }
+    &_ee {
+      background-color: var(--cee);
+    }
+    &_e7 {
+      background-color: var(--ce7);
+    }
+    &_ff {
+      background-color: var(--cff);
+    }
+  }
+}
+
+.bg{
+  &_f5{
+    background-color: var(--bgf5);
+  }
+  &_f8{
+    background-color: var(--bgf8);
+  }
+  &_fa{
+    background-color: var(--bgfa);
+  }
+}
