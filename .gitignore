@@ -49,3 +49,7 @@ Thumbs.db
 *.mov
 *.wmv
 
+
+# Package-lock files
+*.Package-lock.json
+
