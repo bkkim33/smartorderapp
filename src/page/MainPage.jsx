@@ -11,8 +11,9 @@ function MainPage() {
     <Layout>
       <div>main</div>
       <Link to="/login">로그인 이동</Link>
-      <Button className="mt-10">ssssssss</Button>
-      
+      <Button onClick={() => {}} size="full">
+        save
+      </Button>
     </Layout>
   );
 }

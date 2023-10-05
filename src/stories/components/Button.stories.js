@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../components/Button";
+// import { Icons } from "../../components/Icon";
 
 export default {
   title: "components/Button",
@@ -7,8 +8,12 @@ export default {
   tags: ["autodocs"],
   argTypes: {
     children: { control: "text" },
-    size: { control: "radio" },
-    round: { control: { type: "boolean" } },
+    size: { control: "select" },
+    round: { control: "boolean" },
+    icon: { control: "text" },
+    iconStyle: {
+      control: "object"
+    },
   },
 };
 
