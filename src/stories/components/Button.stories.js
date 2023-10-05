@@ -10,9 +10,11 @@ export default {
     children: { control: "text" },
     size: { control: "select" },
     round: { control: "boolean" },
-    icon: { control: "text" },
+    // icon: { control: "text" },
+    icon: { control: "select", options: ["Heart", ""] },
     iconStyle: {
-      control: "object"
+      control: "object",
+      
     },
   },
 };
