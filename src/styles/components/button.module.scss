@@ -1,7 +1,78 @@
-@import '../common/variables';
-.button{
+@import'../common/variables';
+
+// 버튼의 기본크기는 large를 기준으로 합니다.
+.btn{
+  min-width: 120px;
+  height: 40px;
+  border: 0;
+  background-color: var(--primary);
+  @include body2(var(--cff));
+  &:hover{
+    background-color: var(--c33);
+  }
+  &:active{
+    background-color: var(--point);
+  }
+  &:disabled{
+    cursor: default;
+    background-color: var(--bgf5);
+    color: var(--c99);
+  }
+}
+
+.full{
   width: 100%;
   height: 50px;
-  background-color: blue;
-  color: #fff;
+  @include h5(var(--cff));
+  &.round{
+    @include rounded(8px)
+  }
 }
+
+.xlarge{
+  min-width: 150px;
+  height: 50px;
+  @include h5(var(--cff));
+  &.round{
+    @include rounded(8px)
+  }
+}
+
+.medium{
+  min-width: 90px;
+  height: 35px;
+  @include body2(var(--cff));
+}
+
+.small{
+  min-width: 60px;
+  height: 32px;
+  @include body4(var(--cff));
+  &.round{
+    @include rounded(4px)
+  }
+}
+
+.round{
+  @include rounded(6px)
+}
+
+.line{
+  background-color: var(--cff);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  &:hover{
+    background-color: var(--cff);
+    border: 1px solid var(--point);
+    color: var(--point);
+  }
+  &:active{
+    background-color: var(--point);
+    color: var(--cff);
+  }
+  &:disabled{
+    cursor: default;
+    border-color: var(--cbb);
+  }
+}
+
