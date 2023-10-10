@@ -1,0 +1,21 @@
+@import'../common/variables';
+
+.group{
+  display: flex;
+  label{
+    & + label{
+      margin-left: 25px;
+    }
+  }
+  &.vertical{
+    flex-wrap: wrap;
+    flex-direction: column;
+    label{
+      & + label{
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+

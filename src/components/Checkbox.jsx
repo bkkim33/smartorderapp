@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import styles from "../styles/components/radio.module.scss";
+import styles from "../styles/components/checkbox.module.scss";
 
-Radio.propTypes = {
+Checkbox.propTypes = {
   children: PropTypes.string,
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -13,28 +13,28 @@ Radio.propTypes = {
 };
 
 // 기본 상태가 필요시에만 사용됨
-Radio.defaultProps = {
+Checkbox.defaultProps = {
   children: "text",
   value: "value",
   name: "radio1",
   id: "radio0",
   defaultChecked: false,
   disabled: false,
-  textposition: '',
+  textposition: "",
 };
 
-export function Radio({ children, id, ...others }) {
+export function Checkbox({ children, id, ...others }) {
   const { value, name, checked, defaultChecked, textposition, disabled } =
     others;
   const onChange = (e) => {
-    // const { value } = e.target;
-    // console.log("clicked", value);
+    const { value } = e.target;
+    console.log("clicked", value);
   };
   return (
-    <label htmlFor={id} className={`${styles.radiolabel}`}>
+    <label htmlFor={id} className={`${styles.checkboxlabel}`}>
       <input
-        className={`${styles.radioinput}`}
-        type="radio"
+        className={`${styles.checkboxinput}`}
+        type="checkbox"
         value={value}
         name={name}
         id={id}
@@ -46,7 +46,7 @@ export function Radio({ children, id, ...others }) {
       {textposition === "left" && (
         <span className={`${styles.text}`}>{children}</span>
       )}
-      <span className={`${styles.radiocustom}`} />
+      <span className={`${styles.checkboxcustom}`} />
       {textposition !== "left" && (
         <span className={`${styles.text}`}>{children}</span>
       )}
@@ -54,4 +54,4 @@ export function Radio({ children, id, ...others }) {
   );
 }
 
-export default Radio;
+export default Checkbox;

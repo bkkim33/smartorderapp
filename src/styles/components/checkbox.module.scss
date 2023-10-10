@@ -1,27 +1,29 @@
 @import'../common/variables';
 
-.radiolabel {
+.checkboxlabel {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.radiocustom{
+.checkboxcustom{
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border: 1px solid var(--primary-b);
-  border-radius: 50%;
   &::after {
     content: '';
     display: block;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-b);
-    border-radius: 50%;
+    width: 10px;
+    height: 5px;
+    border: 1.5px solid var(--cff);
+    transform: rotate(-45deg);
+    margin-top: -3px;
+    border-top: 0;
+    border-right: 0;
     opacity: 0;
     transition: opacity 0.1s;
   }
@@ -31,11 +33,12 @@
   }
 }
 
-.radioinput {
+.checkboxinput {
   visibility: hidden;
   width: 0;
   left: 0;
-  &:checked + .radiocustom{
+  &:checked + .checkboxcustom{
+    background-color: var(--primary-b);
     border: 1px solid var(--primary-b);
     &:after{
       opacity: 1;
@@ -45,12 +48,12 @@
       background-color: var(--bgf5);
     }
   }
-  &:disabled + .radiocustom{
+  &:disabled + .checkboxcustom{
     cursor: default;
     border: 1px solid var(--ce7);
     background-color: var(--bgf5);
     &:after{
-      background: var(--cbb);
+      border-color: var(--cbb);
     }
   }
 }
