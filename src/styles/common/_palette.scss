@@ -2,12 +2,17 @@
 
 :root {
   // 컬러 시스템 규정 : primary
-  --primary: #1F1F1F;
+  --primary: #55433C;
+  --primary-b: #1F1F1F;
   // 컬러 시스템 규정 : point
-  --point: #F95729;
+  --point: #A47148;
+  --point-hover: #846046;
   // state
   --blue: #4075F3;
   --red: #FF3B4F;
+  --red-active: #E1273A;
+  --yellow:#FFBD3F;
+  --green:#21BD73;
   //Gray Scale
   --c00: #000;
   --c11: #111;

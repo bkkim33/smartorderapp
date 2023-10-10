@@ -2,13 +2,18 @@
 
 // 버튼의 기본크기는 large를 기준으로 합니다.
 .btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 120px;
-  height: 40px;
+  min-height: 40px;
   border: 0;
   background-color: var(--primary);
+  padding: 10px 20px;
   @include body2(var(--cff));
+  box-sizing: border-box;
   &:hover{
-    background-color: var(--c33);
+    background-color: var(--point-hover);
   }
   &:active{
     background-color: var(--point);
@@ -18,11 +23,18 @@
     background-color: var(--bgf5);
     color: var(--c99);
   }
+  i{
+    margin-right: 10px;
+    &.right{
+      margin-left: 10px;
+      margin-right: 0;
+    }
+  }
 }
 
 .full{
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   @include h5(var(--cff));
   &.round{
     @include rounded(8px)
@@ -31,7 +43,7 @@
 
 .xlarge{
   min-width: 150px;
-  height: 50px;
+  min-height: 50px;
   @include h5(var(--cff));
   &.round{
     @include rounded(8px)
@@ -40,14 +52,25 @@
 
 .medium{
   min-width: 90px;
-  height: 35px;
+  min-height: 35px;
   @include body2(var(--cff));
 }
 
 .small{
+  flex-wrap: wrap;
+  flex-direction: column;
   min-width: 60px;
-  height: 32px;
+  min-height: 32px;
   @include body4(var(--cff));
+  padding: 10px;
+  i{
+    display: block;
+    margin-bottom: 3px;
+    margin-right: 0;
+  }
+  span{
+    display: block;
+  }
   &.round{
     @include rounded(4px)
   }
@@ -55,15 +78,31 @@
 
 .icon_m{
   min-width: 50px;
-  height: 50px;
+  min-height: 50px;
+  padding: 10px;
+  i{
+    margin: 0;
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+  }
   &.round{
     @include rounded(8px)
   }
 }
 
-.iconm{
-  min-width: 50px;
-  height: 50px;
+.icon_s{
+  min-width: 30px;
+  min-height: 30px;
+  padding: 7px;
+  i{
+    margin: 0;
+    svg{
+      width: 16px;
+      height: 16px;
+    }
+  }
   &.round{
     @include rounded(8px)
   }
@@ -91,6 +130,83 @@
     border-color: var(--cbb);
     background-color: var(--bgf5);
     color: var(--c99);
+  }
+}
+
+//해당 스테이트는 레드를 기준으로 합니다.
+.state{
+  background-color: var(--c99);
+  @include body2(var(--cff));
+  &:hover{
+    background-color: var(--red);
+  }
+  &:active{
+    background-color: var(--red-active);
+  }
+  &:disabled{
+    cursor: default;
+    background-color: var(--bgf5);
+    color: var(--ce7);
+  }
+  &.line{
+    background-color: var(--cff);
+    border: 1px solid var(--c99);
+    color: var(--c99);
+    &:hover{
+      background-color: var(--cff);
+      border: 1px solid var(--red);
+      color: var(--red);
+    }
+    &:active{
+      background-color: var(--cff);
+      border: 1px solid var(--red-active);
+      color: var(--red-active);
+    }
+    &:disabled{
+      cursor: default;
+      border-color: var(--cbb);
+      background-color: var(--bgf5);
+      color: var(--c99);
+    }
+  }
+}
+
+.none{
+  min-width: auto;
+  min-height: auto;
+  background-color: transparent;
+  border: 0;
+  color: var(--primary);
+  text-decoration: underline;
+  &:hover{
+    background-color: transparent;
+    border: 0;
+    color: var(--point-hover);
+  }
+  &:active{
+    background-color: transparent;
+    border: 0;
+    color: var(--point);
+  }
+  &:disabled{
+    cursor: default;
+    background-color: transparent;
+    border: 0;
+    color: var(--c99);
+  }
+  &.state{
+    color: var(--c99);
+    &:hover{
+      color: var(--red);
+    }
+    &:active{
+      color: var(--red-active);
+    }
+    &:disabled{
+      cursor: default;
+      background-color: transparent;
+      color: var(--ce7);
+    }
   }
 }
 

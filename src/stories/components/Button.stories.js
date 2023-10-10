@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../components/Button";
+import  Button  from "../../components/Button";
 // import { Icons } from "../../components/Icon";
 
 export default {
@@ -9,12 +9,11 @@ export default {
   argTypes: {
     children: { control: "text" },
     size: { control: "select" },
-    round: { control: "boolean" },
+    type: { control: "check" },
     // icon: { control: "text" },
     icon: { control: "select", options: ["Heart", ""] },
     iconStyle: {
       control: "object",
-      
     },
   },
 };
