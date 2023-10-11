@@ -1,25 +1,25 @@
 import React from "react";
 import Radio from "../../components/Radio";
 import Checkbox from "../../components/Checkbox";
-import FromGroup from "../../components/FromGroup";
+import FormGroup from "../../components/FormGroup";
 
 export default {
-  title: "components/FromGroup",
-  component: FromGroup,
+  title: "components/FormGroup",
+  component: FormGroup,
   tags: ["autodocs"],
   argTypes: {},
 };
 
 export const Default = (args) => (
   <>
-    <FromGroup {...args}>{args.children}</FromGroup>
+    <FormGroup {...args}>{args.children}</FormGroup>
   </>
 );
 
 // 
 
 export const RadioDefault = () => (
-  <FromGroup>
+  <FormGroup>
     <Radio name="contact0" id="radio1" value="EMAIL" defaultChecked>
       이메일
     </Radio>
@@ -29,11 +29,11 @@ export const RadioDefault = () => (
     <Radio name="contact0" id="radio4" value="MAIL" disabled>
       우편
     </Radio>
-  </FromGroup>
+  </FormGroup>
 );
 
 export const RadioVertical = () => (
-  <FromGroup vertical>
+  <FormGroup vertical>
     <Radio name="contact1" id="radio01" value="EMAIL" defaultChecked>
       이메일
     </Radio>
@@ -43,11 +43,11 @@ export const RadioVertical = () => (
     <Radio name="contact1" id="radio03" value="MAIL" disabled>
       우편
     </Radio>
-  </FromGroup>
+  </FormGroup>
 );
 
 export const CheckboxDefault = () => (
-  <FromGroup>
+  <FormGroup>
     <Checkbox name="contact00" id="check1" value="EMAIL" defaultChecked>
       이메일
     </Checkbox>
@@ -57,11 +57,11 @@ export const CheckboxDefault = () => (
     <Checkbox name="contact00" id="check3" value="MAIL" disabled>
       우편
     </Checkbox>
-  </FromGroup>
+  </FormGroup>
 );
 
 export const CheckboxVertical = () => (
-  <FromGroup vertical>
+  <FormGroup vertical>
     <Checkbox name="contact01" id="check01" value="EMAIL" defaultChecked>
       이메일
     </Checkbox>
@@ -71,6 +71,6 @@ export const CheckboxVertical = () => (
     <Checkbox name="contact03" id="check03" value="MAIL" disabled>
       우편
     </Checkbox>
-  </FromGroup>
+  </FormGroup>
 );
 
