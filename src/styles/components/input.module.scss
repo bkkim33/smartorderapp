@@ -1,0 +1,67 @@
+@import'../common/variables';
+
+.inputbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 260px;
+    height: 35px;
+    border: 1px solid var(--ce7);
+    padding: 10px;
+    box-sizing: border-box;
+    &:hover{
+        border-color: var(--primary);
+    }
+    &.disabled{
+        background-color: var(--bgf5);
+        &:hover {
+            border-color: var(--ce7);
+        }
+    }
+    .delete{
+        display: none;
+    }
+
+}
+.round{
+    @include rounded(4px);
+}
+.line{
+    border: 0;
+    border-bottom: 1px solid var(--ce7);
+}
+
+// input 기본 스타일은 normal을 기준으로 합니다.
+.input{    
+    width: 100%;
+    min-width: 260px;
+    border: 0;
+    outline: 0;
+    @include body2(var(--primary));    
+    appearance: none;
+    &::placeholder{
+        color: var(--c99);
+    }    
+    &:focus{
+        &::placeholder{
+            color: transparent;
+        }
+    }
+    &:focus + .delete {
+        display: block;
+    }
+    &:disabled{
+        cursor: default;        
+        color: var(--cbb);        
+    }
+}
+
+.input[type=number]{
+    text-align: right;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
