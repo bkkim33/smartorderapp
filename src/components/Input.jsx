@@ -18,7 +18,7 @@ Input.defaultProps = {
     disabled: false,
 };
 
-export function Input({ ...others }) {
+function Input({ ...others }) {
     const { type, shape, placeholder, disabled, classname } = others;
     const [ focus, setFocus ] = useState(false);
     const [ value, setValue ] = useState('');
