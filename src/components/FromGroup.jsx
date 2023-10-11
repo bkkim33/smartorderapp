@@ -13,7 +13,7 @@ RadioGroup.defaultProps = {
   vertical: false,
 };
 
-function RadioGroup({ children, ...others }) {
+export function RadioGroup({ children, ...others }) {
   const { vertical } = others;
   return (
     <div className={`${styles.group} ${vertical ? styles.vertical : ""}`}>

@@ -48,16 +48,26 @@ Button.defaultProps = {
   icon: "",
 };
 
-function Button({ children, onClick, ...others }) {
-  const { size, round, line, state, none,  disabled, classname, iconStyle, icon, iconposition } =
-    others;
+export function Button({ children, onClick, ...others }) {
+  const {
+    size,
+    round,
+    line,
+    state,
+    none,
+    disabled,
+    classname,
+    iconStyle,
+    icon,
+    iconposition,
+  } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
   return (
     <button
       className={`${styles.btn} ${styles[size]} ${round ? styles.round : ""} ${
         line ? styles.line : ""
-      } ${state ? styles.state : ''} ${none ? styles.none : ''} ${
+      } ${state ? styles.state : ""} ${none ? styles.none : ""} ${
         classname ? styles[classname] : ""
       } `}
       disabled={disabled}
@@ -72,9 +82,7 @@ function Button({ children, onClick, ...others }) {
           />
         </i>
       )}
-      {size !== "icon_m" && size !== "icon_s"  && (
-        <span>{children}</span>
-      )}
+      {size !== "icon_m" && size !== "icon_s" && <span>{children}</span>}
       {IconComponent && iconposition === "right" && (
         <i className={`${styles[iconposition]}`}>
           <IconComponent

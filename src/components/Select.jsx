@@ -39,7 +39,7 @@ Select.defaultProps = {
   disabled: false,
 };
 
-function Select({ options, ...others }) {
+export function Select({ options, ...others }) {
   const { round, width, placeholder } = others;
   const [selectedOption, setSelectedOption, disabled] = useState(null);
   return (
