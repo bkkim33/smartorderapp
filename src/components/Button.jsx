@@ -48,7 +48,7 @@ Button.defaultProps = {
   icon: "",
 };
 
-export function Button({ children, onClick, ...others }) {
+function Button({ children, onClick, ...others }) {
   const { size, round, line, state, none,  disabled, classname, iconStyle, icon, iconposition } =
     others;
   const IconComponent = icon ? Icons[icon] : null;

@@ -21,8 +21,13 @@
     }
     .delete{
         display: none;
+        &.block{
+            display: block;
+        }
     }
-
+    &.focus{
+        border-color: var(--primary);
+    }
 }
 .round{
     @include rounded(4px);
@@ -47,9 +52,6 @@
         &::placeholder{
             color: transparent;
         }
-    }
-    &:focus + .delete {
-        display: block;
     }
     &:disabled{
         cursor: default;        
