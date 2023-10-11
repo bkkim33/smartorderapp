@@ -2,7 +2,7 @@ import React from "react";
 import  Radio  from "../../components/Radio";
 
 export default {
-  title: "components/Radio/Radio",
+  title: "components/Radio",
   component: Radio,
   tags: ["autodocs"],
   argTypes: {},

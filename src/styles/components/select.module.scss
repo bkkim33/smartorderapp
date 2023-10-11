@@ -1,0 +1,30 @@
+@import'../common/variables';
+
+.select {
+  &__control{
+    @include rounded(0);
+    min-width: 260px;
+    box-shadow: none !important;
+    border: 1px solid var(--ce7);
+  }
+  // [class$="-control"] {
+  //   @include rounded(0);
+  //   min-width: 260px;
+  //   box-shadow: none !important;
+  //   &:hover,
+  //   &:focus,
+  //   &:active{
+  //     border-color: var(--primary-b);
+  //     box-shadow: none !important;
+  //     outline: 0 !important;
+  //   }
+  // }
+  // [class$="-indicatorSeparator"] {
+  //   display: none;
+  // }
+  // &.round{
+  //   [class$="-control"] {
+  //     @include rounded(4px)
+  //   }
+  // }
+}
