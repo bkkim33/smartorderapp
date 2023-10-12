@@ -7,9 +7,8 @@
 }
 
 .radiocustom{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  position: relative;
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -24,6 +23,8 @@
     border-radius: 50%;
     opacity: 0;
     transition: opacity 0.1s;
+    position: absolute;
+    @include m_auto;
   }
   & + .text{
     margin-right: 0;

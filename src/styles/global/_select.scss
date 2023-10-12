@@ -20,7 +20,7 @@
         @include before_after;
         width: 9px;
         height: 9px;
-        border: 1.5px solid var(--c00);
+        border: 1.5px solid var(--cbb);
         transform: rotate(-45deg);
         border-top: 0;
         border-right: 0;
@@ -32,6 +32,36 @@
     }
     
   }
+  &__clear-indicator{
+    width: 14px;
+    height: 14px;
+    position: relative;
+    margin: 0 12px;
+    @include rounded(7px);
+    background-color: var(--cdd);
+    cursor: pointer;
+    &:after{
+      @include before_after;
+      width: 7px;
+      height: 1.5px;
+      background-color: var(--cff);
+      transform: rotate(45deg);
+      position: absolute;
+      @include m_auto;
+    }
+      &::before{
+      @include before_after;
+      width: 7px;
+      height: 1.5px;
+      background-color: var(--cff);
+      transform: rotate(-45deg);
+      position: absolute;
+      @include m_auto;
+    }
+    svg{
+      display: none;
+    }
+  }
   &__control{
     @include rounded(0);
     border: 1px solid var(--ce7);
@@ -40,6 +70,7 @@
     &--menu-is-open{
       .select__dropdown-indicator{
         &:after{
+          border-color: var(--primary-b);
           transform: rotate(-225deg);
           margin-top: 5px;
         }
@@ -50,6 +81,17 @@
     }
     &:hover{
       border-color: var(--primary-b);
+      .select__dropdown-indicator{
+        &:after{
+          border-color: var(--primary-b);
+        }
+      }
+      .select__clear-indicator{
+        background-color: var(--c99);
+        &:hover{
+          background-color: var(--primary-b);
+        }
+      }
     }
     &--is-disabled{
       background-color: var(--bgf5);
@@ -101,8 +143,40 @@
     border-radius: 13px;
     padding: 0 15px;
     background-color: var(--bgfa);
+    @include body4(var(--primary-b));
+    font-weight: 500;
     & + .select__multi-value{
       margin-left: 10px;
+    }
+    &__remove{
+      width: 12px;
+      height: 12px;
+      position: relative;
+      margin-left: 12px;
+      cursor: pointer;
+      svg{
+        display: none;
+      }
+      &:after{
+        @include before_after;
+        width: 10px;
+        height: 1.5px;
+        background-color: var(--primary-b);
+        transform: rotate(45deg);
+        position: absolute;
+        @include m_auto;
+        border-radius: 1px;
+      }
+       &::before{
+        @include before_after;
+        width: 10px;
+        height: 1.5px;
+        background-color: var(--primary-b);
+        transform: rotate(-45deg);
+        position: absolute;
+        @include m_auto;
+        border-radius: 1px;
+      }
     }
   }
 }
