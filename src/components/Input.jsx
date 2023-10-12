@@ -4,11 +4,11 @@ import styles from "../styles/components/input.module.scss";
 import { Icons } from "./Icon";
 
 Input.propTypes = {
-    type: PropTypes.oneOf(["text", "password", "number"]),
-    shape: PropTypes.oneOf(["", "round", "line"]),
-    placeholder: PropTypes.string,
-    disabled: PropTypes.bool,
-    classname: PropTypes.string,
+  type: PropTypes.oneOf(["text", "password", "number"]),
+  shape: PropTypes.oneOf(["", "round", "line"]),
+  placeholder: PropTypes.string,
+  disabled: PropTypes.bool,
+  globalClass: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -19,7 +19,7 @@ Input.defaultProps = {
 };
 
 export function Input({ ...others }) {
-  const { type, shape, placeholder, disabled, classname } = others;
+  const { type, shape, placeholder, disabled, globalClass } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
   const onChange = (e) => {
@@ -37,7 +37,7 @@ export function Input({ ...others }) {
   return (
     <div
       className={`${styles.inputbox} ${styles[shape]} ${
-        classname ? styles[classname] : ""
+        globalClass || ""
       } ${disabled ? styles.disabled : ""} ${focus ? styles.focus : ""}`}
     >
       <input
@@ -51,8 +51,8 @@ export function Input({ ...others }) {
         onBlur={(event) => handleFocusOut(event)}
       ></input>
       <button
-        className={`${styles.delete} ${value ? styles.block : ""}`}
         onClick={onReset}
+        className={`${styles.delete} ${value ? styles.block : ""}`}
       >
         <Icons.Deletecir />
       </button>

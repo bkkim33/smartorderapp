@@ -9,9 +9,8 @@ export default {
   argTypes: {
     children: { control: "text" },
     size: { control: "select" },
-    type: { control: "check" },
     // icon: { control: "text" },
-    icon: { control: "select", options: ["Heart", ""] },
+    icon: { control: "select", options: ["Heart", "Deletecir", ""] },
     iconStyle: {
       control: "object",
     },

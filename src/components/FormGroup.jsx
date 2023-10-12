@@ -5,6 +5,7 @@ import styles from "../styles/components/formgroup.module.scss";
 FormGroup.propTypes = {
   children: PropTypes.node.isRequired,
   vertical: PropTypes.bool,
+  globalClass: PropTypes.string,
 };
 
 // 기본 상태가 필요시에만 사용됨
@@ -14,9 +15,13 @@ FormGroup.defaultProps = {
 };
 
 export function FormGroup({ children, ...others }) {
-  const { vertical } = others;
+  const { vertical, globalClass } = others;
   return (
-    <div className={`${styles.group} ${vertical ? styles.vertical : ""}`}>
+    <div
+      className={`${styles.group} ${
+        vertical ? styles.vertical : ""
+      } ${globalClass || ''}`}
+    >
       {children}
     </div>
   );

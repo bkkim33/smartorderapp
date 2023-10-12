@@ -10,17 +10,17 @@ Select.propTypes = {
   width: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
+  multi: PropTypes.bool,
 };
 
 // 기본 상태가 필요시에만 사용됨
 Select.defaultProps = {
   // children: "from 요소 그룹",
-  round: '',
+  round: "",
   options: [
     {
       value: "chocolate",
-      label:
-        "Chocolated",
+      label: "Chocolated",
     },
     { value: "strawberry", label: "Strawberry" },
     { value: "vanilla", label: "Vanilla" },
@@ -34,14 +34,15 @@ Select.defaultProps = {
     // { value: "vanilla8", label: "Vanilla" },
     // { value: "vanilla9", label: "Vanilla" },
   ],
-  width: '',
-  placeholder: '옵션',
+  width: "",
+  placeholder: "옵션",
   disabled: false,
+  multi: false,
 };
 
 export function Select({ options, ...others }) {
-  const { round, width, placeholder } = others;
-  const [selectedOption, setSelectedOption, disabled] = useState(null);
+  const { round, width, placeholder, disabled, multi } = others;
+  const [selectedOption, setSelectedOption] = useState(null);
   return (
     <div
       style={{
@@ -52,13 +53,14 @@ export function Select({ options, ...others }) {
       <RS
         unstyled
         isSearchable
+        isMulti={multi}
         className={`${"select"} ${round || ""}`}
         classNamePrefix="select"
         placeholder={placeholder}
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
-        isDisabled={disabled ? "isdisabled" : ""}
+        isDisabled={disabled}
       />
     </div>
   );

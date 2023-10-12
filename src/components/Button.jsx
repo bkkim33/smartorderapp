@@ -26,7 +26,7 @@ Button.propTypes = {
   state: PropTypes.bool,
   none: PropTypes.bool,
   disabled: PropTypes.bool,
-  classname: PropTypes.string,
+  styleclass: PropTypes.string,
   onClick: PropTypes.func,
 };
 
@@ -46,6 +46,7 @@ Button.defaultProps = {
     height: 20,
   },
   icon: "",
+  globalClass: "",
 };
 
 export function Button({ children, onClick, ...others }) {
@@ -56,7 +57,7 @@ export function Button({ children, onClick, ...others }) {
     state,
     none,
     disabled,
-    classname,
+    globalClass,
     iconStyle,
     icon,
     iconposition,
@@ -68,7 +69,7 @@ export function Button({ children, onClick, ...others }) {
       className={`${styles.btn} ${styles[size]} ${round ? styles.round : ""} ${
         line ? styles.line : ""
       } ${state ? styles.state : ""} ${none ? styles.none : ""} ${
-        classname ? styles[classname] : ""
+        globalClass || ""
       } `}
       disabled={disabled}
       onClick={onClick}
