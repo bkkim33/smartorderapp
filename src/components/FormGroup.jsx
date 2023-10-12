@@ -10,7 +10,7 @@ FormGroup.propTypes = {
 
 // 기본 상태가 필요시에만 사용됨
 FormGroup.defaultProps = {
-  children: "from 요소 그룹",
+  children: "form 요소 그룹",
   vertical: false,
 };
 
