@@ -26,7 +26,6 @@
     }
   }
   &:focus {
-    // outline: none;
     border-color: var(--primary);
   }
   &.error{
@@ -43,59 +42,18 @@
   border: 0;
   outline: 0;
   @include body2(var(--primary));    
-  // appearance: none;
   overflow-y: hidden;
   resize: none;
   &::placeholder{
     color: var(--c99);
   }
   &:focus{
-      &::placeholder{
-          color: transparent;
-      }
+    &::placeholder{
+      color: transparent;
+    }
   }
   &:disabled{
-      cursor: default;        
-      color: var(--cbb);        
+    cursor: default;        
+    color: var(--cbb);        
   }
-  // padding: 10px;
-  // color: var(--primary);
-  // overflow-y: hidden;
-  // resize: none;
-
-  // border: 1px solid var(--ce7);
-  // width: 100%;
-  // min-width: 260px;
-  // height: 100px;
-
-  // &:hover{
-  //   border: 0;
-  // }
-  // &:active{
-  //   border: 0;
-  // }
-  // &:focus {
-  //   outline: none;
-  //   border: 0;
-  // }
-    // &:hover{
-    // border-color: var(--primary);
-    // }
-    // &:active{
-    //   border-color: var(--primary);
-    // }
-    // &:disabled{
-    //   background-color: var(--bgf5);
-    //   color: var(--cbb);
-    // }
-    // &:focus {
-    //   outline: none;
-    //   border-color: var(--primary);
-    // }
-    // &.error{
-    //   border-color: var(--red);
-    // }
-    // .error{
-    //   border-color: var(--red);
-    // }
 }
