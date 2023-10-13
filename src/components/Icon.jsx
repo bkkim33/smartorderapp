@@ -100,22 +100,48 @@ const Heart = ({ width = 20, height = 20, fill = "var(--cff)" }) => (
   </svg>
 );
 
-const Deletecir = ({ width = 14, height = 14 } ) => (
+const Delete = ({ width = 18, height = 18, fill = "var(--primary-b)"}) => (
   <svg 
     width={width}
-    height={height}
-    viewBox="0 0 14 14" 
+    height={height} 
+    viewBox="0 0 18 18" 
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="7" cy="7" r="7" fill="#D9D9D9" />
-    <path d="M9 5L5 9M5 5L9 9" stroke="white" strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M16 2L2 16M2 2L16 16" stroke={fill} strokeWidth="1.5" strokeLinecap="square"/>
   </svg>
+);
 
+const Search = ({ width = 19, height = 19, fill = "var(--c11)" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 19 19" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13.4609 13.3623L17.75 17.75" stroke={fill} strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round" />
+    <circle cx="8.25" cy="8.25" r="7.25" stroke={fill} strokeWidth="1.5" />
+  </svg>
+);
+
+const EyesOff = ({ width = 22, height = 16, fill = "var(--cbb)" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 22 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M21 8C21 8 16.8333 14.5 11 14.5C5.16667 14.5 1 8 1 8C1 8 5.16667 1.5 11 1.5C16.8333 1.5 21 8 21 8Z" stroke={fill} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M11 10.5C12.3807 10.5 13.5 9.38071 13.5 8C13.5 6.61929 12.3807 5.5 11 5.5C9.61929 5.5 8.5 6.61929 8.5 8C8.5 9.38071 9.61929 10.5 11 10.5Z" stroke={fill} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
 );
 
 export const Icons = {
   Logo,
   Heart,
-  Deletecir,
+  Delete,
+  Search,
+  EyesOff,
 };

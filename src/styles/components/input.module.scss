@@ -12,6 +12,9 @@
     box-sizing: border-box;
     &:hover{
         border-color: var(--primary);
+        .delete{
+            background-color: var(--c99);
+        }
     }
     &.disabled{
         background-color: var(--bgf5);
@@ -19,14 +22,54 @@
             border-color: var(--ce7);
         }
     }
-    .delete{
+    &.focus{
+        border-color: var(--primary);
+    }
+    
+    //초기화 버튼
+    .delete {
         display: none;
-        &.block{
+        position: relative;
+        width: 14px;
+        height: 14px;
+        background-color: var(--cdd);
+        border-radius: 50%;
+        flex: 1 0 auto;
+        &::before {
+            @include before_after;
+            width: 7px;
+            height: 1.5px;
+            background-color: var(--cff);
+            transform: rotate(-45deg);
+            position: absolute;
+            @include m_auto;
+        }
+        &::after {
+            @include before_after;
+            width: 7px;
+            height: 1.5px;
+            background-color: var(--cff);
+            transform: rotate(45deg);
+            position: absolute;
+            @include m_auto;
+        }
+        &:hover{
+            background-color: var(--primary-b);
+        }
+        &.block {
             display: block;
         }
     }
-    &.focus{
-        border-color: var(--primary);
+    //검색 버튼
+    .search{
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        flex: 1 0 auto;
+    }
+    //타이머
+    .time{
+        @include body4(var(--primary-b));
     }
 }
 .round{
@@ -35,6 +78,12 @@
 .line{
     border: 0;
     border-bottom: 1px solid var(--ce7);
+}
+.none{
+    border: 0;
+}
+.error {
+    border-color: var(--red);
 }
 
 // input 기본 스타일은 normal을 기준으로 합니다.

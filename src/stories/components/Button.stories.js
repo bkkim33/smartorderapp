@@ -10,7 +10,7 @@ export default {
     children: { control: "text" },
     size: { control: "select" },
     // icon: { control: "text" },
-    icon: { control: "select", options: ["Heart", "Deletecir", ""] },
+    icon: { control: "select", options: ["Heart", "Delete", ""] },
     iconStyle: {
       control: "object",
     },
