@@ -49,7 +49,6 @@ export function Textarea({ children, onClick,  ...others }) {
       <textarea 
         className={` ${styles.textarea} ${classname || ''}`}
         placeholder={placeholder}
-        
         disabled={disabled}
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
