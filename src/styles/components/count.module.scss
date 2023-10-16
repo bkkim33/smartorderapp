@@ -1,0 +1,31 @@
+@import'../common/variables';
+
+.countbox {
+  width: 161px;
+  display: flex;
+  align-items: center;
+  .btncount{
+    border: 1px solid var(--cbb);
+    width: 24px;
+    height: 24px;
+    .minus {
+      left: 5px;
+    }
+    .plus {
+      right: 5px;
+      background-position: 0 100%;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    font-weight: bold;
+    // font-size: 22px;    
+    // color: #0F0E12;
+    @include body1(var(--c11));
+    outline: 0;
+  }
+}
+

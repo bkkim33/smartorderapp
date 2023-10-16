@@ -6,6 +6,7 @@
   gap: 10px;
   width: 100%;
   min-width: 260px;
+  // height: 35px;
   border: 1px solid var(--ce7);
   padding: 10px;
   box-sizing: border-box;
@@ -21,6 +22,12 @@
   }
   .delete{
     display: none;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background-color: var(--cdd);
+    border-radius: 50%;
+    flex: 1 0 auto;
     &.block{
         display: block;
     }
@@ -42,8 +49,7 @@
   border: 0;
   outline: 0;
   @include body2(var(--primary));    
-  overflow-y: hidden;
-  resize: none;
+  appearance: none;
   &::placeholder{
     color: var(--c99);
   }
@@ -56,4 +62,10 @@
     cursor: default;        
     color: var(--cbb);        
   }
+  span{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-b);
+  }
 }
+

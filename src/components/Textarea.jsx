@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import styles from "../styles/components/Textarea.module.scss";
-// import { Icons2 } from "./Icon2";
 
 Textarea.propTypes = {
   children: PropTypes.string,
@@ -10,7 +9,9 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   classname: PropTypes.string,
-  maxLength: PropTypes.any.isRequired,
+  maxLength: PropTypes.number.isRequired,
+  value: PropTypes.string,
+  counton: PropTypes.bool,
 };
 
 // 기본 상태가 필요시에만 사용됨
@@ -20,11 +21,14 @@ Textarea.defaultProps = {
   shape: "",
   placeholder: "내용을 입력해 주세요.",
   disabled: false,
-  maxLength: 10,
+  maxLength: 10, 
+  value: "",
+  counton: false,
 };
 
 export function Textarea({ children, onClick,  ...others }) {
-  const { error, shape,  placeholder, disabled, classname, maxLength } = others;
+  const [counter, setCounter] = useState("")
+  const {error, shape,  placeholder, disabled, classname, maxLength, counton} = others;
   const [focus, setFocus] = useState(false);
   const handleFocusOn = () => {
     setFocus(true);
@@ -32,13 +36,17 @@ export function Textarea({ children, onClick,  ...others }) {
   const handleFocusOut = () => {
     setFocus(false);
   };
-  const [textareaCount, setTextareaCount] = useState(0);
+
   const onTextareaHandler = (e) => {
-    setTextareaCount(e.target.value.length);
+    const value = e.target.value;
+    if(value.length <= maxLength){  
+      setCounter(value);
+    }
   };
 
   return (
-    <div className={`
+    <> 
+     <div className={`
      ${styles.textareabox} 
      ${styles[shape]} 
      ${classname || ''}
@@ -49,18 +57,19 @@ export function Textarea({ children, onClick,  ...others }) {
       <textarea 
         className={` ${styles.textarea} ${classname || ''}`}
         placeholder={placeholder}
-        disabled={disabled}
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
         maxLength={maxLength}
         onChange={onTextareaHandler}
+        value={counter}
         >
         {children}
       </textarea>
-      <p>
-          <span>{textareaCount}/{maxLength}&nbsp;Character</span> 
-      </p>
-    </div>
+      {counton ? (
+          <span>{counter.length}/{maxLength}&nbsp;Character</span>
+        ) : null}
+        </div>
+      </>
   );
 }
 
