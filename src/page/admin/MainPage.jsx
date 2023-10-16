@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Layout from '../layout/DefaultLayout'
-import Button from '../components/Button'
+import Layout from '../../layout/DefaultLayout'
+import Button from '../../components/Button'
 // import { Header } from "../stories/Header";
 
 
