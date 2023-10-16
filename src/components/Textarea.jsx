@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import styles from "../styles/components/Textarea.module.scss";
+import styles from "../styles/components/textarea.module.scss";
 
 Textarea.propTypes = {
   children: PropTypes.string,
