@@ -173,5 +173,12 @@
     border-radius: 16px;
     padding: 20px;
     @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
+    &_top,
+    &_bottom{
+      flex: none;
+    }
+    & + .content_box{
+      margin-top: 20px;
+    }
   }
 }
