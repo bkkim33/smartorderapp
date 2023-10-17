@@ -1,8 +1,13 @@
 @import './common/palette';
 @import './common/variables';
 
+#root{
+  height: 100%;
+}
+
 // 글로벌 scss import
 @import './global/_color';
 @import './global/_select';
+@import './global/_spacing'; // margin, padding
 
 

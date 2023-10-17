@@ -1,0 +1,177 @@
+@import'../common/variables';
+
+// .header{
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 100%;
+//   height: 70px;
+//   padding: 0 30px;
+//   background-color: var(--primary-b);
+// }
+
+.layout{
+  display: flex;
+  height: 100%;
+  background-color: var(--bgfa);
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+  background-color: var(--primary-b);
+  padding: 30px 0 0;
+}
+
+.user{
+  &_img{
+    display: block;
+    width: 60px;
+    &_box{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    & + p{
+      color: var(--cff);
+    }
+  }
+  &_util{
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+  }
+  &_button{
+    height: 35px;
+    flex: 1;
+    border: 1px solid var(--cbb);
+    border-right: 0;
+    span{
+      @include body1(var(--cff));
+    }
+    &:hover{
+      background-color: var(--point);
+      border: 0;
+      span{
+        color: var(--primary-b);
+      }
+    }
+    & + .user_button{
+      border-left: 0;
+      border-right: 1px solid var(--cbb);
+      position: relative;
+      span{
+        color: var(--cbb);
+      }
+      &::before{
+        @include before_after;
+        width: 1px;
+        height: 100%;
+        background-color: var(--cbb);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:hover{
+        background-color: var(--red);
+        border: 0;
+        span{
+          color: var(--cff);
+        }
+      }
+    }
+  }
+}
+
+.menu{
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 10px 20px;
+  border-top: 1px solid var(--c99);
+  &_dep1{
+    & + .menu_dep1{
+      border-top: 1px solid var(--c99);
+    }
+    a{
+      display: flex;
+      align-items: center;
+      @include h5(var(--cff));
+      font-weight: 600;
+      height: 50px;
+      position: relative;
+      padding: 0 10px;
+    }
+    p{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      @include h5(var(--cff));
+      font-weight: 600;
+      position: relative;
+      text-align: left;
+      padding: 0 10px;
+    }
+    &_active{
+      display: block;
+      > p{
+        > span{
+          color: var(--point);
+        }
+      }
+    }
+  }
+  &_dep2{
+    height: 20px;
+    padding: 0 10px;
+    position: relative;
+    &::after{
+      @include before_after;
+      width: 5px;
+      height: 2px;
+      background-color: var(--c99);
+      position: absolute;
+      top: 9px;
+      left: 0;
+    }
+    & + .menu_dep2{
+      margin-top: 10px;
+    }
+    a{
+      height: 20px;
+      font-weight: 400;
+    }
+    &_wrap{
+      display: block;
+      padding: 20px;
+      border-top: 1px solid var(--c99);
+    }
+  }
+}
+
+.active{
+  span{
+    color: var(--point);
+    font-weight: 500;
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  padding: 20px 30px;
+  overflow: auto;
+  &_box{
+    width: 100%;
+    flex: 1;
+    background-color: var(--cff);
+    border-radius: 16px;
+    padding: 20px;
+    @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
+  }
+}
