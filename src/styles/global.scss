@@ -9,8 +9,99 @@
 @import './global/_align'; //정렬
 @import './global/_color'; //배경 글자 등등 모든 색
 @import './global/_spacing'; // margin, padding
+@import './global/_typography'; //타이포
 
 // 글로벌 컨포넌트 import
 @import './global/_select';
 
 
+//임시 테이블 글로벌 스타일 
+
+// 기본 align :: left
+table {
+  th,
+  td {
+    text-align: left;
+
+    // 왼쪽 정렬
+    &.tl {
+      text-align: left;
+    }
+
+    // 오른쪽 정렬
+    &.tr {
+      text-align: right;
+    }
+
+    // 가운데 정렬
+    &.tc {
+      text-align: center;
+    }
+    // 위로 정렬
+    &.vt {
+      vertical-align: top;
+      padding-top: 18px !important;
+    }
+    // 아래로 정렬
+    &.vb {
+      vertical-align: bottom;
+    }
+  }
+
+  .nodata_group {
+    display: flex;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.tbl{
+  table{
+    width: 100%;
+    thead{
+      background-color: var(--primary-b);
+      th {
+        padding: 12px 0px 12px 12px;
+        @include body4(var(--cff));
+        // @include capH(#8a9dbe);
+        // background-color: var(--second50);
+        text-align: center;
+        // 왼쪽 정렬
+        &.tl {
+          text-align: left;
+        }
+      }
+    }
+    tbody{
+      tr {
+        border-bottom: 1px solid #f1f4f7;
+
+        &:hover {
+          background-color: #fafbfe;
+        }
+
+        // &:has(td[rowspan]) {
+        //   & ~ tr {
+        //     td {
+        //       &:first-child {
+        //         padding-left: 12px;
+        //         &[rowspan] {
+        //           padding-left: 30px;
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
+      }
+
+      td {
+        padding: 12px 6px 12px 12px;
+        color: #354165;
+        font-size: 1.4rem;
+
+      }
+    }
+  }
+}

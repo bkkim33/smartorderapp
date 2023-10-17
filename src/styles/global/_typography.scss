@@ -1,0 +1,83 @@
+// 공통 타이틀 및 텍스트에 대한 스타일을 정의합니다.
+
+//페이지 내 컨텐츠 타이틀 스타일
+
+.required {
+  &:after {
+    display: inline-flex;
+    color: var(--red);
+    margin-left: 4px;
+    content: '*';
+  }
+}
+
+.headline1 {
+  @include h1;
+}
+
+.headline2 {
+  @include h2;
+}
+
+.headline3 {
+  @include h3;
+}
+
+.headline4 {
+  @include h4;
+}
+
+.headline5 {
+  @include h5;
+}
+
+.title1 {
+  @include h3;
+}
+
+.title2 {
+  @include h4;
+}
+
+.title3 {
+  @include h5;
+}
+
+.body1 {
+  @include body1;
+}
+
+.body2 {
+  @include body2;
+}
+
+.body3 {
+  @include body3;
+}
+
+.body4 {
+  @include body4;
+}
+
+//타이포규정 예외 font-weight 정의시 사용
+.bold {
+  &800 {
+    font-weight: 800;
+  }
+  &700 {
+    font-weight: 700;
+  }
+  &600 {
+    font-weight: 600;
+  }
+  &500 {
+    font-weight: 500;
+  }
+  &400 {
+    font-weight: 400;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
