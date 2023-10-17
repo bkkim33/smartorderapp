@@ -1,0 +1,28 @@
+@import'../common/variables';
+
+.tablebox{
+    table{
+        width: 100%;
+        border-top: 1px solid #F1F4F7;
+        th {
+            padding: 8px 12px;
+            background-color: #F4F8FC;
+            border-bottom: 1px solid #F1F4F7;
+            @include body4(#8A9DBE);
+            text-align: left;
+        }
+        tr {
+            &:hover{
+                td{
+                    background-color: #FAFBFE;
+                }
+            }
+        }
+        td {
+            height: 66px;
+            padding: 24px 12px;
+            border-bottom: 1px solid #F1F4F7;
+            @include body2(#2E3646);
+        }
+    }
+}

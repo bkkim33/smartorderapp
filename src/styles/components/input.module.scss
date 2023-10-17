@@ -4,8 +4,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 100%;
-    min-width: 260px;
     height: 35px;
     border: 1px solid var(--ce7);
     padding: 10px;
@@ -87,9 +85,8 @@
 }
 
 // input 기본 스타일은 normal을 기준으로 합니다.
-.input{    
+.input{
     width: 100%;
-    min-width: 260px;
     border: 0;
     outline: 0;
     @include body2(var(--primary));    

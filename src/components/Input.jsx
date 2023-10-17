@@ -6,6 +6,7 @@ import { Icons } from "./Icon";
 Input.propTypes = {
   type: PropTypes.oneOf(["text", "password", "number", "search"]),
   shape: PropTypes.oneOf(["", "round", "line", "none"]),
+  width: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   error: PropTypes.bool,
@@ -17,15 +18,16 @@ Input.propTypes = {
 Input.defaultProps = {
     type: "text",
     shape: "",
+    width: "",
     placeholder: "내용을 입력해 주세요.",
     disabled: false,
     error: false,
     timer: false,
-    onClick: {},
+    onClick: () => {},
 };
 
 export function Input({ onClick, ...others }) {
-  const { type, shape, placeholder, disabled, error, timer, globalClass } = others;
+  const { type, shape, width, placeholder, disabled, error, timer, globalClass } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
   const onChange = (e) => {
@@ -58,13 +60,15 @@ export function Input({ onClick, ...others }) {
 
   useEffect(() => {
     if (time.current < 0) {
-      console.log("time out");
       clearInterval(timerId.current);
     }
   }, [sec]);
 
   return (
     <div
+      style={{
+        width: width ? width : "100%",
+      }}
       className={`${styles.inputbox} ${styles[shape]} ${disabled ? styles.disabled : ""} ${focus ? styles.focus : ""} ${error ? styles.error : ""} ${globalClass || ""} `}
     >
       <input
@@ -74,7 +78,6 @@ export function Input({ onClick, ...others }) {
         value={value}
         placeholder={placeholder}
         disabled={disabled}
-        error={error}
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
       ></input>
