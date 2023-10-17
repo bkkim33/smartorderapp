@@ -1,19 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Layout from '../../layout/DefaultLayout'
-import Button from '../../components/Button'
-// import { Header } from "../stories/Header";
-
-
+import ContentBox from "../../layout/ContentBox";
 
 function MainPage() {
   return (
     <Layout>
-      <div>main</div>
-      <Link to="/login">로그인 이동</Link>
+      <div className="">
+        main
+      </div>
+      <ContentBox>
+        1111
+      </ContentBox>
+      {/* <Link to="/login">로그인 이동</Link>
       <Button onClick={() => {}} size="full">
         save
-      </Button>
+      </Button> */}
     </Layout>
   );
 }

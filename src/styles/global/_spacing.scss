@@ -1,0 +1,67 @@
+//해당 파일은 margin, padding spacing 정의 내용을 담고 있습니다.
+//spacing은 2px 단위로 정의합니다.
+//spacing은 0px ~ 40px까지 정의되어 있습니다.
+
+@for $value from 0 through 100 {
+  // 2px 단위로 증가
+  // $value: $i * 2;
+  .m {
+    &l_#{$value} {
+      margin-left: #{$value}px;
+    }
+    &r_#{$value} {
+      margin-right: #{$value}px;
+    }
+    &t_#{$value} {
+      margin-top: #{$value}px;
+    }
+    &b_#{$value} {
+      margin-bottom: #{$value}px;
+    }
+    &tb_#{$value} {
+      margin-top: #{$value}px;
+      margin-bottom: #{$value}px;
+    }
+    &lr_#{$value} {
+      margin-left: #{$value}px;
+      margin-right: #{$value}px;
+    }
+    // margin 전체 정의 추가
+    &g_#{$value} {
+      margin: #{$value}px;
+    }
+  }
+  .p {
+    &l_#{$value} {
+      padding-left: #{$value}px;
+    }
+    &r_#{$value} {
+      padding-right: #{$value}px;
+    }
+    &t_#{$value} {
+      padding-top: #{$value}px;
+    }
+    &b_#{$value} {
+      padding-bottom: #{$value}px;
+    }
+    &tb_#{$value} {
+      padding-top: #{$value}px;
+      padding-bottom: #{$value}px;
+    }
+    &lr_#{$value} {
+      padding-left: #{$value}px;
+      padding-right: #{$value}px;
+    }
+    // padding 전체 정의 추가
+    &d_#{$value} {
+      padding: #{$value}px;
+    }
+  }
+
+  //갭추가
+  .gap {
+    &_#{$value} {
+      gap: #{$value}px;
+    }
+  }
+}

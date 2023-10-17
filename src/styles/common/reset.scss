@@ -196,12 +196,14 @@ summary::marker {
 html,
 body {
   width: 100%;
+  height: 100%;
   font-size: 10px;
   line-height: 1;
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 400;
   background-color: var(--bg);
+  overflow-y: hidden;
 }
 body {
   font-size: 1.2rem;
