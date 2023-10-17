@@ -1,0 +1,50 @@
+.align {
+  display: flex;
+  align-items: center; // 세로정렬(default)
+  justify-content: space-between; // 좌우정렬(default)
+  width: 100%;
+  // align 내 위 아래 정렬이 필요할 때 사용
+  &.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  // 아이템 가로 정렬 :: start / center / end
+  &.center {
+    justify-content: center;
+  }
+  &.start {
+    justify-content: flex-start;
+  }
+  &.end {
+    justify-content: flex-end;
+  }
+
+  // 아이템 세로 정렬 :: bottom / top
+  &.bottom {
+    align-items: flex-end;
+  }
+  &.top {
+    align-items: flex-start;
+  }
+  // 아이템 간격
+  .item {
+    text-align: center;
+    align-items: center;
+    display: inline-flex;
+    // 아이템 간격 기본 마진 20px (gap으로 변경)
+    & + .item {
+      margin-left: 10px;
+    }
+  }
+  // align 영역 내 좌우정렬 (좌우 정렬 아닐땐 사용하지 않음)
+  .lft {
+    display: flex;
+    align-items: center;
+  }
+  .rgt {
+    display: flex;
+    align-items: center;
+  }
+}

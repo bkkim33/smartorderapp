@@ -6,7 +6,7 @@ function SideMenuLayout({globalstyle}) {
   const URL = useLocation();
 
   useEffect(() => {
-    console.log(URL);
+    // console.log(URL);
   }, [URL]);
 
   return (
@@ -41,7 +41,9 @@ function SideMenuLayout({globalstyle}) {
           </li>
           <li
             className={`${styles.menu_dep1} ${
-              URL.pathname === "/admin" ? styles.menu_dep1_active : ""
+              URL.pathname = "/admin/coupon"
+                ? styles.menu_dep1_active
+                : ""
             }`}
           >
             <p>
@@ -50,16 +52,18 @@ function SideMenuLayout({globalstyle}) {
             <ul className={`${styles.menu_dep2_wrap}`}>
               <li className={`${styles.menu_dep2}`}>
                 <Link
-                  to="/admin"
+                  to="/admin/coupon/management"
                   className={` ${
-                    URL.pathname === "/admin" ? styles.active : ""
+                    URL.pathname = "/admin/coupon/management"
+                      ? styles.active
+                      : ""
                   }`}
                 >
                   <span>쿠폰관리</span>
                 </Link>
               </li>
               <li className={`${styles.menu_dep2}`}>
-                <Link to="/admin/login">
+                <Link to="/admin/coupon">
                   <span>쿠폰발급</span>
                 </Link>
               </li>

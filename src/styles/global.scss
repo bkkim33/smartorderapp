@@ -6,8 +6,11 @@
 }
 
 // 글로벌 scss import
-@import './global/_color';
-@import './global/_select';
+@import './global/_align'; //정렬
+@import './global/_color'; //배경 글자 등등 모든 색
 @import './global/_spacing'; // margin, padding
+
+// 글로벌 컨포넌트 import
+@import './global/_select';
 
 
