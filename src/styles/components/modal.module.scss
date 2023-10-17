@@ -1,0 +1,78 @@
+@import'../common/variables';
+
+  .modalbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.3s;
+    .modal{
+        width: 700px;
+        background: var(--cff);
+        padding: 30px 20px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-sizing: content-box;
+        border: 1px solid var(--primary-b);
+        &.small {
+          width: 700px;
+          }
+        &.large {
+            width: 1000px;
+        }
+        &_content{
+            margin-bottom: 20px;
+            .top{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--c11);
+                .title{
+                    @include h2(var(--c11));
+                    font-weight: bold;
+                }
+                .closebtn{
+                    border: none;
+                    cursor: pointer;
+                    font-size: 20px;
+                    vertical-align: top;
+                }
+            }
+            .subtitle{
+                margin: 15px 0;
+                @include body1(var(--c33));
+            }
+            .detail{
+                padding: 10px;
+                background: var(--bgfa);
+                min-height: 30px;
+                max-height: 100px;
+                max-height: 323px;
+
+                overflow-y: auto;
+            }
+        }
+        &_btns{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+
+@media (orientation: portrait) {
+  .modal{
+    width: 100vw !important;
+    height: 100vh !important;
+    border: 0 !important;
+  }
+}
