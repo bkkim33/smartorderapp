@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/smartorderapp/static/css/main.207bbee7.css",
-    "main.js": "/smartorderapp/static/js/main.90cef2e7.js",
+    "main.css": "/smartorderapp/static/css/main.c05e79ac.css",
+    "main.js": "/smartorderapp/static/js/main.640ac014.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
     "static/media/Pretendard-ExtraBold.woff": "/smartorderapp/static/media/Pretendard-ExtraBold.88651b953c5d967d1db9.woff",
     "static/media/Pretendard-Bold.woff": "/smartorderapp/static/media/Pretendard-Bold.dd56301118da9e158ce9.woff",
@@ -15,12 +15,12 @@
     "static/media/Pretendard-Regular.woff2": "/smartorderapp/static/media/Pretendard-Regular.78a54f1fe75272411bb2.woff2",
     "static/media/user_img.png": "/smartorderapp/static/media/user_img.1ff80bb7dfe9e6f3e62e.png",
     "index.html": "/smartorderapp/index.html",
-    "main.207bbee7.css.map": "/smartorderapp/static/css/main.207bbee7.css.map",
-    "main.90cef2e7.js.map": "/smartorderapp/static/js/main.90cef2e7.js.map",
+    "main.c05e79ac.css.map": "/smartorderapp/static/css/main.c05e79ac.css.map",
+    "main.640ac014.js.map": "/smartorderapp/static/js/main.640ac014.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.207bbee7.css",
-    "static/js/main.90cef2e7.js"
+    "static/css/main.c05e79ac.css",
+    "static/js/main.640ac014.js"
   ]
 }
