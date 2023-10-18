@@ -18,7 +18,7 @@
         background: var(--cff);
         padding: 30px 20px 20px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        box-sizing: content-box;
+        @include box-sizing;
         border: 1px solid var(--primary-b);
         &.small {
           width: 700px;
@@ -52,11 +52,10 @@
             .detail{
                 padding: 10px;
                 background: var(--bgfa);
-                min-height: 30px;
-                max-height: 100px;
-                max-height: 323px;
-
-                overflow-y: auto;
+                // height: 200px;
+                // overflow-y: auto;
+                // 스크롤 계산되는거 확인하기
+                @include scroll(200px,200px)
             }
         }
         &_btns{
@@ -69,7 +68,7 @@
 }
 
 
-@media (orientation: portrait) {
+@media all and (orientation: portrait)  {
   .modal{
     width: 100vw !important;
     height: 100vh !important;

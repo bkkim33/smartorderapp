@@ -51,7 +51,9 @@ export function Modal({ onClick, onClose, ...others }) {
                   }}>x</button>
               </div>
               {subtitle && <div className={`${styles.subtitle}`}>{subtitle}</div>}
-              <div className={`${styles.detail}`}>임시 컨텐츠 영역<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+              <div className={`${styles.detail}`}>임시 컨텐츠 영역<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+              <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+              </div>
               </div>
               <div className={`${styles.modal_btns}`}>
                   <Button onClick={() => {}} size="full" line>
