@@ -1,0 +1,57 @@
+@import'../common/variables';
+
+.tbl{
+  table{
+    width: 100%;
+    thead{
+      background-color: var(--primary-b);
+      th {
+        padding: 10px;
+        @include body4(var(--cff));
+        text-align: center;
+        & + th{
+            border-left: 1px solid var(--c99);
+        }
+      }
+    }
+    tbody{
+      tr {
+        border-bottom: 1px solid #f1f4f7;
+        &:hover {
+          background-color: #fafbfe;
+        }
+      }
+
+      td {
+        padding: 10px;
+        color: #354165;
+        font-size: 1.4rem;
+        // 왼쪽 정렬
+        &.left {
+            text-align: left;
+        }
+
+        // 오른쪽 정렬
+        &.right {
+            text-align: right;
+        }
+
+        // 가운데 정렬
+        &.center {
+            text-align: center;
+        }
+        // 위로 정렬
+        &.top {
+            vertical-align: top;
+            padding-top: 18px !important;
+        }
+        &.bottom {
+            vertical-align: bottom;
+        }
+         & + td{
+            border-left: 1px solid var(--ce7);
+        }
+      }
+    }
+  }
+}

@@ -57,51 +57,24 @@ table {
   }
 }
 
-.tbl{
-  table{
-    width: 100%;
-    thead{
-      background-color: var(--primary-b);
-      th {
-        padding: 12px 0px 12px 12px;
-        @include body4(var(--cff));
-        // @include capH(#8a9dbe);
-        // background-color: var(--second50);
-        text-align: center;
-        // 왼쪽 정렬
-        &.tl {
-          text-align: left;
-        }
-      }
+.bullet_list{
+  li{
+    padding-left: 10px;
+    position: relative;
+    line-height: 2rem;
+    & + li{
+      margin-top: 10px;
     }
-    tbody{
-      tr {
-        border-bottom: 1px solid #f1f4f7;
-
-        &:hover {
-          background-color: #fafbfe;
-        }
-
-        // &:has(td[rowspan]) {
-        //   & ~ tr {
-        //     td {
-        //       &:first-child {
-        //         padding-left: 12px;
-        //         &[rowspan] {
-        //           padding-left: 30px;
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
-      }
-
-      td {
-        padding: 12px 6px 12px 12px;
-        color: #354165;
-        font-size: 1.4rem;
-
-      }
+    &::after{
+      @include before_after;
+      width: 3px;
+      height: 3px;
+      border-radius: 1.5px;
+      background-color: var(--cff);
+      position: absolute;
+      top: 10px;
+      margin-top: -2px;
+      left: 0;
     }
   }
 }
