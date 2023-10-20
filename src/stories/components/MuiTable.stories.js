@@ -1,18 +1,19 @@
 import React from "react";
-import Layout from '../../../layout/DefaultLayout'
-import ContentBox from "../../../layout/ContentBox";
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
-import MuiTooltip from "../../../components/MuiTooltip";
-import { MuiTable } from "../../../components/MuiTable";
+import { MuiTable } from "../../components/MuiTable";
 
+export default {
+  title: "components/Lib/MuiTable",
+  component: MuiTable,
+  tags: ["autodocs"],
+  argTypes: {},
+};
 
 const cols = [
   { colWidth: "8%" },
   { colWidth: "8%" },
   { colWidth: "30%" },
   { colWidth: "auto" },
-  { colWidth: "8%" },
+  { colWidth: "10%" },
   { colWidth: "5%" },
   { colWidth: "5%" },
 ];
@@ -78,55 +79,10 @@ const rows = [
   },
 ];
 
-function MainPage() {
-  return (
-    <Layout>
-      <div className="align mb_20">
-        <div className="lft">
-          <h1 className="headline2">쿠폰관리</h1>
-          <MuiTooltip placements="right-end" globalClass="ml_5">
-            <ul className="bullet_list">
-              <li>쿠폰 추가 버튼을 통해 쿠폰을 생성할 수 있습니다.</li>
-              <li>
-                쿠폰 이미지는 파일 불러오기 기능을 통해 직접 제작하여 업로드
-                가능합니다.
-              </li>
-              <li>
-                이미 발급한 쿠폰은 삭제해도 발송 관리자가 고객에게 전송할 수
-                있습니다. <br />
-                쿠폰 회수는 쿠폰 발급 메뉴에서 가능합니다.
-              </li>
-            </ul>
-          </MuiTooltip>
-        </div>
-        <div className="rgt">
-          <Button onClick={() => {}} round>
-            쿠폰 생성
-          </Button>
-        </div>
-      </div>
-      <ContentBox>
-        <div className="align mb_20">
-          <div className="lft">
-            <p className="body2">
-              전체
-              <em className="ml_5 primary-b bold600">46</em>
-            </p>
-          </div>
-          <div className="rgt">
-            <Input
-              onClick={() => {}}
-              placeholder="쿠폰명을 입력해주세요"
-              shape="round"
-              type="search"
-              width="300px"
-            />
-          </div>
-        </div>
-        <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
-      </ContentBox>
-    </Layout>
-  );
-}
+export const Default = (args) => (
+  <>
+    <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
+  </>
+);
 
-export default MainPage;
+

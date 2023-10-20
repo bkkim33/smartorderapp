@@ -2,7 +2,7 @@ import React from "react";
 import Select from "../../components/Select";
 
 export default {
-  title: "components/Select",
+  title: "components/Lib/Select",
   component: Select,
   tags: ["autodocs"],
   argTypes: {},
