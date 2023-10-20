@@ -66,8 +66,8 @@ export function Button({ children, onClick, app, color, ...others }) {
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
-  // const appClass = app ? `app` : `color-${color}`;
-  const appClass = `color-${color}`;
+  const appClass = app ? `color-${color}` : ``;
+  // const appClass = `color-${color}`;
 
   return (
     <button

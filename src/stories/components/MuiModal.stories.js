@@ -14,14 +14,48 @@ export default {
 
 export const Default = () => {
   const [open, setOpen] = useState(false);
+
   const handleOpen = () => {
     setOpen(true);
-    console.log('눌럿어', {setOpen})
-  }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Button onClick={handleOpen}>Open modal</Button>
-      <MuiModal propOpen={open}></MuiModal>
+      <MuiModal
+        open={open}
+        onClose={handleClose}
+        header={
+          <>
+            <h4>Title</h4>
+            <Button
+              icon="Delete"
+              iconposition=""
+              none
+              onClick={handleClose}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--c11)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+        button={
+          <>
+            <Button onClick={() => {}} line>취소</Button>
+            <Button onClick={() => {}} globalClass="ml_10">
+              확인
+            </Button>
+          </>
+        }
+      >
+        컨텐츠
+      </MuiModal>
     </>
   );
 }

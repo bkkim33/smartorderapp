@@ -87,7 +87,7 @@ export function MuiTooltip({ children, ...others }) {
           arrow
         >
           <button>
-            <Icons.TolltipIcon width={icon.width} height={icon.height} />
+            <Icons.Question width={icon.width} height={icon.height} />
           </button>
         </Tooltip>
       </div>
