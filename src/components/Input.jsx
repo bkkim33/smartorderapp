@@ -111,7 +111,7 @@ export function Input({ onClick, ...others }) {
           <button className={`${styles.search}`}
             onClick={onClick}
           >
-            <Icons.Search />
+            <Icons.ArrowBg />
           </button>
         </>
         )
