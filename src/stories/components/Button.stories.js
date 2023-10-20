@@ -1,6 +1,5 @@
 import React from "react";
-import  Button  from "../../components/Button";
-// import { Icons } from "../../components/Icon";
+import Button  from "../../components/Button";
 
 export default {
   title: "components/Button",
@@ -14,22 +13,47 @@ export default {
     iconStyle: {
       control: "object",
     },
+    color: {
+      control: {
+        type: "select",
+        options: ["", "gray", "lime","change"],
+      },
+    },
   },
 };
 
 export const Default = (args) => (
   <>
-    <Button {...args}>
-      {args.children}
-    </Button>
+  <Button {...args}>{args.children}</Button>
   </>
 );
 
-// 
+export const AppPrimary = (args) => (
+  <>
+    <Button onClick={() => {}} size="full">확인</Button>
+  </>
+);
 
-// export const Full = () => (
-//   <>
-//     <Button size="full">버튼이다</Button>
-//   </>
-// );
+export const AppOutline= (args) => (
+  <>
+    <Button onClick={() => {}} size="full" line>메뉴 더 담기</Button>
+  </>
+);
 
+export const AppGray = () => (
+  <>
+    <Button onClick={() => {}} size="medium" color="gray">장바구니 담기</Button>
+  </>
+);
+
+export const AppLime = () => (
+  <>
+    <Button onClick={() => {}} size="medium" color="lime">홈</Button>
+  </>
+);
+
+export const AppSecondary = () => (
+  <>
+    <Button onClick={() => {}} size="xsmall" color="change" line>변경</Button>
+  </>
+);

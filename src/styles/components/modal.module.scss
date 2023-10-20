@@ -52,10 +52,7 @@
             .detail{
                 padding: 10px;
                 background: var(--bgfa);
-                // height: 200px;
-                // overflow-y: auto;
-                // 스크롤 계산되는거 확인하기
-                @include scroll(200px,200px)
+                @include scroll(y,200px);
             }
         }
         &_btns{

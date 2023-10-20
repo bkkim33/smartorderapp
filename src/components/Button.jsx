@@ -28,6 +28,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   styleclass: PropTypes.string,
   onClick: PropTypes.func,
+  color: PropTypes.oneOf(["", "gray", "lime","change"]),
 };
 
 // 기본 상태가 필요시에만 사용됨
@@ -47,9 +48,10 @@ Button.defaultProps = {
   },
   icon: "",
   globalClass: "",
+  color: "default",
 };
 
-export function Button({ children, onClick, ...others }) {
+export function Button({ children, onClick, app, color, ...others }) {
   const {
     size,
     round,
@@ -64,13 +66,16 @@ export function Button({ children, onClick, ...others }) {
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
+  // const appClass = app ? `app` : `color-${color}`;
+  const appClass = `color-${color}`;
+
   return (
     <button
-      className={`${styles.btn} ${styles[size]} ${round ? styles.round : ""} ${
-        line ? styles.line : ""
-      } ${state ? styles.state : ""} ${none ? styles.none : ""} ${
-        globalClass || ""
-      } `}
+      className={`
+      ${styles.btn} ${styles[size]} ${round ? styles.round : ""} 
+      ${line ? styles.line : ""} ${state ? styles.state : ""} 
+      ${none ? styles.none : ""} ${globalClass || ""} 
+      ${styles[appClass]}`}
       disabled={disabled}
       onClick={onClick}
     >
