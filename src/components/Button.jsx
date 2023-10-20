@@ -48,7 +48,7 @@ Button.defaultProps = {
   },
   icon: "",
   globalClass: "",
-  color: "default",
+  color: "",
 };
 
 export function Button({ children, onClick, app, color, ...others }) {
