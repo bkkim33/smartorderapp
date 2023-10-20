@@ -180,7 +180,6 @@ const AdminLogo = ({ width = 172, height = 34 }) => (
   </svg>
 );
 
-
 const Heart = ({ width = 20, height = 20, fill = "var(--cff)" }) => (
   <svg
     width={width}
@@ -223,7 +222,7 @@ const Search = ({ width = 19, height = 19, fill = "var(--c11)" }) => (
   </svg>
 );
 
-const EyesOff = ({ width = 22, height = 16, fill = "var(--cbb)" }) => (
+const EyesOn = ({ width = 22, height = 16, fill = "var(--cbb)" }) => (
   <svg 
     width={width}
     height={height} 
@@ -236,11 +235,308 @@ const EyesOff = ({ width = 22, height = 16, fill = "var(--cbb)" }) => (
   </svg>
 );
 
+const Google = ({ width = 27, height = 28 }) => (
+  <svg 
+    width={width} 
+    height={height} 
+    viewBox="0 0 27 28" 
+    fill="none" xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_1273_4444)">
+      <path fillRule="evenodd" clipRule="evenodd" d="M26.9996 14.3179C26.9996 13.3248 26.9114 12.3712 26.7491 11.4546H13.7754V16.8699H21.1895C20.8703 18.6201 19.8995 20.1025 18.4409 21.0957V24.6079H22.8935C25.4981 22.1706 27.0009 18.5819 27.0009 14.3179H26.9996Z" fill="#4285F4" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M13.7754 28C17.4948 28 20.6134 26.7457 22.8922 24.6078L18.4396 21.0956C17.2054 21.9357 15.6286 22.4316 13.7741 22.4316C10.1858 22.4316 7.14905 19.9692 6.06542 16.6602H1.46484V20.2871C3.73204 24.8623 8.38972 28 13.7754 28Z" fill="#34A853" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M6.06705 16.6602C5.79193 15.8201 5.6349 14.9233 5.6349 14C5.6349 13.0768 5.79193 12.18 6.06705 11.3398V7.71289H1.46518C0.532084 9.60286 0 11.7408 0 14C0 16.2593 0.532084 18.3972 1.46518 20.2872L6.06705 16.6602Z" fill="#FBBC05" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M13.7754 5.56835C15.7974 5.56835 17.6142 6.27527 19.0418 7.66142L22.9935 3.64541C20.6069 1.38747 17.4883 0 13.7754 0C8.38972 0 3.73204 3.13764 1.46484 7.71286L6.06672 11.3398C7.15035 8.03071 10.1871 5.56835 13.7754 5.56835Z" fill="#EA4335" />
+    </g>
+    <defs>
+      <clipPath id="clip0_1273_4444">
+        <rect width="27" height="28" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const Home = ({ width = 23, height = 21, fill = "#0F0E12"}) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 23 21" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2 10L11.5 2L21 10" stroke={fill} strokeWidth="2" strokeLinecap="square" />
+    <path d="M5 13V20H18V13" stroke={fill} strokeWidth="2" strokeLinecap="square" />
+  </svg>
+);
+
+const Cart = ({ width = 26, height = 21, fill = "var(--c11)" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 26 21" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M1 1H6.76L10.12 12H21.64L25 1H12.92" stroke={fill} strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
+    <circle cx="11" cy="18" r="2" stroke={fill} strokeWidth="2" />
+    <circle cx="20" cy="18" r="2" stroke={fill} strokeWidth="2" />
+  </svg>
+);
+
+const Cup = ({ width = 26, height = 28, fill = "#0F0E12" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 26 28" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M8.16453 24.9999L6.23047 13.5713H19.7689L17.8349 24.9999H8.16453Z" stroke={fill} strokeWidth="2"/>
+    <rect x="5" y="10.1431" width="16" height="3.42857" stroke={fill} strokeWidth="2"/>
+    <path d="M6.25874 10.1429L5.26422 10.0383C5.23459 10.3202 5.32595 10.6014 5.51559 10.812C5.70522 11.0226 5.97533 11.1429 6.25874 11.1429V10.1429ZM19.742 10.1429V11.1429C20.0254 11.1429 20.2955 11.0226 20.4852 10.812C20.6748 10.6014 20.7662 10.3202 20.7365 10.0383L19.742 10.1429ZM6.25874 11.1429H19.742V9.14286H6.25874V11.1429ZM7.25326 10.2474C7.49876 7.91248 9.85848 5.86816 13.0004 5.86816V3.86816C9.08009 3.86816 5.64058 6.45872 5.26422 10.0383L7.25326 10.2474ZM13.0004 5.86816C16.1423 5.86816 18.502 7.91248 18.7475 10.2474L20.7365 10.0383C20.3602 6.45872 16.9207 3.86816 13.0004 3.86816V5.86816Z" fill={fill} />
+    <path d="M9.26976 5.3656L8.2998 2" stroke={fill} strokeWidth="2" strokeLinecap="square"/>
+    </svg>
+);
+
+const Like = ({ width = 26, height = 26, fill = "#F7D356" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 26 26" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13 0L17.2027 7.21553L25.3637 8.98278L19.8001 15.2095L20.6412 23.5172L13 20.15L5.35879 23.5172L6.19995 15.2095L0.636266 8.98278L8.79733 7.21553L13 0Z" fill={fill} />
+  </svg>
+);
+
+const LogoOnly = ({ width = 20, height = 20 }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 20 20" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.4986 14.9652C16.6582 12.9677 15.0417 11.3914 13.0362 10.5798C12.9221 11.201 12.747 11.7948 12.514 12.3433C12.514 12.3433 12.5108 12.3433 12.5108 12.3465C13.8895 12.9516 15.0095 14.0261 15.6683 15.3798C15.5157 15.3911 15.3598 15.404 15.2039 15.404C13.7947 15.404 12.4995 14.9345 11.4502 14.1536C11.4149 14.1262 11.3779 14.1004 11.3409 14.0713C11.3056 14.0439 11.2686 14.0181 11.2317 13.989C10.7544 13.6018 10.3334 13.1452 9.98471 12.6337C9.95579 12.5918 9.93329 12.5482 9.90597 12.5047C9.87705 12.4611 9.85134 12.4192 9.82402 12.3756C9.76939 12.2852 9.71636 12.19 9.66654 12.0965C9.63601 12.0997 9.61191 12.0997 9.58298 12.1013L9.54763 12.1045C8.96754 12.1449 8.39709 12.2739 7.85234 12.4805C8.06285 12.9306 8.31513 13.355 8.59795 13.7551C8.62366 13.7906 8.65098 13.8277 8.67829 13.8648C8.704 13.9019 8.72972 13.939 8.75703 13.9761C9.12341 14.4569 9.53638 14.9022 9.99757 15.2911C10.0313 15.3201 10.0715 15.3476 10.1084 15.3766C10.1422 15.4073 10.1808 15.4298 10.2161 15.4605C11.5932 16.5431 13.319 17.1949 15.2023 17.1949C15.5446 17.1949 15.8837 17.1659 16.2179 17.124C16.835 17.0465 17.4311 16.8965 18 16.6851C17.8923 16.0865 17.7268 15.5073 17.4986 14.9636V14.9652Z" fill="black" />
+    <path d="M8.93865 9.77472C8.91133 9.53916 8.89044 9.30521 8.89044 9.0632C8.89044 7.73856 9.29699 6.51073 9.98635 5.49264C10.6789 6.51073 11.0855 7.73856 11.0855 9.0632C11.0855 9.3036 11.063 9.53755 11.0357 9.76988C11.0308 9.81345 11.0244 9.86024 11.018 9.9038C11.0132 9.94898 11.0083 9.99415 11.0019 10.0393C10.9055 10.6718 10.7159 11.2736 10.4459 11.8303C10.4218 11.8738 10.3993 11.9174 10.3752 11.9609C10.3511 12.0045 10.3302 12.0513 10.3045 12.0949C10.2547 12.1884 10.2017 12.2836 10.147 12.374C10.1679 12.4079 10.1888 12.4466 10.2097 12.4789C10.5391 12.9597 10.936 13.3953 11.3908 13.768C11.6784 13.363 11.9339 12.9371 12.146 12.4837C12.1653 12.4434 12.1846 12.403 12.2039 12.3595C12.2232 12.3175 12.2425 12.2788 12.2617 12.2368C12.498 11.677 12.6715 11.0848 12.7808 10.4717C12.7872 10.4266 12.792 10.3798 12.7984 10.333C12.8065 10.2894 12.8113 10.241 12.8193 10.1942C12.8756 9.81345 12.9141 9.42622 12.9141 9.0277C12.9141 7.18031 12.2955 5.48135 11.2655 4.11153C10.9039 3.63073 10.4925 3.19026 10.0362 2.7998C9.55892 3.19671 9.13308 3.65332 8.75868 4.15026C7.72383 5.51684 7.10195 7.2158 7.10195 9.0632C7.10195 9.44881 7.14213 9.82313 7.19355 10.1942C7.76239 9.99093 8.34731 9.85056 8.93865 9.77634V9.77472Z" fill="black" />
+    <path d="M8.54333 14.1423C7.49081 14.9313 6.1876 15.404 4.77352 15.404C4.62247 15.404 4.47303 15.3911 4.3252 15.3814C4.98242 14.0229 6.11047 12.9435 7.49402 12.3417C7.5358 12.324 7.57597 12.303 7.61936 12.2885C7.66114 12.2723 7.6997 12.2481 7.74309 12.2336C8.30551 12.0174 8.90488 11.8803 9.53319 11.8335C9.583 11.8286 9.63281 11.8286 9.68102 11.8254C9.73084 11.8222 9.78065 11.8206 9.83046 11.819C9.88671 11.8157 9.93973 11.8093 9.99598 11.8093C10.0522 11.8093 10.0972 11.8157 10.1486 11.819C10.1663 11.7819 10.1856 11.7512 10.2017 11.7141C10.4636 11.18 10.6403 10.6089 10.7335 10.0151C10.4909 9.99093 10.2499 9.9748 10.0024 9.9748C9.75494 9.9748 9.49301 9.99254 9.24394 10.0184C9.20056 10.0232 9.15396 10.028 9.11057 10.0329C9.06558 10.0377 9.01898 10.0426 8.97398 10.0474C8.36978 10.1248 7.78808 10.2684 7.23209 10.4734C7.18871 10.4879 7.14853 10.5088 7.10354 10.5266C7.05855 10.5411 7.01837 10.5621 6.97338 10.5815C4.96314 11.3914 3.34177 12.971 2.50136 14.9765C2.27157 15.5218 2.10606 16.1027 2 16.6996C2.56402 16.9062 3.15376 17.0546 3.7676 17.1288C4.10023 17.1708 4.43607 17.1998 4.77995 17.1998C6.66646 17.1998 8.39871 16.548 9.77744 15.4637C9.33393 15.083 8.91613 14.6393 8.54012 14.1439L8.54333 14.1423Z" fill="black" />
+  </svg>
+);
+
+const Location = ({ width = 20, height = 20, fill = "#0F0E12" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 20 20" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path fillRule="evenodd" clipRule="evenodd" d="M10 19C10 19 17.5 14.0909 17.5 8.36364C17.5 6.41068 16.7098 4.53771 15.3033 3.15676C13.8968 1.77581 11.9891 1 10 1C8.01088 1 6.10322 1.77581 4.6967 3.15676C3.29018 4.53771 2.5 6.41068 2.5 8.36364C2.5 14.0909 10 19 10 19ZM12.5 8.20015C12.5 9.55576 11.3807 10.6547 10 10.6547C8.61929 10.6547 7.5 9.55576 7.5 8.20015C7.5 6.84454 8.61929 5.74561 10 5.74561C11.3807 5.74561 12.5 6.84454 12.5 8.20015Z" fill={fill} />
+  </svg>
+);
+
+const MenuOrder = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2.75" y="1.25" width="10.5" height="13.5" stroke={fill} strokeWidth="1.5" />
+    <path d="M6 4.5H10" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <rect x="7" y="10.5" width="2" height="2" fill={fill} />
+  </svg>
+);
+
+const MenuLike = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M8.64808 2.62253L8 1.50983L7.35192 2.62253L5.90185 5.11214L3.08599 5.7219L1.82749 5.99443L2.68545 6.95463L4.60512 9.10306L4.31489 11.9695L4.18518 13.2507L5.36351 12.7314L8 11.5696L10.6365 12.7314L11.8148 13.2507L11.6851 11.9695L11.3949 9.10306L13.3146 6.95463L14.1725 5.99443L12.914 5.7219L10.0982 5.11214L8.64808 2.62253Z" stroke={fill} strokeWidth="1.5" />
+  </svg>
+);
+
+const MenuOrderdetails = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2.75" y="1.25" width="10.5" height="13.5" stroke={fill} strokeWidth="1.5" />
+    <path d="M6 7.5H10" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M6 4.5H10" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M6 10.5H8" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+  </svg>
+);
+
+const MenuCoupon = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg">
+    <rect x="1.25" y="2.25" width="13.5" height="11.5" stroke={fill} strokeWidth="1.5" />
+    <path d="M5.5 4.50781V5.44731" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M5.5 7.63525V8.46973" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M5.5 10.6572V11.4917" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+  </svg>
+);
+
+const MenuPrivacy = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8Z" stroke={fill} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 14C13.4321 13.0963 12.5719 12.3383 11.5135 11.8091C10.4551 11.2799 9.23953 11 8 11C6.76047 11 5.54488 11.2799 4.48651 11.8091C3.42813 12.3383 2.56786 13.0963 2 14" stroke={fill} strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round" />
+  </svg>
+);
+
+const MenuNotice = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2.75" y="2" width="10.5" height="12.5" stroke={fill} strokeWidth="1.5" />
+    <path d="M6 7.25H10" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M6 0.75L6 3.25" stroke={fill} stroke-width="1.5" strokeLinecap="square" />
+    <path d="M10 0.75L10 3.25" stroke={fill} stroke-width="1.5" strokeLinecap="square" />
+    <path d="M6 10.25H10" stroke={fill} stroke-width="1.5" strokeLinecap="square" />
+  </svg>
+);
+
+const Infomation = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M14.25 8C14.25 11.4358 11.4358 14.25 8 14.25C4.56421 14.25 1.75 11.4358 1.75 8C1.75 4.56421 4.56421 1.75 8 1.75C11.4358 1.75 14.25 4.56421 14.25 8Z" stroke={fill} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8 5V8.33333" stroke={fill} strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round" />
+    <rect x="7.27539" y="10.3384" width="1.44946" height="1.44946" fill={fill} />
+  </svg>
+);
+
+const Question = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 16 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M14.25 8C14.25 11.4358 11.4358 14.25 8 14.25C4.56421 14.25 1.75 11.4358 1.75 8C1.75 4.56421 4.56421 1.75 8 1.75C11.4358 1.75 14.25 4.56421 14.25 8Z" stroke={fill} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M7.23389 9.44818C7.23918 8.10767 7.5933 7.69852 8.22755 7.29475C8.68209 6.99327 9.03622 6.65949 9.03093 6.1642C9.03622 5.62584 8.62395 5.27591 8.11127 5.27052C7.61972 5.27591 7.15989 5.60969 7.13875 6.23957H5.6377C5.66412 4.72678 6.76877 4 8.12184 4C9.59647 4 10.6377 4.78062 10.6377 6.11036C10.6377 6.99865 10.1884 7.55855 9.49605 7.98385C8.89879 8.34455 8.63452 8.69448 8.62924 9.44818V9.56662H7.23389V9.44818Z" fill={fill} />
+    <rect x="7.27539" y="10.3384" width="1.44946" height="1.44946" fill={fill} />
+  </svg>
+
+);
+
+const Trash = ({ width = 20, height = 20, fill = "#0F0E12" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 20 20" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M5 7V17H15V7" stroke={fill} strokeWidth="1.5" strokeLinejoin="round" />
+    <line x1="8.25" y1="8.17236" x2="8.25" y2="14.7026" stroke={fill} strokeWidth="1.5" strokeLinejoin="round" />
+    <line x1="11.7559" y1="8.17236" x2="11.7559" y2="14.7026" stroke={fill} strokeWidth="1.5" strokeLinejoin="round" />
+    <path d="M3.5 4.25H2.75V5.75H3.5V4.25ZM16.5 5.75H17.25V4.25H16.5V5.75ZM8 3V2.25H7.41442L7.27239 2.8181L8 3ZM12 3L12.7276 2.8181L12.5856 2.25H12V3ZM3.5 5.75H7.5V4.25H3.5V5.75ZM8.22761 5.1819L8.72761 3.1819L7.27239 2.8181L6.77239 4.8181L8.22761 5.1819ZM8 3.75H12V2.25H8V3.75ZM7.5 5.75H12.5V4.25H7.5V5.75ZM12.5 5.75H16.5V4.25H12.5V5.75ZM11.2724 3.1819L11.7724 5.1819L13.2276 4.8181L12.7276 2.8181L11.2724 3.1819Z" fill={fill} />
+  </svg>
+);
+
+const Logout = ({ width = 24, height = 24, fill = "#0F0E12" }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.4404 14.62L20.0004 12.06L17.4404 9.5" stroke={fill} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M9.75977 12.0601H19.9298" stroke={fill} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M11.7598 20C7.33977 20 3.75977 17 3.75977 12C3.75977 7 7.33977 4 11.7598 4" stroke={fill} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+
+);
+
+const OrderComplete = ({ width = 127, height = 119, fill = "#0F0E12" }) => (
+  <svg 
+    width={width} 
+    height={height} 
+    viewBox="0 0 127 119" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M110.209 2H16.0127L2 47.8446V117H125V47.8446L110.209 2Z" fill="white" stroke={fill} strokeWidth="3" strokeLinejoin="round" />
+    <path d="M75.0596 47.6984L64.1411 46L51.5762 46.8409L49.4139 49.8715L49.604 51.28L47.5371 56.8017L45.2176 57.6543L44 64.7667L49.0058 66.296L49.4139 70.2798L53.4436 102.555L62.4649 104L72.8982 102.555L77.3448 66.7198L80.9843 64.7667L82 62.0493L80.3919 57.8884L77.3448 56.6996L75.0596 47.6984Z" fill="white" />
+    <path d="M71.312 51.6447C64.1233 52.2854 49.669 52.6441 49.3609 48.954C48.9758 44.3414 73.2375 45.8789 75.1631 47.4165C76.7035 48.6465 77.8588 54.3354 78.2439 57.0262M78.2439 57.0262C74.0077 58.1793 61.9154 59.7937 47.4353 57.0262C45.2787 56.1036 44.4829 60.4856 44.3545 62.792C44.3545 63.6889 45.3558 65.5596 49.3609 65.8671C54.1403 66.234 63.8335 68.0023 77.7704 65.8207M78.2439 57.0262C81.6329 56.3627 82.7368 59.8248 82.8652 61.6388C82.9468 62.792 82.3471 64.3952 80.5546 65.0983C79.8123 65.3895 78.4322 65.7171 77.7704 65.8207M77.7704 65.8207L74.3928 98.9244C74.3928 100.462 73.0065 103.614 67.4609 103.921C60.529 104.306 53.5971 104.69 52.4417 99.6932C51.5175 95.6956 50.0027 78.2956 49.3609 70.0953" stroke={fill} strokeWidth="3" strokeLinecap="square" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M66.9077 91.72C67.0027 91.6865 67.055 91.5861 67.0307 91.4885C66.971 91.2486 66.9013 91.0106 66.8132 90.7681C66.4204 89.6858 65.6162 88.3968 63.4315 86.7616C60.9924 84.9359 59.5494 82.2817 58.6097 79.7436C58.5322 79.5342 58.4577 79.3245 58.3861 79.1149C58.3374 78.9723 58.157 78.9284 58.0571 79.0414C56.2484 81.0876 56.4973 84.9071 58.7888 88.0791C61.0079 91.151 64.4096 92.6005 66.9077 91.72ZM68.897 90.2103C68.8041 90.3423 68.6053 90.3038 68.5505 90.152C68.5492 90.1485 68.548 90.145 68.5467 90.1415C68.0061 88.6523 66.9431 87.0897 64.537 85.2888C62.5035 83.7667 61.2217 81.4899 60.3391 79.1061C60.2071 78.7495 60.0851 78.3943 59.9717 78.0421C59.9371 77.9346 59.9972 77.8194 60.1067 77.791C62.5652 77.153 65.7593 78.6071 67.8768 81.5383C70.038 84.5299 70.3823 88.0976 68.897 90.2103Z" fill="#846046" />
+    <rect x="24" y="13" width="79" height="19" fill="white" stroke={fill} strokeWidth="3" strokeLinejoin="round" />
+  </svg>
+);
+
+const Coupon = ({ width = 24, height = 18, fill = "#0F0E12" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 24 18" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M23 1V5.64589C22.4479 5.8105 21.9399 6.1104 21.5251 6.52512C20.8687 7.1815 20.5 8.07174 20.5 9C20.5 9.92826 20.8687 10.8185 21.5251 11.4749C21.9399 11.8896 22.4479 12.1895 23 12.3541V17H1V12.3541C1.55205 12.1895 2.06015 11.8896 2.47487 11.4749C3.13125 10.8185 3.5 9.92826 3.5 9C3.5 8.07174 3.13125 7.1815 2.47487 6.52512C2.06015 6.1104 1.55205 5.8105 1 5.64589V1H23Z" stroke={fill} strokeWidth="2" />
+    <path d="M8 13L16 5" stroke={fill} strokeWidth="2" />
+    <circle cx="14.5" cy="12.5" r="1.5" fill={fill} />
+    <circle cx="9.5" cy="6.5" r="1.5" fill={fill} />
+  </svg>
+
+);
+
+// const  = () => ();
+
 export const Icons = {
   Logo,
   AdminLogo,
   Heart,
   Delete,
   Search,
-  EyesOff,
+  EyesOn,
+  Google,
+  Home,
+  Cart,
+  Cup,
+  Like,
+  LogoOnly,
+  Location,
+  MenuOrder,
+  MenuLike,
+  MenuOrderdetails,
+  MenuCoupon,
+  MenuPrivacy,
+  MenuNotice,
+  Infomation,
+  Question,
+  Trash,
+  Logout,
+  OrderComplete,
+  Coupon,
 };

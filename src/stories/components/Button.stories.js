@@ -10,7 +10,9 @@ export default {
     children: { control: "text" },
     size: { control: "select" },
     // icon: { control: "text" },
-    icon: { control: "select", options: ["Heart", "Delete", ""] },
+    icon: { 
+      control: "select", 
+      options: ["Heart", "Delete", "Search", "Google", "Home", "Cart", "Cup", "Like", "LogoOnly", "Location", "MenuOrder", "MenuLike", "MenuOrderdetails", "MenuCoupon", "MenuPrivacy", "MenuNotice", "Infomation", "Question", "Trash", "Logout", "OrderComplete", "Coupon", "Back", "ArrowBg", "" ] },
     iconStyle: {
       control: "object",
     },

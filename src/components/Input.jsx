@@ -95,8 +95,8 @@ export function Input({ onClick, ...others }) {
         )
       }
       {type === "password" && (
-        <>          
-          <Icons.EyesOff />
+        <>
+          <Icons.EyesOn />
         </>
       )
       }
