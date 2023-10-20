@@ -19,3 +19,9 @@ export const Default = (args) => (
     <Tabs {...args} TabsBtn={TabsBtn}></Tabs>
   </>
 );
+
+export const Round = (args) => (
+  <>
+    <Tabs {...args} TabsBtn={TabsBtn} type="round"></Tabs>
+  </>
+);
