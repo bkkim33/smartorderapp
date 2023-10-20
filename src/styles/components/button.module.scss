@@ -1,27 +1,36 @@
 @import'../common/variables';
 
+//정리중
+:root {
+  --lime:#DAEE5F
+}
+
 // 버튼의 기본크기는 large를 기준으로 합니다.
 .btn{
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 120px;
-  min-height: 40px;
+  min-height: 50px;
   border: 0;
-  background-color: var(--primary-b);
+  background-color: var(--c11);
   padding: 10px 20px;
-  @include body2(var(--cff));
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--cff);
   box-sizing: border-box;
   &:hover{
-    background-color: var(--point-hover);
+    background-color: var(--lime);
+    color: var(--c11);
   }
   &:active{
-    background-color: var(--point);
+    background-color: var(--lime);
   }
   &:disabled{
     cursor: default;
-    background-color: var(--bgf5);
-    color: var(--c99);
+    background-color: var(--cff); 
+    color: var(--c99);  
+    border:  1px solid var(--cdd);
   }
   i{
     margin-right: 10px;
@@ -33,35 +42,27 @@
 }
 
 .full{
-  width: 100%;
-  min-height: 50px;
-  @include h5(var(--cff));
-  &.round{
-    @include rounded(8px)
-  }
+  width: 100%; 
+  border: 0; 
 }
 
-.xlarge{
-  min-width: 150px;
-  min-height: 50px;
-  @include h5(var(--cff));
+.xlarge{ 
+  min-width: 335px;
   &.round{
-    @include rounded(8px)
+    @include rounded(4px)
   }
 }
 
 .medium{
-  min-width: 90px;
-  min-height: 35px;
-  @include body2(var(--cff));
+  min-width: 163px;
 }
 
 .small{
   flex-wrap: wrap;
   flex-direction: column;
-  min-width: 60px;
-  min-height: 32px;
-  @include body4(var(--cff));
+  min-width: 79px;
+  min-height: 40px;
+  font-size: 1.6rem;
   padding: 10px;
   i{
     display: block;
@@ -74,6 +75,13 @@
   &.round{
     @include rounded(4px)
   }
+}
+
+.xsmall{
+  min-width: 48px;
+  min-height: 26px;
+  padding: 6px 12px; 
+  font-size: 1.4rem;
 }
 
 .icon_m{
@@ -114,21 +122,20 @@
 
 .line{
   background-color: var(--cff);
-  border: 1px solid var(--primary);
-  color: var(--primary);
+  border: 1px solid var(--c11);
+  color: var(--c11);
   &:hover{
-    background-color: var(--cff);
-    border: 1px solid var(--point);
-    color: var(--point);
+    background-color: var(--c11);
+    color: var(--cff);
   }
   &:active{
-    background-color: var(--point);
+    background-color: var(--c11);
     color: var(--cff);
   }
   &:disabled{
     cursor: default;
-    border-color: var(--cbb);
-    background-color: var(--bgf5);
+    border-color: var(--ce7);
+    background-color: var(--cff);
     color: var(--c99);
   }
 }
@@ -164,13 +171,13 @@
     }
     &:disabled{
       cursor: default;
-      border-color: var(--cbb);
-      background-color: var(--bgf5);
-      color: var(--c99);
-    }
-  }
-}
-
+      background-color: var(--cff);
+      color: var(--c99); 
+      border-color: var(--ce7);
+    } 
+  } 
+} 
+ 
 .none{
   min-width: auto;
   min-height: auto;
@@ -209,3 +216,29 @@
     }
   }
 }
+
+.color{ 
+  &-gray{
+    background-color: var(--cee);
+    color: var(--c77);
+    &:active{
+      background-color: var(--c11); 
+      color: var(--cff); 
+    }
+  }
+  
+  &-lime{ 
+    background-color: var(--lime); 
+    color: var(--c11);
+    &:active{
+      background-color: var(--c11); 
+      color: var(--cff); 
+    }
+  } 
+
+  &-change{  
+    background-color: var(--cff); 
+    color: var(--c55);  
+    border-color: var(--cef);
+  }
+}   
