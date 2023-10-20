@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import MuiTooltip from "../../../components/MuiTooltip";
-import { MuiTable } from "../../../components/MuiTable";
+import MuiTable from "../../../components/MuiTable";
+import MuiModal from "../../../components/MuiModal";
 
-
+// 임시 데이터 테이터에 따라 테이블 컨포넌트 변경 필요
 const cols = [
   { colWidth: "8%" },
   { colWidth: "8%" },
@@ -79,6 +80,15 @@ const rows = [
 ];
 
 function MainPage() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Layout>
       <div className="align mb_20">
@@ -100,7 +110,7 @@ function MainPage() {
           </MuiTooltip>
         </div>
         <div className="rgt">
-          <Button onClick={() => {}} round>
+          <Button onClick={handleOpen} round>
             쿠폰 생성
           </Button>
         </div>
@@ -125,6 +135,28 @@ function MainPage() {
         </div>
         <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
       </ContentBox>
+      <MuiModal
+        open={open}
+        onClose={handleClose}
+        header={
+          <>
+            <h4>TITLE</h4>
+            <Button
+              icon="Delete"
+              none
+              onClick={handleClose}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--c99)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+      >
+        컨텐츠
+      </MuiModal>
     </Layout>
   );
 }

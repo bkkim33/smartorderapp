@@ -41,6 +41,8 @@
   }
 }
 
+
+
 .full{
   width: 100%; 
   border: 0; 
@@ -119,6 +121,32 @@
 .round{
   @include rounded(6px)
 }
+
+.color{ 
+  &-gray{
+    background-color: var(--cee);
+    color: var(--c77);
+    &:active{
+      background-color: var(--c11); 
+      color: var(--cff); 
+    }
+  }
+  
+  &-lime{ 
+    background-color: var(--lime); 
+    color: var(--c11);
+    &:active{
+      background-color: var(--c11); 
+      color: var(--cff); 
+    }
+  } 
+
+  &-change{  
+    background-color: var(--cff); 
+    color: var(--c55);  
+    border-color: var(--cef);
+  }
+}  
 
 .line{
   background-color: var(--cff);
@@ -217,28 +245,4 @@
   }
 }
 
-.color{ 
-  &-gray{
-    background-color: var(--cee);
-    color: var(--c77);
-    &:active{
-      background-color: var(--c11); 
-      color: var(--cff); 
-    }
-  }
-  
-  &-lime{ 
-    background-color: var(--lime); 
-    color: var(--c11);
-    &:active{
-      background-color: var(--c11); 
-      color: var(--cff); 
-    }
-  } 
-
-  &-change{  
-    background-color: var(--cff); 
-    color: var(--c55);  
-    border-color: var(--cef);
-  }
-}   
+ 
