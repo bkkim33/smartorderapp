@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "./page/admin/MainPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
+import CouponIssuance from "./page/admin/coupon/CouponIssuancePage";
 // import Login from "./page/admin/LoginPage";
 
 function App() {
@@ -16,7 +17,13 @@ function App() {
         path="/admin/coupon/management"
         element={<CouponeManagement />}
       />
+      <Route
+        exact
+        path="/admin/coupon/issuance"
+        element={<CouponIssuance />}
+      />
       {/* KDS */}
+      <Route path="/*" element={<Main />} />
     </Routes>
   );
 }
