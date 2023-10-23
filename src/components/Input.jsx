@@ -13,25 +13,45 @@ Input.propTypes = {
   timer: PropTypes.bool,
   globalClass: PropTypes.string,
   onClick: PropTypes.func,
+  counton: PropTypes.bool,
+  maxLength: PropTypes.number,
 };
 
 Input.defaultProps = {
-    type: "text",
-    shape: "",
-    width: "",
-    placeholder: "내용을 입력해 주세요.",
-    disabled: false,
-    error: false,
-    timer: false,
-    onClick: () => {},
+  type: "text",
+  shape: "",
+  width: "",
+  placeholder: "내용을 입력해 주세요.",
+  disabled: false,
+  error: false,
+  timer: false,
+  onClick: () => {},
+  counton: false,
 };
 
 export function Input({ onClick, ...others }) {
-  const { type, shape, width, placeholder, disabled, error, timer, globalClass } = others;
+  const {
+    type,
+    shape,
+    width,
+    placeholder,
+    disabled,
+    error,
+    timer,
+    globalClass,
+    maxLength,
+    counton,
+  } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
   const onChange = (e) => {
     setValue(e.target.value);
+    if (counton === true) {
+      if (e.target.value > maxLength) {
+        return;
+      }
+      setValue(e.target.value);
+    }
   };
   const onReset = () => {
     setValue("");
@@ -69,7 +89,11 @@ export function Input({ onClick, ...others }) {
       style={{
         width: width ? width : "100%",
       }}
-      className={`${styles.inputbox} ${styles[shape]} ${disabled ? styles.disabled : ""} ${focus ? styles.focus : ""} ${error ? styles.error : ""} ${globalClass || ""} `}
+      className={`${styles.inputbox} ${styles[shape]} ${
+        disabled ? styles.disabled : ""
+      } ${focus ? styles.focus : ""} ${error ? styles.error : ""} ${
+        globalClass || ""
+      } `}
     >
       <input
         className={`${styles.input}`}
@@ -78,29 +102,34 @@ export function Input({ onClick, ...others }) {
         value={value}
         placeholder={placeholder}
         disabled={disabled}
+        maxLength={maxLength - 1}
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
       ></input>
-      { type === "text" && !timer && (
-          <button
-            onClick={onReset}
-            className={`${styles.delete} ${value ? styles.block : ""}`}
-          >
-            <span className={`${styles.delete}`} />
-          </button>
-        )
-      }
-      { type === "text" && timer && (
-        <span className={`${styles.time}`}>{min < 10 ? `0${min}` : min}:{sec < 10 ? `0${sec}` : sec}</span>
-        )
-      }
+      {type === "text" && !timer && (
+        <button
+          onClick={onReset}
+          className={`${styles.delete} ${value ? styles.block : ""}`}
+        >
+          <span className={`${styles.delete}`} />
+        </button>
+      )}
+      {type === "text" && timer && (
+        <span className={`${styles.time}`}>
+          {min < 10 ? `0${min}` : min}:{sec < 10 ? `0${sec}` : sec}
+        </span>
+      )}
+      {type === "text" && counton && (
+        <span className={`${styles.time}`}>
+          {value.length}/{maxLength}
+        </span>
+      )}
       {type === "password" && (
         <>
           <Icons.EyesOn />
         </>
-      )
-      }
-      { type === "search" && (
+      )}
+      {type === "search" && (
         <>
           <button
             onClick={onReset}
@@ -108,14 +137,11 @@ export function Input({ onClick, ...others }) {
           >
             <span className={`${styles.delete}`} />
           </button>
-          <button className={`${styles.search}`}
-            onClick={onClick}
-          >
+          <button className={`${styles.search}`} onClick={onClick}>
             <Icons.Search />
           </button>
         </>
-        )
-      }
+      )}
     </div>
   );
 }

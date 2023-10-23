@@ -155,14 +155,22 @@ function MainPage() {
           </>
         }
       >
-        <div className="align">
-          <div className="lft">
-            <h5 className="title3">쿠폰 상세 내용</h5>
+        <div className="align top">
+          <div className="lft" style={{ flex: 1 }}>
+            <div style={{ width: "100%" }}>
+              <h5 className="title3 mb_15">쿠폰 상세 내용</h5>
+              <div>
+                <label className="required">쿠폰명</label>
+                <Input counton maxLength={15} onClick={() => {}} />
+              </div>
+            </div>
           </div>
-          <div className="rgt">
+          <div className="rgt" style={{ width: 400, marginLeft: 15 }}>
             <div>
-              <h5 className="title3">쿠폰 미리보기</h5>
-              <p>고객에게 실제 보여지는 쿠폰 이미지 입니다.</p>
+              <h5 className="title3 ">쿠폰 미리보기</h5>
+              <p className="body2 mb_15 mt_10">
+                고객에게 실제 보여지는 쿠폰 이미지 입니다.
+              </p>
             </div>
           </div>
         </div>
