@@ -7,6 +7,7 @@
 
 // 버튼의 기본크기는 large를 기준으로 합니다.
 .btn{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,7 +215,22 @@
     }
   }
 }
-
+.badge {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 12px;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #F95729;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--cff);
+}
 .icon_m{
   min-width: 50px;
   min-height: 50px;
@@ -230,7 +246,6 @@
     @include rounded(8px)
   }
 }
-
 .icon_s{
   min-width: 30px;
   min-height: 30px;
@@ -245,6 +260,10 @@
   &.round{
     @include rounded(8px)
   }
+  .badge{
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    font-size: 0;
+  }
 }
-
- 

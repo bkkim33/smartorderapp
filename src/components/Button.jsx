@@ -28,7 +28,7 @@ Button.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
   }),
-
+  badge: PropTypes.bool,
   globalClass: PropTypes.string,
   onClick: PropTypes.func,
 };
@@ -44,13 +44,14 @@ Button.defaultProps = {
   disabled: false,
   onClick: {},
   iconStyle: {
-    fill: "var(--cff)",
-    width: 20,
-    height: 20,
+    // fill: "var(--c00)",
+    // width: 20,
+    // height: 20,
   },
   icon: "",
   globalClass: "",
   color: "",
+  badge: false,
 };
 
 export function Button({ children, onClick, app, color, ...others }) {
@@ -65,6 +66,7 @@ export function Button({ children, onClick, app, color, ...others }) {
     iconStyle,
     icon,
     iconposition,
+    badge,
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
@@ -99,6 +101,9 @@ export function Button({ children, onClick, app, color, ...others }) {
             height={mergedIconStyle.height}
           />
         </i>
+      )}
+      {badge === true && (
+        <span className={`${styles.badge}`}>99+</span>
       )}
     </button>
   );
