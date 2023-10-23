@@ -3,7 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "../styles/layout/layout.module.scss";
 
 function SideMenuLayout({globalstyle}) {
-  const URL = useLocation();
+  const location = useLocation();
+
+  //destructuring pathname from location
+  const { pathname } = location;
+
+  //Javascript split method to get the name of the path in array
+  const splitLocation = pathname.split("/");
 
   useEffect(() => {
     // console.log(URL);
@@ -41,9 +47,7 @@ function SideMenuLayout({globalstyle}) {
           </li>
           <li
             className={`${styles.menu_dep1} ${
-              URL.pathname = "/admin/coupon"
-                ? styles.menu_dep1_active
-                : ""
+              splitLocation[2] === "coupon" ? styles.menu_dep1_active : ""
             }`}
           >
             <p>
@@ -54,7 +58,7 @@ function SideMenuLayout({globalstyle}) {
                 <Link
                   to="/admin/coupon/management"
                   className={` ${
-                    URL.pathname = "management"
+                    splitLocation[3] === "management"
                       ? styles.active
                       : ""
                   }`}
@@ -66,7 +70,7 @@ function SideMenuLayout({globalstyle}) {
                 <Link
                   to="/admin/coupon/issuance"
                   className={` ${
-                    URL.pathname = "issuance"
+                    splitLocation[3] === "issuance"
                       ? styles.active
                       : ""
                   }`}

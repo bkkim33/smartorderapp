@@ -26,7 +26,7 @@ function App() {
         element={<CouponIssuance />}
       />
       {/* KDS */}
-      <Route path="/*" element={<Main />} />
+      {/* <Route path="/*" element={<Main />} /> */}
     </Routes>
   );
 }
