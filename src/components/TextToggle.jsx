@@ -14,27 +14,26 @@ TextToggle.defaultProps = {
 };
 
 export function TextToggle({ data, ...others }) {
-  const { optiontext, globalClass } = others;
-  const [active, setActive] = useState(false);
-  const onClick = (e) => {
-    setActive(e.target === true)
-  }
+  const { globalClass } = others;
+  const [active, setActive] = useState(null);
   return (
-    <div className={` ${styles.texttoggle} ${globalClass || ''} `}>
-      {
-        data.map((btns) => (
-          <>
-            <button
-              className={`${active === true ? styles.active : ""} `}
-              onClick={onClick}
-              key={btns.id}
-            >
-              {btns.title}
-            </button>
-            {active === true && <span className={`${optiontext ? styles.optiontext : ""}`}>+500</span>}
-          </>      
-        ))
-      }
+    <div className={` ${styles.texttoggle} ${globalClass || ""}  `}>
+      {data.map((btns) => (
+        <div
+          key={btns.id}
+          className={`${styles.btn} ${active === btns ? styles.active : ""}`}
+        >
+          <button
+            className={`${active === btns ? styles.active : ""} `}
+            onClick={(e) => setActive(btns)}
+          >
+            {btns.title}
+          </button>
+          {btns.option === true && active === btns && (
+            <span className={`${styles.optiontext}`}>+500</span>
+          )}
+        </div>
+      ))}
     </div>
   );
 };

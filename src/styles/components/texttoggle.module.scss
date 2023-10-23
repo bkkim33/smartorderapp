@@ -8,22 +8,28 @@
   font-size: 0;
   row-gap: 15px;
 
-  button {
+  .btn {
     position: relative;
     width: 50%;
+     & + .btn {
+      margin-left: -1px;
+    }
+    &.active {
+      z-index: 1;
+    }    
+  }
+
+  button {
+    width: 100%;
     height: 40px;
     border: 1px solid #E7E7E7;
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--c99);
-    &+button {
-      margin-left: -1px;
-    }
     &.active {
       border-color: #0F0E12;
       font-weight: 700;
       color: #0F0E12;
-      z-index: 1;
     }    
   }
   .optiontext {
