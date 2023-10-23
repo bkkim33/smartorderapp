@@ -163,7 +163,7 @@ function MainPage() {
             <div style={{ width: "100%" }}>
               <h5 className="title3 mb_15">쿠폰 상세 내용</h5>
               <div className="mt_20">
-                <label className="required body2">쿠폰 내용</label>
+                <label className="required body2">쿠폰 이미지 타이틀</label>
                 <Textarea
                   Height={90}
                   globalClass="mt_10"

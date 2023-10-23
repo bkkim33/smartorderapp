@@ -5,13 +5,12 @@ import { Icons } from "./Icon";
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  iconposition: PropTypes.oneOf(["right", ""]),
-  icon: PropTypes.string,
-  iconStyle: PropTypes.shape({
-    fill: PropTypes.string,
-    width: PropTypes.number,
-    height: PropTypes.number,
-  }),
+  round: PropTypes.bool,
+  line: PropTypes.bool,
+  state: PropTypes.bool,
+  none: PropTypes.bool,
+  disabled: PropTypes.bool,
+  color: PropTypes.oneOf(["", "gray", "lime", "change"]),
   size: PropTypes.oneOf([
     "full",
     "xlarge",
@@ -22,14 +21,16 @@ Button.propTypes = {
     "icon_s",
     "",
   ]),
-  round: PropTypes.bool,
-  line: PropTypes.bool,
-  state: PropTypes.bool,
-  none: PropTypes.bool,
-  disabled: PropTypes.bool,
-  styleclass: PropTypes.string,
+  icon: PropTypes.string,
+  iconposition: PropTypes.oneOf(["right", ""]),
+  iconStyle: PropTypes.shape({
+    fill: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+  }),
+
+  globalClass: PropTypes.string,
   onClick: PropTypes.func,
-  color: PropTypes.oneOf(["", "gray", "lime","change"]),
 };
 
 // 기본 상태가 필요시에만 사용됨
