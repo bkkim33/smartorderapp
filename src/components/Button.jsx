@@ -17,6 +17,7 @@ Button.propTypes = {
     "xlarge",
     "medium",
     "small",
+    "xsmall",
     "icon_m",
     "icon_s",
     "",

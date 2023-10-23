@@ -1,0 +1,29 @@
+@import'../common/variables';
+
+.texttoggle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 0;
+  row-gap: 15px;
+
+  button {
+    position: relative;
+    width: 50%;
+    height: 40px;
+    border: 1px solid #E7E7E7;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--c99);
+    box-sizing: border-box;
+    &+button {
+      margin-left: -1px;
+    }
+    &.active {
+      border-color: #0F0E12;
+      font-weight: 700;
+      color: #0F0E12;
+      z-index: 1;
+    }    
+  }
+}
