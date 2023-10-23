@@ -102,7 +102,7 @@ export function Input({ onClick, ...others }) {
         value={value}
         placeholder={placeholder}
         disabled={disabled}
-        maxLength={maxLength - 1}
+        maxLength={maxLength}
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
       ></input>

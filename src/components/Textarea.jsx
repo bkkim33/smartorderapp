@@ -8,10 +8,10 @@ Textarea.propTypes = {
   shape: PropTypes.oneOf(["", "round"]),
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
-  classname: PropTypes.string,
   maxLength: PropTypes.number.isRequired,
   value: PropTypes.string,
   counton: PropTypes.bool,
+  Height: PropTypes.number,
 };
 
 // 기본 상태가 필요시에만 사용됨
@@ -21,14 +21,24 @@ Textarea.defaultProps = {
   shape: "",
   placeholder: "내용을 입력해 주세요.",
   disabled: false,
-  maxLength: 10, 
+  maxLength: 10,
   value: "",
   counton: false,
+  Height: 50,
 };
 
 export function Textarea({ children, onClick,  ...others }) {
   const [counter, setCounter] = useState("")
-  const {error, shape,  placeholder, disabled, classname, maxLength, counton} = others;
+  const {
+    error,
+    shape,
+    placeholder,
+    disabled,
+    maxLength,
+    counton,
+    globalClass,
+    Height
+  } = others;
   const [focus, setFocus] = useState(false);
   const handleFocusOn = () => {
     setFocus(true);
@@ -45,31 +55,36 @@ export function Textarea({ children, onClick,  ...others }) {
   };
 
   return (
-    <> 
-     <div className={`
+    <>
+      <div
+        className={`
      ${styles.textareabox} 
      ${styles[shape]} 
-     ${classname || ''}
      ${disabled ? styles.disabled : ""} 
      ${focus ? styles.focus : ""}
-     ${error ? styles.error : ""}`}
-    >
-      <textarea 
-        className={` ${styles.textarea} ${classname || ''}`}
-        placeholder={placeholder}
-        onFocus={(event) => handleFocusOn(event)}
-        onBlur={(event) => handleFocusOut(event)}
-        maxLength={maxLength}
-        onChange={onTextareaHandler}
-        value={counter}
+     ${error ? styles.error : ""}
+     ${globalClass || ""}
+     `}
+      >
+        <textarea
+          className={` ${styles.textarea}`}
+          placeholder={placeholder}
+          onFocus={(event) => handleFocusOn(event)}
+          onBlur={(event) => handleFocusOut(event)}
+          maxLength={maxLength}
+          onChange={onTextareaHandler}
+          value={counter}
+          style={{ height: Height }}
         >
-        {children}
-      </textarea>
-      {counton ? (
-          <span>{counter.length}/{maxLength}&nbsp;Character</span>
+          {children}
+        </textarea>
+        {counton ? (
+          <span>
+            {counter.length}/{maxLength}&nbsp;Character
+          </span>
         ) : null}
-        </div>
-      </>
+      </div>
+    </>
   );
 }
 

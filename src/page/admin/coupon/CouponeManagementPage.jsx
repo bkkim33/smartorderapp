@@ -3,9 +3,12 @@ import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
+import Textarea from "../../../components/Textarea";
 import MuiTooltip from "../../../components/MuiTooltip";
 import MuiTable from "../../../components/MuiTable";
 import MuiModal from "../../../components/MuiModal";
+import FormGroup from "../../../components/FormGroup";
+import Radio from "../../../components/Radio";
 
 // 임시 데이터 테이터에 따라 테이블 컨포넌트 변경 필요
 const cols = [
@@ -159,9 +162,48 @@ function MainPage() {
           <div className="lft" style={{ flex: 1 }}>
             <div style={{ width: "100%" }}>
               <h5 className="title3 mb_15">쿠폰 상세 내용</h5>
-              <div>
-                <label className="required">쿠폰명</label>
-                <Input counton maxLength={15} onClick={() => {}} />
+              <div className="mt_20">
+                <label className="required body2">쿠폰 내용</label>
+                <Textarea
+                  Height={90}
+                  globalClass="mt_10"
+                  counton
+                  maxLength={150}
+                />
+              </div>
+              <div className="mt_20">
+                <label className="required body2">쿠폰 옵션</label>
+                <FormGroup globalClass="mt_10">
+                  <Radio
+                    name="drink"
+                    id="radio1"
+                    value="drinkables"
+                    defaultChecked
+                  >
+                    음료 1잔
+                  </Radio>
+                  <Radio name="drink" id="radio2" value="Americano">
+                    아메리카노 1잔
+                  </Radio>
+                </FormGroup>
+              </div>
+              <div className="mt_20">
+                <label className="required body2">쿠폰명</label>
+                <Input
+                  globalClass="mt_10"
+                  counton
+                  maxLength={15}
+                  onClick={() => {}}
+                />
+              </div>
+              <div className="mt_20">
+                <label className="required body2">유효기간</label>
+                <Input
+                  globalClass="mt_10"
+                  counton
+                  maxLength={15}
+                  onClick={() => {}}
+                />
               </div>
             </div>
           </div>
@@ -171,6 +213,7 @@ function MainPage() {
               <p className="body2 mb_15 mt_10">
                 고객에게 실제 보여지는 쿠폰 이미지 입니다.
               </p>
+              <div style={{}}></div>
             </div>
           </div>
         </div>
