@@ -54,7 +54,7 @@ function SideMenuLayout({globalstyle}) {
                 <Link
                   to="/admin/coupon/management"
                   className={` ${
-                    URL.pathname = "/admin/coupon/management"
+                    URL.pathname = "management"
                       ? styles.active
                       : ""
                   }`}
@@ -63,7 +63,14 @@ function SideMenuLayout({globalstyle}) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep2}`}>
-                <Link to="/admin/coupon">
+                <Link
+                  to="/admin/coupon/issuance"
+                  className={` ${
+                    URL.pathname = "issuance"
+                      ? styles.active
+                      : ""
+                  }`}
+                >
                   <span>쿠폰발급</span>
                 </Link>
               </li>
