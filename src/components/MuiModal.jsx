@@ -23,7 +23,7 @@ export function MuiModal({ open, onClose, header, button, children }) {
           className={`${styles.modal}`}
         >
           <div className={`${styles.modal_box}`}>
-            <div className={`${styles.modal_header} ${"mb_10"}`}>{header}</div>
+            <div className={`${styles.modal_header} ${"mb_20"}`}>{header}</div>
             <div>{children}</div>
             {button && <div className={`${styles.modal_btn}`}>{button}</div>}
           </div>
