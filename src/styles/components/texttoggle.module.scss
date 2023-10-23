@@ -1,6 +1,7 @@
 @import'../common/variables';
 
 .texttoggle {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -15,7 +16,6 @@
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--c99);
-    box-sizing: border-box;
     &+button {
       margin-left: -1px;
     }
@@ -25,5 +25,11 @@
       color: #0F0E12;
       z-index: 1;
     }    
+  }
+  .optiontext {
+    position: absolute;
+    left: 0;
+    bottom: -17px;
+    @include body2($color: #3B82F6);
   }
 }

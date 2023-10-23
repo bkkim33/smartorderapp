@@ -8,16 +8,16 @@ export default {
   argTypes: {},
 };
 
-const TextToggleBtn = [
-  { id: 1, title: "기본 (2샷)" },
-  { id: 2, title: "연하게 (1샷만)" },
-  { id: 3, title: "진하게 (1샷추가)" },
-  { id: 4, title: "메뉴명 4" },
-  { id: 5, title: "메뉴명 5" },
+const btnlist = [
+  { id: 1, title: "기본 (2샷)", option: null },
+  { id: 2, title: "연하게 (1샷만)", option: null },
+  { id: 3, title: "진하게 (1샷추가)", option: null },
+  { id: 4, title: "메뉴명 4", option: null },
+  { id: 5, title: "메뉴명 5", option: true },
 ];
 
 export const Default = (args) => (
   <>
-    <TextToggle {...args} TextToggleBtn={TextToggleBtn}></TextToggle>
+    <TextToggle {...args} data={btnlist}></TextToggle>
   </>
 );
