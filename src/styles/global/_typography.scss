@@ -2,6 +2,10 @@
 
 //페이지 내 컨텐츠 타이틀 스타일
 
+.neon{
+  background: linear-gradient(to top, #F2FD53 10%, transparent 50%);
+}
+
 .required {
   &:after {
     display: inline-flex;

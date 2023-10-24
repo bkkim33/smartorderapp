@@ -18,13 +18,13 @@
 }
 
 @mixin h4($color: var(--c00)) {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 700; //extra-bold
   color: $color;
 }
 
 @mixin h5($color: var(--c00)) {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700; //extra-bold
   color: $color;
 }

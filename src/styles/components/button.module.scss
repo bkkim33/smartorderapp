@@ -222,8 +222,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: max-content;
-  // width: 12px;
+  // width: max-content;
+  width: 12px;
   height: 12px;
   padding: 4px;
   border-radius: 10px;
@@ -261,10 +261,10 @@
   &.round{
     @include rounded(8px)
   }
-  .badge{
-    width: 10px;
-    height: 10px;
-    padding: 0;
-    font-size: 0;
-  }
+  // .badge{
+  //   width: 10px;
+  //   height: 10px;
+  //   padding: 0;
+  //   font-size: 0;
+  // }
 }

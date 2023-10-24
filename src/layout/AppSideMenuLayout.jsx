@@ -1,115 +1,92 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import Button from "../components/Button";
+import { Icons } from "../components/Icon";
+import Userimg from "../images/user_img.gif";
 
-function SideMenuLayout({globalstyle}) {
-  const location = useLocation();
+function SideMenuLayout({ globalstyle, onClose, open }) {
+  // const location = useLocation();
 
   //destructuring pathname from location
-  const { pathname } = location;
+  // const { pathname } = location;
 
   //Javascript split method to get the name of the path in array
-  const splitLocation = pathname.split("/");
+  // const splitLocation = pathname.split("/");
 
   return (
-    <aside className={`${styles.menu} ${globalstyle}`}>
+    <aside
+      className={`${styles.menu} ${open ? styles.open : ""} ${
+        globalstyle | ""
+      }`}
+    >
       <nav>
-        <div className={`${styles.menu_header}`}>
-          <Button icon="Home" none onClick={() => {}} size="icon_s">
-            button
-          </Button>
-          <Button icon="Delete" none onClick={() => {}} size="icon_s">
-            button
+        <div className={`${styles.menu_top}`}>
+          <div className={`${styles.menu_header}`}>
+            <Button icon="Home" none onClick={() => {}} size="icon_s">
+              button
+            </Button>
+            <Button icon="Delete" none onClick={onClose} size="icon_s">
+              닫기
+            </Button>
+          </div>
+          <div className={`${"align mt_30"} ${styles.menu_user}`}>
+            <div className={`${"lft"} ${styles.menu_user_txt}`}>
+              <p>
+                <span>
+                  <strong className="neon">김이준</strong> 님,
+                </span>
+                <span>좋은 하루 보내세요!</span>
+              </p>
+            </div>
+            <div className={`${"rgt"} ${styles.menu_user_img}`}>
+              <img src={Userimg} alt="유저 이미지" />
+            </div>
+          </div>
+          <ul className={`${styles.menu_wrap} `}>
+            <li className={`${styles.menu_dep1}`}>
+              <Link to="/admin/login">
+                <Icons.MenuCoupon width={16} height={16} fill="#3A3A3A" />
+                <span>쿠폰함</span>
+              </Link>
+            </li>
+            <li className={`${styles.menu_dep1}`}>
+              <Link to="/admin/login">
+                <Icons.MenuOrder width={16} height={16} fill="#3A3A3A" />
+                <span>주문내역</span>
+              </Link>
+            </li>
+            <li className={`${styles.menu_dep1}`}>
+              <Link to="/admin/login">
+                <Icons.MenuPrivacy width={16} height={16} fill="#3A3A3A" />
+                <span>내 정보</span>
+              </Link>
+            </li>
+            <li className={`${styles.menu_dep1}`}>
+              <Link to="/admin/login">
+                <Icons.MenuNotice width={16} height={16} fill="#3A3A3A" />
+                <span>공지사항</span>
+              </Link>
+            </li>
+            <li className={`${styles.menu_dep1}`}>
+              <Link to="/admin/login">
+                <Icons.Question width={16} height={16} fill="#3A3A3A" />
+                <span>자주하는 질문</span>
+              </Link>
+            </li>
+            <li className={`${styles.menu_dep1}`}>
+              <Link to="/admin/login">
+                <Icons.Infomation width={16} height={16} fill="#3A3A3A" />
+                <span>이용약관</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className={`${styles.menu_bottom}`}>
+          <Button onClick={() => {}} size="full">
+            로그아웃
           </Button>
         </div>
-        <div>
-          
-        </div>
-        <ul className={`${styles.menu_wrap}`}>
-          <li
-            className={`${styles.menu_dep1} ${
-              URL.pathname === "/admin/product" ? styles.menu_dep1_active : ""
-            }`}
-          >
-            <p>
-              <span>상품 전시관리</span>
-            </p>
-            <ul className={`${styles.menu_dep2_wrap}`}>
-              <li className={`${styles.menu_dep2}`}>
-                <Link to="/admin/main">
-                  <span>메뉴 관리</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link to="/admin/login">
-                  <span>카테고리 관리</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link to="/admin/login">
-                  <span>메뉴 옵션 관리</span>
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li
-            className={`${styles.menu_dep1} ${
-              splitLocation[2] === "coupon" ? styles.menu_dep1_active : ""
-            }`}
-          >
-            <p>
-              <span>쿠폰발급관리</span>
-            </p>
-            <ul className={`${styles.menu_dep2_wrap}`}>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/coupon/management"
-                  className={` ${
-                    splitLocation[3] === "management" ? styles.active : ""
-                  }`}
-                >
-                  <span>쿠폰관리</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/coupon/issuance"
-                  className={` ${
-                    splitLocation[3] === "issuance" ? styles.active : ""
-                  }`}
-                >
-                  <span>쿠폰발급</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link to="/admin/login">
-                  <span>쿠폰발송</span>
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li className={`${styles.menu_dep1}`}>
-            <Link to="/admin/login">
-              <span>주문내역관리</span>
-            </Link>
-          </li>
-          <li className={`${styles.menu_dep1}`}>
-            <Link to="/admin/login">
-              <span>매출관리</span>
-            </Link>
-          </li>
-          <li className={`${styles.menu_dep1}`}>
-            <Link to="/admin/login">
-              <span>지점관리</span>
-            </Link>
-          </li>
-          <li className={`${styles.menu_dep1}`}>
-            <Link to="/admin/login">
-              <span>계정관리</span>
-            </Link>
-          </li>
-        </ul>
       </nav>
     </aside>
   );

@@ -3,20 +3,25 @@
 .layout{
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 100%;
-  background-color: var(--bgfa);
   overflow-y: auto;
+  // overflow-x: hidden;
 }
 
 .header{
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
   min-width: 260px;
   min-height: 60px;
   background-color: var(--cff);
   position: sticky;
+  top: 0;
+  align-self: flex-start;
   padding: 0 20px;
+  z-index: 90;
   button{
     min-width: 26px;
     min-height: 26px;
@@ -35,7 +40,39 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  right: -100%;
+  transition: right 0.5s;
+  z-index: 999;
+  &::after{
+    @include before_after;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+    left: -100%;
+    opacity: 0;
+    transition-property: left, opacity;
+    transition: 1s, 0.2s;
+  }
+  &.open{
+    right: 0;
+    transition: right 0.6s;
+    &::after{
+      background-color: rgba(0,0,0,0.5);
+      opacity: 1;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      transition: opacity 0.7s;
+    }
+  }
+  &_top{
+    flex: 1;
+  }
+  &_bottom{
+    padding: 20px 20px 45px;
+  }
   &_header{
     display: flex;
     justify-content: space-between;
@@ -44,67 +81,66 @@
     min-height: 60px;
     padding: 0 20px;
   }
+  &_user{
+    &_txt{
+      padding: 0 20px;
+      p{
+        span{
+          display: block;
+          @include h4();
+          font-weight: 500;
+          strong{
+            font-weight: 700;
+          }
+          & + span{
+            margin-top: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &_img{
+      width: 94px;
+    }
+  }
   nav{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 70%;
+    height: 100%;
     background-color: var(--cff);
+    top: 0;
+    z-index: 10;
+  }
+  &_wrap{
+    padding: 0 20px;
   }
   &_dep1{
-    & + .menu_dep1{
-      border-top: 1px solid var(--c99);
+    border-top: 1px solid var(--cee);
+    &:last-child{
+      border-bottom: 1px solid var(--cee);
     }
     a{
       display: flex;
       align-items: center;
-      @include h5(var(--cff));
-      font-weight: 600;
-      height: 50px;
+      justify-content: flex-start;
+      @include h5(var(--c00));
+      font-weight: 500;
+      height: 66px;
       position: relative;
-      padding: 0 10px;
-    }
-    p{
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 50px;
-      @include h5(var(--cff));
-      font-weight: 600;
-      position: relative;
-      text-align: left;
-      padding: 0 10px;
+      span{
+        margin-left: 14px;
+      }
     }
     &_active{
       display: block;
-      > p{
+      > a{
         > span{
           color: var(--point);
         }
       }
-    }
-  }
-  &_dep2{
-    height: 20px;
-    padding: 0 10px;
-    position: relative;
-    &::after{
-      @include before_after;
-      width: 5px;
-      height: 2px;
-      background-color: var(--c99);
-      position: absolute;
-      top: 9px;
-      left: 0;
-    }
-    & + .menu_dep2{
-      margin-top: 10px;
-    }
-    a{
-      height: 20px;
-      font-weight: 400;
-    }
-    &_wrap{
-      display: block;
-      padding: 20px;
-      border-top: 1px solid var(--c99);
     }
   }
 }
@@ -117,25 +153,7 @@
 }
 
 .content{
-  // display: flex;
-  // flex-direction: column;
-  // height: 100%;
   flex: 1;
-  padding: 20px 30px;
-  overflow: auto;
-  &_box{
-    width: 100%;
-    flex: 1;
-    background-color: var(--cff);
-    border-radius: 16px;
-    padding: 20px;
-    @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
-    &_top,
-    &_bottom{
-      flex: none;
-    }
-    & + .content_box{
-      margin-top: 20px;
-    }
-  }
+  height: calc(100% - 60px);
+  overflow-y: auto;
 }

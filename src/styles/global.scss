@@ -5,6 +5,7 @@
   height: 100%;
 }
 
+@import './global/_scrollbar';
 // 글로벌 scss import
 @import './global/_align'; //정렬
 @import './global/_color'; //배경 글자 등등 모든 색

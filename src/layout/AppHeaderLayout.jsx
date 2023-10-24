@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from "react";
 import styles from "../styles/layout/applayout.module.scss";
 import SideMenu from "./AppSideMenuLayout";
 import Button from "../components/Button";
 
 function HeaderLayout() {
-  const onClick = () =>{
+  const [open, setOpen] = useState(false);
 
-  }
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <header className={`${styles.header}`}>
@@ -39,14 +46,14 @@ function HeaderLayout() {
         </Button>
         <Button
           none
-          onClick={() => {}}
+          onClick={handleOpen}
           size="small"
           globalClass="pd_0 hamburger"
         >
           매뉴오픈
         </Button>
       </header>
-      <SideMenu></SideMenu>
+      <SideMenu open={open} onClose={handleClose}></SideMenu>
     </>
   );
 }
