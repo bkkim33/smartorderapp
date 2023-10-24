@@ -103,7 +103,7 @@ export function Button({ children, onClick, app, color, ...others }) {
         </i>
       )}
       {badge === true && (
-        <span className={`${styles.badge}`}>99+</span>
+        <span className={`${styles.badge}`}>12</span>
       )}
     </button>
   );
