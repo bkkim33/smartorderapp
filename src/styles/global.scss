@@ -14,49 +14,11 @@
 // 글로벌 컨포넌트 import
 @import './global/_select';
 
+// app에만 사용되는 글로벌 css
+@import './global/_appglobal';
 
-//임시 테이블 글로벌 스타일 
 
-// 기본 align :: left
-table {
-  th,
-  td {
-    text-align: left;
-
-    // 왼쪽 정렬
-    &.tl {
-      text-align: left;
-    }
-
-    // 오른쪽 정렬
-    &.tr {
-      text-align: right;
-    }
-
-    // 가운데 정렬
-    &.tc {
-      text-align: center;
-    }
-    // 위로 정렬
-    &.vt {
-      vertical-align: top;
-      padding-top: 18px !important;
-    }
-    // 아래로 정렬
-    &.vb {
-      vertical-align: bottom;
-    }
-  }
-
-  .nodata_group {
-    display: flex;
-    min-height: 500px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
+// 임시 블릿
 .bullet_list{
   li{
     padding-left: 10px;
@@ -78,3 +40,46 @@ table {
     }
   }
 }
+
+//임시 테이블 글로벌 스타일 
+
+// 기본 align :: left
+// table {
+//   th,
+//   td {
+//     text-align: left;
+
+//     // 왼쪽 정렬
+//     &.tl {
+//       text-align: left;
+//     }
+
+//     // 오른쪽 정렬
+//     &.tr {
+//       text-align: right;
+//     }
+
+//     // 가운데 정렬
+//     &.tc {
+//       text-align: center;
+//     }
+//     // 위로 정렬
+//     &.vt {
+//       vertical-align: top;
+//       padding-top: 18px !important;
+//     }
+//     // 아래로 정렬
+//     &.vb {
+//       vertical-align: bottom;
+//     }
+//   }
+
+//   .nodata_group {
+//     display: flex;
+//     min-height: 500px;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//   }
+// }
+
