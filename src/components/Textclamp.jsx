@@ -15,12 +15,9 @@ Textclamp.defaultProps = {
 export function Textclamp({ ...others }) {
   const { width, text } = others;
   return (
-    // <div className={`${styles.clamp}`} style={{width: width,}}>
-    //   {text}
-    // </div>
     <div className={styles.clamp} style={{ width }}>
-    {text}
-  </div>
+      {text}
+    </div>
   );
 }
 
