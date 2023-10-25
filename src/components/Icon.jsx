@@ -197,7 +197,7 @@ const Heart = ({ width = 20, height = 20, fill = "var(--cff)" }) => (
   </svg>
 );
 
-const Delete = ({ width = 18, height = 18, fill = "var(--primary-b)"}) => (
+const Delete = ({ width = 18, height = 18, fill = "var(--primary)"}) => (
   <svg 
     width={width}
     height={height} 
@@ -256,7 +256,7 @@ const Google = ({ width = 27, height = 28 }) => (
   </svg>
 );
 
-const Home = ({ width = 23, height = 21, fill = "#0F0E12"}) => (
+const Home = ({ width = 23, height = 21, fill = "var(--primary)"}) => (
   <svg 
     width={width}
     height={height}
@@ -283,7 +283,7 @@ const Cart = ({ width = 26, height = 21, fill = "var(--c11)" }) => (
   </svg>
 );
 
-const Cup = ({ width = 26, height = 28, fill = "#0F0E12" }) => (
+const Cup = ({ width = 26, height = 28, fill = "var(--primary)" }) => (
   <svg 
     width={width}
     height={height} 
@@ -324,7 +324,7 @@ const LogoOnly = ({ width = 20, height = 20 }) => (
   </svg>
 );
 
-const Location = ({ width = 20, height = 20, fill = "#0F0E12" }) => (
+const Location = ({ width = 20, height = 20, fill = "var(--primary)" }) => (
   <svg 
     width={width}
     height={height}
@@ -449,7 +449,7 @@ const Question = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
 
 );
 
-const Trash = ({ width = 20, height = 20, fill = "#0F0E12" }) => (
+const Trash = ({ width = 20, height = 20, fill = "var(--primary)" }) => (
   <svg 
     width={width}
     height={height}
@@ -464,7 +464,7 @@ const Trash = ({ width = 20, height = 20, fill = "#0F0E12" }) => (
   </svg>
 );
 
-const Logout = ({ width = 24, height = 24, fill = "#0F0E12" }) => (
+const Logout = ({ width = 24, height = 24, fill = "var(--primary)" }) => (
   <svg 
     width={width}
     height={height} 
@@ -479,7 +479,7 @@ const Logout = ({ width = 24, height = 24, fill = "#0F0E12" }) => (
 
 );
 
-const OrderComplete = ({ width = 127, height = 119, fill = "#0F0E12" }) => (
+const OrderComplete = ({ width = 127, height = 119, fill = "var(--primary)" }) => (
   <svg 
     width={width} 
     height={height} 
@@ -495,7 +495,7 @@ const OrderComplete = ({ width = 127, height = 119, fill = "#0F0E12" }) => (
   </svg>
 );
 
-const Coupon = ({ width = 24, height = 18, fill = "#0F0E12" }) => (
+const Coupon = ({ width = 24, height = 18, fill = "var(--primary)" }) => (
   <svg 
     width={width}
     height={height}
@@ -511,7 +511,7 @@ const Coupon = ({ width = 24, height = 18, fill = "#0F0E12" }) => (
 
 );
 
-const Back = ({ width = 26, height = 18, fill = "#0F0E12" }) => (
+const Back = ({ width = 26, height = 18, fill = "var(--primary)" }) => (
   <svg 
     width={width}
     height={height} 
@@ -524,7 +524,7 @@ const Back = ({ width = 26, height = 18, fill = "#0F0E12" }) => (
 
 );
 
-const ArrowBg = ({ width = 36, height = 36, fill = "var(--c00)", stroke = "#DAEE5F" }) => (
+const ArrowBg = ({ width = 36, height = 36, fill = "var(--c00)", stroke = "var(--point)" }) => (
   <svg 
     width={width}
     height={height} 

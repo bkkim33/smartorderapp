@@ -5,13 +5,13 @@
     align-items: center;
     gap: 10px;
     height: 35px;
-    border: 1px solid var(--ce7);
+    border: 1px solid var(--cdd);
     padding: 10px;
     box-sizing: border-box;
     &:hover{
         border-color: var(--primary);
         .delete{
-            background-color: var(--c99);
+            background-color: var(--c99); 
         }
     }
     &.disabled{
@@ -52,7 +52,7 @@
             @include m_auto;
         }
         &:hover{
-            background-color: var(--primary-b);
+            background-color: var(--primary);
         }
         &.block {
             display: block;
@@ -68,6 +68,7 @@
     //타이머
     .time{
         @include body4(var(--primary-b));
+        color: var(--red);
     }
 }
 .round{
@@ -101,7 +102,7 @@
     }
     &:disabled{
         cursor: default;        
-        color: var(--cbb);        
+        color: var(--c99);        
     }
 }
 

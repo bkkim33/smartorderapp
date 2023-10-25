@@ -29,7 +29,7 @@
 
       &::before {
         height: 3px;
-        background-color: #0F0E12;
+        background-color: var(--primary);
       }
     }
   }
@@ -63,8 +63,8 @@
     }
 
     &.active {
-      border-color: #0F0E12;
-      color: var(--c11);
+      border-color: var(--primary);
+      color: var(--c11); 
     }
   }
 }

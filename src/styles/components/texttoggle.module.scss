@@ -27,15 +27,15 @@
     font-weight: 400;
     color: var(--c99);
     &.active {
-      border-color: #0F0E12;
+      border-color: var(----primary);
       font-weight: 700;
-      color: #0F0E12;
+      color: var(--c11);
     }    
   }
   .optiontext {
     position: absolute;
     left: 0;
     bottom: -17px;
-    @include body2($color: #3B82F6);
+    @include body2($color: var(--c11));
   }
 }

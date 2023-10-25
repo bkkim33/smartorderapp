@@ -36,7 +36,7 @@ export const Default = () => (
         <Icons.Google width={27} height={28} />
       </div>
       <div className="item">
-        <Icons.OrderComplete width={127} height={119} fill="#0F0E12" />
+        <Icons.OrderComplete width={127} height={119} fill="var(--primary)" />
       </div>
     </div>
     <div className="align start mt_20">
@@ -44,7 +44,7 @@ export const Default = () => (
         <Icons.Heart width={20} height={20} fill="var(--red)" />
       </div>
       <div className="item">
-        <Icons.Delete width={18} height={18} fill="var(--primary-b)" />
+        <Icons.Delete width={18} height={18} fill="var(--primary)" />
       </div>
       <div className="item">
         <Icons.Search width={19} height={19} fill="var(--c11)" />
@@ -53,13 +53,13 @@ export const Default = () => (
         <Icons.EyesOn width={22} height={16} fill="var(--cbb)" />
       </div>
       <div className="item">
-        <Icons.Home width={23} height={21} fill="#0F0E12" />
+        <Icons.Home width={23} height={21} fill="var(--primary)" />
       </div>
       <div className="item">
         <Icons.Cart width={26} height={21} fill="var(--c11)" />
       </div>
       <div className="item">
-        <Icons.Cup width={26} height={28} fill="#0F0E12" />
+        <Icons.Cup width={26} height={28} fill="var(--primary)" />
       </div>
       <div className="item">
         <Icons.Like width={26} height={28} fill="#F7D356" />
@@ -68,7 +68,7 @@ export const Default = () => (
         <Icons.LogoOnly width={20} height={20} />
       </div>
       <div className="item">
-        <Icons.Location width={20} height={20} fill="#0F0E12" />
+        <Icons.Location width={20} height={20} fill="var(--primary)" />
       </div>
       <div className="item">
         <Icons.MenuOrder width={16} height={16} fill="#3A3A3A" />
@@ -95,16 +95,16 @@ export const Default = () => (
         <Icons.Question width={16} height={16} fill="#3A3A3A" />
       </div>
       <div className="item">
-        <Icons.Trash width={20} height={20} fill="#0F0E12" />
+        <Icons.Trash width={20} height={20} fill="var(--primary)" />
       </div>
       <div className="item">
-        <Icons.Logout width={24} height={24} fill="#0F0E12" />
+        <Icons.Logout width={24} height={24} fill="var(--primary)" />
       </div>
       <div className="item">
-        <Icons.Coupon width={24} height={18} fill="#0F0E12" />
+        <Icons.Coupon width={24} height={18} fill="var(--primary)" />
       </div>
       <div className="item">
-        <Icons.Back width={26} height={18} fill="#0F0E12" />
+        <Icons.Back width={26} height={18} fill="var(--primary)" />
       </div>
     </div>
     <div className="align start mt_20">
@@ -113,7 +113,7 @@ export const Default = () => (
           width={36}
           height={36}
           fill="var(--c00)"
-          stroke="#DAEE5F"
+          stroke="var(--point)"
         />
       </div>
     </div>

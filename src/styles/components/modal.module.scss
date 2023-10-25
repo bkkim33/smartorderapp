@@ -19,7 +19,7 @@
         padding: 30px 20px 20px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         @include box-sizing;
-        border: 1px solid var(--primary-b);
+        border: 1px solid var(--primary);
         &.small {
           width: 700px;
           }

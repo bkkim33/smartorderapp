@@ -13,13 +13,13 @@
   cursor: pointer;
   width: 18px;
   height: 18px;
-  border: 1px solid var(--primary-b);
+  border: 1px solid var(--primary);
   &::after {
     content: '';
     display: block;
     width: 10px;
     height: 5px;
-    border: 1.5px solid var(--cff);
+    border: 1.5px solid var(--primary);
     transform: rotate(-45deg);
     margin-top: -3px;
     border-top: 0;
@@ -38,8 +38,7 @@
   width: 0;
   left: 0;
   &:checked + .checkboxcustom{
-    background-color: var(--primary-b);
-    border: 1px solid var(--primary-b);
+    border: 1px solid var(--primary);
     &:after{
       opacity: 1;
     }

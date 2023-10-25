@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 0 5px;
-    border-bottom: 1px solid var(--primary-b);
+    border-bottom: 1px solid var(--primary);
     @include h4(var(--c00));
   }
   &_btn{
