@@ -414,9 +414,9 @@ const MenuNotice = ({ width = 16, height = 16, fill = "#3A3A3A" }) => (
   >
     <rect x="2.75" y="2" width="10.5" height="12.5" stroke={fill} strokeWidth="1.5" />
     <path d="M6 7.25H10" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
-    <path d="M6 0.75L6 3.25" stroke={fill} stroke-width="1.5" strokeLinecap="square" />
-    <path d="M10 0.75L10 3.25" stroke={fill} stroke-width="1.5" strokeLinecap="square" />
-    <path d="M6 10.25H10" stroke={fill} stroke-width="1.5" strokeLinecap="square" />
+    <path d="M6 0.75L6 3.25" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M10 0.75L10 3.25" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M6 10.25H10" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
   </svg>
 );
 

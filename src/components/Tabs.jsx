@@ -13,20 +13,17 @@ Tabs.defaultProps = {
     globalClass: "",
 };
 
-export function Tabs({ TabsBtn, onClick, ...others }){
-    const { type, globalClass } = others;
-    const [active, setActive] = useState(null);
-    return (
+export function Tabs({ TabsData, onClick, ...others }) {
+  const { type, globalClass } = others;
+  const [active, setActive] = useState(null);
+  return (
+    <>
       <div className={` ${styles.tabs} ${styles[type]} ${globalClass || ""} `}>
-        {TabsBtn.map((btn) => (
+        {TabsData.map((btn) => (
           <button
             className={`
             ${active === btn ? styles.active : ""}
-            ${
-              btn.defaultActive
-                ? active === null ? styles.active
-                : "" : ""
-            }`}
+            ${btn.defaultActive ? (active === null ? styles.active : "") : ""}`}
             onClick={() => setActive(btn)}
             key={btn.id}
           >
@@ -34,7 +31,20 @@ export function Tabs({ TabsBtn, onClick, ...others }){
           </button>
         ))}
       </div>
-    );
+      {TabsData.map((content) => (
+        <div
+          key={content.id}
+          className={`
+            ${styles.tabs_content} 
+            ${active === content ? styles.active : ""} 
+            ${content.defaultActive ? (active === null ? styles.active : "") : ""}
+          `}
+        >
+          {content.content}
+        </div>
+      ))}
+    </>
+  );
 };
 
 export default Tabs;

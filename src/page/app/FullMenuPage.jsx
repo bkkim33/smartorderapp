@@ -1,18 +1,13 @@
 import React from "react";
-import Layout from '../../layout/AppDefaultLayout'
+
 import Mainimg from "../../images/main_img.gif";
 
-import FullMenu from "./FullMenuPage";
 
-import Tabs from "../../components/Tabs";
-
-// import { Icons } from "../../components/Icon";
-
-function MainPage() {
+function FullMenuPage() {
   return (
-    <Layout>
-      <div className="main">
-        <div className="align top main_visual">
+    <div className="main">
+      전체 메뉴 리스트
+        {/* <div className="align top main_visual">
           <div className="lft">
             <p>
               <span className="headline4 mb_16">Good morning</span>
@@ -32,44 +27,26 @@ function MainPage() {
           </div>
         </div>
         <div className="main_content">
-          <div className="main_locations">
-            <button>
-              <p>
-                <span>주문매장을</span>
-                <span>선택해 주세요</span>
-              </p>
-
-            </button>
-          </div>
+          <div className="main_locations"></div>
           <Tabs
-            TabsData={[
+            TabsBtn={[
               {
                 id: 1,
                 title: "전체메뉴",
                 defaultActive: true,
-                content: (
-                  <>
-                    <FullMenu />
-                  </>
-                ),
+                content: 
               },
               {
                 id: 2,
                 title: "즐겨찾는메뉴",
-                content: (
-                  <>
-                    <FullMenu />
-                  </>
-                ),
               },
             ]}
             onClick={() => {}}
-          ></Tabs>
-          <div style={{ height: "100%" }}>main</div>
-        </div>
+          />
+          <div style={{ height: '100%' }}>main</div>
+        </div> */}
       </div>
-    </Layout>
   );
 }
 
-export default MainPage;
+export default FullMenuPage;
