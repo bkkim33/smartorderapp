@@ -1,10 +1,5 @@
 @import'../common/variables';
 
-//정리중
-:root {
-  --lime:#DAEE5F
-}
-
 // 버튼의 기본크기는 large를 기준으로 합니다.
 .btn{
   position: relative;
@@ -14,24 +9,14 @@
   min-width: 120px;
   min-height: 50px;
   border: 0;
-  background-color: var(--c11);
+  background-color: var(--point);
   padding: 10px 20px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--cff);
+  @include h4(var(--c00));
   box-sizing: border-box;
-  &:hover{
-    background-color: var(--lime);
-    color: var(--c11);
-  }
-  &:active{
-    background-color: var(--lime);
-  }
   &:disabled{
     cursor: default;
-    background-color: var(--cff); 
-    color: var(--c99);  
-    border:  1px solid var(--cdd);
+    background-color: var(--cee); 
+    color: var(--c77);  
   }
   i{
     margin-right: 10px;
@@ -42,29 +27,22 @@
   }
 }
 
-
-
 .full{
   width: 100%; 
-  border: 0; 
 }
 
 .xlarge{ 
-  min-width: 335px;
-  &.round{
-    @include rounded(4px)
-  }
+  min-width: 163px;
 }
 
 .medium{
-  min-width: 163px;
+  min-width: 105px;
 }
 
 .small{
   flex-wrap: wrap;
   flex-direction: column;
-  min-width: 79px;
-  min-height: 40px;
+  min-width: 86px;
   font-size: 1.6rem;
   padding: 10px;
   i{
@@ -87,54 +65,26 @@
   font-size: 1.4rem;
 }
 
-
-
 .round{
   @include rounded(6px)
 }
 
-.color{ 
-  &-gray{
-    background-color: var(--cee);
-    color: var(--c77);
-    &:active{
-      background-color: var(--c11); 
-      color: var(--cff); 
-    }
-  }
-  
-  &-lime{ 
-    background-color: var(--lime); 
-    color: var(--c11);
-    &:active{
-      background-color: var(--c11); 
-      color: var(--cff); 
-    }
-  } 
-
+.type{ 
   &-change{  
-    background-color: var(--cff); 
+    background-color: var(--cff);
     color: var(--c55);  
-    border-color: var(--cef);
+    border:1px solid var(--ce7);
   }
 }  
 
 .line{
   background-color: var(--cff);
-  border: 1px solid var(--c11);
+  border: 1px solid var(--primary);
   color: var(--c11);
-  &:hover{
-    background-color: var(--c11);
-    color: var(--cff);
-  }
-  &:active{
-    background-color: var(--c11);
-    color: var(--cff);
-  }
   &:disabled{
     cursor: default;
-    border-color: var(--ce7);
     background-color: var(--cff);
+    border:1px solid var(--cdd);
     color: var(--c99);
   }
 }
