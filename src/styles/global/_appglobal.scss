@@ -70,8 +70,62 @@
   }
   &_locations{
     width: 100%;
-    padding: 0 20px;
     height: 110px;
     background-color: var(--point);
+    position: relative;
+    > button{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+      i{
+        transition: all 0.3s;
+        &.open{
+          transform: rotate(-180deg);
+          transition: all 0.3s;
+        }
+      }
+    }
+    p{
+      text-align: left;
+      span{
+        display: block;
+      }
+    }
+    &_list{
+      position: absolute;
+      top: 110px;
+      width: 100%;
+      max-height: 0;
+      background-color: var(--point);
+      padding: 0 20px;
+      z-index: 10;
+      overflow-y: hidden;
+      transition: all .3s ease-in-out;
+      &.open{
+        max-height: 100vh;
+        transition: all .3s ease-in-out;
+        overflow-y: auto;
+      }
+      ul{
+        li{
+          border-top: 1px solid rgba(0,0,0,0.1);
+          > button{
+            width: 100%;
+            display: flex;
+            padding: 15px 0;
+            i{
+              margin-right: 5px;
+            }
+            p{
+              flex: 1;
+            }
+          }
+        }
+      }
+      
+    }
   }
 }
