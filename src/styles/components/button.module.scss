@@ -70,6 +70,10 @@
 }
 
 .type{ 
+  &-gray{
+    background-color: var(--cee); 
+    color: var(--c77);  
+  }
   &-change{  
     background-color: var(--cff);
     color: var(--c55);  

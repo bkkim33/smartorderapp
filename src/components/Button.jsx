@@ -10,7 +10,7 @@ Button.propTypes = {
   state: PropTypes.bool,
   none: PropTypes.bool,
   disabled: PropTypes.bool,
-  btntype: PropTypes.oneOf(["", "change"]),
+  btntype: PropTypes.oneOf(["", "change", "gray"]),
   size: PropTypes.oneOf([
     "full",
     "xlarge",

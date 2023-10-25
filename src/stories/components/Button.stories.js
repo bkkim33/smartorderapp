@@ -18,7 +18,7 @@ export default {
     btntype: {
       control: {
         type: "select",
-        options: ["", "change"],
+        options: ["", "change", "gray"],
       },
     },
   },
@@ -42,9 +42,15 @@ export const AppOutline= () => (
   </>
 );
 
-export const AppXlarge = () => (
+export const AppPoint = () => (
   <>
     <Button onClick={() => {}} size="xlarge">장바구니 담기</Button>
+  </>
+);
+
+export const AppGray = () => (
+  <>
+    <Button onClick={() => {}} size="xlarge" btntype="gray">장바구니 담기</Button>
   </>
 );
 
