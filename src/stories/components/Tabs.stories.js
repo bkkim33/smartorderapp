@@ -16,12 +16,12 @@ const TabsBtn = [
 
 export const Default = (args) => (
   <>
-    <Tabs {...args} TabsBtn={TabsBtn}></Tabs>
+    <Tabs {...args} TabsData={TabsBtn}></Tabs>
   </>
 );
 
 export const Round = (args) => (
   <>
-    <Tabs {...args} TabsBtn={TabsBtn} type="round"></Tabs>
+    <Tabs {...args} TabsData={TabsBtn} type="round"></Tabs>
   </>
 );
