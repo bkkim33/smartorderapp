@@ -92,6 +92,18 @@
       text-align: left;
       span{
         display: block;
+        em{
+          display: inline-flex;
+          align-items: center;
+          height: 20px;
+          padding: 0 5px;
+          @include body4(var(--cff));
+          margin-right: 10px;
+          background-color: #6D772F;
+          &.red_bg{
+            background-color: var(--red);
+          }
+        }
       }
     }
     &_list{
