@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Layout from '../../layout/AppDefaultLayout'
 import Mainimg from "../../images/main_img.gif";
 
@@ -14,44 +14,55 @@ const LocationsData = [
     title: "클라우드 카페",
     location: "서울 강남구 논현로 85길 46 메가존빌딩 1F",
     time: "매일 08:00~22:00",
+    state: "주문가능",
   },
   {
     id: 2,
-    title: "클라우드 카페",
-    location: "서울 강남구 논현로 85길 46 메가존빌딩 1F",
+    title: "클라우드9 카페",
+    location: "서울 강남구 역삼로17길 57 1F",
     time: "매일 08:00~22:00",
+    state: "준비중",
   },
   {
     id: 3,
     title: "클라우드 카페",
-    location: "서울 강남구 논현로 85길 46 메가존빌딩 1F",
+    location: "경기 과천시 갈현동 471-1",
     time: "매일 08:00~22:00",
+    state: "준비중",
   },
 ];
 
 function Locations() {
-  const label = useRef(); 
-  const options = useRef();
   const [open, setOpen] = useState(false);
-  // const [titleSelect, setTitleSelect] = useState();
+  const [titleSelect, setTitleSelect] = useState(
+    <p className="headline1">
+      <span>주문매장을</span>
+      <span>선택해 주세요!</span>
+    </p>
+  );
 
   const LocationonCLick = () => {
     setOpen(!open);
   };
-  const ListCLick = (item) => {
+  const ListCLick = (location) => {
     setOpen(!open);
-    label.innerHTML = item.textContent;
+    setTitleSelect(
+      <p>
+        <span className="headline1">{location.title}</span>
+        <span className="mt_12">
+          {location.state === "준비중" && <em>준비중</em>}
+          {location.state === "주문가능" && (
+            <em className="red_bg">주문가능</em>
+          )}
+          {location.time}
+        </span>
+      </p>
+    );
   };
-  options.forEach((option) => {
-    option.addEventListener("click", () => ListCLick(option));
-  });
   return (
     <div className="main_locations">
       <button onClick={LocationonCLick}>
-        <p ref={label} className="headline1">
-          <span></span>
-          <span>선택해 주세요!</span>
-        </p>
+        {titleSelect}
         <i className={`${open ? "open" : ""}`}>
           <Icons.ArrowBg
             width={36}
@@ -65,11 +76,11 @@ function Locations() {
         <ul>
           {LocationsData.map((location) => (
             <li key={location.id}>
-              <button onClick={ListCLick}>
+              <button onClick={() => ListCLick(location)}>
                 <i>
                   <Icons.LogoOnly width={20} height={20} />
                 </i>
-                <p ref={options} className="optionItem">
+                <p className="optionItem">
                   <span>{location.title}</span>
                   <span>{location.location}</span>
                   <span>{location.time}</span>
