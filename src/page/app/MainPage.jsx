@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Layout from '../../layout/AppDefaultLayout'
 import Mainimg from "../../images/main_img.gif";
 
@@ -30,23 +30,28 @@ const LocationsData = [
 ];
 
 function Locations() {
+  const label = useRef(); 
+  const options = useRef();
   const [open, setOpen] = useState(false);
-  const [titleSelect, setTitleSelect] = useState();
+  // const [titleSelect, setTitleSelect] = useState();
+
   const LocationonCLick = () => {
     setOpen(!open);
   };
-  const ListCLick = (e) => {
+  const ListCLick = (item) => {
     setOpen(!open);
-    setTitleSelect(e.target.LocationsData.title);
+    label.innerHTML = item.textContent;
   };
+  options.forEach((option) => {
+    option.addEventListener("click", () => ListCLick(option));
+  });
   return (
     <div className="main_locations">
       <button onClick={LocationonCLick}>
-        <p className="headline1">
-          <span>{titleSelect}</span>
+        <p ref={label} className="headline1">
+          <span></span>
           <span>선택해 주세요!</span>
         </p>
-
         <i className={`${open ? "open" : ""}`}>
           <Icons.ArrowBg
             width={36}
@@ -64,7 +69,7 @@ function Locations() {
                 <i>
                   <Icons.LogoOnly width={20} height={20} />
                 </i>
-                <p>
+                <p ref={options} className="optionItem">
                   <span>{location.title}</span>
                   <span>{location.location}</span>
                   <span>{location.time}</span>
