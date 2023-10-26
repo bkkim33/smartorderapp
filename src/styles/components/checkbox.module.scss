@@ -11,15 +11,15 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 18px;
-  height: 18px;
-  border: 1px solid var(--primary);
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--primary); 
   &::after {
     content: '';
     display: block;
-    width: 10px;
-    height: 5px;
-    border: 1.5px solid var(--primary);
+    width: 12px;
+    height: 7px;
+    border: 2px solid var(--primary);
     transform: rotate(-45deg);
     margin-top: -3px;
     border-top: 0;
@@ -59,6 +59,6 @@
 
 .text{
   margin-right: 5px;
-  @include body2();
+  @include h5();
+  font-weight: 400;
 }
-

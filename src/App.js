@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import AppMain from "./page/app/MainPage";
+import MenuDetailPage from "./page/app/order/MenuDetailPage";
 
 import AdminMain from "./page/admin/MainPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       {/* APP */}
       <Route exact path="/app" element={<AppMain />} />
+      <Route exact path="/app/order/menudetail" element={<MenuDetailPage />} />
       {/* <Route path="/app/login" element={<Login />} />c */}
       {/* ADMIN */}
       <Route exact path="/admin" element={<AdminMain />} />

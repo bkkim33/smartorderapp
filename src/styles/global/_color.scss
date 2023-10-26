@@ -2,9 +2,9 @@
   color: var(--primary);
 }
 
-.primary-b{
-  color: var(--primary-b);
-}
+// .primary-b{
+//   color: var(--primary-b);
+// }
 
 .primary_bg{
   background-color: var(--primary);
@@ -32,6 +32,14 @@
 
 .red_bg{
   background-color: var(--red);
+}
+
+.red_text{
+  color: var(--red-text);
+}
+
+.red_text_bg{
+  background-color: var(--red-text);
 }
 
 .color{
