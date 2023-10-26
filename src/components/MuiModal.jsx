@@ -1,4 +1,6 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
+
+import React from "react";
 import Modal from "@mui/material/Modal";
 // import PropTypes from "prop-types";
 import styles from "../styles/components/muimodal.module.scss";
@@ -6,10 +8,7 @@ import styles from "../styles/components/muimodal.module.scss";
 
 MuiModal.propTypes = {};
 
-MuiModal.defaultProps = {
-
-};
-
+MuiModal.defaultProps = {};
 
 export function MuiModal({ open, onClose, header, button, children }) {
   return (
@@ -30,8 +29,5 @@ export function MuiModal({ open, onClose, header, button, children }) {
     </div>
   );
 }
-  
 
-  
 export default MuiModal;
-  

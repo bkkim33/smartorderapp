@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from '../../layout/AppDefaultLayout'
+import Layout from '../../layout/AppDefaultLayout';
 import Mainimg from "../../images/main_img.gif";
 
 import FullMenu from "./FullMenuPage";
