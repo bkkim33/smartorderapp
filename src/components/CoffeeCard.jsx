@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/components/coffeecard.module.scss';
 
@@ -14,25 +14,26 @@ CoffeeCard.defaultProps = {
   price: "3500",
 };
 
-export function CoffeeCard ({ onClick, ...others }) {
-  const {title, price, image} = others;
-
-  let formattedPrice;
-  if (!isNaN(price)) {
-    const parsedPrice = parseInt(price, 10);
-    formattedPrice = parsedPrice.toLocaleString("ko-KR") + "원";
-  } else {
-    formattedPrice = price;
-  }
+export function CoffeeCard({ data, onClick }) {
 
   return (
-    <>
-      <div className={`${styles.card}`} onClick={onClick}>
-        <img src={require("../../src/images/" + image)} alt={title} className={`${styles.image}`} />
-        <p className={`${styles.title}`}>{title}</p>
-        <p className={`${styles.price}`}>{formattedPrice}</p>
-      </div>
-    </>
+    <div className={`${styles.card_box}`}>
+      {data.map((Coffee) => (
+        <div key={Coffee.id} className={`${styles.card}`} onClick={onClick}>
+          <div className={`${styles.card_img_box} ${"mb_15"}`}>
+            <img
+              src={Coffee.image}
+              alt={Coffee.title}
+              className={`${styles.img}`}
+            />
+          </div>
+          <p className={`${styles.title}`}>{Coffee.title}</p>
+          <p className={`${styles.price}`}>
+            {Coffee.price.toLocaleString()} 원
+          </p>
+        </div>
+      ))}
+    </div>
   );
 };
 

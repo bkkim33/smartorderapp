@@ -2,26 +2,35 @@
 @import'../global';
 
 .card {
-  width: 163px;
-  height: 217px;
-  overflow: hidden;
-  text-align: center;
-  .image {
-    width: 163px;
-    height: 163px;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    background-color: #F8F8F8;
-    object-fit: contain;
+  max-width: 360px;
+  width: calc(50% - 7.5px);
+  &_box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px 15px;
+    padding: 0 20px;
+  }
+  &_img {
+    &_box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      border-radius: 4px;
+      background-color: #F8F8F8;
+    }
   }
   .title {
     margin-bottom: 5px;
     font-size: 1.8rem;
     color: var(--c11);
+    text-align: center;
   }
   .price {
     font-size: 1.6rem;
     color: var(--c77);
+    text-align: center;
   }
 }

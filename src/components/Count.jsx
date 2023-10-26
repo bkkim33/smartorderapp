@@ -34,24 +34,23 @@ export function Count({ onClick, ...others }) {
     };
 
   return (
-    <>
-      <div className={`${styles.countbox}`}>
-        <button 
+    <div className={`${styles.countbox}`}>
+      <button
         className={`${styles.btncount} ${styles.minus}`}
         onClick={handleMinus}
-        disabled={disabled}>-</button>
-        <input 
-          name=""
-          title="상품 개수"
-          value={count}
-          readOnly
-        />
-        <button 
-         className={`${styles.btncount} ${styles.plus}`}
-         onClick={handlePlus}
-         disabled={disabled}>+</button>
-       </div>
-    </>
+        disabled={disabled}
+      >
+        -
+      </button>
+      <input name="" title="상품 개수" value={count} readOnly />
+      <button
+        className={`${styles.btncount} ${styles.plus}`}
+        onClick={handlePlus}
+        disabled={disabled}
+      >
+        +
+      </button>
+    </div>
   );
 }
 
