@@ -6,6 +6,12 @@
 }
 
 @import './global/_scrollbar';
+
+// app에만 사용되는 글로벌 css
+@import './global/_appglobal';
+@import './global/_appglobal2';
+@import './global/_appglobal3';
+
 // 글로벌 scss import
 @import './global/_align'; //정렬
 @import './global/_color'; //배경 글자 등등 모든 색
@@ -14,10 +20,6 @@
 
 // 글로벌 컨포넌트 import
 @import './global/_select';
-
-// app에만 사용되는 글로벌 css
-@import './global/_appglobal';
-@import './global/_appglobal2';
 
 
 // 임시 블릿

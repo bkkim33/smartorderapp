@@ -143,7 +143,6 @@ function MainPage() {
                 ),
               },
             ]}
-            onClick={() => {}}
             globalClass="main_tab"
           />
         </div>

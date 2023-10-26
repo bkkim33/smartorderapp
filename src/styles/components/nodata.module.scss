@@ -1,0 +1,12 @@
+@import'../common/variables';
+
+.nodata{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p{
+    @include body1;
+    font-weight: 500;
+  }
+}

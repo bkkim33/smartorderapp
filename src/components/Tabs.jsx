@@ -5,7 +5,6 @@ import styles from "../styles/components/tabs.module.scss"
 Tabs.propTypes = {
     type: PropTypes.oneOf(["","round"]),
     globalClass: PropTypes.string,
-    onClick: PropTypes.func,
 }
 
 Tabs.defaultProps = {
@@ -13,7 +12,7 @@ Tabs.defaultProps = {
     globalClass: "",
 };
 
-export function Tabs({ TabsData, onClick, ...others }) {
+export function Tabs({ TabsData, ...others }) {
   const { type, globalClass } = others;
   const [active, setActive] = useState(null);
   return (
