@@ -1,50 +1,88 @@
 import React from "react";
-
+import Card from "../../components/CoffeeCard";
+import NoData from "../../components/NoData";
 // import Mainimg from "../../images/main_img.gif";
+
+const CoffeeData = [
+  {
+    id: 1,
+    title: "아메리카노",
+    image: require("../../images/item.png"),
+    price: 3500,
+    type: "coffee",
+    favorites: false,
+  },
+  {
+    id: 2,
+    title: "카페라떼",
+    image: require("../../images/item01.png"),
+    price: 4000,
+    type: "coffee",
+    favorites: false,
+  },
+  {
+    id: 3,
+    title: "바닐라라떼(ICE)",
+    image: require("../../images/item01.png"),
+    price: 4300,
+    type: "coffee",
+    favorites: false,
+  },
+  {
+    id: 4,
+    title: "더치커피",
+    image: require("../../images/item.png"),
+    price: 3500,
+    type: "coffee",
+    favorites: false,
+  },
+  {
+    id: 5,
+    title: "청포도에이드",
+    image: require("../../images/item02.png"),
+    price: 4500,
+    type: "adejuice",
+    favorites: false,
+  },
+  {
+    id: 6,
+    title: "딸기라떼",
+    image: require("../../images/item03.png"),
+    price: 5500,
+    type: "noncoffee",
+    favorites: false,
+  },
+  {
+    id: 7,
+    title: "토마토주스",
+    image: require("../../images/item04.png"),
+    price: 5500,
+    type: "adejuice",
+    favorites: false,
+  },
+  {
+    id: 8,
+    title: "캐모마일(ICE)",
+    image: require("../../images/item05.png"),
+    price: 4000,
+    type: "tea",
+    favorites: false,
+  },
+];
+
+const Favorites = CoffeeData.filter(
+  (FavoritesData) => FavoritesData.favorites === true
+);
 
 
 function FavoritesMenuPage() {
   return (
-    <div className="main">
-      즐겨찾는 메뉴 리스트
-      {/* <div className="align top main_visual">
-          <div className="lft">
-            <p>
-              <span className="headline4 mb_16">Good morning</span>
-              <span>
-                <strong>하루가 달콤해지는</strong>
-              </span>
-              <span>
-                <em className="neon">바닐라라떼</em>
-              </span>
-              <span>
-                <em className="neon">한잔 어때요?</em>
-              </span>
-            </p>
-          </div>
-          <div className="rgt">
-            <img src={Mainimg} alt="유저 이미지" />
-          </div>
-        </div>
-        <div className="main_content">
-          <div className="main_locations"></div>
-          <Tabs
-            TabsBtn={[
-              {
-                id: 1,
-                title: "전체메뉴",
-                defaultActive: true,
-                content: 
-              },
-              {
-                id: 2,
-                title: "즐겨찾는메뉴",
-              },
-            ]}
-            onClick={() => {}}
-          />
-          <div style={{ height: '100%' }}>main</div>
-        </div> */}
+    <div className="coffeemenu pt_20">
+      {Favorites?.length > 0 ? (
+        <Card data={Favorites} />
+      ) : (
+        <NoData globalClass="mt_80 mb_80" txt="즐겨찾는 메뉴가 없습니다." />
+      )}
     </div>
   );
 }

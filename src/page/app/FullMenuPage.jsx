@@ -5,7 +5,6 @@ import Tabs from "../../components/Tabs";
 
 // import Mainimg from "../../images/main_img.gif";
 
-
 const CoffeeData = [
   {
     id: 1,
@@ -13,6 +12,7 @@ const CoffeeData = [
     image: require("../../images/item.png"),
     price: 3500,
     type: "coffee",
+    favorites: true,
   },
   {
     id: 2,
@@ -20,6 +20,7 @@ const CoffeeData = [
     image: require("../../images/item01.png"),
     price: 4000,
     type: "coffee",
+    favorites: false,
   },
   {
     id: 3,
@@ -27,6 +28,7 @@ const CoffeeData = [
     image: require("../../images/item01.png"),
     price: 4300,
     type: "coffee",
+    favorites: false,
   },
   {
     id: 4,
@@ -34,6 +36,7 @@ const CoffeeData = [
     image: require("../../images/item.png"),
     price: 3500,
     type: "coffee",
+    favorites: false,
   },
   {
     id: 5,
@@ -41,6 +44,7 @@ const CoffeeData = [
     image: require("../../images/item02.png"),
     price: 4500,
     type: "adejuice",
+    favorites: false,
   },
   {
     id: 6,
@@ -48,6 +52,7 @@ const CoffeeData = [
     image: require("../../images/item03.png"),
     price: 5500,
     type: "noncoffee",
+    favorites: true,
   },
   {
     id: 7,
@@ -55,6 +60,7 @@ const CoffeeData = [
     image: require("../../images/item04.png"),
     price: 5500,
     type: "adejuice",
+    favorites: false,
   },
   {
     id: 8,
@@ -62,6 +68,7 @@ const CoffeeData = [
     image: require("../../images/item05.png"),
     price: 4000,
     type: "tea",
+    favorites: false,
   },
 ];
 
@@ -82,7 +89,7 @@ const Tea = CoffeeData.filter((CoffeeData) => CoffeeData.type === "tea");
 
 function FullMenuPage() {
   return (
-    <div className="fullmenu">
+    <div className="coffeemenu">
       <Tabs
         TabsData={[
           {
@@ -142,7 +149,7 @@ function FullMenuPage() {
           },
         ]}
         type="round"
-        globalClass="fullmenu_tab"
+        globalClass="coffeemenu_tab"
       />
     </div>
   );

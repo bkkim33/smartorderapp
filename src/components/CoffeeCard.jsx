@@ -11,15 +11,15 @@ CoffeeCard.propTypes = {
 CoffeeCard.defaultProps = {
   image: "item.png",
   title: "아메리카노",
-  price: "3500",
+  price: 3500,
 };
 
-export function CoffeeCard({ data, onClick }) {
+export function CoffeeCard({ data, globalstyle, onClick }) {
 
   return (
-    <div className={`${styles.card_box}`}>
+    <div className={`${styles.card_box} ${globalstyle | ""}`}>
       {data.map((Coffee) => (
-        <div key={Coffee.id} className={`${styles.card}`} onClick={onClick}>
+        <button key={Coffee.id} className={`${styles.card}`} onClick={onClick}>
           <div className={`${styles.card_img_box} ${"mb_15"}`}>
             <img
               src={Coffee.image}
@@ -31,7 +31,7 @@ export function CoffeeCard({ data, onClick }) {
           <p className={`${styles.price}`}>
             {Coffee.price.toLocaleString()} 원
           </p>
-        </div>
+        </button>
       ))}
     </div>
   );
