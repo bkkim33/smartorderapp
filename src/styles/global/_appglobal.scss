@@ -62,17 +62,17 @@
   }
   &_content{
     width: 100%;
-    height: 100%;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
   }
   &_locations{
     width: 100%;
     height: 110px;
     background-color: var(--point);
     position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    z-index: 2;
     > button{
       display: flex;
       justify-content: space-between;
@@ -139,5 +139,14 @@
       }
       
     }
+  }
+  &_tab{
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 110px;
+    align-self: flex-start;
+    z-index: 1;
+    background-color: var(--cff);
   }
 }

@@ -3,6 +3,7 @@ import Layout from '../../layout/AppDefaultLayout'
 import Mainimg from "../../images/main_img.gif";
 
 import FullMenu from "./FullMenuPage";
+import FavoritesMenu from "./FavoritesMenuPage";
 
 import Tabs from "../../components/Tabs";
 
@@ -137,12 +138,13 @@ function MainPage() {
                 title: "즐겨찾는메뉴",
                 content: (
                   <>
-                    <FullMenu />
+                    <FavoritesMenu />
                   </>
                 ),
               },
             ]}
             onClick={() => {}}
+            globalClass="main_tab"
           />
         </div>
       </div>
