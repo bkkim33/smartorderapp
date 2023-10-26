@@ -1,0 +1,85 @@
+
+
+.inner{
+  padding: 20px;
+}
+hr{
+  width: 100%;
+  height: 5px;
+  margin: 0;
+  border: 0;
+  background-color: var(--bgf5);
+}
+
+.cartcontainer{
+  .location{
+    gap: 5px;
+    .lft{
+      font-size: 1.4rem;
+    }
+  }
+  .checkout{
+    .selectall{
+      // color: var(--c55);
+      // font-size: 1.6rem;
+      @include headline(var(--c55), 1.6rem)
+    }
+    .select{
+      // color: var(--c11);
+      // font-size: 1.6rem;
+      @include headline(var(--c11), 1.6rem)
+    }
+  }
+}
+
+
+
+
+.emptycart {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+.shoppingcart{
+  .menucontainer{
+    // 이미지 확인 중 // 대리님 배경 업로드시 변경 필요 
+    .menuimg{
+      background: #F3F4F5;
+      width: 80px;
+      height: 80px;
+    }
+    .menuitem {
+      .title {
+        @include h5(var(--c33)); 
+      }
+      .price {
+        @include h5(var(--c77)); 
+        span {
+          @include body1(var(--c77)); 
+        }
+      }
+      .menudescription{
+        font-size: 1.4rem;
+        .iced {
+          color: #3B82F6;
+        }
+        .hot {
+          color: var(--red-text);
+        }
+        .bar{
+          width: 1px;
+          height: 12px;
+          background: #ddd;
+        }
+        .option{
+          color: var(--c77);
+        }
+      }
+    }
+  }
+  .menuitembackground{
+    background: #F3F4F5;
+    width: 80px;
+    height: 80px;
+  }
+}
