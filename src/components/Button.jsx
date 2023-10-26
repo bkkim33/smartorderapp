@@ -10,7 +10,7 @@ Button.propTypes = {
   state: PropTypes.bool,
   none: PropTypes.bool,
   disabled: PropTypes.bool,
-  color: PropTypes.oneOf(["", "gray", "lime", "change"]),
+  btntype: PropTypes.oneOf(["", "change", "gray"]),
   size: PropTypes.oneOf([
     "full",
     "xlarge",
@@ -50,11 +50,11 @@ Button.defaultProps = {
   },
   icon: "",
   globalClass: "",
-  color: "",
+  btntype: "",
   badge: false,
 };
 
-export function Button({ children, onClick, app, color, ...others }) {
+export function Button({ children, onClick, app, btntype, ...others }) {
   const {
     size,
     round,
@@ -70,8 +70,8 @@ export function Button({ children, onClick, app, color, ...others }) {
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
-  const appClass = app ? `color-${color}` : ``;
-  // const appClass = `color-${color}`;
+  // const appClass = app ? `color-${color}` : ``;
+  const appClass = `type-${btntype}`;
 
   return (
     <button

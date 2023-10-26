@@ -15,10 +15,10 @@ export default {
     iconStyle: {
       control: "object",
     },
-    color: {
+    btntype: {
       control: {
         type: "select",
-        options: ["", "gray", "lime","change"],
+        options: ["", "change", "gray"],
       },
     },
   },
@@ -30,32 +30,33 @@ export const Default = (args) => (
   </>
 );
 
-export const AppPrimary = (args) => (
+export const AppPrimary = () => (
   <>
     <Button onClick={() => {}} size="full">확인</Button>
   </>
 );
 
-export const AppOutline= (args) => (
+export const AppOutline= () => (
   <>
     <Button onClick={() => {}} size="full" line>메뉴 더 담기</Button>
   </>
 );
 
-export const AppGray = () => (
+export const AppPoint = () => (
   <>
-    <Button onClick={() => {}} size="medium" color="gray">장바구니 담기</Button>
+    <Button onClick={() => {}} size="xlarge">장바구니 담기</Button>
   </>
 );
 
-export const AppLime = () => (
+export const AppGray = () => (
   <>
-    <Button onClick={() => {}} size="medium" color="lime">홈</Button>
+    <Button onClick={() => {}} size="xlarge" btntype="gray">장바구니 담기</Button>
   </>
 );
 
 export const AppSecondary = () => (
   <>
-    <Button onClick={() => {}} size="xsmall" color="change" line>변경</Button>
+    <Button onClick={() => {}} size="xsmall" btntype="change">변경</Button>
   </>
 );
+
