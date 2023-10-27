@@ -34,6 +34,7 @@
   display: flex;
   height: 100%;
   flex-direction: column;
+  overflow-y: auto;
   &_visual{
     width: 100%;
     align-items: flex-end;
