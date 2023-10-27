@@ -6,12 +6,14 @@ import Button from "../components/Button";
 function HeaderLayout() {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
+  const handleOpen = (e) => {
     setOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const handleClose = () => {
     setOpen(false);
+    document.body.style.overflow = "unset";
   };
 
   return (

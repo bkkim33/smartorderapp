@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import Button from "../components/Button";
@@ -13,6 +13,13 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
 
   //Javascript split method to get the name of the path in array
   // const splitLocation = pathname.split("/");
+
+  // useEffect((open) => {
+  //   // modal이 떠 있을 땐 스크롤 막음
+  //   disableScroll();
+  //   // modal 닫히면 다시 스크롤 가능하도록 함
+  //   return () => enableScroll();
+  // }, []);
 
   return (
     <aside
