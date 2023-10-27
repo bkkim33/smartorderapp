@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import AppMain from "./page/app/MainPage";
+import AppLogin from "./page/app/login/LoginPage";
 import MenuDetailPage from "./page/app/order/MenuDetailPage";
 
 import AdminMain from "./page/admin/MainPage";
@@ -12,7 +13,8 @@ function App() {
   return (
     <Routes>
       {/* APP */}
-      <Route exact path="/app" element={<AppMain />} />
+      <Route exact path="/app" element={<AppLogin />} />
+      <Route exact path="/app/main" element={<AppMain />} />
       <Route exact path="/app/order/menudetail" element={<MenuDetailPage />} />
       {/* <Route path="/app/login" element={<Login />} />c */}
       {/* ADMIN */}
@@ -22,11 +24,7 @@ function App() {
         path="/admin/coupon/management"
         element={<CouponeManagement />}
       />
-      <Route
-        exact
-        path="/admin/coupon/issuance"
-        element={<CouponIssuance />}
-      />
+      <Route exact path="/admin/coupon/issuance" element={<CouponIssuance />} />
       {/* KDS */}
       {/* <Route path="/*" element={<Main />} /> */}
     </Routes>

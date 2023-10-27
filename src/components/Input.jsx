@@ -124,11 +124,11 @@ export function Input({ onClick, ...others }) {
           {value.length}/{maxLength}
         </span>
       )}
-      {type === "password" && (
+      {/* {type === "password" && (
         <>
           <Icons.EyesOn />
         </>
-      )}
+      )} */}
       {type === "search" && (
         <>
           <button

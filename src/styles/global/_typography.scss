@@ -15,6 +15,10 @@
   }
 }
 
+.headline0 {
+  @include h0;
+}
+
 .headline1 {
   @include h1;
 }
@@ -79,6 +83,9 @@
   }
   &400 {
     font-weight: 400;
+  }
+  &300 {
+    font-weight: 300;
   }
 }
 

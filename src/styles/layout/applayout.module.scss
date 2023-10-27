@@ -9,6 +9,7 @@
   // overflow-x: hidden;
 }
 
+
 .header{
   display: flex;
   justify-content: flex-end;
@@ -169,4 +170,15 @@
   flex: 1;
   height: calc(100% - 60px);
   overflow-y: auto;
+}
+
+
+.login{
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F5F0;
+  .content{
+    height: auto;
+    flex: none;
+  }
 }
