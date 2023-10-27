@@ -18,7 +18,7 @@ export default {
     btntype: {
       control: {
         type: "select",
-        options: ["", "change", "gray"],
+        options: ["", "change", "gray", "blue", "googlelogin"],
       },
     },
   },
@@ -39,6 +39,18 @@ export const AppPrimary = () => (
 export const AppOutline= () => (
   <>
     <Button onClick={() => {}} size="full" line>메뉴 더 담기</Button>
+  </>
+);
+
+export const AppLogin = () => (
+  <>
+    <Button onClick={() => {}} size="full" btntype="blue">로그인</Button>
+  </>
+);
+
+export const AppGoogleLogin = () => (
+  <>
+    <Button icon="Google" onClick={() => {}} size="full" btntype="googlelogin">Google 계정으로 로그인</Button>
   </>
 );
 

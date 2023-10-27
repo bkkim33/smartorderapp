@@ -25,6 +25,9 @@
       margin-right: 0;
     }
   }
+  span{
+    flex:1;
+  }
 }
 
 .full{
@@ -70,6 +73,10 @@
 }
 
 .type{ 
+  &-blue{
+    background-color: var(--blue); 
+    color: var(--cff);  
+  }
   &-gray{
     background-color: var(--cee); 
     color: var(--c77);  
@@ -78,6 +85,11 @@
     background-color: var(--cff);
     color: var(--c55);  
     border:1px solid var(--ce7);
+  }
+  &-googlelogin{
+    background-color: var(--cff);
+    color: var(--c11);  
+    border: 1px solid var(--ce7);  
   }
 }  
 
