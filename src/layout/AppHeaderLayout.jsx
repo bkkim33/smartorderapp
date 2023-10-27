@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import SideMenu from "./AppSideMenuLayout";
 import Button from "../components/Button";
@@ -15,7 +16,7 @@ function HeaderLayout() {
     setOpen(false);
     document.body.style.overflow = "unset";
   };
-
+  const navigate = useNavigate();
   return (
     <>
       <header className={`${styles.header}`}>
@@ -40,11 +41,11 @@ function HeaderLayout() {
           }}
           none
           badge
-          onClick={() => {}}
+          onClick={() => navigate("/cart")}
           size="icon_s"
           globalClass="pd_0"
         >
-          button
+          장바구니
         </Button>
         <Button
           none

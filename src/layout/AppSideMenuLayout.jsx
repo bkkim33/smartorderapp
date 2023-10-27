@@ -53,8 +53,15 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
         <nav>
           <div className={`${styles.menu_top}`}>
             <div className={`${styles.menu_header}`}>
-              <Button icon="Home" none onClick={() => {}} size="icon_s">
-                button
+              <Button
+                icon="Home"
+                none
+                onClick={() => {
+                  navigate("/main");
+                }}
+                size="icon_s"
+              >
+                홈으로 이동
               </Button>
               <Button icon="Delete" none onClick={onClose} size="icon_s">
                 닫기
@@ -116,7 +123,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
             <Button
               none
               onClick={() => {
-                navigate("/app");
+                navigate("/");
               }}
               size="small"
             >

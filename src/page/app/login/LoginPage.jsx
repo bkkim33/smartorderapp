@@ -81,7 +81,7 @@ function LoginPage() {
                 <Button
                   btntype="blue"
                   onClick={() => {
-                    navigate("/app/main");
+                    navigate("/main");
                   }}
                   size="full"
                 >
