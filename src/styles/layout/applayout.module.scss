@@ -38,8 +38,7 @@
   z-index: -99;
   left: 0;
   opacity: 0;
-  transition-property: left, opacity;
-  transition: 1s, 0.2s;
+  transition: all 0.2s;
   &.open{
     background-color: rgba(0,0,0,0.5);
     opacity: 1;
