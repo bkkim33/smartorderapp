@@ -31,7 +31,22 @@
   }
 }
 
-
+.dimd{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
+  left: 0;
+  opacity: 0;
+  transition-property: left, opacity;
+  transition: 1s, 0.2s;
+  &.open{
+    background-color: rgba(0,0,0,0.5);
+    opacity: 1;
+    z-index: 900;
+    transition: all 0.7s;
+  }
+}
 
 .menu{
   display: flex;
@@ -44,28 +59,9 @@
   right: -100%;
   transition: right 0.5s;
   z-index: 999;
-  &::after{
-    @include before_after;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -99;
-    left: -200%;
-    opacity: 0;
-    transition-property: left, opacity;
-    transition: 1s, 0.2s;
-  }
   &.open{
     right: 0;
     transition: right 0.6s;
-    &::after{
-      background-color: rgba(0,0,0,0.5);
-      opacity: 1;
-      left: 0;
-      top: 0;
-      z-index: 1;
-      transition: opacity 0.7s;
-    }
   }
   &_top{
     // flex: 1;
