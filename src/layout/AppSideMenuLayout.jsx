@@ -51,6 +51,8 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 <img src={Userimg} alt="유저 이미지" />
               </div>
             </div>
+          </div>
+          <div className={`${styles.menu_bottom}`}>
             <ul className={`${styles.menu_wrap} `}>
               <li className={`${styles.menu_dep1}`}>
                 <Link to="/admin/login">
@@ -89,9 +91,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
             </ul>
-          </div>
-          <div className={`${styles.menu_bottom}`}>
-            <Button onClick={() => {}} size="full">
+            <Button none onClick={() => {}} size="small">
               로그아웃
             </Button>
           </div>

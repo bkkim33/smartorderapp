@@ -26,7 +26,7 @@
     min-width: 26px;
     min-height: 26px;
     & + button{
-      margin-left: 6px;
+      margin-left: 10px;
     }
   }
 }
@@ -65,11 +65,20 @@
   &_top{
     // flex: 1;
     display: flex;
-    height: calc(100% - 115px);
+    // height: calc(100% - 115px);
     flex-direction: column;
   }
   &_bottom{
+    flex: 1;
     padding: 20px 20px 45px;
+    overflow-y: auto;
+    button{
+      color: var(--c33);
+      font-size: 1.4rem;
+      padding: 0;
+      margin-top: 30px;
+      font-weight: 400;
+    }
   }
   &_header{
     display: flex;
@@ -105,7 +114,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 70%;
     height: 100%;
     background-color: var(--cff);
@@ -116,10 +125,10 @@
   &_wrap{
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    // padding: 0 20px;
     flex: 1;
-    height:calc(100% - 50px) ;
-    overflow-y: auto;
+    // height:calc(100% - 50px) ;
+    // overflow-y: auto;
   }
   &_dep1{
     border-top: 1px solid var(--cee);
