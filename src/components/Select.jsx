@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 Select.propTypes = {
   // children: PropTypes.node.isRequired,
-  round: PropTypes.oneOf(["round", "allround", ""]),
+  round: PropTypes.oneOf(["app", "line", "round", "allround", ""]),
   // options: PropTypes.node,
   width: PropTypes.string,
   placeholder: PropTypes.string,
@@ -30,6 +30,7 @@ Select.defaultProps = {
 export function Select({ options, ...others }) {
   const { round, width, placeholder, disabled, multi, defaultValue } = others;
   const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <div
       style={{

@@ -1,4 +1,46 @@
 .select {
+  &.app{
+    .select__control{
+      font-size: 1.6rem;
+      border: 0;
+      &--is-focused{
+        font-size: 1.6rem;
+      }
+    }
+    .select__dropdown-indicator{
+      &:after{
+        border-color: var(--c11);
+      }
+    }
+    .select__placeholder{
+      font-size: 1.6rem;
+    }
+    .select__menu{
+      box-shadow: none;
+      margin-top: -1px;
+      &-list{
+        padding: 0;
+        height: 160px !important;
+      }
+    }
+    .select__option{
+      color: var(--c11);
+      padding: 13px 19px;
+      &--is-selected{
+        background: var(--bgf5);
+        font-weight: 400;
+      }
+      & + .select__option{
+        margin-top: 0;
+      }
+    }
+  }
+  &.line {
+    .select__control{
+      border: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+  }
   &.round{
     .select__control{
       @include rounded(4px);
@@ -70,26 +112,26 @@
     &--menu-is-open{
       .select__dropdown-indicator{
         &:after{
-          border-color: var(--primary-b);
+          border-color: var(--primary);
           transform: rotate(-225deg);
           margin-top: 5px;
         }
       }
     }
     &--is-focused{
-      border-color: var(--primary-b);
+      border-color: var(--primary);
     }
     &:hover{
-      border-color: var(--primary-b);
+      border-color: var(--primary);
       .select__dropdown-indicator{
         &:after{
-          border-color: var(--primary-b);
+          border-color: var(--primary);
         }
       }
       .select__clear-indicator{
         background-color: var(--c99);
         &:hover{
-          background-color: var(--primary-b);
+          background-color: var(--primary);
         }
       }
     }
@@ -114,7 +156,7 @@
     @include clamp(1)
   }
   &__menu{
-    border: 1px solid var(--primary-b);
+    border: 1px solid var(--primary);
     @include shadow(0, 4px, 4px, rgba(0,0,0,0.25));
     margin-top: -1px;
     &-list{
@@ -139,11 +181,11 @@
     display: flex;
     align-items: center;
     height: 25px;
-    border: 1px solid var(--primary-b);
+    border: 1px solid var(--primary);
     border-radius: 13px;
     padding: 0 15px;
     background-color: var(--bgfa);
-    @include body4(var(--primary-b));
+    @include body4(var(--primary));
     font-weight: 500;
     & + .select__multi-value{
       margin-left: 10px;
@@ -161,7 +203,7 @@
         @include before_after;
         width: 10px;
         height: 1.5px;
-        background-color: var(--primary-b);
+        background-color: var(--primary);
         transform: rotate(45deg);
         position: absolute;
         @include m_auto;
@@ -171,7 +213,7 @@
         @include before_after;
         width: 10px;
         height: 1.5px;
-        background-color: var(--primary-b);
+        background-color: var(--primary);
         transform: rotate(-45deg);
         position: absolute;
         @include m_auto;

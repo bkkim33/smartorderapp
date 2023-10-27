@@ -14,6 +14,13 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
+const sector = [
+  { value: "메가존.디지털", label: "메가존.디지털" },
+  { value: "메가존클라우드", label: "메가존클라우드" },
+  { value: "메가존소프트", label: "메가존소프트" },
+  { value: "클라우드그램", label: "클라우드그램" },
+];
+
 export const Default = (args) => (
   <div style={{ width: "100%", height: "250px" }}>
     {/* div는 영역을 넓히기 위해 스토리북에만 사용하는 태그입니다. 해당 태그를
@@ -40,3 +47,11 @@ export const Multi = () => (
   </div>
 );
 
+
+export const AppDefault = () => (
+  <div style={{ width: "100%", height: "250px" }}>
+    {/* div는 영역을 넓히기 위해 스토리북에만 사용하는 태그입니다. 해당 태그를
+    제외하고 사용하세요. */}
+    <Select options={sector} round="app" placeholder="메가존.디지털"></Select>
+  </div>
+);
