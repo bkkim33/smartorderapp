@@ -15,8 +15,8 @@
   box-sizing: border-box;
   &:disabled{
     cursor: default;
-    background-color: var(--cee); 
-    color: var(--c77);  
+    background-color: var(--bgf8); 
+    color: var(--cdd);  
   }
   i{
     margin-right: 10px;
@@ -77,6 +77,11 @@
   &-blue{
     background-color: var(--blue); 
     color: var(--cff);  
+    &:disabled{
+      cursor: default;
+      background-color: var(--cdd); 
+      color: var(--cbb);  
+    }
   }
   &-gray{
     background-color: var(--cee); 

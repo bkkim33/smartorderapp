@@ -1,22 +1,13 @@
 import React , { useState } from "react";
-import Layout from '../../layout/AppDefaultLayout'
-import { Icons } from "../../components/Icon";
-import { Button } from "../../components/Button"
-import { Checkbox } from "../../components/Checkbox"
-import { Count } from "../../components/Count"
+import Layout from '../../../layout/AppDefaultLayout'
+import { Icons } from "../../../components/Icon";
+import { Button } from "../../../components/Button"
+import { Checkbox } from "../../../components/Checkbox"
+import { Count } from "../../../components/Count"
 
-import Menuitem from "../../images/item.png";
+import Menuitem from "../../../images/item.png";
 
 function CartPage({ isHotIce }) {
-  // const isCartEmpty = true;
-
-  // const [isCartEmpty, setIsCartEmpty] = useState(true);
-  // // 데이터값
-  // useEffect(() => {
-
-  // }, []);
-
-  // const [isHotIce, setIsHotIce] = useState(true);
 
   return (
     <Layout>
@@ -24,35 +15,38 @@ function CartPage({ isHotIce }) {
         <div className="location inner align">
           <div className="lft align start">
             <Icons.Location width={20} height={20} fill="#495EEC" />
-            <p>
-              <b>클라우드카페 역삼점</b>의 메뉴입니다.
-            </p>
+            <p><b>클라우드카페 역삼점</b>의 메뉴입니다.</p>
           </div>
-          <Button
-            onClick={() => {}}
-            size="xsmall"
-            btntype="change"
+          <Button 
+            onClick={() => {}} 
+            size="xsmall" 
+            btntype="change" 
             globalClass="rgt"
           >
             변경
           </Button>
-        </div>
+        </div>  
         <hr />
         <div className="checkout inner align">
           <Checkbox className="selectall lft">전체 선택</Checkbox>
-          <Button onClick={() => {}} none globalClass="rgt select">
+          <Button
+            onClick={() => {}}
+            none
+            globalClass="rgt select"
+            >
             선택삭제
           </Button>
         </div>
         <hr />
         <div className="shoppingcart inner">
           {/* 장바구니 내용 */}
-          <div className="menucontainer align top ">
-            <div className="align lft top">
+          <div className="menucontainer align">
+            <div className="align top start">
               <Checkbox>{""}</Checkbox>
               <div className="menuimg ml_10 mr_15">
-                {/* <div className="menuitembackground"/> */}
-                <img src={Menuitem} alt="Menu Item" />
+                <div className="menuimg_img_box">
+                  <img className="img" src={Menuitem} alt="Menu Item"/>
+                </div>
               </div>
               <div className="menuitem">
                 <p className="title mb_8">아메리카노</p>
@@ -60,20 +54,24 @@ function CartPage({ isHotIce }) {
                   3,800<span>원</span>
                 </p>
                 <div className="menudescription align">
-                  <div className={isHotIce ? "iced" : "hot"}>ICED</div>
+                  <div className={isHotIce ? "hot" : "iced"}>ICED</div>
                   <span className="bar mlr_6" />
                   <div className="option">연하게</div>
                 </div>
               </div>
             </div>
-            <div className="rgt align column">
+            <div className="menuright align column bottom">
               <Icons.Trash
                 width={20}
                 height={20}
                 fill="var(--primary)"
-                className=""
+                className="mb_20"
               />
-              <Button onClick={() => {}} none globalClass="pd_0 bottom">
+              <Button 
+                onClick={() => {}} 
+                none 
+                globalClass="pd_0 bottom"
+                >
                 옵션변경
               </Button>
             </div>
