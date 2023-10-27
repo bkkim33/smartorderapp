@@ -29,8 +29,12 @@ function Dateimages() {
   }
 }
 
-function LoginPage() {
+function QRLoginPage() {
   const navigate = useNavigate();
+  const [certification, setCertification] = useState(false);
+  const certifications = () => {
+    setCertification(true);
+  };
   return (
     <Layout>
       <div className="login">
@@ -55,15 +59,23 @@ function LoginPage() {
             <Dateimages />
           </div>
         </div>
+        <div className="login_info">
+          <p>
+            <span>서비스 이용을 위해</span>
+            <span>휴대폰 번호를 입력해주세요.</span>
+          </p>
+        </div>
         <div className="login_content">
           <div className="login_box">
             <div className="login_box_input align column ">
               <div>
                 <Input
-                  onClick={() => {}}
+                  onClick={certifications}
                   shape="none"
                   globalClass="login_input"
-                  placeholder="ID"
+                  placeholder="핸드폰 번호 입력"
+                  phone
+                  maxLength={13}
                 />
               </div>
               <div>
@@ -71,8 +83,10 @@ function LoginPage() {
                   onClick={() => {}}
                   shape="none"
                   globalClass="login_input"
-                  type="password"
-                  placeholder="Password"
+                  type="text"
+                  placeholder="인증번호 입력"
+                  timer={certification === true}
+                  disabled={certification === false}
                 />
               </div>
             </div>
@@ -84,27 +98,11 @@ function LoginPage() {
                     navigate("/app/main");
                   }}
                   size="full"
+                  disabled={certification === false}
                 >
                   로그인
                 </Button>
               </div>
-              <div className="mt_20 pt_20">
-                <Button
-                  btntype="googlelogin"
-                  icon="Google"
-                  onClick={() => {}}
-                  size="full"
-                >
-                  Google 계정으로 로그인
-                </Button>
-              </div>
-            </div>
-            <div className="mt_20">
-              <FormGroup>
-                <Checkbox name="contact00" id="check1" value="Login">
-                  로그인 상태 유지
-                </Checkbox>
-              </FormGroup>
             </div>
           </div>
         </div>
@@ -113,4 +111,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default QRLoginPage;

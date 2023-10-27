@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import Button from "../components/Button";
@@ -6,6 +7,7 @@ import { Icons } from "../components/Icon";
 import Userimg from "../images/user_img.gif";
 
 function SideMenuLayout({ globalstyle, onClose, open }) {
+  const navigate = useNavigate();
   // const location = useLocation();
 
   //destructuring pathname from location
@@ -91,7 +93,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
             </ul>
-            <Button none onClick={() => {}} size="small">
+            <Button none onClick={() => {navigate("/app");}} size="small">
               로그아웃
             </Button>
           </div>

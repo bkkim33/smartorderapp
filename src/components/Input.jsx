@@ -41,6 +41,7 @@ export function Input({ onClick, ...others }) {
     globalClass,
     maxLength,
     counton,
+    phone,
   } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
@@ -52,6 +53,15 @@ export function Input({ onClick, ...others }) {
       }
       setValue(e.target.value);
     }
+    if (phone === true) {
+      setValue(
+        e.target.value
+          .replace(/[^0-9]/g, "")
+          .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3")
+          .replace(/(\-{1,2})$/g, "")
+      );
+    }
+
   };
   const onReset = () => {
     setValue("");
@@ -84,6 +94,8 @@ export function Input({ onClick, ...others }) {
     }
   }, [sec]);
 
+  
+
   return (
     <div
       style={{
@@ -112,6 +124,11 @@ export function Input({ onClick, ...others }) {
           className={`${styles.delete} ${value ? styles.block : ""}`}
         >
           <span className={`${styles.delete}`} />
+        </button>
+      )}
+      {phone === true && (
+        <button onClick={onClick} className={`${styles.certification}`}>
+          인증요청
         </button>
       )}
       {type === "text" && timer && (

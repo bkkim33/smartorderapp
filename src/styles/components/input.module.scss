@@ -24,6 +24,11 @@
     border-color: var(--primary);
   }
 
+  .certification{
+    @include body2(var(--blue));
+    border-bottom: 1px solid var(--blue);
+  }
+
   //초기화 버튼
   .delete {
     display: none;
@@ -88,6 +93,12 @@
   .delete {
     display: none !important;
   }
+  &.disabled {
+    background-color: transparent;
+    &:hover {
+      border-color: var(--ce7);
+    }
+  }
 }
 .error {
   border-color: var(--red);
@@ -102,7 +113,7 @@
   font-weight: 400;
   appearance: none;
   &::placeholder {
-    color: var(--c33);
+    color: #6D772F;
   }
   &:focus {
     &::placeholder {
