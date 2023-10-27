@@ -13,7 +13,8 @@
   cursor: pointer;
   width: 24px;
   height: 24px;
-  border: 1px solid var(--primary); 
+  border: 1px solid var(--cdd);
+  background-color: var(--cff);
   &::after {
     content: '';
     display: block;
