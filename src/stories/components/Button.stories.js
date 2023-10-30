@@ -11,7 +11,7 @@ export default {
     // icon: { control: "text" },
     icon: { 
       control: "select", 
-      options: ["Heart", "Delete", "Search", "Google", "Home", "Cart", "Cup", "Like", "LogoOnly", "Location", "MenuOrder", "MenuLike", "MenuOrderdetails", "MenuCoupon", "MenuPrivacy", "MenuNotice", "Infomation", "Question", "Trash", "Logout", "OrderComplete", "Coupon", "Back", "ArrowBg", "" ] },
+      options: ["Heart", "Delete", "Search", "Google", "Home", "Cart", "Cup", "Like", "LikeOff", "LogoOnly", "Location", "MenuOrder", "MenuLike", "MenuOrderdetails", "MenuCoupon", "MenuPrivacy", "MenuNotice", "Infomation", "Question", "Trash", "Logout", "OrderComplete", "Coupon", "Back", "ArrowBg", "" ] },
     iconStyle: {
       control: "object",
     },

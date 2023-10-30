@@ -18,9 +18,10 @@
     .select__menu{
       box-shadow: none;
       margin-top: -1px;
+      background-color: var(--cff);
       &-list{
         padding: 0;
-        height: 160px !important;
+        // max-height: 160px !important;
       }
     }
     .select__option{

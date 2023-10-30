@@ -62,7 +62,10 @@ export const Default = () => (
         <Icons.Cup width={26} height={28} fill="var(--primary)" />
       </div>
       <div className="item">
-        <Icons.Like width={26} height={28} fill="#F7D356" />
+        <Icons.LikeOff width={26} height={26} />
+      </div>
+      <div className="item">
+        <Icons.Like width={26} height={26} fill="#F7D356" />
       </div>
       <div className="item">
         <Icons.LogoOnly width={20} height={20} />

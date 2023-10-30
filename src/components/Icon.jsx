@@ -597,6 +597,19 @@ const Nodata = ({ width = 83, height = 92 }) => (
   </svg>
 );
 
+const LikeOff = ({ width = 26, height = 26 }) => (
+  <svg 
+    width={width}
+    height={height} 
+    viewBox="0 0 26 26" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13 0L17.2027 7.21553L25.3637 8.98278L19.8001 15.2095L20.6412 23.5172L13 20.15L5.35879 23.5172L6.19995 15.2095L0.636266 8.98278L8.79733 7.21553L13 0Z" fill="black" fill-opacity="0.1" />
+  </svg>
+);
+
+
 export const Icons = {
   Logo,
   AdminLogo,
@@ -626,4 +639,5 @@ export const Icons = {
   Back,
   ArrowBg,
   Nodata,
+  LikeOff,
 };

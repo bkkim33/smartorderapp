@@ -35,6 +35,12 @@
   color: $color;
 }
 
+@mixin body0($color: var(--c00)) {
+  font-size: 1.6rem;
+  font-weight: 400; //normal
+  color: $color;
+}
+
 @mixin body1($color: var(--c00)) {
   font-size: 1.5rem;
   font-weight: 400; //extra-bold

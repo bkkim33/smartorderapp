@@ -3,7 +3,7 @@
 .countbox {
   display: flex;
   align-items: center;
-  min-width: 161px;
+  max-width: 161px;
   .btncount{
     flex-shrink: 0;
     width: 24px;
@@ -22,3 +22,6 @@
   }
 }
 
+.small{
+  max-width: 121px;
+}

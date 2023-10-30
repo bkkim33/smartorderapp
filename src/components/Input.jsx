@@ -8,6 +8,7 @@ Input.propTypes = {
   shape: PropTypes.oneOf(["", "round", "line", "none"]),
   width: PropTypes.string,
   placeholder: PropTypes.string,
+  placeholderColor: PropTypes.oneOf(["", "green"]),
   disabled: PropTypes.bool,
   error: PropTypes.bool,
   timer: PropTypes.bool,
@@ -22,6 +23,7 @@ Input.defaultProps = {
   shape: "",
   width: "",
   placeholder: "내용을 입력해 주세요.",
+  placeholderColor: "",
   disabled: false,
   error: false,
   timer: false,
@@ -35,6 +37,7 @@ export function Input({ onClick, ...others }) {
     shape,
     width,
     placeholder,
+    placeholderColor,
     disabled,
     error,
     timer,
@@ -105,10 +108,10 @@ export function Input({ onClick, ...others }) {
         disabled ? styles.disabled : ""
       } ${focus ? styles.focus : ""} ${error ? styles.error : ""} ${
         globalClass || ""
-      } `}
+        } `}
     >
       <input
-        className={`${styles.input}`}
+        className={`${styles.input} ${styles[placeholderColor]}`}
         type={type}
         onChange={onChange}
         value={value}

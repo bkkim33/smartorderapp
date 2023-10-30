@@ -10,6 +10,7 @@ hr{
   border: 0;
   background-color: var(--bgf5);
 }
+
 .order{
   &_visual{
     position: relative;
@@ -23,6 +24,54 @@ hr{
     }
   }
   .red_text{
-    color: var(--red-text) !important;
+    color: var(--red-text);
+  }
+}
+
+.notice{
+  ul{    
+    li{
+      padding: 20px 4px 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+      > button {
+        width: 100%;
+        display: flex;
+        p {
+          text-align: left;
+        }
+        .arrow {
+          display: block;
+          width: 9px;
+          height: 9px;
+          border: 1.5px solid #111111;
+          border-top: 0;
+          border-left: 0;
+          transform: rotate(-45deg);
+          flex-shrink: 0;
+        }
+      }      
+    }
+  }
+  
+  &_title{
+    padding-bottom: 15px;
+    p.body0{
+      line-height: 2.4rem;
+    }
+  }
+  &_content{
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    p{
+      line-height: 2.4rem;
+    }
+  }
+}
+
+.terms{
+  ul{
+    li{
+      padding: 20px 4px;
+    }
   }
 }

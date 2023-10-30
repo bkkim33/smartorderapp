@@ -113,7 +113,7 @@
   font-weight: 400;
   appearance: none;
   &::placeholder {
-    color: #6D772F;
+    color: var(--c99);
   }
   &:focus {
     &::placeholder {
@@ -123,6 +123,11 @@
   &:disabled {
     cursor: default;
     color: var(--c99);
+  }
+  &.green{
+    &::placeholder {
+      color: #6D772F;
+    }
   }
 }
 

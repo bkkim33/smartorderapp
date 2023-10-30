@@ -45,7 +45,7 @@ export function Select({ options, ...others }) {
         className={`${"select"} ${round || ""}`}
         classNamePrefix="select"
         placeholder={placeholder}
-        defaultValue={defaultValue ? options[defaultValue] : selectedOption}
+        defaultValue={options[defaultValue] || selectedOption}
         onChange={setSelectedOption}
         options={options}
         isDisabled={disabled}

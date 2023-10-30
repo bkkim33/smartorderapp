@@ -102,7 +102,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                <Link to="/admin/login">
+                <Link to="/notice">
                   <Icons.MenuNotice width={16} height={16} fill="#3A3A3A" />
                   <span>공지사항</span>
                 </Link>
@@ -114,7 +114,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                <Link to="/admin/login">
+                <Link to="/terms">
                   <Icons.Infomation width={16} height={16} fill="#3A3A3A" />
                   <span>이용약관</span>
                 </Link>

@@ -9,6 +9,7 @@ Count.propTypes = {
   // type: PropTypes.string,
   // value: PropTypes.number,
   disabled: PropTypes.bool,
+  size: PropTypes.oneOf(["", "small"]),
 };
 
 // 기본 상태가 필요시에만 사용됨
@@ -19,10 +20,11 @@ Count.defaultProps = {
   // name: "",
   // title: "상품 개수",
   disabled: false,
+  size: "",
 };
 
 export function Count({ onClick, ...others }) {
-  const { disabled } = others;
+  const { disabled, size } = others;
   const [count, setCount] = useState(0);
   const handleMinus = () => {
       if (count > 0) {
@@ -34,7 +36,7 @@ export function Count({ onClick, ...others }) {
     };
 
   return (
-    <div className={`${styles.countbox}`}>
+    <div className={`${styles.countbox} ${styles[size]}`}>
       <button
         className={`${styles.btncount} ${styles.minus}`}
         onClick={handleMinus}

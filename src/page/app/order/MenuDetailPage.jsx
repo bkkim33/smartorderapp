@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../../layout/AppDefaultLayout";
 import Menuimg from "../../../images/coffee_img.jpg";
 import Button from "../../../components/Button";
@@ -6,14 +6,35 @@ import TextToggle from "../../../components/TextToggle";
 import Count from "../../../components/Count";
 
 function MenuDetailPage() {
+  const [isOn, setIsOn] = useState(false);
+  const toggleHandler = () => {
+    setIsOn(!isOn)
+  };
+
   return (
     <Layout Back Menu Cart Title="주문하기">
       <div className="order">
         <div className="order_visual">
           <img src={Menuimg} alt="커피 이미지" />
-          <Button icon="Like" none onClick={() => {}} size="icon_s">
-            즐겨찾기
-          </Button>
+          {isOn ?
+            <Button
+              icon="LikeOff"
+              none
+              onClick={toggleHandler}
+              size="icon_s"
+            >
+              즐겨찾기off
+            </Button>
+            :
+            <Button
+              icon="Like"
+              none
+              onClick={toggleHandler}
+              size="icon_s"
+            >
+              즐겨찾기on
+            </Button>
+          }
         </div>
         <div className="align inner">
           <p className="headline2">바닐라라떼</p>
@@ -40,8 +61,7 @@ function MenuDetailPage() {
                     title: "ICED",
                     defaultActive: true,
                   },
-                ]}
-                onClick={() => {}}
+                ]}                
               />
             </div>
             <div className="pb_20">
@@ -64,13 +84,12 @@ function MenuDetailPage() {
                     option: true,
                     title: "진하게 (1샷추가)",
                   },
-                ]}
-                onClick={() => {}}
+                ]}                
               />
             </div>
           </div>
           <hr />
-          <div className="inner align">
+          <div className="align inner">
             <div className="lft">
               <Count />
             </div>
@@ -82,7 +101,19 @@ function MenuDetailPage() {
             </div>
           </div>
         </div>
-        <div className="align"></div>
+        <div className="align inner gap_9">
+          <Button
+            btntype="gray"
+            size="full"
+          >
+            장바구니 담기
+          </Button>
+          <Button
+            size="full"
+          >
+            구매하기
+          </Button>
+        </div>
       </div>
     </Layout>
   );
