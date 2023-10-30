@@ -1,5 +1,5 @@
-import React, { useRef, useCallback } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState, useCallback } from "react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -36,6 +36,7 @@ const CouponData = [
 ];
 
 function CouponSwiper () {
+  const [countSlide, setCountSlide] = useState('1');
   // const sliderRef = useRef(null);
   const swiperParams = {
     pagination: {
@@ -49,14 +50,23 @@ function CouponSwiper () {
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 20,
-    className: "mySwiper",
+    // className: "mySwiper",
     // ref: sliderRef,
     modules: [Navigation, Pagination],
-  };
+  }
   return (
     <div className="pd_20">
+      <div className="align end">
+        <p>
+          <em>{countSlide}</em> / {CouponData.length}
+        </p>
+      </div>
       <>
-        <Swiper {...swiperParams}>
+        <Swiper
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={(swiper) => setCountSlide(swiper.activeIndex + 1)}
+          {...swiperParams}
+        >
           {CouponData.map((Coupon) => (
             <SwiperSlide key={Coupon.id}>
               <div>
@@ -83,10 +93,10 @@ function CouponSwiper () {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div class="swiper-pagination"></div>
+        <div className="swiper-pagination"></div>
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </>
       {/* <div className="align mb_20">
         <SlidePrevButton />
