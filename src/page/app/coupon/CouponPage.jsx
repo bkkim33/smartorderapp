@@ -14,90 +14,84 @@ import { Tabs } from "../../../components/Tabs";
 
 // import Menuitem from "../../../images/item.png";
 
+const CouponData = [
+  {
+    id: 1,
+    type: "Americano",
+    title: "입사환영쿠폰",
+    issuer: "메가존.디지털",
+    date: "무기한",
+    image: require("../../../images/couponitem.png"),
+    use: false,
+  },
+  {
+    id: 2,
+    type: "Americano",
+    title: "입사환영쿠폰",
+    issuer: "메가존.디지털",
+    date: "무기한",
+    image: require("../../../images/couponitem.png"),
+    use: false,
+  },
+];
+
 function CouponSwiper () {
-  const sliderRef = useRef(null);
-  function SlideNextButton() {
-    const handleNext = useCallback(() => {
-      if (!sliderRef.current) return;
-      sliderRef.current.swiper.slideNext();
-    }, []);
-
-    return (
-      <Button
-        icon="Cup"
-        iconStyle={{
-          fill: "#000000",
-          width: 24,
-        }}
-        none
-        badge
-        onClick={handleNext}
-        size="icon_s"
-        globalClass="pd_0"
-      >
-        장바구니 이동
-      </Button>
-    );
-  }
-  function SlidePrevButton() {
-    const handlePrev = useCallback(() => {
-      if (!sliderRef.current) return;
-      sliderRef.current.swiper.slidePrev();
-    }, []);
-
-    return (
-      <Button
-        icon="Cup"
-        iconStyle={{
-          fill: "#000000",
-          width: 24,
-        }}
-        none
-        badge
-        onClick={handlePrev}
-        size="icon_s"
-        globalClass="pd_0"
-      >
-        장바구니 이동
-      </Button>
-    );
-  }
+  // const sliderRef = useRef(null);
   const swiperParams = {
     pagination: {
-      type: "fraction",
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 20,
-    navigation: true,
     className: "mySwiper",
-    ref: sliderRef,
+    // ref: sliderRef,
     modules: [Navigation, Pagination],
   };
   return (
     <div className="pd_20">
-    <div className="align end">
-      <p>보유한 쿠폰 통 10장</p>
-    </div>
       <>
-        <Swiper
-          {...swiperParams}
-        >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
+        <Swiper {...swiperParams}>
+          {CouponData.map((Coupon) => (
+            <SwiperSlide key={Coupon.id}>
+              <div>
+                <img
+                  src={Coupon.image}
+                  alt={Coupon.title}
+                  // className={`${styles.img}`}
+                />
+                <div>
+                  <dl>
+                    <dt>쿠폰명</dt>
+                    <dd>{Coupon.title}</dd>
+                  </dl>
+                  <dl>
+                    <dt>발급처</dt>
+                    <dd>{Coupon.issuer}</dd>
+                  </dl>
+                  <dl>
+                    <dt>유효기간</dt>
+                    <dd>{Coupon.date}</dd>
+                  </dl>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </>
-      <div className="align mb_20">
+      {/* <div className="align mb_20">
         <SlidePrevButton />
         <SlideNextButton />
-      </div>
+      </div> */}
     </div>
   );
   
