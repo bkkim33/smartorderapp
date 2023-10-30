@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import Card from '../../components/CoffeeCard';
 import Tabs from "../../components/Tabs";
 
@@ -88,6 +88,7 @@ const Tea = CoffeeData.filter((CoffeeData) => CoffeeData.type === "tea");
 
 
 function FullMenuPage() {
+  const navigate = useNavigate();
   return (
     <div className="coffeemenu">
       <Tabs
@@ -98,7 +99,12 @@ function FullMenuPage() {
             defaultActive: true,
             content: (
               <>
-                <Card data={CoffeeData} />
+                <Card
+                  data={CoffeeData}
+                  onClick={() => {
+                    navigate("/order");
+                  }}
+                />
               </>
             ),
           },
@@ -107,7 +113,12 @@ function FullMenuPage() {
             title: "Coffee",
             content: (
               <>
-                <Card data={Coffee} />
+                <Card
+                  data={Coffee}
+                  onClick={() => {
+                    navigate("/order");
+                  }}
+                />
               </>
             ),
           },
@@ -116,7 +127,12 @@ function FullMenuPage() {
             title: "Non-Coffee",
             content: (
               <>
-                <Card data={NonCoffee} />
+                <Card
+                  data={NonCoffee}
+                  onClick={() => {
+                    navigate("/order");
+                  }}
+                />
               </>
             ),
           },
@@ -125,7 +141,12 @@ function FullMenuPage() {
             title: "Ade/Juice",
             content: (
               <>
-                <Card data={AdeJuice} />
+                <Card
+                  data={AdeJuice}
+                  onClick={() => {
+                    navigate("/order");
+                  }}
+                />
               </>
             ),
           },
@@ -143,7 +164,12 @@ function FullMenuPage() {
             title: "Tea",
             content: (
               <>
-                <Card data={Tea} />
+                <Card
+                  data={Tea}
+                  onClick={() => {
+                    navigate("/order");
+                  }}
+                />
               </>
             ),
           },

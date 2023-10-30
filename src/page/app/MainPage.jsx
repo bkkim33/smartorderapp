@@ -116,7 +116,7 @@ function Dateimages() {
 
 function MainPage() {
   return (
-    <Layout>
+    <Layout Coupon Cart Menu>
       <div className="main">
         <div className="align top main_visual">
           <div className="lft">

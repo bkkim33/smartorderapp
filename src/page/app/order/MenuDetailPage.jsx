@@ -7,22 +7,20 @@ import Count from "../../../components/Count";
 
 function MenuDetailPage() {
   return (
-    <Layout>
+    <Layout Back Menu Cart Title="주문하기">
       <div className="order">
         <div className="order_visual">
           <img src={Menuimg} alt="커피 이미지" />
-          <Button
-            icon="Like"
-            none
-            onClick={() => { }}
-            size="icon_s"
-          >
+          <Button icon="Like" none onClick={() => {}} size="icon_s">
             즐겨찾기
           </Button>
         </div>
         <div className="align inner">
           <p className="headline2">바닐라라떼</p>
-          <p className="item gap_1"><span className="headline2">4,300</span><span className="headline5 pt_2">원</span></p>
+          <p className="item gap_1">
+            <span className="headline2">4,300</span>
+            <span className="headline5 pt_2">원</span>
+          </p>
         </div>
         <hr />
         <div className="order_content">
@@ -34,16 +32,16 @@ function MenuDetailPage() {
                   {
                     id: 1,
                     option: null,
-                    title: 'HOT'
+                    title: "HOT",
                   },
                   {
                     id: 2,
                     option: null,
-                    title: 'ICED',
+                    title: "ICED",
                     defaultActive: true,
-                  }
+                  },
                 ]}
-                onClick={() => { }}
+                onClick={() => {}}
               />
             </div>
             <div className="pb_20">
@@ -53,21 +51,21 @@ function MenuDetailPage() {
                   {
                     id: 1,
                     option: null,
-                    title: '기본 (2샷)',
+                    title: "기본 (2샷)",
                     defaultActive: true,
                   },
                   {
                     id: 2,
                     option: null,
-                    title: '연하게 (1샷만)'
+                    title: "연하게 (1샷만)",
                   },
                   {
                     id: 3,
                     option: true,
-                    title: '진하게 (1샷추가)'
-                  }
+                    title: "진하게 (1샷추가)",
+                  },
                 ]}
-                onClick={() => { }}
+                onClick={() => {}}
               />
             </div>
           </div>
@@ -77,13 +75,14 @@ function MenuDetailPage() {
               <Count />
             </div>
             <div className="rgt">
-              <p className="item gap_2"><span className="red_text headline1">999,999</span><span className="red_text headline2">원</span></p>
+              <p className="item gap_2">
+                <span className="red_text headline1">999,999</span>
+                <span className="red_text headline2">원</span>
+              </p>
             </div>
           </div>
         </div>
-        <div className="align">
-          
-        </div>
+        <div className="align"></div>
       </div>
     </Layout>
   );

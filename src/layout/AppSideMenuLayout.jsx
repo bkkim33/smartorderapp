@@ -84,7 +84,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
           <div className={`${styles.menu_bottom}`}>
             <ul className={`${styles.menu_wrap} `}>
               <li className={`${styles.menu_dep1}`}>
-                <Link to="/admin/login">
+                <Link to="/coupon">
                   <Icons.MenuCoupon width={16} height={16} fill="#3A3A3A" />
                   <span>쿠폰함</span>
                 </Link>

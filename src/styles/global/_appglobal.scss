@@ -17,7 +17,7 @@
       height: 2px;
       background-color: var(--c00);
       position: absolute;
-      top: -8px;
+      top: -7px;
     }
     &::after{
       @include before_after;
@@ -25,7 +25,7 @@
       height: 2px;
       background-color: var(--c00);
       position: absolute;
-      top: 8px;
+      top: 7px;
     }
   }
 }

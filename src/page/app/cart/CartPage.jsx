@@ -10,30 +10,28 @@ import Menuitem from "../../../images/item.png";
 function CartPage({ isHotIce }) {
 
   return (
-    <Layout>
+    <Layout Back Title="장바구니">
       <div className="cartcontainer">
         <div className="location inner align">
           <div className="lft align start">
             <Icons.Location width={20} height={20} fill="#495EEC" />
-            <p><b>클라우드카페 역삼점</b>의 메뉴입니다.</p>
+            <p>
+              <b>클라우드카페 역삼점</b>의 메뉴입니다.
+            </p>
           </div>
-          <Button 
-            onClick={() => {}} 
-            size="xsmall" 
-            btntype="change" 
+          <Button
+            onClick={() => {}}
+            size="xsmall"
+            btntype="change"
             globalClass="rgt"
           >
             변경
           </Button>
-        </div>  
+        </div>
         <hr />
         <div className="checkout inner align">
           <Checkbox className="selectall lft">전체 선택</Checkbox>
-          <Button
-            onClick={() => {}}
-            none
-            globalClass="rgt select"
-            >
+          <Button onClick={() => {}} none globalClass="rgt select">
             선택삭제
           </Button>
         </div>
@@ -45,7 +43,7 @@ function CartPage({ isHotIce }) {
               <Checkbox>{""}</Checkbox>
               <div className="menuimg ml_10 mr_15">
                 <div className="menuimg_img_box">
-                  <img className="img" src={Menuitem} alt="Menu Item"/>
+                  <img className="img" src={Menuitem} alt="Menu Item" />
                 </div>
               </div>
               <div className="menuitem">
@@ -67,11 +65,7 @@ function CartPage({ isHotIce }) {
                 fill="var(--primary)"
                 className="mb_20"
               />
-              <Button 
-                onClick={() => {}} 
-                none 
-                globalClass="pd_0 bottom"
-                >
+              <Button onClick={() => {}} none globalClass="pd_0 bottom">
                 옵션변경
               </Button>
             </div>

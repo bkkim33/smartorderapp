@@ -18,7 +18,7 @@
 }
 
 @mixin h3($color: var(--c00)) {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 700; //extra-bold
   color: $color;
 }
