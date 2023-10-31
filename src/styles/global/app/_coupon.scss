@@ -78,6 +78,9 @@
     }
   }
   &_img{
+    img{
+      width: 100%;
+    }
     &.dimd{
       position: relative;
       p{
