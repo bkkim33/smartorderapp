@@ -15,7 +15,6 @@
   dd{
     width: 100%;
     .select{
-      caret-color: transparent;
       &.app{
         .select__control{
           padding: 0 20px;
@@ -23,15 +22,12 @@
         .select__menu{
           margin-top: 10px;
         }
-      }
-    }
-    .single_department{
-      padding: 0 20px;
-      overflow: hidden;
-      p{
-        height: 35px;
-        font-size: 1.6rem;
-        color: var(--c99);
+        .select__control--is-disabled{
+          background-color: var(--cff);
+          .select__indicator{
+            display: none;
+          }
+        }
       }
     }
   }

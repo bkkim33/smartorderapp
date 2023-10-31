@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import Layout from '../../../layout/AppDefaultLayout'
 import { Input } from "../../../components/Input"
 import { Select } from "../../../components/Select"
@@ -67,18 +67,26 @@ function MyInfo() {
             <dl className="align">
               <dt>소속</dt>
               <dd>
-              {isSingle ? (
-                <div className="single_department">
-                  <p className="align">겸임이 아닐 경우</p>
-                </div>
+                {isSingle ? (
+                  <Select
+                    options={[
+                      {
+                        value: "default",
+                        label: "겸임이 아닐 경우",
+                      },
+                    ]}
+                    round="app"
+                    defaultValue={0}
+                    disabled
+                  />
                 ) : (
                   <Select 
                   options={sector} 
                   round="app" 
-                  placeholder="메가존.디지털" 
-                  />
+                  placeholder="메가존.디지털"
+                   />
                 )}
-                </dd>
+              </dd>
             </dl>
           </li>
         </ul>
