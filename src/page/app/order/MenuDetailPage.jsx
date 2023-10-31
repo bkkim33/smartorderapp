@@ -89,16 +89,17 @@ function MenuDetailPage() {
             </div>
           </div>
           <hr />
-          <div className="align inner">
+          <div className="align inner pb_10 gap_9">
             <div className="lft">
               <Count />
             </div>
-            <div className="rgt">
-              <p className="item gap_2">
+            <div className="rgt align">
+              <p className="align gap_2 end">
                 <span className="red_text headline1">999,999</span>
                 <span className="red_text headline2">원</span>
               </p>
             </div>
+           
           </div>
         </div>
         <div className="align inner gap_9">

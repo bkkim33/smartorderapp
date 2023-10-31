@@ -54,7 +54,8 @@ export const Default = () => {
           </>
         }
       >
-        컨텐츠
+        컨텐츠<br />
+        컨텐츠<br />
       </MuiModal>
     </>
   );

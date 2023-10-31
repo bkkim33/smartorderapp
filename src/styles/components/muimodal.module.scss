@@ -23,3 +23,44 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .modal{
+    &_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translate(0, 0);
+      padding: 0;
+    }
+    &_header{
+      justify-content: center;
+      position: relative;
+      border-bottom-color: var(--ce7);
+      padding: 20px;
+      @include h3(var(--c00));
+      margin-bottom: 39px;
+      button{
+        position: absolute;
+        right: 20px;
+      }
+    }
+    &_content{
+      overflow-y: auto;
+      flex: 1;
+      height: 100%;
+      padding: 0 20px;
+    }
+    &_btn {
+      padding: 30px 20px 32px;
+      button{
+        width: 100%;
+      }
+    }
+  }
+}

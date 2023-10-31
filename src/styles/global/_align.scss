@@ -42,9 +42,11 @@
   .lft {
     display: flex;
     align-items: center;
+    flex: 1;
   }
   .rgt {
     display: flex;
     align-items: center;
+    flex: 1;
   }
 }

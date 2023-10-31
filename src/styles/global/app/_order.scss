@@ -1,0 +1,16 @@
+.order{
+  &_visual{
+    position: relative;
+    //swiper 기능 전 임시 비주얼
+    background: #f3f4f5;
+    text-align: center;
+    > button{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .red_text{
+    color: var(--red-text);
+  }
+}
