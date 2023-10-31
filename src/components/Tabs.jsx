@@ -37,6 +37,7 @@ export function Tabs({ TabsData, ...others }) {
             ${styles.tabs_content} 
             ${active === content ? styles.active : ""} 
             ${content.defaultActive ? (active === null ? styles.active : "") : ""}
+            ${globalClass + "content" || ""}
           `}
         >
           {content.content}

@@ -1,0 +1,115 @@
+.coupon_tabcontent{
+  height: calc(100% - 75px);
+  padding: 0 20px;
+  overflow-y: auto;
+}
+
+.couponswiper{
+  // flex: 1;
+  // display: flex !important;
+  // align-items: center;
+  // justify-content: center;
+  width: 100%;
+  height: fit-content;
+  .swiper-wrapper{
+    height: fit-content;
+  }
+}
+
+.swiper-pagination{
+  position: relative !important;
+  height: 13px;
+  margin-top: 30px;
+  top: auto !important;
+  bottom: 0 !important;
+  span{
+   border-radius: 0;
+   width: 13px;
+   height: 13px;
+   &.swiper-pagination-bullet-active{
+     background-color: var(--point);
+     width: 19px;
+   }
+  }
+}
+
+.swiper-button{
+  &-next,
+  &-prev{
+    top: 50%!important;
+    color: rgba($color: #ffffff, $alpha: 0.9) !important;
+    font-weight: 300 !important;
+    &::after{
+      font-size: 32px !important;
+    }
+    &.use{
+      top: 40% !important;
+    }
+  }
+  
+}
+
+.swiper-button-disabled{
+  opacity: 0.5;
+}
+
+.coupon_slidecard{
+  &_box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 20px 0;
+    min-height: 572px;
+    position: relative;
+  }
+  &_info{
+    @include h4(var(--c00));
+    font-weight: 400;
+    em{
+      color: var(--c00);
+      font-weight: 700;
+    }
+    span{
+       @include h4(var(--cbb));
+      font-weight: 400;
+    }
+  }
+  &_img{
+    &.dimd{
+      position: relative;
+      p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        font-size: 4.0rem;
+        font-weight: 700;
+        color: var(--cff);
+      }
+    }
+  }
+  &_txt{
+    background-color: var(--bgf5);
+    padding: 20px;
+    dl{
+      display: flex;
+      dt{
+        min-width: 60px;
+        border-right: 1px solid var(--cdd);
+        @include body2(var(--c33));
+      }
+      dd{
+        @include body2(var(--c33));
+      }
+      & + dl{
+        margin-top: 12px;
+      }
+    }
+  }
+}
