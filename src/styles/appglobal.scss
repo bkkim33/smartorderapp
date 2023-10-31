@@ -1,0 +1,8 @@
+@import './common/palette';
+@import './common/variables';
+
+//APP에만 별도로 사용되는 scss 구성 
+@import './global/app/common';
+@import './global/app/login';
+@import './global/app/main';
+@import './global/app/coupon';
