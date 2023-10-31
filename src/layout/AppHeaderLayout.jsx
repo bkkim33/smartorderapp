@@ -9,12 +9,12 @@ function HeaderLayout({ Coupon, Cart, Menu, Back, Title, Close }) {
 
   const handleOpen = (e) => {
     setOpen(true);
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   };
 
   const handleClose = () => {
     setOpen(false);
-    document.body.style.overflow = "unset";
+    // document.body.style.overflow = "unset";
   };
   const navigate = useNavigate();
   return (
@@ -30,7 +30,7 @@ function HeaderLayout({ Coupon, Cart, Menu, Back, Title, Close }) {
                 height: 26,
               }}
               none
-              onClick={() => navigate(-1)}
+              onClick={() => navigate(-1 || "/")}
               size="icon_s"
               globalClass="pd_0"
             >
