@@ -1,0 +1,38 @@
+.myinfo{
+  li{
+    padding: 10.5px 0;
+    border-bottom:  1px solid rgba(0, 0, 0, 0.1);
+  }
+  label, dt{
+    min-width: 82px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 4px;
+    text-align: left;
+    color: var(--c00);
+    font-size : 1.4rem;
+    font-weight: bold;
+  }
+  dd{
+    width: 100%;
+    .select{
+      caret-color: transparent;
+      &.app{
+        .select__control{
+          padding: 0 20px;
+        }
+        .select__menu{
+          margin-top: 10px;
+        }
+      }
+    }
+    .single_department{
+      padding: 0 20px;
+      overflow: hidden;
+      p{
+        height: 35px;
+        font-size: 1.6rem;
+        color: var(--c99);
+      }
+    }
+  }
+}

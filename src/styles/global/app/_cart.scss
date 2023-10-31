@@ -1,0 +1,80 @@
+// 장바구니 이후 작업진행
+
+.cartcontainer{
+  .location{
+    gap: 5px;
+    .lft{
+      font-size: 1.4rem;
+    }
+  }
+  .checkout{
+    .selectall{
+      @include headline(var(--c55), 1.6rem)
+    }
+    .select{
+      @include headline(var(--c11), 1.6rem)
+    }
+  }
+  .shoppingcart{
+    .menucontainer{
+      gap: 10px;
+      .menuimg{
+        // width: calc(50% - 7.5px);
+        // min-width: 80px;
+        width: 80px;
+        &_box{
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 20px 15px;
+          padding: 0 20px;
+        }
+        &_img {
+          &_box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            // background-color: #F3F4F5;
+            background-color: red;
+          }
+        }
+      }
+      .menuitem {
+        .title {
+          @include h5(var(--c33)); 
+        }
+        .price {
+          @include h5(var(--c77)); 
+          span {
+            @include body1(var(--c77)); 
+          }
+        }
+        .menudescription{
+          font-size: 1.4rem;
+          .iced {
+            color: #3B82F6;
+          }
+          .hot {
+            color: var(--red-text);
+          }
+          .bar{
+            width: 1px;
+            height: 12px;
+            background: #ddd;
+          }
+          .option{
+            color: var(--c77);
+          }
+        }
+      }
+      .menuright{
+        gap: 40px;
+        button{
+          @include body2(var(--c33));
+        }
+      }
+    }
+  }
+}

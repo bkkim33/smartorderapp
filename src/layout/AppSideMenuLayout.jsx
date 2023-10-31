@@ -96,7 +96,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                <Link to="/admin/login">
+                <Link to="/myinfo">
                   <Icons.MenuPrivacy width={16} height={16} fill="#3A3A3A" />
                   <span>내 정보</span>
                 </Link>

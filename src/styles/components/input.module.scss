@@ -129,6 +129,13 @@
       color: #6D772F;
     }
   }
+  &.phone {
+    &:disabled {
+      .certification {
+        display: none;
+      }
+    }
+  }
 }
 
 .input[type="number"] {
