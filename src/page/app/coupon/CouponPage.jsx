@@ -24,6 +24,7 @@ const CouponData = [
     date: "무기한",
     image: require("../../../images/couponitem.png"),
     use: false,
+    usename: "",
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ const CouponData = [
     date: "무기한",
     image: require("../../../images/couponitem.png"),
     use: true,
+    usename: "기간만료",
   },
   {
     id: 3,
@@ -42,6 +44,7 @@ const CouponData = [
     date: "무기한",
     image: require("../../../images/couponitem.png"),
     use: true,
+    usename: "사용완료",
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ const CouponData = [
     date: "무기한",
     image: require("../../../images/couponitem.png"),
     use: false,
+    usename: "",
   },
   {
     id: 5,
@@ -60,6 +64,7 @@ const CouponData = [
     date: "무기한",
     image: require("../../../images/couponitem.png"),
     use: false,
+    usename: "",
   },
 ];
 
@@ -97,7 +102,7 @@ function CouponPage() {
             ),
           },
         ]}
-        // globalClass="main_tab"
+        globalClass="coupon_tab"
       />
     </Layout>
   );

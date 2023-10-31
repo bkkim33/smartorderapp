@@ -25,15 +25,15 @@ function CouponSwiper ({data}) {
     slidesPerGroup: 1,
     slidesPerView: 1,
     spaceBetween: 20,
-    // className: "mySwiper",
+    className: "couponswiper",
     // ref: sliderRef,
     modules: [Navigation, Pagination],
   };
   return (
-    <div className="pd_20">
-      <div className="align end">
-        <p>
-          <em>{countSlide}</em> / {data.length}
+    <div className="coupon_slidecard_box">
+      <div className="align end mb_15">
+        <p className="coupon_slidecard_info">
+          <em>{countSlide}</em> / <span>{data.length}</span>
         </p>
       </div>
       <>
@@ -44,38 +44,43 @@ function CouponSwiper ({data}) {
         >
           {data.map((Coupon) => (
             <SwiperSlide key={Coupon.id}>
-              <div className="">
-                <div>
+              <div className="coupon_slidecard">
+                <div
+                  className={`${"coupon_slidecard_img"} ${
+                    Coupon.use === true ? "dimd" : ""
+                  }`}
+                >
+                  {Coupon.use === true && <p>{Coupon.usename}</p>}
                   <img
                     src={Coupon.image}
                     alt={Coupon.title}
                     // className={`${styles.img}`}
                   />
                 </div>
-
-                <div>
+                <div className="coupon_slidecard_txt">
                   <dl>
                     <dt>쿠폰명</dt>
-                    <dd>{Coupon.title}</dd>
+                    <dd className="ml_15">{Coupon.title}</dd>
                   </dl>
                   <dl>
                     <dt>발급처</dt>
-                    <dd>{Coupon.issuer}</dd>
+                    <dd className="ml_15">{Coupon.issuer}</dd>
                   </dl>
                   <dl>
                     <dt>유효기간</dt>
-                    <dd>{Coupon.date}</dd>
+                    <dd className="ml_15">{Coupon.date}</dd>
                   </dl>
                 </div>
               </div>
             </SwiperSlide>
           ))}
+
+          <div
+            className={`${"swiper-pagination"} ${
+              data[0].use === true ? "use" : "unuse"
+            }`}
+          ></div>
         </Swiper>
-        <div
-          className={`${"swiper-pagination"} ${
-            data[0].use === true ? "use" : "unuse"
-          }`}
-        ></div>
 
         <div
           className={`${"swiper-button-next"} ${
