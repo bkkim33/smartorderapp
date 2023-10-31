@@ -10,6 +10,7 @@ import NoticeList from "./page/app/notice/NoticeListPage";
 import NoticeDetail from "./page/app/notice/NoticeDetailPage";
 import TermsList from "./page/app/terms/TermsListPage";
 import TermsDetail from "./page/app/terms/TermsDetailPage";
+import MyInfo from "./page/app/myinfo/MyInfo";
 
 import AdminMain from "./page/admin/MainPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
@@ -30,6 +31,7 @@ function App() {
       <Route path="/notice/detail" element={<NoticeDetail />} />
       <Route path="/terms" element={<TermsList />} />
       <Route path="/terms/detail" element={<TermsDetail />} />
+      <Route path="/myinfo" element={<MyInfo />} />
       {/* <Route path="/app/login" element={<Login />} />c */}
       {/* ADMIN */}
       <Route path="/admin" element={<AdminMain />} />
