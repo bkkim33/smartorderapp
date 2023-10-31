@@ -8,6 +8,7 @@
     height: 2px;
     background-color: var(--c00);
     font-size: 0;
+    color: var(--cff);
     position: relative;
     &::before{
       @include before_after;
