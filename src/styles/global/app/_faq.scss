@@ -1,0 +1,40 @@
+.faq-list {
+  .faq-item{
+    cursor: pointer;
+    padding: 20px 4px;
+    @include body0 (var(--c00));
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);    
+    .question{
+      &::before{
+        content: 'Q.';
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+    &.active {
+      .question {
+        font-weight: bold;
+      }
+    }
+    .arrow{
+      display: block;
+      width: 9px;
+      height: 9px;
+      border: 1.5px solid #111111;
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      transition: all 0.2s;
+      &.up {
+        transform: rotate(225deg);
+        transition: all 0.2s;
+      }
+    }
+  }
+  .answer{
+    padding: 20px 15px;
+    @include body0 (var(--c00));
+    background-color: #F8F8F8;
+  }
+}
