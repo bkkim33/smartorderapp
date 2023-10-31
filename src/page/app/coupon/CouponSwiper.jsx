@@ -44,12 +44,15 @@ function CouponSwiper ({data}) {
         >
           {data.map((Coupon) => (
             <SwiperSlide key={Coupon.id}>
-              <div>
-                <img
-                  src={Coupon.image}
-                  alt={Coupon.title}
-                  // className={`${styles.img}`}
-                />
+              <div className="">
+                <div>
+                  <img
+                    src={Coupon.image}
+                    alt={Coupon.title}
+                    // className={`${styles.img}`}
+                  />
+                </div>
+
                 <div>
                   <dl>
                     <dt>쿠폰명</dt>

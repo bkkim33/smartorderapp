@@ -4,6 +4,7 @@ import Header from './AppHeaderLayout'
 // import SideMenu from "./SideMenuLayout";
 import styles from "../styles/layout/applayout.module.scss";
 import "../styles/global.scss";
+import "../styles/appglobal.scss";
 
 function DefaultLayout({ children, Coupon, Cart, Menu, Back, Title, Close }) {
   return (
