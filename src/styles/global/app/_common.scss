@@ -1,0 +1,29 @@
+.hamburger{
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 30px;
+  span{
+    width: 18px;
+    height: 2px;
+    background-color: var(--c00);
+    font-size: 0;
+    position: relative;
+    &::before{
+      @include before_after;
+      width: 18px;
+      height: 2px;
+      background-color: var(--c00);
+      position: absolute;
+      top: -7px;
+    }
+    &::after{
+      @include before_after;
+      width: 18px;
+      height: 2px;
+      background-color: var(--c00);
+      position: absolute;
+      top: 7px;
+    }
+  }
+}
