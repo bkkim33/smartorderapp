@@ -109,7 +109,8 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                <Link to="/admin/login">
+                {/* 진현주 - Link에 자주하는 질문 페이지로 변경 */}
+                <Link to="/faq">
                   <Icons.Question width={16} height={16} fill="#3A3A3A" />
                   <span>자주하는 질문</span>
                 </Link>
