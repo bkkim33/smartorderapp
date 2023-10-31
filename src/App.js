@@ -11,6 +11,8 @@ import NoticeDetail from "./page/app/notice/NoticeDetailPage";
 import TermsList from "./page/app/terms/TermsListPage";
 import TermsDetail from "./page/app/terms/TermsDetailPage";
 import MyInfo from "./page/app/myinfo/MyInfo";
+// 진현주 - 자주하는 질문 페이지 추가
+import Faq from "./page/app/faq/Faq";
 
 import AdminMain from "./page/admin/MainPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
@@ -32,6 +34,8 @@ function App() {
       <Route path="/terms" element={<TermsList />} />
       <Route path="/terms/detail" element={<TermsDetail />} />
       <Route path="/myinfo" element={<MyInfo />} />
+      {/* 진현주 - 자주하는 질문 페이지 추가 */}
+      <Route path="/faq" element={<Faq />} />
       {/* <Route path="/app/login" element={<Login />} />c */}
       {/* ADMIN */}
       <Route path="/admin" element={<AdminMain />} />
