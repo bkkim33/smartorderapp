@@ -5,8 +5,8 @@ import { Button } from "../../../components/Button"
 import { Checkbox } from "../../../components/Checkbox"
 import { Count } from "../../../components/Count"
 import { FormGroup } from "../../../components/FormGroup"
+import { useNavigate } from "react-router-dom";
 import NoData from "../../../components/NoData";
-
 
 
 function CartPage({ isHotIce }) {
@@ -112,7 +112,8 @@ const totalAmount = selectedItems.reduce((total, item) => total + item.price * i
 const totalQuantity = selectedItems.reduce((total, item) => total + item.quantity, 0);
 // 빈 장바구니 
 const isCartEmpty = cartItems.length === 0;
-
+// 랜딩 연결
+const navigate = useNavigate();
 
   return (
     <Layout Back Title="장바구니">
@@ -144,23 +145,23 @@ const isCartEmpty = cartItems.length === 0;
               )}
           </div>
           <hr />
-          <div className="checkout inner align">
-            {cartItems.length > 0 && (
-              <Checkbox
+            <div className="checkout inner align">
+              <Checkbox 
                 id={selectAll} 
-                className="selectall lft"
-                onChange={handleSelectAll}
-                checked={selectAll} 
-              >
+                className="selectall lft" 
+                onChange={handleSelectAll} 
+                checked={selectAll}
+                >
                 전체 선택
               </Checkbox>
-            )}
-            {cartItems.length > 0 && (
-              <Button onClick={handleDeleteSelected} none globalClass="rgt select">
+              <Button 
+                onClick={handleDeleteSelected} 
+                none 
+                globalClass="rgt select"
+                >
                 선택삭제
               </Button>
-            )}
-          </div>
+            </div>
           <hr />
           <div className="shoppingcart inner">
             {cartItems.map(item => (
@@ -223,19 +224,23 @@ const isCartEmpty = cartItems.length === 0;
                 </div>
               </div>
             ))}
-            <Button onClick={() => {}} size="full" line>메뉴 더 담기</Button>
+          {isCartEmpty && (
+            <NoData globalClass="mt_80 mb_30 align item" txt={("장바구니에 담겨진\n메뉴가 없습니다.")} />
+          )}
+            <Button onClick={() => {}} size="full" line>
+              {isCartEmpty ? "메뉴 담으러 가기" : "메뉴 더 담기"}
+            </Button>
           </div>
-          <hr />
+          {cartItems.length > 0 && ( <hr /> )}
           {!isCartEmpty && (
             <div className="cartorder">
               <dl className="align mb_30">
                 <dt>총 주문금액</dt>
                 <dd>{totalAmount.toLocaleString()}<span className="ml_2">원</span></dd>
               </dl>
-              <Button onClick={() => {}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
+              <Button onClick={() => {navigate("/order");}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
             </div>
           )}
-          {isCartEmpty && <NoData globalClass="mt_80 mb_80" txt="즐겨찾는 메뉴가 없습니다." />}
         </FormGroup>
       </div>
     </Layout>
