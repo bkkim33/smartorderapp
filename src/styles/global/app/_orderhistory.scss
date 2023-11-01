@@ -10,9 +10,6 @@
   &_card{
     width: 100%;
     border: 1px solid var(--ce7);
-    & + .orderhistory_card{
-      margin-top: 20px;
-    }
     &_title{
       display: flex;
       align-items: center;
