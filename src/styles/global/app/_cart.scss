@@ -1,10 +1,26 @@
-// 장바구니 이후 작업진행
-
 .cartcontainer{
   .location{
+    position: relative;
     gap: 5px;
     .lft{
       font-size: 1.4rem;
+    }
+    &_dropdown {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      width: calc(100% - 40px);
+      background-color: var(--cff);
+      border: 1px solid var(--c77);
+      li {
+        @include body2(var(--c11));
+        padding: 13px 20px;
+        &:active {
+          background-color: var(--bgf5);
+        }
+      }
     }
   }
   .checkout{
@@ -16,65 +32,129 @@
     }
   }
   .shoppingcart{
-    .menucontainer{
+    padding-top: 0;
+    .menu{
       gap: 10px;
-      .menuimg{
-        // width: calc(50% - 7.5px);
-        // min-width: 80px;
-        width: 80px;
-        &_box{
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          gap: 20px 15px;
-          padding: 0 20px;
-        }
-        &_img {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--ce7);
+      &_container{
+        width: 100%;
+      }
+      &_card{
+        &_images{
+          // width: calc(50% - 7.5px);
+          // min-width: 80px;
+          width: 80px;
           &_box{
+            width: 100%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 8px;
-            // background-color: #F3F4F5;
-            background-color: red;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px 15px;
+            padding: 0 20px;
+            
+          }
+          &_img {
+            &_box{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 8px;
+              background-color: #F3F4F5;
+            }
+          }
+        }
+        &_item {
+          .title {
+            @include h5(var(--c33)); 
+          }
+          .price {
+            @include body0(var(--c77)); 
+            span {
+              @include body2(var(--c77)); 
+            }
+        
+          }
+          .description{
+            font-size: 1.4rem;
+            .iced {
+              color: #3B82F6;
+            }
+            .hot {
+              color: var(--red-text);
+            }
+            .bar{
+              width: 1px;
+              height: 12px;
+              background: #ddd;
+            }
+            .option{
+              color: var(--c77);
+            }
+          }
+        }
+        &_right{
+          gap: 40px;
+          button{
+            @include body2(var(--c33));
           }
         }
       }
-      .menuitem {
-        .title {
-          @include h5(var(--c33)); 
-        }
-        .price {
-          @include h5(var(--c77)); 
-          span {
-            @include body1(var(--c77)); 
+      &_bottom{
+        .item_total{
+          @include font(var(--c11), 2.2rem, 700);
+          span{
+            @include h5(var(--c11))
           }
-        }
-        .menudescription{
-          font-size: 1.4rem;
-          .iced {
-            color: #3B82F6;
-          }
-          .hot {
-            color: var(--red-text);
-          }
-          .bar{
-            width: 1px;
-            height: 12px;
-            background: #ddd;
-          }
-          .option{
-            color: var(--c77);
-          }
-        }
-      }
-      .menuright{
-        gap: 40px;
-        button{
-          @include body2(var(--c33));
         }
       }
     }
   }
+  .cartorder{
+    padding: 30px 20px;
+    dl{
+      dt{
+        @include h4(var(--c11));
+      }
+      dd{
+        @include h1(var(--red-text));
+        span{
+          @include h2(var(--red-text));
+        }
+      }
+    }
+  }
+  .total{
+    // font-size: 2.2rem;
+    // color: var(--c11);
+    // font-weight: bold;
+    @include font(var(--c11), 2.2rem, 700);
+    span{
+      @include h5(var(--c11));
+    }
+  }
 }
+
+  @media all and (max-width:320px) {
+    .cartcontainer{
+      .shoppingcart{
+        .menu{
+          &_card{
+            display: flex;
+            flex-direction: column;
+            &_left{
+              margin-bottom: 0;
+            }
+            &_right{
+              flex-direction: row;
+              align-items: center;
+            }
+          }
+          &_bottom{
+            gap: 20px;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
