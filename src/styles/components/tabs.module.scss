@@ -90,3 +90,35 @@
     }
   }
 }
+
+.poingbg{
+  flex-wrap: nowrap;
+  row-gap: 0;  
+  button {
+    height: 50px;
+    border: 0;
+    border-top: 1px solid var(--cdd);
+    border-bottom: 1px solid var(--cdd);
+    @include h5(var(--c99));
+    font-weight: 400;
+    &:first-of-type {
+      border-left: 1px solid var(--cdd);
+    }
+    &:last-of-type {
+      border-right: 1px solid var(--cdd);
+    }
+    &::before {
+      display: none;
+    }
+    &.active {
+      border-color: var(--point);
+      background-color: var(--point);
+      font-weight: 700;
+      color: var(--c11);
+    }
+    & + button {
+      margin-left: 0;
+    }
+    
+  }
+}

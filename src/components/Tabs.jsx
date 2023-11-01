@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import styles from "../styles/components/tabs.module.scss"
 
 Tabs.propTypes = {
-    type: PropTypes.oneOf(["","round"]),
-    globalClass: PropTypes.string,
-}
+  type: PropTypes.oneOf(["", "round", "poingbg"]),
+  globalClass: PropTypes.string,
+};
 
 Tabs.defaultProps = {
     type: "",
