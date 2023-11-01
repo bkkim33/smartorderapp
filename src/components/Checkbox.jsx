@@ -14,7 +14,8 @@ Checkbox.propTypes = {
 
 // 기본 상태가 필요시에만 사용됨
 Checkbox.defaultProps = {
-  children: "text",
+  // 진현주 - 텍스트 없이 사용하여도 children에 text로 자동기입되어서 수정
+  children: "",
   value: "value",
   name: "radio1",
   id: "radio0",
@@ -23,13 +24,21 @@ Checkbox.defaultProps = {
   textposition: "",
 };
 
-export function Checkbox({ children, id, ...others }) {
+export function Checkbox({ children, id, onChange, ...others }) {
   const { value, name, checked, defaultChecked, textposition, disabled } =
     others;
-  const onChange = (e) => {
-    const { value } = e.target;
-    console.log("clicked", value);
+  
+  // 진현주 - 페이지에 사용 시 onChange의 값을 못 찾아서 수정
+  // const onChange = (e) => {
+  //   const { value } = e.target;
+  //   console.log("clicked", value);
+  // };
+  const handleChange = (e) => {
+    if (onChange) {
+      onChange(e);
+    }
   };
+  
   return (
     <label htmlFor={id} className={`${styles.checkboxlabel}`}>
       <input
@@ -40,7 +49,7 @@ export function Checkbox({ children, id, ...others }) {
         id={id}
         defaultChecked={defaultChecked}
         disabled={disabled}
-        onChange={onChange}
+        onChange={handleChange}
         checked={checked}
       />
       {textposition === "left" && (
