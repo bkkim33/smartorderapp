@@ -5,6 +5,7 @@ import AppLogin from "./page/app/login/LoginPage";
 import AppQRLogin from "./page/app/login/QRLoginPage";
 import MenuDetail from "./page/app/order/MenuDetailPage";
 import CartPage from "./page/app/cart/CartPage";
+import OrderHistory from "./page/app/orderhistory/OrderHistoryPage";
 import Coupon from "./page/app/coupon/CouponPage";
 import NoticeList from "./page/app/notice/NoticeListPage";
 import NoticeDetail from "./page/app/notice/NoticeDetailPage";
@@ -27,6 +28,7 @@ function App() {
       <Route path="/qr" element={<AppQRLogin />} />
       <Route path="/main" element={<AppMain />} />
       <Route path="/order" element={<MenuDetail />} />
+      <Route path="/order/history" element={<OrderHistory />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/coupon" element={<Coupon />} />
       <Route path="/notice" element={<NoticeList />} />

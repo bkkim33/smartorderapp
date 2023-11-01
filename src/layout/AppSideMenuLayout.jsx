@@ -90,7 +90,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                <Link to="/admin/login">
+                <Link to="/order/history">
                   <Icons.MenuOrder width={16} height={16} fill="#3A3A3A" />
                   <span>주문내역</span>
                 </Link>
