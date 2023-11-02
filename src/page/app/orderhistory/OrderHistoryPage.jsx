@@ -9,14 +9,52 @@ import NoData from "../../../components/NoData";
 const OrderHistoryData = [
   {
     id: 1,
+    ordernum: 231013001,
     image: require("../../../images/item.png"),
     product: "아메리카노",
-    productlength: 1,
+    productlength: 2,
     location: "클라우드카페 역삼점",
-    price: 3500,
-    other: true,
+    locationname: "서울 강남구 논현로 85길 46 메가존빌딩 1F",
+    price: 3800,
     date: "2023.10.28",
     time: "17:43:44",
+    type: "ICED",
+    density: {
+      opt: "연하게",
+      price: 0,
+    },
+    discount: [
+      {
+        title: "입사쿠폰 아메리카노",
+        price: -3800,
+        count: 1,
+      },
+      {
+        title: "임직원가 적용",
+        price: -3800,
+        count: 1,
+      },
+    ],
+    other: [
+      {
+        id: 1,
+        product: "아메리카노",
+        productlength: 1,
+        price: 3800,
+        type: "HOT",
+        density: {
+          opt: "진하게",
+          price: 500,
+        },
+        discount: [
+          {
+            title: "입사쿠폰 아메리카노",
+            price: -3800,
+            count: 1,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 2,

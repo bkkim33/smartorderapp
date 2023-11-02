@@ -5,9 +5,10 @@ import Button from "../../../components/Button";
 
 function OrderHistoryCard({ Data }) {
   const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
+  const [modalindex, setModalindex] = useState([]);
+  const handleOpen = (index) => {
     setOpen(true);
+    setModalindex(Data[index]);
   };
 
    const handleClose = () => {
@@ -16,7 +17,7 @@ function OrderHistoryCard({ Data }) {
 
   return (
     <>
-      {Data.map((History) => (
+      {Data.map((History, index) => (
         <div key={History.id} className="orderhistory_card mb_20">
           <div className="orderhistory_card_top">
             <div className="orderhistory_card_title">
@@ -25,7 +26,7 @@ function OrderHistoryCard({ Data }) {
               <p className="body3">{History.time}</p>
             </div>
             <div className="ml_10">
-              <Button size="small" none onClick={handleOpen}>
+              <Button size="small" none onClick={() => handleOpen(index)}>
                 상세내역
               </Button>
             </div>
@@ -45,7 +46,7 @@ function OrderHistoryCard({ Data }) {
           </div>
         </div>
       ))}
-      <Modal open={open} handleClose={handleClose} />
+      <Modal open={open} handleClose={handleClose} data={modalindex} />
     </>
   );
 }

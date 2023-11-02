@@ -67,6 +67,94 @@
       background-color: #F8F8F8;
     }
   }
+  &_modal{
+    &_info{
+      display: flex;
+      align-items: center;
+      min-height: 108px;
+      background-color: var(--bgf5);
+      padding: 13px 20px;
+      i{
+        width: 74px;
+        padding-right: 10px;
+      }
+      ul{
+        padding-left: 10px;
+        border-left: 1px solid rgba(0,0,0,0.1);
+        li{
+          @include body3;
+          span{
+            & + span{
+              margin-left: 10px;
+            }
+          }
+          & + li{
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    &_receipt{
+      .receipt_top{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        p{
+          &:first-child{
+            flex: 1;
+          }
+          .body3{
+            color: var(--c77);
+            & + .body3{
+              color: var(--cbb);
+            }
+          }
+        }
+      }
+      .receipt_bottom{
+        .receipt_list{
+          border-bottom: 1px solid var(--ce7);
+          padding: 5px 0;
+          > li{
+            border-top: 1px solid var(--ce7);
+          }
+          &_product{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 10px;
+            p{
+              &:first-child{
+                flex: 1;
+              }
+              strong{
+                display: block;
+                font-weight: 500;
+              }
+              span{
+                display: block;
+              }
+            }
+          }
+          &_discount{
+            > li{
+              border-top: 1px dashed var(--ce7);
+              padding: 10px;
+              display: flex;
+              justify-content: flex-end;
+              align-items: flex-start;
+              p{
+                &:first-child{
+                  flex: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 320px) {
