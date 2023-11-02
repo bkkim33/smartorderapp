@@ -28,8 +28,8 @@ export const Default = (args) => (
   </>
 );
 
-export const PointBg = (args) => (
+export const LineBox = (args) => (
   <>
-    <TextToggle {...args} data={btnlist2} type="poingbg"></TextToggle>
+    <TextToggle {...args} data={btnlist2} type="linebox"></TextToggle>
   </>
 );

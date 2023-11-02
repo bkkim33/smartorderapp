@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "../styles/components/texttoggle.module.scss"
 
 TextToggle.propTypes = {
-  type: PropTypes.oneOf(["","poingbg"]),
+  type: PropTypes.oneOf(["", "linebox"]),
   globalClass: PropTypes.string,
   onClick: PropTypes.func,
 }

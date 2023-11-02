@@ -1,0 +1,139 @@
+.payment{
+  .headline4{
+    color: var(--c11);
+  }
+  .body0 {
+    color: var(--c33);
+  }
+  .coupon{
+    .input_box {
+      height: 50px;
+    }
+  }
+  .togglebtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;    
+    .arrow {
+      display: block;
+      width: 9px;
+      height: 9px;
+      margin-top: 7px;
+      border: 2px solid #111111;
+      border-top: 0;
+      border-right: 0;
+      transform: rotate(-225deg);
+      flex-shrink: 0;
+      @include transition(all);
+    }
+    &.open {
+      .arrow {
+        margin-top: 0;
+        margin-bottom: 5px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  //주문내역
+  .orderlist{
+    &_card{
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      &_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        padding: 8px;
+        background-color: #f3f4f5;
+      }
+      &_info{
+        flex: 1;
+        .title{
+          @include h5(var(--c33));
+        }
+        .price{
+          @include font(var(--c88), 1.4rem, 500);
+        }
+        .hoticed{
+          position: relative;
+          @include body2;
+          text-transform: uppercase;
+          &.hot{
+            color: var(--red-text);
+          }
+          &.iced{
+            color: #3B82F6;
+          }
+          &::after{
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            margin: 0 6px;
+            background-color: var(--cdd);
+          }
+        }
+        .option{
+          @include body2(var(--c77));
+        }
+        .total{
+          @include h4(var(--primary));
+          font-weight: 600;          
+            em {
+              @include font(var(--primary), 1.7rem, 400);
+            }
+        }
+      }
+    }
+  }  
+}
+
+//쿠폰
+.couponlist {
+  &_wrap{
+    padding: 15px;
+    border: 1px solid var(--ce0);
+    &.line{
+      border-color: var(--c00);
+    }
+  }
+  &_total {
+    text-align: right;
+    @include body0(#4C3D3A);
+  }
+  &_card{
+    display: flex;
+    align-items: flex-start;       
+    &_img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      padding: 8px;
+      background-color: #f3f4f5;
+    }
+    &_info{
+      align-self: center;
+      line-height: normal;
+      .issuer{
+        @include h5(var(--c11));
+      }
+      .title{
+        @include body2(var(--c33));
+      }
+      .date{
+        @include body2(var(--c77));
+      }
+    }
+  }
+}

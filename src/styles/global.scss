@@ -43,6 +43,14 @@
       left: 0;
     }
   }
+  &.gray{
+    li{
+      @include body2(var(--c99));
+      &::after{
+        background-color: var(--c99);
+      }
+    }
+  }
 }
 
 //임시 테이블 글로벌 스타일 

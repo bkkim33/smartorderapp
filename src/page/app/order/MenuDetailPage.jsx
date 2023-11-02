@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/AppDefaultLayout";
 import Menuimg from "../../../images/coffee_img.jpg";
 import Button from "../../../components/Button";
@@ -10,6 +11,7 @@ function MenuDetailPage() {
   const toggleHandler = () => {
     setIsOn(!isOn)
   };
+  const navigate = useNavigate();
 
   return (
     <Layout Back Menu Cart Title="주문하기">
@@ -99,7 +101,6 @@ function MenuDetailPage() {
                 <span className="red_text headline2">원</span>
               </p>
             </div>
-           
           </div>
         </div>
         <div className="align inner gap_9">
@@ -111,6 +112,9 @@ function MenuDetailPage() {
           </Button>
           <Button
             size="full"
+            onClick={() => {
+              navigate("/payment");
+            }}
           >
             구매하기
           </Button>

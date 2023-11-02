@@ -39,31 +39,10 @@
   }
 }
 
-.poingbg{
+.linebox{
   flex-wrap: nowrap;
-  row-gap: 0;  
-  .btn {
-    &+.btn {
-      margin-left: 0;
-    }
-    &:first-of-type {
-      border-left: 1px solid var(--cdd);
-    }
-    &:last-of-type {
-      border-right: 1px solid var(--cdd);
-    }
-  }
+  gap: 10px;
   button {
     height: 50px;
-    border: 0;
-    border-top: 1px solid var(--cdd);
-    border-bottom: 1px solid var(--cdd);
-    
-    &.active {
-      border-color: var(--point);
-      background-color: var(--point);
-      font-weight: 700;
-      color: var(--c11);
-    }
   }
 }

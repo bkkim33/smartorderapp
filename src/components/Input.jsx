@@ -7,6 +7,7 @@ Input.propTypes = {
   type: PropTypes.oneOf(["text", "password", "number", "search"]),
   shape: PropTypes.oneOf(["", "round", "line", "none"]),
   width: PropTypes.string,
+  height: PropTypes.oneOf(["", "large"]),
   placeholder: PropTypes.string,
   placeholderColor: PropTypes.oneOf(["", "green"]),
   disabled: PropTypes.bool,
@@ -16,12 +17,15 @@ Input.propTypes = {
   onClick: PropTypes.func,
   counton: PropTypes.bool,
   maxLength: PropTypes.number,
+  readonly: PropTypes.bool,
+  defaultValue: PropTypes.string,
 };
 
 Input.defaultProps = {
   type: "text",
   shape: "",
   width: "",
+  height: "",
   placeholder: "내용을 입력해 주세요.",
   placeholderColor: "",
   disabled: false,
@@ -29,6 +33,8 @@ Input.defaultProps = {
   timer: false,
   onClick: () => {},
   counton: false,
+  readonly: false,
+  defaultValue: "기본 벨류",
 };
 
 export function Input({ onClick, ...others }) {
@@ -36,6 +42,7 @@ export function Input({ onClick, ...others }) {
     type,
     shape,
     width,
+    height,
     placeholder,
     placeholderColor,
     disabled,
@@ -45,6 +52,8 @@ export function Input({ onClick, ...others }) {
     maxLength,
     counton,
     phone,
+    readonly,
+    defaultValue,
   } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
@@ -104,20 +113,21 @@ export function Input({ onClick, ...others }) {
       style={{
         width: width ? width : "100%",
       }}
-      className={`${styles.inputbox} ${styles[shape]} ${
+      className={`${styles.inputbox} ${styles[shape]} ${styles[height]} ${
         disabled ? styles.disabled : ""
       } ${focus ? styles.focus : ""} ${error ? styles.error : ""} ${
         globalClass || ""
-        } `}
+        } ${readonly ? styles.readonly : ""}`}
     >
       <input
         className={`${styles.input} ${styles[placeholderColor]}`}
         type={type}
         onChange={onChange}
-        value={value}
+        value={defaultValue ? defaultValue : value}
         placeholder={placeholder}
         disabled={disabled}
         maxLength={maxLength}
+        readOnly={readonly}
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
       ></input>

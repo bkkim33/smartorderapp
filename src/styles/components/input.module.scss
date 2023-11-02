@@ -103,6 +103,18 @@
 .error {
   border-color: var(--red);
 }
+.readonly{
+  &:hover{
+    border-color: var(--cdd);
+  }
+  &.focus{
+    border-color: var(--cdd);
+  }
+}
+.large{
+  height: 50px;
+  padding: 17px 15px;
+}
 
 // input 기본 스타일은 normal을 기준으로 합니다.
 .input {
@@ -135,6 +147,13 @@
       .certification {
         display: none;
       }
+    }
+  }
+  
+  &:read-only{
+    cursor: default;
+    &::placeholder{
+      color: var(--c99);
     }
   }
 }

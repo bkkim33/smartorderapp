@@ -33,10 +33,11 @@
   }
 
   &_con {
-    min-width: 200px;
+    // min-width: 200px;
     max-width: 600px;
-    padding: 10px 14px;
-    background-color: var(--primary);
+    padding: 10px 12px;
+    background-color: var(--blue);
+    border-radius: 0;
     opacity: 1;
     @include body3(var(--cff));
 
@@ -54,7 +55,7 @@
   }
 
   &_arrow {
-    color: var(--primary-b);
+    color: var(--blue);
     font-size: 1rem;
   }
 
@@ -77,4 +78,8 @@
   //     }
   //   }
   // }
+}
+
+.MuiTooltip-popper[data-popper-placement*="bottom"] .css-1hjrgzd-MuiTooltip-tooltip {
+  margin-top: 19px;
 }

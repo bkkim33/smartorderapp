@@ -44,6 +44,7 @@ MuiTooltip.defaultProps = {
   iconSize: {
     width: 20,
     height: 20,
+    fill: "#3A3A3A",
   },
   // onClick: () => {},
   // type: "text",
@@ -87,7 +88,7 @@ export function MuiTooltip({ children, ...others }) {
           arrow
         >
           <button>
-            <Icons.Question width={icon.width} height={icon.height} />
+            <Icons.Question width={icon.width} height={icon.height} fill={icon.fill} />
           </button>
         </Tooltip>
       </div>
