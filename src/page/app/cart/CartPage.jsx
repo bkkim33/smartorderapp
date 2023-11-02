@@ -65,7 +65,9 @@ const [cartItems, setCartItems] = useState(initialCartItems);
 // 전체 선택
 const [selectAll, setSelectAll] = useState(false);
 
-// 카운터시 계산
+// 카운터시 계산 
+// ************ 대리님 확인 필요 부분 ************
+// <Count/> 사용 시 데이터 값이 <Count/> 안에 있는 button->onClick에 변수가 읽혀야 하는데 되지 않음 
 const handleItemQuantity = (id, value) => {
   const updatedCart = cartItems.map(item =>
     item.id === id ? { ...item, quantity: Math.max(1, item.quantity + value) } : item
@@ -120,9 +122,9 @@ const navigate = useNavigate();
       <div className="cartcontainer">
         <FormGroup vertical>
           <div className="location inner align">
-            <div className="lft align start">
+            <div className="align start">
               <Icons.Location width={20} height={20} fill="#495EEC" />
-              <p className="ml_5">
+              <p className="location_text ml_5 ">
                 <b>{selectedLocation}</b>의 메뉴입니다.
               </p>
             </div>
@@ -130,7 +132,6 @@ const navigate = useNavigate();
               onClick={handleDropdownClick}
               size="xsmall"
               btntype="change"
-              globalClass="rgt"
             >
               변경
             </Button>
@@ -147,8 +148,8 @@ const navigate = useNavigate();
           <hr />
             <div className="checkout inner align">
               <Checkbox 
-                id={selectAll} 
-                className="selectall lft" 
+                id={selectAll.toString()} 
+                className="selectall" 
                 onChange={handleSelectAll} 
                 checked={selectAll}
                 >
@@ -157,7 +158,7 @@ const navigate = useNavigate();
               <Button 
                 onClick={handleDeleteSelected} 
                 none 
-                globalClass="rgt select"
+                globalClass="deleteselect pd_0"
                 >
                 선택삭제
               </Button>
@@ -167,8 +168,8 @@ const navigate = useNavigate();
             {cartItems.map(item => (
               <div key={item.id} className="menu align column">
                 <div className="menu_container">
-                  <div className="menu_card align top">
-                    <div className="menu_card_left align top start mb_30">
+                  <div className="menu_card align mb_30">
+                    <div className="menu_card_left align top start">
                       {cartItems.length > 0 && (
                         <Checkbox
                           id={item.id} 
@@ -203,9 +204,9 @@ const navigate = useNavigate();
                         휴지통
                       </Button>
                       <Button 
-                        onClick={() => {}} 
+                        onClick={() => navigate("/order")}
                         none 
-                        globalClass="pd_0 bottom"
+                        globalClass="pd_0"
                       >
                         옵션변경
                       </Button>
@@ -214,8 +215,10 @@ const navigate = useNavigate();
                 </div>
                 <div className="menu_bottom align pl_30">
                   <Count
-                    handleItemQuantity={(value) => handleItemQuantity(item.id, value)}
-                    count={item.quantity}
+                    // onClick={(value) => handleItemQuantity(item.id, value)}
+                    // handleItemQuantity={(value) => handleItemQuantity(item.id, value)}
+                    onClick={() => {}}
+                    count={item.quantity} size="small"
                   />
                   <p className="item_total">
                     {Number(item.price * item.quantity).toLocaleString()}
@@ -227,7 +230,7 @@ const navigate = useNavigate();
           {isCartEmpty && (
             <NoData globalClass="mt_80 mb_30 align item" txt={("장바구니에 담겨진\n메뉴가 없습니다.")} />
           )}
-            <Button onClick={() => {}} size="full" line>
+            <Button onClick={() => {navigate("/main");}} size="full" line>
               {isCartEmpty ? "메뉴 담으러 가기" : "메뉴 더 담기"}
             </Button>
           </div>
@@ -238,7 +241,7 @@ const navigate = useNavigate();
                 <dt>총 주문금액</dt>
                 <dd>{totalAmount.toLocaleString()}<span className="ml_2">원</span></dd>
               </dl>
-              <Button onClick={() => {navigate("/order");}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
+              <Button onClick={() => {}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
             </div>
           )}
         </FormGroup>

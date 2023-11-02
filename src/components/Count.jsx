@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import styles from "../styles/components/count.module.scss";
 
 Count.propTypes = {
-  handleItemQuantity: PropTypes.func.isRequired,
-  count: PropTypes.number,
+  // count: PropTypes.string,
   disabled: PropTypes.bool,
   size: PropTypes.oneOf(["", "small"]),
 };
@@ -16,18 +15,19 @@ Count.defaultProps = {
   size: "",
 };
 
-export function Count({ handleItemQuantity, count, ...others }) {
+export function Count({ count, ...others }) {
   const { disabled, size } = others;
+  const [currentCount, setCount] = useState(count);
 
   // 진현주 - 코드 간소화 
   const handleMinus = () => {
-    if (count > 0) {
-      handleItemQuantity(-1); 
+    if (currentCount > 0) {
+      setCount(currentCount - 1);
     }
   };
 
   const handlePlus = () => {
-    handleItemQuantity(1); 
+    setCount(currentCount + 1);
   };
 
   return (
@@ -35,9 +35,9 @@ export function Count({ handleItemQuantity, count, ...others }) {
       <button
         className={`${styles.btncount} ${styles.minus}`}
         onClick={handleMinus}
-        disabled={disabled || count === 0}
+        disabled={disabled || currentCount === 0}
       />
-      <input name="" title="상품 개수" value={count} readOnly />
+      <input name="" title="상품 개수" value={currentCount} readOnly />
       <button
         className={`${styles.btncount} ${styles.plus}`}
         onClick={handlePlus}
