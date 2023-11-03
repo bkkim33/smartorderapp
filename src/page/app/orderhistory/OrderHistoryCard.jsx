@@ -38,7 +38,7 @@ function OrderHistoryCard({ Data }) {
             <div>
               <p className="headline5">
                 {History.product} {History.productlength}개{" "}
-                {History.other === true ? "외" : ""}
+                {History.other ? "외" : ""}
               </p>
               <p className="mt_8 body2">{History.location}</p>
               <p className="mt_15 body0">{History.price.toLocaleString()}원</p>
