@@ -34,7 +34,6 @@ Input.defaultProps = {
   onClick: () => {},
   counton: false,
   readonly: false,
-  defaultValue: "기본 벨류",
 };
 
 export function Input({ onClick, ...others }) {
