@@ -1,0 +1,19 @@
+.ordercomplete {
+  &_txt {
+    @include font(var(--c11), 1.8rem, 700);
+  }
+
+  &_num {
+    @include font(var(--c11), 3.6rem, 700);
+  }
+
+  &_desc {
+    @include body0(var(--c55));
+    text-align: center;
+    line-height: 150%;
+  }
+
+  &_btns {
+    gap: 13px;
+  }
+}
