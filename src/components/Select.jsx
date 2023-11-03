@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RS from "react-select";
+import RS, { components } from "react-select";
 import PropTypes from "prop-types";
 
 Select.propTypes = {
@@ -27,6 +27,10 @@ Select.defaultProps = {
   defaultValue: null,
 };
 
+const Input = (props) => (
+  <components.Input {...props} readOnly={props.selectProps.isReadOnly} />
+);
+
 export function Select({ options, ...others }) {
   const { round, width, placeholder, disabled, multi, defaultValue } = others;
   const [selectedOption, setSelectedOption] = useState(null);
@@ -40,6 +44,7 @@ export function Select({ options, ...others }) {
     >
       <RS
         unstyled
+        components={{ Input }}
         isSearchable
         isMulti={multi}
         className={`${"select"} ${round || ""}`}
@@ -48,6 +53,7 @@ export function Select({ options, ...others }) {
         defaultValue={options[defaultValue] || selectedOption}
         onChange={setSelectedOption}
         options={options}
+        isReadOnly={true}
         isDisabled={disabled}
       />
     </div>

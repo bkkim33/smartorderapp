@@ -183,10 +183,27 @@
           &_sum{
             display: flex;
             padding: 10px;
+            justify-content: flex-start;
+            align-items: flex-start;
             p{
+              &.body2{
+                &.red{
+                  color: var(--red);
+                }
+                
+              }
+              &:first-child{ 
+                flex: 1;
+              }
               strong{
                 font-weight: 500;
                 color: var(--c11);
+                 &.body2{
+                  &.red{
+                    color: var(--red);
+                  }
+                  
+                }
               }
             }
           }

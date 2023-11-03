@@ -51,6 +51,21 @@ const OrderHistoryData = [
           },
         ],
       },
+      {
+        id: 2,
+        product: "플레인요거트스무디",
+        productlength: 1,
+        price: 5000,
+        type: "ICED Only",
+        density: null,
+        discount: [
+          {
+            title: "입사쿠폰 모든음료",
+            percent: 100,
+            count: 1,
+          },
+        ],
+      },
     ],
   },
   {

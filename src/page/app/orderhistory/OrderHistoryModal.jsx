@@ -6,11 +6,19 @@ import Button from "../../../components/Button";
 import { Icons } from "../../../components/Icon";
 
 function OrderHistoryModal({ open, handleClose, data }) {
-  const Sum =
-    (data.price * data.productlength) +
-    (data.other?.price * data.other?.productlength);
-  const density = data.density;
-  console.log(density);
+  const productprice = parseInt(data.price * data.productlength);
+  const otherprice = [data.other?.map((other) =>
+    parseInt(other.price * other.productlength),
+  )]; 
+  
+  console.log(otherprice);
+  // const otherpricesum = parseInt(+otherprice);
+  const otherpricesum = otherprice.reduce((a, b, i) => {
+    console.log(a, b, i);
+    return parseInt(a + b);
+  }, 0);
+  console.log(otherpricesum);
+  const pricesum = productprice + otherpricesum;
   return (
     <>
       <MuiModal
@@ -129,7 +137,7 @@ function OrderHistoryModal({ open, handleClose, data }) {
                       </span>
                     </p>
                     <p className="body2">
-                      {other.price * other.productlength}원
+                      {(other.price * other.productlength).toLocaleString()}원
                     </p>
                   </div>
                   <ul className="receipt_list_discount">
@@ -161,7 +169,23 @@ function OrderHistoryModal({ open, handleClose, data }) {
                   <p>
                     <strong className="body2">합계금액</strong>
                   </p>
-                  <p>{Sum}</p>
+                  <p className="body2">{pricesum.toLocaleString()}원</p>
+                </div>
+              </li>
+              <li>
+                <div className="receipt_list_sum">
+                  <p>
+                    <strong className="body2 red">총 할인</strong>
+                  </p>
+                  {/* <p className="body2 red">{Sum}</p> */}
+                </div>
+              </li>
+              <li>
+                <div className="receipt_list_sum mt_5">
+                  <p>
+                    <strong className="headline5">합계금액</strong>
+                  </p>
+                  {/* <p className="headline5">{Sum}</p> */}
                 </div>
               </li>
             </ul>
