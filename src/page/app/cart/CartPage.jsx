@@ -142,7 +142,7 @@ const navigate = useNavigate();
   return (
     <Layout Back Title="장바구니">
       <div className="cartcontainer ">
-        <FormGroup vertical className="align column">
+        <FormGroup vertical>
           <div className="location inner align">
             <div className="align start">
               <Icons.Location width={20} height={20} fill="#495EEC" />
