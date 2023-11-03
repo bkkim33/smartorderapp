@@ -15,7 +15,7 @@ Count.defaultProps = {
   size: "",
 };
 
-export function Count({ count, ...others }) {
+export function Count({ count, handleItemQuantity, ...others }) {
   const { disabled, size } = others;
   const [currentCount, setCount] = useState(count);
 
@@ -23,11 +23,13 @@ export function Count({ count, ...others }) {
   const handleMinus = () => {
     if (currentCount > 0) {
       setCount(currentCount - 1);
+      handleItemQuantity ? handleItemQuantity(-1) : setCount(currentCount - 1);
     }
   };
 
   const handlePlus = () => {
     setCount(currentCount + 1);
+    handleItemQuantity ? handleItemQuantity(1) : setCount(currentCount + 1);
   };
 
   return (

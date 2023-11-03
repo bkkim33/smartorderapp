@@ -57,6 +57,30 @@ const initialCartItems = [{
     image: require("../../../images/item.png"),
     selected: false
   },
+  {
+    id: 4,
+    name: '카페라떼',
+    price: 4500,
+    quantity: 1,
+    image: require("../../../images/item01.png"),
+    selected: false
+  },
+  {
+    id: 5,
+    name: '카페모카',
+    price: 5000,
+    quantity: 1,
+    image: require("../../../images/item.png"),
+    selected: false
+  },
+  // {
+  //   id: 6,
+  //   name: '카페모카',
+  //   price: 5000,
+  //   quantity: 1,
+  //   image: require("../../../images/item.png"),
+  //   selected: false
+  // },
 ];
 
 // 메뉴 데이터 넣는거 
@@ -66,8 +90,6 @@ const [cartItems, setCartItems] = useState(initialCartItems);
 const [selectAll, setSelectAll] = useState(false);
 
 // 카운터시 계산 
-// ************ 대리님 확인 필요 부분 ************
-// <Count/> 사용 시 데이터 값이 <Count/> 안에 있는 button->onClick에 변수가 읽혀야 하는데 되지 않음 
 const handleItemQuantity = (id, value) => {
   const updatedCart = cartItems.map(item =>
     item.id === id ? { ...item, quantity: Math.max(1, item.quantity + value) } : item
@@ -119,8 +141,8 @@ const navigate = useNavigate();
 
   return (
     <Layout Back Title="장바구니">
-      <div className="cartcontainer">
-        <FormGroup vertical>
+      <div className="cartcontainer ">
+        <FormGroup vertical className="align column">
           <div className="location inner align">
             <div className="align start">
               <Icons.Location width={20} height={20} fill="#495EEC" />
@@ -149,11 +171,10 @@ const navigate = useNavigate();
             <div className="checkout inner align">
               <Checkbox 
                 id={selectAll.toString()} 
-                className="selectall" 
                 onChange={handleSelectAll} 
                 checked={selectAll}
+                txt={"전체 선택"}
                 >
-                전체 선택
               </Checkbox>
               <Button 
                 onClick={handleDeleteSelected} 
@@ -172,7 +193,7 @@ const navigate = useNavigate();
                     <div className="menu_card_left align top start">
                       {cartItems.length > 0 && (
                         <Checkbox
-                          id={item.id} 
+                          id={item.id.toString()}
                           name={item.name} 
                           checked={item.selected} 
                           onChange={() => handleSingleCheck(item.id)}
@@ -215,10 +236,8 @@ const navigate = useNavigate();
                 </div>
                 <div className="menu_bottom align pl_30">
                   <Count
-                    // onClick={(value) => handleItemQuantity(item.id, value)}
-                    // handleItemQuantity={(value) => handleItemQuantity(item.id, value)}
-                    onClick={() => {}}
                     count={item.quantity} size="small"
+                    handleItemQuantity={(value) => handleItemQuantity(item.id, value)} 
                   />
                   <p className="item_total">
                     {Number(item.price * item.quantity).toLocaleString()}
@@ -234,14 +253,16 @@ const navigate = useNavigate();
               {isCartEmpty ? "메뉴 담으러 가기" : "메뉴 더 담기"}
             </Button>
           </div>
-          {cartItems.length > 0 && ( <hr /> )}
           {!isCartEmpty && (
-            <div className="cartorder">
-              <dl className="align mb_30">
-                <dt>총 주문금액</dt>
-                <dd>{totalAmount.toLocaleString()}<span className="ml_2">원</span></dd>
-              </dl>
-              <Button onClick={() => {}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
+            <div className="cartorder_box">
+              {/* {cartItems.length > 0 && ( <hr /> )} */}
+              <div className="cartorder">
+                <dl className="align mb_30">
+                  <dt>총 주문금액</dt>
+                  <dd>{totalAmount.toLocaleString()}<span className="ml_2">원</span></dd>
+                </dl>
+                <Button onClick={() => {}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
+              </div>
             </div>
           )}
         </FormGroup>
