@@ -41,11 +41,13 @@
   // align 영역 내 좌우정렬 (좌우 정렬 아닐땐 사용하지 않음)
   .lft {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     flex: 1;
   }
   .rgt {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     flex: 1;
   }

@@ -26,30 +26,27 @@ const OrderHistoryData = [
     discount: [
       {
         title: "입사쿠폰 아메리카노",
-        price: -3800,
+        percent: 100,
         count: 1,
       },
       {
         title: "임직원가 적용",
-        price: -3800,
+        percent: 73.95,
         count: 1,
       },
     ],
     other: [
       {
         id: 1,
-        product: "아메리카노",
+        product: "플레인요거트스무디",
         productlength: 1,
-        price: 3800,
-        type: "HOT",
-        density: {
-          opt: "진하게",
-          price: 500,
-        },
+        price: 4200,
+        type: "ICED Only",
+        density: null,
         discount: [
           {
-            title: "입사쿠폰 아메리카노",
-            price: -3800,
+            title: "입사쿠폰 모든음료",
+            percent: 100,
             count: 1,
           },
         ],

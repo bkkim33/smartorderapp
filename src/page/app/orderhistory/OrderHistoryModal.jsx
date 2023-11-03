@@ -6,7 +6,9 @@ import Button from "../../../components/Button";
 import { Icons } from "../../../components/Icon";
 
 function OrderHistoryModal({ open, handleClose, data }) {
-  
+  const Sum =
+    (data.price * data.productlength) +
+    (data.other?.price * data.other?.productlength);
   const density = data.density;
   console.log(density);
   return (
@@ -57,6 +59,9 @@ function OrderHistoryModal({ open, handleClose, data }) {
             </p>
           </div>
           <div className="receipt_bottom">
+            <i className="bg_icon">
+              <Icons.LogoIcon />
+            </i>
             <ul className="receipt_list">
               <li>
                 <div className="receipt_list_product">
@@ -64,23 +69,40 @@ function OrderHistoryModal({ open, handleClose, data }) {
                     <strong className="body2">
                       {data.product} {data.productlength}개
                     </strong>
-                    <span className="mt_5">
-                      <em>{data.type}</em> / <em>{data.density?.opt}</em>
+                    <span className="mt_5 body2">
+                      <em>{data.type} </em>
+                      <em>
+                        {data.density && (
+                          <>
+                            / {data.density?.opt}
+                            (+
+                            {data.density?.price > 0 && data.density?.price})
+                          </>
+                        )}
+                      </em>
                     </span>
                   </p>
-                  <p>{data.price * data.productlength}</p>
+                  <p className="body2">
+                    {(data.price * data.productlength).toLocaleString()}원
+                  </p>
                 </div>
                 <ul className="receipt_list_discount">
                   {data.discount?.map((discount, index) => (
                     <li key={index}>
-                      <p className="red">
+                      <p className="body2">
                         <span>[할인]</span>
                         <span>
                           {discount.title}
                           {discount.count}
                         </span>
                       </p>
-                      <p className="red">{discount.price}</p>
+                      <p className="body2">
+                        -
+                        {Math.round(
+                          data.price * discount.count * (discount.percent / 100)
+                        ).toLocaleString()}
+                        원
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -92,28 +114,56 @@ function OrderHistoryModal({ open, handleClose, data }) {
                       <strong className="body2">
                         {other.product} {other.productlength}개
                       </strong>
-                      <span className="mt_5">
-                        <em>{other.type}</em> / <em>{other.density?.opt} (+{other.density?.price > 0 && other.density?.price})</em>
+                      <span className="mt_5 body2">
+                        <em>{other.type}</em>
+                        <em>
+                          {other.density && (
+                            <>
+                              / {other.density?.opt}
+                              (+
+                              {other.density?.price > 0 && other.density?.price}
+                              )
+                            </>
+                          )}
+                        </em>
                       </span>
                     </p>
-                    <p>{other.price * other.productlength}</p>
+                    <p className="body2">
+                      {other.price * other.productlength}원
+                    </p>
                   </div>
                   <ul className="receipt_list_discount">
                     {other.discount?.map((discount, index) => (
                       <li key={index}>
-                        <p>
+                        <p className="body2">
                           <span>[할인]</span>
                           <span>
                             {discount.title}
                             {discount.count}
                           </span>
                         </p>
-                        <p>{discount.price}</p>
+                        <p className="body2">
+                          -
+                          {Math.round(
+                            other.price *
+                              discount.count *
+                              (discount.percent / 100)
+                          ).toLocaleString()}
+                          원
+                        </p>
                       </li>
                     ))}
                   </ul>
                 </li>
               ))}
+              <li>
+                <div className="receipt_list_sum">
+                  <p>
+                    <strong className="body2">합계금액</strong>
+                  </p>
+                  <p>{Sum}</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
