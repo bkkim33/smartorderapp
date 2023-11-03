@@ -152,9 +152,48 @@ function PaymentPage() {
           </div>
         </div>
         <hr />
-        <div className="inner">
+        <div className="inner payment_info">
           <p className="headline4 mb_20">결제정보</p>
-
+          <ul className="payment_info_list">
+            <li className="align mb_20">
+              <p>메뉴금액</p>
+              <p><span>22,200</span> 원</p>
+            </li>
+            <li>
+              <div className="align mb_14">
+                <p className="align start red_text">
+                  할인금액
+                  <button className={`togglebtn ml_4 ${isOpen ? "open" : ""}`} onClick={toggleHandler}><i className="arrow red"></i></button>
+                </p>
+                <p className="align end red_text"><span>- 17,210</span> 원</p>
+              </div>
+              {isOpen ?
+                <ul className="discount">
+                  <li>
+                    <p className="red_text">쿠폰할인</p>
+                    <p className="red_text"><span>9,000</span> 원</p>
+                  </li>
+                  <li className="detail">
+                    <p>[입사환영] 아메리카노 1잔</p>
+                    <p><span>3,800</span> 원</p>
+                  </li>
+                  <li className="detail">
+                    <p>[입사환영] 모든음료 1잔</p>
+                    <p><span>5,200</span> 원</p>
+                  </li>
+                  <li>
+                    <p className="red_text">임직원할인</p>
+                    <p className="red_text"><span>8,210</span> 원</p>
+                  </li>
+                </ul>
+                : ""
+              }             
+            </li>
+          </ul>
+          <div className="payment_info_total align">
+            <p className="headline3">총 결제금액</p>
+            <p className="red_text headline1"><span className="pr_2">4,990</span>원</p>
+          </div>
         </div>
         <hr />
         <div className="inner">
@@ -167,9 +206,9 @@ function PaymentPage() {
         </div>
         <hr />
         <div className="inner">
-          <Checkbox>
-            개인정보 수집 및 이용동의            
-          </Checkbox>
+          <Checkbox
+            txt={"개인정보 수집 및 이용동의"}
+          />
           <Button            
             size="full"
             globalClass="mt_20"

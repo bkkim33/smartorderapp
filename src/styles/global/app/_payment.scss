@@ -19,22 +19,26 @@
     .arrow {
       display: block;
       width: 9px;
-      height: 9px;
-      margin-top: 7px;
+      height: 9px;      
       border: 2px solid #111111;
       border-top: 0;
       border-right: 0;
-      transform: rotate(-225deg);
+      margin-bottom: 5px;
+      transform: rotate(-45deg);
       flex-shrink: 0;
       @include transition(all);
+      &.red {
+        border-color: var(--red-text);
+      }
     }
     &.open {
       .arrow {
-        margin-top: 0;
-        margin-bottom: 5px;
-        transform: rotate(-45deg);
+        margin-top: 7px;
+        margin-bottom: 0;
+        transform: rotate(-225deg);
       }
     }
+    
   }
   //주문내역
   .orderlist{
@@ -93,11 +97,76 @@
         }
       }
     }
-  }  
+  }
+  &_info{
+    &_list{
+      li{
+        p {
+          @include body2(var(--c33));
+          span {
+            font-weight: 500;
+          }
+          &.red_text{
+            color: var(--red-text);
+          }
+        }
+        .togglebtn{
+          width: 14px;
+          height: 14px;
+          .arrow{
+            width: 7px;
+            height: 7px;
+            border-width: 1px;
+            margin-bottom: 4px;
+          }
+          &.open{
+            .arrow{
+              margin-top: 5px;
+            }
+          }
+        }
+      } 
+      .discount{
+        padding: 14px 0 20px;
+        border-top: 1px dashed var(--ce0);
+        > li{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          &.detail{
+            position: relative;
+            padding-left: 18px;
+            &::before{
+              @include before_after;
+              position: absolute;
+              left: 4px;
+              top: 4px;
+              width: 6px;
+              height: 6px;
+              border: 1px solid var(--c33);
+              border-top: 0;
+              border-right: 0;
+            }
+          }
+        }
+      }
+    }
+    &_total{
+      padding-top: 20px;
+      border-top: 1px solid var(--cee);
+      .red_text{
+        color: var(--red-text);
+      }
+    }    
+  } 
 }
 
 //쿠폰
-.couponlist {
+.couponlist{
   &_wrap{
     padding: 15px;
     border: 1px solid var(--ce0);
@@ -112,7 +181,7 @@
   &_card{
     display: flex;
     align-items: flex-start;       
-    &_img {
+    &_img{
       display: flex;
       align-items: center;
       justify-content: center;

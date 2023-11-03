@@ -101,9 +101,7 @@ function LoginPage() {
             </div>
             <div className="mt_20">
               <FormGroup>
-                <Checkbox name="contact00" id="check1" value="Login">
-                  로그인 상태 유지
-                </Checkbox>
+                <Checkbox name="contact00" id="check1" value="Login" txt={"로그인 상태 유지"} />
               </FormGroup>
             </div>
           </div>
