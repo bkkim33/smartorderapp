@@ -261,7 +261,7 @@ const navigate = useNavigate();
                   <dt>총 주문금액</dt>
                   <dd>{totalAmount.toLocaleString()}<span className="ml_2">원</span></dd>
                 </dl>
-                <Button onClick={() => {}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
+                <Button onClick={() => {navigate("/payment");}} size="full">총 <span>{totalQuantity}</span>개 주문하기</Button>
               </div>
             </div>
           )}

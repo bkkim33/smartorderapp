@@ -2,10 +2,12 @@ import React , { useState } from "react";
 import Layout from '../../../layout/AppDefaultLayout'
 import { Icons } from "../../../components/Icon";
 import { Button } from "../../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 function OrderComplete( ) {
 
   const [number, setNumber] = useState(2310); 
+  const navigate = useNavigate();
 
   return (
     <Layout Title="주문완료" Close>
@@ -23,8 +25,8 @@ function OrderComplete( ) {
           </p>
         </div>
         <div className="ordercomplete_btns inner align">
-          <Button onClick={() => {}} size="full" btntype="gray">홈</Button>
-          <Button onClick={() => {}} size="full">주문내역 보기</Button>
+          <Button onClick={() => {navigate("/main");}} size="full" btntype="gray">홈</Button>
+          <Button onClick={() => {navigate("/order/history");}} size="full">주문내역 보기</Button>
         </div>
       </div>
     </Layout>
