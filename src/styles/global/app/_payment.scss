@@ -67,7 +67,6 @@
           @include font(var(--c88), 1.4rem, 500);
         }
         .hoticed{
-          position: relative;
           @include body2;
           text-transform: uppercase;
           &.hot{
@@ -76,7 +75,12 @@
           &.iced{
             color: #3B82F6;
           }
-          &::after{
+          
+        }
+        .option{
+          position: relative;
+          @include body2(var(--c77));
+          &::before{
             content: '';
             display: inline-block;
             width: 1px;
@@ -84,9 +88,6 @@
             margin: 0 6px;
             background-color: var(--cdd);
           }
-        }
-        .option{
-          @include body2(var(--c77));
         }
         .total{
           @include h4(var(--primary));
@@ -147,7 +148,7 @@
               top: 4px;
               width: 6px;
               height: 6px;
-              border: 1px solid var(--c33);
+              border: 1px solid var(--red);
               border-top: 0;
               border-right: 0;
             }

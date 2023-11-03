@@ -105,8 +105,9 @@ function OrderHistoryModal({ open, handleClose, data }) {
                         {data.density && (
                           <>
                             / {data.density?.opt}
-                            (+
-                            {data.density?.price > 0 && data.density?.price})
+                            {data.density?.price > 0 && (
+                              <>(+{data.density?.price})</>
+                            )}
                           </>
                         )}
                       </em>
@@ -161,9 +162,9 @@ function OrderHistoryModal({ open, handleClose, data }) {
                           {other.density && (
                             <>
                               / {other.density?.opt}
-                              (+
-                              {other.density?.price > 0 && other.density?.price}
-                              )
+                              {other.density?.price > 0 && (
+                                <>(+{other.density?.price})</>
+                              )}
                             </>
                           )}
                         </em>
