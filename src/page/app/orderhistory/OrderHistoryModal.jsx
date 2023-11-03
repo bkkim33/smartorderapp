@@ -6,19 +6,41 @@ import Button from "../../../components/Button";
 import { Icons } from "../../../components/Icon";
 
 function OrderHistoryModal({ open, handleClose, data }) {
-  const productprice = parseInt(data.price * data.productlength);
-  const otherprice = [data.other?.map((other) =>
-    parseInt(other.price * other.productlength),
-  )]; 
-  
-  console.log(otherprice);
-  // const otherpricesum = parseInt(+otherprice);
-  const otherpricesum = otherprice.reduce((a, b, i) => {
-    console.log(a, b, i);
-    return parseInt(a + b);
-  }, 0);
-  console.log(otherpricesum);
-  const pricesum = productprice + otherpricesum;
+  const productprice = parseInt(data.price * data.productlength + data.density?.price);
+  const productdiscount = data.discount ? data.discount?.reduce(
+    (total, currentvalue) =>
+      (total = total + parseInt(data.price * currentvalue.count * (currentvalue.percent / 100))),0
+  ) : 0;
+  const otherprice = data.other ? data.other?.reduce(
+    (total, currentvalue) =>
+      (total =
+        total + parseInt(currentvalue.price * currentvalue.productlength)),0
+  ) : 0;
+  const otherdiscount = data.other
+    ? data.other?.reduce(
+        (total, currentvalue) =>
+          (total =
+            total +
+            parseInt(
+              currentvalue.price *
+                currentvalue.discount?.reduce(
+                  (total, currentvalue) =>
+                    (total =
+                      total +
+                      parseInt(
+                        currentvalue.count * (currentvalue.percent / 100)
+                      )),
+                  0
+                )
+            )),
+        0
+      )
+    : 0;
+
+  const pricesum = productprice + otherprice;
+  const discountsum = productdiscount + otherdiscount;
+  const Sum = pricesum - discountsum;
+  console.log(pricesum);
   return (
     <>
       <MuiModal
@@ -91,7 +113,18 @@ function OrderHistoryModal({ open, handleClose, data }) {
                     </span>
                   </p>
                   <p className="body2">
-                    {(data.price * data.productlength).toLocaleString()}원
+                    {data.density?.price && (
+                      <>
+                        {(
+                          data.price * data.productlength +
+                          data.density?.price
+                        ).toLocaleString()}
+                      </>
+                    )}
+                    {!data.density?.price && (
+                      <>{(data.price * data.productlength).toLocaleString()}</>
+                    )}
+                    원
                   </p>
                 </div>
                 <ul className="receipt_list_discount">
@@ -137,7 +170,20 @@ function OrderHistoryModal({ open, handleClose, data }) {
                       </span>
                     </p>
                     <p className="body2">
-                      {(other.price * other.productlength).toLocaleString()}원
+                      {other.density?.price && (
+                        <>
+                          {(
+                            other.price * other.productlength +
+                            other.density?.price
+                          ).toLocaleString()}
+                        </>
+                      )}
+                      {!other.density?.price && (
+                        <>
+                          {(other.price * other.productlength).toLocaleString()}
+                        </>
+                      )}
+                      원
                     </p>
                   </div>
                   <ul className="receipt_list_discount">
@@ -171,25 +217,57 @@ function OrderHistoryModal({ open, handleClose, data }) {
                   </p>
                   <p className="body2">{pricesum.toLocaleString()}원</p>
                 </div>
-              </li>
-              <li>
-                <div className="receipt_list_sum">
-                  <p>
-                    <strong className="body2 red">총 할인</strong>
-                  </p>
-                  {/* <p className="body2 red">{Sum}</p> */}
-                </div>
+                <ul className="receipt_list_sum_discount">
+                  <li>
+                    <p>
+                      <strong className="body2 red">총 할인</strong>
+                    </p>
+                    <p className="body2 red">
+                      -{discountsum.toLocaleString()}원
+                    </p>
+                  </li>
+                </ul>
               </li>
               <li>
                 <div className="receipt_list_sum mt_5">
                   <p>
                     <strong className="headline5">합계금액</strong>
                   </p>
-                  {/* <p className="headline5">{Sum}</p> */}
+                  <p className="headline5">{Sum.toLocaleString()}원</p>
                 </div>
               </li>
             </ul>
           </div>
+        </div>
+        <div className="orderhistory_modal_toss mt_20 mb_40">
+          <dl>
+            <dt>판매자</dt>
+            <dd>클라우드카페 역삼1호점</dd>
+          </dl>
+          <dl>
+            <dt>카드번호</dt>
+            <dd>12345678****123*</dd>
+          </dl>
+          <dl>
+            <dt>결제수단</dt>
+            <dd>하나카드</dd>
+          </dl>
+          <dl>
+            <dt>할부개월</dt>
+            <dd>일시불</dd>
+          </dl>
+          <dl>
+            <dt>결제금액</dt>
+            <dd>5,270원</dd>
+          </dl>
+          <dl>
+            <dt>승인번호</dt>
+            <dd>12345678</dd>
+          </dl>
+          <dl>
+            <dt>승인일시</dt>
+            <dd>2023-10-09 09:00:52</dd>
+          </dl>
         </div>
       </MuiModal>
     </>
