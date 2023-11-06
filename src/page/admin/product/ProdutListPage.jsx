@@ -4,7 +4,7 @@ import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import Textarea from "../../../components/Textarea";
-import MuiTooltip from "../../../components/MuiTooltip";
+import Table from "../../../components/Table";
 import MuiTable from "../../../components/MuiTable";
 import MuiModal from "../../../components/MuiModal";
 import FormGroup from "../../../components/FormGroup";
@@ -98,7 +98,29 @@ function ProdutListPage() {
         <h1 className="headline2">상품관리</h1>
       </div>
       <ContentBox top>
-        
+        <Table
+          colgroup={
+            <>
+              <col width="20%" />
+              <col />
+            </>
+          }
+        >
+          <tr>
+            <th>카테고리명</th>
+            <td>
+              
+            </td>
+          </tr>
+          <tr>
+            <th>구성</th>
+            <td />
+          </tr>
+          <tr>
+            <th>합니다.</th>
+            <td />
+          </tr>
+        </Table>
       </ContentBox>
       <ContentBox>
         <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
