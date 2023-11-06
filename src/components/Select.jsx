@@ -38,7 +38,7 @@ export function Select({ options, ...others }) {
   return (
     <div
       style={{
-        width: width ? width : "100%",
+        minWidth: width ? width : "100%",
         // width: "max-content",
       }}
     >

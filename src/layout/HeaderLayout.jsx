@@ -19,6 +19,7 @@ function HeaderLayout() {
           <span className="mt_15">로그아웃</span>
         </button>
       </div>
+
       <SideMenu globalstyle="mt_30" />
     </header>
   );

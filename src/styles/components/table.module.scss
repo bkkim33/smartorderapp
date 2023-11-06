@@ -1,29 +1,29 @@
-@import'../common/variables';
+@import "../common/variables";
 
-.tablebox{
-    table{
-        width: 100%;
-        border-top: 1px solid var(--ce7);
-        th {
-            padding: 10px;
-            background-color: var(--c44);
-            border-bottom: 1px solid var(--c99);
-            @include body2(var(--cff));
-            font-weight: 500;
-            text-align: left;
-        }
-        tr {
-            &:hover{
-                td{
-                    background-color: #fafbfe;
-                }
-            }
-        }
-        td {
-            padding: 10px;
-            @include body3(var(--c33));
-            font-size: 1.4rem;
-            border-bottom: 1px solid var(--ce7);
-        }
+.tablebox {
+  table {
+    width: 100%;
+    border-top: 1px solid var(--ce7);
+    th {
+      padding: 10px;
+      background-color: var(--c44);
+      border-bottom: 1px solid var(--c99);
+      @include body2(var(--cff));
+      font-weight: 500;
+      text-align: left;
     }
+    tr {
+      &:hover{
+        td{
+            background-color: #fafbfe;
+        }
+      }
+    }
+    td {
+      padding: 10px;
+      @include body3(var(--c33));
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--ce7);
+    }
+  }
 }

@@ -5,6 +5,7 @@ import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import Textarea from "../../../components/Textarea";
 import Table from "../../../components/Table";
+import Select from "../../../components/Select";
 import MuiTable from "../../../components/MuiTable";
 import MuiModal from "../../../components/MuiModal";
 import FormGroup from "../../../components/FormGroup";
@@ -82,6 +83,90 @@ const rows = [
   },
 ];
 
+const categoryOpt = [
+  {
+    label: "전체",
+    value: "전체",
+  },
+  {
+    label: "Coffee",
+    value: "Coffee",
+  },
+  {
+    label: "Non-Coffee",
+    value: "Non-Coffee",
+  },
+  {
+    label: "Ade/Juice",
+    value: "Ade/Juice",
+  },
+  {
+    label: "Blended",
+    value: "Blended",
+  },
+  {
+    label: "Tea",
+    value: "Tea",
+  },
+  {
+    label: "Bread",
+    value: "Bread",
+  },
+  {
+    label: "Bottle",
+    value: "Bottle",
+  },
+]
+
+const storeNameOpt = [
+  {
+    label: "전체",
+    value: "전체",
+  },
+  {
+    label: "클라우드카페(역삼1호점)",
+    value: "클라우드카페(역삼1호점)",
+  },
+  {
+    label: "클라우드9카페(역삼2호점)",
+    value: "클라우드9카페(역삼2호점)",
+  },
+];
+
+const salesStatusOpt = [
+  {
+    label: "전체",
+    value: "전체",
+  },
+  {
+    label: "판매중",
+    value: "판매중",
+  },
+  {
+    label: "품절",
+    value: "품절",
+  },
+  {
+    label: "판매중지",
+    value: "판매중지",
+  },
+];
+
+const displayOpt = [
+  {
+    label: "전체",
+    value: "전체",
+  },
+  {
+    label: "전시중(Y)",
+    value: "전시중(Y)",
+  },
+  {
+    label: "전시안함(N)",
+    value: "전시안함(N)",
+  },
+];
+
 function ProdutListPage() {
   const [open, setOpen] = useState(false);
 
@@ -101,7 +186,9 @@ function ProdutListPage() {
         <Table
           colgroup={
             <>
-              <col width="20%" />
+              <col width="15%" />
+              <col />
+              <col width="15%" />
               <col />
             </>
           }
@@ -109,18 +196,59 @@ function ProdutListPage() {
           <tr>
             <th>카테고리명</th>
             <td>
-              
+              <Select
+                round="round"
+                width="420px"
+                defaultValue={0}
+                options={categoryOpt}
+              />
+            </td>
+            <th>카테고리명</th>
+            <td>
+              <Select
+                round="round"
+                width="420px"
+                defaultValue={0}
+                options={storeNameOpt}
+              />
             </td>
           </tr>
           <tr>
-            <th>구성</th>
-            <td />
+            <th>판매상태</th>
+            <td>
+              <Select
+                round="round"
+                width="420px"
+                defaultValue={0}
+                options={salesStatusOpt}
+              />
+            </td>
+            <th>전시여부</th>
+            <td>
+              <Select
+                round="round"
+                width="420px"
+                defaultValue={0}
+                options={displayOpt}
+              />
+            </td>
           </tr>
           <tr>
-            <th>합니다.</th>
-            <td />
+            <th> 상품검색 (ID, 상품명)</th>
+            <td colSpan={3}>
+              <Input
+                onClick={() => {}}
+                placeholder="상품ID 또는 상품명을 입력해주세요."
+                shape="round"
+              />
+            </td>
           </tr>
         </Table>
+        <div className="align center mt_20">
+          <Button onClick={handleOpen} round>
+            검색
+          </Button>
+        </div>
       </ContentBox>
       <ContentBox>
         <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>

@@ -76,7 +76,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                   <span>좋은 하루 보내세요!</span>
                 </p>
               </div>
-              <div className={`${"rgt"} ${styles.menu_user_img}`}>
+              <div className={`${styles.menu_user_img}`}>
                 <Dateimages />
               </div>
             </div>

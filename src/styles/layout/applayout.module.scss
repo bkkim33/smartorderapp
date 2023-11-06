@@ -46,6 +46,8 @@
   button{
     min-width: 26px;
     min-height: 26px;
+    width: 30px;
+    height: 30px;
     & + button{
       margin-left: 10px;
     }
