@@ -101,23 +101,6 @@ function ProdutListPage() {
         
       </ContentBox>
       <ContentBox>
-        <div className="align mb_20">
-          <div className="lft">
-            <p className="body2">
-              전체
-              <em className="ml_5 primary-b bold600">46</em>
-            </p>
-          </div>
-          <div className="rgt">
-            <Input
-              onClick={() => {}}
-              placeholder="쿠폰명을 입력해주세요"
-              shape="round"
-              type="search"
-              width="300px"
-            />
-          </div>
-        </div>
         <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
       </ContentBox>
       <MuiModal
