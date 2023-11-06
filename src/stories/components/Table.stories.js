@@ -21,7 +21,20 @@ export const Default = (args) => (
             } 
             {...args}
         >
-            {args.children}
+            <tr>
+                <th>이렇게</th>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>구성</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>합니다.</th>
+                <td></td>
+            </tr>
         </Table>
     </>
 );

@@ -3,11 +3,13 @@
 .tablebox{
     table{
         width: 100%;
+        border-top: 1px solid var(--ce7);
         th {
             padding: 10px;
-            background-color: var(--primary);
-            border-bottom: 1px solid var(--c99);
-            @include body4(var(--cff));
+            background-color: var(--bgf5);
+            border-bottom: 1px solid var(--ce7);
+            @include body2(var(--primary));
+            font-weight: 500;
             text-align: left;
         }
         tr {
@@ -16,17 +18,12 @@
                     background-color: #fafbfe;
                 }
             }
-            &:first-child{
-                td{
-                    border-top: 0;
-                }
-            }
         }
         td {
             padding: 10px;
-            color: #354165;
+            @include body3(var(--c33));
             font-size: 1.4rem;
-            border-top: 1px solid var(--ce7);
+            border-bottom: 1px solid var(--ce7);
         }
     }
 }
