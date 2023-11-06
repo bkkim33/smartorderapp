@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/AppDefaultLayout";
-import Menuimg from "../../../images/coffee_img.jpg";
 import Button from "../../../components/Button";
 import TextToggle from "../../../components/TextToggle";
 import Count from "../../../components/Count";
+
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Navigation, Pagination } from "swiper/modules";
+import MenuSwiper from "./MenuSwiper";
 
 function MenuDetailPage() {
   const [isOn, setIsOn] = useState(false);
@@ -17,17 +24,8 @@ function MenuDetailPage() {
     <Layout Back Menu Cart Title="주문하기">
       <div className="order">
         <div className="order_visual">
-          <img src={Menuimg} alt="커피 이미지" />
+          <MenuSwiper />
           {isOn ?
-            <Button
-              icon="LikeOff"
-              none
-              onClick={toggleHandler}
-              size="icon_s"
-            >
-              즐겨찾기off
-            </Button>
-            :
             <Button
               icon="Like"
               none
@@ -35,6 +33,15 @@ function MenuDetailPage() {
               size="icon_s"
             >
               즐겨찾기on
+            </Button>
+            :            
+            <Button
+              icon="LikeOff"
+              none
+              onClick={toggleHandler}
+              size="icon_s"
+            >
+              즐겨찾기off
             </Button>
           }
         </div>

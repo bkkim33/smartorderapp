@@ -37,8 +37,7 @@ function CouponSwiper ({data}) {
         </p>
       </div>
       <>
-        <Swiper
-          onSwiper={(swiper) => console.log(swiper)}
+        <Swiper          
           onSlideChange={(swiper) => setCountSlide(swiper.activeIndex + 1)}
           {...swiperParams}
         >

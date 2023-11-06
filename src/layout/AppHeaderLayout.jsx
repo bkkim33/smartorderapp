@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import SideMenu from "./AppSideMenuLayout";
@@ -17,6 +17,14 @@ function HeaderLayout({ Coupon, Cart, Menu, Back, Title, Close }) {
     // document.body.style.overflow = "unset";
   };
   const navigate = useNavigate();
+  const node = useRef();
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", modalOff);
+  //   return () => {
+  //     document.removeEventListener("mousedown", modalOff);
+  //   };
+  // }, []);
+
   return (
     <>
       <header className={`${styles.header}`}>

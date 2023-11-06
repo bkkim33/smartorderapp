@@ -7,6 +7,7 @@ import Button from "../../../components/Button";
 import Checkbox from "../../../components/Checkbox";
 import OrderListCard from "./OrderListCard";
 import Modal from "./CouponListModal";
+import { useNavigate } from "react-router-dom";
 
 const OrderListData = [
   {
@@ -98,10 +99,15 @@ const CouponListData = [
 ]
 
 function PaymentPage() {
-  const [isOpen, setIsOpen] = useState(true);
-  const toggleHandler = () => {
-    setIsOpen(!isOpen)
-  };
+  const navigate = useNavigate();
+  const [menuOn, setMenuOn] = useState(true);
+  const menuToggle = () => {
+    setMenuOn(!menuOn);
+  }
+  const [discountOn, setDiscountOn] = useState(true);
+  const discountToggle = () => {
+    setDiscountOn(!discountOn);
+  }
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -128,13 +134,18 @@ function PaymentPage() {
           <div className="align">
             <p className="headline4">주문메뉴</p>
             <button
-              className={`togglebtn ${isOpen ? "open" : ""}`}
-              onClick={toggleHandler}
-            >
+              className={`togglebtn ${menuOn ? "open" : ""}`}
+              onClick={menuToggle}>
               <i className="arrow"></i>
             </button>
           </div>
-          {isOpen ? <OrderListCard data={OrderListData} /> : ""}
+          {menuOn ?
+            <OrderListCard
+              data={OrderListData}
+            />
+            :
+            ""
+          }
         </div>
         <hr />
         <div className="inner">
@@ -199,18 +210,11 @@ function PaymentPage() {
               <div className="align mb_14">
                 <p className="align start red_text">
                   할인금액
-                  <button
-                    className={`togglebtn ml_4 ${isOpen ? "open" : ""}`}
-                    onClick={toggleHandler}
-                  >
-                    <i className="arrow red"></i>
-                  </button>
+                  <button className={`togglebtn ml_4 ${discountOn ? "open" : ""}`} onClick={discountToggle}><i className="arrow red"></i></button>
                 </p>
-                <p className="align end red_text">
-                  <span>- 17,210</span> 원
-                </p>
+                <p className="align end red_text"><span>- 17,210</span> 원</p>
               </div>
-              {isOpen ? (
+              {discountOn ? (
                 // <ul className="discount">
                 //   {OrderListData.map((data) => (
                 //     <>
@@ -287,7 +291,9 @@ function PaymentPage() {
         <hr />
         <div className="inner">
           <Checkbox txt={"개인정보 수집 및 이용동의"} />
-          <Button size="full" globalClass="mt_20" onClick={() => {}}>
+          <Button size="full" globalClass="mt_20" onClick={() => {
+            navigate("/complete");
+          }}>
             <p className="align gap_4">
               <span>총</span>
               <span>

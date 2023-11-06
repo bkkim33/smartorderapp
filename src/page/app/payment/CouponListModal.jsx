@@ -4,6 +4,7 @@ import Checkbox from "../../../components/Checkbox";
 import Button from "../../../components/Button";
 
 function CouponListModal({ open, handleClose, data }) {  
+  const [checked, setChecked] = useState(false);
   return (
     <MuiModal 
       open={open} 
@@ -35,10 +36,11 @@ function CouponListModal({ open, handleClose, data }) {
         </p>
         {data.map((couponlist, index) => (
           <div key={couponlist.id} className="mb_15">
-            <div className={`${'couponlist_wrap'}`}>
+            <div className={`${'couponlist_wrap'} ${checked ? "checked" : ""}`}>
               <Checkbox
                 id={`check` + couponlist.id.toString()}
                 name={couponlist.title.toString()}
+                onChange={(e) => setChecked(e.target.checked)}
               >
                 <div className="couponlist_card">
                   <div className="couponlist_card_img mlr_10">

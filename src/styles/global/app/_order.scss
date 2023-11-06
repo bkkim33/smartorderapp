@@ -8,9 +8,30 @@
       position: absolute;
       right: 0;
       top: 0;
+      z-index: 1;
     }
   }
   .red_text{
     color: var(--red-text);
   }
+}
+
+.swiper-pagination {
+  &.menudetail{    
+    height: 13px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    top: auto !important;
+    bottom: 0 !important;  
+    span {
+      border-radius: 0;
+      width: 13px;
+      height: 13px;  
+      &.swiper-pagination-bullet-active {
+        background-color: var(--point);
+        width: 19px;
+      }
+    }
+  }
+  
 }

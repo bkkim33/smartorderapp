@@ -42,7 +42,6 @@ Button.defaultProps = {
   state: false,
   none: false,
   disabled: false,
-  onClick: {},
   iconStyle: {
     // fill: "var(--c00)",
     // width: 20,
