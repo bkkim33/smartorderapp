@@ -9,9 +9,9 @@ import AdminLogin from "./page/admin/login/AdminLoginPage";
 import ProdutList from "./page/admin/product/ProdutListPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
 import CouponIssuance from "./page/admin/coupon/CouponIssuancePage";
-
-
-
+// 진현주 - 내 프로필 페이지 추가
+import Profile from "./page/admin/myprofile/Profile";
+import ChangePassword from "./page/admin/myprofile/ChangePassword";
 
 // app import
 
@@ -69,6 +69,10 @@ function App() {
           element={<CouponeManagement />}
         />
         <Route path="/admin/coupon/issuance" element={<CouponIssuance />} />
+        {/* 진현주 - 내 프로필 페이지 추가 */}
+        <Route path="/admin/myprofile/profile" element={<Profile />} />
+        <Route path="/admin/myprofile/changepassword" element={<ChangePassword />} />
+
       </Route>
       {/* KDS */}
       {/* <Route path="/*" element={<Main />} /> */}
