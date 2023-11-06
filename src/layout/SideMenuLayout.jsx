@@ -101,8 +101,8 @@ function SideMenuLayout({globalstyle}) {
             </Link>
           </li>
           <li className={`${styles.menu_dep1}`}>
-            <Link to="/admin/login">
-              <span>계정관리</span>
+            <Link to="/admin/account">
+              <span>계정/권한 관리</span>
             </Link>
           </li>
         </ul>

@@ -9,6 +9,8 @@ import AdminLogin from "./page/admin/login/AdminLoginPage";
 import ProdutList from "./page/admin/product/ProdutListPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
 import CouponIssuance from "./page/admin/coupon/CouponIssuancePage";
+import AccountCreate from "./page/admin/account/AccountCreatePage";
+import AccountModify from "./page/admin/account/AccountModifyPage";
 // 진현주 - 내 프로필 페이지 추가
 import Profile from "./page/admin/myprofile/Profile";
 import ChangePassword from "./page/admin/myprofile/ChangePassword";
@@ -32,10 +34,6 @@ import TermsDetail from "./page/app/terms/TermsDetailPage";
 import MyInfo from "./page/app/myinfo/MyInfo";
 import Faq from "./page/app/faq/Faq";
 import OrderComplete from "./page/app/ordercomplete/OrderComplete";
-
-
-
-// import Login from "./page/admin/LoginPage";
 
 function App() {
   return (
@@ -69,10 +67,15 @@ function App() {
           element={<CouponeManagement />}
         />
         <Route path="/admin/coupon/issuance" element={<CouponIssuance />} />
+
+        <Route path="/admin/account/create" element={<AccountCreate />} />
+        <Route path="/admin/account/modify" element={<AccountModify />} />
         {/* 진현주 - 내 프로필 페이지 추가 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
-        <Route path="/admin/myprofile/changepassword" element={<ChangePassword />} />
-
+        <Route
+          path="/admin/myprofile/changepassword"
+          element={<ChangePassword />}
+        />
       </Route>
       {/* KDS */}
       {/* <Route path="/*" element={<Main />} /> */}
