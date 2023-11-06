@@ -167,7 +167,7 @@ const displayOpt = [
   },
 ];
 
-function ProdutListPage() {
+function ProductListPage() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -245,7 +245,7 @@ function ProdutListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} round size="small_h35">
+          <Button onClick={handleOpen} btntype="gray" round size="small_h35">
             검색
           </Button>
         </div>
@@ -337,4 +337,4 @@ function ProdutListPage() {
   );
 }
 
-export default ProdutListPage;
+export default ProductListPage;

@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
-import ProdutList from "./page/admin/product/ProdutListPage";
+import ProductList from "./page/admin/product/ProductListPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
 import CouponIssuance from "./page/admin/coupon/CouponIssuancePage";
 import AccountCreate from "./page/admin/account/AccountCreatePage";
@@ -61,7 +61,7 @@ function App() {
       {/* ADMIN */}
       <Route>
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/product" element={<ProdutList />} />
+        <Route path="/admin/product" element={<ProductList />} />
         <Route
           path="/admin/coupon/management"
           element={<CouponeManagement />}
