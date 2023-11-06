@@ -3,26 +3,30 @@
 .tablebox{
     table{
         width: 100%;
-        border-top: 1px solid #F1F4F7;
         th {
-            padding: 8px 12px;
-            background-color: #F4F8FC;
-            border-bottom: 1px solid #F1F4F7;
-            @include body4(#8A9DBE);
+            padding: 10px;
+            background-color: var(--primary);
+            border-bottom: 1px solid var(--c99);
+            @include body4(var(--cff));
             text-align: left;
         }
         tr {
             &:hover{
                 td{
-                    background-color: #FAFBFE;
+                    background-color: #fafbfe;
+                }
+            }
+            &:first-child{
+                td{
+                    border-top: 0;
                 }
             }
         }
         td {
-            height: 66px;
-            padding: 24px 12px;
-            border-bottom: 1px solid #F1F4F7;
-            @include body2(#2E3646);
+            padding: 10px;
+            color: #354165;
+            font-size: 1.4rem;
+            border-top: 1px solid var(--ce7);
         }
     }
 }
