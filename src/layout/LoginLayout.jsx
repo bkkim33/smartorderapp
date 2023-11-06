@@ -1,17 +1,17 @@
 import React from 'react';
-import Header from './HeaderLayout'
+// import Header from './AppHeaderLayout'
 // import Footer from "./FooterLayout";
 // import SideMenu from "./SideMenuLayout";
 import styles from "../styles/layout/layout.module.scss";
 import "../styles/global.scss";
 
-function AdminDefaultLayout({children}) {
+function AdminLoginLayout({ children }) {
   return (
     <>
       {/* <Header /> */}
-      <div className={`${styles.layout}`}>
+      <div className={`${styles.layout} ${styles.adminlogin}`}>
         {/* <SideMenu /> */}
-        <Header />
+        {/* <Header /> */}
         <div className={`${styles.content}`}>{children}</div>
       </div>
 
@@ -20,4 +20,4 @@ function AdminDefaultLayout({children}) {
   );
 }
 
-export default AdminDefaultLayout;
+export default AdminLoginLayout;
