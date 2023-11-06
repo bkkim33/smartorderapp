@@ -22,7 +22,7 @@ export const Default = (args) => (
             {...args}
         >
             <tr>
-                <th>이렇게</th>
+                <th className="required">이렇게</th>
                 <td>
                     
                 </td>

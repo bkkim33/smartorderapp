@@ -6,9 +6,9 @@
         border-top: 1px solid var(--ce7);
         th {
             padding: 10px;
-            background-color: var(--bgf5);
-            border-bottom: 1px solid var(--ce7);
-            @include body2(var(--primary));
+            background-color: var(--c44);
+            border-bottom: 1px solid var(--c99);
+            @include body2(var(--cff));
             font-weight: 500;
             text-align: left;
         }
