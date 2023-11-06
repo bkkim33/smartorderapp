@@ -245,7 +245,7 @@ function ProdutListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} round>
+          <Button onClick={handleOpen} round size="small_h35">
             검색
           </Button>
         </div>
