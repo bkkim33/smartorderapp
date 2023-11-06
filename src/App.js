@@ -23,6 +23,8 @@ import AdminLogin from "./page/admin/login/LoginPage";
 import AdminMain from "./page/admin/MainPage";
 import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
 import CouponIssuance from "./page/admin/coupon/CouponIssuancePage";
+import AccountCreate from "./page/admin/account/AccountCreatePage";
+import AccountModify from "./page/admin/account/AccountModifyPage";
 // import Login from "./page/admin/LoginPage";
 
 function App() {
@@ -50,6 +52,8 @@ function App() {
       <Route path="/admin" element={<AdminLogin />} />
       <Route path="/admin/coupon/management" element={<CouponeManagement />} />
       <Route path="/admin/coupon/issuance" element={<CouponIssuance />} />
+      <Route path="/admin/account/create" element={<AccountCreate />} />
+      <Route path="/admin/account/modify" element={<AccountModify />} />
       {/* KDS */}
       {/* <Route path="/*" element={<Main />} /> */}
     </Routes>
