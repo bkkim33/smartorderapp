@@ -211,59 +211,59 @@ function PaymentPage() {
                 </p>
               </div>
               {isOpen ? (
+                // <ul className="discount">
+                //   {OrderListData.map((data) => (
+                //     <>
+                //       {data.discount?.map((discount, index) => (
+                //         <li key={index} className="detail">
+                //           <p className="red_text">
+                //             <span>[할인]</span>
+                //             <span>
+                //               {discount.title}
+                //               {discount.count}잔
+                //             </span>
+                //           </p>
+                //           <p className="red_text">
+                //             -
+                //             {Math.round(
+                //               data.price *
+                //                 discount.count *
+                //                 (discount.percent / 100)
+                //             ).toLocaleString()}
+                //             원
+                //           </p>
+                //         </li>
+                //       ))}
+                //     </>
+                //   ))}
+                // </ul>
                 <ul className="discount">
-                  {OrderListData.map((data) => (
-                    <>
-                      {data.discount?.map((discount, index) => (
-                        <li key={index} className="detail">
-                          <p className="red_text">
-                            <span>[할인]</span>
-                            <span>
-                              {discount.title}
-                              {discount.count}잔
-                            </span>
-                          </p>
-                          <p className="red_text">
-                            -
-                            {Math.round(
-                              data.price *
-                                discount.count *
-                                (discount.percent / 100)
-                            ).toLocaleString()}
-                            원
-                          </p>
-                        </li>
-                      ))}
-                    </>
-                  ))}
+                  <li>
+                    <p className="red_text">쿠폰할인</p>
+                    <p className="red_text">
+                      <span>9,000</span>원
+                    </p>
+                  </li>
+                  <li className="detail">
+                    <p>[입사환영] 아메리카노 1잔</p>
+                    <p>
+                      <span>3,800</span> 원
+                    </p>
+                  </li>
+                  <li className="detail">
+                    <p>[입사환영] 모든음료 1잔</p>
+                    <p>
+                      <span>5,200</span> 원
+                    </p>
+                  </li>
+                  <li>
+                    <p className="red_text">임직원할인</p>
+                    <p className="red_text">
+                      <span>8,210</span> 원
+                    </p>
+                  </li>
                 </ul>
               ) : (
-                // <ul className="">
-                //   <li>
-                //     <p className="red_text">쿠폰할인</p>
-                //     <p className="red_text">
-                //       <span>9,000</span>원
-                //     </p>
-                //   </li>
-                //   <li className="detail">
-                //     <p>[입사환영] 아메리카노 1잔</p>
-                //     <p>
-                //       <span>3,800</span> 원
-                //     </p>
-                //   </li>
-                //   <li className="detail">
-                //     <p>[입사환영] 모든음료 1잔</p>
-                //     <p>
-                //       <span>5,200</span> 원
-                //     </p>
-                //   </li>
-                //   <li>
-                //     <p className="red_text">임직원할인</p>
-                //     <p className="red_text">
-                //       <span>8,210</span> 원
-                //     </p>
-                //   </li>
-                // </ul>
                 ""
               )}
             </li>
