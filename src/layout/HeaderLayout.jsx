@@ -10,13 +10,7 @@ function HeaderLayout() {
   }
   return (
     <header className={`${styles.header}`}>
-      <Icons.AdminLogo />
-      <div className={`${styles.user_img_box} ${"mt_30"}`}>
-        <div className={`${styles.user_img}`}>
-          <img src={Userimg} alt="유저 이미지" />
-        </div>
-        <p className="mt_10">mz-cafe-admin</p>
-      </div>
+      <Icons.AdminLogo width={"100%"} height={50} fill="#fff" />
       <div className={`${styles.user_util} ${"mt_20"}`}>
         <button onClick={onClick} className={`${styles.user_button} ${""}`}>
           <span className="mt_15">프로필</span>
@@ -25,7 +19,6 @@ function HeaderLayout() {
           <span className="mt_15">로그아웃</span>
         </button>
       </div>
-
       <SideMenu globalstyle="mt_30" />
     </header>
   );
