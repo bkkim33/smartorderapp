@@ -199,7 +199,6 @@ function ProductListPage() {
             <td>
               <Select
                 round="round"
-                width="420px"
                 defaultValue={0}
                 options={categoryOpt}
               />
@@ -208,7 +207,6 @@ function ProductListPage() {
             <td>
               <Select
                 round="round"
-                width="420px"
                 defaultValue={0}
                 options={storeNameOpt}
               />
@@ -219,7 +217,6 @@ function ProductListPage() {
             <td>
               <Select
                 round="round"
-                width="420px"
                 defaultValue={0}
                 options={salesStatusOpt}
               />
@@ -228,7 +225,6 @@ function ProductListPage() {
             <td>
               <Select
                 round="round"
-                width="420px"
                 defaultValue={0}
                 options={displayOpt}
               />

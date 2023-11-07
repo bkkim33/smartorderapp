@@ -10,13 +10,14 @@ function HeaderLayout() {
   }
   return (
     <header className={`${styles.header}`}>
-      <Icons.AdminLogo width={"100%"} height={50} fill="#fff" />
-      <div className={`${styles.user_util} ${"mt_20"}`}>
+      <Icons.AdminLogo width={"100%"} height={50} fill="#303033" />
+      <div className={`${styles.user_util} ${"mt_30"}`}>
         <button onClick={onClick} className={`${styles.user_button} ${""}`}>
-          <span className="mt_15">프로필</span>
+          <Icons.MenuPrivacy width={12} height={12} fill="#3A3A3A" />
+          <span className="ml_7">프로필</span>
         </button>
         <button onClick={onClick} className={`${styles.user_button} ${""}`}>
-          <span className="mt_15">로그아웃</span>
+          <span>로그아웃</span>
         </button>
       </div>
 

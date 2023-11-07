@@ -1,11 +1,14 @@
 @import'../common/variables';
 
+
+
 .tbl{
   table{
     width: 100%;
     thead{
       background-color: var(--bgf5);
       th {
+        font-family: 'Pretendard';
         padding: 10px;
         @include h5(var(--c33));
         text-align: center;
@@ -23,6 +26,7 @@
       }
 
       td {
+        font-family: 'Pretendard';
         padding: 10px;
         // color: #354165;
         // font-size: 1.4rem;
