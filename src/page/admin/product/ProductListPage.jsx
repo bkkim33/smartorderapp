@@ -15,9 +15,9 @@ import Radio from "../../../components/Radio";
 const cols = [
   { colWidth: "8%" },
   { colWidth: "8%" },
-  { colWidth: "30%" },
+  { colWidth: "20%" },
   { colWidth: "auto" },
-  { colWidth: "8%" },
+  { colWidth: "10%" },
   { colWidth: "5%" },
   { colWidth: "5%" },
 ];
@@ -38,7 +38,7 @@ const rows = [
     rowdata: [
       { data: "1084", fnc: null, align: "center" },
       { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "left" },
+      { data: "쿠폰이름쿠폰이름쿠폰이름쿠폰이름쿠폰이름쿠폰이름", fnc: null, align: "center" },
       { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
       { data: 100, fnc: null, align: "right" },
       { data: "미리보기", fnc: true, align: "center" },
@@ -50,7 +50,7 @@ const rows = [
     rowdata: [
       { data: "1084", fnc: null, align: "center" },
       { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "left" },
+      { data: "쿠폰이름", fnc: null, align: "center" },
       { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
       { data: 100, fnc: null, align: "right" },
       { data: "미리보기", fnc: true, align: "center" },
@@ -62,7 +62,7 @@ const rows = [
     rowdata: [
       { data: "1084", fnc: null, align: "center" },
       { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "left" },
+      { data: "쿠폰이름", fnc: null, align: "center" },
       { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
       { data: 100, fnc: null, align: "right" },
       { data: "미리보기", fnc: true, align: "center" },
@@ -74,7 +74,7 @@ const rows = [
     rowdata: [
       { data: "1084", fnc: null, align: "center" },
       { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "left" },
+      { data: "쿠폰이름", fnc: null, align: "center" },
       { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
       { data: 100, fnc: null, align: "right" },
       { data: "미리보기", fnc: true, align: "center" },
@@ -182,6 +182,7 @@ function ProductListPage() {
       <div className="align mb_20">
         <h1 className="headline2">상품관리</h1>
       </div>
+      <hr className="primary"/>
       <ContentBox top>
         <Table
           colgroup={
@@ -245,11 +246,20 @@ function ProductListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} btntype="gray" round size="small_h35">
+          <Button onClick={handleOpen} btntype="c11" size="xlarge" >
             검색
           </Button>
         </div>
       </ContentBox>
+      <hr className="secondary"/>
+      <div className="align end mt_42 mb_13">
+        <Button onClick={handleOpen} size="small_h35" line globalClass="mr_5">
+          삭제
+        </Button>
+        <Button onClick={handleOpen} size="small_h35" >
+          신규등록
+        </Button>
+      </div>
       <ContentBox>
         <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
       </ContentBox>

@@ -13,7 +13,7 @@
 .layout{
   display: flex;
   height: 100%;
-  background-color: var(--bgfa);
+  // background-color: var(--bgfa);
 }
 
 .header{
@@ -171,8 +171,8 @@
     flex: 1;
     background-color: var(--cff);
     border-radius: 16px;
-    padding: 20px;
-    @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
+    padding: 20px 0;
+    // @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
     &_top,
     &_bottom{
       flex: none;

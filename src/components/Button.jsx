@@ -10,7 +10,7 @@ Button.propTypes = {
   state: PropTypes.bool,
   none: PropTypes.bool,
   disabled: PropTypes.bool,
-  btntype: PropTypes.oneOf(["", "change", "gray", "blue", "googlelogin"]),
+  btntype: PropTypes.oneOf(["", "change", "gray", "blue", "googlelogin", "c11"]),
   size: PropTypes.oneOf([
     "full",
     "xlarge",
@@ -19,6 +19,8 @@ Button.propTypes = {
     "xsmall",
     "icon_m",
     "icon_s",
+    "small_h35",
+    "medium_h40",
     "",
   ]),
   icon: PropTypes.string,

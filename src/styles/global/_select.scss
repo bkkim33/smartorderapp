@@ -1,43 +1,4 @@
-.select {
-  &.app{
-    .select__control{
-      font-size: 1.6rem;
-      border: 0;
-      &--is-focused{
-        font-size: 1.6rem;
-      }
-    }
-    .select__dropdown-indicator{
-      &:after{
-        border-color: var(--c11);
-      }
-    }
-    .select__placeholder{
-      font-size: 1.6rem;
-    }
-    .select__menu{
-      z-index: 10;
-      box-shadow: none;
-      margin-top: -1px;
-      background-color: var(--cff);
-      &-list{
-        padding: 0;
-        // max-height: 160px !important;
-      }
-    }
-    .select__option{
-      color: var(--c11);
-      padding: 13px 19px;
-      background-color: var(--cff);
-      &--is-selected{
-        background: var(--bgf5);
-        font-weight: 400;
-      }
-      & + .select__option{
-        margin-top: 0;
-      }
-    }
-  }
+.select { 
   &.line {
     .select__control{
       border: 0;
@@ -113,6 +74,7 @@
     padding: 0 10px;
     min-height: 35px !important;
     background-color: var(--cff);
+    font-size: 1.6rem;
     &--menu-is-open{
       .select__dropdown-indicator{
         &:after{
@@ -156,7 +118,8 @@
     }
   }
   &__placeholder{
-    @include body2(var(--c99));
+    @include body2(var(--c99)); 
+    font-size: 1.6rem;
     @include clamp(1)
   }
   &__menu{
@@ -223,6 +186,45 @@
         position: absolute;
         @include m_auto;
         border-radius: 1px;
+      }
+    }
+  }
+  &.app{
+    .select__control{
+      font-size: 1.6rem;
+      border: 0;
+      &--is-focused{
+        font-size: 1.6rem;
+      }
+    }
+    .select__dropdown-indicator{
+      &:after{
+        border-color: var(--c11);
+      }
+    }
+    .select__placeholder{
+      font-size: 1.6rem;
+    }
+    .select__menu{
+      z-index: 10;
+      box-shadow: none;
+      margin-top: -1px;
+      background-color: var(--cff);
+      &-list{
+        padding: 0;
+        // max-height: 160px !important;
+      }
+    }
+    .select__option{
+      color: var(--c11);
+      padding: 13px 19px;
+      background-color: var(--cff);
+      &--is-selected{
+        background: var(--bgf5);
+        font-weight: 400;
+      }
+      & + .select__option{
+        margin-top: 0;
       }
     }
   }

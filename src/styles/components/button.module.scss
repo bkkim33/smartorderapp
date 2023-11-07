@@ -41,12 +41,16 @@
 
 .medium{
   min-width: 105px;
+  &_40{
+  min-height: 40px;
+
+  }
 }
 
-.medium_h40{
-  min-width: 105px;
-  min-height: 40px;
-}
+// .medium_h40{
+//   min-width: 105px;
+//   min-height: 40px;
+// }
 
 .small{
   flex-wrap: wrap;
@@ -104,6 +108,10 @@
     background-color: var(--cff);
     color: var(--c11);  
     border: 1px solid var(--ce7);  
+  }
+  &-c11{
+    background-color: var(--c11);
+    color: var(--cff);  
   }
 }  
 
