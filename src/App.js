@@ -7,6 +7,7 @@ import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
 import ProductList from "./page/admin/product/ProductListPage";
+import ProductCreate from "./page/admin/product/ProductCreatePage";
 import AccountList from "./page/admin/account/AccountListPage";
 import AccountCreate from "./page/admin/account/AccountCreatePage";
 import AccountModify from "./page/admin/account/AccountModifyPage";
@@ -61,7 +62,7 @@ function App() {
       <Route>
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/product/list" element={<ProductList />} />
-        <Route path="/admin/order/history" element={<ProductList />} />
+        <Route path="/admin/product/create" element={<ProductCreate />} />
         <Route path="/admin/account" element={<AccountList />} />
         <Route path="/admin/account/create" element={<AccountCreate />} />
         <Route path="/admin/account/modify" element={<AccountModify />} />

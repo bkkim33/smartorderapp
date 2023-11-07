@@ -109,6 +109,9 @@ export const Default = () => (
       <div className="item">
         <Icons.Back width={26} height={18} fill="var(--primary)" />
       </div>
+      <div className="item">
+        <Icons.Plus width={12} height={12} fill="var(--primary)" />
+      </div>
     </div>
     <div className="align start mt_20">
       <div className="item">

@@ -19,6 +19,7 @@ Button.propTypes = {
     "xsmall",
     "icon_m",
     "icon_s",
+    "icon_s_h35",
     "small_h35",
     "medium_h40",
     "",
@@ -93,7 +94,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
           />
         </i>
       )}
-      {size !== "icon_m" && size !== "icon_s" && <span>{children}</span>}
+      {size !== "icon_m" && size !== "icon_s" && size !== "icon_s_h35" && <span>{children}</span>}
       {IconComponent && iconposition === "right" && (
         <i className={`${styles[iconposition]}`}>
           <IconComponent
