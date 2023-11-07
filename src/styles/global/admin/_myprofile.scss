@@ -1,12 +1,17 @@
 .myprofile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
   .passwordbox {
     .password {
       padding: 0;
       height: auto;
     }
   }
-
+  .changepasswordbox{flex: 1;}
   .error_txt {
     @include font(var(--red-text), 1.2rem, 400);
   }
+  
 }

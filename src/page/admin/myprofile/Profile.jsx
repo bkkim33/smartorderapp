@@ -6,11 +6,19 @@ import Input from "../../../components/Input"
 import Button from "../../../components/Button"
 
 function Profile() {
+
+  const [password, setPassword] = useState("");
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+
   return (
     <Layout>
       <div className="align mb_20">
         <h1 className="headline2">내 프로필</h1>
       </div>
+      <hr className="primary"/>
       <ContentBox>
       <div className="myprofile">
         <Table           
@@ -42,8 +50,10 @@ function Profile() {
           </tr>
           <tr>
             <th>비밀번호</th>
-            <td className="align passwordbox">
+            <td className="align start passwordbox ">
               <Input
+                value={password}
+                onChange={handlePasswordChange}
                 placeholder="**********"
                 type='password'
                 shape="none"
@@ -52,7 +62,6 @@ function Profile() {
               />
               <Button 
               onClick={() => {}}
-              round
               size="xsmall">
                 변경
               </Button>
