@@ -646,6 +646,19 @@ const LikeOff = ({ width = 26, height = 26 }) => (
   </svg>
 );
 
+const Plus = ({ width = 12, height = 12, fill = "var(--primary)" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 12 12" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M1 6H11" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+    <path d="M6 11L6 1" stroke={fill} strokeWidth="1.5" strokeLinecap="square" />
+  </svg>
+);
+
 
 export const Icons = {
   Logo,
@@ -678,4 +691,5 @@ export const Icons = {
   ArrowBg,
   Nodata,
   LikeOff,
+  Plus,
 };

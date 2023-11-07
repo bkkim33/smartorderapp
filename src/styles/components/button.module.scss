@@ -71,6 +71,8 @@
   }
   &_h35{
     min-height: 35px;
+    padding: 6px 19px;
+    font-size: 1.4rem;
   }
 }
 
@@ -247,6 +249,15 @@
     //   width: 16px;
     //   height: 16px;
     // }
+  }
+  &_h35{
+    min-width: 35px;
+    min-height: 35px;
+    padding: 7px;
+    i{
+      margin: 0;
+      font-size: 0;
+    }
   }
   &.round{
     @include rounded(8px)
