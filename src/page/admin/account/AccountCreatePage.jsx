@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
@@ -6,14 +6,12 @@ import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Button from "../../../components/Button";
 
-function MainPage() {
+function AccountCreate() {
   
   return (
     <Layout>
       <div className="align mb_20">
-        <div className="lft">
-          <h1 className="headline2">계정 생성</h1>          
-        </div>        
+        <h1 className="headline2">계정 생성</h1>        
       </div>
       <ContentBox>
         <Table colgroup={<><col width="20%" /><col /></>}>
@@ -118,4 +116,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default AccountCreate;
