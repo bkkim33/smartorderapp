@@ -4,8 +4,11 @@ import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
 import Input from "../../../components/Input"
 import Button from "../../../components/Button"
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+
+  const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
   const handlePasswordChange = (e) => {
@@ -20,7 +23,7 @@ function Profile() {
       </div>
       <hr className="primary"/>
       <ContentBox>
-      <div className="myprofile">
+      <div className="admin_myprofile">
         <Table           
           colgroup={[
             <col width="20%" />,
@@ -61,7 +64,7 @@ function Profile() {
                 globalClass="password"
               />
               <Button 
-              onClick={() => {}}
+              onClick={() => navigate("/admin/myprofile/changepassword")}
               size="xsmall">
                 변경
               </Button>

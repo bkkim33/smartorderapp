@@ -72,10 +72,7 @@ function App() {
         <Route path="/admin/account/modify" element={<AccountModify />} />
         {/* 진현주 - 내 프로필 페이지 추가 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
-        <Route
-          path="/admin/myprofile/changepassword"
-          element={<ChangePassword />}
-        />
+        <Route path="/admin/myprofile/changepassword" element={<ChangePassword />}/>
       </Route>
       {/* KDS */}
       {/* <Route path="/*" element={<Main />} /> */}

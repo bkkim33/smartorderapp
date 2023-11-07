@@ -6,6 +6,7 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 
 function ChangePassword() {
+
   const [errorMessages, setErrorMessages] = useState({
     currentPasswordError: "",
     newPasswordError: "",
@@ -33,7 +34,7 @@ function ChangePassword() {
       </div>
       <hr className="primary"/>
       <ContentBox>
-        <div className="myprofile">
+        <div className="admin_myprofile">
           <Table globalClass="changepasswordbox" colgroup={[<col key="col1" width="20%" />, <col key="col2"/>]}>
             <tr key="currentPassword">
               <th>현재 비밀번호</th>
