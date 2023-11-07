@@ -7,8 +7,7 @@ import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
 import ProductList from "./page/admin/product/ProductListPage";
-import CouponeManagement from "./page/admin/coupon/CouponeManagementPage";
-import CouponIssuance from "./page/admin/coupon/CouponIssuancePage";
+import AccountList from "./page/admin/account/AccountListPage";
 import AccountCreate from "./page/admin/account/AccountCreatePage";
 import AccountModify from "./page/admin/account/AccountModifyPage";
 // 진현주 - 내 프로필 페이지 추가
@@ -61,13 +60,9 @@ function App() {
       {/* ADMIN */}
       <Route>
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/product" element={<ProductList />} />
-        <Route
-          path="/admin/coupon/management"
-          element={<CouponeManagement />}
-        />
-        <Route path="/admin/coupon/issuance" element={<CouponIssuance />} />
-
+        <Route path="/admin/product/list" element={<ProductList />} />
+        <Route path="/admin/order/history" element={<ProductList />} />
+        <Route path="/admin/account" element={<AccountList />} />
         <Route path="/admin/account/create" element={<AccountCreate />} />
         <Route path="/admin/account/modify" element={<AccountModify />} />
         {/* 진현주 - 내 프로필 페이지 추가 */}

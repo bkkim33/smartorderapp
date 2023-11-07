@@ -15,7 +15,7 @@ function HeaderLayout() {
   return (
     <header className={`${styles.header}`}>
       <Icons.AdminLogo width={"100%"} height={50} fill="#303033" />
-      <div className={`${styles.user_util} ${"mt_30"}`}>
+      <div className={`${styles.user_util} ${"mt_20"}`}>
         <button onClick={() => navigate("/admin/myprofile/profile")} className={`${styles.user_button} ${""}`}>
           <Icons.MenuPrivacy width={12} height={12} fill="#3A3A3A" />
           <span className="ml_7">프로필</span>

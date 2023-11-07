@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
@@ -6,8 +7,35 @@ import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Button from "../../../components/Button";
 
+const companyOpt = [
+  {
+    label: '메가존 법인소속명',
+    value: '메가존 법인소속명'
+  },
+  {
+    label: '클라우드 카페 매장소속명',
+    value: '클라우드 카페 매장소속명'
+  }
+]
+
+const rightOpt = [
+  {
+    label: '카페서비스 관리자',
+    value: '카페서비스 관리자'
+  },
+  {
+    label: '매장 관리자',
+    value: '매장 관리자'
+  }
+  ,
+  {
+    label: '어드민 관리자',
+    value: '어드민 관리자'
+  }
+]
+
 function AccountCreate() {
-  
+  const navigate = useNavigate();
   return (
     <Layout>
       <div className="align mb_20">
@@ -20,16 +48,7 @@ function AccountCreate() {
             <td>
               <Select
                 placeholder="소속 선택"
-                options={[
-                  {
-                    label: '메가존 법인소속명',
-                    value: '메가존 법인소속명'
-                  },
-                  {
-                    label: '클라우드 카페 매장소속명',
-                    value: '클라우드 카페 매장소속명'
-                  }
-                ]}
+                options={companyOpt}
               />
             </td>
           </tr>
@@ -73,21 +92,7 @@ function AccountCreate() {
             <td>
               <Select
                 placeholder="선택"
-                options={[
-                  {
-                    label: '카페서비스 관리자',
-                    value: '카페서비스 관리자'
-                  },
-                  {
-                    label: '매장 관리자',
-                    value: '매장 관리자'
-                  }
-                  ,
-                  {
-                    label: '어드민 관리자',
-                    value: '어드민 관리자'
-                  }
-                ]}
+                options={rightOpt}
               />
             </td>
           </tr>
@@ -95,17 +100,15 @@ function AccountCreate() {
         <div className="align mt_20">
           <div className="rgt gap_10">
             <Button              
-              onClick={() => { }}
-              round
-              size="medium"
-              btntype="gray"
+              onClick={() => navigate("/admin/account")}
+              size="small_h35"
+              line
             >
               취소
             </Button>
             <Button
               onClick={() => { }}
-              round
-              size="medium"
+              size="small_h35"
             >
               계정 생성
             </Button>
