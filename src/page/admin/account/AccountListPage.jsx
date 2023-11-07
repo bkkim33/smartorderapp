@@ -6,7 +6,7 @@ import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 
 //mui table import
-import Table from '@mui/material/Table';
+import MuiTable from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -43,7 +43,7 @@ function AccountListPage() {
         </div>
         <div className="tbl">
           <TableContainer>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="10%" />
                 <col width="20%" />
@@ -104,7 +104,7 @@ function AccountListPage() {
                   </TableCell>
                 </TableRow>
               </TableBody>
-            </Table>
+            </MuiTable>
           </TableContainer>
         </div>
       </ContentBox>      

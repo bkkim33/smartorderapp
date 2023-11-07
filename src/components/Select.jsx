@@ -32,13 +32,14 @@ const Input = (props) => (
 );
 
 export function Select({ options, ...others }) {
-  const { round, width, placeholder, disabled, multi, defaultValue } = others;
+  const { round, maxwidth, minwidth, placeholder, disabled, multi, defaultValue } = others;
   const [selectedOption, setSelectedOption] = useState(null);
 
   return (
     <div
       style={{
-        minWidth: width ? width : "100%",
+        maxWidth: maxwidth ? maxwidth : "100%",
+        minWidth: minwidth ? minwidth : "",
         // width: "max-content",
       }}
     >

@@ -4,6 +4,7 @@
   table {
     width: 100%;
     border-top: 1px solid var(--ce7);
+    table-layout: fixed;
     th {
       padding: 10px;
       background-color: var(--bgf5);

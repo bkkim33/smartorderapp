@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -6,82 +7,18 @@ import Input from "../../../components/Input";
 import Textarea from "../../../components/Textarea";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
-import MuiTable from "../../../components/MuiTable";
 import MuiModal from "../../../components/MuiModal";
 import FormGroup from "../../../components/FormGroup";
 import Radio from "../../../components/Radio";
 
-// 임시 데이터 테이터에 따라 테이블 컨포넌트 변경 필요
-const cols = [
-  { colWidth: "8%" },
-  { colWidth: "8%" },
-  { colWidth: "20%" },
-  { colWidth: "auto" },
-  { colWidth: "10%" },
-  { colWidth: "5%" },
-  { colWidth: "5%" },
-];
+//mui table import
+import MuiTable from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
-const columns = [
-  { field: "쿠폰 코드", headerName: "couponnum", colSpan: null },
-  { field: "유효기한", headerName: "period", colSpan: null },
-  { field: "쿠폰명", headerName: "name", colSpan: null },
-  { field: "쿠폰 설명", headerName: "ex", colSpan: null },
-  { field: "발급한 수량", headerName: "amount", colSpan: null },
-  { field: "미리보기", headerName: "미리보기", colSpan: null },
-  { field: "관리", headerName: "관리", colSpan: null },
-];
-
-const rows = [
-  {
-    id: 1,
-    rowdata: [
-      { data: "1084", fnc: null, align: "center" },
-      { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름쿠폰이름쿠폰이름쿠폰이름쿠폰이름쿠폰이름", fnc: null, align: "center" },
-      { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
-      { data: 100, fnc: null, align: "right" },
-      { data: "미리보기", fnc: true, align: "center" },
-      { data: "삭제", fnc: true, align: "center" },
-    ],
-  },
-  {
-    id: 2,
-    rowdata: [
-      { data: "1084", fnc: null, align: "center" },
-      { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "center" },
-      { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
-      { data: 100, fnc: null, align: "right" },
-      { data: "미리보기", fnc: true, align: "center" },
-      { data: "삭제", fnc: true, align: "center" },
-    ],
-  },
-  {
-    id: 3,
-    rowdata: [
-      { data: "1084", fnc: null, align: "center" },
-      { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "center" },
-      { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
-      { data: 100, fnc: null, align: "right" },
-      { data: "미리보기", fnc: true, align: "center" },
-      { data: "삭제", fnc: true, align: "center" },
-    ],
-  },
-  {
-    id: 4,
-    rowdata: [
-      { data: "1084", fnc: null, align: "center" },
-      { data: "2023.10.20", fnc: null, align: "center" },
-      { data: "쿠폰이름", fnc: null, align: "center" },
-      { data: "쿠폰설명 입니다.", fnc: null, align: "left" },
-      { data: 100, fnc: null, align: "right" },
-      { data: "미리보기", fnc: true, align: "center" },
-      { data: "삭제", fnc: true, align: "center" },
-    ],
-  },
-];
 
 const categoryOpt = [
   {
@@ -133,39 +70,21 @@ const storeNameOpt = [
   },
 ];
 
-const salesStatusOpt = [
+const numOpt = [
   {
-    label: "전체",
-    value: "전체",
+    label: "20개씩 보기",
+    value: "20개씩 보기",
   },
   {
-    label: "판매중",
-    value: "판매중",
+    label: "30개씩 보기",
+    value: "30개씩 보기",
   },
   {
-    label: "품절",
-    value: "품절",
-  },
-  {
-    label: "판매중지",
-    value: "판매중지",
+    label: "50개씩 보기",
+    value: "50개씩 보기",
   },
 ];
 
-const displayOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "전시중(Y)",
-    value: "전시중(Y)",
-  },
-  {
-    label: "전시안함(N)",
-    value: "전시안함(N)",
-  },
-];
 
 function ProductListPage() {
   const [open, setOpen] = useState(false);
@@ -182,51 +101,35 @@ function ProductListPage() {
       <div className="align mb_20">
         <h1 className="headline2">상품관리</h1>
       </div>
-      <hr className="primary"/>
+      <hr className="primary" />
       <ContentBox top>
         <Table
           colgroup={
             <>
               <col width="15%" />
-              <col />
+              <col width="auto" />
               <col width="15%" />
-              <col />
+              <col width="auto" />
             </>
           }
         >
           <tr>
-            <th>카테고리명</th>
+            <th>상품 카테고리</th>
             <td>
               <Select
+                width="350px"
                 round="round"
                 defaultValue={0}
                 options={categoryOpt}
               />
             </td>
-            <th>카테고리명</th>
+            <th>판매 매장</th>
             <td>
               <Select
+                width="350px"
                 round="round"
                 defaultValue={0}
                 options={storeNameOpt}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>판매상태</th>
-            <td>
-              <Select
-                round="round"
-                defaultValue={0}
-                options={salesStatusOpt}
-              />
-            </td>
-            <th>전시여부</th>
-            <td>
-              <Select
-                round="round"
-                defaultValue={0}
-                options={displayOpt}
               />
             </td>
           </tr>
@@ -242,22 +145,97 @@ function ProductListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} btntype="c11" size="xlarge" >
+          <Button onClick={handleOpen} btntype="c11" size="xlarge">
             검색
           </Button>
         </div>
       </ContentBox>
-      <hr className="secondary"/>
-      <div className="align end mt_42 mb_13">
-        <Button onClick={handleOpen} size="small_h35" line globalClass="mr_5">
-          삭제
-        </Button>
-        <Button onClick={handleOpen} size="small_h35" >
-          신규등록
-        </Button>
+      <hr className="secondary" />
+      <div className="align mt_42">
+        <div className="lft">
+          <Select
+            minwidth="200px"
+            round="round"
+            defaultValue={0}
+            options={numOpt}
+          />
+        </div>
+        <div className="rgt">
+          <Button onClick={handleOpen} size="small_h35" line globalClass="mr_5">
+            삭제
+          </Button>
+          <Button onClick={handleOpen} size="small_h35">
+            신규등록
+          </Button>
+        </div>
       </div>
       <ContentBox>
-        <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
+        <div className="tbl">
+          <TableContainer>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+              <colgroup>
+                <col width="10%" />
+                <col width="20%" />
+                <col width="20%" />
+                <col width="20%" />
+                <col width="20%" />
+                <col width="10%" />
+              </colgroup>
+              <TableHead>
+                <TableRow>
+                  <TableCell>No.</TableCell>
+                  <TableCell>소속</TableCell>
+                  <TableCell>관리자 ID</TableCell>
+                  <TableCell>이름</TableCell>
+                  <TableCell>권한</TableCell>
+                  <TableCell>전시여부</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="center">1</TableCell>
+                  <TableCell className="center">메가존클라우드</TableCell>
+                  <TableCell className="center">admin01</TableCell>
+                  <TableCell className="center">이름</TableCell>
+                  <TableCell className="center">카페서비스 관리자</TableCell>
+                  <TableCell className="center">
+                    <Link to="/admin/account/modify">권한 수정</Link>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="center">2</TableCell>
+                  <TableCell className="center">클라우드카페</TableCell>
+                  <TableCell className="center">admin02</TableCell>
+                  <TableCell className="center">010-***-1234</TableCell>
+                  <TableCell className="center">매장 관리자</TableCell>
+                  <TableCell className="center">
+                    <Link to="/admin/account/modify">권한 수정</Link>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="center">3</TableCell>
+                  <TableCell className="center">클라우드카페</TableCell>
+                  <TableCell className="center">admin03</TableCell>
+                  <TableCell className="center">홍길동3</TableCell>
+                  <TableCell className="center">매장 관리자</TableCell>
+                  <TableCell className="center">
+                    <Link to="/admin/account/modify">권한 수정</Link>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="center">4</TableCell>
+                  <TableCell className="center">클라우드카페</TableCell>
+                  <TableCell className="center">admin04</TableCell>
+                  <TableCell className="center">홍길동4</TableCell>
+                  <TableCell className="center">어드민 관리자</TableCell>
+                  <TableCell className="center">
+                    <Link to="/admin/account/modify">권한 수정</Link>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </MuiTable>
+          </TableContainer>
+        </div>
       </ContentBox>
       <MuiModal
         open={open}
