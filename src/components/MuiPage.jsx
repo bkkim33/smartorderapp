@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
 import React from "react";
+import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
+import PaginationItem from '@mui/material/PaginationItem';
 import PropTypes from "prop-types";
 import styles from "../styles/components/muipage.module.scss";
 
@@ -19,15 +21,22 @@ export function MuiPage({ ...others }) {
   const { shape, disabled, globalClass } = others;
   return (
     <div className={`${styles.pagenation} ${globalClass}`}>
-      <Pagination
-        count={10}
-        shape={shape}
-        disabled={disabled}
-        showFirstButton
-        showLastButton
-        size="large"
-        disableRipple
-      />
+      <Stack 
+        alignItems="center"
+        textAlign="center"
+      >
+        <Pagination
+          count={10}
+          shape={shape}
+          disabled={disabled}
+          showFirstButton
+          showLastButton
+          size="large"
+          renderItem={(item) => (
+            <PaginationItem {...item} disableRipple disableElevation />
+          )}
+        />
+      </Stack>
     </div>
     
   );

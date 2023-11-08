@@ -1,18 +1,17 @@
 @import "../common/variables";
 
 .pagenation{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: 20px;
   button{
     font-family: 'Pretendard';
     font-size: 1.4em;
-
+    &:hover {
+      background-color: transparent;
+    }
     &[aria-current="true"]{
       font-weight: 700;
       background-color: var(--point);
-      &:hover{
+      &:hover {
         background-color: var(--point);
       }
     }
