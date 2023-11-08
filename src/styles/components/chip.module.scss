@@ -1,0 +1,41 @@
+@import'../common/variables';
+
+.chip{
+  display: inline-block;
+  background-color: #F5F6FA;
+  border-radius: 15px;
+  padding: 9px 15px;
+  font-size: 1.4rem;
+  border: 1px solid #1F1F1F;
+  color: #1F1F1F;
+
+  .delete {
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 auto;
+    margin-left: 8px;
+    &::before {
+      @include before_after;
+      width: 7px;
+      height: 1px;
+      background-color: var(--c11);
+      transform: rotate(-45deg);
+      position: absolute;
+      @include m_auto;
+    }
+    &::after {
+      @include before_after;
+      width: 7px;
+      height: 1px;
+      background-color: var(--c11);
+      transform: rotate(45deg);
+      position: absolute;
+      @include m_auto;
+    }
+  }
+}
+
+
+
+
+
