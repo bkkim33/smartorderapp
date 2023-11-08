@@ -5,32 +5,36 @@ import { Button } from "./Button";
 import { Chip } from "./Chip"; 
 
 const FileUpload = forwardRef((props, ref) => {
-  
+
   const { onChange } = props;
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState([]);
   const [visible, setVisible] = useState(true);
   const inputRef = useRef(null);
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
+    const files = event.target.files;
+    setSelectedFiles([...selectedFiles, ...files]);
     setVisible(true);
-    onChange && onChange(file);
+    onChange && onChange(files);
   };
 
   const triggerInputFile = () => {
     inputRef.current.click();
   };
 
-  const handleDelete = () => {
-    setSelectedFile(null); 
-    setVisible(false); 
+  const handleDelete = (file) => {
+    const updatedFiles = selectedFiles.filter((f) => f !== file);
+    setSelectedFiles(updatedFiles); 
+    if (updatedFiles.length === 0) {
+      setVisible(false);
+    }
   };
 
   return (
     <div className={styles.fileUpload}>
        <input
          type="file"
+         multiple
          onChange={handleFileChange}
          ref={(input) => {
            inputRef.current = input;
@@ -42,7 +46,9 @@ const FileUpload = forwardRef((props, ref) => {
        <Button onClick={triggerInputFile} className={styles.uploadButton} size="small_h35" btntype="c11">
          파일업로드
        </Button>
-       {visible && selectedFile && <Chip label={selectedFile.name} onClick={handleDelete} globalClass="mt_10"/>} 
+       {visible && selectedFiles.map((file, index) => (
+          <Chip key={index} label={file.name} onClick={() => handleDelete(file)} globalClass="mt_10 mr_8"/> 
+       ))}
     </div>
   );
 });
