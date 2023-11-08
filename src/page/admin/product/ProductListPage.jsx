@@ -10,6 +10,7 @@ import Select from "../../../components/Select";
 import MuiModal from "../../../components/MuiModal";
 import FormGroup from "../../../components/FormGroup";
 import Radio from "../../../components/Radio";
+import MuiPage from "../../../components/MuiPage";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -236,6 +237,7 @@ function ProductListPage() {
             </MuiTable>
           </TableContainer>
         </div>
+        <MuiPage />
       </ContentBox>
       <MuiModal
         open={open}
