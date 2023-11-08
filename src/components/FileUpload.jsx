@@ -22,14 +22,14 @@ const FileUpload = forwardRef((props, ref) => {
     inputRef.current.click();
   };
 
-  const handleDelete = (file) => {
-    const updatedFiles = selectedFiles.filter((f) => f !== file);
+  const handleDelete = (name) => {
+    const updatedFiles = selectedFiles.filter(file => file.name !== name);
     setSelectedFiles(updatedFiles); 
     if (updatedFiles.length === 0) {
       setVisible(false);
     }
   };
-
+  
   return (
     <div className={styles.fileUpload}>
        <input
@@ -47,7 +47,7 @@ const FileUpload = forwardRef((props, ref) => {
          파일업로드
        </Button>
        {visible && selectedFiles.map((file, index) => (
-          <Chip key={index} label={file.name} onClick={() => handleDelete(file)} globalClass="mt_10 mr_8"/> 
+          <Chip key={index} label={file.name} onClick={() => handleDelete(index)} globalClass="mt_10 mr_8"/> 
        ))}
     </div>
   );

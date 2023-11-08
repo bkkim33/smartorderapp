@@ -4,16 +4,16 @@
   display: inline-block;
   background-color: #F5F6FA;
   border-radius: 15px;
-  padding: 9px 15px;
+  padding:   9px 9px 9px 15px;
   font-size: 1.4rem;
   border: 1px solid #1F1F1F;
   color: #1F1F1F;
 
   .delete {
     cursor: pointer;
+    width: 14px;
+    height: 14px;
     position: relative;
-    flex: 1 0 auto;
-    margin-left: 8px;
     &::before {
       @include before_after;
       width: 7px;
