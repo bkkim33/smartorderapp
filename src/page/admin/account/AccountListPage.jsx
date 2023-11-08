@@ -4,6 +4,7 @@ import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
+import MuiPage from "../../../components/MuiPage";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -107,7 +108,8 @@ function AccountListPage() {
             </MuiTable>
           </TableContainer>
         </div>
-      </ContentBox>      
+        <MuiPage />
+      </ContentBox>
     </Layout>
   );
 }

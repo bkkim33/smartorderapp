@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Layout from '../../layout/AppDefaultLayout';
-import Mainimg10 from "../../images/main_img10.gif";
-import Mainimg12 from "../../images/main_img12.gif";
 import MainimgDefult from "../../images/main_img.gif";
 
 import FullMenu from "./FullMenuPage";
@@ -94,24 +92,7 @@ function Locations() {
         </ul>
       </div>
     </div>
-  );
- 
-}
-
-function Dateimages() {
-  const today = new Date();
-  // 현재 날짜를 가져옵니다.
-
-  const formattedDate = today.getMonth() + 1;
-  // 원하는 형식으로 날짜를 설정합니다.
-  switch (formattedDate) {
-    case 10:
-      return <img src={Mainimg10} alt="유저 이미지" />;
-    case 12:
-      return <img src={Mainimg12} alt="유저 이미지" />;
-    default:
-      return <img src={MainimgDefult} alt="유저 이미지" />;
-  }
+  ); 
 }
 
 function MainPage() {
@@ -134,7 +115,7 @@ function MainPage() {
             </p>
           </div>
           <div className="rgt">
-            <Dateimages />
+            <img src={MainimgDefult} alt="유저 이미지" />
           </div>
         </div>
         <div className="main_content">
