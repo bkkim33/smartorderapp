@@ -1,0 +1,40 @@
+@import "../common/variables";
+
+.alert{
+  &_wrap{
+    max-width: 335px;
+    margin: 0;
+    border-radius: 0;
+  }
+  &_box{
+    min-height: 202px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+  }
+  &_content{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &_title{
+    margin-bottom: 14px;
+    @include h3(var(--c11));
+    text-align: center;
+  }
+  &_desc{
+    @include body1(var(--c55));
+    text-align: center;
+  }
+  &_btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 13px;
+    button {
+      width: 100%;
+    }
+  }
+}
