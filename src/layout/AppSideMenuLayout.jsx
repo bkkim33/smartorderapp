@@ -4,27 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import Button from "../components/Button";
 import { Icons } from "../components/Icon";
-import Mainimg10 from "../images/main_img10.gif";
-import Mainimg12 from "../images/main_img12.gif";
 import MainimgDefult from "../images/main_img.gif";
-
-
-
-function Dateimages() {
-  const today = new Date();
-  // 현재 날짜를 가져옵니다.
-
-  const formattedDate = today.getMonth() + 1;
-  // 원하는 형식으로 날짜를 설정합니다.
-  switch (formattedDate) {
-    case 10:
-      return <img src={Mainimg10} alt="유저 이미지" />;
-    case 12:
-      return <img src={Mainimg12} alt="유저 이미지" />;
-    default:
-      return <img src={MainimgDefult} alt="유저 이미지" />;
-  }
-}
 
 function SideMenuLayout({ globalstyle, onClose, open }) {
   const navigate = useNavigate();
@@ -77,7 +57,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </p>
               </div>
               <div className={`${styles.menu_user_img}`}>
-                <Dateimages />
+                <img src={MainimgDefult} alt="유저 이미지" />
               </div>
             </div>
           </div>
