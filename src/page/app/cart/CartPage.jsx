@@ -282,7 +282,12 @@ const navigate = useNavigate();
                   <span className="ml_2">원</span>
                 </dd>
               </dl>
-              <Button onClick={() => {}} size="full">
+              <Button
+                onClick={() => {
+                  navigate("/payment");
+                }}
+                size="full"
+              >
                 총 <span>{totalQuantity}</span>개 주문하기
               </Button>
             </div>

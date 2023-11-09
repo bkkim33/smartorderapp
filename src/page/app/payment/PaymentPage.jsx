@@ -6,8 +6,9 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 import Checkbox from "../../../components/Checkbox";
 import OrderListCard from "./OrderListCard";
-import Modal from "./CouponListModal";
-import { useNavigate } from "react-router-dom";
+import CouponListModal from "./CouponListModal";
+import PayAlert from "./PayAlert";
+
 
 const OrderListData = [
   {
@@ -99,7 +100,7 @@ const CouponListData = [
 ]
 
 function PaymentPage() {
-  const navigate = useNavigate();
+  
   const [menuOn, setMenuOn] = useState(true);
   const menuToggle = () => {
     setMenuOn(!menuOn);
@@ -115,6 +116,14 @@ function PaymentPage() {
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const [AlertOpen, setalertOpen] = useState(false);
+  const AlerthandleOpen = () => {
+    setalertOpen(true);
+  };
+  const AlerthandleClose = () => {
+    setalertOpen(false);
   };
 
   const pricesum = OrderListData.reduce(
@@ -135,17 +144,12 @@ function PaymentPage() {
             <p className="headline4">주문메뉴</p>
             <button
               className={`togglebtn ${menuOn ? "open" : ""}`}
-              onClick={menuToggle}>
+              onClick={menuToggle}
+            >
               <i className="arrow"></i>
             </button>
           </div>
-          {menuOn ?
-            <OrderListCard
-              data={OrderListData}
-            />
-            :
-            ""
-          }
+          {menuOn ? <OrderListCard data={OrderListData} /> : ""}
         </div>
         <hr />
         <div className="inner">
@@ -210,37 +214,18 @@ function PaymentPage() {
               <div className="align mb_14">
                 <p className="align start red_text">
                   할인금액
-                  <button className={`togglebtn ml_4 ${discountOn ? "open" : ""}`} onClick={discountToggle}><i className="arrow red"></i></button>
+                  <button
+                    className={`togglebtn ml_4 ${discountOn ? "open" : ""}`}
+                    onClick={discountToggle}
+                  >
+                    <i className="arrow red"></i>
+                  </button>
                 </p>
-                <p className="align end red_text"><span>- 17,210</span> 원</p>
+                <p className="align end red_text">
+                  <span>- 17,210</span> 원
+                </p>
               </div>
               {discountOn ? (
-                // <ul className="discount">
-                //   {OrderListData.map((data) => (
-                //     <>
-                //       {data.discount?.map((discount, index) => (
-                //         <li key={index} className="detail">
-                //           <p className="red_text">
-                //             <span>[할인]</span>
-                //             <span>
-                //               {discount.title}
-                //               {discount.count}잔
-                //             </span>
-                //           </p>
-                //           <p className="red_text">
-                //             -
-                //             {Math.round(
-                //               data.price *
-                //                 discount.count *
-                //                 (discount.percent / 100)
-                //             ).toLocaleString()}
-                //             원
-                //           </p>
-                //         </li>
-                //       ))}
-                //     </>
-                //   ))}
-                // </ul>
                 <ul className="discount">
                   <li>
                     <p className="red_text">쿠폰할인</p>
@@ -291,9 +276,11 @@ function PaymentPage() {
         <hr />
         <div className="inner">
           <Checkbox txt={"개인정보 수집 및 이용동의"} />
-          <Button size="full" globalClass="mt_20" onClick={() => {
-            navigate("/complete");
-          }}>
+          <Button
+            size="full"
+            globalClass="mt_20"
+            onClick={AlerthandleOpen}
+          >
             <p className="align gap_4">
               <span>총</span>
               <span>
@@ -304,7 +291,12 @@ function PaymentPage() {
           </Button>
         </div>
       </div>
-      <Modal open={open} handleClose={handleClose} data={CouponListData} />
+      <CouponListModal
+        open={open}
+        handleClose={handleClose}
+        data={CouponListData}
+      />
+      <PayAlert open={AlertOpen} handleClose={AlerthandleClose} />
     </Layout>
   );
 }

@@ -98,7 +98,7 @@ function HeaderLayout({ Coupon, Cart, Menu, Back, Title, Close }) {
                   width: 24,
                 }}
                 none
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/main")}
                 size="icon_s"
                 globalClass="pd_0"
               >
