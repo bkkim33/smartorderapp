@@ -95,7 +95,7 @@ function QRLoginPage() {
                 <Button
                   btntype="blue"
                   onClick={() => {
-                    navigate("/main");
+                    navigate("/qrmain");
                   }}
                   size="full"
                   disabled={certification === false}

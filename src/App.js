@@ -21,6 +21,7 @@ import ChangePassword from "./page/admin/myprofile/ChangePassword";
 import "./styles/appglobal.scss";
 
 import AppMain from "./page/app/MainPage";
+import QRAppMain from "./page/app/QRMainPage";
 import AppLogin from "./page/app/login/LoginPage";
 import AppQRLogin from "./page/app/login/QRLoginPage";
 import MenuDetail from "./page/app/order/MenuDetailPage";
@@ -44,6 +45,7 @@ function App() {
         <Route exact path="/" element={<AppLogin />} />
         <Route path="/qr" element={<AppQRLogin />} />
         <Route path="/main" element={<AppMain />} />
+        <Route path="/qrmain" element={<QRAppMain />} />
         <Route path="/order" element={<MenuDetail />} />
         <Route path="/order/history" element={<OrderHistory />} />
         <Route path="/cart" element={<CartPage />} />
@@ -70,7 +72,10 @@ function App() {
         <Route path="/admin/account/modify" element={<AccountModify />} />
         {/* 진현주 - 내 프로필 페이지 추가 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
-        <Route path="/admin/myprofile/changepassword" element={<ChangePassword />}/>
+        <Route
+          path="/admin/myprofile/changepassword"
+          element={<ChangePassword />}
+        />
       </Route>
       {/* KDS */}
       {/* <Route path="/*" element={<Main />} /> */}

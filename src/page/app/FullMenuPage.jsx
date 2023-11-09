@@ -87,11 +87,12 @@ const AdeJuice = CoffeeData.filter(
 const Tea = CoffeeData.filter((CoffeeData) => CoffeeData.type === "tea");
 
 
-function FullMenuPage() {
+function FullMenuPage({ QR }) {
   const navigate = useNavigate();
   return (
     <div className="coffeemenu">
       <Tabs
+        globalClass={`${"coffeemenu_tab"} ${QR === true ? "qr" : ""}`}
         TabsData={[
           {
             id: 0,
@@ -175,7 +176,6 @@ function FullMenuPage() {
           },
         ]}
         type="round"
-        globalClass="coffeemenu_tab"
       />
     </div>
   );

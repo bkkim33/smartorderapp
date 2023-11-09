@@ -130,5 +130,9 @@
     align-self: flex-start;
     z-index: 10;
     background-color: var(--cff);
+    &.qr{
+      top: 110px;
+      z-index: 100;
+    }
   }
 }
