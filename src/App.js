@@ -8,6 +8,7 @@ import "./styles/adminglobal.scss";
 import AdminLogin from "./page/admin/login/AdminLoginPage";
 import ProductList from "./page/admin/product/ProductListPage";
 import ProductCreate from "./page/admin/product/ProductCreatePage";
+import OrderDetail from "./page/admin/order/OrderDetailPage";
 import UserList from "./page/admin/user/UserListPage";
 import AccountList from "./page/admin/account/AccountListPage";
 import AccountCreate from "./page/admin/account/AccountCreatePage";
@@ -67,6 +68,7 @@ function App() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/product/list" element={<ProductList />} />
         <Route path="/admin/product/create" element={<ProductCreate />} />
+        <Route path="/admin/order/detail" element={<OrderDetail />} />
         <Route path="/admin/user" element={<UserList />} />
         <Route path="/admin/account" element={<AccountList />} />
         <Route path="/admin/account/create" element={<AccountCreate />} />

@@ -33,7 +33,7 @@ export function MuiPage({ ...others }) {
           showLastButton
           size="large"
           renderItem={(item) => (
-            <PaginationItem {...item} disableRipple disableElevation />
+            <PaginationItem {...item} disableRipple />
           )}
         />
       </Stack>
