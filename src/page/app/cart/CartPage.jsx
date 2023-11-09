@@ -4,10 +4,9 @@ import { Icons } from "../../../components/Icon";
 import { Button } from "../../../components/Button"
 import { Checkbox } from "../../../components/Checkbox"
 import { Count } from "../../../components/Count"
-import { FormGroup } from "../../../components/FormGroup"
 import { useNavigate } from "react-router-dom";
 import NoData from "../../../components/NoData";
-
+import Modal from "./ChangeOptionModal";
 
 function CartPage({ isHotIce }) {
   // 지점 데이터
@@ -139,6 +138,15 @@ const isCartEmpty = cartItems.length === 0;
 // 랜딩 연결
 const navigate = useNavigate();
 
+// modal open
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Layout Back Title="장바구니">
       <div className="cartcontainer">
@@ -231,7 +239,7 @@ const navigate = useNavigate();
                       휴지통
                     </Button>
                     <Button
-                      onClick={() => navigate("/order")}
+                      onClick={handleOpen}
                       none
                       globalClass="pd_0"
                     >
@@ -294,6 +302,7 @@ const navigate = useNavigate();
           </div>
         )}
       </div>
+      <Modal open={open} handleClose={handleClose} />
     </Layout>
   );
 }
