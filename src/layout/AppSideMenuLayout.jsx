@@ -113,8 +113,11 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
             </Button>
           </div>
         </nav>
+        <div
+          onClick={onClose}
+          className={`${styles.dimd} ${open ? styles.open : ""}`}
+        ></div>
       </aside>
-      <div className={`${styles.dimd} ${open ? styles.open : ""}`}></div>
     </>
   );
 }
