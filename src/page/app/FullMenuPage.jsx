@@ -103,7 +103,7 @@ function FullMenuPage({ QR }) {
                 <Card
                   data={CoffeeData}
                   onClick={() => {
-                    navigate("/order");
+                    navigate("/qrorder");
                   }}
                 />
               </>
@@ -117,7 +117,7 @@ function FullMenuPage({ QR }) {
                 <Card
                   data={Coffee}
                   onClick={() => {
-                    navigate("/order");
+                    navigate("/qrorder");
                   }}
                 />
               </>
@@ -131,7 +131,7 @@ function FullMenuPage({ QR }) {
                 <Card
                   data={NonCoffee}
                   onClick={() => {
-                    navigate("/order");
+                    navigate("/qrorder");
                   }}
                 />
               </>
@@ -145,7 +145,7 @@ function FullMenuPage({ QR }) {
                 <Card
                   data={AdeJuice}
                   onClick={() => {
-                    navigate("/order");
+                    navigate("/qrorder");
                   }}
                 />
               </>
@@ -168,7 +168,7 @@ function FullMenuPage({ QR }) {
                 <Card
                   data={Tea}
                   onClick={() => {
-                    navigate("/order");
+                    navigate("/qrorder");
                   }}
                 />
               </>

@@ -47,6 +47,7 @@ function App() {
         <Route path="/main" element={<AppMain />} />
         <Route path="/qrmain" element={<QRAppMain />} />
         <Route path="/order" element={<MenuDetail />} />
+        <Route path="/qrorder" element={<MenuDetail QR />} />
         <Route path="/order/history" element={<OrderHistory />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/payment" element={<Payment />} />

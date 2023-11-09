@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import { Navigation, Pagination } from "swiper/modules";
 import MenuSwiper from "./MenuSwiper";
 
-function MenuDetailPage() {
+function MenuDetailPage({QR}) {
   const [isOn, setIsOn] = useState(false);
   const toggleHandler = () => {
     setIsOn(!isOn)
@@ -25,25 +25,24 @@ function MenuDetailPage() {
       <div className="order">
         <div className="order_visual">
           <MenuSwiper />
-          {isOn ?
-            <Button
-              icon="Like"
-              none
-              onClick={toggleHandler}
-              size="icon_s"
-            >
-              즐겨찾기on
-            </Button>
-            :            
-            <Button
-              icon="LikeOff"
-              none
-              onClick={toggleHandler}
-              size="icon_s"
-            >
-              즐겨찾기off
-            </Button>
-          }
+          {!QR && (
+            <>
+              {isOn ? (
+                <Button icon="Like" none onClick={toggleHandler} size="icon_s">
+                  즐겨찾기on
+                </Button>
+              ) : (
+                <Button
+                  icon="LikeOff"
+                  none
+                  onClick={toggleHandler}
+                  size="icon_s"
+                >
+                  즐겨찾기off
+                </Button>
+              )}
+            </>
+          )}
         </div>
         <div className="align inner">
           <p className="headline2">바닐라라떼</p>
@@ -70,7 +69,7 @@ function MenuDetailPage() {
                     title: "ICED",
                     defaultActive: true,
                   },
-                ]}                
+                ]}
               />
             </div>
             <div className="pb_20">
@@ -93,7 +92,7 @@ function MenuDetailPage() {
                     option: true,
                     title: "진하게 (1샷추가)",
                   },
-                ]}                
+                ]}
               />
             </div>
           </div>
@@ -111,10 +110,7 @@ function MenuDetailPage() {
           </div>
         </div>
         <div className="align inner gap_9">
-          <Button
-            btntype="gray"
-            size="full"
-          >
+          <Button btntype="gray" size="full">
             장바구니 담기
           </Button>
           <Button
