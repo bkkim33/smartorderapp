@@ -72,7 +72,7 @@ function SideMenuLayout({globalstyle}) {
             <ul className={`${styles.menu_dep2_wrap}`}>
               <li className={`${styles.menu_dep2}`}>
                 <Link
-                  to="/admin/order/detail"
+                  to="/admin/OrderManagement"
                   className={` ${splitLocation[3] === "detail"
                       ? styles.active
                       : ""
