@@ -13,6 +13,30 @@ import 'swiper/css/navigation';
 import { Navigation, Pagination } from "swiper/modules";
 import MenuSwiper from "./MenuSwiper";
 
+const ProductData = [
+  {
+    id: 1,
+    title: "바닐라라떼1",
+    image: require("../../../images/coffee_img.png"),
+    sales: true,
+    salesname: "",
+  },
+  {
+    id: 2,
+    title: "바닐라라떼2",
+    image: require("../../../images/coffee_img.png"),
+    sales: false,
+    salesname: "품절",
+  },
+  {
+    id: 3,
+    title: "바닐라라떼3",
+    image: require("../../../images/coffee_img.png"),
+    sales: false,
+    salesname: "판매중지",
+  }
+]
+
 function MenuDetailPage({QR}) {
   const [isOn, setIsOn] = useState(false);
   const toggleHandler = () => {
@@ -24,7 +48,7 @@ function MenuDetailPage({QR}) {
     <Layout Back Menu Cart Title="주문하기">
       <div className="order">
         <div className="order_visual">
-          <MenuSwiper />
+          <MenuSwiper data={ProductData}/>
           {!QR && (
             <>
               {isOn ? (
