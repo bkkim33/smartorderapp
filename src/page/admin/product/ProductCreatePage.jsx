@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Table from "../../../components/Table";
+import FileUpload from "../../../components/FileUpload";
+import Chip from "../../../components/Chip";
+import Checkbox from "../../../components/Checkbox";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -13,6 +16,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import MuiModal from "../../../components/MuiModal";
 
 const categoryOpt = [
   {
@@ -43,9 +47,44 @@ const categoryOpt = [
     label: 'Bottle',
     value: 'Bottle',
   },
-]
+];
 
 function ProductCreatPage() {
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [data, setData] = useState([
+    { id: 0, code: "C0001", name: "아메리카노1잔", discount: "-3,800", selected: false },
+    { id: 1, code: "C0002", name: "모든음료1잔", discount: "$최대값$", selected: false },
+    { id: 2, code: "C0003", name: "아메리카노1잔", discount: "-3,800", selected: false },
+    { id: 3, code: "C0004", name: "모든음료1잔", discount: "-$최대값$", selected: false },
+  ]);
+  const [selectAll, setSelectAll] = useState(false);
+
+  const handleSelectAll = () => {
+    const updatedSelectAll = !selectAll;
+    setSelectAll(updatedSelectAll);
+    const updatedData = data.map((item) => ({
+      ...item,
+      selected: updatedSelectAll,
+    }));
+    setData(updatedData);
+  };
+
+  const handleSingleCheck = (id) => {
+    const updatedData = data.map((item) =>
+      item.id === id ? { ...item, selected: !item.selected } : item
+    );
+    setData(updatedData);
+    setSelectAll(updatedData.every((item) => item.selected));
+  };
+  
   return (
     <Layout>
       <div className="align mb_20">
@@ -80,9 +119,7 @@ function ProductCreatPage() {
           <tr>
             <th className="required">상품 이미지</th>
             <td>
-              <Input
-                placeholder="상품명을 입력해주세요."
-              />
+              <FileUpload onChange={() => {}} />
             </td>
           </tr>
           <tr>
@@ -107,12 +144,14 @@ function ProductCreatPage() {
             <th>쿠폰할인 적용</th>
             <td>
               <div className="align start gap_8">
-                <Input 
-                  width="300px"
-                />
+                <div>
+                  <Chip label="테스트염" onClick={() => {}} globalClass="mr_8"/>
+                  <Chip label="테스트염" onClick={() => {}} globalClass="mr_8"/>
+                  <Chip label="테스트염" onClick={() => {}}/>
+                </div>
                 <Button
                   btntype="c11"
-                  onClick={() => { }}
+                  onClick={handleOpen}
                   size="small_h35"
                 >
                   쿠폰할인 선택
@@ -211,7 +250,78 @@ function ProductCreatPage() {
             </Button>
           </div>
         </div>
-      </ContentBox>      
+      </ContentBox>    
+      <MuiModal
+        open={open}
+        onClose={handleClose}
+        header={
+          <>
+            <h4>쿠폰할인 선택</h4>
+            <Button
+              icon="Delete"
+              none
+              onClick={handleClose}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--c99)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+      >
+        <div className="">
+          <Table
+            colgroup={
+              <>
+                <col width="10%" />
+                <col width="30%" />
+                <col width="30%" />
+                <col width="30%" />
+              </>
+            }
+          >
+            <tr>
+              <th>
+                <Checkbox
+                  id={selectAll.toString()}
+                  onChange={handleSelectAll}
+                  checked={selectAll}
+                ></Checkbox>
+              </th>
+              <th>쿠폰코드</th>
+              <th>쿠폰명</th>
+              <th>할인가</th>
+            </tr>
+            {data.map((item) => (
+            <tr key={item.id}>
+              <td>
+                {data.length > 0 && (
+                  <Checkbox
+                    id={item.id.toString()}
+                    name={item.name}
+                    checked={item.selected}
+                    onChange={() => handleSingleCheck(item.id)}
+                  />  
+                )}
+              </td>
+              <td>{item.code}</td>
+              <td>{item.name}</td>
+              <td>{item.discount}</td>
+            </tr>
+              ))}
+          </Table>
+          <div className="align center mt_20">
+            <Button onClick={handleClose} size="xlarge" line globalClass="mr_20">
+              취소
+            </Button>
+            <Button onClick={() => {}} size="xlarge" >
+              확인
+            </Button>
+          </div>
+        </div>
+      </MuiModal>  
     </Layout>
   );
 }
