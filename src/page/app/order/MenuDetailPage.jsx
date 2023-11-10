@@ -147,7 +147,7 @@ function MenuDetailPage({QR}) {
               line
               size="full"
               onClick={() => {
-                navigate("/payment");
+                navigate("/main");
               }}
             >
               다른메뉴 보기
