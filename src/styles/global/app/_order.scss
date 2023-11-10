@@ -14,6 +14,44 @@
   .red_text{
     color: var(--red-text);
   }
+  &_floating{
+    background-color: #F6F5F0;
+    position: fixed;
+    bottom: -100%; 
+    left: 0;
+    width: 100%;
+    transition: bottom 0.5s ease; 
+    &.show {
+      bottom: 0;
+      transition: bottom 0.5s ease;
+    }
+    .sign{
+      p{
+        @include body0(var(--c11));
+      }
+      .closebutton{
+        width:14px;
+        height:14px;
+        position:relative;
+        text-indent:-9999px;
+        &:before, &:after{
+          content:'';
+          width:10px;
+          height:1px;
+          position:absolute;
+          left:50%;
+          top:50%;
+          background:#111;
+        }
+        &:before{
+          transform:translate(-50%,-50%) rotate(-45deg)
+        }
+        &:after{
+          transform:translate(-50%,-50%) rotate(45deg)
+        }
+      }
+    }
+  }
 }
 
 .swiper-pagination {

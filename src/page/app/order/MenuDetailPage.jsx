@@ -110,7 +110,14 @@ function MenuDetailPage({QR}) {
           </div>
         </div>
         <div className="align inner gap_9">
-          <Button btntype="gray" size="full">
+          <Button 
+            btntype="gray"
+            size="full"
+            onClick={() => {
+              // navigate("/payment");
+              document.querySelector(".order_floating").classList.add("show");
+            }}
+          >
             장바구니 담기
           </Button>
           <Button
@@ -121,6 +128,31 @@ function MenuDetailPage({QR}) {
           >
             구매하기
           </Button>
+        </div>
+        <div className="order_floating inner">
+          <div className="sign align mt_5 mb_24">
+            <p className="">장바구니 추가 되었습니다.</p>
+            <button 
+              className="closebutton"
+              onClick={() => {
+                document.querySelector(".order_floating").classList.remove("show");
+              }}
+            >닫기</button>
+          </div>
+          <div className="align gap_9">
+            <Button line size="full">
+              장바구니 가기
+            </Button>
+            <Button
+              line
+              size="full"
+              onClick={() => {
+                navigate("/payment");
+              }}
+            >
+              다른메뉴 보기
+            </Button>
+        </div>
         </div>
       </div>
     </Layout>
