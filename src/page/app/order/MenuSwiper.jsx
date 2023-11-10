@@ -4,9 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from "swiper/modules";
-import Menuimg from "../../../images/coffee_img.png";
 
-function MenuSwiper() {
+function MenuSwiper({data}) {
   const swiperParams = {
     pagination: {
       el: `${".swiper-pagination"}`,
@@ -20,12 +19,16 @@ function MenuSwiper() {
     <Swiper
       {...swiperParams}
     >
-      <SwiperSlide>
-        <img src={Menuimg} alt="커피 이미지" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={Menuimg} alt="커피 이미지" />
-      </SwiperSlide>
+      {data.map((product) => (
+        <SwiperSlide key={product.id} className={`${"order_visual_card"} ${product.sales === false ? "dimd" : ""
+          }`}>
+          {product.sales === false && <p>{product.salesname}</p>}
+          <img
+            src={product.image}
+            alt={product.title}
+          />
+        </SwiperSlide>
+      ))}
       <div className={`${"swiper-pagination"} ${"menudetail"}`}></div>
     </Swiper>
   );
