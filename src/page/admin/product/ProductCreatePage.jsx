@@ -61,9 +61,9 @@ function ProductCreatPage() {
 
   const [data, setData] = useState([
     { id: 0, code: "C0001", name: "아메리카노1잔", discount: "-3,800", selected: false },
-    { id: 1, code: "C0002", name: "모든음료1잔", discount: "$최대값$", selected: false },
+    { id: 1, code: "C0002", name: "모든음료1잔", discount: "0", selected: false },
     { id: 2, code: "C0003", name: "아메리카노1잔", discount: "-3,800", selected: false },
-    { id: 3, code: "C0004", name: "모든음료1잔", discount: "-$최대값$", selected: false },
+    { id: 3, code: "C0004", name: "모든음료1잔", discount: "0", selected: false },
   ]);
   const [selectAll, setSelectAll] = useState(false);
 
