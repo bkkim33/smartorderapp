@@ -1,0 +1,120 @@
+.admin_order{
+  position: relative;
+  &_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 10px;
+    > p {
+      @include h5(var(--c33));
+    }
+  }
+  ul {
+    li {
+      border-top: 1px solid var(--ce7);
+    }
+  }
+  &_product{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    p{
+      &:first-child{
+        flex: 1;
+      }
+      strong{
+        display: block;
+        font-weight: 500;
+        color: var(--c11);
+      }
+      span{
+        display: block;
+        color: var(--c33);
+      }
+    }
+  }
+  &_discount{
+    > li{
+      border-top: 1px dashed var(--ce7);
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      p{
+        &.body2{
+          color: var(--red);
+        }
+        &:first-child{
+          flex: 1;
+          padding-left: 14px;
+          position: relative;
+          &::after{
+            @include before_after;
+            width: 6px;
+            height: 6px;
+            border: 1px solid var(--red);
+            border-top: 0;
+            border-right: 0;
+            position: absolute;
+            left: 4px;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+  &_sum{
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    p{
+      &.body2{
+        &.red{
+          color: var(--red);
+        }        
+      }
+      &:first-child{ 
+        flex: 1;
+      }
+      strong{
+        font-weight: 500;
+        color: var(--c11);
+          &.body2{
+            &.red{
+              color: var(--red);
+          }          
+        }
+      }
+    }
+    &_discount{
+      > li{
+        border-top: 1px dashed var(--ce7);
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+        p{
+        &.body2{
+          &.red{
+            color: var(--red);
+          }          
+        }
+        &:first-child{ 
+          flex: 1;
+        }
+        strong{
+          font-weight: 500;
+          color: var(--c11);
+          &.body2{
+            &.red{
+              color: var(--red);
+            }            
+          }
+        }
+      }
+    }
+  }
+} 

@@ -194,42 +194,42 @@ function ProductListPage() {
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell className="center">1</TableCell>
-                  <TableCell className="center">메가존클라우드</TableCell>
-                  <TableCell className="center">admin01</TableCell>
-                  <TableCell className="center">이름</TableCell>
-                  <TableCell className="center">카페서비스 관리자</TableCell>
-                  <TableCell className="center">
+                  <TableCell>1</TableCell>
+                  <TableCell>메가존클라우드</TableCell>
+                  <TableCell>admin01</TableCell>
+                  <TableCell>이름</TableCell>
+                  <TableCell>카페서비스 관리자</TableCell>
+                  <TableCell>
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">2</TableCell>
-                  <TableCell className="center">클라우드카페</TableCell>
-                  <TableCell className="center">admin02</TableCell>
-                  <TableCell className="center">010-***-1234</TableCell>
-                  <TableCell className="center">매장 관리자</TableCell>
-                  <TableCell className="center">
+                  <TableCell>2</TableCell>
+                  <TableCell>클라우드카페</TableCell>
+                  <TableCell>admin02</TableCell>
+                  <TableCell>010-***-1234</TableCell>
+                  <TableCell>매장 관리자</TableCell>
+                  <TableCell>
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">3</TableCell>
-                  <TableCell className="center">클라우드카페</TableCell>
-                  <TableCell className="center">admin03</TableCell>
-                  <TableCell className="center">홍길동3</TableCell>
-                  <TableCell className="center">매장 관리자</TableCell>
-                  <TableCell className="center">
+                  <TableCell>3</TableCell>
+                  <TableCell>클라우드카페</TableCell>
+                  <TableCell>admin03</TableCell>
+                  <TableCell>홍길동3</TableCell>
+                  <TableCell>매장 관리자</TableCell>
+                  <TableCell>
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">4</TableCell>
-                  <TableCell className="center">클라우드카페</TableCell>
-                  <TableCell className="center">admin04</TableCell>
-                  <TableCell className="center">홍길동4</TableCell>
-                  <TableCell className="center">어드민 관리자</TableCell>
-                  <TableCell className="center">
+                  <TableCell>4</TableCell>
+                  <TableCell>클라우드카페</TableCell>
+                  <TableCell>admin04</TableCell>
+                  <TableCell>홍길동4</TableCell>
+                  <TableCell>어드민 관리자</TableCell>
+                  <TableCell>
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>

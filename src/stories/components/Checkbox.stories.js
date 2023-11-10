@@ -18,25 +18,19 @@ export const Default = (args) => (
 
 export const DefaultChecked = () => (
   <>
-    <Checkbox name="contact1" id="check1" value="text" defaultChecked>
-      text
-    </Checkbox>
+    <Checkbox name="contact1" id="check1" value="text" defaultChecked txt="text"></Checkbox>
   </>
 );
 
 export const Disabled = () => (
   <>
-    <Checkbox name="contact2" id="check2" value="text" disabled>
-      text
-    </Checkbox>
+    <Checkbox name="contact2" id="check2" value="text" disabled txt="text"></Checkbox>
   </>
 );
 
 export const DisabledChecked = () => (
   <>
-    <Checkbox name="contact3" id="check3" value="text" defaultChecked disabled>
-      text
-    </Checkbox>
+    <Checkbox name="contact3" id="check3" value="text" defaultChecked disabled txt="text"></Checkbox>
   </>
 );
 

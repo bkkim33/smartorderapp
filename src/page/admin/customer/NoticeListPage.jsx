@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -7,7 +8,7 @@ import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
 import TextToggle from "../../../components/TextToggle";
-import Modal from "./OrderDetailModal";
+import Checkbox from "../../../components/Checkbox";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -17,37 +18,37 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-const categoryOpt = [
+const targetOpt = [
   {
     label: "전체",
     value: "전체",
   },
   {
-    label: "임직원 법인명",
-    value: "임직원 법인명",
+    label: "임직원",
+    value: "임직원",
   },
   {
-    label: "입주사 회사명",
-    value: "입주사 회사명",
+    label: "입주사",
+    value: "입주사",
   },
   {
     label: "방문객",
     value: "방문객",
-  },
+  }
 ]
 
-const storeNameOpt = [
+const displayOpt = [
   {
     label: "전체",
     value: "전체",
   },
   {
-    label: "클라우드 카페",
-    value: "클라우드 카페",
+    label: "노출함(Y)",
+    value: "노출함(Y)",
   },
   {
-    label: "클라우드 9 카페",
-    value: "클라우드 9 카페",
+    label: "노출안함(N)",
+    value: "노출안함(N)",
   },
 ];
 
@@ -66,8 +67,7 @@ const numOpt = [
   },
 ];
 
-
-function OrderDetailPage() {
+function NoticeListPage() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -75,11 +75,10 @@ function OrderDetailPage() {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">주문 내역 관리</h1>
+        <h1 className="headline2">공지사항 관리</h1>
       </div>
       <hr className="primary" />
       <ContentBox top>
@@ -88,36 +87,34 @@ function OrderDetailPage() {
             <>
               <col width="15%" />
               <col width="auto" />
+              <col width="15%" />
+              <col width="auto" />
             </>
           }
         >
           <tr>
-            <th>주문자(소속)</th>
+            <th>공개대상</th>
             <td>
               <Select
                 width="350px"
                 round="round"
-                placeholder="- SELECT -"
                 defaultValue={0}
-                options={categoryOpt}
+                options={targetOpt}
               />
             </td>
-          </tr>
-          <tr>
-            <th>매장명</th>
+            <th>전체</th>
             <td>
               <Select
                 width="350px"
                 round="round"
-                placeholder="- SELECT -"
                 defaultValue={0}
-                options={storeNameOpt}
+                options={displayOpt}
               />
             </td>
           </tr>
           <tr>
-            <th>기간설정</th>
-            <td>
+            <th>등록일</th>
+            <td colSpan={3}>
               {/* 임시 */}
               <TextToggle
                 data={[
@@ -147,8 +144,18 @@ function OrderDetailPage() {
                 globalClass="mb_8"
               />
               <Input
-                onClick={() => {}}
+                onClick={() => { }}
                 placeholder="날짜 입력"
+                shape="round"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>제목</th>
+            <td colSpan={3}>
+              <Input
+                onClick={() => { }}
+                placeholder="제목을 입력해 주세요."
                 shape="round"
               />
             </td>
@@ -161,11 +168,8 @@ function OrderDetailPage() {
         </div>
       </ContentBox>
       <hr className="secondary" />
-      <div className="align bottom mt_42">
+      <div className="align mt_42">
         <div className="lft">
-          <p className="body0">총 <span className="title3">200</span>건</p>
-        </div>
-        <div className="rgt">
           <Select
             minwidth="200px"
             round="round"
@@ -173,101 +177,86 @@ function OrderDetailPage() {
             options={numOpt}
           />
         </div>
+        <div className="rgt">
+          <Button onClick={() => {}} size="small_h35" line globalClass="mr_5">
+            삭제
+          </Button>
+          <Button onClick={() => { }} size="small_h35">
+            등록하기
+          </Button>
+        </div>
       </div>
       <ContentBox>
         <div className="tbl">
           <TableContainer>
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
-                <col width="5%" />
-                <col width="15%" />
-                <col width="15%" />
+                <col width="8%" />
+                <col width="8%" />
                 <col width="auto" />
-                <col width="20%" />
+                <col width="12%" />
                 <col width="15%" />
-                <col width="10%" />
+                <col width="12%" />
+                <col width="12%" />
               </colgroup>
               <TableHead>
                 <TableRow>
+                  <TableCell>
+                    <Checkbox id="check1" name="check1" />
+                  </TableCell>
                   <TableCell>No.</TableCell>
-                  <TableCell>주문번호</TableCell>
-                  <TableCell>주문자(소속)</TableCell>
-                  <TableCell>주문명</TableCell>
-                  <TableCell>주문일시</TableCell>
-                  <TableCell>매장명</TableCell>
-                  <TableCell>결제금액</TableCell>
+                  <TableCell>제목</TableCell>
+                  <TableCell>공개대상</TableCell>
+                  <TableCell>등록일</TableCell>
+                  <TableCell>노출여부</TableCell>
+                  <TableCell>작성자</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
+                  <TableCell><Checkbox id="check2" name="check2" /></TableCell>
                   <TableCell>1</TableCell>
-                  <TableCell>000000</TableCell>
-                  <TableCell>메가존 클라우드</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-                      
-                    >
-                      에스프레소 1개 외
-                    </Button>
-                  </TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>클라우드 카페</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-                    >
-                      8,280원
-                    </Button>
-                  </TableCell>
+                  <TableCell>공지사항 제목입니다.</TableCell>
+                  <TableCell>전체</TableCell>
+                  <TableCell>2023. 10. 30</TableCell>
+                  <TableCell>Y</TableCell>
+                  <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
+                  <TableCell><Checkbox id="check3" name="check3" /></TableCell>
                   <TableCell>2</TableCell>
-                  <TableCell>000001</TableCell>
-                  <TableCell>메가존 클라우드</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-
-                    >
-                      아메리카노 1개 외
-                    </Button>
-                  </TableCell>
-                  <TableCell>2023.10.24 09:27:10</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-                    >
-                      4,280원
-                    </Button>
-                  </TableCell>
+                  <TableCell>공지사항 제목입니다.</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>2023. 10. 30</TableCell>
+                  <TableCell>Y</TableCell>
+                  <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
+                  <TableCell><Checkbox id="check4" name="check4" /></TableCell>
                   <TableCell>3</TableCell>
-                  <TableCell>000002</TableCell>
-                  <TableCell>메가존</TableCell>
-                  <TableCell>카페라떼 1개</TableCell>
-                  <TableCell>2023.10.24 09:27:20</TableCell>
-                  <TableCell>클라우드 카페</TableCell>
-                  <TableCell>2,000원</TableCell>
+                  <TableCell>공지사항 제목입니다.</TableCell>
+                  <TableCell>방문객</TableCell>
+                  <TableCell>2023. 10. 30</TableCell>
+                  <TableCell>Y</TableCell>
+                  <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
+                  <TableCell><Checkbox id="check5" name="check5" /></TableCell>
                   <TableCell>4</TableCell>
-                  <TableCell>000003</TableCell>
-                  <TableCell>메가존</TableCell>
-                  <TableCell>카푸치노 1개</TableCell>
-                  <TableCell>2023.10.24 09:27:30</TableCell>
-                  <TableCell>클라우드 카페</TableCell>
-                  <TableCell>2,000원</TableCell>
+                  <TableCell>공지사항 제목입니다.</TableCell>
+                  <TableCell>전체</TableCell>
+                  <TableCell>2023. 11. 01</TableCell>
+                  <TableCell>N</TableCell>
+                  <TableCell>admin</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check6" name="check6" /></TableCell>
+                  <TableCell>5</TableCell>
+                  <TableCell>공지사항 제목입니다.</TableCell>
+                  <TableCell>전체</TableCell>
+                  <TableCell>2023. 11. 01</TableCell>
+                  <TableCell>N</TableCell>
+                  <TableCell>admin</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>
@@ -275,9 +264,8 @@ function OrderDetailPage() {
         </div>
         <MuiPage />
       </ContentBox>
-      <Modal open={open} handleClose={handleClose} />
     </Layout>
   );
 }
 
-export default OrderDetailPage;
+export default NoticeListPage;
