@@ -150,7 +150,7 @@ function MenuDetailPage({QR}) {
               navigate("/payment");
             }}
           >
-            구매하기
+            주문하기
           </Button>
         </div>
         <div className="order_floating inner">

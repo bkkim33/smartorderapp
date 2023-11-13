@@ -88,6 +88,10 @@ function OrderHistoryModal({ open, handleClose, data }) {
               <span className="body3 ml_4">{data.time}</span>
             </p>
           </div>
+          <div className="align">
+            <p className="body1 ml_10">상세내역</p>
+            <p className="body1 mr_10">금액</p>
+          </div>
           <div className="receipt_bottom">
             <i className="bg_icon">
               <Icons.LogoIcon />
@@ -232,7 +236,7 @@ function OrderHistoryModal({ open, handleClose, data }) {
               <li>
                 <div className="receipt_list_sum mt_5">
                   <p>
-                    <strong className="headline5">합계금액</strong>
+                    <strong className="headline5">결제금액</strong>
                   </p>
                   <p className="headline5">{Sum.toLocaleString()}원</p>
                 </div>

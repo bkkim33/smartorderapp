@@ -124,7 +124,7 @@ function MainPage() {
             TabsData={[
               {
                 id: 1,
-                title: "전체메뉴",
+                title: "전체 메뉴",
                 defaultActive: true,
                 content: (
                   <>
@@ -134,7 +134,7 @@ function MainPage() {
               },
               {
                 id: 2,
-                title: "즐겨찾는메뉴",
+                title: "즐겨 찾는 메뉴",
                 content: (
                   <>
                     <FavoritesMenu />
