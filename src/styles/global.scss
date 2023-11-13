@@ -81,6 +81,9 @@
         &:hover {
           background-color: #fafbfe;
         }
+        &.noborder {
+          border-bottom: none;
+        }
       }
 
       td {
@@ -90,7 +93,12 @@
         // font-size: 1.4rem;
         @include body2(var(--c33));
         text-align: center;
-
+        // 진현주 - 테이블 형식 내용 추가
+        vertical-align: top;
+        &.noborder {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
         // 왼쪽 정렬
         &.left {
           text-align: left;

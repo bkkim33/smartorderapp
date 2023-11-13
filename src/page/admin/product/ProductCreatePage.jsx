@@ -84,7 +84,27 @@ function ProductCreatPage() {
     setData(updatedData);
     setSelectAll(updatedData.every((item) => item.selected));
   };
-  
+
+
+
+  const [newOption, setNewOption] = useState({
+    optionName: ["온도", "농도"],
+    detailOptionName: ["HOT", "ICED", "HOT ICED", "ICED ONLY"],
+    optionPrice: "",
+  });
+
+  const handleAddOption = () => {
+    const updatedData = [...data, { ...newOption, id: data.length }];
+    setData(updatedData);
+    setNewOption({
+      optionName: "",
+      detailOptionName: "",
+      optionPrice: "",
+    });
+  };
+
+
+
   return (
     <Layout>
       <div className="align mb_20">
@@ -92,6 +112,9 @@ function ProductCreatPage() {
       </div>
       <hr className="primary" />
       <ContentBox>
+        <div className="align mt_10 mb_20">
+          <h2 className="headline4">기본 정보</h2>
+        </div>
         <Table
           colgroup={
             <>
@@ -184,7 +207,13 @@ function ProductCreatPage() {
                   <TableCell>
                     <div className="align gap_8">
                       <Input
-                        onClick={() => { }}
+                        value={newOption.optionName}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionName: e.target.value,
+                          })
+                        }
                         placeholder="옵션명 입력"
                       />
                       <Button
@@ -193,12 +222,12 @@ function ProductCreatPage() {
                         onClick={() => { }}
                         size="icon_s_h35"
                       >
-                        옵션명 추가
+                        옵션 삭제
                       </Button>
                       <Button
                         icon="Plus"
                         line
-                        onClick={() => { }}
+                        onClick={handleAddOption}
                         size="icon_s_h35"
                       >
                         옵션명 추가
@@ -207,14 +236,26 @@ function ProductCreatPage() {
                   </TableCell>
                   <TableCell>
                     <Input
-                      onClick={() => { }}
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
                       placeholder="상세옵션명 입력"
                     />
                   </TableCell>
                   <TableCell>
                     <div className="align gap_8">
                       <Input
-                        onClick={() => { }}
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
                         type="number"
                         placeholder="옵션가 입력"
                       />
@@ -225,6 +266,370 @@ function ProductCreatPage() {
                         size="icon_s_h35"
                       >
                         옵션가 추가
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell rowSpan={4}>
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionName}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionName: e.target.value,
+                          })
+                        }
+                        placeholder="온도"
+                      />
+                      <Button
+                        icon="Plus"
+                        line
+                        onClick={handleAddOption}
+                        size="icon_s_h35"
+                      >
+                        옵션명 추가
+                      </Button>
+                    </div>
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="HOT"
+                    />
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="noborder">
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="ICED"
+                    />
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="noborder">
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="HOT ONLY"
+                    />
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="ICED ONLY"
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                      <Button
+                        icon="Plus"
+                        line
+                        onClick={handleAddOption}
+                        size="icon_s_h35"
+                      >
+                        옵션명 추가
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell rowSpan={4}>
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionName}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionName: e.target.value,
+                          })
+                        }
+                        placeholder="농도"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                      <Button
+                        icon="Plus"
+                        line
+                        onClick={handleAddOption}
+                        size="icon_s_h35"
+                      >
+                        옵션명 추가
+                      </Button>
+                    </div>
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="HOT"
+                    />
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="noborder">
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="ICED"
+                    />
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="noborder">
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="HOT ONLY"
+                    />
+                  </TableCell>
+                  <TableCell className="noborder">
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <Input
+                      value={newOption.detailOptionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          detailOptionName: e.target.value,
+                        })
+                      }
+                      placeholder="ICED ONLY"
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <div className="align gap_8">
+                      <Input
+                        value={newOption.optionPrice}
+                        onChange={(e) =>
+                          setNewOption({
+                            ...newOption,
+                            optionPrice: e.target.value,
+                          })
+                        }
+                        type="number"
+                        placeholder="0원"
+                      />
+                      <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                      <Button
+                        icon="Plus"
+                        line
+                        onClick={handleAddOption}
+                        size="icon_s_h35"
+                      >
+                        옵션명 추가
                       </Button>
                     </div>
                   </TableCell>
