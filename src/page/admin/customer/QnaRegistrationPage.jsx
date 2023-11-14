@@ -27,7 +27,7 @@ import MuiAlert from "../../../components/MuiAlert";
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">공지사항 등록</h1>
+        <h1 className="headline2">자주하는 질문 등록</h1>
       </div>
       <hr className="primary" />
       <ContentBox>
@@ -99,17 +99,17 @@ import MuiAlert from "../../../components/MuiAlert";
           <Button onClick={() => {}} size="xlarge" line>
             취소
           </Button>
-          <Button onClick={handleOpen} size="xlarge">
+          <Button onClick={() => { }} size="xlarge">
             저장
           </Button>
         </div>
       </ContentBox>
-        <MuiAlert
+      <MuiAlert
           open={open}
           onClose={handleClose}
           title={
             <>
-               수정된 내용을 <br/> 저장 하시겠습니까?
+              수정된 내용을 <br/> 저장 하시겠습니까?
             </>
           }
           button={

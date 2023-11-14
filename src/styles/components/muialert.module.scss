@@ -23,6 +23,7 @@
     margin-bottom: 14px;
     @include h3(var(--c11));
     text-align: center;
+    line-height: 160%;
   }
   &_desc{
     @include body1(var(--c55));
