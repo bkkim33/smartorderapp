@@ -98,7 +98,6 @@ function NoticeListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
                 defaultValue={0}
                 options={targetOpt}
               />
@@ -107,7 +106,6 @@ function NoticeListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
                 defaultValue={0}
                 options={displayOpt}
               />
@@ -117,37 +115,23 @@ function NoticeListPage() {
             <th>등록일</th>
             <td colSpan={3}>
               {/* 임시 */}
-              <TextToggle
-                data={[
-                  {
-                    id: 1,
-                    option: null,
-                    title: '오늘'
-                  },
-                  {
-                    id: 2,
-                    option: null,
-                    title: '1주일'
-                  },
-                  {
-                    id: 3,
-                    option: null,
-                    title: '1개월'
-                  },
-                  {
-                    id: 4,
-                    option: null,
-                    title: '3개월'
-                  }
-                ]}
-                onClick={() => { }}
-                type="linebox"
-                globalClass="mb_8"
-              />
+              <div className="align start mb_8 gap_5">
+                <Button onClick={() => {}} size="small_h35" line="light">
+                  오늘
+                </Button>
+                <Button onClick={() => {}} size="small_h35" line="light">
+                  1주일
+                </Button>
+                <Button onClick={() => {}} size="small_h35" line="light">
+                  1개월
+                </Button>
+                <Button onClick={() => {}} size="small_h35" line="light">
+                  3개월
+                </Button>
+              </div>
               <Input
                 onClick={() => { }}
                 placeholder="날짜 입력"
-                shape="round"
               />
             </td>
           </tr>
@@ -157,7 +141,6 @@ function NoticeListPage() {
               <Input
                 onClick={() => { }}
                 placeholder="제목을 입력해 주세요."
-                shape="round"
               />
             </td>
           </tr>
@@ -173,7 +156,6 @@ function NoticeListPage() {
         <div className="lft">
           <Select
             minwidth="200px"
-            round="round"
             defaultValue={0}
             options={numOpt}
           />

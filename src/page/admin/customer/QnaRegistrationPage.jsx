@@ -77,7 +77,6 @@ import MuiAlert from "../../../components/MuiAlert";
               <Input
                 onClick={() => { }}
                 placeholder="제목을 입력해 주세요."
-                shape="round"
               />
             </td>
           </tr>
@@ -85,7 +84,6 @@ import MuiAlert from "../../../components/MuiAlert";
             <th className="required">내용입력</th>
             <td>
               <div className="admin_editorarea mb_8">에디터 사용영역 입니다.</div>
-              <Textarea Height={200} />
             </td>
           </tr>
           <tr>

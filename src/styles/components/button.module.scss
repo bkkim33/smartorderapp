@@ -71,7 +71,7 @@
   }
   &_h35{
     min-height: 35px;
-    padding: 6px 19px;
+    padding: 9px 19px;
     font-size: 1.4rem;
   }
 }
@@ -128,7 +128,21 @@
     border:1px solid var(--cdd);
     color: var(--c99);
   }
+  &.light{
+    @extend .line;
+    color: var(--c99);
+    border: 1px solid var(--cdd);
+    &:hover{
+      border: 1px solid var(--primary);
+      color: var(--c11);
+    }
+    &:active{
+      border: 1px solid var(--primary);
+      color: var(--c11);
+    }
+  }
 }
+
 
 //해당 스테이트는 레드를 기준으로 합니다.
 .state{

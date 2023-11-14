@@ -119,7 +119,6 @@ function ProductListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
                 defaultValue={0}
                 options={categoryOpt}
               />
@@ -128,7 +127,6 @@ function ProductListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
                 defaultValue={0}
                 options={storeNameOpt}
               />
@@ -140,7 +138,6 @@ function ProductListPage() {
               <Input
                 onClick={() => {}}
                 placeholder="상품ID 또는 상품명을 입력해주세요."
-                shape="round"
               />
             </td>
           </tr>
@@ -156,7 +153,6 @@ function ProductListPage() {
         <div className="lft">
           <Select
             minwidth="200px"
-            round="round"
             defaultValue={0}
             options={numOpt}
           />

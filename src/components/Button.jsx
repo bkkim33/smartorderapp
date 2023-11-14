@@ -74,14 +74,17 @@ export function Button({ children, onClick, app, btntype, ...others }) {
   const mergedIconStyle = { ...iconStyle };
   // const appClass = app ? `color-${color}` : ``;
   const appClass = `type-${btntype}`;
-
+  
   return (
     <button
       className={`
       ${styles.btn} ${styles[size]} ${round ? styles.round : ""} 
-      ${line ? styles.line : ""} ${state ? styles.state : ""} 
+      ${line ? styles.line : ""} 
+      ${state ? styles.state : ""} 
       ${none ? styles.none : ""} ${globalClass || ""} 
-      ${styles[appClass]}`}
+      ${styles[appClass]} 
+      ${line === "light" ? styles.light : ""} 
+      `} 
       disabled={disabled}
       onClick={onClick}
     >

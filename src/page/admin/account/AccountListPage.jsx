@@ -28,7 +28,6 @@ function AccountListPage() {
             <Input
               onClick={() => { }}
               placeholder="관리자 검색 (관리자 ID, 관리자명)"
-              shape="round"
               type="search"
               width="300px"
             />
