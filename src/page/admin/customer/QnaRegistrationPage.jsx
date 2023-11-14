@@ -97,7 +97,7 @@ import MuiAlert from "../../../components/MuiAlert";
           <Button onClick={() => {}} size="xlarge" line>
             취소
           </Button>
-          <Button onClick={() => { }} size="xlarge">
+          <Button onClick={() => { }} size="xlarge_border">
             저장
           </Button>
         </div>

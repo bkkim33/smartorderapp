@@ -161,7 +161,7 @@ function ProductListPage() {
           <Button onClick={handleOpen} size="small_h35" line globalClass="mr_5">
             삭제
           </Button>
-          <Button onClick={handleOpen} size="small_h35">
+          <Button onClick={handleOpen} size="small_h35_border">
             신규등록
           </Button>
         </div>

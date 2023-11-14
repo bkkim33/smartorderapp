@@ -164,7 +164,7 @@ function NoticeListPage() {
           <Button onClick={() => {}} size="small_h35" line globalClass="mr_5">
             삭제
           </Button>
-          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35">
+          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35_border">
             등록하기
           </Button>
         </div>

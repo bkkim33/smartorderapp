@@ -84,6 +84,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
       ${none ? styles.none : ""} ${globalClass || ""} 
       ${styles[appClass]} 
       ${line === "light" ? styles.light : ""} 
+      ${size === "small_h35" || size === "xlarge" ? styles.border : ""}
       `} 
       disabled={disabled}
       onClick={onClick}
