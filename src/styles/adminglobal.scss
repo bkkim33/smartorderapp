@@ -5,6 +5,8 @@
 //Admin에만 별도로 사용되는 scss 구성 
 @import './global/admin/adminlogin';
 // 진현주 - 내 프로필 페이지 scss 추가
-@import './global/admin/myprofile';
+@import './global/admin/adminmyprofile';
 @import './global/admin/adminproduct';
 @import './global/admin/adminorder';
+// 진현주 - 공지사항 scss 추가
+@import './global/admin/admincustomer';

@@ -68,6 +68,7 @@ const numOpt = [
 ];
 
 function NoticeListPage() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -181,7 +182,7 @@ function NoticeListPage() {
           <Button onClick={() => {}} size="small_h35" line globalClass="mr_5">
             삭제
           </Button>
-          <Button onClick={() => { }} size="small_h35">
+          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35">
             등록하기
           </Button>
         </div>
