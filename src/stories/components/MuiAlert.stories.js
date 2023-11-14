@@ -37,7 +37,7 @@ export const Default = () => {
         button={
           <>
             <Button onClick={() => { }} line>취소</Button>
-            <Button onClick={() => { }}>확인</Button>
+            <Button onClick={() => { }} size="">확인</Button>
           </>
         }
       >

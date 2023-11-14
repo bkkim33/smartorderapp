@@ -1,25 +1,17 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import Textarea from "../../../components/Textarea";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
-import MuiModal from "../../../components/MuiModal";
-import FormGroup from "../../../components/FormGroup";
-import Radio from "../../../components/Radio";
-import MuiPage from "../../../components/MuiPage";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { height } from "@mui/system";
 
 
 const categoryOpt = [
@@ -72,20 +64,20 @@ const storeNameOpt = [
   },
 ];
 
-const numOpt = [
-  {
-    label: "20개씩 보기",
-    value: "20개씩 보기",
-  },
-  {
-    label: "30개씩 보기",
-    value: "30개씩 보기",
-  },
-  {
-    label: "50개씩 보기",
-    value: "50개씩 보기",
-  },
-];
+// const numOpt = [
+//   {
+//     label: "20개씩 보기",
+//     value: "20개씩 보기",
+//   },
+//   {
+//     label: "30개씩 보기",
+//     value: "30개씩 보기",
+//   },
+//   {
+//     label: "50개씩 보기",
+//     value: "50개씩 보기",
+//   },
+// ];
 
 
 function ProductListPage() {

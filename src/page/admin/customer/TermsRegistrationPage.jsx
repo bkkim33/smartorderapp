@@ -11,7 +11,7 @@ import FormGroup from "../../../components/FormGroup";
 //mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
-  function QnaRegistrationPage() {
+  function TermsRegistrationPage() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -25,7 +25,7 @@ import MuiAlert from "../../../components/MuiAlert";
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">자주하는 질문 등록</h1>
+        <h1 className="headline2">이용약관 등록</h1>
       </div>
       <hr className="primary" />
       <ContentBox>
@@ -70,6 +70,15 @@ import MuiAlert from "../../../components/MuiAlert";
             </td>
           </tr>
           <tr>
+            <th className="required">시행일자</th>
+            <td>
+              <Input
+                onClick={() => { }}
+                placeholder="달력들어가야 함요."
+              />
+            </td>
+          </tr>
+          <tr>
             <th className="required">제목</th>
             <td>
               <Input
@@ -100,12 +109,12 @@ import MuiAlert from "../../../components/MuiAlert";
           </Button>
         </div>
       </ContentBox>
-      <MuiAlert
+        <MuiAlert
           open={open}
           onClose={handleClose}
           title={
             <>
-              수정된 내용을 <br/> 저장 하시겠습니까?
+               수정된 내용을 <br/> 저장 하시겠습니까?
             </>
           }
           button={
@@ -120,4 +129,4 @@ import MuiAlert from "../../../components/MuiAlert";
   );
 }
 
-export default QnaRegistrationPage;
+export default TermsRegistrationPage;

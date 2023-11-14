@@ -108,7 +108,8 @@ function AccountCreate() {
             </Button>
             <Button
               onClick={() => { }}
-              size="small_h35_border"
+              size="small_h35" 
+              border
             >
               계정 생성
             </Button>

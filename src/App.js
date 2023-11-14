@@ -13,6 +13,8 @@ import AdminNotice from "./page/admin/customer/NoticeListPage";
 // 진현주 231113 - 공지사항 등록 페이지 추가 
 import NoticeRegistrationPage from "./page/admin/customer/NoticeRegistrationPage";
 import QnaRegistrationPage from "./page/admin/customer/QnaRegistrationPage";
+import TermsRegistrationPage from "./page/admin/customer/TermsRegistrationPage";
+
 
 
 import UserList from "./page/admin/user/UserListPage";
@@ -83,7 +85,8 @@ function App() {
         {/* 진현주 - 등록페이지 추가 */}
         <Route path="/admin/customer/notice/registration"  element={<NoticeRegistrationPage/>} />
         <Route path="/admin/customer/qna/registration"  element={<QnaRegistrationPage/>} />
-
+        <Route path="/admin/customer/terms/registration"  element={<TermsRegistrationPage/>} />
+        
         <Route path="/admin/user" element={<UserList />} />
         <Route path="/admin/account" element={<AccountList />} />
         <Route path="/admin/account/create" element={<AccountCreate />} />

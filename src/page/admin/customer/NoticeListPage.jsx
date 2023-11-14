@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -7,7 +7,6 @@ import Input from "../../../components/Input";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
-import TextToggle from "../../../components/TextToggle";
 import Checkbox from "../../../components/Checkbox";
 
 //mui table import
@@ -69,12 +68,9 @@ const numOpt = [
 
 function NoticeListPage() {
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
+  const [ setOpen ] = useState(false);
   const handleOpen = () => {
     setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
   };
   return (
     <Layout>
@@ -164,7 +160,7 @@ function NoticeListPage() {
           <Button onClick={() => {}} size="small_h35" line globalClass="mr_5">
             삭제
           </Button>
-          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35_border">
+          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35" border>
             등록하기
           </Button>
         </div>

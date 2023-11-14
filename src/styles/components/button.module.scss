@@ -28,6 +28,10 @@
   span{
     // flex:1;
   }
+  &.border{
+    border: 1px solid var(--primary);
+    color: var(--c11);
+  }
 }
 
 .full{
@@ -37,11 +41,6 @@
 
 .xlarge{ 
   min-width: 163px;
-  &_border {
-    @extend .xlarge;
-    border: 1px solid var(--primary);
-    color: var(--c11);
-  }
 }
 
 .medium{
@@ -76,14 +75,8 @@
   }
   &_h35{
     min-height: 35px;
-    padding: 6px 19px;
+    padding: 9px 19px;
     font-size: 1.4rem;
-    &_border {
-      @extend .small_h35;
-      border: 1px solid var(--primary);
-      color: var(--c11);
-      padding: 9px 19px;
-    }
   }
 }
 

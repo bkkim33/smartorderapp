@@ -6,7 +6,7 @@ import { Icons } from "./Icon";
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   round: PropTypes.bool,
-  line: PropTypes.bool,
+  line: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   state: PropTypes.bool,
   none: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -24,6 +24,7 @@ Button.propTypes = {
     "medium_h40",
     "",
   ]),
+  border: PropTypes.bool,
   icon: PropTypes.string,
   iconposition: PropTypes.oneOf(["right", ""]),
   iconStyle: PropTypes.shape({
@@ -40,6 +41,7 @@ Button.propTypes = {
 Button.defaultProps = {
   children: "button",
   size: "",
+  border: false,
   round: false,
   line: false,
   state: false,
@@ -69,6 +71,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
     icon,
     iconposition,
     badge,
+    border,
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
@@ -84,7 +87,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
       ${none ? styles.none : ""} ${globalClass || ""} 
       ${styles[appClass]} 
       ${line === "light" ? styles.light : ""} 
-      ${size === "small_h35" || size === "xlarge" ? styles.border : ""}
+      ${border ? styles.border : ""}
       `} 
       disabled={disabled}
       onClick={onClick}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import MuiModal from "../../../components/MuiModal";
 import Button from "../../../components/Button";

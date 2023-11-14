@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from "react";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import React from "react";
+// import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from "swiper/modules";
+// import { Navigation, Pagination } from "swiper/modules";
 import Layout from '../../../layout/AppDefaultLayout'
 // import { Icons } from "../../../components/Icon";
 // import { Button } from "../../../components/Button"

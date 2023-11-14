@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -8,7 +7,6 @@ import Table from "../../../components/Table";
 import FileUpload from "../../../components/FileUpload";
 import Radio from "../../../components/Radio";
 import FormGroup from "../../../components/FormGroup";
-import Textarea from "../../../components/Textarea";
 
 //mui table import
 import MuiAlert from "../../../components/MuiAlert";
@@ -97,7 +95,7 @@ import MuiAlert from "../../../components/MuiAlert";
           <Button onClick={() => {}} size="xlarge" line>
             취소
           </Button>
-          <Button onClick={handleOpen} size="xlarge_border">
+          <Button onClick={handleOpen} size="xlarge" border>
             저장
           </Button>
         </div>
@@ -113,7 +111,7 @@ import MuiAlert from "../../../components/MuiAlert";
           button={
             <>
               <Button onClick={handleClose} line>아니요</Button>
-              <Button onClick={() => { }}>네</Button>
+              <Button onClick={() => { }} border>네</Button>
             </>
           }
         >

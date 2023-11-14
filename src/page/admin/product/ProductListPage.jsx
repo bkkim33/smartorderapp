@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -161,7 +161,7 @@ function ProductListPage() {
           <Button onClick={handleOpen} size="small_h35" line globalClass="mr_5">
             삭제
           </Button>
-          <Button onClick={handleOpen} size="small_h35_border">
+          <Button onClick={handleOpen} size="small_h35" border>
             신규등록
           </Button>
         </div>
