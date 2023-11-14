@@ -89,8 +89,8 @@ function OrderHistoryModal({ open, handleClose, data }) {
             </p>
           </div>
           <div className="align">
-            <p className="body1 ml_10">상세내역</p>
-            <p className="body1 mr_10">금액</p>
+            <p className="title3 color_t_99 ml_10">상세내역</p>
+            <p className="title3 color_t_99 mr_10">금액</p>
           </div>
           <div className="receipt_bottom">
             <i className="bg_icon">
