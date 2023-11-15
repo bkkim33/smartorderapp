@@ -23,7 +23,7 @@ import AccountModify from "./page/admin/account/AccountModifyPage";
 import Profile from "./page/admin/myprofile/Profile";
 import ChangePassword from "./page/admin/myprofile/ChangePassword";
 // 진현주 231113 - 카테고리 관리 페이지 추가 
-import CategoryManagementPage from "./page/admin/product/CategoryManagementPage";
+// import CategoryManagementPage from "./page/admin/product/CategoryManagementPage";
 
 
 // app import
@@ -77,7 +77,7 @@ function App() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/product/list" element={<ProductList />} />
         <Route path="/admin/product/create" element={<ProductCreate />} />
-        <Route path="/admin/product/category"  element={<CategoryManagementPage />} />
+        {/* <Route path="/admin/product/category"  element={<CategoryManagementPage />} /> */}
         <Route path="/admin/order/detail" element={<OrderDetail />} />
         <Route path="/admin/customer/notice" element={<AdminNotice />} />
         {/* 진현주 - 등록페이지 추가 */}
