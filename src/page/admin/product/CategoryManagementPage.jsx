@@ -100,7 +100,7 @@ function ProductListPage() {
         <ContentBox left>
           <div className="align mt_10 mb_20">
             <h2 className="headline4">카테고리 설정</h2>
-            <div className="btn_set align">
+            <div className="btn_set align rgt">
                 <Button
                   line
                   onClick={() => {}}
