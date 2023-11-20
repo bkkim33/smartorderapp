@@ -85,47 +85,14 @@ function PickupMethodTabPage() {
                 </MuiTable>
               </TableContainer>
             </div>
-            <div className="align rgt mt_20">
-              <Button onClick={() => {}} btntype="c11">
-                저장
-              </Button>
-            </div>
           </div>
           <div className="align column rgt">
             <div className="align mt_10 mb_20">
               <h2 className="headline4">수령방법 설정</h2>
+              <Button onClick={() => {}} size="small_h35" border="point">
+                 적용하기
+              </Button>
             </div>
-            {/* <Table
-              colgroup={
-                <>
-                  <col width="20%" />
-                  <col width="auto" />
-                  <col width="auto" />
-                </>
-              }
-            >
-              <tr>
-                <th>순서</th>
-                <th>수령 방법</th>
-                <th>사용 여부</th>
-              </tr>
-              {receiptMethodsData.map((method) => (
-                  <tr key={method.id}>
-                    <td>{method.id}</td>
-                    <td>{method.name}</td>
-                    <td>
-                      <Select
-                        options={inUse}
-                        defaultValue={0}
-                        value={method.selectedOption}
-                        onChange={(e) =>
-                          handleSelectChange(method.id, e.target.value)
-                        }
-                      />
-                    </td>
-                  </tr>
-                ))}
-            </Table> */}
             <div className="tbl">
               <TableContainer>
                 <MuiTable>
@@ -147,26 +114,21 @@ function PickupMethodTabPage() {
                         <TableCell>{method.id}</TableCell>
                         <TableCell>{method.name}</TableCell>
                         <TableCell>
-                        <Select 
-                          minwidth="100%"
-                          options={inUse}
-                          defaultValue={0}
-                          value={method.selectedOption}
-                          onChange={(e) =>
-                            handleSelectChange(method.id, e.target.value)
-                          }
-                        />
+                          <Select 
+                            minwidth="100%"
+                            options={inUse}
+                            defaultValue={0}
+                            value={method.selectedOption}
+                            onChange={(e) =>
+                              handleSelectChange(method.id, e.target.value)
+                            }
+                          />
                         </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </MuiTable>
               </TableContainer>
-            </div>
-            <div className="align rgt mt_20">
-              <Button onClick={() => {}} btntype="c11">
-                적용하기
-              </Button>
             </div>
           </div>
         </div>
