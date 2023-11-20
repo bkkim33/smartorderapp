@@ -5,6 +5,8 @@ import Table from "../../../components/Table";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 
+import MuiAlert from "../../../components/MuiAlert";
+
 function ChangePassword() {
 
   const [errorMessages, setErrorMessages] = useState({
@@ -20,11 +22,28 @@ function ChangePassword() {
   
     const newErrorMessages = {
       currentPasswordError: currentPassword !== "1234" ? "* 현재 사용하고 있는 비밀번호가 아닙니다." : "",
-      newPasswordError: newPassword.length < 4 || newPassword.length > 20 ? "* 비밀번호는 4~20자 이내여야 합니다." : "",
+      newPasswordError: newPassword.length < 4 || newPassword.length > 20 ? "* 비밀번호는 4~20자 이내여야 합니다.<br/><br/>* 현재 사용하고 있는 비밀번호입니다." : "",
       confirmPasswordError: newPassword !== confirmPassword ? "* 새로운 비밀번호와 다릅니다." : "",
     };
   
     setErrorMessages(newErrorMessages);
+  };
+
+  const [open, setOpen] = useState(false);
+  const [open02, setOpen02] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen02 = () => {
+    setOpen02(true);
+  };
+  const handleClose02 = () => {
+    setOpen02(false);
   };
 
   return (
@@ -59,7 +78,7 @@ function ChangePassword() {
                   maxLength={20}
                 />
                 {errorMessages.newPasswordError && (
-                  <div className="error_txt mt_5 ml_5">{errorMessages.newPasswordError}</div>
+                  <div className="error_txt mt_5 ml_5" dangerouslySetInnerHTML={{ __html: errorMessages.newPasswordError }}/>
                 )}
               </td>
             </tr>
@@ -78,11 +97,41 @@ function ChangePassword() {
             </tr>
           </Table>
           <div className="align end mt_20">
-            <Button onClick={handlePasswordUpdate} btntype="c11" size="xlarge">
+            <Button onClick={() => {handlePasswordUpdate(); handleOpen();}} btntype="c11" size="xlarge">
               확인
             </Button>
           </div>
         </div>
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={
+            <>
+               비밀번호를 변경하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose} line>취소</Button>
+              <Button onClick={handleOpen02} border="point">확인</Button>
+            </>
+          }
+        />
+        <MuiAlert
+          open={open02}
+          onClose={handleClose02}
+          title={
+            <>
+               비밀번호가 변경되었습니다.<br/>
+               다시 로그인해주세요.
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose02} border="point">확인</Button>
+            </>
+          }
+        />
       </ContentBox>
     </Layout>
   );

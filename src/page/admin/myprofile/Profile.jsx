@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
 import Input from "../../../components/Input"
 import Button from "../../../components/Button"
-import { useNavigate } from "react-router-dom";
 
 function Profile() {
 
@@ -14,7 +14,6 @@ function Profile() {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
 
   return (
     <Layout>
@@ -53,11 +52,12 @@ function Profile() {
           </tr>
           <tr>
             <th>비밀번호</th>
-            <td className="align start passwordbox ">
+            <td className="align start passwordbox">
               <Input
+                width="170px"
                 value={password}
                 onChange={handlePasswordChange}
-                placeholder="**********"
+                placeholder="********************"
                 type='password'
                 shape="none"
                 disabled

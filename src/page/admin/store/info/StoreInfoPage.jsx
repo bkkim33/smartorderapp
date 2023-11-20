@@ -66,7 +66,7 @@ function StoreListPage() {
     const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
     console.log(deletedItems);
     setTableRows(updatedTableRows);
-    handleOpen(false);
+    handleClose(false);
   };
 
 

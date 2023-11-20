@@ -222,8 +222,8 @@ function CategoryManagementPage() {
             </div>
           </div>
           <div className="align end mt_20">
-            <Button onClick={() => {}} btntype="c11" size="xlarge">
-              확인
+            <Button onClick={() => {}} size="xlarge" btntype="c11">
+              적용하기
             </Button>
           </div>
         </div>

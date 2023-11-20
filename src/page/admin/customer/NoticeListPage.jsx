@@ -16,6 +16,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import MuiAlert from "../../../components/MuiAlert";
 
 const targetOpt = [
   {
@@ -84,11 +85,13 @@ const initialTableRows = [
 function NoticeListPage() {
 
   const navigate = useNavigate();
-  const [setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
-
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [selectAll, setSelectAll] = useState(false);
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -111,13 +114,15 @@ function NoticeListPage() {
   };
 
   const [tableRows, setTableRows] = useState(initialTableRows);
-  const handleDelete = () => {
+  // MuiAlert 확인 후 데이터 삭제
+  const handleAlertYes = () => {
     const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
     setCheckedItems({});
     setSelectAll(false);
     const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
-    console.log('지워지냐?', deletedItems);
+    console.log(deletedItems);
     setTableRows(updatedTableRows);
+    handleClose(false);
   };
 
   const [activeButton, setActiveButton] = useState(null); 
@@ -207,7 +212,7 @@ function NoticeListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} btntype="c11" size="xlarge">
+          <Button onClick={() => { }} btntype="c11" size="xlarge">
             검색
           </Button>
         </div>
@@ -222,7 +227,7 @@ function NoticeListPage() {
           />
         </div>
         <div className="rgt gap_10">
-          <Button onClick={handleDelete} size="small_h35" line>
+          <Button onClick={handleOpen} size="small_h35" line>
             삭제
           </Button>
           <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35" border="point">
@@ -284,6 +289,21 @@ function NoticeListPage() {
           </TableContainer>
         </div>
         <MuiPage />
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={
+            <>
+               정말 삭제하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose} line>취소</Button>
+              <Button onClick={handleAlertYes} border="point">확인</Button>
+            </>
+          }
+        />
       </ContentBox>
     </Layout>
   );

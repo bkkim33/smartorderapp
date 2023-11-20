@@ -8,13 +8,24 @@ import FileUpload from "../../../components/FileUpload";
 import Radio from "../../../components/Radio";
 import FormGroup from "../../../components/FormGroup";
 
+//mui table import
+import MuiAlert from "../../../components/MuiAlert";
 
-function NoticeRegistrationPage() {
+  function NoticeModifyPage() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">공지사항 등록</h1>
+        <h1 className="headline2">공지사항 수정</h1>
       </div>
       <hr className="primary" />
       <ContentBox>
@@ -22,7 +33,7 @@ function NoticeRegistrationPage() {
           <Button onClick={() => {}} size="small_h35" line>
             취소
           </Button>
-          <Button onClick={() => {}} size="small_h35" border="point">
+          <Button onClick={handleOpen} size="small_h35" border="point">
             저장
           </Button>
         </div>
@@ -89,8 +100,23 @@ function NoticeRegistrationPage() {
           </tr>
         </Table>
       </ContentBox>
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={
+            <>
+               수정된 내용을 <br/> 저장 하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose} line>아니요</Button>
+              <Button onClick={() => { }} border>네</Button>
+            </>
+          }
+        />
     </Layout>
   );
 }
 
-export default NoticeRegistrationPage;
+export default NoticeModifyPage;
