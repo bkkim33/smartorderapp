@@ -225,7 +225,7 @@ function NoticeListPage() {
           <Button onClick={handleDelete} size="small_h35" line>
             삭제
           </Button>
-          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35" border>
+          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35" border="point">
             등록하기
           </Button>
         </div>

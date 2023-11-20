@@ -1,4 +1,4 @@
-// 공통영역
+// 매장정보 탭 공통영역
 .tabbox{
   button{
     color: var(--ce7);
@@ -11,10 +11,34 @@
     }
   }
 }
+// 공통
+.admin_{
+
+}
 .flex1{
   flex: 1;
 }
+
+.crsor{
+  &_poin{
+    cursor: pointer;
+  }
+}
+.w{
+  &_100{width: 100%;}
+}
+
 .plusbtnbox{position: relative;}
+.admin_receivingmethod{
+  .tbl{width: 100%;}
+  // .select < div{
+  //   width: 100%;
+
+  //   }
+  // div:not(.select){
+  //   width: 100%;
+  // }
+}
 // .plusbtn{
 //   position: absolute;
 //   border: 1px solid;
@@ -39,8 +63,6 @@
 //     background-color: var(--primary);
 //   }
 // }
-
-
 
 .selectdays{
   .select{

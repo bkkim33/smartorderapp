@@ -93,7 +93,6 @@ function StoreListPage() {
 
   const [tableRows, setTableRows] = useState(initialTableRows);
 
-  // 체크박스를 제외하고 TableRow 클릭
   const handleTableRowClick = (e, row) => {
     const isCheckbox = e.target.tagName === 'INPUT' && e.target.type === 'checkbox';
     if (!isCheckbox) {
@@ -105,19 +104,6 @@ function StoreListPage() {
       handleCheckboxChange(row.id);
     }
   };
-
-  // 체크박스를 제외하고 TableRow 클릭 해당 태그에 넣어본 코드       
-//   <TableRow
-//   key={row.id}
-//   onClick={(e) => {
-//     const isCheckbox = e.target.tagName === 'INPUT' && e.target.type === 'checkbox';
-//     if (!isCheckbox) {
-//       navigate("/admin/store/info/modify");
-//     } else {
-//       handleCheckboxChange(row.id);
-//     }
-//   }}
-// >
 
   return (
     <Layout>
@@ -155,7 +141,7 @@ function StoreListPage() {
         <Button onClick={() => {navigate("/admin/store/info/registration");}} size="small_h35" line>
           등록
         </Button>
-        <Button onClick={handleOpen} size="small_h35" border>
+        <Button onClick={handleOpen} size="small_h35" border="point">
           삭제
         </Button>
       </div>
@@ -193,11 +179,7 @@ function StoreListPage() {
               </TableHead>
               <TableBody>
                 {tableRows.map((row) => (
-                  // 대리님 확인 필요 - 체크박스를 제외하고 TableRow 클릭되어야 함 : 다 넣어보아도 체크박스만 제외하고 클릭이 안됨.. 아니면 TableCell 각각 연결.. 
-                  <TableRow
-                    key={row.id}
-                    onClick={(e) => handleTableRowClick(e, row)}
-                  >
+                  <TableRow key={row.id} className="crsor_poin" >
                     <TableCell>
                     <Checkbox
                       id={`check${row.id}`}
@@ -206,13 +188,13 @@ function StoreListPage() {
                       onChange={() => handleCheckboxChange(row.id)}
                     />
                     </TableCell>
-                    <TableCell>{row.id}</TableCell>
-                    <TableCell>{row.storeName}</TableCell>
-                    <TableCell>{row.businessNumber}</TableCell>
-                    <TableCell>{row.ownerName}</TableCell>
-                    <TableCell>{row.contact}</TableCell>
-                    <TableCell>{row.address}</TableCell>
-                    <TableCell dangerouslySetInnerHTML={{ __html: row.operatingHours }} />
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.id}</TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.storeName}</TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.businessNumber}</TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.ownerName}</TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.contact}</TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.address}</TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)} dangerouslySetInnerHTML={{ __html: row.operatingHours }} />
                   </TableRow>
                 ))}
               </TableBody>
@@ -231,7 +213,7 @@ function StoreListPage() {
           button={
             <>
               <Button onClick={handleClose} line>아니요</Button>
-              <Button onClick={handleAlertYes} border>네</Button>
+              <Button onClick={handleAlertYes} border="point">네</Button>
             </>
           }
         />
