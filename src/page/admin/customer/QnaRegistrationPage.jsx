@@ -114,8 +114,7 @@ import MuiAlert from "../../../components/MuiAlert";
               <Button onClick={() => { }} border>네</Button>
             </>
           }
-        >
-        </MuiAlert>
+        />
     </Layout>
   );
 }

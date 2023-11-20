@@ -4,7 +4,6 @@ import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import Table from "../../../components/Table";
-import Select from "../../../components/Select";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -12,452 +11,257 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import TableContainer from '@mui/material/TableContainer';
+import MuiAlert from "../../../components/MuiAlert";
 
 
-const categoryOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "Coffee",
-    value: "Coffee",
-  },
-  {
-    label: "Non-Coffee",
-    value: "Non-Coffee",
-  },
-  {
-    label: "Ade/Juice",
-    value: "Ade/Juice",
-  },
-  {
-    label: "Blended",
-    value: "Blended",
-  },
-  {
-    label: "Tea",
-    value: "Tea",
-  },
-  {
-    label: "Bread",
-    value: "Bread",
-  },
-  {
-    label: "Bottle",
-    value: "Bottle",
-  },
-]
-
-const storeNameOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "클라우드카페(역삼1호점)",
-    value: "클라우드카페(역삼1호점)",
-  },
-  {
-    label: "클라우드9카페(역삼2호점)",
-    value: "클라우드9카페(역삼2호점)",
-  },
+const initialCategoryData = [
+  { id: 1, order: 1, category: "Coffee" },
+  { id: 2, order: 2, category: "Non-Coffee" },
+  { id: 3, order: 3, category: "Ade/Juice" },
+  { id: 4, order: 4, category: "Blended" },
 ];
 
-// const numOpt = [
-//   {
-//     label: "20개씩 보기",
-//     value: "20개씩 보기",
-//   },
-//   {
-//     label: "30개씩 보기",
-//     value: "30개씩 보기",
-//   },
-//   {
-//     label: "50개씩 보기",
-//     value: "50개씩 보기",
-//   },
-// ];
+function CategoryManagementPage() {
 
-
-function ProductListPage() {
   const [open, setOpen] = useState(false);
+  const [open02, setOpen02] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleOpen02 = () => {
+    setOpen02(true);
+  };
+  const handleClose02 = () => {
+    setOpen02(false);
+  };
+
+  const [categoryData, setCategoryData] = useState(initialCategoryData);
+
+  const handleCategoryChange = (value, id) => {
+    const updatedData = categoryData.map((row) => {
+      if (row.id === id) {
+        return {
+          ...row,
+          category: row.deletable ? "" : value,
+          deletable: !row.deletable,
+        };
+      }
+      return row;
+    });
+  
+    setCategoryData(updatedData);
+  };
+
+  const handleAddCategory = () => {
+    const newCategory = {
+      id: categoryData.length + 1,
+      order: categoryData.length + 1,
+      category: "",
+    };
+
+    setCategoryData([...categoryData, newCategory]);
+  };
+
+  const handleTableRowClick = (id) => {
+    console.log('되고 있냐?', id);
+  };
+
   return (
     <Layout>
       <div className="align mb_20">
         <h1 className="headline2">카테고리 관리</h1>
       </div>
       <hr className="primary" />
-      <div className="align gap_30">
-        <ContentBox left>
-          <div className="align mt_10 mb_20">
-            <h2 className="headline4">카테고리 설정</h2>
-            <div className="btn_set align rgt">
-                <Button
-                  line
-                  onClick={() => {}}
-                >
-                  <i class="admin_arrow up"></i>
+      <ContentBox>
+        <div className="admin_category">
+          <div className="categorybox align top gap_30">
+            <div className="align column lft">
+              <div className="align mt_10 mb_20">
+                <h2 className="headline4">카테고리 설정</h2>
+                <div className="btn_set align rgt">
+                  <Button
+                    icon="AdminArrow"
+                    onClick={() => {}}
+                    size="icon_s"
+                  >
+                    위로
+                  </Button>
+                  <Button
+                    icon="AdminArrow"
+                    onClick={() => {}}
+                    size="icon_s"
+                  >
+                    아래로
+                  </Button>
+                  <Button
+                    icon="AdminArrowBar"
+                    onClick={() => {}}
+                    size="icon_s"
+                  >
+                    한 페이지 위로
+                  </Button>
+                  <Button
+                    icon="AdminArrowBar"
+                    onClick={() => {}}
+                    size="icon_s"
+                  >
+                    한 페이지 아래로
+                  </Button>
+                </div>
+              </div>
+              <div className="tbl">
+                <TableContainer>
+                  <MuiTable>
+                    <colgroup>
+                        <col width="20%" />
+                        <col width="auto" />
+                    </colgroup>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>순서</TableCell>
+                        <TableCell>카테고리명</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {categoryData.map((row) => (
+                        <TableRow key={row.id} onClick={() => handleTableRowClick(row.id)}>
+                          <TableCell>{row.order}</TableCell>
+                          <TableCell className="left">
+                            {row.category === "" ? (
+                              <div className="align gap_8">
+                                <Input
+                                  placeholder="카테고리명 입력"
+                                  value={row.category}
+                                  onChange={(e) => handleCategoryChange(e, row.id)}
+                                />
+                                <Button
+                                  icon={row.deletable ? "Delete" : "Check"}
+                                  line
+                                   onClick={() => handleCategoryChange(row.deletable ? "" : row.category, row.id)}
+                                  size="icon_s_h35"
+                                >
+                                  {row.deletable ? "옵션 삭제" : "체크"}
+                                </Button>
+                              </div>
+                            ) : (
+                              row.category
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </MuiTable>
+                </TableContainer>
+              </div>
+              <div className="align rgt gap_10 mt_20">
+                <Button onClick={() => {}} line>
+                  순서 저장
                 </Button>
-                <Button
-                  line
-                  onClick={() => {}}
-                >
-                  <i class="admin_arrow down"></i>
+                <Button onClick={handleAddCategory} border>
+                  + 카테고리 추가
                 </Button>
-                <Button
-                  none
-                  onClick={() => {}}
-                >
-                  <i class="admin_arrow up"></i>
+              </div>
+            </div>
+            <div className="align column rgt">
+              <div className="align mt_10 mb_20">
+                <h2 className="headline4">카테고리 정보</h2>
+              </div>
+              <Table
+                colgroup={
+                  <>
+                    <col width="25%" />
+                    <col width="auto" />
+                  </>
+                }
+              >
+                <tr>
+                  <th className="required">카테고리명</th>
+                  <td>
+                    <Input
+                      onClick={() => {}}
+                      placeholder="상품명을 입력해주세요."
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th rowSpan={6}>연결된상품</th>
+                  <td>에스프레소(00001)</td>
+                </tr>
+                <tr>
+                  <td>아메리카노(00002)</td>
+                </tr>
+                <tr>
+                  <td>카페라떼(00003)</td>
+                </tr>
+                <tr>
+                  <td>카푸치노(00004)</td>
+                </tr>
+                <tr>
+                  <td>바닐라라떼(00005)</td>
+                </tr>
+                <tr>
+                  <td>캬라멜마끼아또(00006)</td>
+                </tr>
+              </Table>
+              <div className="align rgt gap_10 mt_20">
+                <Button onClick={handleOpen} line>
+                  삭제
                 </Button>
-                <Button
-                  none
-                  onClick={() => {}}
-                >
-                  <i class="admin_arrow down"></i>
+                <Button onClick={handleOpen02} btntype="c11">
+                  저장
                 </Button>
+              </div>
             </div>
           </div>
-          {/* <TableContainer> */}
-            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
-              <colgroup>
-                  <col width="10%" />
-                  <col width="auto" />
-              </colgroup>
-              <TableHead>
-                <TableRow>
-                  <TableCell>순서</TableCell>
-                  <TableCell>상세옵션명</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell>
-                    <div className="align gap_8">
-                      <Input
-
-                        placeholder="옵션명 입력"
-                      />
-                      <Button
-                        icon="Delete"
-                        line
-                        onClick={() => { }}
-                        size="icon_s_h35"
-                      >
-                        옵션 삭제
-                      </Button>
-                      <Button
-                        icon="Plus"
-                        line
-                        size="icon_s_h35"
-                      >
-                        옵션명 추가
-                      </Button>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <Input
-
-                      placeholder="상세옵션명 입력"
-                    />
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </MuiTable>
-           <>
-  <MuiTable
-    cols={[
-      {
-        colWidth: '8%'
-      },
-      {
-        colWidth: '8%'
-      },
-      {
-        colWidth: '30%'
-      },
-      {
-        colWidth: 'auto'
-      },
-      {
-        colWidth: '10%'
-      },
-      {
-        colWidth: '5%'
-      },
-      {
-        colWidth: '5%'
-      }
-    ]}
-    columns={[
-      {
-        colSpan: null,
-        field: '쿠폰 코드',
-        headerName: 'couponnum'
-      },
-      {
-        colSpan: null,
-        field: '유효기한',
-        headerName: 'period'
-      },
-      {
-        colSpan: null,
-        field: '쿠폰명',
-        headerName: 'name'
-      },
-      {
-        colSpan: null,
-        field: '쿠폰 설명',
-        headerName: 'ex'
-      },
-      {
-        colSpan: null,
-        field: '발급한 수량',
-        headerName: 'amount'
-      },
-      {
-        colSpan: null,
-        field: '미리보기',
-        headerName: '미리보기'
-      },
-      {
-        colSpan: null,
-        field: '관리',
-        headerName: '관리'
-      }
-    ]}
-    rows={[
-      {
-        id: 1,
-        rowdata: [
-          {
-            align: 'center',
-            data: '1084',
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '2023.10.20',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰이름',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰설명 입니다.',
-            fnc: null
-          },
-          {
-            align: 'right',
-            data: 100,
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '미리보기',
-            fnc: true
-          },
-          {
-            align: 'center',
-            data: '삭제',
-            fnc: true
-          }
-        ]
-      },
-      {
-        id: 2,
-        rowdata: [
-          {
-            align: 'center',
-            data: '1084',
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '2023.10.20',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰이름',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰설명 입니다.',
-            fnc: null
-          },
-          {
-            align: 'right',
-            data: 100,
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '미리보기',
-            fnc: true
-          },
-          {
-            align: 'center',
-            data: '삭제',
-            fnc: true
-          }
-        ]
-      },
-      {
-        id: 3,
-        rowdata: [
-          {
-            align: 'center',
-            data: '1084',
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '2023.10.20',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰이름',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰설명 입니다.',
-            fnc: null
-          },
-          {
-            align: 'right',
-            data: 100,
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '미리보기',
-            fnc: true
-          },
-          {
-            align: 'center',
-            data: '삭제',
-            fnc: true
-          }
-        ]
-      },
-      {
-        id: 4,
-        rowdata: [
-          {
-            align: 'center',
-            data: '1084',
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '2023.10.20',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰이름',
-            fnc: null
-          },
-          {
-            align: 'left',
-            data: '쿠폰설명 입니다.',
-            fnc: null
-          },
-          {
-            align: 'right',
-            data: 100,
-            fnc: null
-          },
-          {
-            align: 'center',
-            data: '미리보기',
-            fnc: true
-          },
-          {
-            align: 'center',
-            data: '삭제',
-            fnc: true
-          }
-        ]
-      }
-    ]}
-  />
-</>
-
-          {/* </TableContainer> */}
-          <div className="align center mt_20">
-            <Button onClick={handleOpen} btntype="c11" size="xlarge">
-              검색
+          <div className="align end mt_20">
+            <Button onClick={() => {}} btntype="c11" size="xlarge">
+              확인
             </Button>
           </div>
-        </ContentBox>
-        <ContentBox right>
-          <div className="align mt_10 mb_20">
-            <h2 className="headline4">카테고리 정보</h2>
-          </div>
-          <Table
-            colgroup={
-              <>
-                <col width="15%" />
-                <col width="auto" />
-                <col width="15%" />
-                <col width="auto" />
-              </>
-            }
-          >
-            <tr>
-              <th>상품 카테고리</th>
-              <td>
-                <Select
-                  width="350px"
-                  defaultValue={0}
-                  options={categoryOpt}
-                />
-              </td>
-              <th>판매 매장</th>
-              <td>
-                <Select
-                  width="350px"
-                  defaultValue={0}
-                  options={storeNameOpt}
-                />
-              </td>
-            </tr>
-            <tr>
-              <th> 상품검색 (ID, 상품명)</th>
-              <td colSpan={3}>
-                <Input
-                  onClick={() => {}}
-                  placeholder="상품ID 또는 상품명을 입력해주세요."
-                />
-              </td>
-            </tr>
-          </Table>
-          <div className="align center mt_20">
-            <Button onClick={handleOpen} btntype="c11" size="xlarge">
-              검색
-            </Button>
-          </div>
-        </ContentBox>
-      </div>
+        </div>
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={
+            <>
+               카테고리를 삭제하면 <br/>
+               <span className="red_text">카테고리에 연결된 모든 상품이
+               매장에 노출되지 않으며, 삭제된 카테고리는 복구되지 않습니다.</span> <br/>
+               카테고리를 삭제하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose} line>취소</Button>
+              <Button onClick={() => { }} border>확인</Button>
+            </>
+          }
+        />
+        <MuiAlert
+          open={open02}
+          onClose={handleClose02}
+          title={
+            <>
+               수정된 내용을<br/>
+               저장하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose02} line>아니요</Button>
+              <Button onClick={() => { }} border>네</Button>
+            </>
+          }
+        />
+      </ContentBox>
     </Layout>
   );
 }
 
-export default ProductListPage;
+export default CategoryManagementPage;

@@ -72,12 +72,15 @@ export function Button({ children, onClick, app, btntype, ...others }) {
     iconposition,
     badge,
     border,
+    active,
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
   // const appClass = app ? `color-${color}` : ``;
   const appClass = `type-${btntype}`;
-  
+  // 진현주 - 탭버튼일 때 default 
+  const tabdefault = active ? 'active' : '';
+
   return (
     <button
       className={`
@@ -88,6 +91,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
       ${styles[appClass]} 
       ${line === "light" ? styles.light : ""} 
       ${border ? styles.border : ""}
+      ${tabdefault} 
       `} 
       disabled={disabled}
       onClick={onClick}

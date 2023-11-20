@@ -157,8 +157,8 @@ function ProductListPage() {
             options={numOpt}
           />
         </div>
-        <div className="rgt">
-          <Button onClick={handleOpen} size="small_h35" line globalClass="mr_5">
+        <div className="rgt gap_5">
+          <Button onClick={handleOpen} size="small_h35" line>
             삭제
           </Button>
           <Button onClick={handleOpen} size="small_h35" border>
@@ -189,7 +189,7 @@ function ProductListPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
+                <TableRow component={Link} to="/admin/account/modify">
                   <TableCell>1</TableCell>
                   <TableCell>메가존클라우드</TableCell>
                   <TableCell>admin01</TableCell>
@@ -199,7 +199,7 @@ function ProductListPage() {
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow component={Link} to="/admin/account/modify">
                   <TableCell>2</TableCell>
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin02</TableCell>
@@ -209,7 +209,7 @@ function ProductListPage() {
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow component={Link} to="/admin/account/modify">
                   <TableCell>3</TableCell>
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin03</TableCell>
@@ -219,7 +219,7 @@ function ProductListPage() {
                     <Link to="/admin/account/modify">권한 수정</Link>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow component={Link} to="/admin/account/modify">
                   <TableCell>4</TableCell>
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin04</TableCell>

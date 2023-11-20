@@ -9,62 +9,33 @@
   }
 }
 
-.admin_category{
 
+.admin_category{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  .categorybox{flex: 1;}
+  .tbl{
+    width: 100%;
+    table tbody tr{
+      cursor: pointer;
+    }
+  }
 }
+
 
 // 공통영역.. 어디로 넣어둬야할지 체크해야함 
-// .arrow {
-//   position: relative;
-//   display: inline-block;
-//   width: 0;
-//   height: 0;
-
-//   &::before,
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     border-style: solid;
-//   }
-
-//   &.up::before {
-//     border-width: 0 10px 20px 10px;
-//     border-color: transparent transparent var(--c33) transparent;
-//     top: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-//   }
-
-//   &.down::before {
-//     border-width: 20px 10px 0 10px;
-//     border-color: var(--c33) transparent transparent transparent;
-//     bottom: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-//   }
-// }
 .btn_set{
   button{
-    min-width: 15px;
-    min-height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 0 0 10px;
-
-  }
-}
-.admin_arrow {
-  display: block;
-  width: 9px;
-  height: 9px;
-  border: 1.5px solid #111111;
-  border-top: 0;
-  border-left: 0;
-  &.up{
-    transform: rotate(-135deg);
-  }
-  &.down{
-    transform: rotate(45deg);
+    background-color: #fff;
+    border: 1px solid var(--primary);
+    border-right: 0;
+    &:last-child{
+      border-right: 1px solid var(--primary);
+    }
+    &:nth-child(even){
+      transform: rotateX(180deg)
+    }
   }
 }

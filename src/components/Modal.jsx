@@ -17,7 +17,7 @@ Modal.defaultProps = {
 
 
 export function Modal({ onClick, onClose, ...others }) {
-    const { mobile, modalsize, title, subtitle, detail, } =  others;
+    const { mobile, modalsize, title, subtitle, } =  others;
     const [isModalOpen, setModalOpen] = useState(false);
 
     const handleOpenModal = () => {
