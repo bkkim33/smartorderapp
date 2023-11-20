@@ -29,6 +29,14 @@ import MuiAlert from "../../../components/MuiAlert";
       </div>
       <hr className="primary" />
       <ContentBox>
+        <div className="align end mb_20 gap_5">
+          <Button onClick={() => {}} size="small_h35" line>
+            취소
+          </Button>
+          <Button onClick={handleOpen} size="small_h35" border="point">
+            저장
+          </Button>
+        </div>
         <Table
           colgroup={
             <>
@@ -91,14 +99,6 @@ import MuiAlert from "../../../components/MuiAlert";
             </td>
           </tr>
         </Table>
-        <div className="align end mt_20 gap_8">
-          <Button onClick={() => {}} size="xlarge" line>
-            취소
-          </Button>
-          <Button onClick={handleOpen} size="xlarge" border>
-            저장
-          </Button>
-        </div>
       </ContentBox>
       <MuiAlert
           open={open}

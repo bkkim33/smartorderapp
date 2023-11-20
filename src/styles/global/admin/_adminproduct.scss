@@ -25,8 +25,11 @@
 }
 
 
-// 공통영역.. 어디로 넣어둬야할지 체크해야함 
+// 카테고리 관리 버튼박스
 .btn_set{
+  display: flex;
+  align-items: center;
+  width: fit-content;
   button{
     background-color: #fff;
     border: 1px solid var(--primary);

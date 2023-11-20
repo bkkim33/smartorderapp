@@ -24,7 +24,7 @@ Button.propTypes = {
     "medium_h40",
     "",
   ]),
-  border: PropTypes.bool,
+  border: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   icon: PropTypes.string,
   iconposition: PropTypes.oneOf(["right", ""]),
   iconStyle: PropTypes.shape({
@@ -91,6 +91,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
       ${styles[appClass]} 
       ${line === "light" ? styles.light : ""} 
       ${border ? styles.border : ""}
+      ${border === "point" ? styles.point : ""} 
       ${tabdefault} 
       `} 
       disabled={disabled}

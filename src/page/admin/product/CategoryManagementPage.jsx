@@ -82,38 +82,48 @@ function CategoryManagementPage() {
         <div className="admin_category">
           <div className="categorybox align top gap_30">
             <div className="align column lft">
-              <div className="align mt_10 mb_20">
-                <h2 className="headline4">카테고리 설정</h2>
-                <div className="btn_set align rgt">
-                  <Button
-                    icon="AdminArrow"
-                    onClick={() => {}}
-                    size="icon_s"
-                  >
-                    위로
-                  </Button>
-                  <Button
-                    icon="AdminArrow"
-                    onClick={() => {}}
-                    size="icon_s"
-                  >
-                    아래로
-                  </Button>
-                  <Button
-                    icon="AdminArrowBar"
-                    onClick={() => {}}
-                    size="icon_s"
-                  >
-                    한 페이지 위로
-                  </Button>
-                  <Button
-                    icon="AdminArrowBar"
-                    onClick={() => {}}
-                    size="icon_s"
-                  >
-                    한 페이지 아래로
-                  </Button>
+              <div className="align mt_10 mb_20 gap_20">
+                <div className="align start gap_10">
+                  <h2 className="headline4">카테고리&nbsp;설정</h2>
+                  <div className="btn_set">
+                    <Button
+                      icon="AdminArrow"
+                      onClick={() => {}}
+                      size="icon_s"
+                    >
+                      위로
+                    </Button>
+                    <Button
+                      icon="AdminArrow"
+                      onClick={() => {}}
+                      size="icon_s"
+                    >
+                      아래로
+                    </Button>
+                    <Button
+                      icon="AdminArrowBar"
+                      onClick={() => {}}
+                      size="icon_s"
+                    >
+                      한 페이지 위로
+                    </Button>
+                    <Button
+                      icon="AdminArrowBar"
+                      onClick={() => {}}
+                      size="icon_s"
+                    >
+                      한 페이지 아래로
+                    </Button>
+                  </div>
                 </div>
+                <div className="align end gap_5">
+                <Button onClick={() => {}} size="small_h35" line>
+                  순서 저장
+                </Button>
+                <Button onClick={handleAddCategory} size="small_h35" border="point">
+                  + 카테고리 추가
+                </Button>
+              </div>
               </div>
               <div className="tbl">
                 <TableContainer>
@@ -159,18 +169,18 @@ function CategoryManagementPage() {
                   </MuiTable>
                 </TableContainer>
               </div>
-              <div className="align rgt gap_10 mt_20">
-                <Button onClick={() => {}} line>
-                  순서 저장
-                </Button>
-                <Button onClick={handleAddCategory} border>
-                  + 카테고리 추가
-                </Button>
-              </div>
             </div>
             <div className="align column rgt">
               <div className="align mt_10 mb_20">
-                <h2 className="headline4">카테고리 정보</h2>
+                <h2 className="headline4">카테고리&nbsp;정보</h2>
+                <div className="align end gap_5">
+                <Button onClick={handleOpen} size="small_h35" line>
+                  삭제
+                </Button>
+                <Button onClick={handleOpen02} size="small_h35" border="point">
+                  저장
+                </Button>
+              </div>
               </div>
               <Table
                 colgroup={
@@ -209,14 +219,6 @@ function CategoryManagementPage() {
                   <td>캬라멜마끼아또(00006)</td>
                 </tr>
               </Table>
-              <div className="align rgt gap_10 mt_20">
-                <Button onClick={handleOpen} line>
-                  삭제
-                </Button>
-                <Button onClick={handleOpen02} btntype="c11">
-                  저장
-                </Button>
-              </div>
             </div>
           </div>
           <div className="align end mt_20">
@@ -239,7 +241,7 @@ function CategoryManagementPage() {
           button={
             <>
               <Button onClick={handleClose} line>취소</Button>
-              <Button onClick={() => { }} border>확인</Button>
+              <Button onClick={() => { }} border="point">확인</Button>
             </>
           }
         />
@@ -255,7 +257,7 @@ function CategoryManagementPage() {
           button={
             <>
               <Button onClick={handleClose02} line>아니요</Button>
-              <Button onClick={() => { }} border>네</Button>
+              <Button onClick={() => { }} border="point">네</Button>
             </>
           }
         />
