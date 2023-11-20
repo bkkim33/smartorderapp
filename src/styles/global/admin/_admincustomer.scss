@@ -1,5 +1,11 @@
 .admin_editorarea{
-  // 높이는 임시값
-  min-height: 30px;
+  // 임시 에디터 영역
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: 30px;
+  
   border: 1px solid var(--ce7);
 }
+

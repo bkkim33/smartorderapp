@@ -6,7 +6,7 @@ import { Icons } from "./Icon";
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   round: PropTypes.bool,
-  line: PropTypes.bool,
+  line: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   state: PropTypes.bool,
   none: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -24,6 +24,7 @@ Button.propTypes = {
     "medium_h40",
     "",
   ]),
+  border: PropTypes.bool,
   icon: PropTypes.string,
   iconposition: PropTypes.oneOf(["right", ""]),
   iconStyle: PropTypes.shape({
@@ -40,6 +41,7 @@ Button.propTypes = {
 Button.defaultProps = {
   children: "button",
   size: "",
+  border: false,
   round: false,
   line: false,
   state: false,
@@ -69,19 +71,28 @@ export function Button({ children, onClick, app, btntype, ...others }) {
     icon,
     iconposition,
     badge,
+    border,
+    active,
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
   // const appClass = app ? `color-${color}` : ``;
   const appClass = `type-${btntype}`;
+  // 진현주 - 탭버튼일 때 default 
+  const tabdefault = active ? 'active' : '';
 
   return (
     <button
       className={`
       ${styles.btn} ${styles[size]} ${round ? styles.round : ""} 
-      ${line ? styles.line : ""} ${state ? styles.state : ""} 
+      ${line ? styles.line : ""} 
+      ${state ? styles.state : ""} 
       ${none ? styles.none : ""} ${globalClass || ""} 
-      ${styles[appClass]}`}
+      ${styles[appClass]} 
+      ${line === "light" ? styles.light : ""} 
+      ${border ? styles.border : ""}
+      ${tabdefault} 
+      `} 
       disabled={disabled}
       onClick={onClick}
     >

@@ -1,0 +1,51 @@
+// 공통영역
+.tabbox{
+  button{
+    color: var(--ce7);
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid var(--ce7);
+    &:hover, &:active, &:focus, &.active {
+      border-color: var(--primary);
+      color: var(--c11); 
+    }
+  }
+}
+.flex1{
+  flex: 1;
+}
+.plusbtnbox{position: relative;}
+// .plusbtn{
+//   position: absolute;
+//   border: 1px solid;
+//   &::before {
+//     @include before_after;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 10px;
+//     height: 1.5px;
+//     background-color: var(--primary);
+//   }
+//   &::after{
+//     @include before_after;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 1.5px;
+//     height: 10px;
+//     background-color: var(--primary);
+//   }
+// }
+
+
+
+.selectdays{
+  .select{
+    &__control{
+      gap: 13px;
+    }
+  }
+}

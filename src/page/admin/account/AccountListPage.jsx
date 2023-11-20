@@ -28,14 +28,13 @@ function AccountListPage() {
             <Input
               onClick={() => { }}
               placeholder="관리자 검색 (관리자 ID, 관리자명)"
-              shape="round"
               type="search"
               width="300px"
             />
           </div>
           <div className="rgt">
             <Button
-              size="small_h35"
+              size="small_h35" border
               onClick={() => navigate("./create")}
             >
               계정 생성

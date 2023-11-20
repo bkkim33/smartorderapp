@@ -112,6 +112,15 @@ export const Default = () => (
       <div className="item">
         <Icons.Plus width={12} height={12} fill="var(--primary)" />
       </div>
+      <div className="item">
+        <Icons.AdminArrow width={15} height={16} fill="var(--primary)" />
+      </div>
+      <div className="item">
+        <Icons.AdminArrowBar width={14} height={14} fill="var(--primary)" />
+      </div>
+      <div className="item">
+        <Icons.Check width={14} height={14} fill="var(--primary)" />
+      </div>
     </div>
     <div className="align start mt_20">
       <div className="item">

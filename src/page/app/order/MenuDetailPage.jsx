@@ -5,12 +5,12 @@ import Button from "../../../components/Button";
 import TextToggle from "../../../components/TextToggle";
 import Count from "../../../components/Count";
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+// import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from "swiper/modules";
+// import { Navigation, Pagination } from "swiper/modules";
 import MenuSwiper from "./MenuSwiper";
 
 const ProductData = [

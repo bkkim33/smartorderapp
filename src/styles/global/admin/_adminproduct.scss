@@ -8,3 +8,34 @@
     }
   }
 }
+
+
+.admin_category{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  .categorybox{flex: 1;}
+  .tbl{
+    width: 100%;
+    table tbody tr{
+      cursor: pointer;
+    }
+  }
+}
+
+
+// 공통영역.. 어디로 넣어둬야할지 체크해야함 
+.btn_set{
+  button{
+    background-color: #fff;
+    border: 1px solid var(--primary);
+    border-right: 0;
+    &:last-child{
+      border-right: 1px solid var(--primary);
+    }
+    &:nth-child(even){
+      transform: rotateX(180deg)
+    }
+  }
+}

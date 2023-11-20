@@ -659,6 +659,43 @@ const Plus = ({ width = 12, height = 12, fill = "var(--primary)" }) => (
   </svg>
 );
 
+const AdminArrow = ({ width = 15, height = 16, fill = "var(--primary)" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 15 16"
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13.002 9.99219L7.99419 4.99996L3.00197 10.0077" stroke={fill} strokeWidth="1.5" strokeLinecap="square"/>
+  </svg>
+);
+
+const AdminArrowBar = ({ width = 15, height = 16, fill = "var(--primary)" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 15 16"
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 11L6.99138 5.98175L2.00001 11.0172" stroke={fill} strokeWidth="1.5" strokeLinecap="square"/>
+    <path d="M11.9463 2.84649L1.94629 2.8501" stroke={fill} strokeWidth="1.5" strokeLinecap="square"/>
+  </svg>
+);
+
+const Check = ({ width = 15, height = 16, fill = "var(--primary)" }) => (
+  <svg 
+    width={width}
+    height={height}
+    viewBox="0 0 15 16"
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 0.000488281H15V15.9932H0V0.000488281Z" fill="white"/>
+    <path d="M1 7.83887L5.57886 12.4156L13.4283 4.56974" stroke={fill} strokeWidth="2"/>
+  </svg>
+);
 
 export const Icons = {
   Logo,
@@ -692,4 +729,7 @@ export const Icons = {
   Nodata,
   LikeOff,
   Plus,
+  AdminArrow,
+  AdminArrowBar,
+  Check,
 };

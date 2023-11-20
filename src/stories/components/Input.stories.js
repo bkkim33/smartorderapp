@@ -56,3 +56,35 @@ export const Timer = () => (
     </Input>
   </>
 );
+
+export const Phone = () => (
+  <>
+    <Input
+      type="text"
+      placeholder="input이 하나일 때 연락처 입력"
+      phone
+    >
+    </Input>
+  </>
+);
+
+export const AdminNumericOnly = () => (
+  <>
+    <Input
+      type="text"
+      placeholder="숫자만 입력 가능"
+      numericOnly={true}
+    />
+  </>
+);
+
+
+export const AdminNoSpecialChars = () => (
+  <>
+    <Input
+      type="text"
+      placeholder="특수문자만 입력 불가능"
+      noSpecialChars={true}
+    />
+  </>
+);

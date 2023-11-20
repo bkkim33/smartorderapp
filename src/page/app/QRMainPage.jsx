@@ -3,9 +3,6 @@ import Layout from '../../layout/AppDefaultLayout';
 import MainimgDefult from "../../images/main_img.gif";
 
 import FullMenu from "./FullMenuPage";
-import FavoritesMenu from "./FavoritesMenuPage";
-
-import Tabs from "../../components/Tabs";
 
 import { Icons } from "../../components/Icon";
 

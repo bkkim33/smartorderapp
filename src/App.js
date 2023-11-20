@@ -10,10 +10,14 @@ import ProductList from "./page/admin/product/ProductListPage";
 import ProductCreate from "./page/admin/product/ProductCreatePage";
 import OrderDetail from "./page/admin/order/OrderDetailPage";
 import AdminNotice from "./page/admin/customer/NoticeListPage";
-// 진현주 231113 - 공지사항 등록 페이지 추가 
+// 진현주 231113 -  등록 페이지 추가 
 import NoticeRegistrationPage from "./page/admin/customer/NoticeRegistrationPage";
 import QnaRegistrationPage from "./page/admin/customer/QnaRegistrationPage";
-
+import TermsRegistrationPage from "./page/admin/customer/TermsRegistrationPage";
+import StoreInfoRegistrationPage from "./page/admin/store/info/registration/StoreInfoRegistrationPage";
+// 진현주 매장관리 페이지 추가
+import StoreInfoPage from "./page/admin/store/info/StoreInfoPage";
+import StoreInfoModifyePage from "./page/admin/store/info/modify/StoreInfoModifyePage";
 
 import UserList from "./page/admin/user/UserListPage";
 import AccountList from "./page/admin/account/AccountListPage";
@@ -83,6 +87,12 @@ function App() {
         {/* 진현주 - 등록페이지 추가 */}
         <Route path="/admin/customer/notice/registration"  element={<NoticeRegistrationPage/>} />
         <Route path="/admin/customer/qna/registration"  element={<QnaRegistrationPage/>} />
+        <Route path="/admin/customer/terms/registration"  element={<TermsRegistrationPage/>} />
+        <Route path="/admin/store/info/registration"  element={<StoreInfoRegistrationPage/>} />
+        {/* 진현주 - 매장정보 관리 페이지 추가  */}
+        <Route path="/admin/store/info"  element={<StoreInfoPage/>} />
+        {/* 진현주 - 매장정보 수정 페이지 추가  */}
+        <Route path="/admin/store/info/modify"  element={<StoreInfoModifyePage/>} />
 
         <Route path="/admin/user" element={<UserList />} />
         <Route path="/admin/account" element={<AccountList />} />
@@ -91,7 +101,6 @@ function App() {
         {/* 진현주 - 내 프로필 페이지 추가 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
         <Route path="/admin/myprofile/changepassword"  element={<ChangePassword />} />
-
 
       </Route>
       {/* KDS */}

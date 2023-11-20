@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -8,12 +7,11 @@ import Table from "../../../components/Table";
 import FileUpload from "../../../components/FileUpload";
 import Radio from "../../../components/Radio";
 import FormGroup from "../../../components/FormGroup";
-import Textarea from "../../../components/Textarea";
 
 //mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
-  function NoticeRegistrationPage() {
+  function QnaRegistrationPage() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -77,7 +75,6 @@ import MuiAlert from "../../../components/MuiAlert";
               <Input
                 onClick={() => { }}
                 placeholder="제목을 입력해 주세요."
-                shape="round"
               />
             </td>
           </tr>
@@ -85,7 +82,6 @@ import MuiAlert from "../../../components/MuiAlert";
             <th className="required">내용입력</th>
             <td>
               <div className="admin_editorarea mb_8">에디터 사용영역 입니다.</div>
-              <Textarea Height={200} />
             </td>
           </tr>
           <tr>
@@ -99,7 +95,7 @@ import MuiAlert from "../../../components/MuiAlert";
           <Button onClick={() => {}} size="xlarge" line>
             취소
           </Button>
-          <Button onClick={() => { }} size="xlarge">
+          <Button onClick={handleOpen} size="xlarge" border>
             저장
           </Button>
         </div>
@@ -115,13 +111,12 @@ import MuiAlert from "../../../components/MuiAlert";
           button={
             <>
               <Button onClick={handleClose} line>아니요</Button>
-              <Button onClick={() => { }}>네</Button>
+              <Button onClick={() => { }} border>네</Button>
             </>
           }
-        >
-        </MuiAlert>
+        />
     </Layout>
   );
 }
 
-export default NoticeRegistrationPage;
+export default QnaRegistrationPage;

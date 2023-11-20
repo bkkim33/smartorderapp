@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -7,7 +7,6 @@ import Input from "../../../components/Input";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
-import TextToggle from "../../../components/TextToggle";
 import Checkbox from "../../../components/Checkbox";
 
 //mui table import
@@ -67,15 +66,68 @@ const numOpt = [
   },
 ];
 
+const dateFilterOptions = [
+  { label: "오늘", value: "today" },
+  { label: "1주일", value: "oneWeek" },
+  { label: "1개월", value: "oneMonth" },
+  { label: "3개월", value: "threeMonths" },
+];
+
+const initialTableRows = [
+  { id: 1, title: '공지사항 제목입니다.', target: '전체', date: '2023. 10. 30', visibility: 'Y', author: 'admin' },
+  { id: 2, title: '공지사항 제목입니다.', target: '임직원', date: '2023. 10. 31', visibility: 'Y', author: 'admin' },
+  { id: 3, title: '공지사항 제목입니다.', target: '방문객', date: '2023. 10. 30', visibility: 'N', author: 'user' },
+  { id: 4, title: '공지사항 제목입니다.', target: '전체', date: '2023. 11. 01', visibility: 'Y', author: 'admin' },
+  { id: 5, title: '데이터 확인중입니다', target: '전체', date: '2023. 11. 02', visibility: 'Y', author: 'admin' },
+];
+
 function NoticeListPage() {
+
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
+  const [setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
-  const handleClose = () => {
-    setOpen(false);
+
+  const [selectAll, setSelectAll] = useState(false);
+  const [checkedItems, setCheckedItems] = useState({});
+
+  const handleSelectAll = () => {
+    setSelectAll(!selectAll);
+    const newCheckedItems = {};
+    if (!selectAll) {
+      initialTableRows.forEach((item) => {
+        newCheckedItems[item.id] = true;
+      });
+    }
+    setCheckedItems(newCheckedItems);
   };
+
+  const handleCheckboxChange = (itemId) => {
+    setCheckedItems((prev) => ({
+      ...prev,
+      [itemId]: !prev[itemId],
+    }));
+  };
+
+  const [tableRows, setTableRows] = useState(initialTableRows);
+  const handleDelete = () => {
+    const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
+    setCheckedItems({});
+    setSelectAll(false);
+    const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
+    console.log('지워지냐?', deletedItems);
+    setTableRows(updatedTableRows);
+  };
+
+  const [activeButton, setActiveButton] = useState(null); 
+  const handleButtonClick = (buttonLabel) => {
+    setActiveButton(buttonLabel);
+  };
+
+  const [setStartDate] = useState(null);
+  const [setEndDate] = useState(null);
+
   return (
     <Layout>
       <div className="align mb_20">
@@ -98,7 +150,6 @@ function NoticeListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
                 defaultValue={0}
                 options={targetOpt}
               />
@@ -107,7 +158,6 @@ function NoticeListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
                 defaultValue={0}
                 options={displayOpt}
               />
@@ -116,39 +166,34 @@ function NoticeListPage() {
           <tr>
             <th>등록일</th>
             <td colSpan={3}>
-              {/* 임시 */}
-              <TextToggle
-                data={[
-                  {
-                    id: 1,
-                    option: null,
-                    title: '오늘'
-                  },
-                  {
-                    id: 2,
-                    option: null,
-                    title: '1주일'
-                  },
-                  {
-                    id: 3,
-                    option: null,
-                    title: '1개월'
-                  },
-                  {
-                    id: 4,
-                    option: null,
-                    title: '3개월'
-                  }
-                ]}
-                onClick={() => { }}
-                type="linebox"
-                globalClass="mb_8"
-              />
-              <Input
-                onClick={() => { }}
-                placeholder="날짜 입력"
-                shape="round"
-              />
+              <div className="align start mb_8 gap_5">
+                {dateFilterOptions.map((option) => (
+                  <Button
+                    key={option.value}
+                    onClick={() => handleButtonClick(option.value)}
+                    size="small_h35"
+                    line={activeButton === option.value ? " " : "light"}
+                  >
+                    {option.label}
+                  </Button>
+                ))}
+              </div>
+              {/* 임시 달력 */}
+              <div className="align">
+                <Input
+                  type="date"
+                  onClick={() => { }}
+                  placeholder="시작 날짜"
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+                <span className="mlr_10">~</span>
+                <Input
+                  type="date"
+                  onClick={() => { }}
+                  placeholder="종료 날짜"
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </div>
             </td>
           </tr>
           <tr>
@@ -157,7 +202,6 @@ function NoticeListPage() {
               <Input
                 onClick={() => { }}
                 placeholder="제목을 입력해 주세요."
-                shape="round"
               />
             </td>
           </tr>
@@ -173,16 +217,15 @@ function NoticeListPage() {
         <div className="lft">
           <Select
             minwidth="200px"
-            round="round"
             defaultValue={0}
             options={numOpt}
           />
         </div>
-        <div className="rgt">
-          <Button onClick={() => {}} size="small_h35" line globalClass="mr_5">
+        <div className="rgt gap_10">
+          <Button onClick={handleDelete} size="small_h35" line>
             삭제
           </Button>
-          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35">
+          <Button onClick={() => {navigate("/admin/customer/notice/registration");}} size="small_h35" border>
             등록하기
           </Button>
         </div>
@@ -193,7 +236,7 @@ function NoticeListPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="8%" />
-                <col width="8%" />
+                <col width="5%" />
                 <col width="auto" />
                 <col width="12%" />
                 <col width="15%" />
@@ -203,7 +246,11 @@ function NoticeListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Checkbox id="check1" name="check1" />
+                    <Checkbox 
+                      id="checkAll"
+                      name="checkAll"
+                      checked={selectAll}
+                      onChange={handleSelectAll} />
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>제목</TableCell>
@@ -214,51 +261,24 @@ function NoticeListPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
-                  <TableCell><Checkbox id="check2" name="check2" /></TableCell>
-                  <TableCell>1</TableCell>
-                  <TableCell>공지사항 제목입니다.</TableCell>
-                  <TableCell>전체</TableCell>
-                  <TableCell>2023. 10. 30</TableCell>
-                  <TableCell>Y</TableCell>
-                  <TableCell>admin</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check3" name="check3" /></TableCell>
-                  <TableCell>2</TableCell>
-                  <TableCell>공지사항 제목입니다.</TableCell>
-                  <TableCell>임직원</TableCell>
-                  <TableCell>2023. 10. 30</TableCell>
-                  <TableCell>Y</TableCell>
-                  <TableCell>admin</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check4" name="check4" /></TableCell>
-                  <TableCell>3</TableCell>
-                  <TableCell>공지사항 제목입니다.</TableCell>
-                  <TableCell>방문객</TableCell>
-                  <TableCell>2023. 10. 30</TableCell>
-                  <TableCell>Y</TableCell>
-                  <TableCell>admin</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check5" name="check5" /></TableCell>
-                  <TableCell>4</TableCell>
-                  <TableCell>공지사항 제목입니다.</TableCell>
-                  <TableCell>전체</TableCell>
-                  <TableCell>2023. 11. 01</TableCell>
-                  <TableCell>N</TableCell>
-                  <TableCell>admin</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check6" name="check6" /></TableCell>
-                  <TableCell>5</TableCell>
-                  <TableCell>공지사항 제목입니다.</TableCell>
-                  <TableCell>전체</TableCell>
-                  <TableCell>2023. 11. 01</TableCell>
-                  <TableCell>N</TableCell>
-                  <TableCell>admin</TableCell>
-                </TableRow>
+                {tableRows.map((row) => (
+                  <TableRow key={row.id}>
+                    <TableCell>
+                    <Checkbox
+                      id={`check${row.id}`}
+                      name={`check${row.id}`}
+                      checked={checkedItems[row.id] || false}
+                      onChange={() => handleCheckboxChange(row.id)}
+                    />
+                    </TableCell>
+                    <TableCell>{row.id}</TableCell>
+                    <TableCell>{row.title}</TableCell>
+                    <TableCell>{row.target}</TableCell>
+                    <TableCell>{row.date}</TableCell>
+                    <TableCell>{row.visibility}</TableCell>
+                    <TableCell>{row.author}</TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </MuiTable>
           </TableContainer>

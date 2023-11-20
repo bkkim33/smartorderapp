@@ -74,7 +74,6 @@ function AccountModify() {
           <div className="rgt gap_10">
             <Button
               onClick={() => { }}
-              round
               size="medium"      
               line  
             >
@@ -82,16 +81,16 @@ function AccountModify() {
             </Button>
             <Button
               onClick={() => { }}
-              round
               size="medium"
               btntype="gray"
+              border
             >
               취소
             </Button>
             <Button
               onClick={() => { }}
-              round
               size="medium"
+              border
             >
               저장
             </Button>

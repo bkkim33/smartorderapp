@@ -4,7 +4,7 @@ import styles from "../styles/components/input.module.scss";
 import { Icons } from "./Icon";
 
 Input.propTypes = {
-  type: PropTypes.oneOf(["text", "password", "number", "search"]),
+  type: PropTypes.oneOf(["text", "password", "number", "search", "tel"]),
   shape: PropTypes.oneOf(["", "round", "line", "none"]),
   width: PropTypes.string,
   height: PropTypes.oneOf(["", "large"]),
@@ -19,6 +19,8 @@ Input.propTypes = {
   maxLength: PropTypes.number,
   readonly: PropTypes.bool,
   defaultValue: PropTypes.string,
+  numericOnly: PropTypes.bool,
+  noSpecialChars: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -34,6 +36,8 @@ Input.defaultProps = {
   onClick: () => {},
   counton: false,
   readonly: false,
+  numericOnly: false,
+  noSpecialChars: false,
 };
 
 export function Input({ onClick, ...others }) {
@@ -53,27 +57,36 @@ export function Input({ onClick, ...others }) {
     phone,
     readonly,
     defaultValue,
+    numericOnly, noSpecialChars,
   } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
-  const onChange = (e) => {
-    setValue(e.target.value);
-    if (counton === true) {
-      if (e.target.value > maxLength) {
-        return;
-      }
-      setValue(e.target.value);
-    }
-    if (phone === true) {
-      setValue(
-        e.target.value
-          .replace(/[^0-9]/g, "")
-          .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3")
-          .replace(/(\-{1,2})$/g, "")
-      );
-    }
 
+  const onChange = (e) => {
+    let inputValue = e.target.value;
+    if (counton && inputValue.length > maxLength) {
+      return;
+    }
+    if (phone) {
+      inputValue = inputValue
+        .replace(/[^0-9]/g, "")
+        .slice(0, 11)
+        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, (_, p1, p2, p3) => {
+          const parts = [p1, p2, p3].filter(Boolean);
+          return parts.join('-');
+        });
+    } else {
+      if (numericOnly) {
+        inputValue = inputValue.replace(/\D/g, '');
+      }
+      if (noSpecialChars) {
+        inputValue = inputValue.replace(/[^a-zA-Z0-9\s]/g, '');
+      }
+    }
+    setValue(inputValue);
   };
+  
+
   const onReset = () => {
     setValue("");
   };
