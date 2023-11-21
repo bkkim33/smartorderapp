@@ -276,12 +276,12 @@ function NoticeListPage() {
                       onChange={() => handleCheckboxChange(row.id)}
                     />
                     </TableCell>
-                    <TableCell>{row.id}</TableCell>
-                    <TableCell>{row.title}</TableCell>
-                    <TableCell>{row.target}</TableCell>
-                    <TableCell>{row.date}</TableCell>
-                    <TableCell>{row.visibility}</TableCell>
-                    <TableCell>{row.author}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/customer/notice/modify")}>{row.id}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/customer/notice/modify")}>{row.title}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/customer/notice/modify")}>{row.target}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/customer/notice/modify")}>{row.date}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/customer/notice/modify")}>{row.visibility}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/customer/notice/modify")}>{row.author}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

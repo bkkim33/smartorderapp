@@ -22,7 +22,7 @@ const initialCategoryData = [
   { id: 4, order: 4, category: "Blended" },
 ];
 
-function CategoryManagementPage() {
+function CategoryListPage() {
 
   const [open, setOpen] = useState(false);
   const [open02, setOpen02] = useState(false);
@@ -266,4 +266,4 @@ function CategoryManagementPage() {
   );
 }
 
-export default CategoryManagementPage;
+export default CategoryListPage;

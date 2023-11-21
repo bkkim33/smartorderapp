@@ -25,7 +25,7 @@ import MuiAlert from "../../../components/MuiAlert";
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">공지사항 수정</h1>
+        <h1 className="headline2">공지사항 상세 페이지</h1>
       </div>
       <hr className="primary" />
       <ContentBox>

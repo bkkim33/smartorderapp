@@ -6,16 +6,31 @@ import { Route, Routes } from "react-router-dom";
 import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
+// 상품관리
 import ProductList from "./page/admin/product/ProductListPage";
 import ProductRegistrationPage from "./page/admin/product/ProductRegistrationPage";
-import OrderDetail from "./page/admin/order/OrderDetailPage";
+import ProductModifyPage from "./page/admin/product/ProductModifyPage";
+// 카테고리 관리
+import CategoryList from "./page/admin/product/CategoryListPage";
+// 주문 내역 관리
+
+//매출 관리
+
+// 공지사항 관리
 import AdminNotice from "./page/admin/customer/NoticeListPage";
-// 진현주 231113 -  등록 페이지 추가 
 import NoticeRegistrationPage from "./page/admin/customer/NoticeRegistrationPage";
+import NoticeModifyPage from "./page/admin/customer/NoticeModifyPage";
+// 자주하는 질문
 import QnaRegistrationPage from "./page/admin/customer/QnaRegistrationPage";
+
+
 import TermsRegistrationPage from "./page/admin/customer/TermsRegistrationPage";
+
+
+
+
+import OrderDetail from "./page/admin/order/OrderDetailPage";
 import StoreInfoRegistrationPage from "./page/admin/store/info/registration/StoreInfoRegistrationPage";
-// 진현주 매장관리 페이지 추가
 import StoreInfoPage from "./page/admin/store/info/StoreInfoPage";
 import StoreInfoModifyePage from "./page/admin/store/info/modify/StoreInfoModifyePage";
 
@@ -26,10 +41,7 @@ import AccountModify from "./page/admin/account/AccountModifyPage";
 // 진현주 - 내 프로필 페이지 추가
 import Profile from "./page/admin/myprofile/Profile";
 import ChangePassword from "./page/admin/myprofile/ChangePassword";
-// 진현주 231113 - 카테고리 관리 페이지 추가 
-import CategoryManagementPage from "./page/admin/product/CategoryManagementPage";
-// 공지사항 수정
-import NoticeModifyPage from "./page/admin/customer/NoticeModifyPage";
+
 
 
 // app import
@@ -81,28 +93,35 @@ function App() {
       {/* ADMIN */}
       <Route>
         <Route path="/admin" element={<AdminLogin />} />
+        {/* 상품관리 */}
         <Route path="/admin/product/list" element={<ProductList />} />
         <Route path="/admin/product/registration" element={<ProductRegistrationPage />} />
-        <Route path="/admin/product/category"  element={<CategoryManagementPage />} />
-        <Route path="/admin/order/detail" element={<OrderDetail />} />
+        <Route path="/admin/product/modify" element={<ProductModifyPage />} />
+        {/* 주문 내역 관리 */}
+
+        {/* 매출 관리 */}
+
+        {/* 공지사항 관리 */}
         <Route path="/admin/customer/notice" element={<AdminNotice />} />
-        {/* 진현주 - 등록페이지 추가 */}
         <Route path="/admin/customer/notice/registration"  element={<NoticeRegistrationPage/>} />
-        <Route path="/admin/customer/qna/registration"  element={<QnaRegistrationPage/>} />
-        <Route path="/admin/customer/terms/registration"  element={<TermsRegistrationPage/>} />
-        <Route path="/admin/store/info/registration"  element={<StoreInfoRegistrationPage/>} />
-        {/* 진현주 - 매장정보 관리 페이지 추가  */}
-        <Route path="/admin/store/info"  element={<StoreInfoPage/>} />
-        {/* 진현주 - 매장정보 수정 페이지 추가  */}
-        <Route path="/admin/store/info/modify"  element={<StoreInfoModifyePage/>} />
-        {/* 공지사항 수정 */}
         <Route path="/admin/customer/notice/modify"  element={<NoticeModifyPage/>} />
+        {/* 자주하는 질문 */}
+        <Route path="/admin/customer/qna/registration"  element={<QnaRegistrationPage/>} />
+        
+        
+        <Route path="/admin/customer/terms/registration"  element={<TermsRegistrationPage/>} />
+
+
+        <Route path="/admin/product/category"  element={<CategoryList />} />
+        <Route path="/admin/order/detail" element={<OrderDetail />} />
+        <Route path="/admin/store/info/registration"  element={<StoreInfoRegistrationPage/>} />
+        <Route path="/admin/store/info"  element={<StoreInfoPage/>} />
+        <Route path="/admin/store/info/modify"  element={<StoreInfoModifyePage/>} />
 
         <Route path="/admin/user" element={<UserList />} />
         <Route path="/admin/account" element={<AccountList />} />
         <Route path="/admin/account/create" element={<AccountCreate />} />
         <Route path="/admin/account/modify" element={<AccountModify />} />
-        {/* 진현주 - 내 프로필 페이지 추가 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
         <Route path="/admin/myprofile/changepassword"  element={<ChangePassword />} />
 

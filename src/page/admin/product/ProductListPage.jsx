@@ -254,11 +254,11 @@ function ProductListPage() {
                       onChange={() => handleCheckboxChange(row.id)}
                     />
                     </TableCell>
-                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.id}</TableCell>
-                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.affiliation}</TableCell>
-                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.productId}</TableCell>
-                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.productName}</TableCell>
-                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.role}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.id}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.affiliation}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.productId}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.productName}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.role}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
