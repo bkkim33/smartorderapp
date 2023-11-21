@@ -9,18 +9,23 @@ function HeaderLayout() {
   
   const navigate = useNavigate();
 
-  const onClick = () =>{
-
-  }
   return (
     <header className={`${styles.header}`}>
       <Icons.AdminLogo width={"100%"} height={50} fill="#303033" />
       <div className={`${styles.user_util} ${"mt_20"}`}>
-        <button onClick={() => navigate("/admin/myprofile/profile")} className={`${styles.user_button} ${""}`}>
+        <button
+          onClick={() => navigate("/admin/myprofile/profile")}
+          className={`${styles.user_button} ${""}`}
+        >
           <Icons.MenuPrivacy width={12} height={12} fill="#3A3A3A" />
           <span className="ml_7">프로필</span>
         </button>
-        <button onClick={onClick} className={`${styles.user_button} ${""}`}>
+        <button
+          onClick={() => {
+            navigate("/admin");
+          }}
+          className={`${styles.user_button} ${""}`}
+        >
           <span>로그아웃</span>
         </button>
       </div>
