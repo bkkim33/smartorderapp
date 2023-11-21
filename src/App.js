@@ -110,6 +110,14 @@ function App() {
           path="/admin/product/category"
           element={<CategoryManagementPage />}
         />
+
+
+
+
+
+
+
+        
         <Route path="/admin/order/detail" element={<OrderDetail />} />
         <Route path="/admin/customer/notice" element={<AdminNotice />} />
         {/* 진현주 - 등록페이지 추가 */}
