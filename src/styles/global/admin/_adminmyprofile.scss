@@ -10,8 +10,7 @@
     }
   }
   .changepasswordbox{flex: 1;}
-  .error_txt {
-    @include font(var(--red-text), 1.2rem, 400);
-  }
-  
+}
+.error_txt {
+  @include font(var(--red-text), 1.2rem, 400);
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -11,6 +11,7 @@ import MuiModal from "../../../components/MuiModal";
 import FormGroup from "../../../components/FormGroup";
 import Radio from "../../../components/Radio";
 import MuiPage from "../../../components/MuiPage";
+import Checkbox from "../../../components/Checkbox";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -19,7 +20,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
+import MuiAlert from "../../../components/MuiAlert";
 
 const categoryOpt = [
   {
@@ -86,17 +87,65 @@ const numOpt = [
   },
 ];
 
+const initialTableRows = [
+  { id: 1, affiliation: "P00001", productId: "Coffee", productName: "에스프레소", role: "클라우드 카페" },
+  { id: 2, affiliation: "P00002", productId: "Coffee", productName: "에스프레소", role: "클라우드 카페" },
+  { id: 3, affiliation: "P00003", productId: "Tea", productName: "바닐라라떼", role: "클라우드 카페" },
+  { id: 4, affiliation: "P00004", productId: "Tea", productName: "바닐라라떼", role: "클라우드 카페" },
+];
 
 function ProductListPage() {
+
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [open02, setOpen02] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
+  const handleOpen02 = () => {
+    setOpen02(true);
+  };
+  const handleClose02 = () => {
+    setOpen02(false);
+  };
+
+  const [selectAll, setSelectAll] = useState(false);
+  const [checkedItems, setCheckedItems] = useState({});
+
+  const handleSelectAll = () => {
+    setSelectAll(!selectAll);
+    const newCheckedItems = {};
+    if (!selectAll) {
+      initialTableRows.forEach((item) => {
+        newCheckedItems[item.id] = true;
+      });
+    }
+    setCheckedItems(newCheckedItems);
+  };
+
+  const handleCheckboxChange = (itemId) => {
+    setCheckedItems((prev) => ({
+      ...prev,
+      [itemId]: !prev[itemId],
+    }));
+  };
+
+  const [tableRows, setTableRows] = useState(initialTableRows);
+  // MuiAlert 확인 후 데이터 삭제
+  const handleAlertYes = () => {
+    const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
+    setCheckedItems({});
+    setSelectAll(false);
+    const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
+    console.log(deletedItems);
+    setTableRows(updatedTableRows);
+    handleClose02(false);
+  };
+
   return (
     <Layout>
       <div className="align mb_20">
@@ -158,10 +207,10 @@ function ProductListPage() {
           />
         </div>
         <div className="rgt gap_5">
-          <Button onClick={handleOpen} size="small_h35" line>
+          <Button onClick={handleOpen02} size="small_h35" line>
             삭제
           </Button>
-          <Button onClick={handleOpen} size="small_h35" border="point">
+          <Button onClick={() => navigate("/admin/product/registration")} size="small_h35" border="point">
             신규등록
           </Button>
         </div>
@@ -171,64 +220,47 @@ function ProductListPage() {
           <TableContainer>
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
-                <col width="10%" />
+                <col width="2%" />
+                <col width="3%" />
+                <col width="20%" />
+                <col width="auto%" />
                 <col width="20%" />
                 <col width="20%" />
-                <col width="20%" />
-                <col width="20%" />
-                <col width="10%" />
               </colgroup>
               <TableHead>
                 <TableRow>
+                  <TableCell>
+                    <Checkbox 
+                      id="checkAll"
+                      name="checkAll"
+                      checked={selectAll}
+                      onChange={handleSelectAll} />
+                  </TableCell>
                   <TableCell>No.</TableCell>
-                  <TableCell>소속</TableCell>
-                  <TableCell>관리자 ID</TableCell>
-                  <TableCell>이름</TableCell>
-                  <TableCell>권한</TableCell>
-                  <TableCell>전시여부</TableCell>
+                  <TableCell>상품 ID</TableCell>
+                  <TableCell>상품 카테고리</TableCell>
+                  <TableCell>상품명</TableCell>
+                  <TableCell>판매 매장</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow component={Link} to="/admin/account/modify">
-                  <TableCell>1</TableCell>
-                  <TableCell>메가존클라우드</TableCell>
-                  <TableCell>admin01</TableCell>
-                  <TableCell>이름</TableCell>
-                  <TableCell>카페서비스 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
-                </TableRow>
-                <TableRow component={Link} to="/admin/account/modify">
-                  <TableCell>2</TableCell>
-                  <TableCell>클라우드카페</TableCell>
-                  <TableCell>admin02</TableCell>
-                  <TableCell>010-***-1234</TableCell>
-                  <TableCell>매장 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
-                </TableRow>
-                <TableRow component={Link} to="/admin/account/modify">
-                  <TableCell>3</TableCell>
-                  <TableCell>클라우드카페</TableCell>
-                  <TableCell>admin03</TableCell>
-                  <TableCell>홍길동3</TableCell>
-                  <TableCell>매장 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
-                </TableRow>
-                <TableRow component={Link} to="/admin/account/modify">
-                  <TableCell>4</TableCell>
-                  <TableCell>클라우드카페</TableCell>
-                  <TableCell>admin04</TableCell>
-                  <TableCell>홍길동4</TableCell>
-                  <TableCell>어드민 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
-                </TableRow>
+                {tableRows.map((row) => (
+                  <TableRow key={row.id} className="crsor_poin" >
+                    <TableCell>
+                    <Checkbox
+                      id={`check${row.id}`}
+                      name={`check${row.id}`}
+                      checked={checkedItems[row.id] || false}
+                      onChange={() => handleCheckboxChange(row.id)}
+                    />
+                    </TableCell>
+                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.id}</TableCell>
+                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.affiliation}</TableCell>
+                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.productId}</TableCell>
+                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.productName}</TableCell>
+                    <TableCell onClick={() => navigate("상품상세페이지???")}>{row.role}</TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </MuiTable>
           </TableContainer>
@@ -315,6 +347,21 @@ function ProductListPage() {
           </div>
         </div>
       </MuiModal>
+      <MuiAlert
+          open={open02}
+          onClose={handleClose02}
+          title={
+            <>
+               정말 삭제하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose02} line>취소</Button>
+              <Button onClick={handleAlertYes} border="point">확인</Button>
+            </>
+          }
+        />
     </Layout>
   );
 }

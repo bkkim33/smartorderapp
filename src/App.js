@@ -7,7 +7,7 @@ import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
 import ProductList from "./page/admin/product/ProductListPage";
-import ProductCreate from "./page/admin/product/ProductCreatePage";
+import ProductRegistrationPage from "./page/admin/product/ProductRegistrationPage";
 import OrderDetail from "./page/admin/order/OrderDetailPage";
 import AdminNotice from "./page/admin/customer/NoticeListPage";
 // 진현주 231113 -  등록 페이지 추가 
@@ -28,6 +28,8 @@ import Profile from "./page/admin/myprofile/Profile";
 import ChangePassword from "./page/admin/myprofile/ChangePassword";
 // 진현주 231113 - 카테고리 관리 페이지 추가 
 import CategoryManagementPage from "./page/admin/product/CategoryManagementPage";
+// 공지사항 수정
+import NoticeModifyPage from "./page/admin/customer/NoticeModifyPage";
 
 
 // app import
@@ -80,7 +82,7 @@ function App() {
       <Route>
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/product/list" element={<ProductList />} />
-        <Route path="/admin/product/create" element={<ProductCreate />} />
+        <Route path="/admin/product/registration" element={<ProductRegistrationPage />} />
         <Route path="/admin/product/category"  element={<CategoryManagementPage />} />
         <Route path="/admin/order/detail" element={<OrderDetail />} />
         <Route path="/admin/customer/notice" element={<AdminNotice />} />
@@ -93,6 +95,8 @@ function App() {
         <Route path="/admin/store/info"  element={<StoreInfoPage/>} />
         {/* 진현주 - 매장정보 수정 페이지 추가  */}
         <Route path="/admin/store/info/modify"  element={<StoreInfoModifyePage/>} />
+        {/* 공지사항 수정 */}
+        <Route path="/admin/customer/notice/modify"  element={<NoticeModifyPage/>} />
 
         <Route path="/admin/user" element={<UserList />} />
         <Route path="/admin/account" element={<AccountList />} />

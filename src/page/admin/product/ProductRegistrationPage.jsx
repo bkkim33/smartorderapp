@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -17,6 +18,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import MuiModal from "../../../components/MuiModal";
+import MuiAlert from "../../../components/MuiAlert";
 
 const categoryOpt = [
   {
@@ -49,14 +51,22 @@ const categoryOpt = [
   },
 ];
 
-function ProductCreatPage() {
+function ProductRegistrationPage() {
 
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+  };
+  const [open02, setOpen02] = useState(false);
+  const handleOpen02 = () => {
+    setOpen02(true);
+  };
+  const handleClose02 = () => {
+    setOpen02(false);
   };
 
   const [data, setData] = useState([
@@ -85,8 +95,6 @@ function ProductCreatPage() {
     setSelectAll(updatedData.every((item) => item.selected));
   };
 
-
-
   const [newOption, setNewOption] = useState({
     optionName: ["온도", "농도"],
     detailOptionName: ["HOT", "ICED", "HOT ICED", "ICED ONLY"],
@@ -102,8 +110,6 @@ function ProductCreatPage() {
       optionPrice: "",
     });
   };
-
-
 
   return (
     <Layout>
@@ -217,14 +223,6 @@ function ProductCreatPage() {
                         placeholder="옵션명 입력"
                       />
                       <Button
-                        icon="Delete"
-                        line
-                        onClick={() => { }}
-                        size="icon_s_h35"
-                      >
-                        옵션 삭제
-                      </Button>
-                      <Button
                         icon="Plus"
                         line
                         onClick={handleAddOption}
@@ -284,6 +282,14 @@ function ProductCreatPage() {
                         placeholder="온도"
                       />
                       <Button
+                        icon="Delete"
+                        line
+                        onClick={() => { }}
+                        size="icon_s_h35"
+                      >
+                        옵션 삭제
+                      </Button>
+                      <Button
                         icon="Plus"
                         line
                         onClick={handleAddOption}
@@ -325,6 +331,14 @@ function ProductCreatPage() {
                         size="icon_s_h35"
                       >
                         옵션 삭제
+                      </Button>
+                      <Button
+                        icon="Plus"
+                        line
+                        onClick={handleAddOption}
+                        size="icon_s_h35"
+                      >
+                        옵션명 추가
                       </Button>
                     </div>
                   </TableCell>
@@ -436,14 +450,6 @@ function ProductCreatPage() {
                         size="icon_s_h35"
                       >
                         옵션 삭제
-                      </Button>
-                      <Button
-                        icon="Plus"
-                        line
-                        onClick={handleAddOption}
-                        size="icon_s_h35"
-                      >
-                        옵션명 추가
                       </Button>
                     </div>
                   </TableCell>
@@ -512,6 +518,14 @@ function ProductCreatPage() {
                       >
                         옵션 삭제
                       </Button>
+                      <Button
+                        icon="Plus"
+                        line
+                        onClick={handleAddOption}
+                        size="icon_s_h35"
+                      >
+                        옵션명 추가
+                      </Button>
                     </div>
                   </TableCell>
                 </TableRow>
@@ -623,14 +637,6 @@ function ProductCreatPage() {
                       >
                         옵션 삭제
                       </Button>
-                      <Button
-                        icon="Plus"
-                        line
-                        onClick={handleAddOption}
-                        size="icon_s_h35"
-                      >
-                        옵션명 추가
-                      </Button>
                     </div>
                   </TableCell>
                 </TableRow>
@@ -640,17 +646,10 @@ function ProductCreatPage() {
         </div>        
         <div className="align mt_20">
           <div className="rgt gap_10">
-            <Button
-              onClick={() => {}}
-              size="medium"
-              line
-            >
+            <Button onClick={() => navigate(-1 || "/")} size="xlarge" line>
               취소
             </Button>
-            <Button
-              onClick={() => { }}
-              size="medium"
-            >
+            <Button onClick={handleOpen02} size="xlarge" btntype="c11">
               저장
             </Button>
           </div>
@@ -676,7 +675,6 @@ function ProductCreatPage() {
           </>
         }
       >
-        <div className="">
           <Table
             colgroup={
               <>
@@ -717,18 +715,33 @@ function ProductCreatPage() {
             </tr>
               ))}
           </Table>
-          <div className="align center mt_20">
-            <Button onClick={handleClose} size="xlarge" line globalClass="mr_20">
+          <div className="align end mt_20 gap_5">
+            <Button onClick={handleClose} size="small_h35" line>
               취소
             </Button>
-            <Button onClick={() => {}} size="xlarge" >
+            <Button onClick={() => {}} size="small_h35" border="point" >
               확인
             </Button>
           </div>
-        </div>
       </MuiModal>  
+      <MuiAlert
+          open={open02}
+          onClose={handleClose02}
+          title={
+            <>
+              수정된 내용을<br/>
+              저장하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose02} line>아니요</Button>
+              <Button onClick={()=>{}} border="point">네</Button>
+            </>
+          }
+        />
     </Layout>
   );
 }
 
-export default ProductCreatPage;
+export default ProductRegistrationPage;
