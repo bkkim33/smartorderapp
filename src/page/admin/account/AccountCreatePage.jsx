@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
@@ -6,6 +6,9 @@ import Table from "../../../components/Table";
 import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Button from "../../../components/Button";
+
+//mui table import
+import MuiAlert from "../../../components/MuiAlert";
 
 const companyOpt = [
   {
@@ -36,85 +39,110 @@ const rightOpt = [
 
 function AccountCreate() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+   const handleOpen = () => {
+     setOpen(true);
+   };
+
+   const handleClose = () => {
+     setOpen(false);
+   };
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">계정 생성</h1>        
+        <h1 className="headline2">계정 생성</h1>
       </div>
+      <hr className="primary" />
       <ContentBox>
-        <Table colgroup={<><col width="20%" /><col /></>}>
-          <tr>
-            <th className="required">소속</th>
-            <td>
-              <Select
-                placeholder="소속 선택"
-                options={companyOpt}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th className="required">관리자명</th>
-            <td>
-              <Input onClick={() => { }} />
-            </td>
-          </tr>
-          <tr>
-            <th className="required">ID</th>
-            <td>
-              <Input 
-                onClick={() => { }}
-                placeholder="ID를 입력해 주세요."
-              />
-            </td>
-          </tr>
-          <tr>
-            <th className="required">비밀번호</th>
-            <td>
-              <Input
-                onClick={() => { }}
-                type="password"
-                placeholder="비밀번호를 입력해 주세요."
-              />
-            </td>
-          </tr>
-          <tr>
-            <th className="required">비밀번호 확인</th>
-            <td>
-              <Input
-                onClick={() => { }}
-                type="password"
-                placeholder="비밀번호를 입력해 주세요."
-              />
-            </td>
-          </tr>
-          <tr>
-            <th className="required">어드민 권한</th>
-            <td>
-              <Select
-                placeholder="선택"
-                options={rightOpt}
-              />
-            </td>
-          </tr>
-        </Table>
-        <div className="align mt_20">
-          <div className="rgt gap_10">
-            <Button              
-              onClick={() => navigate("/admin/account")}
-              size="small_h35"
-              line
-            >
-              취소
-            </Button>
-            <Button
-              onClick={() => { }}
-              size="small_h35" 
-              border
-            >
-              계정 생성
-            </Button>
+        <div className="align column">
+          <Table
+            colgroup={
+              <>
+                <col width="20%" />
+                <col />
+              </>
+            }
+          >
+            <tr>
+              <th className="required">소속</th>
+              <td>
+                <Select placeholder="소속 선택" options={companyOpt} />
+              </td>
+            </tr>
+            <tr>
+              <th className="required">관리자명</th>
+              <td>
+                <Input onClick={() => {}} />
+              </td>
+            </tr>
+            <tr>
+              <th className="required">ID</th>
+              <td>
+                <Input onClick={() => {}} placeholder="ID를 입력해 주세요." />
+              </td>
+            </tr>
+            <tr>
+              <th className="required">비밀번호</th>
+              <td>
+                <Input
+                  onClick={() => {}}
+                  type="password"
+                  placeholder="비밀번호를 입력해 주세요."
+                />
+              </td>
+            </tr>
+            <tr>
+              <th className="required">비밀번호 확인</th>
+              <td>
+                <Input
+                  onClick={() => {}}
+                  type="password"
+                  placeholder="비밀번호를 입력해 주세요."
+                />
+              </td>
+            </tr>
+            <tr>
+              <th className="required">어드민 권한</th>
+              <td>
+                <Select placeholder="선택" options={rightOpt} />
+              </td>
+            </tr>
+          </Table>
+          <div className="align mt_20">
+            <div className="rgt gap_10">
+              <Button
+                onClick={() => navigate("/admin/account")}
+                size="xlarge"
+                line
+              >
+                취소
+              </Button>
+              <Button onClick={handleOpen} size="xlarge" btntype="c11">
+                계정 생성
+              </Button>
+            </div>
           </div>
         </div>
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={
+            <>
+              입력한 정보로 <br />
+              계정 생성하시겠습니까?
+            </>
+          }
+          button={
+            <>
+              <Button onClick={handleClose} line>
+                아니요
+              </Button>
+              <Button onClick={() => navigate("/admin/account")} border="point">
+                네
+              </Button>
+            </>
+          }
+        />
       </ContentBox>
     </Layout>
   );

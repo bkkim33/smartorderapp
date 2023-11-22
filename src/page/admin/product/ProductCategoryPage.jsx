@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -22,8 +23,7 @@ const initialCategoryData = [
   { id: 4, order: 4, category: "Blended" },
 ];
 
-function CategoryListPage() {
-
+function ProductCategoryPage() {
   const [open, setOpen] = useState(false);
   const [open02, setOpen02] = useState(false);
 
@@ -54,7 +54,7 @@ function CategoryListPage() {
       }
       return row;
     });
-  
+
     setCategoryData(updatedData);
   };
 
@@ -69,7 +69,7 @@ function CategoryListPage() {
   };
 
   const handleTableRowClick = (id) => {
-    console.log('되고 있냐?', id);
+    console.log("되고 있냐?", id);
   };
 
   return (
@@ -86,18 +86,10 @@ function CategoryListPage() {
                 <div className="align start gap_10">
                   <h2 className="headline4">카테고리&nbsp;설정</h2>
                   <div className="btn_set">
-                    <Button
-                      icon="AdminArrow"
-                      onClick={() => {}}
-                      size="icon_s"
-                    >
+                    <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
                       위로
                     </Button>
-                    <Button
-                      icon="AdminArrow"
-                      onClick={() => {}}
-                      size="icon_s"
-                    >
+                    <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
                       아래로
                     </Button>
                     <Button
@@ -117,20 +109,24 @@ function CategoryListPage() {
                   </div>
                 </div>
                 <div className="align end gap_5">
-                <Button onClick={() => {}} size="small_h35" line>
-                  순서 저장
-                </Button>
-                <Button onClick={handleAddCategory} size="small_h35" border="point">
-                  + 카테고리 추가
-                </Button>
-              </div>
+                  <Button onClick={() => {}} size="small_h35" line>
+                    순서 저장
+                  </Button>
+                  <Button
+                    onClick={handleAddCategory}
+                    size="small_h35"
+                    border="point"
+                  >
+                    + 카테고리 추가
+                  </Button>
+                </div>
               </div>
               <div className="tbl">
                 <TableContainer>
                   <MuiTable>
                     <colgroup>
-                        <col width="20%" />
-                        <col width="auto" />
+                      <col width="20%" />
+                      <col width="auto" />
                     </colgroup>
                     <TableHead>
                       <TableRow>
@@ -140,7 +136,10 @@ function CategoryListPage() {
                     </TableHead>
                     <TableBody>
                       {categoryData.map((row) => (
-                        <TableRow key={row.id} onClick={() => handleTableRowClick(row.id)}>
+                        <TableRow
+                          key={row.id}
+                          onClick={() => handleTableRowClick(row.id)}
+                        >
                           <TableCell>{row.order}</TableCell>
                           <TableCell className="left">
                             {row.category === "" ? (
@@ -148,12 +147,19 @@ function CategoryListPage() {
                                 <Input
                                   placeholder="카테고리명 입력"
                                   value={row.category}
-                                  onChange={(e) => handleCategoryChange(e, row.id)}
+                                  onChange={(e) =>
+                                    handleCategoryChange(e, row.id)
+                                  }
                                 />
                                 <Button
                                   icon={row.deletable ? "Delete" : "Check"}
                                   line
-                                   onClick={() => handleCategoryChange(row.deletable ? "" : row.category, row.id)}
+                                  onClick={() =>
+                                    handleCategoryChange(
+                                      row.deletable ? "" : row.category,
+                                      row.id
+                                    )
+                                  }
                                   size="icon_s_h35"
                                 >
                                   {row.deletable ? "옵션 삭제" : "체크"}
@@ -174,13 +180,17 @@ function CategoryListPage() {
               <div className="align mt_10 mb_20">
                 <h2 className="headline4">카테고리&nbsp;정보</h2>
                 <div className="align end gap_5">
-                <Button onClick={handleOpen} size="small_h35" line>
-                  삭제
-                </Button>
-                <Button onClick={handleOpen02} size="small_h35" border="point">
-                  저장
-                </Button>
-              </div>
+                  <Button onClick={handleOpen} size="small_h35" line>
+                    삭제
+                  </Button>
+                  <Button
+                    onClick={handleOpen02}
+                    size="small_h35"
+                    border="point"
+                  >
+                    저장
+                  </Button>
+                </div>
               </div>
               <Table
                 colgroup={
@@ -222,7 +232,11 @@ function CategoryListPage() {
             </div>
           </div>
           <div className="align end mt_20">
-            <Button onClick={() => {}} size="xlarge" btntype="c11">
+            <Button
+              onClick={() => {}}
+              size="xlarge"
+              btntype="c11"
+            >
               적용하기
             </Button>
           </div>
@@ -232,16 +246,23 @@ function CategoryListPage() {
           onClose={handleClose}
           title={
             <>
-               카테고리를 삭제하면 <br/>
-               <span className="red_text">카테고리에 연결된 모든 상품이
-               매장에 노출되지 않으며, 삭제된 카테고리는 복구되지 않습니다.</span> <br/>
-               카테고리를 삭제하시겠습니까?
+              카테고리를 삭제하면 <br />
+              <span className="red_text">
+                카테고리에 연결된 모든 상품이 매장에 노출되지 않으며, 삭제된
+                카테고리는 복구되지 않습니다.
+              </span>{" "}
+              <br />
+              카테고리를 삭제하시겠습니까?
             </>
           }
           button={
             <>
-              <Button onClick={handleClose} line>취소</Button>
-              <Button onClick={() => { }} border="point">확인</Button>
+              <Button onClick={handleClose} line>
+                취소
+              </Button>
+              <Button onClick={handleClose} border="point">
+                확인
+              </Button>
             </>
           }
         />
@@ -250,14 +271,19 @@ function CategoryListPage() {
           onClose={handleClose02}
           title={
             <>
-               수정된 내용을<br/>
-               저장하시겠습니까?
+              수정된 내용을
+              <br />
+              저장하시겠습니까?
             </>
           }
           button={
             <>
-              <Button onClick={handleClose02} line>아니요</Button>
-              <Button onClick={() => { }} border="point">네</Button>
+              <Button onClick={handleClose02} line>
+                아니요
+              </Button>
+              <Button onClick={handleClose02} border="point">
+                네
+              </Button>
             </>
           }
         />
@@ -266,4 +292,4 @@ function CategoryListPage() {
   );
 }
 
-export default CategoryListPage;
+export default ProductCategoryPage;

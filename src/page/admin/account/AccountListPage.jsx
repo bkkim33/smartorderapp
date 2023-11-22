@@ -26,7 +26,7 @@ function AccountListPage() {
         <div className="align mb_20">
           <div className="lft">
             <Input
-              onClick={() => { }}
+              onClick={() => {}}
               placeholder="관리자 검색 (관리자 ID, 관리자명)"
               type="search"
               width="300px"
@@ -34,8 +34,9 @@ function AccountListPage() {
           </div>
           <div className="rgt">
             <Button
-              size="small_h35" border
+              size="small_h35"
               onClick={() => navigate("./create")}
+              border="point"
             >
               계정 생성
             </Button>
@@ -50,7 +51,6 @@ function AccountListPage() {
                 <col width="20%" />
                 <col width="20%" />
                 <col width="20%" />
-                <col width="10%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -59,55 +59,42 @@ function AccountListPage() {
                   <TableCell>관리자 ID</TableCell>
                   <TableCell>이름</TableCell>
                   <TableCell>권한</TableCell>
-                  <TableCell>전시여부</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
+                <TableRow onClick={() => navigate("/admin/account/modify")}>
                   <TableCell>1</TableCell>
                   <TableCell>메가존클라우드</TableCell>
                   <TableCell>admin01</TableCell>
                   <TableCell>이름</TableCell>
                   <TableCell>카페서비스 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={() => navigate("/admin/account/modify")}>
                   <TableCell>2</TableCell>
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin02</TableCell>
                   <TableCell>010-***-1234</TableCell>
                   <TableCell>매장 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={() => navigate("/admin/account/modify")}>
                   <TableCell>3</TableCell>
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin03</TableCell>
                   <TableCell>홍길동3</TableCell>
                   <TableCell>매장 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={() => navigate("/admin/account/modify")}>
                   <TableCell>4</TableCell>
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin04</TableCell>
                   <TableCell>홍길동4</TableCell>
                   <TableCell>어드민 관리자</TableCell>
-                  <TableCell>
-                    <Link to="/admin/account/modify">권한 수정</Link>
-                  </TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>
           </TableContainer>
+          <MuiPage />
         </div>
-        <MuiPage />
       </ContentBox>
     </Layout>
   );

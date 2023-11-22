@@ -70,7 +70,7 @@ function AdminLoginPage() {
                 <Button
                   btntype="blue"
                   onClick={() => {
-                    navigate("product/list");
+                    navigate("product");
                   }}
                   size="full"
                 >

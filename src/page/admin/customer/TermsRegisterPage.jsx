@@ -9,26 +9,14 @@ import FileUpload from "../../../components/FileUpload";
 import Radio from "../../../components/Radio";
 import FormGroup from "../../../components/FormGroup";
 
-//mui table import
-import MuiAlert from "../../../components/MuiAlert";
-
-  function NoticeModifyPage() {
-    const [open, setOpen] = useState(false);
-
+  function TermsRegisterPage() {
     const navigate = useNavigate();
-
-    const handleOpen = () => {
-      setOpen(true);
-    };
-
-    const handleClose = () => {
-      setOpen(false);
-    };
+    const [setStartDate] = useState(null);
 
     return (
       <Layout>
         <div className="align mb_20">
-          <h1 className="headline2">공지사항 상세</h1>
+          <h1 className="headline2">이용약관 등록</h1>
         </div>
         <hr className="primary" />
         <ContentBox>
@@ -85,6 +73,17 @@ import MuiAlert from "../../../components/MuiAlert";
                   </td>
                 </tr>
                 <tr>
+                  <th className="required">시행 일자</th>
+                  <td>
+                    <Input
+                      type="date"
+                      onClick={() => {}}
+                      placeholder="종료 날짜"
+                      onChange={(e) => setStartDate(e.target.value)}
+                    />
+                  </td>
+                </tr>
+                <tr>
                   <th className="required">제목</th>
                   <td>
                     <Input
@@ -93,6 +92,7 @@ import MuiAlert from "../../../components/MuiAlert";
                     />
                   </td>
                 </tr>
+
                 <tr>
                   <th className="required">내용입력</th>
                   <td>
@@ -101,19 +101,13 @@ import MuiAlert from "../../../components/MuiAlert";
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <th>이미지 등록</th>
-                  <td>
-                    <FileUpload onChange={() => {}} />
-                  </td>
-                </tr>
               </Table>
             </div>
             <div className="align end">
               <div className="item">
                 <Button
                   onClick={() => {
-                    navigate("/admin/customer/notice/");
+                    navigate("/admin/customer/terms/");
                   }}
                   size="xlarge"
                   line
@@ -122,36 +116,21 @@ import MuiAlert from "../../../components/MuiAlert";
                 </Button>
               </div>
               <div className="item">
-                <Button onClick={handleOpen} size="xlarge" btntype="c11">
+                <Button
+                  onClick={() => {
+                    navigate("/admin/customer/terms/");
+                  }}
+                  size="xlarge"
+                  btntype="c11"
+                >
                   저장
                 </Button>
               </div>
             </div>
           </div>
         </ContentBox>
-        <MuiAlert
-          open={open}
-          onClose={handleClose}
-          title={
-            <>
-              수정된 내용을 <br /> 저장 하시겠습니까?
-            </>
-          }
-          button={
-            <>
-              <Button onClick={handleClose} line>
-                아니요
-              </Button>
-              <Button onClick={() => {
-                navigate("/admin/customer/notice");
-              }} border="point">
-                네
-              </Button>
-            </>
-          }
-        />
       </Layout>
     );
   }
 
-export default NoticeModifyPage;
+export default TermsRegisterPage;

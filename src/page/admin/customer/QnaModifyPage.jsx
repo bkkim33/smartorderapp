@@ -12,7 +12,7 @@ import FormGroup from "../../../components/FormGroup";
 //mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
-  function NoticeModifyPage() {
+  function QnaModifyPage() {
     const [open, setOpen] = useState(false);
 
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ import MuiAlert from "../../../components/MuiAlert";
     return (
       <Layout>
         <div className="align mb_20">
-          <h1 className="headline2">공지사항 상세</h1>
+          <h1 className="headline2">자주하는 질문 상세</h1>
         </div>
         <hr className="primary" />
         <ContentBox>
@@ -113,7 +113,7 @@ import MuiAlert from "../../../components/MuiAlert";
               <div className="item">
                 <Button
                   onClick={() => {
-                    navigate("/admin/customer/notice/");
+                    navigate("/admin/customer/qna/");
                   }}
                   size="xlarge"
                   line
@@ -142,9 +142,12 @@ import MuiAlert from "../../../components/MuiAlert";
               <Button onClick={handleClose} line>
                 아니요
               </Button>
-              <Button onClick={() => {
-                navigate("/admin/customer/notice");
-              }} border="point">
+              <Button
+                onClick={() => {
+                  navigate("/admin/customer/qna");
+                }}
+                border="point"
+              >
                 네
               </Button>
             </>
@@ -154,4 +157,4 @@ import MuiAlert from "../../../components/MuiAlert";
     );
   }
 
-export default NoticeModifyPage;
+export default QnaModifyPage;

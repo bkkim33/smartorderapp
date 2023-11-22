@@ -51,8 +51,7 @@ const categoryOpt = [
   },
 ];
 
-function ProductModifyPage() {
-
+function ProductDetailPage() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -70,10 +69,34 @@ function ProductModifyPage() {
   };
 
   const [data, setData] = useState([
-    { id: 0, code: "C0001", name: "아메리카노1잔", discount: "-3,800", selected: false },
-    { id: 1, code: "C0002", name: "모든음료1잔", discount: "0", selected: false },
-    { id: 2, code: "C0003", name: "아메리카노1잔", discount: "-3,800", selected: false },
-    { id: 3, code: "C0004", name: "모든음료1잔", discount: "0", selected: false },
+    {
+      id: 0,
+      code: "C0001",
+      name: "아메리카노1잔",
+      discount: "-3,800",
+      selected: false,
+    },
+    {
+      id: 1,
+      code: "C0002",
+      name: "모든음료1잔",
+      discount: "0",
+      selected: false,
+    },
+    {
+      id: 2,
+      code: "C0003",
+      name: "아메리카노1잔",
+      discount: "-3,800",
+      selected: false,
+    },
+    {
+      id: 3,
+      code: "C0004",
+      name: "모든음료1잔",
+      discount: "0",
+      selected: false,
+    },
   ]);
   const [selectAll, setSelectAll] = useState(false);
 
@@ -132,17 +155,13 @@ function ProductModifyPage() {
           <tr>
             <th className="required">상품 카테고리</th>
             <td>
-              <Select
-                options={categoryOpt}
-              />
-            </td>            
+              <Select options={categoryOpt} />
+            </td>
           </tr>
           <tr>
             <th className="required">상품명</th>
             <td>
-              <Input 
-                placeholder="상품명을 입력해주세요." 
-              />
+              <Input placeholder="상품명을 입력해주세요." />
             </td>
           </tr>
           <tr>
@@ -154,19 +173,13 @@ function ProductModifyPage() {
           <tr>
             <th className="required">판매가</th>
             <td>
-              <Input
-                placeholder="원"
-                type="number"
-              />
+              <Input placeholder="원" type="number" />
             </td>
           </tr>
           <tr>
             <th>임직원 할인가</th>
             <td>
-              <Input
-                placeholder="원"
-                type="number"
-              />
+              <Input placeholder="원" type="number" />
             </td>
           </tr>
           <tr>
@@ -174,21 +187,24 @@ function ProductModifyPage() {
             <td>
               <div className="align start gap_8">
                 <div>
-                  <Chip label="테스트염" onClick={() => {}} globalClass="mr_8"/>
-                  <Chip label="테스트염" onClick={() => {}} globalClass="mr_8"/>
-                  <Chip label="테스트염" onClick={() => {}}/>
+                  <Chip
+                    label="테스트염"
+                    onClick={() => {}}
+                    globalClass="mr_8"
+                  />
+                  <Chip
+                    label="테스트염"
+                    onClick={() => {}}
+                    globalClass="mr_8"
+                  />
+                  <Chip label="테스트염" onClick={() => {}} />
                 </div>
-                <Button
-                  btntype="c11"
-                  onClick={handleOpen}
-                  size="small_h35"
-                >
+                <Button btntype="c11" onClick={handleOpen} size="small_h35">
                   쿠폰할인 선택
                 </Button>
               </div>
-              
             </td>
-          </tr>          
+          </tr>
         </Table>
         <div className="align mt_40 mb_20">
           <h2 className="headline4">옵션 등록</h2>
@@ -225,7 +241,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -268,7 +284,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -313,7 +329,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -350,7 +366,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -387,7 +403,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -411,7 +427,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -454,7 +470,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -499,7 +515,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -536,7 +552,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -573,7 +589,7 @@ function ProductModifyPage() {
                       <Button
                         icon="Delete"
                         line
-                        onClick={() => { }}
+                        onClick={() => {}}
                         size="icon_s_h35"
                       >
                         옵션 삭제
@@ -584,10 +600,14 @@ function ProductModifyPage() {
               </TableBody>
             </MuiTable>
           </TableContainer>
-        </div>        
+        </div>
         <div className="align mt_20">
           <div className="rgt gap_10">
-            <Button onClick={() => navigate(-1 || "/")} size="xlarge" line>
+            <Button
+              onClick={() => navigate("/admin/product/product")}
+              size="xlarge"
+              line
+            >
               취소
             </Button>
             <Button onClick={handleOpen02} size="xlarge" btntype="c11">
@@ -595,7 +615,7 @@ function ProductModifyPage() {
             </Button>
           </div>
         </div>
-      </ContentBox>    
+      </ContentBox>
       <MuiModal
         open={open}
         onClose={handleClose}
@@ -616,29 +636,29 @@ function ProductModifyPage() {
           </>
         }
       >
-          <Table
-            colgroup={
-              <>
-                <col width="10%" />
-                <col width="30%" />
-                <col width="30%" />
-                <col width="30%" />
-              </>
-            }
-          >
-            <tr>
-              <th>
-                <Checkbox
-                  id={selectAll.toString()}
-                  onChange={handleSelectAll}
-                  checked={selectAll}
-                ></Checkbox>
-              </th>
-              <th>쿠폰코드</th>
-              <th>쿠폰명</th>
-              <th>할인가</th>
-            </tr>
-            {data.map((item) => (
+        <Table
+          colgroup={
+            <>
+              <col width="10%" />
+              <col width="30%" />
+              <col width="30%" />
+              <col width="30%" />
+            </>
+          }
+        >
+          <tr>
+            <th>
+              <Checkbox
+                id={selectAll.toString()}
+                onChange={handleSelectAll}
+                checked={selectAll}
+              ></Checkbox>
+            </th>
+            <th>쿠폰코드</th>
+            <th>쿠폰명</th>
+            <th>할인가</th>
+          </tr>
+          {data.map((item) => (
             <tr key={item.id}>
               <td>
                 {data.length > 0 && (
@@ -647,42 +667,50 @@ function ProductModifyPage() {
                     name={item.name}
                     checked={item.selected}
                     onChange={() => handleSingleCheck(item.id)}
-                  />  
+                  />
                 )}
               </td>
               <td>{item.code}</td>
               <td>{item.name}</td>
               <td>{item.discount}</td>
             </tr>
-              ))}
-          </Table>
-          <div className="align end mt_20 gap_5">
-            <Button onClick={handleClose} size="small_h35" line>
-              취소
-            </Button>
-            <Button onClick={() => {}} size="small_h35" border="point" >
-              확인
-            </Button>
-          </div>
-      </MuiModal>  
+          ))}
+        </Table>
+        <div className="align end mt_20 gap_5">
+          <Button onClick={handleClose} size="small_h35" line>
+            취소
+          </Button>
+          <Button onClick={handleClose} size="small_h35" border="point">
+            확인
+          </Button>
+        </div>
+      </MuiModal>
       <MuiAlert
-          open={open02}
-          onClose={handleClose02}
-          title={
-            <>
-              수정된 내용을<br/>
-              저장하시겠습니까?
-            </>
-          }
-          button={
-            <>
-              <Button onClick={handleClose02} line>아니요</Button>
-              <Button onClick={()=>{}} border="point">네</Button>
-            </>
-          }
-        />
+        open={open02}
+        onClose={handleClose02}
+        title={
+          <>
+            수정된 내용을
+            <br />
+            저장하시겠습니까?
+          </>
+        }
+        button={
+          <>
+            <Button onClick={handleClose02} line>
+              아니요
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/product/product")}
+              border="point"
+            >
+              네
+            </Button>
+          </>
+        }
+      />
     </Layout>
   );
 }
 
-export default ProductModifyPage;
+export default ProductDetailPage;

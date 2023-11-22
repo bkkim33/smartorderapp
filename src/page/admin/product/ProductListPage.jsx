@@ -166,19 +166,11 @@ function ProductListPage() {
           <tr>
             <th>상품 카테고리</th>
             <td>
-              <Select
-                width="350px"
-                defaultValue={0}
-                options={categoryOpt}
-              />
+              <Select width="350px" defaultValue={0} options={categoryOpt} />
             </td>
             <th>판매 매장</th>
             <td>
-              <Select
-                width="350px"
-                defaultValue={0}
-                options={storeNameOpt}
-              />
+              <Select width="350px" defaultValue={0} options={storeNameOpt} />
             </td>
           </tr>
           <tr>
@@ -200,17 +192,17 @@ function ProductListPage() {
       <hr className="secondary" />
       <div className="align mt_42">
         <div className="lft">
-          <Select
-            minwidth="200px"
-            defaultValue={0}
-            options={numOpt}
-          />
+          <Select minwidth="200px" defaultValue={0} options={numOpt} />
         </div>
         <div className="rgt gap_5">
           <Button onClick={handleOpen02} size="small_h35" line>
             삭제
           </Button>
-          <Button onClick={() => navigate("/admin/product/registration")} size="small_h35" border="point">
+          <Button
+            onClick={() => navigate("/admin/product/product/register")}
+            size="small_h35"
+            border="point"
+          >
             신규등록
           </Button>
         </div>
@@ -230,11 +222,12 @@ function ProductListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Checkbox 
+                    <Checkbox
                       id="checkAll"
                       name="checkAll"
                       checked={selectAll}
-                      onChange={handleSelectAll} />
+                      onChange={handleSelectAll}
+                    />
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>상품 ID</TableCell>
@@ -245,22 +238,45 @@ function ProductListPage() {
               </TableHead>
               <TableBody>
                 {tableRows.map((row) => (
-                  <TableRow key={row.id} className="crsor_poin" >
+                  <TableRow key={row.id} className="crsor_poin">
                     <TableCell>
-                    <Checkbox
-                      id={`check${row.id}`}
-                      name={`check${row.id}`}
-                      checked={checkedItems[row.id] || false}
-                      onChange={() => handleCheckboxChange(row.id)}
-                    />
+                      <Checkbox
+                        id={`check${row.id}`}
+                        name={`check${row.id}`}
+                        checked={checkedItems[row.id] || false}
+                        onChange={() => handleCheckboxChange(row.id)}
+                      />
                     </TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.id}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.affiliation}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.productId}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.productName}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/modify")}>{row.role}</TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.id}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.affiliation}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.productId}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.productName}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.role}
+                    </TableCell>
                   </TableRow>
                 ))}
+                <TableRow>
+                  <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
+                </TableRow>
               </TableBody>
             </MuiTable>
           </TableContainer>
@@ -348,20 +364,20 @@ function ProductListPage() {
         </div>
       </MuiModal>
       <MuiAlert
-          open={open02}
-          onClose={handleClose02}
-          title={
-            <>
-               정말 삭제하시겠습니까?
-            </>
-          }
-          button={
-            <>
-              <Button onClick={handleClose02} line>취소</Button>
-              <Button onClick={handleAlertYes} border="point">확인</Button>
-            </>
-          }
-        />
+        open={open02}
+        onClose={handleClose02}
+        title={<>정말 삭제하시겠습니까?</>}
+        button={
+          <>
+            <Button onClick={handleClose02} line>
+              취소
+            </Button>
+            <Button onClick={handleAlertYes} border="point">
+              확인
+            </Button>
+          </>
+        }
+      />
     </Layout>
   );
 }

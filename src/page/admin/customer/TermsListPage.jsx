@@ -75,15 +75,49 @@ const dateFilterOptions = [
 ];
 
 const initialTableRows = [
-  { id: 1, title: '공지사항 제목입니다.', target: '전체', date: '2023. 10. 30', visibility: 'Y', author: 'admin' },
-  { id: 2, title: '공지사항 제목입니다.', target: '임직원', date: '2023. 10. 31', visibility: 'Y', author: 'admin' },
-  { id: 3, title: '공지사항 제목입니다.', target: '방문객', date: '2023. 10. 30', visibility: 'N', author: 'user' },
-  { id: 4, title: '공지사항 제목입니다.', target: '전체', date: '2023. 11. 01', visibility: 'Y', author: 'admin' },
-  { id: 5, title: '데이터 확인중입니다', target: '전체', date: '2023. 11. 02', visibility: 'Y', author: 'admin' },
+  {
+    id: 1,
+    title: "이용약관 제목입니다.",
+    target: "전체",
+    date: "2023. 10. 30",
+    visibility: "Y",
+    author: "admin",
+  },
+  {
+    id: 2,
+    title: "이용약관 제목입니다.",
+    target: "임직원",
+    date: "2023. 10. 31",
+    visibility: "Y",
+    author: "admin",
+  },
+  {
+    id: 3,
+    title: "이용약관 제목입니다.",
+    target: "방문객",
+    date: "2023. 10. 30",
+    visibility: "N",
+    author: "user",
+  },
+  {
+    id: 4,
+    title: "이용약관 제목입니다.",
+    target: "전체",
+    date: "2023. 11. 01",
+    visibility: "Y",
+    author: "admin",
+  },
+  {
+    id: 5,
+    title: "이용약관 제목입니다.",
+    target: "전체",
+    date: "2023. 11. 02",
+    visibility: "Y",
+    author: "admin",
+  },
 ];
 
-function NoticeListPage() {
-
+function TermsListPage() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -125,7 +159,7 @@ function NoticeListPage() {
     handleClose(false);
   };
 
-  const [activeButton, setActiveButton] = useState(null); 
+  const [activeButton, setActiveButton] = useState(null);
   const handleButtonClick = (buttonLabel) => {
     setActiveButton(buttonLabel);
   };
@@ -136,7 +170,7 @@ function NoticeListPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">공지사항</h1>
+        <h1 className="headline2">이용약관</h1>
       </div>
       <hr className="primary" />
       <ContentBox top>
@@ -217,7 +251,7 @@ function NoticeListPage() {
           </Button>
           <Button
             onClick={() => {
-              navigate("/admin/customer/notice/register");
+              navigate("/admin/customer/terms/register");
             }}
             size="small_h35"
             border="point"
@@ -269,33 +303,33 @@ function NoticeListPage() {
                       />
                     </TableCell>
                     <TableCell
-                      onClick={() => navigate("/admin/customer/notice/modify")}
+                      onClick={() => navigate("/admin/customer/terms/modify")}
                     >
                       {row.id}
                     </TableCell>
                     <TableCell
                       className="left"
-                      onClick={() => navigate("/admin/customer/notice/modify")}
+                      onClick={() => navigate("/admin/customer/terms/modify")}
                     >
                       {row.title}
                     </TableCell>
                     <TableCell
-                      onClick={() => navigate("/admin/customer/notice/modify")}
+                      onClick={() => navigate("/admin/customer/terms/modify")}
                     >
                       {row.target}
                     </TableCell>
                     <TableCell
-                      onClick={() => navigate("/admin/customer/notice/modify")}
+                      onClick={() => navigate("/admin/customer/terms/modify")}
                     >
                       {row.date}
                     </TableCell>
                     <TableCell
-                      onClick={() => navigate("/admin/customer/notice/modify")}
+                      onClick={() => navigate("/admin/customer/terms/modify")}
                     >
                       {row.visibility}
                     </TableCell>
                     <TableCell
-                      onClick={() => navigate("/admin/customer/notice/modify")}
+                      onClick={() => navigate("/admin/customer/terms/modify")}
                     >
                       {row.author}
                     </TableCell>
@@ -326,4 +360,4 @@ function NoticeListPage() {
   );
 }
 
-export default NoticeListPage;
+export default TermsListPage;

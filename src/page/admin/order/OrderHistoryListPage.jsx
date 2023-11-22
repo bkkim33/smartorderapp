@@ -66,14 +66,29 @@ const numOpt = [
   },
 ];
 
+const dateFilterOptions = [
+  { label: "오늘", value: "today" },
+  { label: "1주일", value: "oneWeek" },
+  { label: "1개월", value: "oneMonth" },
+  { label: "3개월", value: "threeMonths" },
+];
 
-function OrderDetailPage() {
+
+function OrderHistoryListPage() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const [setStartDate] = useState(null);
+  const [setEndDate] = useState(null);
+
+  const [activeButton, setActiveButton] = useState(null);
+  const handleButtonClick = (buttonLabel) => {
+    setActiveButton(buttonLabel);
   };
 
   return (
@@ -86,6 +101,8 @@ function OrderDetailPage() {
         <Table
           colgroup={
             <>
+              <col width="15%" />
+              <col width="auto" />
               <col width="15%" />
               <col width="auto" />
             </>
@@ -102,8 +119,6 @@ function OrderDetailPage() {
                 options={categoryOpt}
               />
             </td>
-          </tr>
-          <tr>
             <th>매장명</th>
             <td>
               <Select
@@ -117,45 +132,40 @@ function OrderDetailPage() {
           </tr>
           <tr>
             <th>기간설정</th>
-            <td>
+            <td colSpan={3}>
               {/* 임시 */}
-              <TextToggle
-                data={[
-                  {
-                    id: 1,
-                    option: null,
-                    title: '오늘'
-                  },
-                  {
-                    id: 2,
-                    option: null,
-                    title: '1주일'
-                  },
-                  {
-                    id: 3,
-                    option: null,
-                    title: '1개월'
-                  },
-                  {
-                    id: 4,
-                    option: null,
-                    title: '3개월'
-                  }
-                ]}
-                onClick={() => { }}
-                type="linebox"
-                globalClass="mb_8"
-              />
-              <Input
-                onClick={() => {}}
-                placeholder="날짜 입력"
-                shape="round"
-              />
+              <div className="align start mb_8 gap_5">
+                {dateFilterOptions.map((option) => (
+                  <Button
+                    key={option.value}
+                    onClick={() => handleButtonClick(option.value)}
+                    size="small_h35"
+                    line={activeButton === option.value ? " " : "light"}
+                  >
+                    {option.label}
+                  </Button>
+                ))}
+              </div>
+              <div className="align">
+                <Input
+                  type="date"
+                  onClick={() => {}}
+                  placeholder="시작 날짜"
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+                <span className="mlr_10">~</span>
+                <Input
+                  type="date"
+                  onClick={() => {}}
+                  placeholder="종료 날짜"
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </div>
             </td>
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} btntype="c11" size="xlarge">
+          <Button onClick={() => {}} btntype="c11" size="xlarge">
             검색
           </Button>
         </div>
@@ -163,7 +173,9 @@ function OrderDetailPage() {
       <hr className="secondary" />
       <div className="align bottom mt_42">
         <div className="lft">
-          <p className="body0">총 <span className="title3">200</span>건</p>
+          <p className="body0">
+            총 <span className="title3">200</span>건
+          </p>
         </div>
         <div className="rgt">
           <Select
@@ -199,59 +211,25 @@ function OrderDetailPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
+                <TableRow onClick={handleOpen}>
                   <TableCell>1</TableCell>
                   <TableCell>000000</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-                      
-                    >
-                      에스프레소 1개 외
-                    </Button>
-                  </TableCell>
+                  <TableCell>에스프레소 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>클라우드 카페</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-                    >
-                      8,280원
-                    </Button>
-                  </TableCell>
+                  <TableCell>8,280원</TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={handleOpen}>
                   <TableCell>2</TableCell>
                   <TableCell>000001</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-
-                    >
-                      아메리카노 1개 외
-                    </Button>
-                  </TableCell>
+                  <TableCell>아메리카노 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:10</TableCell>
                   <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>
-                    <Button
-                      none
-                      size="xsmall"
-                      onClick={handleOpen}
-                    >
-                      4,280원
-                    </Button>
-                  </TableCell>
+                  <TableCell>4,280원</TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={handleOpen}>
                   <TableCell>3</TableCell>
                   <TableCell>000002</TableCell>
                   <TableCell>메가존</TableCell>
@@ -260,7 +238,7 @@ function OrderDetailPage() {
                   <TableCell>클라우드 카페</TableCell>
                   <TableCell>2,000원</TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={handleOpen}>
                   <TableCell>4</TableCell>
                   <TableCell>000003</TableCell>
                   <TableCell>메가존</TableCell>
@@ -280,4 +258,4 @@ function OrderDetailPage() {
   );
 }
 
-export default OrderDetailPage;
+export default OrderHistoryListPage;

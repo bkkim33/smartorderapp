@@ -20,8 +20,9 @@ function SideMenuLayout({globalstyle}) {
       <nav>
         <ul className={`${styles.menu_wrap}`}>
           <li
-            className={`${styles.menu_dep1} ${splitLocation[2] === "product" ? styles.menu_dep1_active : ""
-              }`}
+            className={`${styles.menu_dep1} ${
+              splitLocation[2] === "product" ? styles.menu_dep1_active : ""
+            }`}
           >
             <p>
               <span>상품 전시 관리</span>
@@ -29,11 +30,10 @@ function SideMenuLayout({globalstyle}) {
             <ul className={`${styles.menu_dep2_wrap}`}>
               <li className={`${styles.menu_dep2}`}>
                 <Link
-                  to="/admin/product/list"
-                  className={` ${splitLocation[3] === "list"
-                    ? styles.active
-                    : ""
-                    }`}
+                  to="/admin/product/product"
+                  className={` ${
+                    splitLocation[3] === "product" ? styles.active : ""
+                  }`}
                 >
                   <span>상품 관리</span>
                 </Link>
@@ -41,30 +41,19 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/product/category"
-                  className={` ${splitLocation[3] === "category"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "category" ? styles.active : ""
+                  }`}
                 >
                   <span>카테고리 관리</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/product/discount"
-                  className={` ${splitLocation[3] === "discount"
-                    ? styles.active
-                    : ""
-                    }`}
-                >
-                  <span>할인정보 관리</span>
                 </Link>
               </li>
             </ul>
           </li>
           <li
-            className={`${styles.menu_dep1} ${splitLocation[2] === "order" ? styles.menu_dep1_active : ""
-              }`}
+            className={`${styles.menu_dep1} ${
+              splitLocation[2] === "order" ? styles.menu_dep1_active : ""
+            }`}
           >
             <p>
               <span>주문/매출 관리</span>
@@ -72,11 +61,10 @@ function SideMenuLayout({globalstyle}) {
             <ul className={`${styles.menu_dep2_wrap}`}>
               <li className={`${styles.menu_dep2}`}>
                 <Link
-                  to="/admin/OrderManagement"
-                  className={` ${splitLocation[3] === "detail"
-                      ? styles.active
-                      : ""
-                    }`}
+                  to="/admin/order/history"
+                  className={` ${
+                    splitLocation[3] === "history" ? styles.active : ""
+                  }`}
                 >
                   <span>주문내역 관리</span>
                 </Link>
@@ -84,10 +72,9 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/order/sales"
-                  className={` ${splitLocation[3] === "sales"
-                      ? styles.active
-                      : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "sales" ? styles.active : ""
+                  }`}
                 >
                   <span>매출 관리</span>
                 </Link>
@@ -95,8 +82,9 @@ function SideMenuLayout({globalstyle}) {
             </ul>
           </li>
           <li
-            className={`${styles.menu_dep1} ${splitLocation[2] === "customer" ? styles.menu_dep1_active : ""
-              }`}
+            className={`${styles.menu_dep1} ${
+              splitLocation[2] === "customer" ? styles.menu_dep1_active : ""
+            }`}
           >
             <p>
               <span>고객지원 관리</span>
@@ -105,10 +93,10 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/customer/notice"
-                  className={` ${splitLocation[3] === "notice"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "notice" ? styles.active : ""
+                  }
+                  `}
                 >
                   <span>공지사항</span>
                 </Link>
@@ -116,10 +104,10 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/customer/qna"
-                  className={` ${splitLocation[3] === "qna"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "qna" ? styles.active : ""
+                  }
+                  `}
                 >
                   <span>자주하는 질문</span>
                 </Link>
@@ -127,10 +115,9 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/customer/terms"
-                  className={` ${splitLocation[3] === "terms"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "terms" ? styles.active : ""
+                  }`}
                 >
                   <span>이용약관</span>
                 </Link>
@@ -138,8 +125,9 @@ function SideMenuLayout({globalstyle}) {
             </ul>
           </li>
           <li
-            className={`${styles.menu_dep1} ${splitLocation[2] === "store" ? styles.menu_dep1_active : ""
-              }`}
+            className={`${styles.menu_dep1} ${
+              splitLocation[2] === "store" ? styles.menu_dep1_active : ""
+            }`}
           >
             <p>
               <span>매장별 설정 관리</span>
@@ -148,10 +136,9 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/store/info"
-                  className={` ${splitLocation[3] === "info"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "info" ? styles.active : ""
+                  }`}
                 >
                   <span>매장 정보</span>
                 </Link>
@@ -159,10 +146,9 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/store/receive"
-                  className={` ${splitLocation[3] === "receive"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "receive" ? styles.active : ""
+                  }`}
                 >
                   <span>수령 방법</span>
                 </Link>
@@ -170,10 +156,9 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/store/display"
-                  className={` ${splitLocation[3] === "display"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "display" ? styles.active : ""
+                  }`}
                 >
                   <span>상품 전시</span>
                 </Link>
@@ -181,10 +166,9 @@ function SideMenuLayout({globalstyle}) {
               <li className={`${styles.menu_dep2}`}>
                 <Link
                   to="/admin/store/status"
-                  className={` ${splitLocation[3] === "status"
-                    ? styles.active
-                    : ""
-                    }`}
+                  className={` ${
+                    splitLocation[3] === "status" ? styles.active : ""
+                  }`}
                 >
                   <span>판매 상태</span>
                 </Link>
@@ -192,16 +176,18 @@ function SideMenuLayout({globalstyle}) {
             </ul>
           </li>
           <li
-            className={`${styles.menu_dep1} ${splitLocation[2] === "user" ? styles.menu_dep1_active : ""
-              }`}
+            className={`${styles.menu_dep1} ${
+              splitLocation[2] === "user" ? styles.menu_dep1_active : ""
+            }`}
           >
             <Link to="/admin/user">
               <span>사용자 관리</span>
             </Link>
           </li>
           <li
-            className={`${styles.menu_dep1} ${splitLocation[2] === "account" ? styles.menu_dep1_active : ""
-              }`}
+            className={`${styles.menu_dep1} ${
+              splitLocation[2] === "account" ? styles.menu_dep1_active : ""
+            }`}
           >
             <Link to="/admin/account">
               <span>계정/권한 관리</span>

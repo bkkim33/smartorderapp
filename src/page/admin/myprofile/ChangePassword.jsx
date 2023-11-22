@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from "../../../layout/DefaultLayout";
 import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
@@ -8,6 +9,7 @@ import Button from "../../../components/Button";
 import MuiAlert from "../../../components/MuiAlert";
 
 function ChangePassword() {
+   const navigate = useNavigate();
 
   const [errorMessages, setErrorMessages] = useState({
     currentPasswordError: "",
@@ -40,6 +42,7 @@ function ChangePassword() {
   };
 
   const handleOpen02 = () => {
+    setOpen(false);
     setOpen02(true);
   };
   const handleClose02 = () => {
@@ -51,10 +54,13 @@ function ChangePassword() {
       <div className="align mb_20">
         <h1 className="headline2">비밀번호 변경</h1>
       </div>
-      <hr className="primary"/>
+      <hr className="primary" />
       <ContentBox>
         <div className="admin_myprofile">
-          <Table globalClass="changepasswordbox" colgroup={[<col key="col1" width="20%" />, <col key="col2"/>]}>
+          <Table
+            globalClass="changepasswordbox"
+            colgroup={[<col key="col1" width="20%" />, <col key="col2" />]}
+          >
             <tr key="currentPassword">
               <th>현재 비밀번호</th>
               <td>
@@ -64,7 +70,9 @@ function ChangePassword() {
                   type="password"
                 />
                 {errorMessages.currentPasswordError && (
-                  <div className="error_txt mt_5 ml_5">{errorMessages.currentPasswordError}</div>
+                  <div className="error_txt mt_5 ml_5">
+                    {errorMessages.currentPasswordError}
+                  </div>
                 )}
               </td>
             </tr>
@@ -78,7 +86,12 @@ function ChangePassword() {
                   maxLength={20}
                 />
                 {errorMessages.newPasswordError && (
-                  <div className="error_txt mt_5 ml_5" dangerouslySetInnerHTML={{ __html: errorMessages.newPasswordError }}/>
+                  <div
+                    className="error_txt mt_5 ml_5"
+                    dangerouslySetInnerHTML={{
+                      __html: errorMessages.newPasswordError,
+                    }}
+                  />
                 )}
               </td>
             </tr>
@@ -91,13 +104,22 @@ function ChangePassword() {
                   placeholder="새로운 비밀번호 재입력"
                 />
                 {errorMessages.confirmPasswordError && (
-                  <div className="error_txt mt_5 ml_5">{errorMessages.confirmPasswordError}</div>
+                  <div className="error_txt mt_5 ml_5">
+                    {errorMessages.confirmPasswordError}
+                  </div>
                 )}
               </td>
             </tr>
           </Table>
           <div className="align end mt_20">
-            <Button onClick={() => {handlePasswordUpdate(); handleOpen();}} btntype="c11" size="xlarge">
+            <Button
+              onClick={() => {
+                handlePasswordUpdate();
+                handleOpen();
+              }}
+              btntype="c11"
+              size="xlarge"
+            >
               확인
             </Button>
           </div>
@@ -105,15 +127,15 @@ function ChangePassword() {
         <MuiAlert
           open={open}
           onClose={handleClose}
-          title={
-            <>
-               비밀번호를 변경하시겠습니까?
-            </>
-          }
+          title={<>비밀번호를 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} line>취소</Button>
-              <Button onClick={handleOpen02} border="point">확인</Button>
+              <Button onClick={handleClose} line>
+                취소
+              </Button>
+              <Button onClick={handleOpen02} border="point">
+                확인
+              </Button>
             </>
           }
         />
@@ -122,13 +144,19 @@ function ChangePassword() {
           onClose={handleClose02}
           title={
             <>
-               비밀번호가 변경되었습니다.<br/>
-               다시 로그인해주세요.
+              비밀번호가 변경되었습니다.
+              <br />
+              다시 로그인해주세요.
             </>
           }
           button={
             <>
-              <Button onClick={handleClose02} border="point">확인</Button>
+              <Button
+                onClick={() => navigate("/admin")}
+                border="point"
+              >
+                확인
+              </Button>
             </>
           }
         />
