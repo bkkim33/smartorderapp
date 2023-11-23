@@ -154,14 +154,15 @@
 
 //해당 스테이트는 레드를 기준으로 합니다.
 .state{
-  background-color: var(--c99);
+  background-color: var(--red);
   @include body2(var(--cff));
-  &:hover{
-    background-color: var(--red);
-  }
-  &:active{
-    background-color: var(--red-active);
-  }
+  border: 1px solid var(--red);
+  // &:hover{
+  //   background-color: var(--red);
+  // }
+  // &:active{
+  //   background-color: var(--red-active);
+  // }
   &:disabled{
     cursor: default;
     background-color: var(--bgf5);
