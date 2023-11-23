@@ -21,7 +21,7 @@ function StoreRegisterPage() {
       </div>
       <hr className="primary" />
       {/* <ContentBox> */}
-      <div className="tabbox align start mb_15">
+      <div className="tabbox align mb_15">
         <Button
           onClick={() => handleTabChange("storeInfo")}
           tabdefault

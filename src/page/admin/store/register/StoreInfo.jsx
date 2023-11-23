@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button";
 import Input from "../../../../components/Input";
 import Table from "../../../../components/Table";
@@ -10,7 +11,8 @@ import Select from "../../../../components/Select";
 import Modal from "./AdrresModal";
 import MuiAlert from "../../../../components/MuiAlert";
 
-function StoreInfo({}) {
+function StoreInfo() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -170,7 +172,7 @@ function StoreInfo({}) {
         </tr>
       </Table>
       <div className="align end gap_10">
-        <Button line size="xlarge">
+        <Button onClick={() => navigate("/admin/store")} line size="xlarge">
           목록
         </Button>
         <Button onClick={handleOpen} btntype="c11" size="xlarge">
@@ -192,7 +194,7 @@ function StoreInfo({}) {
             <Button onClick={handleClose} line>
               취소
             </Button>
-            <Button onClick={() => {}} border="point">
+            <Button onClick={handleClose} border="point">
               확인
             </Button>
           </>

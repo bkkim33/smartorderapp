@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../../layout/DefaultLayout'
 import ContentBox from "../../../../layout/ContentBox";
 import Button from "../../../../components/Button";
@@ -22,6 +23,7 @@ const inUse = [
 ];
 
 function PickupMethod() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -149,7 +151,7 @@ function PickupMethod() {
         </div>
       </div>
       <div className="align end gap_10">
-        <Button line size="xlarge">
+        <Button onClick={() => navigate("/admin/store")} line size="xlarge">
           목록
         </Button>
         <Button onClick={handleOpen} btntype="c11" size="xlarge">
@@ -170,7 +172,7 @@ function PickupMethod() {
             <Button onClick={handleClose} line>
               취소
             </Button>
-            <Button onClick={() => {}} border="point">
+            <Button onClick={handleClose} border="point">
               확인
             </Button>
           </>
