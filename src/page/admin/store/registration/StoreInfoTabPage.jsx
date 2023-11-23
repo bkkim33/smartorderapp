@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import ContentBox from "../../../../../layout/ContentBox";
-import Button from "../../../../../components/Button";
-import Input from "../../../../../components/Input";
-import Table from "../../../../../components/Table";
-import FormGroup from "../../../../../components/FormGroup";
-import Radio from "../../../../../components/Radio";
-import ContactInfo from "../../../../../components/ContactInfo";
-import Select from "../../../../../components/Select";
+import Button from "../../../../components/Button";
+import Input from "../../../../components/Input";
+import Table from "../../../../components/Table";
+import FormGroup from "../../../../components/FormGroup";
+import Radio from "../../../../components/Radio";
+import ContactInfo from "../../../../components/ContactInfo";
+import Select from "../../../../components/Select";
 
-import MuiAlert from "../../../../../components/MuiAlert";
+import Modal from "./AdrresModal";
+import MuiAlert from "../../../../components/MuiAlert";
 
 function StoreInfoTabPage({  }) {
 
@@ -19,6 +19,15 @@ function StoreInfoTabPage({  }) {
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const [open2, setOpen2] = useState(false);
+
+  const handleOpen2 = () => {
+    setOpen2(true);
+  };
+  const handleClose2 = () => {
+    setOpen2(false);
   };
 
   // 운영시간
@@ -41,7 +50,8 @@ function StoreInfoTabPage({  }) {
 
   return (
     <div className="align column">
-      <Table globalClass="flex1"
+      <Table
+        globalClass="flex1"
         colgroup={
           <>
             <col width="15%" />
@@ -52,19 +62,24 @@ function StoreInfoTabPage({  }) {
         <tr>
           <th className="required">가맹점명</th>
           <td>
-          <Input
-            type="text"
-            placeholder="가맹점명을 입력해주세요."
-            noSpecialChars={true}
-            width="300px"
-          />
+            <Input
+              type="text"
+              placeholder="가맹점명을 입력해주세요."
+              noSpecialChars={true}
+              width="300px"
+            />
           </td>
         </tr>
         <tr>
           <th className="required">노출여부</th>
           <td>
             <FormGroup>
-              <Radio name="contact1" id="radio5" value="exposure" defaultChecked>
+              <Radio
+                name="contact1"
+                id="radio5"
+                value="exposure"
+                defaultChecked
+              >
                 노출
               </Radio>
               <Radio name="contact1" id="radio6" value="nonexposed">
@@ -82,25 +97,29 @@ function StoreInfoTabPage({  }) {
               numericOnly={true}
               width="300px"
             />
-            <span className="required_lft red_text ml_10">숫자만 입력 가능합니다.</span>
+            <span className="required_lft red_text ml_10">
+              숫자만 입력 가능합니다.
+            </span>
           </td>
         </tr>
         <tr>
           <th className="required">대표자명</th>
           <td>
-          <Input
-            type="text"
-            placeholder="대표자명을 입력해주세요."
-            noSpecialChars={true}
-            width="300px"
-          />
+            <Input
+              type="text"
+              placeholder="대표자명을 입력해주세요."
+              noSpecialChars={true}
+              width="300px"
+            />
           </td>
         </tr>
         <tr>
           <th className="required">연락처</th>
           <td className="Phone_number align start">
-            <ContactInfo/>
-            <span className="required_lft red_text ml_10">숫자만 입력 가능합니다.</span>
+            <ContactInfo />
+            <span className="required_lft red_text ml_10">
+              숫자만 입력 가능합니다.
+            </span>
           </td>
         </tr>
         <tr>
@@ -112,14 +131,20 @@ function StoreInfoTabPage({  }) {
               noSpecialChars={true}
               width="300px"
             />
-            <Button 
-            onClick={() => {}} 
-            size="xsmall" btntype="change" globalClass="ml_10">찾기</Button>
+            <Button
+              onClick={handleOpen2}
+              size="xsmall"
+              btntype="change"
+              globalClass="ml_10"
+            >
+              찾기
+            </Button>
           </td>
         </tr>
         <tr>
           <th className="required">운영시간</th>
-          <td className="selectdays align start gap_5">
+          <td>
+            <div className="selectdays align start gap_5">
               <Select options={days} defaultValue={0} />
               <span className="bold700 ml_10">시작</span>
               <Select options={hours} defaultValue={0} />시
@@ -128,33 +153,52 @@ function StoreInfoTabPage({  }) {
               <span className="bold700 ml_10">종료</span>
               <Select options={hours} defaultValue={0} />시
               <Select options={minutes} defaultValue={0} />분
+              <Button icon="Plus" line onClick={() => {}} size="icon_s_h35">
+                옵션명 추가
+              </Button>
+            </div>
+            <div className="selectdays align start gap_5 mt_10">
+              <Select options={days} defaultValue={0} />
+              <span className="bold700 ml_10">시작</span>
+              <Select options={hours} defaultValue={0} />시
+              <Select options={minutes} defaultValue={0} />분
+              <span className="mlr_4">~</span>
+              <span className="bold700 ml_10">종료</span>
+              <Select options={hours} defaultValue={0} />시
+              <Select options={minutes} defaultValue={0} />분
+            </div>
           </td>
         </tr>
       </Table>
       <div className="align end gap_10">
-        <Button  line size="xlarge" >
+        <Button line size="xlarge">
           목록
         </Button>
         <Button onClick={handleOpen} btntype="c11" size="xlarge">
           저장
         </Button>
       </div>
+      <Modal open={open2} handleClose={handleClose2} />
       <MuiAlert
         open={open}
         onClose={handleClose}
         title={
           <>
-            입력한 내용을 <br/>
+            입력한 내용을 <br />
             저장하시겠습니까?
           </>
         }
         button={
           <>
-            <Button onClick={handleClose} line>취소</Button>
-            <Button onClick={() => { }} border>확인</Button>
+            <Button onClick={handleClose} line>
+              취소
+            </Button>
+            <Button onClick={() => {}} border="point">
+              확인
+            </Button>
           </>
         }
-       />
+      />
     </div>
   );
 }

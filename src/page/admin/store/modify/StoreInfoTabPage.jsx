@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Button from "../../../../../components/Button";
-import Input from "../../../../../components/Input";
-import Table from "../../../../../components/Table";
-import FormGroup from "../../../../../components/FormGroup";
-import Radio from "../../../../../components/Radio";
-import ContactInfo from "../../../../../components/ContactInfo";
-import Select from "../../../../../components/Select";
+import ContentBox from "../../../../layout/ContentBox";
+import Button from "../../../../components/Button";
+import Input from "../../../../components/Input";
+import Table from "../../../../components/Table";
+import FormGroup from "../../../../components/FormGroup";
+import Radio from "../../../../components/Radio";
+import ContactInfo from "../../../../components/ContactInfo";
+import Select from "../../../../components/Select";
 
-//mui table import
-import MuiAlert from "../../../../../components/MuiAlert";
+import MuiAlert from "../../../../components/MuiAlert";
 
 function StoreInfoTabPage({  }) {
 

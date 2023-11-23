@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from '../../../../layout/DefaultLayout'
-import ContentBox from "../../../../layout/ContentBox";
-import Button from "../../../../components/Button";
-import Input from "../../../../components/Input";
-import Table from "../../../../components/Table";
-import Select from "../../../../components/Select";
-import MuiPage from "../../../../components/MuiPage";
-import Checkbox from "../../../../components/Checkbox";
+import Layout from '../../../layout/DefaultLayout'
+import ContentBox from "../../../layout/ContentBox";
+import Button from "../../../components/Button";
+import Input from "../../../components/Input";
+import Table from "../../../components/Table";
+import Select from "../../../components/Select";
+import MuiPage from "../../../components/MuiPage";
+import Checkbox from "../../../components/Checkbox";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -16,7 +16,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import MuiAlert from "../../../../components/MuiAlert";
+import MuiAlert from "../../../components/MuiAlert";
 
 const targetOpt = [
   {
@@ -38,12 +38,61 @@ const targetOpt = [
 ]
 
 const initialTableRows = [
-  {id: 1, storeName: '클라우드 카페', businessNumber: '123456789', ownerName: '양땡열',contact: '010-1234-5678', address: '서울특별시 강남구 논현로85길 46',operatingHours: '월~금 오전 8시 ~ 오후 10시',},
-  {id: 2, storeName: '클라우드 9 카페', businessNumber: '123456789', ownerName: '이땡아',contact: '010-9876-5432', address: '서울특별시 강남구 역삼로17길 57',operatingHours: '월~금 오전 8시 ~ 오후 10시 <br/> 월~금 오전 8시 ~ 오후 10시',},
-  {id: 3, storeName: '과천 클라우드 카페', businessNumber: '123456789', ownerName: '양땡열',contact: '010-1234-5678', address: '서울특별시 강남구 논현로85길 46',operatingHours: '월~금 오전 8시 ~ 오후 10시',},
-  {id: 4, storeName: '클라우드 카페', businessNumber: '123456789', ownerName: '양땡열',contact: '010-1234-5678', address: '서울특별시 강남구 논현로85길 46',operatingHours: '월~금 오전 8시 ~ 오후 10시',},
-  {id: 5, storeName: '클라우드 카페', businessNumber: '123456789', ownerName: '양땡열',contact: '010-1234-5678', address: '서울특별시 강남구 논현로85길 46',operatingHours: '월~금 오전 8시 ~ 오후 10시',},
-  {id: 6, storeName: '클라우드 카페', businessNumber: '123456789', ownerName: '양땡열',contact: '010-1234-5678', address: '서울특별시 강남구 논현로85길 46',operatingHours: '월~금 오전 8시 ~ 오후 10시',},
+  {
+    id: 1,
+    storeName: "클라우드 카페",
+    businessNumber: "123456789",
+    ownerName: "양땡열",
+    contact: "010-1234-5678",
+    address: "서울특별시 강남구 논현로85길 46",
+    operatingHours: "월~금 오전 8시 ~ 오후 10시",
+  },
+  {
+    id: 2,
+    storeName: "클라우드 9 카페",
+    businessNumber: "123456789",
+    ownerName: "이땡아",
+    contact: "010-9876-5432",
+    address: "서울특별시 강남구 역삼로17길 57",
+    operatingHours: "월~금 오전 8시 ~ 오후 10시",
+  },
+  {
+    id: 3,
+    storeName: "과천 클라우드 카페",
+    businessNumber: "123456789",
+    ownerName: "양땡열",
+    contact: "010-1234-5678",
+    address: "서울특별시 강남구 논현로85길 46",
+    operatingHours:
+      "월~금 오전 8시 ~ 오후 10시 <br /> 토~일 오전 10시 ~ 오후 06시",
+  },
+  {
+    id: 4,
+    storeName: "클라우드 카페",
+    businessNumber: "123456789",
+    ownerName: "양땡열",
+    contact: "010-1234-5678",
+    address: "서울특별시 강남구 논현로85길 46",
+    operatingHours: "월~금 오전 8시 ~ 오후 10시",
+  },
+  {
+    id: 5,
+    storeName: "클라우드 카페",
+    businessNumber: "123456789",
+    ownerName: "양땡열",
+    contact: "010-1234-5678",
+    address: "서울특별시 강남구 논현로85길 46",
+    operatingHours: "월~금 오전 8시 ~ 오후 10시",
+  },
+  {
+    id: 6,
+    storeName: "클라우드 카페",
+    businessNumber: "123456789",
+    ownerName: "양땡열",
+    contact: "010-1234-5678",
+    address: "서울특별시 강남구 논현로85길 46",
+    operatingHours: "월~금 오전 8시 ~ 오후 10시",
+  },
 ];
 
 function StoreListPage() {
@@ -123,10 +172,7 @@ function StoreListPage() {
           <tr>
             <th>가맹점명</th>
             <td>
-              <Select
-                defaultValue={0}
-                options={targetOpt}
-              />
+              <Select defaultValue={0} options={targetOpt} />
             </td>
           </tr>
         </Table>
@@ -138,11 +184,17 @@ function StoreListPage() {
       </ContentBox>
       <hr className="secondary" />
       <div className="align end gap_10 mt_42">
-        <Button onClick={() => {navigate("/admin/store/info/registration");}} size="small_h35" line>
-          등록
-        </Button>
-        <Button onClick={handleOpen} size="small_h35" border="point">
+        <Button onClick={handleOpen} size="small_h35" line>
           삭제
+        </Button>
+        <Button
+          onClick={() => {
+            navigate("/admin/store/info/registration");
+          }}
+          size="small_h35"
+          border="point"
+        >
+          등록
         </Button>
       </div>
       <ContentBox>
@@ -162,11 +214,12 @@ function StoreListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Checkbox 
+                    <Checkbox
                       id="checkAll"
                       name="checkAll"
                       checked={selectAll}
-                      onChange={handleSelectAll} />
+                      onChange={handleSelectAll}
+                    />
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>가맹점명</TableCell>
@@ -179,22 +232,44 @@ function StoreListPage() {
               </TableHead>
               <TableBody>
                 {tableRows.map((row) => (
-                  <TableRow key={row.id} className="crsor_poin" >
+                  <TableRow key={row.id} className="crsor_poin">
                     <TableCell>
-                    <Checkbox
-                      id={`check${row.id}`}
-                      name={`check${row.id}`}
-                      checked={checkedItems[row.id] || false}
-                      onChange={() => handleCheckboxChange(row.id)}
-                    />
+                      <Checkbox
+                        id={`check${row.id}`}
+                        name={`check${row.id}`}
+                        checked={checkedItems[row.id] || false}
+                        onChange={() => handleCheckboxChange(row.id)}
+                      />
                     </TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.id}</TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.storeName}</TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.businessNumber}</TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.ownerName}</TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.contact}</TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>{row.address}</TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)} dangerouslySetInnerHTML={{ __html: row.operatingHours }} />
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
+                      {row.id}
+                    </TableCell>
+                    <TableCell
+                      className="left"
+                      onClick={(e) => handleTableRowClick(e, row)}
+                    >
+                      {row.storeName}
+                    </TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
+                      {row.businessNumber}
+                    </TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
+                      {row.ownerName}
+                    </TableCell>
+                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
+                      {row.contact}
+                    </TableCell>
+                    <TableCell
+                      className="left"
+                      onClick={(e) => handleTableRowClick(e, row)}
+                    >
+                      {row.address}
+                    </TableCell>
+                    <TableCell
+                      className="left"
+                      onClick={(e) => handleTableRowClick(e, row)}
+                      dangerouslySetInnerHTML={{ __html: row.operatingHours }}
+                    />
                   </TableRow>
                 ))}
               </TableBody>
@@ -207,13 +282,22 @@ function StoreListPage() {
           onClose={handleClose}
           title={
             <>
-               가맹점을 삭제하면  <span className="red_text">가맹점에 연결된 모든 정보가 삭제되며, 삭제된 가맹점은 복구되지 않습니다.</span> 가맹점을 삭제하시겠습니까?
+              가맹점을 삭제하면{" "}
+              <span className="red_text">
+                가맹점에 연결된 모든 정보가 삭제되며, 삭제된 가맹점은 복구되지
+                않습니다.
+              </span>{" "}
+              가맹점을 삭제하시겠습니까?
             </>
           }
           button={
             <>
-              <Button onClick={handleClose} line>아니요</Button>
-              <Button onClick={handleAlertYes} border="point">네</Button>
+              <Button onClick={handleClose} line>
+                아니요
+              </Button>
+              <Button onClick={handleAlertYes} border="point">
+                네
+              </Button>
             </>
           }
         />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Layout from '../../../../../layout/DefaultLayout'
-import ContentBox from "../../../../../layout/ContentBox";
-import Button from "../../../../../components/Button";
+import Layout from '../../../../layout/DefaultLayout'
+import ContentBox from "../../../../layout/ContentBox";
+import Button from "../../../../components/Button";
 import StoreInfoTabPage from "./StoreInfoTabPage"; 
 import PickupMethodTabPage from "./PickupMethodTabPage"
 import ProductDisplayTabPage from "./ProductDisplayTabPage"
@@ -22,7 +22,7 @@ function StoreInfoRegistrationPage() {
       </div>
       <hr className="primary" />
       {/* <ContentBox> */}
-        <div className="tabbox align start pt_20">
+        <div className="tabbox align start mb_15">
         <Button onClick={() => handleTabChange("storeInfo")} tabdefault active={activeTab === "storeInfo"}>
           매장정보
         </Button>

@@ -227,8 +227,8 @@ function ProductDetailPage() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <TableRow>
-                      <TableCell rowSpan={4}>
+                    <TableRow className="noborder">
+                      <TableCell className="top" rowSpan={4}>
                         <div className="align gap_8">
                           <Input
                             value={newOption.optionName}
@@ -302,7 +302,7 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow className="noborder">
                       <TableCell className="noborder">
                         <Input
                           value={newOption.detailOptionName}
@@ -339,7 +339,7 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow className="noborder">
                       <TableCell className="noborder">
                         <Input
                           value={newOption.detailOptionName}
@@ -376,7 +376,7 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow className="noborder">
                       <TableCell>
                         <Input
                           value={newOption.detailOptionName}
@@ -413,8 +413,8 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
-                      <TableCell rowSpan={4}>
+                    <TableRow className="noborder">
+                      <TableCell className="top" rowSpan={4}>
                         <div className="align gap_8">
                           <Input
                             value={newOption.optionName}
@@ -488,7 +488,7 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow className="noborder">
                       <TableCell className="noborder">
                         <Input
                           value={newOption.detailOptionName}
@@ -525,7 +525,7 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow className="noborder">
                       <TableCell className="noborder">
                         <Input
                           value={newOption.detailOptionName}
@@ -562,7 +562,7 @@ function ProductDetailPage() {
                         </div>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow className="noborder">
                       <TableCell>
                         <Input
                           value={newOption.detailOptionName}
