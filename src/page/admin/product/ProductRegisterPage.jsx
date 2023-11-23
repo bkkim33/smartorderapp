@@ -228,7 +228,7 @@ function ProductRegisterPage() {
                   </TableHead>
                   <TableBody>
                     <TableRow>
-                      <TableCell>
+                      <TableCell className="top">
                         <div className="align gap_8">
                           <Input
                             value={newOption.optionName}
@@ -250,7 +250,7 @@ function ProductRegisterPage() {
                           </Button>
                         </div>
                       </TableCell>
-                      <TableCell>
+                      <TableCell className="top">
                         <Input
                           value={newOption.detailOptionName}
                           onChange={(e) =>
@@ -262,7 +262,7 @@ function ProductRegisterPage() {
                           placeholder="상세옵션명 입력"
                         />
                       </TableCell>
-                      <TableCell>
+                      <TableCell className="top">
                         <div className="align gap_8">
                           <Input
                             value={newOption.optionPrice}

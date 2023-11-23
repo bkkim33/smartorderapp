@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Layout from '../../../../../layout/DefaultLayout'
-import ContentBox from "../../../../../layout/ContentBox";
-import Button from "../../../../../components/Button";
+import Layout from '../../../../layout/DefaultLayout'
+import ContentBox from "../../../../layout/ContentBox";
+import Button from "../../../../components/Button";
 import StoreInfoTabPage from "./StoreInfoTabPage"; 
 import PickupMethodTabPage from "./PickupMethodTabPage"
 import ProductDisplayTabPage from "./ProductDisplayTabPage"
