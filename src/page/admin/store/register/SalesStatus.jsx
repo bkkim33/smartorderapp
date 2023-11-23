@@ -197,7 +197,7 @@ function SalesStatus() {
                     <TableCell>{row.categoryName}</TableCell>
                     <TableCell className="left">{row.productName}</TableCell>
                     <TableCell>{row.storeName}</TableCell>
-                    <TableCell>{row.salesStatus}</TableCell>
+                    <TableCell>{row.salesStatus === '미설정' ? <span className="red_text">{row.salesStatus}</span> : row.salesStatus}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
