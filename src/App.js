@@ -17,6 +17,7 @@ import ProductCategory from "./page/admin/product/ProductCategoryPage";
 // 주문내역 관리
 import OrderHistoryList from "./page/admin/order/OrderHistoryListPage";
 //매출 관리
+import SalesList from "./page/admin/order/SalesListPage";
 
 
 // 공지사항 관리
@@ -134,7 +135,7 @@ function App() {
         {/* ADMIN 주문/매출 관리 - 주문 내역 관리 */}
         <Route path="/admin/order/history" element={<OrderHistoryList />} />
         {/* ADMIN 주문/매출 관리 - 매출 관리 */}
-        {/* 작업 필요! */}
+        <Route path="/admin/order/sales" element={<SalesList />} />
 
         {/* ADMIN 고객 지원 관리 - 공지사항 리스트 */}
         <Route path="/admin/customer/notice" element={<AdminNotice />} />

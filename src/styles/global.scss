@@ -130,8 +130,43 @@
         &.bottom {
           vertical-align: bottom;
         }
-
-       
+        >button {
+          width: 100%;
+        }
+        >a {
+          text-decoration: underline;
+        }
+      }
+    }
+    tfoot{
+      td {
+        font-family: 'Pretendard';
+        padding: 20px 10px;
+        @include h5(var(--c33));
+        text-align: center;
+        vertical-align: top;
+        &.red_text{
+          color: var(--red-text);
+        }
+         &+td {
+          border-bottom: 1px solid #D9D9D9;
+        }
+        &.noborder {
+          border-bottom: 0;
+        }
+        &.left {
+          text-align: left;
+        }
+        &.right {
+          text-align: right;
+        }
+        &.top {
+          vertical-align: top;
+          padding-top: 18px !important;
+        }
+        &.bottom {
+          vertical-align: bottom;
+        }
         >button {
           width: 100%;
         }
