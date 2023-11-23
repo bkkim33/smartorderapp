@@ -32,8 +32,8 @@ import AdminTerms from "./page/admin/customer/TermsListPage";
 import TermsRegister from "./page/admin/customer/TermsRegisterPage";
 import TermsModify from "./page/admin/customer/TermsModifyPage";
 // 매장별 설정관리
-import StoreInfoPage from "./page/admin/store/StoreInfoPage";
-import StoreInfoRegistrationPage from "./page/admin/store/registration/StoreInfoRegistrationPage";
+import StoreInfo from "./page/admin/store/StoreListPage";
+import StoreRegister from "./page/admin/store/register/StoreRegisterPage";
 
 import StoreInfoModifyePage from "./page/admin/store/modify/StoreInfoModifyePage";
 // 사용자 관리
@@ -165,12 +165,9 @@ function App() {
         {/* ADMIN 고객 지원 관리 - 이용약관 상세 */}
         <Route path="/admin/customer/terms/modify" element={<TermsModify />} />
         {/* ADMIN 매장별 설정관리 - 리스트 */}
-        <Route path="/admin/store" element={<StoreInfoPage />} />
+        <Route path="/admin/store" element={<StoreInfo />} />
         {/* ADMIN 매장별 설정관리 - 리스트 */}
-        <Route
-          path="/admin/store/info/registration"
-          element={<StoreInfoRegistrationPage />}
-        />
+        <Route path="/admin/store/register" element={<StoreRegister />} />
 
         <Route
           path="/admin/store/info/modify"
