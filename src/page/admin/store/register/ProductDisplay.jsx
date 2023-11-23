@@ -43,19 +43,60 @@ const categoryOpt = [
   },
 ];
 
+const values = [
+  { id: 1, text: "에스프레소", display: true },
+  { id: 2, text: "아메리카노", display: true },
+  { id: 3, text: "카페라떼", display: true },
+  { id: 4, text: "카푸치노", display: true },
+  { id: 5, text: "바닐라라떼", display: true },
+  { id: 6, text: "캬라멜마끼아또", display: true },
+  { id: 7, text: "더치커피", display: false },
+  { id: 8, text: "디카페인콜드브루", display: false },
+  { id: 9, text: "캔 콜드브루", display: false },
+  { id: 10, text: "달고나라떼", display: false },
+  { id: 11, text: "딸기라떼", display: false },
+  { id: 12, text: "초코라떼", display: false },
+  { id: 13, text: "얼그레이 밀크티", display: false },
+  { id: 14, text: "복숭아아이스티", display: false },
+  { id: 15, text: "플레인요거트스무디", display: false },
+  { id: 16, text: "딸기요거트스무디", display: false },
+  { id: 17, text: "블루베리요거트스무디", display: false },
+  { id: 18, text: "한라봉스무디", display: false },
+  { id: 19, text: "레몬에이드", display: false },
+  { id: 20, text: "샤인머스캣에이드", display: false },
+  { id: 21, text: "감귤주스", display: false },
+  { id: 22, text: "토마토주스", display: false },
+  { id: 23, text: "수박주스", display: false },
+  { id: 24, text: "유자차", display: false },
+  { id: 25, text: "배도라지모과차", display: false },
+  { id: 26, text: "보이차", display: false },
+  { id: 27, text: "로얄캐모마일", display: false },
+  { id: 28, text: "쿨 민트", display: false },
+  { id: 29, text: "현미녹차", display: false },
+  { id: 30, text: "루이보스 빌베리", display: false },
+  { id: 31, text: "플레인베이글", display: false },
+  { id: 32, text: "블루베리베이글", display: false },
+  { id: 33, text: "어니언베이글", display: false },
+  { id: 34, text: "크림치즈", display: false },
+  { id: 35, text: "제로콜라", display: false },
+  { id: 36, text: "제로사이다", display: false },
+  { id: 37, text: "탐스 애플키위", display: false },
+  { id: 38, text: "빅토리아 라임", display: false },
+  { id: 39, text: "핫식스", display: false },
+];
+
+const Display = values.filter((display) => display.display === true);
+const NoDisplay = values.filter((display) => display.display === false);
 
 function ProductDisplay() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const active = false;
+  const [active, setActive] = useState([]);
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
-  };
-  const handleActive = (e) => {
-    e.target.setActive(!active);
   };
   return (
     <div className="align column">
@@ -104,91 +145,16 @@ function ProductDisplay() {
             <h2 className="headline4 mb_10">전시가능 상품리스트</h2>
             <div className="store_list_cont">
               <ul>
-                <li
-                  onClick={(e) => handleActive(e)}
-                  className={`${active ? "active" : ""}`}
-                >
-                  에스프레소
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  아메리카노
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  카페라떼
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  카푸치노
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  바닐라라떼
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  캬라멜마끼아또
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  더치커피
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  디카페인콜드브루
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  캔 콜드브루
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  달고나라떼
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  에스프레소
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  아메리카노
-                </li>
-                <li
-                  onClick={handleActive}
-                  className={`${active ? "active" : ""}`}
-                >
-                  카페라떼
-                </li>
-                <li>카푸치노</li>
-                <li>바닐라라떼</li>
-                <li>캬라멜마끼아또</li>
-                <li>더치커피</li>
-                <li>디카페인콜드브루</li>
-                <li>캔 콜드브루</li>
-                <li>달고나라떼</li>
+                {NoDisplay.map((val) => (
+                  <li
+                    key={val.id}
+                    id={val.id}
+                    onClick={() => setActive(val.id)}
+                    className={`${active === val.id ? "active" : ""}`}
+                  >
+                    {val.text}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -202,7 +168,20 @@ function ProductDisplay() {
           </div>
           <div className="store_list ml_15">
             <h2 className="headline4 mb_10">전시상품 리스트</h2>
-            <div className="store_list_cont"></div>
+            <div className="store_list_cont">
+              <ul>
+                {Display.map((val) => (
+                  <li
+                    key={val.id}
+                    id={val.id}
+                    onClick={() => setActive(val.id)}
+                    className={`${active === val.id ? "active" : ""}`}
+                  >
+                    {val.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
