@@ -20,12 +20,11 @@ const inUse = [
   { value: "N", label: "N" },
 ];
 
-function PickupMethodTabPage() {
-
+function PickupMethod() {
   const [receiptMethodsData, setReceiptMethodsData] = useState([
-    { id: 1, name: '매장픽업', selectedOption: 'Y' },
-    { id: 2, name: '테이블 수령', selectedOption: 'Y' },
-    { id: 3, name: '배달 요청', selectedOption: 'N' },
+    { id: 1, name: "매장픽업", selectedOption: "Y" },
+    { id: 2, name: "테이블 수령", selectedOption: "Y" },
+    { id: 3, name: "배달 요청", selectedOption: "N" },
   ]);
 
   const handleSelectChange = (id, value) => {
@@ -36,7 +35,6 @@ function PickupMethodTabPage() {
     );
   };
 
-  
   return (
     <div className="admin_receivingmethod">
       <div className="align mb_20">
@@ -156,4 +154,4 @@ function PickupMethodTabPage() {
   );
 }
 
-export default PickupMethodTabPage;
+export default PickupMethod;

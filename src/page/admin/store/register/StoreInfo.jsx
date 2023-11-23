@@ -10,8 +10,7 @@ import Select from "../../../../components/Select";
 import Modal from "./AdrresModal";
 import MuiAlert from "../../../../components/MuiAlert";
 
-function StoreInfoTabPage({  }) {
-
+function StoreInfo({}) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -203,4 +202,4 @@ function StoreInfoTabPage({  }) {
   );
 }
 
-export default StoreInfoTabPage;
+export default StoreInfo;

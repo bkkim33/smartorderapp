@@ -189,7 +189,7 @@ function StoreListPage() {
         </Button>
         <Button
           onClick={() => {
-            navigate("/admin/store/info/registration");
+            navigate("/admin/store/register");
           }}
           size="small_h35"
           border="point"
