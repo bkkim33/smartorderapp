@@ -55,7 +55,7 @@ function ProductDisplay() {
   };
   return (
     <div className="align column">
-      <div className="align column">
+      <div className="align column mb_20">
         <div>
           <div className="align mb_20">
             <h2 className="headline4">전시가능 상품 조회</h2>
@@ -95,22 +95,22 @@ function ProductDisplay() {
           </div>
           <hr className="secondary" />
         </div>
-        <div className="mt_20 flex1">
-          <div className="align">
-            <div className="item">
-              <div className="store_list_box">
-
-              </div>
-            </div>
-            <div className="btn_set item">
-              <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
-                위로
-              </Button>
-              <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
-                아래로
-              </Button>
-            </div>
-            <div className="item"></div>
+        <div className="store_list_box align mt_20 flex1">
+          <div className="store_list item align column">
+            <h2 className="headline4 mb_10">카테고리&nbsp;설정</h2>
+            <div className="store_list_cont flex1"></div>
+          </div>
+          <div className="btn_set item">
+            <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
+              위로
+            </Button>
+            <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
+              아래로
+            </Button>
+          </div>
+          <div className="store_list item">
+            <h2 className="headline4">카테고리&nbsp;설정</h2>
+            <div className="store_list_cont"></div>
           </div>
         </div>
       </div>
