@@ -47,11 +47,15 @@ const categoryOpt = [
 function ProductDisplay() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const active = false;
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+  };
+  const handleActive = (e) => {
+    e.target.setActive(!active);
   };
   return (
     <div className="align column">
@@ -96,20 +100,108 @@ function ProductDisplay() {
           <hr className="secondary" />
         </div>
         <div className="store_list_box align mt_20 flex1">
-          <div className="store_list item align column">
-            <h2 className="headline4 mb_10">카테고리&nbsp;설정</h2>
-            <div className="store_list_cont flex1"></div>
+          <div className="store_list">
+            <h2 className="headline4 mb_10">전시가능 상품리스트</h2>
+            <div className="store_list_cont">
+              <ul>
+                <li
+                  onClick={(e) => handleActive(e)}
+                  className={`${active ? "active" : ""}`}
+                >
+                  에스프레소
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  아메리카노
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  카페라떼
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  카푸치노
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  바닐라라떼
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  캬라멜마끼아또
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  더치커피
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  디카페인콜드브루
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  캔 콜드브루
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  달고나라떼
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  에스프레소
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  아메리카노
+                </li>
+                <li
+                  onClick={handleActive}
+                  className={`${active ? "active" : ""}`}
+                >
+                  카페라떼
+                </li>
+                <li>카푸치노</li>
+                <li>바닐라라떼</li>
+                <li>캬라멜마끼아또</li>
+                <li>더치커피</li>
+                <li>디카페인콜드브루</li>
+                <li>캔 콜드브루</li>
+                <li>달고나라떼</li>
+              </ul>
+            </div>
           </div>
-          <div className="btn_set item">
+          <div className="btn_set ml_15">
             <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
-              위로
+              전시
             </Button>
             <Button icon="AdminArrow" onClick={() => {}} size="icon_s">
-              아래로
+              전시 안함
             </Button>
           </div>
-          <div className="store_list item">
-            <h2 className="headline4">카테고리&nbsp;설정</h2>
+          <div className="store_list ml_15">
+            <h2 className="headline4 mb_10">전시상품 리스트</h2>
             <div className="store_list_cont"></div>
           </div>
         </div>
