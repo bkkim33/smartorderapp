@@ -6,7 +6,6 @@ import Table from "../../../../components/Table";
 import Select from "../../../../components/Select";
 import Button from "../../../../components/Button";
 import Checkbox from "../../../../components/Checkbox";
-import MuiPage from "../../../../components/MuiPage";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -16,7 +15,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import MuiAlert from "../../../../components/MuiAlert";
-import { grey } from "@mui/material/colors";
 
 const categoryOpt = [
   {label: "전체",value: "전체",},
@@ -38,23 +36,38 @@ const salesStatusData = [
 ]
 
 const initialTableRows = [
-  { id: 1, title: '공지사항 제목입니다.', target: '전체', date: '2023. 10. 30', visibility: 'Y', author: 'admin' },
-  { id: 2, title: '공지사항 제목입니다.', target: '임직원', date: '2023. 10. 31', visibility: 'Y', author: 'admin' },
-  { id: 3, title: '공지사항 제목입니다.', target: '방문객', date: '2023. 10. 30', visibility: 'N', author: 'user' },
-  { id: 4, title: '공지사항 제목입니다.', target: '전체', date: '2023. 11. 01', visibility: 'Y', author: 'admin' },
-  { id: 5, title: '데이터 확인중입니다', target: '전체', date: '2023. 11. 02', visibility: 'Y', author: 'admin' },
+  { id: 1, orderNumber: 1, productID: 'P00001', categoryName: 'Coffee', productName: '에스프레소', storeName: '클라우드 카페', salesStatus: '미설정' },
+  { id: 2, orderNumber: 2, productID: 'P00002', categoryName: 'Coffee', productName: '캬라멜마끼아또', storeName: '클라우드 카페', salesStatus: '미설정' },
+  { id: 3, orderNumber: 3, productID: 'P00003', categoryName: 'Tea', productName: '유자차', storeName: '클라우드 9 카페', salesStatus: '판매중' },
+  { id: 4, orderNumber: 4, productID: 'P00004', categoryName: 'Tea', productName: '제로콜라', storeName: '클라우드 카페', salesStatus: '품절' },
+  { id: 5, orderNumber: 5, productID: 'P00005', categoryName: 'Bottle', productName: '에스프레소', storeName: '클라우드 카페', salesStatus: '판매중지' },
 ];
 
 function SalesStatus() {
 
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
+  const [openAlert1, setOpenAlert1] = useState(false);
+  const [openAlert2, setOpenAlert2] = useState(false);
+  const [openAlert3, setOpenAlert3] = useState(false);
+  const handleOpenAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(true);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(true);
+    } else if (alertNumber === 3) {
+      setOpenAlert3(true);
+    }
   };
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(false);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(false);
+    } else if (alertNumber === 3) {
+      setOpenAlert3(false);
+    }
   };
+
   const [selectAll, setSelectAll] = useState(false);
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -76,17 +89,7 @@ function SalesStatus() {
     }));
   };
 
-  const [tableRows, setTableRows] = useState(initialTableRows);
-  // MuiAlert 확인 후 데이터 삭제
-  const handleAlertYes = () => {
-    const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
-    setCheckedItems({});
-    setSelectAll(false);
-    const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
-    console.log(deletedItems);
-    setTableRows(updatedTableRows);
-    handleClose(false);
-  };
+  const [tableRows] = useState(initialTableRows);
 
   return(
     <div className="align column">
@@ -137,17 +140,15 @@ function SalesStatus() {
       </div>
       <hr className="secondary" />
       <div className="align end mt_42 gap_10">
-        {/* <div className="rgt gap_10"> */}
-          <Button onClick={() => {}} size="small_h35" btntype="gray" border>
+          <Button onClick={() => handleOpenAlert(1)} size="small_h35" state>
             판매중지
           </Button>
-          <Button onClick={handleOpen} size="small_h35" line>
+          <Button onClick={() => handleOpenAlert(2)} size="small_h35" line>
             품절
           </Button>
-          <Button onClick={() => {}} size="small_h35" border="point">
+          <Button onClick={() => handleOpenAlert(3)} size="small_h35" border="point">
             판매중
           </Button>
-        {/* </div> */}
       </div>
       <ContentBox>
         <div className="tbl">
@@ -156,12 +157,11 @@ function SalesStatus() {
               <colgroup>
                 <col width="2%" />
                 <col width="5%" />
-                <col width="auto" />
-                <col width="12%" />
+                <col width="10%" />
                 <col width="15%" />
-                <col width="12%" />
-                <col width="12%" />
-                <col width="12%" />
+                <col width="auto" />
+                <col width="auto" />
+                <col width="15%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -178,7 +178,6 @@ function SalesStatus() {
                   <TableCell>카테고리명</TableCell>
                   <TableCell>상품명</TableCell>
                   <TableCell>판매매장</TableCell>
-                  <TableCell>전시상태</TableCell>
                   <TableCell>판매상태</TableCell>
                 </TableRow>
               </TableHead>
@@ -193,20 +192,19 @@ function SalesStatus() {
                         onChange={() => handleCheckboxChange(row.id)}
                       />
                     </TableCell>
-                    <TableCell>{row.author}</TableCell>
-                    <TableCell>{row.author}</TableCell>
-                    <TableCell>{row.author}</TableCell>
-                    <TableCell>{row.author}</TableCell>
-                    <TableCell>{row.author}</TableCell>
-                    <TableCell>{row.author}</TableCell>
-                    <TableCell>{row.author}</TableCell>
+                    <TableCell>{row.orderNumber}</TableCell>
+                    <TableCell>{row.productID}</TableCell>
+                    <TableCell>{row.categoryName}</TableCell>
+                    <TableCell className="left">{row.productName}</TableCell>
+                    <TableCell>{row.storeName}</TableCell>
+                    <TableCell>{row.salesStatus}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </MuiTable>
           </TableContainer>
         </div>
-        <MuiPage />
+        {/* <MuiPage /> */}
         <div className="align end">
           <div className="item">
             <Button
@@ -221,15 +219,45 @@ function SalesStatus() {
           </div>
         </div>
         <MuiAlert
-          open={open}
-          onClose={handleClose}
-          title={<>선택한 상품의 판매상태를 <br/>$판매상태$ 으로 모두 변경하시겠습니까</>}
+          open={openAlert1}
+          onClose={() => handleCloseAlert(1)}
+          title={<>선택한 상품을 판매중지 상태로 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} line>
-                아니오
+              <Button onClick={() => handleCloseAlert(1)} line>
+                아니요
               </Button>
-              <Button onClick={() => {}} border="point">
+              <Button onClick={() => handleCloseAlert(1)} border="point">
+                예
+              </Button>
+            </>
+          }
+        />
+        <MuiAlert
+          open={openAlert2}
+          onClose={() => handleCloseAlert(2)}
+          title={<>선택한 상품을 품절 상태로 변경하시겠습니까?</>}
+          button={
+            <>
+              <Button onClick={() => handleCloseAlert(2)} line>
+                아니요
+              </Button>
+              <Button onClick={() => handleCloseAlert(2)} border="point">
+                예
+              </Button>
+            </>
+          }
+        />
+        <MuiAlert
+          open={openAlert3}
+          onClose={() => handleCloseAlert(3)}
+          title={<>선택한 상품을 판매중 상태로 변경하시겠습니까?</>}
+          button={
+            <>
+              <Button onClick={() => handleCloseAlert(3)} line>
+                아니요
+              </Button>
+              <Button onClick={() => handleCloseAlert(3)} border="point">
                 예
               </Button>
             </>
