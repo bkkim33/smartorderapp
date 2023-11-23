@@ -24,7 +24,7 @@ function OrderDetailModal({ open, handleClose }){
         </>
       }
     >      
-    <div className="orderhistory_modal_receipt">
+    <div className="admin_orderhistory_modal_receipt">
       <div className="align">
         <p className="title3 color_t_99 ml_10">메뉴명 / 할인내역</p>
         <p className="title3 color_t_99 mr_10">금액</p>
