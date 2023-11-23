@@ -36,7 +36,7 @@ import TermsModify from "./page/admin/customer/TermsModifyPage";
 import StoreInfo from "./page/admin/store/StoreListPage";
 import StoreRegister from "./page/admin/store/register/StoreRegisterPage";
 
-import StoreInfoModifyePage from "./page/admin/store/modify/StoreInfoModifyePage";
+import StoreInfoModify from "./page/admin/store/modify/StoreModifyPage";
 // 사용자 관리
 import UserList from "./page/admin/user/UserListPage";
 // 계정/권한 관리
@@ -171,8 +171,8 @@ function App() {
         <Route path="/admin/store/register" element={<StoreRegister />} />
 
         <Route
-          path="/admin/store/info/modify"
-          element={<StoreInfoModifyePage />}
+          path="/admin/store/modify"
+          element={<StoreInfoModify />}
         />
         {/* ADMIN 사용자 관리 */}
         <Route path="/admin/user" element={<UserList />} />

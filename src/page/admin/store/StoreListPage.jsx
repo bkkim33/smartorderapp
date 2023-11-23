@@ -147,7 +147,7 @@ function StoreListPage() {
     if (!isCheckbox) {
       const isChildOfCheckbox = e.target.closest('input[type="checkbox"]');
       if (!isChildOfCheckbox) {
-        navigate("/admin/store/info/modify");
+        navigate("/admin/store/modify");
       }
     } else {
       handleCheckboxChange(row.id);
