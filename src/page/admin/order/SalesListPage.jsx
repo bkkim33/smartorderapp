@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -7,7 +6,6 @@ import Input from "../../../components/Input";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
-import Modal from "./OrderDetailModal";
 import Checkbox from "../../../components/Checkbox";
 
 //mui table import
@@ -109,14 +107,6 @@ const initialTableRows = [
 
 function SalesListPage() {
 
-  const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
   const [selectAll, setSelectAll] = useState(false);
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -138,18 +128,7 @@ function SalesListPage() {
     }));
   };
 
-  const [tableRows, setTableRows] = useState(initialTableRows);
-  // MuiAlert 확인 후 데이터 삭제
-  const handleAlertYes = () => {
-    const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
-    setCheckedItems({});
-    setSelectAll(false);
-    const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
-    console.log(deletedItems);
-    setTableRows(updatedTableRows);
-    handleClose(false);
-  };
-
+  const [tableRows] = useState(initialTableRows);
   const [activeButton, setActiveButton] = useState(null); 
   const handleButtonClick = (buttonLabel) => {
     setActiveButton(buttonLabel);
@@ -315,16 +294,16 @@ function SalesListPage() {
                         onChange={() => handleCheckboxChange(row.id)}
                       />
                     </TableCell>
-                    <TableCell onClick={handleOpen}>{row.orderNumber}</TableCell>
-                    <TableCell onClick={handleOpen} className="left">{row.productName}</TableCell>
-                    <TableCell onClick={handleOpen}>{row.storeName}</TableCell>
-                    <TableCell onClick={handleOpen}>{row.orderDateTime}</TableCell>
-                    <TableCell onClick={handleOpen}>{row.payer}</TableCell>
-                    <TableCell onClick={handleOpen}>{row.paymentType}</TableCell>
-                    <TableCell onClick={handleOpen}>{row.paymentMethod}</TableCell>
-                    <TableCell onClick={handleOpen} className="right">{row.originalAmount.toString()}</TableCell>
-                    <TableCell onClick={handleOpen} className="right">{row.discountAmount.toString()}</TableCell>
-                    <TableCell onClick={handleOpen} className="right">{row.totalPaymentAmount.toString()}</TableCell>
+                    <TableCell>{row.orderNumber}</TableCell>
+                    <TableCell className="left">{row.productName}</TableCell>
+                    <TableCell>{row.storeName}</TableCell>
+                    <TableCell>{row.orderDateTime}</TableCell>
+                    <TableCell>{row.payer}</TableCell>
+                    <TableCell>{row.paymentType}</TableCell>
+                    <TableCell>{row.paymentMethod}</TableCell>
+                    <TableCell className="right">{row.originalAmount.toString()}</TableCell>
+                    <TableCell className="right">{row.discountAmount.toString()}</TableCell>
+                    <TableCell className="right">{row.totalPaymentAmount.toString()}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -341,7 +320,6 @@ function SalesListPage() {
         </div>
         <MuiPage />
       </ContentBox>
-      <Modal open={open} handleClose={handleClose} />
     </Layout>
   );
 }

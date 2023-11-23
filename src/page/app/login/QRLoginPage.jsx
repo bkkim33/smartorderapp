@@ -7,11 +7,6 @@ import MainimgDefult from "../../../images/main_img.gif";
 
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
-import FormGroup from "../../../components/FormGroup";
-import Checkbox from "../../../components/Checkbox";
-
-// import { Icons } from "../../components/Icon";
-
 
 function Dateimages() {
   const today = new Date();
@@ -90,6 +85,7 @@ function QRLoginPage() {
                 />
               </div>
             </div>
+            <div className="error_txt required_lft mt_5 ml_5">인증번호가 맞지 않습니다. <br/><span className="ml_10">다시 인증번호를 요청하세요.</span></div>
             <div className="login_btn mt_20">
               <div>
                 <Button

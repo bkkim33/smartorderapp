@@ -13,4 +13,5 @@
 }
 .error_txt {
   @include font(var(--red-text), 1.2rem, 400);
+  line-height: 140%;
 }
