@@ -113,8 +113,6 @@ function OrderHistoryListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
-                placeholder="- SELECT -"
                 defaultValue={0}
                 options={categoryOpt}
               />
@@ -123,8 +121,6 @@ function OrderHistoryListPage() {
             <td>
               <Select
                 width="350px"
-                round="round"
-                placeholder="- SELECT -"
                 defaultValue={0}
                 options={storeNameOpt}
               />
@@ -171,20 +167,15 @@ function OrderHistoryListPage() {
         </div>
       </ContentBox>
       <hr className="secondary" />
-      <div className="align bottom mt_42">
-        <div className="lft">
-          <p className="body0">
-            총 <span className="title3">200</span>건
-          </p>
-        </div>
-        <div className="rgt">
+      <div className="align start gap_10 mt_42 ">
           <Select
             minwidth="200px"
-            round="round"
             defaultValue={0}
             options={numOpt}
           />
-        </div>
+          <p className="body0">
+            총 <span className="title3">200</span>건
+          </p>
       </div>
       <ContentBox>
         <div className="tbl">
@@ -192,8 +183,9 @@ function OrderHistoryListPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="5%" />
+                <col width="10%" />
                 <col width="15%" />
-                <col width="15%" />
+                <col width="10%" />
                 <col width="auto" />
                 <col width="20%" />
                 <col width="15%" />
@@ -204,6 +196,7 @@ function OrderHistoryListPage() {
                   <TableCell>No.</TableCell>
                   <TableCell>주문번호</TableCell>
                   <TableCell>주문자(소속)</TableCell>
+                  <TableCell>주문자명</TableCell>
                   <TableCell>주문명</TableCell>
                   <TableCell>주문일시</TableCell>
                   <TableCell>매장명</TableCell>
@@ -215,6 +208,7 @@ function OrderHistoryListPage() {
                   <TableCell>1</TableCell>
                   <TableCell>000000</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
+                  <TableCell>홍길동</TableCell>
                   <TableCell>에스프레소 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>클라우드 카페</TableCell>
@@ -224,6 +218,7 @@ function OrderHistoryListPage() {
                   <TableCell>2</TableCell>
                   <TableCell>000001</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
+                  <TableCell>홍길동</TableCell>
                   <TableCell>아메리카노 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:10</TableCell>
                   <TableCell>클라우드 9 카페</TableCell>
@@ -233,6 +228,7 @@ function OrderHistoryListPage() {
                   <TableCell>3</TableCell>
                   <TableCell>000002</TableCell>
                   <TableCell>메가존</TableCell>
+                  <TableCell>홍길동</TableCell>
                   <TableCell>카페라떼 1개</TableCell>
                   <TableCell>2023.10.24 09:27:20</TableCell>
                   <TableCell>클라우드 카페</TableCell>
@@ -242,6 +238,7 @@ function OrderHistoryListPage() {
                   <TableCell>4</TableCell>
                   <TableCell>000003</TableCell>
                   <TableCell>메가존</TableCell>
+                  <TableCell>홍길동</TableCell>
                   <TableCell>카푸치노 1개</TableCell>
                   <TableCell>2023.10.24 09:27:30</TableCell>
                   <TableCell>클라우드 카페</TableCell>
