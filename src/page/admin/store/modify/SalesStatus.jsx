@@ -91,7 +91,7 @@ function SalesStatus() {
 
   const [tableRows] = useState(initialTableRows);
 
-  return(
+  return (
     <div className="align column">
       <Table
         colgroup={
@@ -110,17 +110,11 @@ function SalesStatus() {
         <tr>
           <th>상품 카테고리</th>
           <td>
-            <Select
-              defaultValue={0}
-              options={categoryOpt}
-            />
+            <Select defaultValue={0} options={categoryOpt} />
           </td>
           <th>판매상태</th>
           <td>
-            <Select
-              defaultValue={0}
-              options={salesStatusData}
-            />
+            <Select defaultValue={0} options={salesStatusData} />
           </td>
         </tr>
         <tr>
@@ -140,15 +134,19 @@ function SalesStatus() {
       </div>
       <hr className="secondary" />
       <div className="align end mt_42 gap_10">
-          <Button onClick={() => handleOpenAlert(1)} size="small_h35" state>
-            판매중지
-          </Button>
-          <Button onClick={() => handleOpenAlert(2)} size="small_h35" line>
-            품절
-          </Button>
-          <Button onClick={() => handleOpenAlert(3)} size="small_h35" border="point">
-            판매중
-          </Button>
+        <Button onClick={() => handleOpenAlert(1)} size="small_h35" state>
+          판매중지
+        </Button>
+        <Button onClick={() => handleOpenAlert(2)} size="small_h35" line>
+          품절
+        </Button>
+        <Button
+          onClick={() => handleOpenAlert(3)}
+          size="small_h35"
+          border="point"
+        >
+          판매중
+        </Button>
       </div>
       <ContentBox>
         <div className="tbl">
@@ -197,7 +195,13 @@ function SalesStatus() {
                     <TableCell>{row.categoryName}</TableCell>
                     <TableCell className="left">{row.productName}</TableCell>
                     <TableCell>{row.storeName}</TableCell>
-                    <TableCell>{row.salesStatus}</TableCell>
+                    <TableCell>
+                      {row.salesStatus === "미설정" ? (
+                        <span className="red_text">{row.salesStatus}</span>
+                      ) : (
+                        row.salesStatus
+                      )}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
