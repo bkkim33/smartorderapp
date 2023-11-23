@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Layout from '../../../layout/DefaultLayout'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
@@ -106,6 +108,8 @@ const initialTableRows = [
 ];
 
 function SalesListPage() {
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
 
   const [selectAll, setSelectAll] = useState(false);
   const [checkedItems, setCheckedItems] = useState({});
@@ -157,35 +161,23 @@ function SalesListPage() {
           <tr>
             <th>매장명</th>
             <td colSpan={3}>
-              <Select
-                defaultValue={0}
-                options={storeNameOpt}
-              />
+              <Select defaultValue={0} options={storeNameOpt} />
             </td>
           </tr>
           <tr>
             <th>상품명</th>
             <td colSpan={3}>
-              <Select
-                defaultValue={0}
-                options={categoryOpt}
-              />
+              <Select defaultValue={0} options={categoryOpt} />
             </td>
           </tr>
           <tr>
             <th>결제유형</th>
             <td>
-              <Select
-                defaultValue={0}
-                options={paymentTypes}
-              />
+              <Select defaultValue={0} options={paymentTypes} />
             </td>
             <th>결제수단</th>
             <td>
-              <Select
-                defaultValue={0}
-                options={paymentMethods}
-              />
+              <Select defaultValue={0} options={paymentMethods} />
             </td>
           </tr>
           <tr>
@@ -204,7 +196,20 @@ function SalesListPage() {
                 ))}
               </div>
               <div className="align">
-                <Input
+                <DatePicker
+                  dateFormat="yyyy/MM/dd"
+                  selected={startDate}
+                  className={"date_picker"}
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={(update) => {
+                    setDateRange(update);
+                  }}
+                  isClearable={false}
+                  placeholderText="날짜를 선택해 주세요."
+                />
+                {/* <Input
                   type="date"
                   onClick={() => {}}
                   placeholder="시작 날짜"
@@ -216,7 +221,7 @@ function SalesListPage() {
                   onClick={() => {}}
                   placeholder="종료 날짜"
                   onChange={(e) => setEndDate(e.target.value)}
-                />
+                /> */}
               </div>
             </td>
           </tr>
@@ -301,15 +306,23 @@ function SalesListPage() {
                     <TableCell>{row.payer}</TableCell>
                     <TableCell>{row.paymentType}</TableCell>
                     <TableCell>{row.paymentMethod}</TableCell>
-                    <TableCell className="right">{row.originalAmount.toString()}</TableCell>
-                    <TableCell className="right">{row.discountAmount.toString()}</TableCell>
-                    <TableCell className="right">{row.totalPaymentAmount.toString()}</TableCell>
+                    <TableCell className="right">
+                      {row.originalAmount.toString()}
+                    </TableCell>
+                    <TableCell className="right">
+                      {row.discountAmount.toString()}
+                    </TableCell>
+                    <TableCell className="right">
+                      {row.totalPaymentAmount.toString()}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
-              <TableFooter> 
+              <TableFooter>
                 <TableRow>
-                  <TableCell colSpan={8} className="bg_f5">총 매출액</TableCell>
+                  <TableCell colSpan={8} className="bg_f5">
+                    총 매출액
+                  </TableCell>
                   <TableCell className="right">1,500,000</TableCell>
                   <TableCell className="right">-250,000</TableCell>
                   <TableCell className="right red_text">1,250,000</TableCell>

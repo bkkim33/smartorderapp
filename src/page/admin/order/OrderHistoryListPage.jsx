@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Layout from '../../../layout/DefaultLayout'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
@@ -83,9 +85,10 @@ function OrderHistoryListPage() {
     setOpen(false);
   };
 
-  const [setStartDate] = useState(null);
-  const [setEndDate] = useState(null);
-
+  // const [setStartDate] = useState(null);
+  // const [setEndDate] = useState(null);
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
   const [activeButton, setActiveButton] = useState(null);
   const handleButtonClick = (buttonLabel) => {
     setActiveButton(buttonLabel);
@@ -111,19 +114,11 @@ function OrderHistoryListPage() {
           <tr>
             <th>주문자(소속)</th>
             <td>
-              <Select
-                width="350px"
-                defaultValue={0}
-                options={categoryOpt}
-              />
+              <Select width="350px" defaultValue={0} options={categoryOpt} />
             </td>
             <th>매장명</th>
             <td>
-              <Select
-                width="350px"
-                defaultValue={0}
-                options={storeNameOpt}
-              />
+              <Select width="350px" defaultValue={0} options={storeNameOpt} />
             </td>
           </tr>
           <tr>
@@ -143,19 +138,26 @@ function OrderHistoryListPage() {
                 ))}
               </div>
               <div className="align">
-                <Input
-                  type="date"
-                  onClick={() => {}}
-                  placeholder="시작 날짜"
-                  onChange={(e) => setStartDate(e.target.value)}
+                <DatePicker
+                  dateFormat="yyyy/MM/dd"
+                  selected={startDate}
+                  className={"date_picker"}
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={(update) => {
+                    setDateRange(update);
+                  }}
+                  isClearable={false}
+                  placeholderText="날짜를 선택해 주세요."
                 />
-                <span className="mlr_10">~</span>
+                {/* <span className="mlr_10">~</span>
                 <Input
                   type="date"
                   onClick={() => {}}
                   placeholder="종료 날짜"
                   onChange={(e) => setEndDate(e.target.value)}
-                />
+                /> */}
               </div>
             </td>
           </tr>
@@ -168,14 +170,10 @@ function OrderHistoryListPage() {
       </ContentBox>
       <hr className="secondary" />
       <div className="align start gap_10 mt_42 ">
-          <Select
-            minwidth="200px"
-            defaultValue={0}
-            options={numOpt}
-          />
-          <p className="body0">
-            총 <span className="title3">200</span>건
-          </p>
+        <Select minwidth="200px" defaultValue={0} options={numOpt} />
+        <p className="body0">
+          총 <span className="title3">200</span>건
+        </p>
       </div>
       <ContentBox>
         <div className="tbl">

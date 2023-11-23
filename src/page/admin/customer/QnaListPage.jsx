@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
@@ -118,6 +120,10 @@ const initialTableRows = [
 ];
 
 function QnaListPage() {
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+
+
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -211,7 +217,20 @@ function QnaListPage() {
               </div>
               {/* 임시 달력 */}
               <div className="align">
-                <Input
+                <DatePicker
+                  dateFormat="yyyy/MM/dd"
+                  selected={startDate}
+                  className={"date_picker"}
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={(update) => {
+                    setDateRange(update);
+                  }}
+                  isClearable={false}
+                  placeholderText="날짜를 선택해 주세요."
+                />
+                {/* <Input
                   type="date"
                   onClick={() => {}}
                   placeholder="시작 날짜"
@@ -223,7 +242,7 @@ function QnaListPage() {
                   onClick={() => {}}
                   placeholder="종료 날짜"
                   onChange={(e) => setEndDate(e.target.value)}
-                />
+                /> */}
               </div>
             </td>
           </tr>
