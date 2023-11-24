@@ -15,10 +15,10 @@ function PasswordPage() {
   return (
     <Layout>
       <div className="login">
-        <div className="align top login_visual">
+        {/* <div className="align top login_visual">
           <div className="lft">
             <p>
-              {/* <span className="headline4 mb_16">We’ve already met!</span> */}
+              <span className="headline4 mb_16">We’ve already met!</span>
               <span className="headline0">
                 <strong>
                   안녕하세요 <em className="bold400">:)</em>
@@ -35,7 +35,7 @@ function PasswordPage() {
           <div className="rgt pt_30">
             <img src={MainimgDefult} alt="유저 이미지" />
           </div>
-        </div>
+        </div> */}
         <div className="login_content">
           <div className="login_box">
             <p>현재 비밀번호를 입력하세요.</p>
