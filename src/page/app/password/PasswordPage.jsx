@@ -95,11 +95,13 @@ function PasswordPage() {
             <div className="error_txt required_lft mt_5 ml_5">
               비밀번호는 4~20자 이내여야 합니다.
             </div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              현재 사용하고 있는 비밀번호입니다.
+            </div>
             <p className="title2 mt_25 mb_10">새로운 비밀번호를 확인해주세요.</p>
             <div className="login_box_input">
               <div>
                 <Input
-                  // width="361px"
                   onClick={() => {}}
                   shape="none"
                   globalClass="login_input"
@@ -109,7 +111,7 @@ function PasswordPage() {
               </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
-              현재 사용하고 있는 비밀번호입니다.
+              새로운 비밀번호와 다릅니다.
             </div>
             <div className="login_btn mt_20">
               <div>
