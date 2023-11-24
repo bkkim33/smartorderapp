@@ -66,7 +66,6 @@ function ChangePassword() {
               <td>
                 <Input
                   placeholder="현재 비밀번호 입력"
-                  shape="round"
                   type="password"
                 />
                 {errorMessages.currentPasswordError && (
@@ -81,7 +80,6 @@ function ChangePassword() {
               <td>
                 <Input
                   type="password"
-                  shape="round"
                   placeholder="4~20자의 영문, 숫자 특수문자 조합으로 입력"
                   maxLength={20}
                 />
@@ -100,7 +98,6 @@ function ChangePassword() {
               <td>
                 <Input
                   type="password"
-                  shape="round"
                   placeholder="새로운 비밀번호 재입력"
                 />
                 {errorMessages.confirmPasswordError && (

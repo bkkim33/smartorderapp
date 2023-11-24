@@ -59,10 +59,12 @@ function LoginPage() {
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
               ID를 입력해주세요. <br />
-              <span className="ml_10">잘못된 ID 형식입니다.</span>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
-              비밀번호를 입력해주세요.
+              비밀번호가 맞지 않습니다.
+            </div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              비밀번호를 입력해주세요. 
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
               ID 또는 비밀번호를 확인해주세요.

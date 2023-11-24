@@ -89,6 +89,12 @@ function MailVerifyPage() {
               </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
+              이메일 주소를 입력해주세요.
+            </div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              이메일 형식이 올바르지 않습니다.
+            </div>
+            <div className="error_txt required_lft mt_5 ml_5">
               인증번호가 맞지 않습니다. <br />
               <span className="ml_10">다시 인증번호를 요청하세요.</span>
             </div>

@@ -1,45 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/AppLoginLayout";
+import Mainimg10 from "../../../images/main_img10.gif";
+import Mainimg12 from "../../../images/main_img12.gif";
 import MainimgDefult from "../../../images/main_img.gif";
-
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
-import FormGroup from "../../../components/FormGroup";
-import Checkbox from "../../../components/Checkbox";
 
-// import { Icons } from "../../components/Icon";
+//mui table import
+import MuiAlert from "../../../components/MuiAlert";
 
+function Dateimages() {
+  const today = new Date();
+  // 현재 날짜를 가져옵니다.
+
+  const formattedDate = today.getMonth() + 1;
+  // 원하는 형식으로 날짜를 설정합니다.
+  switch (formattedDate) {
+    case 10:
+      return <img src={Mainimg10} alt="유저 이미지" />;
+    case 12:
+      return <img src={Mainimg12} alt="유저 이미지" />;
+    default:
+      return <img src={MainimgDefult} alt="유저 이미지" />;
+  }
+}
 function PasswordPage() {
+
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Layout>
       <div className="login">
-        {/* <div className="align top login_visual">
+      <div className="login_visual middle align">
           <div className="lft">
             <p>
-              <span className="headline4 mb_16">We’ve already met!</span>
               <span className="headline0">
                 <strong>
-                  안녕하세요 <em className="bold400">:)</em>
+                  <em className="neon">새로운</em>
                 </strong>
               </span>
               <span>
-                <em className="neon">클라우드카페</em>
+                <strong>
+                  <em className="neon">비밀번호로</em>
+                </strong>
               </span>
               <span>
-                <em className="neon">입니다.</em>
+                <strong>
+                  <em className="neon">변경해주세요.</em>
+                </strong>
               </span>
             </p>
           </div>
-          <div className="rgt pt_30">
-            <img src={MainimgDefult} alt="유저 이미지" />
+          <div className="rgt">
+            <Dateimages />
           </div>
-        </div> */}
+        </div>
         <div className="login_content">
           <div className="login_box">
-            <p>현재 비밀번호를 입력하세요.</p>
-            <div className="login_box_input align column ">
+            <p className="title2 mb_10">현재 비밀번호를 입력하세요.</p>
+            <div className="login_box_input">
               <div>
                 <Input
                   onClick={() => {}}
@@ -51,48 +78,42 @@ function PasswordPage() {
               </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
-              ID를 입력해주세요. <br />
-              <span className="ml_10">잘못된 ID 형식입니다.</span>
+              현재 사용하고 있는 비밀번호가 아닙니다.
             </div>
-            <p>현재 비밀번호를 입력하세요.</p>
-            <div className="login_box_input align column ">
+            <p className="title2 mt_25 mb_10">새로운 비밀번호를 입력하세요.</p>
+            <div className="login_box_input">
               <div>
                 <Input
                   onClick={() => {}}
                   shape="none"
                   globalClass="login_input"
                   type="password"
-                  placeholder="Password"
+                  placeholder="4~20자의 영문, 숫자, 특수문자 조합으로 입력"
                 />
               </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
-              비밀번호를 입력해주세요.
+              비밀번호는 4~20자 이내여야 합니다.
             </div>
-            <p>현재 비밀번호를 입력하세요.</p>
-            <div className="login_box_input align column ">
+            <p className="title2 mt_25 mb_10">새로운 비밀번호를 확인해주세요.</p>
+            <div className="login_box_input">
               <div>
                 <Input
+                  // width="361px"
                   onClick={() => {}}
                   shape="none"
                   globalClass="login_input"
                   type="password"
-                  placeholder="Password"
+                  placeholder="비밀번호 재입력"
                 />
               </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
-              ID 또는 비밀번호를 확인해주세요.
+              현재 사용하고 있는 비밀번호입니다.
             </div>
             <div className="login_btn mt_20">
               <div>
-                <Button
-                  btntype="blue"
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                  size="full"
-                >
+                <Button btntype="blue" onClick={handleOpen} size="full" >
                   비밀번호 변경하기
                 </Button>
               </div>
@@ -100,6 +121,18 @@ function PasswordPage() {
           </div>
         </div>
       </div>
+      <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={<>비밀번호가 변경되었습니다.<br/> 다시 로그인해주세요. </>}
+          button={
+            <>
+              <Button onClick={() => { navigate("/"); }} size="full" border="point">
+                확인
+              </Button>
+            </>
+          }
+        />
     </Layout>
   );
 }
