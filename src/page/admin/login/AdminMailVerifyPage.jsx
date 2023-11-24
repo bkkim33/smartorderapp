@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/LoginLayout";
 // import Mainimg10 from "../../../images/main_img10.gif";
@@ -30,8 +30,14 @@ import Checkbox from "../../../components/Checkbox";
 //   }
 // }
 
-function AdminLoginPage() {
+function AdminMailVerifyPage() {
+
   const navigate = useNavigate();
+  const [certification, setCertification] = useState(false);
+  const certifications = () => {
+    setCertification(true);
+  };
+
   return (
     <Layout>
       <div className="adminlogin">
@@ -42,13 +48,17 @@ function AdminLoginPage() {
         </div>
         <div className="adminlogin_content mt_30">
           <div className="adminlogin_box">
+          <p className="title2 mb_10">비밀번호 찾으세요?</p>
             <div className="adminlogin_box_input align column ">
               <div>
                 <Input
-                  onClick={() => {}}
+                  onClick={certifications}
+                  certification={certification}
                   shape="none"
                   globalClass="adminlogin_input"
-                  placeholder="ID를 입력해주세요."
+                  placeholder="이메일 입력"
+                  phone
+                  maxLength={13}
                 />
               </div>
               <div>
@@ -56,47 +66,36 @@ function AdminLoginPage() {
                   onClick={() => {}}
                   shape="none"
                   globalClass="adminlogin_input"
-                  type="password"
-                  placeholder="비밀번호를 입력해주세요."
+                  type="text"
+                  placeholder="인증번호 입력"
+                  timer={certification === true}
+                  disabled={certification === false}
                 />
               </div>
             </div>
-            <div className="error_txt required_lft mt_5 ml_5">ID를 입력해주세요.</div>
-            <div className="error_txt required_lft mt_5 ml_5">비밀번호가 맞지 않습니다.</div>
-            <div className="error_txt required_lft mt_5 ml_5">비밀번호를 입력해주세요.</div>
-            <div className="error_txt required_lft mt_5 ml_5">ID 또는 비밀번호를 확인해주세요.</div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              이메일 주소를 입력해주세요.
+            </div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              이메일 형식이 올바르지 않습니다.
+            </div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              인증번호가 맞지 않습니다. <br />
+              <span className="ml_10">다시 인증번호를 요청하세요.</span>
+            </div>
             <div className="adminlogin_btn mt_20">
               <div>
                 <Button
                   btntype="blue"
                   onClick={() => {
-                    navigate("product/product");
+                    navigate("/admin");
                   }}
                   size="full"
+                  disabled={certification === false}
                 >
-                  로그인
+                  임시 비밀번호 전송
                 </Button>
               </div>
-            </div>
-            <div className="align mt_20">
-              <FormGroup>
-                <Checkbox
-                  name="contact00"
-                  id="check1"
-                  value="Login"
-                  txt={"로그인 상태 유지"}
-                />
-              </FormGroup>
-              <Button
-                none
-                onClick={() => {
-                  navigate("/admin/mail");
-                }}
-                size="small"
-                btntype="bule"
-              >
-                비밀번호 찾기
-              </Button>
             </div>
           </div>
         </div>
@@ -105,4 +104,4 @@ function AdminLoginPage() {
   );
 }
 
-export default AdminLoginPage;
+export default AdminMailVerifyPage;

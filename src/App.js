@@ -6,6 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
+// 비밀번호 변경
+import AdminMailVerify from "./page/admin/login/AdminMailVerifyPage";
+
 // 프로필
 import Profile from "./page/admin/myprofile/Profile";
 import ChangePassword from "./page/admin/myprofile/ChangePassword";
@@ -136,6 +139,7 @@ function App() {
       <Route>
         {/* ADMIN 로그인 */}
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/mail" element={<AdminMailVerify />} />
         {/* ADMIN 프로필 - 프로필 상세 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
         {/* ADMIN 프로필 - 비밀번호 변경 */}
