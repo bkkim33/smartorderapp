@@ -124,6 +124,7 @@
     @include clamp(1)
   }
   &__menu{
+    z-index: 2;
     background-color: var(--cff);
     border: 1px solid var(--primary);
     @include shadow(0, 4px, 4px, rgba(0,0,0,0.25));

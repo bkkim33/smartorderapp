@@ -189,17 +189,10 @@ function ProductRegisterPage() {
                 <td>
                   <div className="align start gap_8">
                     <div>
-                      <Chip
-                        label="테스트염"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip
-                        label="테스트염"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip label="테스트염" onClick={() => {}} />
+                      <Chip label="C0001" onClick={() => {}} globalClass="mr_8" />
+                      <Chip label="C0002" onClick={() => {}} globalClass="mr_8" />
+                      <Chip label="C0003" onClick={() => {}} globalClass="mr_8" />
+                      <Chip label="C0004" onClick={() => {}} />
                     </div>
                     <Button btntype="c11" onClick={handleOpen} size="small_h35">
                       쿠폰할인 선택

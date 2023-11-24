@@ -134,8 +134,8 @@ function NoticeListPage() {
     setActiveButton(buttonLabel);
   };
 
-  const [setStartDate] = useState(null);
-  const [setEndDate] = useState(null);
+  // const [setStartDate] = useState(null);
+  // const [setEndDate] = useState(null);
 
   return (
     <Layout>

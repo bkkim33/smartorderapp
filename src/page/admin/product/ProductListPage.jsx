@@ -73,25 +73,16 @@ const storeNameOpt = [
 ];
 
 const numOpt = [
-  {
-    label: "20개씩 보기",
-    value: "20개씩 보기",
-  },
-  {
-    label: "30개씩 보기",
-    value: "30개씩 보기",
-  },
-  {
-    label: "50개씩 보기",
-    value: "50개씩 보기",
-  },
+  {label: "20개씩 보기",value: "20개씩 보기",},
+  {label: "30개씩 보기",value: "30개씩 보기",},
+  {label: "50개씩 보기",value: "50개씩 보기",},
 ];
 
 const initialTableRows = [
-  { id: 1, affiliation: "P00001", productId: "Coffee", productName: "에스프레소", role: "클라우드 카페" },
-  { id: 2, affiliation: "P00002", productId: "Coffee", productName: "에스프레소", role: "클라우드 카페" },
-  { id: 3, affiliation: "P00003", productId: "Tea", productName: "바닐라라떼", role: "클라우드 카페" },
-  { id: 4, affiliation: "P00004", productId: "Tea", productName: "바닐라라떼", role: "클라우드 카페" },
+  { id: 1, affiliation: "P00001", productId: "Coffee", productName: "유자차", role: "클라우드 카페 외 1개" },
+  { id: 2, affiliation: "P00002", productId: "Coffee", productName: "에스프레소", role: "클라우드카페(역삼1호점)" },
+  { id: 3, affiliation: "P00003", productId: "Tea", productName: "바닐라라떼", role: "클라우드9카페(역삼2호점)" },
+  { id: 4, affiliation: "P00004", productId: "Tea", productName: "캬라멜마끼아또", role: "클라우드 카페 외 1개" },
 ];
 
 function ProductListPage() {
@@ -247,31 +238,11 @@ function ProductListPage() {
                         onChange={() => handleCheckboxChange(row.id)}
                       />
                     </TableCell>
-                    <TableCell
-                      onClick={() => navigate("/admin/product/product/detail")}
-                    >
-                      {row.id}
-                    </TableCell>
-                    <TableCell
-                      onClick={() => navigate("/admin/product/product/detail")}
-                    >
-                      {row.affiliation}
-                    </TableCell>
-                    <TableCell
-                      onClick={() => navigate("/admin/product/product/detail")}
-                    >
-                      {row.productId}
-                    </TableCell>
-                    <TableCell
-                      onClick={() => navigate("/admin/product/product/detail")}
-                    >
-                      {row.productName}
-                    </TableCell>
-                    <TableCell
-                      onClick={() => navigate("/admin/product/product/detail")}
-                    >
-                      {row.role}
-                    </TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.id}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.affiliation}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.productId}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.productName}</TableCell>
+                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.role}</TableCell>
                   </TableRow>
                 ))}
                 <TableRow>

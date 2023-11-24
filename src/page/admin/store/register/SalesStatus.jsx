@@ -204,19 +204,13 @@ function SalesStatus() {
             </MuiTable>
           </TableContainer>
         </div>
-        {/* <MuiPage /> */}
-        <div className="align end">
-          <div className="item">
-            <Button
-              onClick={() => {
-                navigate("/admin/customer/terms/");
-              }}
-              size="xlarge"
-              btntype="c11"
-            >
-              저장
-            </Button>
-          </div>
+        <div className="align end gap_10">
+          <Button onClick={() => navigate("/admin/store")} line size="xlarge">
+            목록
+          </Button>
+          <Button onClick={() => {}} btntype="c11" size="xlarge">
+            저장
+          </Button>
         </div>
         <MuiAlert
           open={openAlert1}

@@ -72,32 +72,33 @@ function ProductDetailPage() {
     {
       id: 0,
       code: "C0001",
-      name: "아메리카노1잔",
+      name: "[방문] 아메리카노1잔",
       discount: "-3,800",
       selected: false,
     },
     {
       id: 1,
       code: "C0002",
-      name: "모든음료1잔",
+      name: "[방문] 모든음료1잔",
       discount: "0",
       selected: false,
     },
     {
       id: 2,
       code: "C0003",
-      name: "아메리카노1잔",
+      name: "[입사] 아메리카노1잔",
       discount: "-3,800",
       selected: false,
     },
     {
       id: 3,
       code: "C0004",
-      name: "모든음료1잔",
+      name: "[입사] 모든음료1잔",
       discount: "0",
       selected: false,
     },
   ]);
+
   const [selectAll, setSelectAll] = useState(false);
 
   const handleSelectAll = () => {
@@ -175,7 +176,7 @@ function ProductDetailPage() {
               <tr>
                 <th className="required">판매가</th>
                 <td>
-                  <Input placeholder="원" type="number" />
+                  <Input placeholder="원" type="number"/>
                 </td>
               </tr>
               <tr>
@@ -189,17 +190,10 @@ function ProductDetailPage() {
                 <td>
                   <div className="align start gap_8">
                     <div>
-                      <Chip
-                        label="테스트염"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip
-                        label="테스트염"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip label="테스트염" onClick={() => {}} />
+                      <Chip label="C0001" onClick={() => {}} globalClass="mr_8" />
+                      <Chip label="C0002" onClick={() => {}} globalClass="mr_8" />
+                      <Chip label="C0003" onClick={() => {}} globalClass="mr_8" />
+                      <Chip label="C0004" onClick={() => {}} />
                     </div>
                     <Button btntype="c11" onClick={handleOpen} size="small_h35">
                       쿠폰할인 선택
@@ -651,7 +645,7 @@ function ProductDetailPage() {
           }
         >
           <tr>
-            <th>
+            <th className="center">
               <Checkbox
                 id={selectAll.toString()}
                 onChange={handleSelectAll}
@@ -674,9 +668,9 @@ function ProductDetailPage() {
                   />
                 )}
               </td>
-              <td>{item.code}</td>
-              <td>{item.name}</td>
-              <td>{item.discount}</td>
+              <td className="center">{item.code}</td>
+              <td className="center">{item.name}</td>
+              <td className="center">{item.discount}</td>
             </tr>
           ))}
         </Table>

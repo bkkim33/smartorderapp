@@ -204,7 +204,7 @@ function StoreListPage() {
               <colgroup>
                 <col width="2%" />
                 <col width="3%" />
-                <col width="10%" />
+                <col width="12%" />
                 <col width="10%" />
                 <col width="7%" />
                 <col width="15%" />

@@ -13,13 +13,22 @@ import MuiAlert from "../../../../components/MuiAlert";
 
 function StoreInfo() {
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
+  const [openAlert1, setOpenAlert1] = useState(false);
+  const [openAlert2, setOpenAlert2] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
+  const handleOpenAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(true);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(true);
+    } 
   };
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(false);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(false);
+    } 
   };
 
   const [open2, setOpen2] = useState(false);
@@ -84,7 +93,7 @@ function StoreInfo() {
                 노출
               </Radio>
               <Radio name="contact1" id="radio6" value="nonexposed">
-                비노출
+                노출안함
               </Radio>
             </FormGroup>
           </td>
@@ -137,6 +146,7 @@ function StoreInfo() {
               size="xsmall"
               btntype="change"
               globalClass="ml_10"
+              line
             >
               찾기
             </Button>
@@ -154,7 +164,7 @@ function StoreInfo() {
               <span className="bold700 ml_10">종료</span>
               <Select options={hours} defaultValue={0} />시
               <Select options={minutes} defaultValue={0} />분
-              <Button icon="Plus" line onClick={() => {}} size="icon_s_h35">
+              <Button globalClass="ml_15" icon="Plus" line onClick={() => {}} size="icon_s_h35">
                 옵션명 추가
               </Button>
             </div>
@@ -172,17 +182,17 @@ function StoreInfo() {
         </tr>
       </Table>
       <div className="align end gap_10">
-        <Button onClick={() => navigate("/admin/store")} line size="xlarge">
+        <Button onClick={() => handleOpenAlert(1)} line size="xlarge">
           목록
         </Button>
-        <Button onClick={handleOpen} btntype="c11" size="xlarge">
+        <Button onClick={() => handleOpenAlert(2)} btntype="c11" size="xlarge">
           저장
         </Button>
       </div>
       <Modal open={open2} handleClose={handleClose2} />
       <MuiAlert
-        open={open}
-        onClose={handleClose}
+        open={openAlert1}
+        onClose={() => handleCloseAlert(1)}
         title={
           <>
             입력한 내용을 <br />
@@ -191,10 +201,30 @@ function StoreInfo() {
         }
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={() => handleCloseAlert(1)} line>
               취소
             </Button>
-            <Button onClick={handleClose} border="point">
+            <Button onClick={() => navigate("/admin/store")} border="point">
+              확인
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={openAlert2}
+        onClose={() => handleCloseAlert(2)}
+        title={
+          <>
+            수정된 내용을 <br />
+            저장하시겠습니까?
+          </>
+        }
+        button={
+          <>
+            <Button onClick={() => handleCloseAlert(2)} line>
+              취소
+            </Button>
+            <Button onClick={() => navigate("/admin/store")} border="point">
               확인
             </Button>
           </>

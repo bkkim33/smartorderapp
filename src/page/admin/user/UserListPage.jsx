@@ -3,6 +3,7 @@ import React from "react";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Input from "../../../components/Input";
+import MuiPage from "../../../components/MuiPage";
 
 //mui table import
 import Table from '@mui/material/Table';
@@ -167,6 +168,7 @@ function UserListPage() {
             </Table>
           </TableContainer>
         </div>
+        <MuiPage />
       </ContentBox>      
     </Layout>
   );

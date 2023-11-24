@@ -26,7 +26,8 @@ const storeNameOpt = [
 ];
 
 const categoryOpt = [
-  { label: '0', value: 'Coffee', },
+  { label: "전체", value: "전체", },
+  { label: 'Coffee', value: 'Coffee', },
   { label: 'Non-Coffee', value: 'Non-Coffee', },
   { label: 'Ade/Juice', value: 'Ade/Juice', },
   { label: 'Blended', value: 'Blended', },
@@ -89,7 +90,7 @@ const initialTableRows = [
     paymentType: "네이버페이",
     paymentMethod: "신한카드",
     originalAmount: "500000",
-    discountAmount: "-2500",
+    discountAmount: "",
     totalPaymentAmount: "4500",
   },
   {
@@ -138,8 +139,8 @@ function SalesListPage() {
     setActiveButton(buttonLabel);
   };
 
-  const [setStartDate] = useState(null);
-  const [setEndDate] = useState(null);
+  // const [setStartDate] = useState(null);
+  // const [setEndDate] = useState(null);
 
   return (
     <Layout>

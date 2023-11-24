@@ -116,15 +116,15 @@ function ProductDisplay() {
             }
           >
             <tr>
-              <th> 상품검색 (ID, 상품명)</th>
-              <td colSpan={3}></td>
+              <th>판매 매장</th>
+              <td colSpan={3}>클라우드 카페 (역삼1호점)</td>
             </tr>
             <tr>
               <th>상품 카테고리</th>
               <td>
                 <Select width="350px" defaultValue={0} options={categoryOpt} />
               </td>
-              <th>판매 매장</th>
+              <th>상품검색 (ID, 상품명)</th>
               <td>
                 <Input
                   onClick={() => {}}
@@ -198,17 +198,18 @@ function ProductDisplay() {
         onClose={handleClose}
         title={
           <>
-            입력한 내용을 <br />
-            저장하시겠습니까?
+            전시상품 리스트의  <br />
+            상품들을 해당 매장에  <br />
+            전시 상태로 변경하시겠습니까?
           </>
         }
         button={
           <>
             <Button onClick={handleClose} line>
-              취소
+              아니요
             </Button>
-            <Button onClick={handleClose} border="point">
-              확인
+            <Button onClick={() => navigate("/admin/store")}  border="point">
+              네
             </Button>
           </>
         }

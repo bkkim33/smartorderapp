@@ -1,14 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
-import Input from "../../../components/Input";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
-import TextToggle from "../../../components/TextToggle";
 import Modal from "./OrderDetailModal";
 
 //mui table import
@@ -21,8 +20,8 @@ import TableRow from '@mui/material/TableRow';
 
 const categoryOpt = [
   {
-    label: "전체",
-    value: "전체",
+    label: "- SELECT -",
+    value: "- SELECT -",
   },
   {
     label: "임직원 법인명",
@@ -113,12 +112,14 @@ function OrderHistoryListPage() {
         >
           <tr>
             <th>주문자(소속)</th>
-            <td>
-              <Select width="350px" defaultValue={0} options={categoryOpt} />
+            <td colSpan={3}>
+              <Select maxwidth="300px" defaultValue={0} options={categoryOpt} />
             </td>
+          </tr>
+          <tr>
             <th>매장명</th>
-            <td>
-              <Select width="350px" defaultValue={0} options={storeNameOpt} />
+            <td colSpan={3}>
+              <Select maxwidth="300px" defaultValue={0} options={storeNameOpt} />
             </td>
           </tr>
           <tr>
@@ -202,27 +203,27 @@ function OrderHistoryListPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow onClick={handleOpen}>
+                <TableRow>
                   <TableCell>1</TableCell>
                   <TableCell>000000</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell>에스프레소 1개 외</TableCell>
+                  <TableCell><Link onClick={handleOpen}>에스프레소 1개 외</Link></TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>클라우드 카페</TableCell>
-                  <TableCell>8,280원</TableCell>
+                  <TableCell><Link onClick={handleOpen}>8,280원</Link></TableCell>
                 </TableRow>
-                <TableRow onClick={handleOpen}>
+                <TableRow>
                   <TableCell>2</TableCell>
                   <TableCell>000001</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell>아메리카노 1개 외</TableCell>
+                  <TableCell><Link onClick={handleOpen}>에스프레소 1개 외</Link></TableCell>
                   <TableCell>2023.10.24 09:27:10</TableCell>
                   <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>4,280원</TableCell>
+                  <TableCell><Link onClick={handleOpen}>4,280원</Link></TableCell>
                 </TableRow>
-                <TableRow onClick={handleOpen}>
+                <TableRow>
                   <TableCell>3</TableCell>
                   <TableCell>000002</TableCell>
                   <TableCell>메가존</TableCell>
@@ -232,7 +233,7 @@ function OrderHistoryListPage() {
                   <TableCell>클라우드 카페</TableCell>
                   <TableCell>2,000원</TableCell>
                 </TableRow>
-                <TableRow onClick={handleOpen}>
+                <TableRow>
                   <TableCell>4</TableCell>
                   <TableCell>000003</TableCell>
                   <TableCell>메가존</TableCell>
