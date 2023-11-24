@@ -24,7 +24,7 @@ function Dateimages() {
   }
 }
 
-function QRLoginPage() {
+function MailVerifyPage() {
   const navigate = useNavigate();
   const [certification, setCertification] = useState(false);
   const certifications = () => {
@@ -33,32 +33,34 @@ function QRLoginPage() {
   return (
     <Layout>
       <div className="login">
-        <div className="align top login_visual">
+        <div className="login_visual middle align">
           <div className="lft">
             <p>
-              <span className="headline4 mb_16">We’ve already met!</span>
+              {/* <span className="headline4 mb_16">We’ve already met!</span> */}
               <span className="headline0">
                 <strong>
-                  안녕하세요 <em className="bold400">:)</em>
+                  <em className="neon">비밀번호 </em>
                 </strong>
               </span>
               <span>
-                <em className="neon">클라우드카페</em>
+                <em className="neon"></em>
               </span>
               <span>
-                <em className="neon">입니다.</em>
+                <strong>
+                  <em className="neon">찾으세요 ?</em>
+                </strong>
               </span>
             </p>
           </div>
-          <div className="rgt pt_30">
+          <div className="rgt">
             <Dateimages />
           </div>
         </div>
         <div className="login_info">
-          <p>
+          {/* <p>
             <span>서비스 이용을 위해</span>
             <span>휴대폰 번호를 입력해주세요.</span>
-          </p>
+          </p> */}
         </div>
         <div className="login_content">
           <div className="login_box">
@@ -69,7 +71,7 @@ function QRLoginPage() {
                   certification={certification}
                   shape="none"
                   globalClass="login_input"
-                  placeholder="핸드폰 번호 입력"
+                  placeholder="이메일 입력"
                   phone
                   maxLength={13}
                 />
@@ -95,12 +97,12 @@ function QRLoginPage() {
                 <Button
                   btntype="blue"
                   onClick={() => {
-                    navigate("/qrmain");
+                    navigate("/");
                   }}
                   size="full"
                   disabled={certification === false}
                 >
-                  로그인
+                  임시 비밀번호 전송
                 </Button>
               </div>
             </div>
@@ -111,4 +113,4 @@ function QRLoginPage() {
   );
 }
 
-export default QRLoginPage;
+export default MailVerifyPage;

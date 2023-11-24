@@ -10,7 +10,7 @@ import Checkbox from "../../../components/Checkbox";
 
 // import { Icons } from "../../components/Icon";
 
-function LoginPage() {
+function PasswordPage() {
   const navigate = useNavigate();
   return (
     <Layout>
@@ -18,7 +18,7 @@ function LoginPage() {
         <div className="align top login_visual">
           <div className="lft">
             <p>
-              <span className="headline4 mb_16">We’ve already met!</span>
+              {/* <span className="headline4 mb_16">We’ve already met!</span> */}
               <span className="headline0">
                 <strong>
                   안녕하세요 <em className="bold400">:)</em>
@@ -38,15 +38,24 @@ function LoginPage() {
         </div>
         <div className="login_content">
           <div className="login_box">
+            <p>현재 비밀번호를 입력하세요.</p>
             <div className="login_box_input align column ">
               <div>
                 <Input
                   onClick={() => {}}
                   shape="none"
                   globalClass="login_input"
-                  placeholder="ID (@앞 부분만 입력)"
+                  type="password"
+                  placeholder="현재 비밀번호 입력"
                 />
               </div>
+            </div>
+            <div className="error_txt required_lft mt_5 ml_5">
+              ID를 입력해주세요. <br />
+              <span className="ml_10">잘못된 ID 형식입니다.</span>
+            </div>
+            <p>현재 비밀번호를 입력하세요.</p>
+            <div className="login_box_input align column ">
               <div>
                 <Input
                   onClick={() => {}}
@@ -58,11 +67,19 @@ function LoginPage() {
               </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
-              ID를 입력해주세요. <br />
-              <span className="ml_10">잘못된 ID 형식입니다.</span>
-            </div>
-            <div className="error_txt required_lft mt_5 ml_5">
               비밀번호를 입력해주세요.
+            </div>
+            <p>현재 비밀번호를 입력하세요.</p>
+            <div className="login_box_input align column ">
+              <div>
+                <Input
+                  onClick={() => {}}
+                  shape="none"
+                  globalClass="login_input"
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
               ID 또는 비밀번호를 확인해주세요.
@@ -72,43 +89,13 @@ function LoginPage() {
                 <Button
                   btntype="blue"
                   onClick={() => {
-                    navigate("/password");
+                    navigate("/");
                   }}
                   size="full"
                 >
-                  로그인
+                  비밀번호 변경하기
                 </Button>
               </div>
-              <div className="mt_20 pt_20">
-                <Button
-                  btntype="googlelogin"
-                  icon="Google"
-                  onClick={() => navigate("/main")}
-                  size="full"
-                >
-                  Google 계정으로 로그인
-                </Button>
-              </div>
-            </div>
-            <div className="align mt_20">
-              <FormGroup>
-                <Checkbox
-                  name="contact00"
-                  id="check1"
-                  value="Login"
-                  txt={"로그인 상태 유지"}
-                />
-              </FormGroup>
-              <Button
-                none
-                onClick={() => {
-                  navigate("/mail");
-                }}
-                size="small"
-                btntype="bule"
-              >
-                비밀번호 찾기
-              </Button>
             </div>
           </div>
         </div>
@@ -117,4 +104,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default PasswordPage;
