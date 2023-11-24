@@ -48,22 +48,41 @@ import AccountModify from "./page/admin/account/AccountModifyPage";
 // app import
 
 import "./styles/appglobal.scss";
-
+// 메인 (임직원) : app
 import AppMain from "./page/app/MainPage";
+// 메인 (QR-외부인) : mobile web
 import QRAppMain from "./page/app/QRMainPage";
+// 로그인 (임직원) : app
 import AppLogin from "./page/app/login/LoginPage";
+// 로그인 (임직원) : mobile web
 import AppQRLogin from "./page/app/login/QRLoginPage";
+// 메일인증 (임직원) : app
+import MailVerify from "./page/app/login/MailVerifyPage";
+// 비밀번호 변경 (임직원) : app
+import Password from "./page/app/password/PasswordPage";
+// 메뉴상세 (공통) : app & mobile web
 import MenuDetail from "./page/app/order/MenuDetailPage";
+// 장바구니 (공통) : app & mobile web
 import CartPage from "./page/app/cart/CartPage";
+// 주문상세 (공통) : app & mobile web
 import OrderHistory from "./page/app/orderhistory/OrderHistoryPage";
+// 구매 (공통) : app & mobile web
 import Payment from "./page/app/payment/PaymentPage";
+// 쿠폰 (공통) : app & mobile web
 import Coupon from "./page/app/coupon/CouponPage";
+// 공지사항 - 리스트 (공통) : app & mobile web
 import NoticeList from "./page/app/notice/NoticeListPage";
+// 공지사항 - 상세 (공통) : app & mobile web
 import NoticeDetail from "./page/app/notice/NoticeDetailPage";
+// 약관 - 리스트 (공통) : app & mobile web
 import TermsList from "./page/app/terms/TermsListPage";
+// 약관 - 상세 (공통) : app & mobile web
 import TermsDetail from "./page/app/terms/TermsDetailPage";
+// 내정보 - 상세 (공통) : app & mobile web
 import MyInfo from "./page/app/myinfo/MyInfo";
+// 자주하는 질문 (공통) : app & mobile web
 import Faq from "./page/app/faq/Faq";
+// 구매완료 (공통) : app & mobile web
 import OrderComplete from "./page/app/ordercomplete/OrderComplete";
 
 function App() {
@@ -72,6 +91,12 @@ function App() {
       {/* APP : 각 페이지에 레이어 팝업이 있을시 페이지 내부에 존재합니다. */}
       <Route>
         {/* APP로그인 */}
+        <Route exact path="/" element={<AppLogin />} />
+        {/* APP 메일인증 */}
+        <Route exact path="/mail" element={<MailVerify />} />
+        {/* APP 비밀번호 변경 */}
+        <Route exact path="/password" element={<Password />} />
+        {/* APP 비밀번호 변경 */}
         <Route exact path="/" element={<AppLogin />} />
         {/* APP QR접근 로그인 */}
         <Route path="/qr" element={<AppQRLogin />} />
@@ -170,10 +195,7 @@ function App() {
         {/* ADMIN 매장별 설정관리 - 리스트 */}
         <Route path="/admin/store/register" element={<StoreRegister />} />
 
-        <Route
-          path="/admin/store/modify"
-          element={<StoreInfoModify />}
-        />
+        <Route path="/admin/store/modify" element={<StoreInfoModify />} />
         {/* ADMIN 사용자 관리 */}
         <Route path="/admin/user" element={<UserList />} />
         {/* ADMIN 계정/권한 관리 - 계정/권한 관리 리스트 */}

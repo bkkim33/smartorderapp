@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
@@ -12,7 +14,11 @@ import FormGroup from "../../../components/FormGroup";
 //mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+
 function TermsModifyPage() {
+  const [startDate, setStartDate] = useState();
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -25,7 +31,7 @@ function TermsModifyPage() {
     setOpen(false);
   };
 
-  const [setStartDate] = useState(null);
+  // const [setStartDate] = useState(null);
 
   return (
     <Layout>
@@ -89,12 +95,20 @@ function TermsModifyPage() {
               <tr>
                 <th className="required">시행 일자</th>
                 <td>
-                  <Input
+                  <DatePicker
+                    dateFormat="yyyy/MM/dd"
+                    selected={startDate}
+                    className={"date_picker"}
+                    onChange={(date) => setStartDate(date)}
+                    isClearable={true}
+                    placeholderText="날짜를 선택해 주세요."
+                  />
+                  {/* <Input
                     type="date"
                     onClick={() => {}}
                     placeholder="종료 날짜"
                     onChange={(e) => setStartDate(e.target.value)}
-                  />
+                  /> */}
                 </td>
               </tr>
               <tr>
@@ -110,9 +124,24 @@ function TermsModifyPage() {
               <tr>
                 <th className="required">내용입력</th>
                 <td>
-                  <div className="admin_editorarea mb_8">
-                    에디터 사용영역 입니다.
-                  </div>
+                  <CKEditor
+                    editor={ClassicEditor}
+                    data="<p></p>"
+                    onReady={(editor) => {
+                      // You can store the "editor" and use when it is needed.
+                      console.log("Editor is ready to use!", editor);
+                    }}
+                    onChange={(event, editor) => {
+                      const data = editor.getData();
+                      console.log({ event, editor, data });
+                    }}
+                    onBlur={(event, editor) => {
+                      console.log("Blur.", editor);
+                    }}
+                    onFocus={(event, editor) => {
+                      console.log("Focus.", editor);
+                    }}
+                  />
                 </td>
               </tr>
             </Table>

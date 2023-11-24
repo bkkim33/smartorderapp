@@ -57,7 +57,9 @@ export function Input({ onClick, ...others }) {
     phone,
     readonly,
     defaultValue,
-    numericOnly, noSpecialChars,
+    numericOnly,
+    noSpecialChars,
+    certification,
   } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
@@ -129,7 +131,7 @@ export function Input({ onClick, ...others }) {
         disabled ? styles.disabled : ""
       } ${focus ? styles.focus : ""} ${error ? styles.error : ""} ${
         globalClass || ""
-        } ${readonly ? styles.readonly : ""}`}
+      } ${readonly ? styles.readonly : ""}`}
     >
       <input
         className={`${styles.input} ${styles[placeholderColor]}`}
@@ -154,7 +156,8 @@ export function Input({ onClick, ...others }) {
       {/* 진현주 - disabled시 인증요청 button=none 작업 추가 (내정보 페이지에 사용)*/}
       {!disabled && phone === true && (
         <button onClick={onClick} className={`${styles.certification}`}>
-          인증요청
+          {!certification && <>인증요청</>}
+          {certification && <>재전송</>}
         </button>
       )}
       {type === "text" && timer && (

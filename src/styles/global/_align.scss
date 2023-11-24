@@ -22,6 +22,9 @@
   }
 
   // 아이템 세로 정렬 :: bottom / top
+  &.middle {
+    align-items: center;
+  }
   &.bottom {
     align-items: flex-end;
   }
