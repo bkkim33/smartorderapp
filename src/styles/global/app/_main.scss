@@ -115,7 +115,7 @@
     position: sticky;
     top: 110px;
     align-self: flex-start;
-    z-index: 1;
+    z-index: 11;
     background-color: var(--cff);
   }
 }
@@ -134,5 +134,9 @@
       top: 110px;
       z-index: 100;
     }
+    &.content{
+      z-index: 5;
+    }
   }
+  
 }
