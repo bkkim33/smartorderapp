@@ -112,6 +112,16 @@ function MailVerifyPage() {
                 </Button>
               </div>
             </div>
+            <div className="align center mt_10">
+              <Button
+                none
+                onClick={() => navigate(-1 || "/")}
+                size="small"
+                btntype="bule"
+              >
+                뒤로가기
+              </Button>
+            </div>
           </div>
         </div>
       </div>
