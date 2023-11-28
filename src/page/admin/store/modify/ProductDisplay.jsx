@@ -206,7 +206,7 @@ function ProductDisplay() {
         button={
           <>
             <Button onClick={handleClose} line>
-              아니요
+              아니오
             </Button>
             <Button onClick={() => navigate("/admin/store")}  border="point">
               네

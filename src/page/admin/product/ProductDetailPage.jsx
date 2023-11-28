@@ -696,7 +696,7 @@ function ProductDetailPage() {
         button={
           <>
             <Button onClick={handleClose02} line>
-              아니요
+              아니오
             </Button>
             <Button
               onClick={() => navigate("/admin/product/product")}

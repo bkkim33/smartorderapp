@@ -76,6 +76,7 @@
     @include body4(var(--primary-b));
     color: var(--red);
   }
+  
 }
 .round {
   @include rounded(4px);
@@ -116,7 +117,9 @@
   height: 50px;
   padding: 17px 15px;
 }
-
+.txt_center {
+  > input {text-align: center;}text-align: center;
+}
 // input 기본 스타일은 normal을 기준으로 합니다.
 .input {
   width: 100%;
@@ -156,7 +159,7 @@
     &::placeholder{
       color: var(--c99);
     }
-  }
+  }  
 }
 
 .input[type="number"] {

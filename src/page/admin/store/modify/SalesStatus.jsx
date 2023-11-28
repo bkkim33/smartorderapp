@@ -223,10 +223,10 @@ function SalesStatus() {
           button={
             <>
               <Button onClick={() => handleCloseAlert(1)} line>
-                아니요
+                아니오
               </Button>
               <Button onClick={() => handleCloseAlert(1)} border="point">
-                예
+                네
               </Button>
             </>
           }
@@ -238,10 +238,10 @@ function SalesStatus() {
           button={
             <>
               <Button onClick={() => handleCloseAlert(2)} line>
-                아니요
+                아니오
               </Button>
               <Button onClick={() => handleCloseAlert(2)} border="point">
-                예
+                네
               </Button>
             </>
           }
@@ -253,10 +253,10 @@ function SalesStatus() {
           button={
             <>
               <Button onClick={() => handleCloseAlert(3)} line>
-                아니요
+                아니오
               </Button>
               <Button onClick={() => handleCloseAlert(3)} border="point">
-                예
+                네
               </Button>
             </>
           }

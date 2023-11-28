@@ -139,7 +139,7 @@ function AccountModify() {
         button={
           <>
             <Button onClick={handleClose} line>
-              아니요
+              취소
             </Button>
             <Button
               onClick={() => {
@@ -147,7 +147,7 @@ function AccountModify() {
               }}
               border="point"
             >
-              네
+              확인
             </Button>
           </>
         }

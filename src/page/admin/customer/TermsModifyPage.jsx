@@ -177,7 +177,7 @@ function TermsModifyPage() {
         button={
           <>
             <Button onClick={handleClose} line>
-              아니요
+              아니오
             </Button>
             <Button
               onClick={() => {

@@ -211,7 +211,7 @@ function OrderHistoryListPage() {
                   <TableCell><Link onClick={handleOpen}>에스프레소 1개 외</Link></TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>클라우드 카페</TableCell>
-                  <TableCell><Link onClick={handleOpen}>8,280원</Link></TableCell>
+                  <TableCell className="right"><Link onClick={handleOpen}>8,280원</Link></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>2</TableCell>
@@ -221,7 +221,7 @@ function OrderHistoryListPage() {
                   <TableCell><Link onClick={handleOpen}>에스프레소 1개 외</Link></TableCell>
                   <TableCell>2023.10.24 09:27:10</TableCell>
                   <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell><Link onClick={handleOpen}>4,280원</Link></TableCell>
+                  <TableCell className="right"><Link onClick={handleOpen}>4,280원</Link></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>3</TableCell>
@@ -231,7 +231,7 @@ function OrderHistoryListPage() {
                   <TableCell>카페라떼 1개</TableCell>
                   <TableCell>2023.10.24 09:27:20</TableCell>
                   <TableCell>클라우드 카페</TableCell>
-                  <TableCell>2,000원</TableCell>
+                  <TableCell className="right">2,000원</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>4</TableCell>
@@ -241,7 +241,7 @@ function OrderHistoryListPage() {
                   <TableCell>카푸치노 1개</TableCell>
                   <TableCell>2023.10.24 09:27:30</TableCell>
                   <TableCell>클라우드 카페</TableCell>
-                  <TableCell>2,000원</TableCell>
+                  <TableCell className="right">2,000원</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>

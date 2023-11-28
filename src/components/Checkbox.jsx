@@ -19,7 +19,7 @@ Checkbox.defaultProps = {
   value: "value",
   name: "radio1",
   id: "radio0",
-  defaultChecked: false,
+  // defaultChecked: false,
   disabled: false,
   textposition: "",
 };

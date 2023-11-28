@@ -18,7 +18,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import MuiModal from "../../../components/MuiModal";
-import MuiAlert from "../../../components/MuiAlert";
 
 const categoryOpt = [
   {
@@ -51,6 +50,13 @@ const categoryOpt = [
   },
 ];
 
+const initialTableRows = [
+  { id: 0, code: "C0001", name: "아메리카노1잔", discount: "-3,800", selected: false },
+  { id: 1, code: "C0002", name: "모든음료1잔", discount: "0", selected: false },
+  { id: 2, code: "C0003", name: "아메리카노1잔", discount: "-3,800", selected: false },
+  { id: 3, code: "C0004", name: "모든음료1잔", discount: "0", selected: false },
+];
+
 function ProductRegisterPage() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -60,63 +66,29 @@ function ProductRegisterPage() {
   const handleClose = () => {
     setOpen(false);
   };
-  const [open02, setOpen02] = useState(false);
-  const handleOpen02 = () => {
-    setOpen02(true);
-  };
-  const handleClose02 = () => {
-    setOpen02(false);
-  };
 
-  const [data, setData] = useState([
-    {
-      id: 0,
-      code: "C0001",
-      name: "아메리카노1잔",
-      discount: "-3,800",
-      selected: false,
-    },
-    {
-      id: 1,
-      code: "C0002",
-      name: "모든음료1잔",
-      discount: "0",
-      selected: false,
-    },
-    {
-      id: 2,
-      code: "C0003",
-      name: "아메리카노1잔",
-      discount: "-3,800",
-      selected: false,
-    },
-    {
-      id: 3,
-      code: "C0004",
-      name: "모든음료1잔",
-      discount: "0",
-      selected: false,
-    },
-  ]);
   const [selectAll, setSelectAll] = useState(false);
+  const [checkedItems, setCheckedItems] = useState({});
 
   const handleSelectAll = () => {
-    const updatedSelectAll = !selectAll;
-    setSelectAll(updatedSelectAll);
-    const updatedData = data.map((item) => ({
-      ...item,
-      selected: updatedSelectAll,
-    }));
-    setData(updatedData);
+    setSelectAll(!selectAll);
+    const newCheckedItems = {};
+    if (!selectAll) {
+      initialTableRows.forEach((item) => {
+        newCheckedItems[item.id] = true;
+      });
+    }
+    setCheckedItems(newCheckedItems);
   };
 
-  const handleSingleCheck = (id) => {
-    const updatedData = data.map((item) =>
-      item.id === id ? { ...item, selected: !item.selected } : item
-    );
-    setData(updatedData);
-    setSelectAll(updatedData.every((item) => item.selected));
+  const handleCheckboxChange = (itemId) => {
+    setCheckedItems((prev) => ({
+      ...prev,
+      [itemId]: !prev[itemId],
+    }));
   };
+
+  const [tableRows, setTableRows] = useState(initialTableRows);
 
   const [newOption, setNewOption] = useState({
     optionName: ["온도", "농도"],
@@ -125,8 +97,8 @@ function ProductRegisterPage() {
   });
 
   const handleAddOption = () => {
-    const updatedData = [...data, { ...newOption, id: data.length }];
-    setData(updatedData);
+    const updatedData = [...tableRows, { ...newOption, id: tableRows.length }];
+    setTableRows(updatedData);
     setNewOption({
       optionName: "",
       detailOptionName: "",
@@ -320,8 +292,52 @@ function ProductRegisterPage() {
             </Button>
           </>
         }
-      >
-        <Table
+      > 
+        <div className="tbl">
+          <TableContainer>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+              <colgroup>
+                <col width="5%"/>
+                <col width="25%"/>
+                <col width="50%"/>
+                <col width="25%"/>
+              </colgroup>
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox
+                      id="checkAll"
+                      name="checkAll"
+                      checked={selectAll}
+                      onChange={handleSelectAll}
+                    />
+                  </TableCell>
+                  <TableCell>쿠폰코드</TableCell>
+                  <TableCell>쿠폰명</TableCell>
+                  <TableCell>할인가</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {tableRows.map((row) => (
+                  <tr key={row.id}>
+                    <td>
+                      <Checkbox
+                        id={row.id.toString()}
+                        name={row.name}
+                        checked={checkedItems[row.id] || false}
+                        onChange={() => handleCheckboxChange(row.id)}
+                      />
+                    </td>
+                    <td className="left">{row.code}</td>
+                    <td className="left">{row.name}</td>
+                    <td>{row.discount}</td>
+                  </tr>
+                ))}
+              </TableBody>
+            </MuiTable>
+          </TableContainer>
+        </div>
+        {/* <Table
           colgroup={
             <>
               <col width="10%" />
@@ -343,6 +359,7 @@ function ProductRegisterPage() {
             <th>쿠폰명</th>
             <th>할인가</th>
           </tr>
+
           {data.map((item) => (
             <tr key={item.id}>
               <td>
@@ -360,7 +377,7 @@ function ProductRegisterPage() {
               <td>{item.discount}</td>
             </tr>
           ))}
-        </Table>
+        </Table> */}
         <div className="align end mt_20 gap_5">
           <Button onClick={handleClose} size="small_h35" line>
             취소

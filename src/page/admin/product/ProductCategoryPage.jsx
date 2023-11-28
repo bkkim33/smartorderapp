@@ -17,10 +17,11 @@ import MuiAlert from "../../../components/MuiAlert";
 
 
 const initialCategoryData = [
-  { id: 1, order: 1, category: "Coffee" },
-  { id: 2, order: 2, category: "Non-Coffee" },
-  { id: 3, order: 3, category: "Ade/Juice" },
-  { id: 4, order: 4, category: "Blended" },
+  {
+    id: 1, order: 1, category: <Input defaultValue="Coffee" /> },
+  { id: 2, order: 2, category: <Input defaultValue="Non-Coffee" /> },
+  { id: 3, order: 3, category: <Input defaultValue="Ade/Juice" /> },
+  { id: 4, order: 4, category: <Input defaultValue="Blended" /> },
 ];
 
 function ProductCategoryPage() {
@@ -141,7 +142,7 @@ function ProductCategoryPage() {
                           onClick={() => handleTableRowClick(row.id)}
                         >
                           <TableCell>{row.order}</TableCell>
-                          <TableCell className="left">
+                          <TableCell>
                             {row.category === "" ? (
                               <div className="align gap_8">
                                 <Input
@@ -279,7 +280,7 @@ function ProductCategoryPage() {
           button={
             <>
               <Button onClick={handleClose02} line>
-                아니요
+                아니오
               </Button>
               <Button onClick={handleClose02} border="point">
                 네
