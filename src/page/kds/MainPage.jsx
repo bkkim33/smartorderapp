@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from '../../layout/DefaultLayout'
+import Layout from '../../layout/KDSDefaultLayout'
 import ContentBox from "../../layout/ContentBox";
 import { MuiTooltip } from "../../components/MuiTooltip";
 

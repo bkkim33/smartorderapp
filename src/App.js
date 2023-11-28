@@ -1,5 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 
+// KDS import
+import KDSLogin from "./page/kds/login/KDSLoginPage";
+// 비밀번호 변경
+import KDSMailVerify from "./page/kds/login/KDSMailVerifyPage";
+// 제조현황
+import KDSMain from "./page/kds/MainPage";
 
 
 // admin import
@@ -139,6 +145,7 @@ function App() {
       <Route>
         {/* ADMIN 로그인 */}
         <Route path="/admin" element={<AdminLogin />} />
+        {/* ADMIN 비밀번호 찾기 */}
         <Route path="/admin/mail" element={<AdminMailVerify />} />
         {/* ADMIN 프로필 - 프로필 상세 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
@@ -161,7 +168,6 @@ function App() {
         />
         {/* ADMIN 상품전시관리 - 카테 고리 관리 */}
         <Route path="/admin/product/category" element={<ProductCategory />} />
-
         {/* ADMIN 주문/매출 관리 - 주문 내역 관리 */}
         <Route path="/admin/order/history" element={<OrderHistoryList />} />
         {/* ADMIN 주문/매출 관리 - 매출 관리 */}
@@ -209,7 +215,15 @@ function App() {
         {/* ADMIN 계정/권한 관리 - 계정/권한 관리 계정상세 */}
         <Route path="/admin/account/modify" element={<AccountModify />} />
       </Route>
-      {/* KDS */}
+      {/* KDS : 각 페이지에 레이어 팝업이 있을시 페이지 내부에 존재합니다.  */}
+      <Route>
+        {/* KDS 로그인 */}
+        <Route path="/kds" element={<KDSLogin />} />
+        {/* KDS 비밀번호 찾기 */}
+        <Route path="/kds/mail" element={<KDSMailVerify />} />
+        {/* KDS 제조현황 */}
+        <Route path="/kds/main" element={<KDSMain />} />
+      </Route>
       {/* <Route path="/*" element={<Main />} /> */}
     </Routes>
   );
