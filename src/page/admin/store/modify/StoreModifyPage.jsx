@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Layout from '../../../../layout/DefaultLayout'
-import ContentBox from "../../../../layout/ContentBox";
 import Button from "../../../../components/Button";
 import StoreInfo from "./StoreInfo"; 
 import PickupMethod from "./PickupMethod";

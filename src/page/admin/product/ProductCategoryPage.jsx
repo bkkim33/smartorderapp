@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import Table from "../../../components/Table";
+import MuiAlert from "../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -13,12 +13,9 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
-import MuiAlert from "../../../components/MuiAlert";
-
 
 const initialCategoryData = [
-  {
-    id: 1, order: 1, category: <Input defaultValue="Coffee" /> },
+  { id: 1, order: 1, category: <Input defaultValue="Coffee" /> },
   { id: 2, order: 2, category: <Input defaultValue="Non-Coffee" /> },
   { id: 3, order: 3, category: <Input defaultValue="Ade/Juice" /> },
   { id: 4, order: 4, category: <Input defaultValue="Blended" /> },

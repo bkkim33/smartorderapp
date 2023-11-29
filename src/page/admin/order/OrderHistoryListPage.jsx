@@ -19,52 +19,22 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 const categoryOpt = [
-  {
-    label: "- SELECT -",
-    value: "- SELECT -",
-  },
-  {
-    label: "임직원 법인명",
-    value: "임직원 법인명",
-  },
-  {
-    label: "입주사 회사명",
-    value: "입주사 회사명",
-  },
-  {
-    label: "방문객",
-    value: "방문객",
-  },
+  { label: "- SELECT -", value: "- SELECT -" },
+  { label: "임직원 법인명", value: "임직원 법인명" },
+  { label: "입주사 회사명", value: "입주사 회사명" },
+  { label: "방문객", value: "방문객" },
 ]
 
 const storeNameOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "클라우드 카페",
-    value: "클라우드 카페",
-  },
-  {
-    label: "클라우드 9 카페",
-    value: "클라우드 9 카페",
-  },
+  { label: "전체", value: "전체" },
+  { label: "클라우드 카페", value: "클라우드 카페" },
+  { label: "클라우드 9 카페", value: "클라우드 9 카페" },
 ];
 
 const numOpt = [
-  {
-    label: "20개씩 보기",
-    value: "20개씩 보기",
-  },
-  {
-    label: "30개씩 보기",
-    value: "30개씩 보기",
-  },
-  {
-    label: "50개씩 보기",
-    value: "50개씩 보기",
-  },
+  { label: "20개씩 보기", value: "20개씩 보기" },
+  { label: "30개씩 보기", value: "30개씩 보기" },
+  { label: "50개씩 보기", value: "50개씩 보기" },
 ];
 
 const dateFilterOptions = [
@@ -73,7 +43,6 @@ const dateFilterOptions = [
   { label: "1개월", value: "oneMonth" },
   { label: "3개월", value: "threeMonths" },
 ];
-
 
 function OrderHistoryListPage() {
   const [open, setOpen] = useState(false);

@@ -6,35 +6,17 @@ import Table from "../../../components/Table";
 import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Button from "../../../components/Button";
-
-//mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
 const companyOpt = [
-  {
-    label: '메가존 법인소속명',
-    value: '메가존 법인소속명'
-  },
-  {
-    label: '클라우드 카페 매장소속명',
-    value: '클라우드 카페 매장소속명'
-  }
+  { label: '메가존 법인소속명', value: '메가존 법인소속명' },
+  { label: '클라우드 카페 매장소속명', value: '클라우드 카페 매장소속명' }
 ]
 
 const rightOpt = [
-  {
-    label: '카페서비스 관리자',
-    value: '카페서비스 관리자'
-  },
-  {
-    label: '매장 관리자',
-    value: '매장 관리자'
-  }
-  ,
-  {
-    label: '어드민 관리자',
-    value: '어드민 관리자'
-  }
+  { label: '카페서비스 관리자', value: '카페서비스 관리자' },
+  { label: '매장 관리자', value: '매장 관리자' },
+  { label: '어드민 관리자', value: '어드민 관리자' },
 ]
 
 function AccountCreate() {

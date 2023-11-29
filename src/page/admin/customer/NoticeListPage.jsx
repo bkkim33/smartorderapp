@@ -21,52 +21,22 @@ import TableRow from '@mui/material/TableRow';
 import MuiAlert from "../../../components/MuiAlert";
 
 const targetOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "임직원",
-    value: "임직원",
-  },
-  {
-    label: "입주사",
-    value: "입주사",
-  },
-  {
-    label: "방문객",
-    value: "방문객",
-  }
+  { label: "전체", value: "전체" },
+  { label: "임직원", value: "임직원" },
+  { label: "입주사", value: "입주사" },
+  { label: "방문객", value: "방문객" },
 ]
 
 const displayOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "노출함(Y)",
-    value: "노출함(Y)",
-  },
-  {
-    label: "노출안함(N)",
-    value: "노출안함(N)",
-  },
+  { label: "전체", value: "전체" },
+  { label: "노출함(Y)", value: "노출함(Y)" },
+  { label: "노출안함(N)", value: "노출안함(N)" },
 ];
 
 const numOpt = [
-  {
-    label: "20개씩 보기",
-    value: "20개씩 보기",
-  },
-  {
-    label: "30개씩 보기",
-    value: "30개씩 보기",
-  },
-  {
-    label: "50개씩 보기",
-    value: "50개씩 보기",
-  },
+  { label: "20개씩 보기", value: "20개씩 보기" },
+  { label: "30개씩 보기", value: "30개씩 보기" },
+  { label: "50개씩 보기", value: "50개씩 보기" },
 ];
 
 const dateFilterOptions = [
@@ -77,11 +47,46 @@ const dateFilterOptions = [
 ];
 
 const initialTableRows = [
-  { id: 1, title: '공지사항 제목입니다.', target: '전체', date: '2023. 10. 30', visibility: 'Y', author: 'admin' },
-  { id: 2, title: '공지사항 제목입니다.', target: '임직원', date: '2023. 10. 31', visibility: 'Y', author: 'admin' },
-  { id: 3, title: '공지사항 제목입니다.', target: '방문객', date: '2023. 10. 30', visibility: 'N', author: 'user' },
-  { id: 4, title: '공지사항 제목입니다.', target: '전체', date: '2023. 11. 01', visibility: 'Y', author: 'admin' },
-  { id: 5, title: '데이터 확인중입니다', target: '전체', date: '2023. 11. 02', visibility: 'Y', author: 'admin' },
+  { 
+    id: 1, 
+    title: '공지사항 제목입니다.', 
+    target: '전체', 
+    date: '2023. 10. 30', 
+    visibility: 'Y', 
+    author: 'admin' 
+  },
+  { 
+    id: 2, 
+    title: '공지사항 제목입니다.', 
+    target: '임직원', 
+    date: '2023. 10. 31', 
+    visibility: 'Y', 
+    author: 'admin' 
+  },
+  { 
+    id: 3, 
+    title: '공지사항 제목입니다.', 
+    target: '방문객', 
+    date: '2023. 10. 30', 
+    visibility: 'N', 
+    author: 'user' 
+  },
+  { 
+    id: 4, 
+    title: '공지사항 제목입니다.', 
+    target: '전체', 
+    date: '2023. 11. 01', 
+    visibility: 'Y', 
+    author: 'admin' 
+  },
+  { 
+    id: 5, 
+    title: '데이터 확인중입니다', 
+    target: '전체', 
+    date: '2023. 11. 02', 
+    visibility: 'Y', 
+    author: 'admin' 
+  },
 ];
 
 function NoticeListPage() {

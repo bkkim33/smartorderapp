@@ -9,6 +9,8 @@ import Table from "../../../components/Table";
 import FileUpload from "../../../components/FileUpload";
 import Chip from "../../../components/Chip";
 import Checkbox from "../../../components/Checkbox";
+import MuiModal from "../../../components/MuiModal";
+import MuiAlert from "../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -17,44 +19,46 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import MuiModal from "../../../components/MuiModal";
 
 const categoryOpt = [
-  {
-    label: 'Coffee',
-    value: 'Coffee',
-  },
-  {
-    label: 'Non-Coffee',
-    value: 'Non-Coffee',
-  },
-  {
-    label: 'Ade/Juice',
-    value: 'Ade/Juice',
-  },
-  {
-    label: 'Blended',
-    value: 'Blended',
-  },
-  {
-    label: 'Tea',
-    value: 'Tea',
-  },
-  {
-    label: 'Bread',
-    value: 'Bread',
-  },
-  {
-    label: 'Bottle',
-    value: 'Bottle',
-  },
+  { label: 'Coffee', value: 'Coffee' },
+  { label: 'Non-Coffee', value: 'Non-Coffee' },
+  { label: 'Ade/Juice', value: 'Ade/Juice' },
+  { label: 'Blended', value: 'Blended' },
+  { label: 'Tea', value: 'Tea' },
+  { label: 'Bread', value: 'Bread' },
+  { label: 'Bottle', value: 'Bottle' },
 ];
 
 const initialTableRows = [
-  { id: 0, code: "C0001", name: "아메리카노1잔", discount: "-3,800", selected: false },
-  { id: 1, code: "C0002", name: "모든음료1잔", discount: "0", selected: false },
-  { id: 2, code: "C0003", name: "아메리카노1잔", discount: "-3,800", selected: false },
-  { id: 3, code: "C0004", name: "모든음료1잔", discount: "0", selected: false },
+  { 
+    id: 0, 
+    code: "C0001", 
+    name: "아메리카노1잔", 
+    discount: "-3,800", 
+    selected: false 
+  },
+  { 
+    id: 1, 
+    code: "C0002", 
+    name: "모든음료1잔", 
+    discount: "0", 
+    selected: false 
+  },
+  { 
+    id: 2, 
+    code: "C0003", 
+    name: "아메리카노1잔", 
+    discount: "-3,800", 
+    selected: false 
+  },
+  { 
+    id: 3, 
+    code: "C0004", 
+    name: "모든음료1잔", 
+    discount: "0", 
+    selected: false 
+  },
 ];
 
 function ProductRegisterPage() {
@@ -65,6 +69,14 @@ function ProductRegisterPage() {
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const [open02, setOpen02] = useState(false);
+  const handleOpen02 = () => {
+    setOpen02(true);
+  };
+  const handleClose02 = () => {
+    setOpen02(false);
   };
 
   const [selectAll, setSelectAll] = useState(false);
@@ -263,7 +275,7 @@ function ProductRegisterPage() {
                 취소
               </Button>
               <Button
-                onClick={() => navigate("/admin/product/product")}
+                onClick={handleOpen02}
                 size="xlarge"
                 btntype="c11"
               >
@@ -337,47 +349,6 @@ function ProductRegisterPage() {
             </MuiTable>
           </TableContainer>
         </div>
-        {/* <Table
-          colgroup={
-            <>
-              <col width="10%" />
-              <col width="30%" />
-              <col width="30%" />
-              <col width="30%" />
-            </>
-          }
-        >
-          <tr>
-            <th>
-              <Checkbox
-                id={selectAll.toString()}
-                onChange={handleSelectAll}
-                checked={selectAll}
-              ></Checkbox>
-            </th>
-            <th>쿠폰코드</th>
-            <th>쿠폰명</th>
-            <th>할인가</th>
-          </tr>
-
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>
-                {data.length > 0 && (
-                  <Checkbox
-                    id={item.id.toString()}
-                    name={item.name}
-                    checked={item.selected}
-                    onChange={() => handleSingleCheck(item.id)}
-                  />
-                )}
-              </td>
-              <td>{item.code}</td>
-              <td>{item.name}</td>
-              <td>{item.discount}</td>
-            </tr>
-          ))}
-        </Table> */}
         <div className="align end mt_20 gap_5">
           <Button onClick={handleClose} size="small_h35" line>
             취소
@@ -387,6 +358,21 @@ function ProductRegisterPage() {
           </Button>
         </div>
       </MuiModal>
+      <MuiAlert
+        open={open02}
+        onClose={handleClose02}
+        title={<>저장하시겠습니까?</>}
+        button={
+          <>
+            <Button onClick={handleClose02} line>
+              아니오
+            </Button>
+            <Button onClick={() => navigate("/admin/product/product/detail")} border="point">
+              네
+            </Button>
+          </>
+        }
+      />
     </Layout>
   );
 }

@@ -1,24 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
 import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Button from "../../../components/Button";
-
-//mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
 function AccountModify() {
   const navigate = useNavigate();
-
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };

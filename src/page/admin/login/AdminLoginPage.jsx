@@ -5,14 +5,11 @@ import Layout from "../../../layout/LoginLayout";
 // import Mainimg12 from "../../../images/main_img12.gif";
 // import MainimgDefult from "../../../images/main_img.gif";
 
-import {Icons} from "../../../components/Icon";
+import { Icons } from "../../../components/Icon";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 import FormGroup from "../../../components/FormGroup";
 import Checkbox from "../../../components/Checkbox";
-
-// import { Icons } from "../../components/Icon";
-
 
 // function Dateimages() {
 //   const today = new Date();

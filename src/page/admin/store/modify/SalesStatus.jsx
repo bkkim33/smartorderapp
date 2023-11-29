@@ -17,14 +17,14 @@ import TableRow from '@mui/material/TableRow';
 import MuiAlert from "../../../../components/MuiAlert";
 
 const categoryOpt = [
-  {label: "전체",value: "전체",},
-  {label: "Coffee",value: "Coffee",},
-  {label: "Non-Coffee",value: "Non-Coffee",},
-  {label: "Ade/Juice",value: "Ade/Juice",},
-  {label: "Blended",value: "Blended",},
-  {label: "Tea",value: "Tea",},
-  {label: "Bread",value: "Bread",},
-  {label: "Bottle",value: "Bottle",},
+  { label: "전체", value: "전체" },
+  { label: "Coffee", value: "Coffee" },
+  { label: "Non-Coffee", value: "Non-Coffee" },
+  { label: "Ade/Juice", value: "Ade/Juice" },
+  { label: "Blended", value: "Blended" },
+  { label: "Tea", value: "Tea" },
+  { label: "Bread", value: "Bread" },
+  { label: "Bottle", value: "Bottle" },
 ]
 
 const salesStatusData = [
@@ -36,11 +36,51 @@ const salesStatusData = [
 ]
 
 const initialTableRows = [
-  { id: 1, orderNumber: 1, productID: 'P00001', categoryName: 'Coffee', productName: '에스프레소', storeName: '클라우드 카페', salesStatus: '미설정' },
-  { id: 2, orderNumber: 2, productID: 'P00002', categoryName: 'Coffee', productName: '캬라멜마끼아또', storeName: '클라우드 카페', salesStatus: '미설정' },
-  { id: 3, orderNumber: 3, productID: 'P00003', categoryName: 'Tea', productName: '유자차', storeName: '클라우드 9 카페', salesStatus: '판매중' },
-  { id: 4, orderNumber: 4, productID: 'P00004', categoryName: 'Tea', productName: '제로콜라', storeName: '클라우드 카페', salesStatus: '품절' },
-  { id: 5, orderNumber: 5, productID: 'P00005', categoryName: 'Bottle', productName: '에스프레소', storeName: '클라우드 카페', salesStatus: '판매중지' },
+  { 
+    id: 1, 
+    orderNumber: 1, 
+    productID: 'P00001', 
+    categoryName: 'Coffee', 
+    productName: '에스프레소', 
+    storeName: '클라우드 카페', 
+    salesStatus: '미설정' 
+  },
+  { 
+    id: 2, 
+    orderNumber: 2, 
+    productID: 'P00002', 
+    categoryName: 'Coffee', 
+    productName: '캬라멜마끼아또', 
+    storeName: '클라우드 카페', 
+    salesStatus: '미설정' 
+  },
+  { 
+    id: 3, 
+    orderNumber: 3, 
+    productID: 'P00003', 
+    categoryName: 'Tea', 
+    productName: '유자차', 
+    storeName: '클라우드 9 카페', 
+    salesStatus: '판매중' 
+  },
+  { 
+    id: 4, 
+    orderNumber: 4, 
+    productID: 'P00004', 
+    categoryName: 'Tea', 
+    productName: '제로콜라', 
+    storeName: '클라우드 카페', 
+    salesStatus: '품절' 
+  },
+  { 
+    id: 5, 
+    orderNumber: 5, 
+    productID: 'P00005', 
+    categoryName: 'Bottle', 
+    productName: '에스프레소', 
+    storeName: '클라우드 카페', 
+    salesStatus: '판매중지' 
+  },
 ];
 
 function SalesStatus() {

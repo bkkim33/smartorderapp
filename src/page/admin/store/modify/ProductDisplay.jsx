@@ -4,43 +4,17 @@ import Table from "../../../../components/Table";
 import Button from "../../../../components/Button";
 import Input from "../../../../components/Input";
 import Select from "../../../../components/Select";
-
 import MuiAlert from "../../../../components/MuiAlert";
 
-
 const categoryOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "Coffee",
-    value: "Coffee",
-  },
-  {
-    label: "Non-Coffee",
-    value: "Non-Coffee",
-  },
-  {
-    label: "Ade/Juice",
-    value: "Ade/Juice",
-  },
-  {
-    label: "Blended",
-    value: "Blended",
-  },
-  {
-    label: "Tea",
-    value: "Tea",
-  },
-  {
-    label: "Bread",
-    value: "Bread",
-  },
-  {
-    label: "Bottle",
-    value: "Bottle",
-  },
+  { label: "전체", value: "전체" },
+  { label: "Coffee", value: "Coffee" },
+  { label: "Non-Coffee", value: "Non-Coffee" },
+  { label: "Ade/Juice", value: "Ade/Juice" },
+  { label: "Blended", value: "Blended" },
+  { label: "Tea", value: "Tea" },
+  { label: "Bread", value: "Bread" },
+  { label: "Bottle", value: "Bottle" },
 ];
 
 const values = [

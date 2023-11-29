@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from '../../../../layout/DefaultLayout'
-import ContentBox from "../../../../layout/ContentBox";
 import Button from "../../../../components/Button";
 import Input from "../../../../components/Input";
-import Table from "../../../../components/Table";
 import Select from "../../../../components/Select";
-
 
 //mui table import
 import MuiAlert from "../../../../components/MuiAlert";

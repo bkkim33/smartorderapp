@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -12,6 +12,7 @@ import FormGroup from "../../../components/FormGroup";
 import Radio from "../../../components/Radio";
 import MuiPage from "../../../components/MuiPage";
 import Checkbox from "../../../components/Checkbox";
+import MuiAlert from "../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -20,69 +21,59 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import MuiAlert from "../../../components/MuiAlert";
 
 const categoryOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "Coffee",
-    value: "Coffee",
-  },
-  {
-    label: "Non-Coffee",
-    value: "Non-Coffee",
-  },
-  {
-    label: "Ade/Juice",
-    value: "Ade/Juice",
-  },
-  {
-    label: "Blended",
-    value: "Blended",
-  },
-  {
-    label: "Tea",
-    value: "Tea",
-  },
-  {
-    label: "Bread",
-    value: "Bread",
-  },
-  {
-    label: "Bottle",
-    value: "Bottle",
-  },
+  { label: "전체", value: "전체" },
+  { label: "Coffee", value: "Coffee" },
+  { label: "Non-Coffee", value: "Non-Coffee" },
+  { label: "Ade/Juice", value: "Ade/Juice" },
+  { label: "Blended", value: "Blended" },
+  { label: "Tea", value: "Tea" },
+  { label: "Bread", value: "Bread" },
+  { label: "Bottle", value: "Bottle" },
 ]
 
 const storeNameOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "클라우드카페(역삼1호점)",
-    value: "클라우드카페(역삼1호점)",
-  },
-  {
-    label: "클라우드9카페(역삼2호점)",
-    value: "클라우드9카페(역삼2호점)",
-  },
+  { label: "전체", value: "전체" },
+  { label: "클라우드카페(역삼1호점)", value: "클라우드카페(역삼1호점)" },
+  { label: "클라우드9카페(역삼2호점)", value: "클라우드9카페(역삼2호점)" },
 ];
 
 const numOpt = [
-  {label: "20개씩 보기",value: "20개씩 보기",},
-  {label: "30개씩 보기",value: "30개씩 보기",},
-  {label: "50개씩 보기",value: "50개씩 보기",},
+  { label: "20개씩 보기", value: "20개씩 보기" },
+  { label: "30개씩 보기", value: "30개씩 보기" },
+  { label: "50개씩 보기", value: "50개씩 보기" },
 ];
 
 const initialTableRows = [
-  { id: 1, affiliation: "P00001", productId: "Coffee", productName: "유자차", role: "클라우드 카페 외 1개" },
-  { id: 2, affiliation: "P00002", productId: "Coffee", productName: "에스프레소", role: "클라우드카페(역삼1호점)" },
-  { id: 3, affiliation: "P00003", productId: "Tea", productName: "바닐라라떼", role: "클라우드9카페(역삼2호점)" },
-  { id: 4, affiliation: "P00004", productId: "Tea", productName: "캬라멜마끼아또", role: "클라우드 카페 외 1개" },
+  { 
+    id: 1, 
+    affiliation: "P00001", 
+    productId: "Coffee", 
+    productName: "유자차", 
+    role: "클라우드 카페 외 1개" 
+  },
+  { 
+    id: 2, 
+    affiliation: "P00002", 
+    productId: "Coffee", 
+    productName: "에스프레소", 
+    role: "클라우드카페(역삼1호점)" 
+  },
+  { 
+    id: 3, 
+    affiliation: "P00003", 
+    productId: "Tea", 
+    productName: "바닐라라떼", 
+    role: "클라우드9카페(역삼2호점)" 
+  },
+  { 
+    id: 4, 
+    affiliation: "P00004", 
+    productId: "Tea", 
+    productName: "캬라멜마끼아또", 
+    role: "클라우드 카페 외 1개" 
+  },
 ];
 
 function ProductListPage() {
