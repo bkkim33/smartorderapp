@@ -9,6 +9,8 @@ import Table from "../../../components/Table";
 import FileUpload from "../../../components/FileUpload";
 import Chip from "../../../components/Chip";
 import Checkbox from "../../../components/Checkbox";
+import MuiModal from "../../../components/MuiModal";
+import MuiAlert from "../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -17,38 +19,15 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import MuiModal from "../../../components/MuiModal";
-import MuiAlert from "../../../components/MuiAlert";
 
 const categoryOpt = [
-  {
-    label: 'Coffee',
-    value: 'Coffee',
-  },
-  {
-    label: 'Non-Coffee',
-    value: 'Non-Coffee',
-  },
-  {
-    label: 'Ade/Juice',
-    value: 'Ade/Juice',
-  },
-  {
-    label: 'Blended',
-    value: 'Blended',
-  },
-  {
-    label: 'Tea',
-    value: 'Tea',
-  },
-  {
-    label: 'Bread',
-    value: 'Bread',
-  },
-  {
-    label: 'Bottle',
-    value: 'Bottle',
-  },
+  { label: 'Coffee', value: 'Coffee' },
+  { label: 'Non-Coffee', value: 'Non-Coffee' },
+  { label: 'Ade/Juice', value: 'Ade/Juice' },
+  { label: 'Blended', value: 'Blended' },
+  { label: 'Tea', value: 'Tea' },
+  { label: 'Bread', value: 'Bread' },
+  { label: 'Bottle', value: 'Bottle' },
 ];
 
 function ProductDetailPage() {

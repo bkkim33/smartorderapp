@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/DefaultLayout";
 import ContentBox from "../../../layout/ContentBox";
 import Table from "../../../components/Table";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
-
 import MuiAlert from "../../../components/MuiAlert";
 
 function ChangePassword() {

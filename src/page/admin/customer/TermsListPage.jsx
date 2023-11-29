@@ -21,52 +21,22 @@ import TableRow from '@mui/material/TableRow';
 import MuiAlert from "../../../components/MuiAlert";
 
 const targetOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "임직원",
-    value: "임직원",
-  },
-  {
-    label: "입주사",
-    value: "입주사",
-  },
-  {
-    label: "방문객",
-    value: "방문객",
-  }
+  { label: "전체", value: "전체" },
+  { label: "임직원", value: "임직원" },
+  { label: "입주사", value: "입주사" },
+  { label: "방문객", value: "방문객" }
 ]
 
 const displayOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "노출함(Y)",
-    value: "노출함(Y)",
-  },
-  {
-    label: "노출안함(N)",
-    value: "노출안함(N)",
-  },
+  { label: "전체", value: "전체" },
+  { label: "노출함(Y)", value: "노출함(Y)" },
+  { label: "노출안함(N)", value: "노출안함(N)" },
 ];
 
 const numOpt = [
-  {
-    label: "20개씩 보기",
-    value: "20개씩 보기",
-  },
-  {
-    label: "30개씩 보기",
-    value: "30개씩 보기",
-  },
-  {
-    label: "50개씩 보기",
-    value: "50개씩 보기",
-  },
+  { label: "20개씩 보기", value: "20개씩 보기" },
+  { label: "30개씩 보기", value: "30개씩 보기" },
+  { label: "50개씩 보기", value: "50개씩 보기" },
 ];
 
 const dateFilterOptions = [
@@ -169,8 +139,8 @@ function TermsListPage() {
     setActiveButton(buttonLabel);
   };
 
-  const [setStartDate] = useState(null);
-  const [setEndDate] = useState(null);
+  // const [setStartDate] = useState(null);
+  // const [setEndDate] = useState(null);
 
   return (
     <Layout>

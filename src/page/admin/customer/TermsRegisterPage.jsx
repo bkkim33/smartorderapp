@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,17 +7,24 @@ import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import Table from "../../../components/Table";
-import FileUpload from "../../../components/FileUpload";
 import Radio from "../../../components/Radio";
 import FormGroup from "../../../components/FormGroup";
+import MuiAlert from "../../../components/MuiAlert";
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
   function TermsRegisterPage() {
-      const [startDate, setStartDate] = useState();
+    const [startDate, setStartDate] = useState();
     const navigate = useNavigate();
     // const [setStartDate] = useState(null);
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => {
+      setOpen(true);
+    };
+    const handleClose = () => {
+      setOpen(false);
+    };
 
     return (
       <Layout>
@@ -146,9 +153,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
               </div>
               <div className="item">
                 <Button
-                  onClick={() => {
-                    navigate("/admin/customer/terms/");
-                  }}
+                  onClick={handleOpen}
                   size="xlarge"
                   btntype="c11"
                 >
@@ -158,6 +163,21 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
             </div>
           </div>
         </ContentBox>
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={<>저장하시겠습니까?</>}
+          button={
+            <>
+              <Button onClick={handleClose} line>
+                아니오
+              </Button>
+              <Button onClick={() => navigate("/admin/customer/terms")} border="point">
+                네
+              </Button>
+            </>
+          }
+        />
       </Layout>
     );
   }

@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
-import Input from "../../../components/Input";
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
 import Checkbox from "../../../components/Checkbox";
+import MuiAlert from "../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -16,25 +16,12 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import MuiAlert from "../../../components/MuiAlert";
 
 const targetOpt = [
-  {
-    label: "전체",
-    value: "전체",
-  },
-  {
-    label: "클라우드 카페",
-    value: "클라우드 카페",
-  },
-  {
-    label: "클라우드 9 카페",
-    value: "클라우드 9 카페",
-  },
-  {
-    label: "과천 클라우드 카페",
-    value: "과천 클라우드 카페",
-  }
+  { label: "전체", value: "전체" },
+  { label: "클라우드 카페", value: "클라우드 카페" },
+  { label: "클라우드 9 카페", value: "클라우드 9 카페" },
+  { label: "과천 클라우드 카페", value: "과천 클라우드 카페" }
 ]
 
 const initialTableRows = [

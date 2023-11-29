@@ -1,13 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
-
 import Tooltip from "@mui/material/Tooltip";
-
 import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/components/tooltip.module.scss";
 import { Icons } from "./Icon";
-
 
 MuiTooltip.propTypes = {
   // children: PropTypes.node.isRequired,

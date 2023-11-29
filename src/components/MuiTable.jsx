@@ -6,22 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
-// import { useState } from "react";
-// import PropTypes from "prop-types";
 import styles from "../styles/components/muitable.module.scss";
-// import { Icons } from "./Icon";
-
-
-MuiTable.propTypes = {
-
-};
-
-// 기본 상태가 필요시에만 사용됨
-MuiTable.defaultProps = {
-
-};
-
 
 export function MuiTable({ cols, columns, rows }) {
   return (

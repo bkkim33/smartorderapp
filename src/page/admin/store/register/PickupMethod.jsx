@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from '../../../../layout/DefaultLayout'
-import ContentBox from "../../../../layout/ContentBox";
 import Button from "../../../../components/Button";
 import Input from "../../../../components/Input";
-import Table from "../../../../components/Table";
 import Select from "../../../../components/Select";
-
+import MuiAlert from "../../../../components/MuiAlert";
 
 //mui table import
-import MuiAlert from "../../../../components/MuiAlert";
 import MuiTable from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -163,17 +159,16 @@ function PickupMethod() {
         onClose={handleClose}
         title={
           <>
-            입력한 내용을 <br />
             저장하시겠습니까?
           </>
         }
         button={
           <>
             <Button onClick={handleClose} line>
-              취소
+              아니오
             </Button>
             <Button onClick={handleClose} border="point">
-              확인
+              네
             </Button>
           </>
         }

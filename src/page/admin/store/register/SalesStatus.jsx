@@ -6,6 +6,7 @@ import Table from "../../../../components/Table";
 import Select from "../../../../components/Select";
 import Button from "../../../../components/Button";
 import Checkbox from "../../../../components/Checkbox";
+import MuiAlert from "../../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -14,33 +15,72 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import MuiAlert from "../../../../components/MuiAlert";
 
 const categoryOpt = [
-  {label: "전체",value: "전체",},
-  {label: "Coffee",value: "Coffee",},
-  {label: "Non-Coffee",value: "Non-Coffee",},
-  {label: "Ade/Juice",value: "Ade/Juice",},
-  {label: "Blended",value: "Blended",},
-  {label: "Tea",value: "Tea",},
-  {label: "Bread",value: "Bread",},
-  {label: "Bottle",value: "Bottle",},
+  { label: "전체", value: "전체" },
+  { label: "Coffee", value: "Coffee" },
+  { label: "Non-Coffee", value: "Non-Coffee" },
+  { label: "Ade/Juice", value: "Ade/Juice" },
+  { label: "Blended", value: "Blended" },
+  { label: "Tea", value: "Tea" },
+  { label: "Bread", value: "Bread" },
+  { label: "Bottle", value: "Bottle" },
 ]
 
 const salesStatusData = [
-  { value: 0, label: '전체' },
-  { value: 1, label: '판매중' },
-  { value: 2, label: '품절' },
-  { value: 3, label: '판매중지' },
-  { value: 4, label: '미설정' },
+  { label: '전체', value: 0 },
+  { label: '판매중', value: 1 },
+  { label: '품절', value: 2 },
+  { label: '판매중지', value: 3 },
+  { label: '미설정', value: 4 },
 ]
 
 const initialTableRows = [
-  { id: 1, orderNumber: 1, productID: 'P00001', categoryName: 'Coffee', productName: '에스프레소', storeName: '클라우드 카페', salesStatus: '미설정' },
-  { id: 2, orderNumber: 2, productID: 'P00002', categoryName: 'Coffee', productName: '캬라멜마끼아또', storeName: '클라우드 카페', salesStatus: '미설정' },
-  { id: 3, orderNumber: 3, productID: 'P00003', categoryName: 'Tea', productName: '유자차', storeName: '클라우드 9 카페', salesStatus: '판매중' },
-  { id: 4, orderNumber: 4, productID: 'P00004', categoryName: 'Tea', productName: '제로콜라', storeName: '클라우드 카페', salesStatus: '품절' },
-  { id: 5, orderNumber: 5, productID: 'P00005', categoryName: 'Bottle', productName: '에스프레소', storeName: '클라우드 카페', salesStatus: '판매중지' },
+  { 
+    id: 1, 
+    orderNumber: 1, 
+    productID: 'P00001', 
+    categoryName: 'Coffee', 
+    productName: '에스프레소', 
+    storeName: '클라우드 카페', 
+    salesStatus: '미설정' 
+  },
+  { 
+    id: 2, 
+    orderNumber: 2, 
+    productID: 'P00002', 
+    categoryName: 'Coffee', 
+    productName: '캬라멜마끼아또', 
+    storeName: '클라우드 카페', 
+    salesStatus: '미설정' 
+  },
+  { 
+    id: 3, 
+    orderNumber: 3, 
+    productID: 'P00003', 
+    categoryName: 'Tea', 
+    productName: '유자차', 
+    storeName: '클라우드 9 카페', 
+    salesStatus: '판매중' 
+  },
+  { 
+    id: 4, 
+    orderNumber: 4, 
+    productID: 'P00004', 
+    categoryName: 'Tea', 
+    productName: '제로콜라', 
+    storeName: '클라우드 카페', 
+    salesStatus: '품절' 
+  },
+  { 
+    id: 5, 
+    orderNumber: 5, 
+    productID: 'P00005', 
+    categoryName: 'Bottle', 
+    productName: '에스프레소', 
+    storeName: '클라우드 카페', 
+    salesStatus: '판매중지' 
+  },
 ];
 
 function SalesStatus() {
@@ -66,6 +106,13 @@ function SalesStatus() {
     } else if (alertNumber === 3) {
       setOpenAlert3(false);
     }
+  };
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
   };
 
   const [selectAll, setSelectAll] = useState(false);
@@ -208,7 +255,7 @@ function SalesStatus() {
           <Button onClick={() => navigate("/admin/store")} line size="xlarge">
             목록
           </Button>
-          <Button onClick={() => {}} btntype="c11" size="xlarge">
+          <Button onClick={handleOpen} btntype="c11" size="xlarge">
             저장
           </Button>
         </div>
@@ -252,6 +299,21 @@ function SalesStatus() {
                 아니오
               </Button>
               <Button onClick={() => handleCloseAlert(3)} border="point">
+                네
+              </Button>
+            </>
+          }
+        />
+        <MuiAlert
+          open={open}
+          onClose={handleClose}
+          title={<>입력한 내용을 <br />저장하시겠습니까?</>}
+          button={
+            <>
+              <Button onClick={handleClose} line>
+                아니오
+              </Button>
+              <Button onClick={() => navigate("/admin/store/register")} border="point">
                 네
               </Button>
             </>
