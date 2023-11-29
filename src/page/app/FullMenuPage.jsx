@@ -102,9 +102,9 @@ function FullMenuPage({ QR }) {
               <>
                 <Card
                   data={CoffeeData}
-                  onClick={() => {
-                    navigate("/qrorder");
-                  }}
+                  onClick={() =>
+                    navigate(`${QR === true ? "/qrorder" : "/order"}`)
+                  }
                 />
               </>
             ),
@@ -116,9 +116,9 @@ function FullMenuPage({ QR }) {
               <>
                 <Card
                   data={Coffee}
-                  onClick={() => {
-                    navigate("/qrorder");
-                  }}
+                  onClick={() =>
+                    navigate(`${QR === true ? "/qrorder" : "/order"}`)
+                  }
                 />
               </>
             ),
@@ -130,9 +130,9 @@ function FullMenuPage({ QR }) {
               <>
                 <Card
                   data={NonCoffee}
-                  onClick={() => {
-                    navigate("/qrorder");
-                  }}
+                  onClick={() =>
+                    navigate(`${QR === true ? "/qrorder" : "/order"}`)
+                  }
                 />
               </>
             ),
@@ -144,9 +144,9 @@ function FullMenuPage({ QR }) {
               <>
                 <Card
                   data={AdeJuice}
-                  onClick={() => {
-                    navigate("/qrorder");
-                  }}
+                  onClick={() =>
+                    navigate(`${QR === true ? "/qrorder" : "/order"}`)
+                  }
                 />
               </>
             ),
@@ -167,9 +167,9 @@ function FullMenuPage({ QR }) {
               <>
                 <Card
                   data={Tea}
-                  onClick={() => {
-                    navigate("/qrorder");
-                  }}
+                  onClick={() =>
+                    navigate(`${QR === true ? "/qrorder" : "/order"}`)
+                  }
                 />
               </>
             ),
