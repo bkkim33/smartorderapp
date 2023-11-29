@@ -61,12 +61,25 @@ export function Input({ onClick, ...others }) {
     noSpecialChars,
     certification,
     numtxt,
+    slice,
   } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
 
   const onChange = (e) => {
     let inputValue = e.target.value;
+    if (type === 'tel') {
+      inputValue.replace(/\D/g, "");
+      if (slice === 3){
+        inputValue.slice(0, 3);
+      }
+      if (slice === 4) {
+        inputValue.slice(0, 4);
+      } 
+      if (!Number(inputValue)) {
+        return;
+      }
+    }
     if (counton && inputValue.length > maxLength) {
       return;
     }
@@ -121,6 +134,7 @@ export function Input({ onClick, ...others }) {
     }
   }, [sec]);
 
+  
   
 
   return (
