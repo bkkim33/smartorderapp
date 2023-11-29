@@ -158,13 +158,16 @@ function ProductDetailPage() {
               <tr>
                 <th className="required">상품 카테고리</th>
                 <td>
-                  <Select options={categoryOpt} />
+                  <Select options={categoryOpt} defaultValue={0} />
                 </td>
               </tr>
               <tr>
                 <th className="required">상품명</th>
                 <td>
-                  <Input placeholder="상품명을 입력해주세요." />
+                  <Input
+                    placeholder="상품명을 입력해주세요."
+                    defaultValue="아메리카노"
+                  />
                 </td>
               </tr>
               <tr>
@@ -176,28 +179,58 @@ function ProductDetailPage() {
               <tr>
                 <th className="required">판매가</th>
                 <td>
-                  <Input placeholder="원" type="number"/>
+                  <Input
+                    placeholder="금액을 입력해주세요."
+                    type="number"
+                    defaultValue="3800"
+                    numtxt="원"
+                  />
                 </td>
               </tr>
               <tr>
                 <th>임직원 할인가</th>
                 <td>
-                  <Input placeholder="원" type="number" />
+                  <Input
+                    placeholder="금액을 입력해주세요."
+                    type="number"
+                    defaultValue="990"
+                    numtxt="원"
+                  />
                 </td>
               </tr>
               <tr>
                 <th>쿠폰할인 적용</th>
                 <td>
                   <div className="align start gap_8">
-                    <div>
-                      <Chip label="C0001" onClick={() => {}} globalClass="mr_8" />
-                      <Chip label="C0002" onClick={() => {}} globalClass="mr_8" />
-                      <Chip label="C0003" onClick={() => {}} globalClass="mr_8" />
-                      <Chip label="C0004" onClick={() => {}} />
+                    <div className="align start">
+                      <div className="item">
+                        <Button
+                          btntype="c11"
+                          onClick={handleOpen}
+                          size="small_h35"
+                        >
+                          쿠폰할인 선택
+                        </Button>
+                      </div>
+                      <div className="item">
+                        <Chip
+                          label="C0001"
+                          onClick={() => {}}
+                          globalClass="mr_8"
+                        />
+                        <Chip
+                          label="C0002"
+                          onClick={() => {}}
+                          globalClass="mr_8"
+                        />
+                        <Chip
+                          label="C0003"
+                          onClick={() => {}}
+                          globalClass="mr_8"
+                        />
+                        <Chip label="C0004" onClick={() => {}} />
+                      </div>
                     </div>
-                    <Button btntype="c11" onClick={handleOpen} size="small_h35">
-                      쿠폰할인 선택
-                    </Button>
                   </div>
                 </td>
               </tr>
@@ -218,6 +251,7 @@ function ProductDetailPage() {
                       <TableCell>옵션명</TableCell>
                       <TableCell>상세옵션명</TableCell>
                       <TableCell>옵션가</TableCell>
+                      <TableCell></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -285,16 +319,9 @@ function ProductDetailPage() {
                           >
                             옵션 삭제
                           </Button>
-                          <Button
-                            icon="Plus"
-                            line
-                            onClick={handleAddOption}
-                            size="icon_s_h35"
-                          >
-                            옵션명 추가
-                          </Button>
                         </div>
                       </TableCell>
+                      <TableCell className="noborder"></TableCell>
                     </TableRow>
                     <TableRow className="noborder">
                       <TableCell className="noborder">
@@ -332,6 +359,7 @@ function ProductDetailPage() {
                           </Button>
                         </div>
                       </TableCell>
+                      <TableCell className="noborder"></TableCell>
                     </TableRow>
                     <TableRow className="noborder">
                       <TableCell className="noborder">
@@ -369,6 +397,7 @@ function ProductDetailPage() {
                           </Button>
                         </div>
                       </TableCell>
+                      <TableCell className="noborder"></TableCell>
                     </TableRow>
                     <TableRow className="noborder">
                       <TableCell>
@@ -405,6 +434,16 @@ function ProductDetailPage() {
                             옵션 삭제
                           </Button>
                         </div>
+                      </TableCell>
+                      <TableCell>
+                        <Button
+                          icon="Plus"
+                          line
+                          onClick={() => {}}
+                          size="icon_s_h35"
+                        >
+                          옵션가 추가
+                        </Button>
                       </TableCell>
                     </TableRow>
                     <TableRow className="noborder">
@@ -471,16 +510,9 @@ function ProductDetailPage() {
                           >
                             옵션 삭제
                           </Button>
-                          <Button
-                            icon="Plus"
-                            line
-                            onClick={handleAddOption}
-                            size="icon_s_h35"
-                          >
-                            옵션명 추가
-                          </Button>
                         </div>
                       </TableCell>
+                      <TableCell className="noborder"></TableCell>
                     </TableRow>
                     <TableRow className="noborder">
                       <TableCell className="noborder">
@@ -518,6 +550,7 @@ function ProductDetailPage() {
                           </Button>
                         </div>
                       </TableCell>
+                      <TableCell className="noborder"></TableCell>
                     </TableRow>
                     <TableRow className="noborder">
                       <TableCell className="noborder">
@@ -555,6 +588,7 @@ function ProductDetailPage() {
                           </Button>
                         </div>
                       </TableCell>
+                      <TableCell className="noborder"></TableCell>
                     </TableRow>
                     <TableRow className="noborder">
                       <TableCell>
@@ -591,6 +625,16 @@ function ProductDetailPage() {
                             옵션 삭제
                           </Button>
                         </div>
+                      </TableCell>
+                      <TableCell>
+                        <Button
+                          icon="Plus"
+                          line
+                          onClick={() => {}}
+                          size="icon_s_h35"
+                        >
+                          옵션가 추가
+                        </Button>
                       </TableCell>
                     </TableRow>
                   </TableBody>

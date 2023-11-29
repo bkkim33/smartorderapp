@@ -282,11 +282,12 @@ function StoreListPage() {
           onClose={handleClose}
           title={
             <>
-              가맹점을 삭제하면{" "}
+              가맹점을 삭제하면 <br />
               <span className="red_text">
                 가맹점에 연결된 모든 정보가 삭제되며, 삭제된 가맹점은 복구되지
                 않습니다.
-              </span>{" "}
+              </span>
+              <br />
               가맹점을 삭제하시겠습니까?
             </>
           }

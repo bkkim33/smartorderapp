@@ -60,6 +60,7 @@ export function Input({ onClick, ...others }) {
     numericOnly,
     noSpecialChars,
     certification,
+    numtxt,
   } = others;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
@@ -170,11 +171,11 @@ export function Input({ onClick, ...others }) {
           {value.length}/{maxLength}
         </span>
       )}
-      {/* {type === "password" && (
+      {type === "number" && (
         <>
-          <Icons.EyesOn />
+          <p>{numtxt}</p>
         </>
-      )} */}
+      )}
       {type === "search" && (
         <>
           <button
