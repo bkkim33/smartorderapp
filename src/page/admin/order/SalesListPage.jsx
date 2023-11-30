@@ -160,13 +160,11 @@ function SalesListPage() {
         >
           <tr>
             <th>매장명</th>
-            <td colSpan={3}>
+            <td>
               <Select defaultValue={0} options={storeNameOpt} />
             </td>
-          </tr>
-          <tr>
             <th>상품명</th>
-            <td colSpan={3}>
+            <td>
               <Select defaultValue={0} options={categoryOpt} />
             </td>
           </tr>
@@ -183,7 +181,7 @@ function SalesListPage() {
           <tr>
             <th>기간설정</th>
             <td colSpan={3}>
-              <div className="align start mb_8 gap_5">
+              <div className="align start gap_5">
                 {dateFilterOptions.map((option) => (
                   <Button
                     key={option.value}
@@ -194,34 +192,21 @@ function SalesListPage() {
                     {option.label}
                   </Button>
                 ))}
-              </div>
-              <div className="align">
-                <DatePicker
-                  dateFormat="yyyy/MM/dd"
-                  selected={startDate}
-                  className={"date_picker"}
-                  selectsRange={true}
-                  startDate={startDate}
-                  endDate={endDate}
-                  onChange={(update) => {
-                    setDateRange(update);
-                  }}
-                  isClearable={false}
-                  placeholderText="날짜를 선택해 주세요."
-                />
-                {/* <Input
-                  type="date"
-                  onClick={() => {}}
-                  placeholder="시작 날짜"
-                  onChange={(e) => setStartDate(e.target.value)}
-                />
-                <span className="mlr_10">~</span>
-                <Input
-                  type="date"
-                  onClick={() => {}}
-                  placeholder="종료 날짜"
-                  onChange={(e) => setEndDate(e.target.value)}
-                /> */}
+                <div className="item" style={{ minWidth: "400px" }}>
+                  <DatePicker
+                    dateFormat="yyyy/MM/dd"
+                    selected={startDate}
+                    className={"date_picker"}
+                    selectsRange={true}
+                    startDate={startDate}
+                    endDate={endDate}
+                    onChange={(update) => {
+                      setDateRange(update);
+                    }}
+                    isClearable={false}
+                    placeholderText="날짜를 선택해 주세요."
+                  />
+                </div>
               </div>
             </td>
           </tr>

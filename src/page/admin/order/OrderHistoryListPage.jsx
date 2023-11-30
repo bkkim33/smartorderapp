@@ -81,21 +81,23 @@ function OrderHistoryListPage() {
         >
           <tr>
             <th>주문자(소속)</th>
-            <td colSpan={3}>
+            <td>
               <Select maxwidth="300px" defaultValue={0} options={categoryOpt} />
             </td>
-          </tr>
-          <tr>
             <th>매장명</th>
-            <td colSpan={3}>
-              <Select maxwidth="300px" defaultValue={0} options={storeNameOpt} />
+            <td>
+              <Select
+                maxwidth="300px"
+                defaultValue={0}
+                options={storeNameOpt}
+              />
             </td>
           </tr>
           <tr>
             <th>기간설정</th>
             <td colSpan={3}>
               {/* 임시 */}
-              <div className="align start mb_8 gap_5">
+              <div className="align start gap_5">
                 {dateFilterOptions.map((option) => (
                   <Button
                     key={option.value}
@@ -106,28 +108,21 @@ function OrderHistoryListPage() {
                     {option.label}
                   </Button>
                 ))}
-              </div>
-              <div className="align">
-                <DatePicker
-                  dateFormat="yyyy/MM/dd"
-                  selected={startDate}
-                  className={"date_picker"}
-                  selectsRange={true}
-                  startDate={startDate}
-                  endDate={endDate}
-                  onChange={(update) => {
-                    setDateRange(update);
-                  }}
-                  isClearable={false}
-                  placeholderText="날짜를 선택해 주세요."
-                />
-                {/* <span className="mlr_10">~</span>
-                <Input
-                  type="date"
-                  onClick={() => {}}
-                  placeholder="종료 날짜"
-                  onChange={(e) => setEndDate(e.target.value)}
-                /> */}
+                <div className="item" style={{minWidth: '400px'}}>
+                  <DatePicker
+                    dateFormat="yyyy/MM/dd"
+                    selected={startDate}
+                    className={"date_picker"}
+                    selectsRange={true}
+                    startDate={startDate}
+                    endDate={endDate}
+                    onChange={(update) => {
+                      setDateRange(update);
+                    }}
+                    isClearable={false}
+                    placeholderText="날짜를 선택해 주세요."
+                  />
+                </div>
               </div>
             </td>
           </tr>
@@ -177,20 +172,28 @@ function OrderHistoryListPage() {
                   <TableCell>000000</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell><Link onClick={handleOpen}>에스프레소 1개 외</Link></TableCell>
+                  <TableCell>
+                    <Link onClick={handleOpen}>에스프레소 1개 외</Link>
+                  </TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>클라우드 카페</TableCell>
-                  <TableCell className="right"><Link onClick={handleOpen}>8,280원</Link></TableCell>
+                  <TableCell className="right">
+                    <Link onClick={handleOpen}>8,280원</Link>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>2</TableCell>
                   <TableCell>000001</TableCell>
                   <TableCell>메가존 클라우드</TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell><Link onClick={handleOpen}>에스프레소 1개 외</Link></TableCell>
+                  <TableCell>
+                    <Link onClick={handleOpen}>에스프레소 1개 외</Link>
+                  </TableCell>
                   <TableCell>2023.10.24 09:27:10</TableCell>
                   <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell className="right"><Link onClick={handleOpen}>4,280원</Link></TableCell>
+                  <TableCell className="right">
+                    <Link onClick={handleOpen}>4,280원</Link>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>3</TableCell>
