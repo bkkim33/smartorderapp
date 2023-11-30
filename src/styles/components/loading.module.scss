@@ -1,0 +1,121 @@
+.loading {
+  &_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  &_box {
+    overflow: hidden;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+  }
+  &_item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0) scale(0.48);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    div {
+      box-sizing: content-box;
+      div {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #7eb543;
+        animation: loading 1s linear infinite;
+      }
+      > &:nth-child(1) {
+        transform: rotate(0deg);
+        transform-origin: 85px 50px;        
+      }
+      &:nth-child(1) {
+        > div {
+          left: 79px;
+          top: 44px;
+          animation-delay: -0.875s;
+        }
+      }      
+      &:nth-child(2) {
+        transform: rotate(45deg);
+        transform-origin: 75px 75px;
+        > div {
+          left: 69px;
+          top: 69px;
+          animation-delay: -0.75s;
+        }
+      }
+      &:nth-child(3) {
+        transform: rotate(90deg);
+        transform-origin: 50px 85px;
+        > div {
+          left: 44px;
+          top: 79px;
+          animation-delay: -0.625s;
+        }
+      }
+      &:nth-child(4) {
+        transform: rotate(135deg);
+        transform-origin: 25px 75px;
+        > div {
+          left: 19px;
+          top: 69px;
+          animation-delay: -0.5s;
+        }
+      }
+      &:nth-child(5) {
+        transform: rotate(180deg);
+        transform-origin: 15px 50px;
+        > div {
+          left: 9px;
+          top: 44px;
+          animation-delay: -0.375s;
+        }
+      }
+      &:nth-child(6) {
+        transform: rotate(225deg);
+        transform-origin: 25px 25px;
+        > div {
+          left: 19px;
+          top: 19px;
+          animation-delay: -0.25s;
+        }
+      }
+      &:nth-child(7) {
+        transform: rotate(270deg);
+        transform-origin: 50px 15px;
+        > div {
+          left: 44px;
+          top: 9px;
+          animation-delay: -0.125s;
+        }
+      }
+      &:nth-child(8) {
+        transform: rotate(315deg);
+        transform-origin: 75px 25px;
+        > div {
+          left: 69px;
+          top: 19px;
+          animation-delay: 0s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.5, 1.5);
+  }
+  100% {
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1);
+  }
+}

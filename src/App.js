@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-
+import Loading from "./components/Loading";
 // KDS import
 import KDSLogin from "./page/kds/login/KDSLoginPage";
 // 비밀번호 변경
@@ -99,6 +99,7 @@ function App() {
     <Routes>
       {/* APP : 각 페이지에 레이어 팝업이 있을시 페이지 내부에 존재합니다. */}
       <Route>
+        <Route exact path="/loading" element={<Loading />} />
         {/* APP로그인 */}
         <Route exact path="/" element={<AppLogin />} />
         {/* APP 메일인증 */}
