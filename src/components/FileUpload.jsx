@@ -32,23 +32,38 @@ const FileUpload = forwardRef((props, ref) => {
   
   return (
     <div className={styles.fileUpload}>
-       <input
-         type="file"
-         multiple
-         onChange={handleFileChange}
-         ref={(input) => {
-           inputRef.current = input;
-           if (ref) {
-             ref.current = input;
-           }
-         }}
-       />
-       <Button onClick={triggerInputFile} className={styles.uploadButton} size="small_h35" btntype="c11">
-         파일업로드
-       </Button>
-       {visible && selectedFiles.map((file, index) => (
-          <Chip key={index} label={file.name} onClick={() => handleDelete(index)} globalClass="mt_10 mr_8"/> 
-       ))}
+      <input
+        type="file"
+        multiple
+        onChange={handleFileChange}
+        ref={(input) => {
+          inputRef.current = input;
+          if (ref) {
+            ref.current = input;
+          }
+        }}
+      />
+      <div className="item">
+        <Button
+          onClick={triggerInputFile}
+          className={styles.uploadButton}
+          size="small_h35"
+          btntype="c11"
+        >
+          파일업로드
+        </Button>
+      </div>
+      <div className="item">
+        {visible &&
+          selectedFiles.map((file, index) => (
+            <Chip
+              key={index}
+              label={file.name}
+              onClick={() => handleDelete(index)}
+              globalClass="mr_8"
+            />
+          ))}
+      </div>
     </div>
   );
 });

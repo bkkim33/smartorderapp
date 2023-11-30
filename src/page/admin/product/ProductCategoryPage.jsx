@@ -15,10 +15,10 @@ import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
 
 const initialCategoryData = [
-  { id: 1, order: 1, category: <Input defaultValue="Coffee" /> },
-  { id: 2, order: 2, category: <Input defaultValue="Non-Coffee" /> },
-  { id: 3, order: 3, category: <Input defaultValue="Ade/Juice" /> },
-  { id: 4, order: 4, category: <Input defaultValue="Blended" /> },
+  { id: 1, order: 1, category: <Input defaultValue="Coffee" disabled /> },
+  { id: 2, order: 2, category: <Input defaultValue="Non-Coffee" disabled /> },
+  { id: 3, order: 3, category: <Input defaultValue="Ade/Juice" disabled /> },
+  { id: 4, order: 4, category: <Input defaultValue="Blended" disabled /> },
 ];
 
 function ProductCategoryPage() {
@@ -67,7 +67,7 @@ function ProductCategoryPage() {
   };
 
   const handleTableRowClick = (id) => {
-    console.log("되고 있냐?", id);
+    // console.log("되고 있냐?", id);
   };
 
   return (

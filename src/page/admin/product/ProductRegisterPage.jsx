@@ -134,17 +134,17 @@ function ProductRegisterPage() {
               colgroup={
                 <>
                   <col width="15%" />
-                  <col />
+                  <col width="auto" />
+                  <col width="15%" />
+                  <col width="auto" />
                 </>
               }
             >
               <tr>
                 <th className="required">상품 카테고리</th>
                 <td>
-                  <Select options={categoryOpt} />
+                  <Select maxwidth="300px" options={categoryOpt} />
                 </td>
-              </tr>
-              <tr>
                 <th className="required">상품명</th>
                 <td>
                   <Input placeholder="상품명을 입력해주세요." />
@@ -152,8 +152,10 @@ function ProductRegisterPage() {
               </tr>
               <tr>
                 <th className="required">상품 이미지</th>
-                <td>
-                  <FileUpload onChange={() => {}} />
+                <td colSpan={3}>
+                  <div className="align start">
+                    <FileUpload onChange={() => {}} />
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -165,8 +167,6 @@ function ProductRegisterPage() {
                     numtxt="원"
                   />
                 </td>
-              </tr>
-              <tr>
                 <th>임직원 할인가</th>
                 <td>
                   <Input
@@ -178,36 +178,34 @@ function ProductRegisterPage() {
               </tr>
               <tr>
                 <th>쿠폰할인 적용</th>
-                <td>
-                  <div className="align start gap_8">
-                    <div className="align">
-                      <div className="lft">
-                        <Button
-                          btntype="c11"
-                          onClick={handleOpen}
-                          size="small_h35"
-                        >
-                          쿠폰할인 선택
-                        </Button>
-                      </div>
-                      <div className="rgt">
-                        <Chip
-                          label="C0001"
-                          onClick={() => {}}
-                          globalClass="mr_8"
-                        />
-                        <Chip
-                          label="C0002"
-                          onClick={() => {}}
-                          globalClass="mr_8"
-                        />
-                        <Chip
-                          label="C0003"
-                          onClick={() => {}}
-                          globalClass="mr_8"
-                        />
-                        <Chip label="C0004" onClick={() => {}} />
-                      </div>
+                <td colSpan={3}>
+                  <div className="align start">
+                    <div className="item">
+                      <Button
+                        btntype="c11"
+                        onClick={handleOpen}
+                        size="small_h35"
+                      >
+                        쿠폰할인 선택
+                      </Button>
+                    </div>
+                    <div className="item">
+                      <Chip
+                        label="C0001"
+                        onClick={() => {}}
+                        globalClass="mr_8"
+                      />
+                      <Chip
+                        label="C0002"
+                        onClick={() => {}}
+                        globalClass="mr_8"
+                      />
+                      <Chip
+                        label="C0003"
+                        onClick={() => {}}
+                        globalClass="mr_8"
+                      />
+                      <Chip label="C0004" onClick={() => {}} />
                     </div>
                   </div>
                 </td>
@@ -305,11 +303,7 @@ function ProductRegisterPage() {
               <Button onClick={() => navigate(-1 || "/")} size="xlarge" line>
                 취소
               </Button>
-              <Button
-                onClick={handleOpen02}
-                size="xlarge"
-                btntype="c11"
-              >
+              <Button onClick={handleOpen02} size="xlarge" btntype="c11">
                 저장
               </Button>
             </div>
@@ -398,7 +392,10 @@ function ProductRegisterPage() {
             <Button onClick={handleClose02} line>
               아니오
             </Button>
-            <Button onClick={() => navigate("/admin/product/product/detail")} border="point">
+            <Button
+              onClick={() => navigate("/admin/product/product/detail")}
+              border="point"
+            >
               네
             </Button>
           </>

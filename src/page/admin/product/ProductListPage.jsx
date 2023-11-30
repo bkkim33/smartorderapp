@@ -148,11 +148,15 @@ function ProductListPage() {
           <tr>
             <th>상품 카테고리</th>
             <td>
-              <Select width="350px" defaultValue={0} options={categoryOpt} />
+              <Select maxwidth="300px" defaultValue={0} options={categoryOpt} />
             </td>
             <th>판매 매장</th>
             <td>
-              <Select width="350px" defaultValue={0} options={storeNameOpt} />
+              <Select
+                maxwidth="300px"
+                defaultValue={0}
+                options={storeNameOpt}
+              />
             </td>
           </tr>
           <tr>
@@ -229,11 +233,31 @@ function ProductListPage() {
                         onChange={() => handleCheckboxChange(row.id)}
                       />
                     </TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.id}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.affiliation}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.productId}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.productName}</TableCell>
-                    <TableCell onClick={() => navigate("/admin/product/product/detail")}>{row.role}</TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.id}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.affiliation}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.productId}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.productName}
+                    </TableCell>
+                    <TableCell
+                      onClick={() => navigate("/admin/product/product/detail")}
+                    >
+                      {row.role}
+                    </TableCell>
                   </TableRow>
                 ))}
                 <TableRow>
