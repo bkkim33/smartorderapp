@@ -14,15 +14,14 @@ CoffeeCard.defaultProps = {
   price: 3500,
 };
 
-export function CoffeeCard({ data, globalstyle, onClick, notsold }) {
-
+export function CoffeeCard({ data, globalstyle, onClick }) {
   return (
     <div className={`${styles.card_box} ${globalstyle | ""}`}>
       {data.map((Coffee) => (
         <button
           key={Coffee.id}
           className={`${styles.card}`}
-          onClick={`${!Coffee.notsold ? onClick : {}}`}
+          onClick={!Coffee.notsold ? onClick : () => {}}
         >
           <div
             className={`${styles.card_img_box} ${"mb_15"} ${
