@@ -13,6 +13,7 @@ const CoffeeData = [
     price: 3500,
     type: "coffee",
     favorites: true,
+    notsold: false,
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const CoffeeData = [
     price: 4000,
     type: "coffee",
     favorites: false,
+    notsold: false,
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const CoffeeData = [
     price: 4300,
     type: "coffee",
     favorites: false,
+    notsold: false,
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ const CoffeeData = [
     price: 3500,
     type: "coffee",
     favorites: false,
+    notsold: false,
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ const CoffeeData = [
     price: 4500,
     type: "adejuice",
     favorites: false,
+    notsold: "미판매",
   },
   {
     id: 6,
@@ -53,6 +58,7 @@ const CoffeeData = [
     price: 5500,
     type: "noncoffee",
     favorites: true,
+    notsold: "미판매",
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ const CoffeeData = [
     price: 5500,
     type: "adejuice",
     favorites: false,
+    notsold: "미판매",
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ const CoffeeData = [
     price: 4000,
     type: "tea",
     favorites: false,
+    notsold: false,
   },
 ];
 

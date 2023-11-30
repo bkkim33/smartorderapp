@@ -4,6 +4,22 @@
 .card {
   max-width: 360px;
   width: calc(50% - 7.5px);
+  .dimd{
+    position: relative;
+    z-index: 999;
+    p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      position: absolute;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--cff);
+    }
+  }
   &_box{
     width: 100%;
     display: flex;
