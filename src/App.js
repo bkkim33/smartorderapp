@@ -1,5 +1,8 @@
 import { Route, Routes } from "react-router-dom";
+
+import Error from "./page/Error";
 import Loading from "./components/Loading";
+
 // KDS import
 import KDSLogin from "./page/kds/login/KDSLoginPage";
 // 비밀번호 변경
@@ -97,9 +100,51 @@ import OrderComplete from "./page/app/ordercomplete/OrderComplete";
 function App() {
   return (
     <Routes>
+      <Route>
+        {/* 공통 */}
+        <Route
+          exact
+          path="/error503"
+          element={
+            <Error
+              title="시스템 점검중"
+              txt={"지금은 시스템 점검중입니다.\n 잠시 후 다시 이용해 주세요."}
+              type="503"
+            />
+          }
+        />
+        <Route
+          exact
+          path="/error403"
+          element={
+            <Error
+              title="페이지 접근 불가"
+              txt={
+                "원하시는 페이지를 찾을 수 없습니다.\n 잠시 후 다시 이용해 주세요."
+              }
+              type="403"
+              btn
+            />
+          }
+        />
+        <Route
+          exact
+          path="/error404"
+          element={
+            <Error
+              title="페이지 없음"
+              txt={
+                "원하시는 페이지를 찾을 수 없습니다.\n 잠시 후 다시 이용해 주세요."
+              }
+              type="404"
+              btn
+            />
+          }
+        />
+        <Route exact path="/loading" element={<Loading />} />
+      </Route>
       {/* APP : 각 페이지에 레이어 팝업이 있을시 페이지 내부에 존재합니다. */}
       <Route>
-        <Route exact path="/loading" element={<Loading />} />
         {/* APP로그인 */}
         <Route exact path="/" element={<AppLogin />} />
         {/* APP 메일인증 */}

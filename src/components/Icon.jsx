@@ -809,6 +809,84 @@ const Setting = ({ width = 19, height = 20, fill = "var(--primary)" }) => (
   </svg>
 );
 
+const Error = ({ width = 63, height = 63, fill = "#ED5151" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 63 63"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="31.5"
+      cy="31.5"
+      r="29"
+      fill="white"
+      stroke={fill}
+      strokeWidth="5"
+    />
+    <rect
+      x="39.9854"
+      y="19"
+      width="5"
+      height="29"
+      rx="2.5"
+      transform="rotate(45 39.9854 19)"
+      fill={fill}
+    />
+    <rect
+      x="19.4941"
+      y="22.5355"
+      width="5"
+      height="29"
+      rx="2.5"
+      transform="rotate(-45 19.4941 22.5355)"
+      fill={fill}
+    />
+  </svg>
+);
+
+const ErrorWarning = ({ width = 63, height = 63, fill = "#ED5151" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 63 63"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="31.5"
+      cy="31.5"
+      r="29"
+      fill="white"
+      stroke={fill}
+      strokeWidth="5"
+    />
+    <path d="M12 50L53 12" stroke={fill} strokeWidth="5" />
+  </svg>
+);
+
+const ErrorInfo = ({ width = 63, height = 63, fill = "#ED5151" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 63 63"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="31.5"
+      cy="31.5"
+      r="29"
+      fill="white"
+      stroke={fill}
+      strokeWidth="5"
+    />
+    <rect x="29" y="16" width="5" height="21" rx="2.5" fill={fill} />
+    <circle cx="31.5" cy="42.5" r="2.5" fill={fill} />
+  </svg>
+);
+
 export const Icons = {
   Logo,
   LogoIcon,
@@ -846,4 +924,7 @@ export const Icons = {
   AdminArrowBar,
   Check,
   Setting,
+  Error,
+  ErrorWarning,
+  ErrorInfo,
 };

@@ -1,0 +1,32 @@
+.error {
+  &_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  &_box {
+    overflow: hidden;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  &_title{
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+  }
+  &_txt{
+    white-space: pre-line;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #777;
+    line-height: 26px;
+  }
+}
+
