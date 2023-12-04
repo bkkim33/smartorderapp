@@ -25,9 +25,6 @@
       margin-right: 0;
     }
   }
-  span{
-    // flex:1;
-  }
   &.border{
     border: 1px solid var(--primary);
     color: var(--c11);
@@ -50,8 +47,9 @@
 .medium{
   min-width: 105px;
   &_40{
-  min-height: 40px;
-
+    min-width: 95px;
+    min-height: 40px;
+    @include h5(var(--c00));
   }
 }
 

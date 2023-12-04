@@ -4,7 +4,17 @@
   &_wrap{
     max-width: 380px;
     margin: 0;
-    border-radius: 0;
+    border-radius: 8px;
+  }
+  &.minwidth{
+    .alert_wrap{
+      min-width: 350px;
+      max-width: 100%;
+    }
+    .alert_box{
+      min-height: 210px;
+      padding: 30px;
+    }
   }
   &_box{
     min-height: 202px;
@@ -32,10 +42,10 @@
   &_btn{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 13px;
     button {
-      width: 100%; 
+      // width: 100%; 
     }
   }
 }

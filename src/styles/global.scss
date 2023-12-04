@@ -94,7 +94,9 @@
           border-bottom: none;
         }
       }
-
+      th{
+        @include body2(var(--c33));
+      }
       td {
         font-family: 'Pretendard';
         padding: 20px 10px;

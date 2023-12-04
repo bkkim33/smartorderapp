@@ -58,7 +58,7 @@ function ChangePassword() {
         <div className="admin_myprofile">
           <Table
             globalClass="changepasswordbox"
-            colgroup={[<col key="col1" width="20%" />, <col key="col2" />]}
+            colgroup={[<col key="col1" width="10%" />, <col key="col2" />]}
           >
             <tr key="currentPassword">
               <th>현재 비밀번호</th>
@@ -66,6 +66,7 @@ function ChangePassword() {
                 <Input
                   placeholder="현재 비밀번호 입력"
                   type="password"
+                  width="400px"
                 />
                 {errorMessages.currentPasswordError && (
                   <div className="error_txt mt_5 ml_5">
@@ -81,6 +82,7 @@ function ChangePassword() {
                   type="password"
                   placeholder="4~20자의 영문, 숫자 특수문자 조합으로 입력"
                   maxLength={20}
+                  width="400px"
                 />
                 {errorMessages.newPasswordError && (
                   <div
@@ -98,6 +100,7 @@ function ChangePassword() {
                 <Input
                   type="password"
                   placeholder="새로운 비밀번호 재입력"
+                  width="400px"
                 />
                 {errorMessages.confirmPasswordError && (
                   <div className="error_txt mt_5 ml_5">
@@ -114,7 +117,7 @@ function ChangePassword() {
                 handleOpen();
               }}
               btntype="c11"
-              size="xlarge"
+              size="medium_40"
             >
               확인
             </Button>
@@ -126,14 +129,15 @@ function ChangePassword() {
           title={<>비밀번호를 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} line size="medium_40">
                 취소
               </Button>
-              <Button onClick={handleOpen02} border="point">
+              <Button onClick={handleOpen02} border="point" size="medium_40">
                 확인
               </Button>
             </>
           }
+          minWidth
         />
         <MuiAlert
           open={open02}
@@ -147,14 +151,12 @@ function ChangePassword() {
           }
           button={
             <>
-              <Button
-                onClick={() => navigate("/admin")}
-                border="point"
-              >
+              <Button onClick={() => navigate("/admin")} border="point">
                 확인
               </Button>
             </>
           }
+          minWidth
         />
       </ContentBox>
     </Layout>

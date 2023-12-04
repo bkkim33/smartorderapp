@@ -136,11 +136,14 @@ function ProductListPage() {
       <hr className="primary" />
       <ContentBox top>
         <Table
+          search
           colgroup={
             <>
-              <col width="15%" />
+              <col width="10%" />
               <col width="auto" />
-              <col width="15%" />
+              <col width="10%" />
+              <col width="auto" />
+              <col width="10%" />
               <col width="auto" />
             </>
           }
@@ -148,20 +151,14 @@ function ProductListPage() {
           <tr>
             <th>상품 카테고리</th>
             <td>
-              <Select maxwidth="300px" defaultValue={0} options={categoryOpt} />
+              <Select defaultValue={0} options={categoryOpt} />
             </td>
             <th>판매 매장</th>
             <td>
-              <Select
-                maxwidth="300px"
-                defaultValue={0}
-                options={storeNameOpt}
-              />
+              <Select defaultValue={0} options={storeNameOpt} />
             </td>
-          </tr>
-          <tr>
             <th> 상품검색 (ID, 상품명)</th>
-            <td colSpan={3}>
+            <td>
               <Input
                 onClick={() => {}}
                 placeholder="상품ID 또는 상품명을 입력해주세요."
@@ -170,7 +167,15 @@ function ProductListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} btntype="c11" size="xlarge">
+          {/* <Button onClick={handleOpen} line btntype="c11" size="medium_40">
+            초기화
+          </Button> */}
+          <Button
+            onClick={handleOpen}
+            btntype="c11"
+            size="medium_40"
+            // globalClass="ml_10"
+          >
             검색
           </Button>
         </div>

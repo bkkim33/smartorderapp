@@ -121,7 +121,8 @@
   &__placeholder{
     @include body2(var(--c99)); 
     font-size: 1.6rem;
-    @include clamp(1)
+    @include clamp(1);
+    text-align: left;
   }
   &__menu{
     z-index: 2;
@@ -137,6 +138,7 @@
   &__option{
     @include body2();
     padding: 13px;
+    text-align: left;
     &--is-selected{
       font-weight: 700;
       color: var(--c11);

@@ -18,7 +18,7 @@ function Profile() {
       <hr className="primary" />
       <ContentBox>
         <div className="admin_myprofile">
-          <Table colgroup={[<col width="20%" />, <col />]}>
+          <Table colgroup={[<col width="10%" />, <col width="auto" />]}>
             <tr>
               <th>소속</th>
               <td>메가존 디지털</td>
@@ -45,7 +45,7 @@ function Profile() {
               <th>비밀번호</th>
               <td className="align start passwordbox">
                 <Input
-                  width="170px"
+                  width="200px"
                   type="password"
                   placeholder="비밀번호를 입력해 주세요."
                   globalClass="password"
@@ -55,7 +55,7 @@ function Profile() {
                 />
                 <Button
                   onClick={() => navigate("/admin/myprofile/changepassword")}
-                  size="xsmall"
+                  size="medium_40"
                 >
                   변경
                 </Button>

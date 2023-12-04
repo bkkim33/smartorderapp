@@ -8,7 +8,7 @@ MuiAlert.propTypes = {};
 
 MuiAlert.defaultProps = {};
 
-export function MuiAlert({ open, onClose, title, button, desc }) {
+export function MuiAlert({ open, onClose, title, button, desc, minWidth }) {
   return (
     <div>
       <Dialog
@@ -16,7 +16,7 @@ export function MuiAlert({ open, onClose, title, button, desc }) {
         onClose={onClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        className={`${styles.alert}`}
+        className={`${styles.alert} ${minWidth ? styles.minwidth : ""}`}
         classes={{
           paper: styles.alert_wrap,
         }}
@@ -27,7 +27,7 @@ export function MuiAlert({ open, onClose, title, button, desc }) {
             <p className={`${styles.alert_desc}`}>{<>{desc}</>}</p>
           </div>
           {button && <div className={`${styles.alert_btn}`}>{button}</div>}
-        </div>        
+        </div>
       </Dialog>
     </div>
   );
