@@ -11,8 +11,10 @@ function HeaderLayout() {
 
   return (
     <header className={`${styles.header}`}>
-      <Icons.AdminLogo width={"100%"} height={50} fill="#303033" />
-      <div className={`${styles.user_util} ${"mt_20"}`}>
+      <div className='pt_50'>
+        <Icons.AdminHeaderLogo width={"100%"} height={66} fill="#303033" />
+      </div>
+      <div className={`${styles.user_util} ${"mt_30"}`}>
         <button
           onClick={() => navigate("/admin/myprofile/profile")}
           className={`${styles.user_button} ${""}`}
@@ -30,7 +32,7 @@ function HeaderLayout() {
         </button>
       </div>
 
-      <SideMenu globalstyle="mt_30" />
+      <SideMenu globalstyle="mt_50" />
     </header>
   );
 }
