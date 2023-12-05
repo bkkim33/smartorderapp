@@ -78,7 +78,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
   const mergedIconStyle = { ...iconStyle };
   // const appClass = app ? `color-${color}` : ``;
   const appClass = `type-${btntype}`;
-  // 진현주 - 탭버튼일 때 default 
+  // 탭버튼일 때 default 
   const tabdefault = active ? 'active' : '';
 
   return (

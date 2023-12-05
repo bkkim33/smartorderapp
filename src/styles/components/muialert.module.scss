@@ -32,10 +32,10 @@
   &_btn{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 13px;
-    button {
-      width: 100%; 
-    }
+    // button {
+    //   width: 100%; 
+    // }
   }
 }

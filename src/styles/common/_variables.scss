@@ -43,28 +43,27 @@
 
 @mixin body1($color: var(--c00)) {
   font-size: 1.5rem;
-  font-weight: 400; //extra-bold
+  font-weight: 400; //normal
   color: $color;
 }
 
 @mixin body2($color: var(--c00)) {
   font-size: 1.4rem;
-  font-weight: 400; //extra-bold
+  font-weight: 400; //normal
   color: $color;
 }
 
 @mixin body3($color: var(--c00)) {
   font-size: 1.3rem;
-  font-weight: 400; //extra-bold
+  font-weight: 400; //normal
   color: $color;
 }
 
 @mixin body4($color: var(--c00)) {
   font-size: 1.2rem;
-  font-weight: 400; //extra-bold
+  font-weight: 400; //normal
   color: $color;
 }
-
 
 //믹스인 공통영역
 @mixin rounded($radius) {

@@ -168,7 +168,6 @@ export function Input({ onClick, ...others }) {
           <span className={`${styles.delete}`} />
         </button>
       )}
-      {/* 진현주 - disabled시 인증요청 button=none 작업 추가 (내정보 페이지에 사용)*/}
       {!disabled && phone === true && (
         <button onClick={onClick} className={`${styles.certification}`}>
           {!certification && <>인증요청</>}
