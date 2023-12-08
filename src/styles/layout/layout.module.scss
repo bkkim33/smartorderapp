@@ -185,7 +185,7 @@
       > div{
         background-color: var(--cff);
         @include shadow(0, 2px, 4px, rgba(0,0,0,0.1));
-        padding: 12px 20px;
+        padding: 8px 20px 7px;
         border-radius: 8px;
         & + div{
           margin-left: 10px;
