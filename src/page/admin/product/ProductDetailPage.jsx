@@ -30,6 +30,37 @@ const categoryOpt = [
   { label: 'Bottle', value: 'Bottle' },
 ];
 
+const initialTableRows = [
+  {
+    id: 0,
+    code: "C0001",
+    name: "아메리카노1잔",
+    discount: "-3,800",
+    selected: false,
+  },
+  {
+    id: 1,
+    code: "C0002",
+    name: "모든음료1잔",
+    discount: "0",
+    selected: false,
+  },
+  {
+    id: 2,
+    code: "C0003",
+    name: "아메리카노1잔",
+    discount: "-3,800",
+    selected: false,
+  },
+  {
+    id: 3,
+    code: "C0004",
+    name: "모든음료1잔",
+    discount: "0",
+    selected: false,
+  },
+];
+
 function ProductDetailPage() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -39,6 +70,7 @@ function ProductDetailPage() {
   const handleClose = () => {
     setOpen(false);
   };
+
   const [open02, setOpen02] = useState(false);
   const handleOpen02 = () => {
     setOpen02(true);
@@ -47,56 +79,28 @@ function ProductDetailPage() {
     setOpen02(false);
   };
 
-  const [data, setData] = useState([
-    {
-      id: 0,
-      code: "C0001",
-      name: "[방문] 아메리카노1잔",
-      discount: "-3,800",
-      selected: false,
-    },
-    {
-      id: 1,
-      code: "C0002",
-      name: "[방문] 모든음료1잔",
-      discount: "0",
-      selected: false,
-    },
-    {
-      id: 2,
-      code: "C0003",
-      name: "[입사] 아메리카노1잔",
-      discount: "-3,800",
-      selected: false,
-    },
-    {
-      id: 3,
-      code: "C0004",
-      name: "[입사] 모든음료1잔",
-      discount: "0",
-      selected: false,
-    },
-  ]);
-
   const [selectAll, setSelectAll] = useState(false);
+  const [checkedItems, setCheckedItems] = useState({});
 
   const handleSelectAll = () => {
-    const updatedSelectAll = !selectAll;
-    setSelectAll(updatedSelectAll);
-    const updatedData = data.map((item) => ({
-      ...item,
-      selected: updatedSelectAll,
-    }));
-    setData(updatedData);
+    setSelectAll(!selectAll);
+    const newCheckedItems = {};
+    if (!selectAll) {
+      initialTableRows.forEach((item) => {
+        newCheckedItems[item.id] = true;
+      });
+    }
+    setCheckedItems(newCheckedItems);
   };
 
-  const handleSingleCheck = (id) => {
-    const updatedData = data.map((item) =>
-      item.id === id ? { ...item, selected: !item.selected } : item
-    );
-    setData(updatedData);
-    setSelectAll(updatedData.every((item) => item.selected));
+  const handleCheckboxChange = (itemId) => {
+    setCheckedItems((prev) => ({
+      ...prev,
+      [itemId]: !prev[itemId],
+    }));
   };
+
+  const [tableRows, setTableRows] = useState(initialTableRows);
 
   const [newOption, setNewOption] = useState({
     optionName: ["온도", "농도"],
@@ -105,8 +109,8 @@ function ProductDetailPage() {
   });
 
   const handleAddOption = () => {
-    const updatedData = [...data, { ...newOption, id: data.length }];
-    setData(updatedData);
+    const updatedData = [...tableRows, { ...newOption, id: tableRows.length }];
+    setTableRows(updatedData);
     setNewOption({
       optionName: "",
       detailOptionName: "",
@@ -117,315 +121,171 @@ function ProductDetailPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">상품 정보 상세페이지</h1>
+        <h1 className="headline2">상품 정보 등록</h1>
       </div>
-      <hr className="primary" />
       <ContentBox>
-        <div className="align column">
-          <div>
-            <div className="align mt_10 mb_20">
-              <h2 className="headline4">기본 정보</h2>
-            </div>
-            <Table
-              colgroup={
-                <>
-                  <col width="15%" />
-                  <col width="auto" />
-                  <col width="15%" />
-                  <col width="auto" />
-                </>
-              }
-            >
-              <tr>
-                <th className="required">상품 카테고리</th>
-                <td>
-                  <Select maxwidth="300px" options={categoryOpt} />
-                </td>
-                <th className="required">상품명</th>
-                <td>
-                  <Input
-                    placeholder="상품명을 입력해주세요."
-                    defaultValue="아메리카노"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th className="required">상품 이미지</th>
-                <td colSpan={3}>
-                  <div className="align start">
-                    <FileUpload onChange={() => {}} />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th className="required">판매가</th>
-                <td>
-                  <Input
-                    placeholder="금액을 입력해주세요."
-                    type="number"
-                    defaultValue="3800"
-                    numtxt="원"
-                  />
-                </td>
-                <th>임직원 할인가</th>
-                <td>
-                  <Input
-                    placeholder="금액을 입력해주세요."
-                    type="number"
-                    defaultValue="990"
-                    numtxt="원"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>쿠폰할인 적용</th>
-                <td colSpan={3}>
-                  <div className="align start">
-                    <div className="item">
-                      <Button
-                        type="pc"
-                        color="point"
-                        onClick={handleOpen}
-                        size="small"
-                      >
-                        쿠폰할인 선택
-                      </Button>
-                    </div>
-                    <div className="item">
-                      <Chip
-                        label="C0001"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip
-                        label="C0002"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip
-                        label="C0003"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip label="C0004" onClick={() => {}} />
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </Table>
-            <div className="align mt_40 mb_20">
-              <h2 className="headline4">옵션 등록</h2>
-            </div>
-            <div className="tbl flex_none">
-              <TableContainer>
-                <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
-                  <colgroup>
-                    <col width="33%" />
-                    <col width="33%" />
-                    <col width="33%" />
-                  </colgroup>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>옵션명</TableCell>
-                      <TableCell>상세옵션명</TableCell>
-                      <TableCell>옵션가</TableCell>
-                      <TableCell></TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    <TableRow className="noborder">
-                      <TableCell className="top" rowSpan={4}>
-                        <div className="align gap_8">
+        <Table
+          colgroup={
+            <>
+              <col width="10%" />
+              <col width="auto" />
+              <col width="10%" />
+              <col width="auto" />
+            </>
+          }
+        >
+          <tr>
+            <th className="required">상품 카테고리</th>
+            <td>
+              <Select maxwidth="300px" options={categoryOpt} />
+            </td>
+            <th className="required">상품명</th>
+            <td>
+              <Input width="300px" placeholder="상품명을 입력해주세요." />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">판매가</th>
+            <td>
+              <Input
+                width="300px"
+                placeholder="금액을 입력해주세요."
+                type="number"
+                numtxt="원"
+              />
+            </td>
+            <th>임직원 할인가</th>
+            <td>
+              <Input
+                width="300px"
+                placeholder="금액을 입력해주세요."
+                type="number"
+                numtxt="원"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">상품 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+              <div className="align top start"></div>
+            </td>
+            <th>쿠폰할인 적용</th>
+            <td className="vertical_top">
+              <div className="align top start">
+                <div className="item" style={{ minWidth: "116px" }}>
+                  <Button
+                    size="small"
+                    onClick={handleOpen}
+                    color="point"
+                    type="pc"
+                  >
+                    쿠폰할인 선택
+                  </Button>
+                </div>
+                <div className="item wrap gap_10">
+                  <Chip label="C0001" onClick={() => {}} />
+                  <Chip label="C0002" onClick={() => {}} />
+                </div>
+              </div>
+            </td>
+          </tr>
+        </Table>
+        <div className="align mt_30 mb_10">
+          <div className="lft">
+            <Button type="pc" color="gray" line size="small">
+              삭제
+            </Button>
+          </div>
+          <div className="rgt">
+            <Button type="pc" color="point" size="small">
+              옵션추가
+            </Button>
+          </div>
+        </div>
+        <div className="tbl">
+          <TableContainer>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+              <colgroup>
+                <col width="2%" />
+                <col width="49%" />
+                <col width="49%" />
+              </colgroup>
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox
+                      id="checkAll"
+                      name="checkAll"
+                      checked={selectAll}
+                      onChange={handleSelectAll}
+                    />
+                  </TableCell>
+                  <TableCell>옵션명</TableCell>
+                  <TableCell>상세옵션명</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox
+                      id={`check1`}
+                      name={`check1`}
+                      // checked={checkedItems[row.id] || false}
+                      // onChange={() => handleCheckboxChange(row.id)}
+                    />
+                  </TableCell>
+                  <TableCell className="top">
+                    <Input
+                      width="440px"
+                      value={newOption.optionName}
+                      onChange={(e) =>
+                        setNewOption({
+                          ...newOption,
+                          optionName: e.target.value,
+                        })
+                      }
+                      placeholder="옵션명 입력"
+                    />
+                  </TableCell>
+                  <TableCell className="top">
+                    <div className="align bottom">
+                      <div className="item top start">
+                        {/* <div className="item">
+                        <Button
+                          color="black"
+                          icon="Delete"
+                          line
+                          none
+                          size="icon_s"
+                          type="pc"
+                        >
+                          삭제
+                        </Button>
+                      </div> */}
+                        <div className="item">
                           <Input
-                            value={newOption.optionName}
+                            width="440px"
+                            value={newOption.detailOptionName}
                             onChange={(e) =>
                               setNewOption({
                                 ...newOption,
-                                optionName: e.target.value,
+                                detailOptionName: e.target.value,
                               })
                             }
-                            placeholder="온도"
+                            placeholder="상세옵션명 입력"
                           />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                          <Button
-                            type="pc"
-                            icon="Plus"
-                            line
-                            color="black"
-                            onClick={handleAddOption}
-                            size="icon_s"
-                          >
-                            옵션명 추가
-                          </Button>
                         </div>
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="HOT"
-                        />
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <div className="align gap_8">
+                        <div className="item">
                           <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
+                            width="300px"
+                            placeholder="금액을 입력해주세요."
                             type="number"
-                            placeholder="0원"
+                            numtxt="원"
                           />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
                         </div>
-                      </TableCell>
-                      <TableCell className="noborder"></TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell className="noborder">
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="ICED"
-                        />
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell className="noborder"></TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell className="noborder">
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="HOT ONLY"
-                        />
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell className="noborder"></TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell>
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="ICED ONLY"
-                        />
-                      </TableCell>
-                      <TableCell>
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell>
+                      </div>
+                      <div className="item">
                         <Button
                           type="pc"
                           icon="Plus"
@@ -436,227 +296,27 @@ function ProductDetailPage() {
                         >
                           옵션가 추가
                         </Button>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell className="top" rowSpan={4}>
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionName}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionName: e.target.value,
-                              })
-                            }
-                            placeholder="농도"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                          <Button
-                            type="pc"
-                            icon="Plus"
-                            line
-                            color="black"
-                            onClick={handleAddOption}
-                            size="icon_s"
-                          >
-                            옵션명 추가
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="HOT"
-                        />
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell className="noborder"></TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell className="noborder">
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="ICED"
-                        />
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell className="noborder"></TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell className="noborder">
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="HOT ONLY"
-                        />
-                      </TableCell>
-                      <TableCell className="noborder">
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell className="noborder"></TableCell>
-                    </TableRow>
-                    <TableRow className="noborder">
-                      <TableCell>
-                        <Input
-                          value={newOption.detailOptionName}
-                          onChange={(e) =>
-                            setNewOption({
-                              ...newOption,
-                              detailOptionName: e.target.value,
-                            })
-                          }
-                          placeholder="ICED ONLY"
-                        />
-                      </TableCell>
-                      <TableCell>
-                        <div className="align gap_8">
-                          <Input
-                            value={newOption.optionPrice}
-                            onChange={(e) =>
-                              setNewOption({
-                                ...newOption,
-                                optionPrice: e.target.value,
-                              })
-                            }
-                            type="number"
-                            placeholder="0원"
-                          />
-                          <Button
-                            type="pc"
-                            icon="Delete"
-                            line
-                            color="black"
-                            onClick={() => {}}
-                            size="icon_s"
-                          >
-                            옵션 삭제
-                          </Button>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <Button
-                          type="pc"
-                          icon="Plus"
-                          line
-                          color="black"
-                          onClick={() => {}}
-                          size="icon_s"
-                        >
-                          옵션가 추가
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </MuiTable>
-              </TableContainer>
-            </div>
-          </div>
-          <div className="align center mt_20 gap_10">
-            <Button
-              onClick={() => navigate("/admin/product/product")} type="pc" color="gray" line size="small">
-              취소
-            </Button>
-            <Button onClick={handleOpen02} type="pc" color="black" size="small">
-              저장
-            </Button>
-          </div>
+                      </div>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </MuiTable>
+          </TableContainer>
+        </div>
+        <div className="align center mt_20 gap_10">
+          <Button
+            onClick={() => navigate(-1 || "/")}
+            type="pc"
+            color="gray"
+            line
+            size="small"
+          >
+            취소
+          </Button>
+          <Button onClick={handleOpen02} type="pc" color="black" size="small">
+            저장
+          </Button>
         </div>
       </ContentBox>
       <MuiModal
@@ -679,51 +339,55 @@ function ProductDetailPage() {
           </>
         }
       >
-        <Table
-          colgroup={
-            <>
-              <col width="10%" />
-              <col width="30%" />
-              <col width="30%" />
-              <col width="30%" />
-            </>
-          }
-        >
-          <tr>
-            <th className="center">
-              <Checkbox
-                id={selectAll.toString()}
-                onChange={handleSelectAll}
-                checked={selectAll}
-              ></Checkbox>
-            </th>
-            <th>쿠폰코드</th>
-            <th>쿠폰명</th>
-            <th>할인가</th>
-          </tr>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>
-                {data.length > 0 && (
-                  <Checkbox
-                    id={item.id.toString()}
-                    name={item.name}
-                    checked={item.selected}
-                    onChange={() => handleSingleCheck(item.id)}
-                  />
-                )}
-              </td>
-              <td className="center">{item.code}</td>
-              <td className="center">{item.name}</td>
-              <td className="center">{item.discount}</td>
-            </tr>
-          ))}
-        </Table>
+        <div className="tbl">
+          <TableContainer>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+              <colgroup>
+                <col width="5%" />
+                <col width="25%" />
+                <col width="50%" />
+                <col width="25%" />
+              </colgroup>
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox
+                      id="checkAll"
+                      name="checkAll"
+                      checked={selectAll}
+                      onChange={handleSelectAll}
+                    />
+                  </TableCell>
+                  <TableCell>쿠폰코드</TableCell>
+                  <TableCell>쿠폰명</TableCell>
+                  <TableCell>할인가</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {tableRows.map((row) => (
+                  <tr key={row.id}>
+                    <td>
+                      <Checkbox
+                        id={row.id.toString()}
+                        name={row.name}
+                        checked={checkedItems[row.id] || false}
+                        onChange={() => handleCheckboxChange(row.id)}
+                      />
+                    </td>
+                    <td className="left">{row.code}</td>
+                    <td className="left">{row.name}</td>
+                    <td>{row.discount}</td>
+                  </tr>
+                ))}
+              </TableBody>
+            </MuiTable>
+          </TableContainer>
+        </div>
         <div className="align center mt_20 gap_5">
-          <Button onClick={handleClose} type="pc" color="gray" line size="small">
+          <Button onClick={handleClose} color="gray" line size="small">
             취소
           </Button>
-          <Button onClick={handleClose} type="pc" color="black" size="small">
+          <Button onClick={handleClose} color="black" size="small">
             확인
           </Button>
         </div>
@@ -732,20 +396,17 @@ function ProductDetailPage() {
         open={open02}
         onClose={handleClose02}
         type="admin"
-        title={
-          <>
-            수정된 내용을
-            <br />
-            저장하시겠습니까?
-          </>
-        }
+        title={<>저장 하시겠습니까?</>}
         button={
           <>
-            <Button onClick={handleClose02} type="pc" color="gray" line size="small">
+            <Button onClick={handleClose02} color="gray" line size="small">
               아니오
             </Button>
             <Button
-              onClick={() => navigate("/admin/product/product")} type="pc" color="black" size="small">
+              onClick={() => navigate("/admin/product/product/detail")}
+              color="black"
+              size="small"
+            >
               네
             </Button>
           </>

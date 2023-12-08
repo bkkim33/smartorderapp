@@ -195,7 +195,7 @@ function ProductListPage() {
                 <col width="2%" />
                 <col width="3%" />
                 <col width="20%" />
-                <col width="auto%" />
+                <col width="auto" />
                 <col width="20%" />
                 <col width="20%" />
               </colgroup>
