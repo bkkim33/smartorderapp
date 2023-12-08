@@ -92,15 +92,19 @@ function AccountModify() {
           </div>
           <div className="align end">
             <div className="rgt gap_10">
-              <Button onClick={handleOpen} size="xlarge" btntype="gray" border>
+              <Button onClick={handleOpen} 
+              color="red"
+                line
+                size="small">
                 계정 삭제
               </Button>
               <Button
                 onClick={() => {
                   navigate("/admin/account");
                 }}
-                size="xlarge"
+                color="gray"
                 line
+                size="small"
               >
                 취소
               </Button>
@@ -108,8 +112,8 @@ function AccountModify() {
                 onClick={() => {
                   navigate("/admin/account");
                 }}
-                size="xlarge"
-                btntype="c11"
+                color="black"
+                size="small"
               >
                 저장
               </Button>
@@ -133,14 +137,18 @@ function AccountModify() {
         }
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={handleClose} 
+              color="gray"
+              line
+              size="small">
               취소
             </Button>
             <Button
               onClick={() => {
                 navigate("/admin/account");
               }}
-              border="point"
+              color="black"
+              size="small"
             >
               확인
             </Button>

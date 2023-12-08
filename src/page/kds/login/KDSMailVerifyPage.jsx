@@ -85,7 +85,7 @@ function KDSMailVerifyPage() {
             <div className="adminlogin_btn mt_20">
               <div>
                 <Button
-                  btntype="blue"
+                  color="blue"
                   onClick={() => {
                     navigate("/kds");
                   }}
@@ -101,7 +101,7 @@ function KDSMailVerifyPage() {
                 none
                 onClick={() => navigate(-1 || "/")}
                 size="small"
-                btntype="bule"
+                color="blue"
               >
                 뒤로가기
               </Button>

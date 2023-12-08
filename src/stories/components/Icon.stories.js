@@ -120,7 +120,7 @@ export const Default = () => (
       </div>
       <div className="item">
         <Icons.Check width={14} height={14} fill="var(--primary)" />
-      </div>
+      </div>      
     </div>
     <div className="align start mt_20">
       <div className="item">
@@ -131,6 +131,18 @@ export const Default = () => (
           stroke="var(--point)"
         />
       </div>
+      <div className="item">
+        <Icons.Setting width={19} height={20} fill="var(--primary)" />
+      </div> 
+      <div className="item">
+        <Icons.AlertIcon width={50} height={50} fill="var(--blue)" />
+      </div>
+      <div className="item">
+        <Icons.AlertIcon width={50} height={50} fill="var(--red)" />
+      </div>
+      <div className="item">
+        <Icons.Download width={11} height={18} fill="var(--c33)" />
+      </div> 
     </div>
   </>
 );

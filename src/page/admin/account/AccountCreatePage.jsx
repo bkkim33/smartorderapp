@@ -99,7 +99,7 @@ function AccountCreate() {
               >
                 취소
               </Button>
-              <Button onClick={handleOpen} size="xlarge" btntype="c11">
+              <Button onClick={handleOpen} size="xlarge" color="black">
                 계정 생성
               </Button>
             </div>
@@ -108,6 +108,7 @@ function AccountCreate() {
         <MuiAlert
           open={open}
           onClose={handleClose}
+          type="admin"
           title={
             <>
               입력한 정보로 <br />
@@ -116,10 +117,10 @@ function AccountCreate() {
           }
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} color="gray" line size="small">
                 아니오
               </Button>
-              <Button onClick={() => navigate("/admin/account")} border="point">
+              <Button onClick={() => navigate("/admin/account")} color="black" size="small">
                 네
               </Button>
             </>

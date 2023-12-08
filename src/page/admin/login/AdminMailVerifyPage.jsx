@@ -80,13 +80,13 @@ function AdminMailVerifyPage() {
             </div>
             <div className="adminlogin_btn mt_20">
               <div>
-                <Button
-                  btntype="blue"
+                <Button                  
                   onClick={() => {
                     navigate("/admin");
                   }}
-                  size="full"
                   disabled={certification === false}
+                  color="blue"
+                  size="full"
                 >
                   임시 비밀번호 전송
                 </Button>
@@ -94,10 +94,10 @@ function AdminMailVerifyPage() {
             </div>
             <div className="align center mt_10">
               <Button
-                none
                 onClick={() => navigate(-1 || "/")}
-                size="small"
-                btntype="blue"
+                color="blue"
+                none
+                size="xsmall"
               >
                 뒤로가기
               </Button>

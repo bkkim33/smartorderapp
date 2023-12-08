@@ -195,7 +195,7 @@ function PaymentPage() {
               placeholder="쿠폰을 선택해 주세요."
               readonly
             />
-            <Button line size="small" onClick={handleOpen}>
+            <Button color="black" line onClick={handleOpen}>
               조회
             </Button>
           </div>
@@ -277,6 +277,7 @@ function PaymentPage() {
         <div className="inner">
           <Checkbox txt={"개인정보 수집 및 이용동의"} />
           <Button
+            color="point"
             size="full"
             globalClass="mt_20"
             onClick={AlerthandleOpen}

@@ -186,8 +186,10 @@ function SalesListPage() {
                   <Button
                     key={option.value}
                     onClick={() => handleButtonClick(option.value)}
-                    size="small_h35"
-                    line={activeButton === option.value ? " " : "light"}
+                    size="small"
+                    line
+                    color="gray"
+                    // line={activeButton === option.value ? " " : "light"}
                   >
                     {option.label}
                   </Button>
@@ -212,7 +214,17 @@ function SalesListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={() => {}} btntype="c11" size="xlarge">
+          <Button
+            color="black"
+            icon="Search"
+            iconStyle={{
+              fill: '#fff',
+              height: 24,
+              width: 24
+            }}
+            round
+            size="icon_l"
+          >
             검색
           </Button>
         </div>

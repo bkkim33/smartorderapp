@@ -4,8 +4,6 @@ import Layout from "../../../layout/AppLoginLayout";
 import MainimgDefult from "../../../images/main_img.gif";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
-
-//mui table import
 import MuiAlert from "../../../components/MuiAlert";
 
 function PasswordPage() {
@@ -98,7 +96,7 @@ function PasswordPage() {
             </div>
             <div className="login_btn mt_20">
               <div>
-                <Button btntype="blue" onClick={handleOpen} size="full" >
+                <Button size="full" color="blue" onClick={handleOpen} >
                   비밀번호 변경하기
                 </Button>
               </div>
@@ -112,7 +110,7 @@ function PasswordPage() {
           title={<>비밀번호가 변경되었습니다.<br/> 다시 로그인해주세요. </>}
           button={
             <>
-              <Button onClick={() => { navigate("/"); }} border="point">
+              <Button color="point" size="full" onClick={() => { navigate("/"); }} >
                 확인
               </Button>
             </>

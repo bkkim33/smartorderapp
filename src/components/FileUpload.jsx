@@ -47,8 +47,8 @@ const FileUpload = forwardRef((props, ref) => {
         <Button
           onClick={triggerInputFile}
           className={styles.uploadButton}
-          size="small_h35"
-          btntype="c11"
+          color="point"
+          size="small"
         >
           파일업로드
         </Button>

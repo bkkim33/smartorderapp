@@ -10,6 +10,7 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 import FormGroup from "../../../components/FormGroup";
 import Checkbox from "../../../components/Checkbox";
+// import { ButtonBase } from "@mui/material";
 
 // function Dateimages() {
 //   const today = new Date();
@@ -73,11 +74,11 @@ function AdminLoginPage() {
             <div className="adminlogin_btn mt_20">
               <div>
                 <Button
-                  btntype="blue"
+                  color="blue"
+                  size="full"
                   onClick={() => {
                     navigate("product/product");
                   }}
-                  size="full"
                 >
                   로그인
                 </Button>
@@ -93,12 +94,12 @@ function AdminLoginPage() {
                 />
               </FormGroup>
               <Button
-                none
                 onClick={() => {
                   navigate("/admin/mail");
                 }}
-                size="small"
-                btntype="bule"
+                color="blue"
+                none
+                size="xsmall"
               >
                 비밀번호 찾기
               </Button>

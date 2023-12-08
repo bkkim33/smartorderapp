@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
 import SideMenu from "./AppSideMenuLayout";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 
 function HeaderLayout({ Coupon, Cart, Menu, Back, Title, Close }) {
   const [open, setOpen] = useState(false);

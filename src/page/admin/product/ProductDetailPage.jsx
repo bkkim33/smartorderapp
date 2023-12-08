@@ -183,9 +183,9 @@ function ProductDetailPage() {
                   <div className="align start">
                     <div className="item">
                       <Button
-                        btntype="c11"
+                        color="point"
                         onClick={handleOpen}
-                        size="small_h35"
+                        size="small"
                       >
                         쿠폰할인 선택
                       </Button>
@@ -248,16 +248,18 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
                           <Button
                             icon="Plus"
                             line
+                            color="black"
                             onClick={handleAddOption}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션명 추가
                           </Button>
@@ -291,8 +293,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -329,8 +332,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -367,8 +371,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -405,8 +410,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -416,8 +422,9 @@ function ProductDetailPage() {
                         <Button
                           icon="Plus"
                           line
+                          color="black"
                           onClick={() => {}}
-                          size="icon_s_h35"
+                          size="icon_s"
                         >
                           옵션가 추가
                         </Button>
@@ -439,16 +446,18 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
                           <Button
                             icon="Plus"
                             line
+                            color="black"
                             onClick={handleAddOption}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션명 추가
                           </Button>
@@ -482,8 +491,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -520,8 +530,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -558,8 +569,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -596,8 +608,9 @@ function ProductDetailPage() {
                           <Button
                             icon="Delete"
                             line
+                            color="black"
                             onClick={() => {}}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션 삭제
                           </Button>
@@ -607,8 +620,9 @@ function ProductDetailPage() {
                         <Button
                           icon="Plus"
                           line
+                          color="black"
                           onClick={() => {}}
-                          size="icon_s_h35"
+                          size="icon_s"
                         >
                           옵션가 추가
                         </Button>
@@ -619,19 +633,14 @@ function ProductDetailPage() {
               </TableContainer>
             </div>
           </div>
-          <div className="align mt_20">
-            <div className="rgt gap_10">
-              <Button
-                onClick={() => navigate("/admin/product/product")}
-                size="xlarge"
-                line
-              >
-                취소
-              </Button>
-              <Button onClick={handleOpen02} size="xlarge" btntype="c11">
-                저장
-              </Button>
-            </div>
+          <div className="align center mt_20 gap_10">
+            <Button
+              onClick={() => navigate("/admin/product/product")} color="gray" line size="small">
+              취소
+            </Button>
+            <Button onClick={handleOpen02} color="black" size="small">
+              저장
+            </Button>
           </div>
         </div>
       </ContentBox>
@@ -695,11 +704,11 @@ function ProductDetailPage() {
             </tr>
           ))}
         </Table>
-        <div className="align end mt_20 gap_5">
-          <Button onClick={handleClose} size="small_h35" line>
+        <div className="align center mt_20 gap_5">
+          <Button onClick={handleClose} color="gray" line size="small">
             취소
           </Button>
-          <Button onClick={handleClose} size="small_h35" border="point">
+          <Button onClick={handleClose} color="black" size="small">
             확인
           </Button>
         </div>
@@ -707,6 +716,7 @@ function ProductDetailPage() {
       <MuiAlert
         open={open02}
         onClose={handleClose02}
+        type="admin"
         title={
           <>
             수정된 내용을
@@ -716,13 +726,11 @@ function ProductDetailPage() {
         }
         button={
           <>
-            <Button onClick={handleClose02} line>
+            <Button onClick={handleClose02} color="gray" line size="small">
               아니오
             </Button>
             <Button
-              onClick={() => navigate("/admin/product/product")}
-              border="point"
-            >
+              onClick={() => navigate("/admin/product/product")} color="black" size="small">
               네
             </Button>
           </>

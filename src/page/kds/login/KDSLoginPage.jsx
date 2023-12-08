@@ -76,7 +76,7 @@ function KDSLoginPage() {
             <div className="adminlogin_btn mt_20">
               <div>
                 <Button
-                  btntype="blue"
+                  color="blue"
                   onClick={() => {
                     navigate("/kds/main");
                   }}
@@ -101,7 +101,7 @@ function KDSLoginPage() {
                   navigate("/kds/mail");
                 }}
                 size="small"
-                btntype="bule"
+                color="blue"
               >
                 비밀번호 찾기
               </Button>

@@ -25,8 +25,8 @@ function OrderComplete( ) {
           </p>
         </div>
         <div className="ordercomplete_btns inner align">
-          <Button onClick={() => {navigate("/main");}} size="full" btntype="gray">홈</Button>
-          <Button onClick={() => {navigate("/order/history");}} size="full">주문내역 보기</Button>
+          <Button onClick={() => {navigate("/main");}} size="full" color="gray" txtColor="txtgray">홈</Button>
+          <Button onClick={() => {navigate("/order/history");}} size="full" color="point">주문내역 보기</Button>
         </div>
       </div>
     </Layout>

@@ -292,10 +292,10 @@ function SalesStatus() {
           title={<>선택한 상품을 판매중 상태로 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={() => handleCloseAlert(3)} line>
+              <Button line onClick={() => handleCloseAlert(3)} >
                 아니오
               </Button>
-              <Button onClick={() => handleCloseAlert(3)} border="point">
+              <Button color="point" onClick={() => handleCloseAlert(3)}>
                 네
               </Button>
             </>

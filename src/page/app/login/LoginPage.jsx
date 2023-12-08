@@ -72,18 +72,19 @@ function LoginPage() {
             <div className="login_btn mt_20">
               <div>
                 <Button
-                  btntype="blue"
+                  color="blue"
+                  size="full"
                   onClick={() => {
                     navigate("/password");
-                  }}
-                  size="full"
+                  }}                  
                 >
                   로그인
                 </Button>
               </div>
               <div className="mt_20 pt_20">
                 <Button
-                  btntype="googlelogin"
+                  color="gray"
+                  line
                   icon="Google"
                   onClick={() => navigate("/main")}
                   size="full"
@@ -106,8 +107,8 @@ function LoginPage() {
                 onClick={() => {
                   navigate("/mail");
                 }}
-                size="small"
-                btntype="bule"
+                size="xsmall"
+                color="blue"
               >
                 비밀번호 찾기
               </Button>

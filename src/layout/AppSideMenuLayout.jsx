@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "../styles/layout/applayout.module.scss";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import { Icons } from "../components/Icon";
 import MainimgDefult from "../images/main_img.gif";
 

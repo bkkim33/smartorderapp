@@ -129,8 +129,9 @@ function QnaRegistrationPage() {
                 onClick={() => {
                   navigate("/admin/customer/qna/");
                 }}
-                size="xlarge"
+                color="gray"
                 line
+                size="small"
               >
                 취소
               </Button>
@@ -138,8 +139,8 @@ function QnaRegistrationPage() {
             <div className="item">
               <Button
                 onClick={handleOpen}
-                size="xlarge"
-                btntype="c11"
+                color="black"
+                size="small"
               >
                 저장
               </Button>
@@ -153,10 +154,16 @@ function QnaRegistrationPage() {
         title={<>저장하시겠습니까?</>}
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={handleClose}
+              color="gray"
+              line
+              size="small"
+            >
               아니오
             </Button>
-            <Button onClick={() => navigate("/admin/customer/qna")} border="point">
+            <Button onClick={() => navigate("/admin/customer/qna")} 
+              color="black"
+              size="small">
               네
             </Button>
           </>

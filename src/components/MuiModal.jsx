@@ -1,16 +1,13 @@
 /** @jsxImportSource @emotion/react */
-
 import React from "react";
 import Modal from "@mui/material/Modal";
-// import PropTypes from "prop-types";
 import styles from "../styles/components/muimodal.module.scss";
-// import { Button } from "./Button";
 
 MuiModal.propTypes = {};
 
 MuiModal.defaultProps = {};
 
-export function MuiModal({ open, onClose, header, button, children }) {
+export function MuiModal({ open, onClose, header, button, footer, children }) {
   return (
     <div>
       <Modal
@@ -21,9 +18,10 @@ export function MuiModal({ open, onClose, header, button, children }) {
         className={`${styles.modal}`}
       >
         <div className={`${styles.modal_box}`}>
-          <div className={`${styles.modal_header} ${"mb_20"}`}>{header}</div>
+          <div className={`${styles.modal_header}`}>{header}</div>
           <div className={`${styles.modal_content}`}>{children}</div>
           {button && <div className={`${styles.modal_btn}`}>{button}</div>}
+          {footer && <div className={`${styles.modal_footer}`}>{footer}</div>}          
         </div>
       </Modal>
     </div>

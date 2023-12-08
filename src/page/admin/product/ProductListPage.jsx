@@ -167,14 +167,17 @@ function ProductListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          {/* <Button onClick={handleOpen} line btntype="c11" size="medium_40">
-            초기화
-          </Button> */}
           <Button
             onClick={handleOpen}
-            btntype="c11"
-            size="medium_40"
-            // globalClass="ml_10"
+            color="black"
+            icon="Search"
+            iconStyle={{
+              fill: '#fff',
+              height: 24,
+              width: 24
+            }}
+            round
+            size="icon_l"
           >
             검색
           </Button>
@@ -186,13 +189,16 @@ function ProductListPage() {
           <Select minwidth="200px" defaultValue={0} options={numOpt} />
         </div>
         <div className="rgt gap_5">
-          <Button onClick={handleOpen02} size="small_h35" line>
+          <Button onClick={handleOpen02} 
+            color="gray"
+            line
+            size="small">
             삭제
           </Button>
           <Button
             onClick={() => navigate("/admin/product/product/register")}
-            size="small_h35"
-            border="point"
+            color="point"
+            size="small"
           >
             신규등록
           </Button>
@@ -357,13 +363,15 @@ function ProductListPage() {
       <MuiAlert
         open={open02}
         onClose={handleClose02}
+        type="admin"
+        iconColor="red"
         title={<>정말 삭제하시겠습니까?</>}
         button={
           <>
-            <Button onClick={handleClose02} line>
+            <Button color="gray" line size="small" onClick={handleClose02}>
               취소
             </Button>
-            <Button onClick={handleAlertYes} border="point">
+            <Button color="black" size="small" onClick={handleAlertYes}>
               확인
             </Button>
           </>

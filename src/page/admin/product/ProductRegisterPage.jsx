@@ -182,9 +182,9 @@ function ProductRegisterPage() {
                   <div className="align start">
                     <div className="item">
                       <Button
-                        btntype="c11"
+                        size="small"
                         onClick={handleOpen}
-                        size="small_h35"
+                        color="point"
                       >
                         쿠폰할인 선택
                       </Button>
@@ -248,8 +248,9 @@ function ProductRegisterPage() {
                           <Button
                             icon="Plus"
                             line
+                            color="black"
                             onClick={handleAddOption}
-                            size="icon_s_h35"
+                            size="icon_s"
                           >
                             옵션명 추가
                           </Button>
@@ -286,8 +287,9 @@ function ProductRegisterPage() {
                         <Button
                           icon="Plus"
                           line
+                          color="black"
                           onClick={() => {}}
-                          size="icon_s_h35"
+                          size="icon_s"
                         >
                           옵션가 추가
                         </Button>
@@ -298,15 +300,13 @@ function ProductRegisterPage() {
               </TableContainer>
             </div>
           </div>
-          <div className="align mt_20">
-            <div className="rgt gap_10">
-              <Button onClick={() => navigate(-1 || "/")} size="xlarge" line>
-                취소
-              </Button>
-              <Button onClick={handleOpen02} size="xlarge" btntype="c11">
-                저장
-              </Button>
-            </div>
+          <div className="align center mt_20 gap_10">
+            <Button onClick={() => navigate(-1 || "/")}  color="gray" line size="small">
+              취소
+            </Button>
+            <Button onClick={handleOpen02} color="black" size="small">
+              저장
+            </Button>
           </div>
         </div>
       </ContentBox>
@@ -374,11 +374,11 @@ function ProductRegisterPage() {
             </MuiTable>
           </TableContainer>
         </div>
-        <div className="align end mt_20 gap_5">
-          <Button onClick={handleClose} size="small_h35" line>
+        <div className="align center mt_20 gap_5">
+          <Button onClick={handleClose} color="gray" line size="small">
             취소
           </Button>
-          <Button onClick={handleClose} size="small_h35" border="point">
+          <Button onClick={handleClose} color="black" size="small">
             확인
           </Button>
         </div>
@@ -386,16 +386,15 @@ function ProductRegisterPage() {
       <MuiAlert
         open={open02}
         onClose={handleClose02}
-        title={<>저장하시겠습니까?</>}
+        type="admin"
+        title={<>저장 하시겠습니까?</>}
         button={
           <>
-            <Button onClick={handleClose02} line>
+            <Button onClick={handleClose02} color="gray" line size="small">
               아니오
             </Button>
             <Button
-              onClick={() => navigate("/admin/product/product/detail")}
-              border="point"
-            >
+              onClick={() => navigate("/admin/product/product/detail")} color="black" size="small">
               네
             </Button>
           </>

@@ -177,8 +177,10 @@ function NoticeListPage() {
                   <Button
                     key={option.value}
                     onClick={() => handleButtonClick(option.value)}
-                    size="small_h35"
-                    line={activeButton === option.value ? " " : "light"}
+                    size="small"
+                    line
+                    color="gray"
+                    // line={activeButton === option.value ? " " : "light"}
                   >
                     {option.label}
                   </Button>
@@ -223,7 +225,17 @@ function NoticeListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={() => {}} btntype="c11" size="xlarge">
+          <Button
+            color="black"
+            icon="Search"
+            iconStyle={{
+              fill: '#fff',
+              height: 24,
+              width: 24
+            }}
+            round
+            size="icon_l"
+          >
             검색
           </Button>
         </div>
@@ -234,15 +246,15 @@ function NoticeListPage() {
           <Select minwidth="200px" defaultValue={0} options={numOpt} />
         </div>
         <div className="rgt gap_10">
-          <Button onClick={handleOpen} size="small_h35" line>
+          <Button onClick={handleOpen} color="gray" line size="small">
             삭제
           </Button>
           <Button
             onClick={() => {
               navigate("/admin/customer/notice/register");
             }}
-            size="small_h35"
-            border="point"
+            color="point"
+            size="small"
           >
             등록하기
           </Button>
@@ -334,10 +346,10 @@ function NoticeListPage() {
           title={<>정말 삭제하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} color="gray" line size="small">
                 취소
               </Button>
-              <Button onClick={handleAlertYes} border="point">
+              <Button onClick={handleAlertYes} color="black" size="small" >
                 확인
               </Button>
             </>

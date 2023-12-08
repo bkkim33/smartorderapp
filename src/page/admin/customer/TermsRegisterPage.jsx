@@ -145,8 +145,9 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
                   onClick={() => {
                     navigate("/admin/customer/terms/");
                   }}
-                  size="xlarge"
+                  color="gray"
                   line
+                  size="small"
                 >
                   취소
                 </Button>
@@ -154,8 +155,8 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
               <div className="item">
                 <Button
                   onClick={handleOpen}
-                  size="xlarge"
-                  btntype="c11"
+                  color="black"
+                  size="small"
                 >
                   저장
                 </Button>
@@ -169,10 +170,19 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
           title={<>저장하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button 
+                onClick={handleClose}
+                color="gray"
+                line
+                size="small"
+              >
                 아니오
               </Button>
-              <Button onClick={() => navigate("/admin/customer/terms")} border="point">
+              <Button 
+                onClick={() => navigate("/admin/customer/terms")}
+                color="black"
+                size="small"
+              >
                 네
               </Button>
             </>

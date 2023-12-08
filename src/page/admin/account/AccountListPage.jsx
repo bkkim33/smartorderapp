@@ -34,9 +34,9 @@ function AccountListPage() {
           </div>
           <div className="rgt">
             <Button
-              size="small_h35"
+              color="point"
+              size="small"
               onClick={() => navigate("./create")}
-              border="point"
             >
               계정 생성
             </Button>
