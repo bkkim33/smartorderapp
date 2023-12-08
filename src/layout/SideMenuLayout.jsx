@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 import styles from "../styles/layout/layout.module.scss";
 
 function SideMenuLayout({globalstyle}) {
+  const navigate = useNavigate();
   const location = useLocation();
 
   //destructuring pathname from location
@@ -193,6 +195,17 @@ function SideMenuLayout({globalstyle}) {
             </Link>
           </li>
         </ul>
+        <Button
+          onClick={() => {
+            navigate("/admin");
+          }}
+          color="red"
+          none
+          type="pc"
+          globalClass={`${styles.menu_btn} ${"mt_20 pl_10"}`}
+        >
+          로그아웃
+        </Button>
       </nav>
     </aside>
   );

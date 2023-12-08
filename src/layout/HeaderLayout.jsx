@@ -1,9 +1,10 @@
 import React from 'react';
-import { Icons } from "../components/Icon";
-import styles from "../styles/layout/layout.module.scss";
-import Userimg from "../images/user_img.png";
-import SideMenu from "./SideMenuLayout";
 import { useNavigate } from "react-router-dom";
+import { Icons } from "../components/Icon";
+import Button from "../components/Button";
+import styles from "../styles/layout/layout.module.scss";
+import SideMenu from "./SideMenuLayout";
+
 
 function HeaderLayout() {
   
@@ -11,28 +12,27 @@ function HeaderLayout() {
 
   return (
     <header className={`${styles.header}`}>
-      <div className='pt_50'>
-        <Icons.AdminHeaderLogo width={"100%"} height={66} fill="#303033" />
+      <div className="pt_30">
+        <Icons.AdminHeaderLogo width={"100%"} height={66} fill="#fff" />
       </div>
       <div className={`${styles.user_util} ${"mt_30"}`}>
-        <button
+        <Button
+          globalClass={`${styles.user_button}`}
           onClick={() => navigate("/admin/myprofile/profile")}
-          className={`${styles.user_button} ${""}`}
-        >
-          <Icons.MenuPrivacy width={12} height={12} fill="#3A3A3A" />
-          <span className="ml_7">프로필</span>
-        </button>
-        <button
-          onClick={() => {
-            navigate("/admin");
+          color="trans"
+          icon="MenuPrivacy"
+          iconStyle={{
+            fill: "var(--cff)",
           }}
-          className={`${styles.user_button} ${""}`}
+          line
+          size="full"
+          txtColor="txtwhite"
+          type="pc"
         >
-          <span>로그아웃</span>
-        </button>
+          프로필
+        </Button>
       </div>
-
-      <SideMenu globalstyle="mt_50" />
+      <SideMenu globalstyle="mt_47" />
     </header>
   );
 }

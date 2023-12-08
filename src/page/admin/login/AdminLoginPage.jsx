@@ -62,7 +62,7 @@ function AdminLoginPage() {
             <div className="error_txt required_lft mt_5 ml_5">
               ID를 입력해주세요.
             </div>
-            <div className="error_txt required_lft mt_5 ml_5">
+            {/* <div className="error_txt required_lft mt_5 ml_5">
               비밀번호가 맞지 않습니다.
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
@@ -70,7 +70,7 @@ function AdminLoginPage() {
             </div>
             <div className="error_txt required_lft mt_5 ml_5">
               ID 또는 비밀번호를 확인해주세요.
-            </div>
+            </div> */}
             <div className="adminlogin_btn mt_20">
               <div>
                 <Button
