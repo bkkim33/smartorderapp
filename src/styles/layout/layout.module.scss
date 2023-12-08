@@ -13,7 +13,7 @@
 .layout{
   display: flex;
   height: 100%;
-  background-color: var(--cff);
+  background-color: var(--bgf0);
 }
 
 .header{
@@ -21,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   min-width: 260px;
-  background-color: #F6F5F0;
+  background-color: var(--c11);
   padding: 20px 0 0;
 }
 
@@ -44,20 +44,14 @@
     padding: 0 20px;
   }
   &_button{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    height: 40px;    
-    background-color: var(--point);
+    min-height: 40px;    
+    border: 1px solid var(--c99);
     span{
-      @include body1(var(--c11));
+      @include body1(var(--cff));
     }
-    & + .user_button{
-      margin-left: 10px;
-      background-color: var(--blue);
+    &:hover{
       span{
-        color: var(--cff);
+        color: var(--point);
       }
     }
   }
@@ -69,23 +63,21 @@
   overflow-y: auto;
   padding: 0 20px 20px;
   &_dep1{
-    border-top: 1px solid #DDDCD8;
-    border-bottom: 1px solid #DDDCD8;
+    border-top: 1px solid var(--c33);
+    border-bottom: 1px solid var(--c33);
     & + .menu_dep1{
       border-top: 0;
     }
     a{
       display: flex;
       align-items: center;
-      @include h5(var(--c11));
+      @include h5(var(--cdd));
       font-weight: 600;
       height: 46px;
       position: relative;
       padding: 0 10px;
       &:hover{
-        span{
-          background: linear-gradient(to top, #F2FD53 10%, transparent 50%);
-        }
+        color: var(--point);
       }
     } 
     p{
@@ -93,7 +85,7 @@
       align-items: center;
       width: 100%;
       height: 46px;
-      @include h5(var(--c11));
+      @include h5(var(--cdd));
       font-weight: 600;
       position: relative;
       text-align: left;
@@ -101,12 +93,17 @@
     }
     &_active{
       display: block;
-      > p,
+       > p{
+        > span{
+          color: var(--point);
+          font-weight: 700;
+        }
+      }
       >a{
         > span{
-          color: var(--c11);
+          color: var(--point);
           font-weight: 700;
-          background: linear-gradient(to top, #F2FD53 10%, transparent 50%);
+          text-decoration: underline;
         }
       }
     }
@@ -120,39 +117,66 @@
     a{
       height: 20px;
       font-weight: 400;
-      color: var(--c77);
-      padding: 0;
+      color: var(--c99);
+      padding-left: 15px;
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: var(--c99);
+        position: absolute;
+        left: 0;
+      }
+      &.active{
+        span{
+          color: var(--point);
+          font-weight: 500;
+          text-decoration: underline;
+        }
+        &::before{
+          background-color: var(--point);
+        }
+      }
     }
     &_wrap{
       display: block;
       padding: 15px 10px;
-      border-top: 1px solid #DDDCD8;
+      border-top: 1px solid var(--c33);
     }
+  }
+  &_btn{
+    font-weight: 300;
   }
 }
 
-.active{
-  span{
-    color: var(--c11);
-    font-weight: 700;
-    background: linear-gradient(to top, #F2FD53 10%, transparent 50%);
-  }
-}
+// .active{
+//   span{
+//     color: var(--point);
+//     font-weight: 500;
+//     text-decoration: underline;
+//     &::before{
+//       background-color: var(--point);
+//     }
+//   }
+// }
 
 .content{
   display: flex;
   flex-direction: column;
   height: 100%;
   flex: 1;
-  padding: 28px 40px;
+  padding: 30px 20px;
   overflow: auto;
   &_box{
     width: 100%;
     flex: 1;
     background-color: var(--cff);
-    border-radius: 16px;
-    padding: 20px 0;
-    // @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
+    border-radius: 8px;
+    padding: 20px;
+    @include shadow(0, 4px, 4px, rgba(0,0,0,0.1));
     &_top,
     &_bottom{
       flex: none;
