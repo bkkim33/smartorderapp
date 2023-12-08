@@ -74,6 +74,7 @@ function AdminLoginPage() {
             <div className="adminlogin_btn mt_20">
               <div>
                 <Button
+                  type="pc"
                   color="blue"
                   size="full"
                   onClick={() => {

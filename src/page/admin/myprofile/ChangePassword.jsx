@@ -109,14 +109,15 @@ function ChangePassword() {
               </td>
             </tr>
           </Table>
-          <div className="align end mt_20">
+          <div className="align center mt_20">
             <Button
               onClick={() => {
                 handlePasswordUpdate();
                 handleOpen();
               }}
+              type="pc"
               color="black"
-              size="xlarge"
+              size="small"
             >
               확인
             </Button>
@@ -125,13 +126,14 @@ function ChangePassword() {
         <MuiAlert
           open={open}
           onClose={handleClose}
+          type="admin"
           title={<>비밀번호를 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} color="gray" line size="xlarge">
+              <Button onClick={handleClose} type="pc" color="gray" line size="small">
                 취소
               </Button>
-              <Button onClick={handleOpen02} color="point" size="xlarge">
+              <Button onClick={handleOpen02} type="pc" color="black" size="small">
                 확인
               </Button>
             </>
@@ -141,6 +143,7 @@ function ChangePassword() {
         <MuiAlert
           open={open02}
           onClose={handleClose02}
+          type="admin"
           title={
             <>
               비밀번호가 변경되었습니다.
@@ -151,9 +154,10 @@ function ChangePassword() {
           button={
             <>
               <Button
+                type="pc"
                 onClick={() => navigate("/admin")}
-                color="point"
-                size="xlarge"
+                color="black"
+                size="small"
               >
                 확인
               </Button>

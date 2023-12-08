@@ -61,7 +61,7 @@ function PickupMethod() {
               한 페이지 아래로
             </Button>
           </div>
-          <Button onClick={() => {}} size="small_h35" border="point">
+          <Button onClick={() => { }} type="pc" size="small" color="point">
             추가
           </Button>
         </div>
@@ -109,6 +109,7 @@ function PickupMethod() {
                       line={{}}
                       onClick={() => {}}
                       size="icon_s"
+                      color="gray"
                     />
                   </TableCell>
                 </TableRow>
@@ -133,11 +134,13 @@ function PickupMethod() {
                   </TableCell>
                   <TableCell>
                     <Button
+                      type="pc"
                       globalClass="rgt"
                       icon="Delete"
                       line={{}}
                       onClick={() => {}}
                       size="icon_s"
+                      color="gray"
                     />
                   </TableCell>
                 </TableRow>
@@ -146,17 +149,18 @@ function PickupMethod() {
           </TableContainer>
         </div>
       </div>
-      <div className="align end gap_10">
-        <Button onClick={() => navigate("/admin/store")} line size="xlarge">
+      <div className="align center gap_10">
+        <Button onClick={() => navigate("/admin/store")} type="pc" color="gray" line size="small">
           목록
         </Button>
-        <Button onClick={handleOpen} btntype="c11" size="xlarge">
+        <Button onClick={handleOpen} type="pc" color="black" size="small">
           저장
         </Button>
       </div>
       <MuiAlert
         open={open}
         onClose={handleClose}
+        type="admin"
         title={
           <>
             저장하시겠습니까?
@@ -164,10 +168,10 @@ function PickupMethod() {
         }
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={handleClose} type="pc" color="gray" size="small" line>
               아니오
             </Button>
-            <Button onClick={handleClose} border="point">
+            <Button onClick={handleClose} type="pc" color="black" size="small">
               네
             </Button>
           </>

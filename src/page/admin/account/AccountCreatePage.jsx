@@ -90,19 +90,24 @@ function AccountCreate() {
               </td>
             </tr>
           </Table>
-          <div className="align mt_20">
-            <div className="rgt gap_10">
-              <Button
-                onClick={() => navigate("/admin/account")}
-                size="xlarge"
-                line
-              >
-                취소
-              </Button>
-              <Button onClick={handleOpen} size="xlarge" color="black">
-                계정 생성
-              </Button>
-            </div>
+          <div className="align center mt_20 gap_10">
+            <Button
+              onClick={() => navigate("/admin/account")}
+              type="pc"
+              size="small"
+              color="gray"
+              line
+            >
+              취소
+            </Button>
+            <Button 
+              onClick={handleOpen} 
+              type="pc" 
+              size="small" 
+              color="black"
+            >
+              계정 생성
+            </Button>
           </div>
         </div>
         <MuiAlert
@@ -117,10 +122,10 @@ function AccountCreate() {
           }
           button={
             <>
-              <Button onClick={handleClose} color="gray" line size="small">
+              <Button onClick={handleClose} type="pc" color="gray" line size="small">
                 아니오
               </Button>
-              <Button onClick={() => navigate("/admin/account")} color="black" size="small">
+              <Button onClick={() => navigate("/admin/account")} type="pc" color="black" size="small">
                 네
               </Button>
             </>

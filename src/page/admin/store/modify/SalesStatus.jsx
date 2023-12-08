@@ -168,23 +168,31 @@ function SalesStatus() {
         </tr>
       </Table>
       <div className="align center mtb_20">
-        <Button onClick={() => {}} btntype="c11" size="xlarge">
+        <Button
+          type="pc"
+          color="black"
+          icon="Search"
+          iconStyle={{
+            fill: '#fff',
+            height: 24,
+            width: 24
+          }}
+          round
+          size="icon_l"
+        >
           검색
         </Button>
       </div>
       <hr className="secondary" />
       <div className="align end mt_42 gap_10">
-        <Button onClick={() => handleOpenAlert(1)} size="small_h35" state>
+        <Button onClick={() => handleOpenAlert(1)} type="pc" size="small" line color="red">
           판매중지
         </Button>
-        <Button onClick={() => handleOpenAlert(2)} size="small_h35" line>
+        <Button onClick={() => handleOpenAlert(2)} type="pc" size="small" line color="gray">
           품절
         </Button>
         <Button
-          onClick={() => handleOpenAlert(3)}
-          size="small_h35"
-          border="point"
-        >
+          onClick={() => handleOpenAlert(3)} type="pc" size="small" color="point">
           판매중
         </Button>
       </div>
@@ -248,24 +256,25 @@ function SalesStatus() {
             </MuiTable>
           </TableContainer>
         </div>
-        <div className="align end gap_10">
-          <Button onClick={() => navigate("/admin/store")} line size="xlarge">
+        <div className="align center gap_10 mt_20">
+          <Button onClick={() => navigate("/admin/store")} type="pc" line size="small" color="gray">
             목록
           </Button>
-          <Button onClick={() => {}} btntype="c11" size="xlarge">
+          <Button onClick={() => { }} type="pc" size="small" color="black">
             저장
           </Button>
         </div>
         <MuiAlert
           open={openAlert1}
           onClose={() => handleCloseAlert(1)}
+          type="admin"
           title={<>선택한 상품을 판매중지 상태로 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={() => handleCloseAlert(1)} line>
+              <Button onClick={() => handleCloseAlert(1)} type="pc" line size="small" color="gray">
                 아니오
               </Button>
-              <Button onClick={() => handleCloseAlert(1)} border="point">
+              <Button onClick={() => handleCloseAlert(1)} type="pc" size="small" color="black">
                 네
               </Button>
             </>
@@ -274,13 +283,14 @@ function SalesStatus() {
         <MuiAlert
           open={openAlert2}
           onClose={() => handleCloseAlert(2)}
+          type="admin"
           title={<>선택한 상품을 품절 상태로 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={() => handleCloseAlert(2)} line>
+              <Button onClick={() => handleCloseAlert(2)} type="pc" line size="small" color="gray">
                 아니오
               </Button>
-              <Button onClick={() => handleCloseAlert(2)} border="point">
+              <Button onClick={() => handleCloseAlert(2)} type="pc" size="small" color="black">
                 네
               </Button>
             </>
@@ -289,13 +299,14 @@ function SalesStatus() {
         <MuiAlert
           open={openAlert3}
           onClose={() => handleCloseAlert(3)}
+          type="admin"
           title={<>선택한 상품을 판매중 상태로 변경하시겠습니까?</>}
           button={
             <>
-              <Button line onClick={() => handleCloseAlert(3)} >
+              <Button onClick={() => handleCloseAlert(3)} type="pc" line size="small" color="gray" >
                 아니오
               </Button>
-              <Button color="point" onClick={() => handleCloseAlert(3)}>
+              <Button onClick={() => handleCloseAlert(3)} type="pc" size="small" color="black">
                 네
               </Button>
             </>

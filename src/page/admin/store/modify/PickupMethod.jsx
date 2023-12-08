@@ -61,7 +61,7 @@ function PickupMethod() {
               한 페이지 아래로
             </Button>
           </div>
-          <Button onClick={() => {}} size="small_h35" border="point">
+          <Button onClick={() => { }} type="pc" size="small" color="point">
             추가
           </Button>
         </div>
@@ -107,8 +107,10 @@ function PickupMethod() {
                       globalClass="rgt"
                       icon="Delete"
                       line={{}}
+                      color="gray"
                       onClick={() => {}}
                       size="icon_s"
+                      type="pc"
                     />
                   </TableCell>
                 </TableRow>
@@ -136,8 +138,10 @@ function PickupMethod() {
                       globalClass="rgt"
                       icon="Delete"
                       line={{}}
+                      color="gray"
                       onClick={() => {}}
                       size="icon_s"
+                      type="pc"
                     />
                   </TableCell>
                 </TableRow>
@@ -146,17 +150,18 @@ function PickupMethod() {
           </TableContainer>
         </div>
       </div>
-      <div className="align end gap_10">
-        <Button onClick={() => navigate("/admin/store")} line size="xlarge">
+      <div className="align center gap_10">
+        <Button onClick={() => navigate("/admin/store")} line size="small" color="gray" type="pc">
           목록
         </Button>
-        <Button onClick={handleOpen} btntype="c11" size="xlarge">
+        <Button onClick={handleOpen} size="small" color="black" type="pc">
           저장
         </Button>
       </div>
       <MuiAlert
         open={open}
         onClose={handleClose}
+        type="admin"
         title={
           <>
             입력한 내용을 <br />
@@ -165,10 +170,10 @@ function PickupMethod() {
         }
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={handleClose} line size="small" color="gray" type="pc">
               취소
             </Button>
-            <Button onClick={handleClose} border="point">
+            <Button onClick={handleClose} color="black" size="small" type="pc">
               확인
             </Button>
           </>

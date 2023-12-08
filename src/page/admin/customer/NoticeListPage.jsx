@@ -177,10 +177,10 @@ function NoticeListPage() {
                   <Button
                     key={option.value}
                     onClick={() => handleButtonClick(option.value)}
+                    type="pc"
                     size="small"
-                    line
-                    color="gray"
-                    // line={activeButton === option.value ? " " : "light"}
+                    line={activeButton === option.value ? false : true}
+                    color={activeButton === option.value ? "point" : "gray"}
                   >
                     {option.label}
                   </Button>
@@ -226,6 +226,7 @@ function NoticeListPage() {
         </Table>
         <div className="align center mt_20">
           <Button
+            type="pc"
             color="black"
             icon="Search"
             iconStyle={{
@@ -246,13 +247,14 @@ function NoticeListPage() {
           <Select minwidth="200px" defaultValue={0} options={numOpt} />
         </div>
         <div className="rgt gap_10">
-          <Button onClick={handleOpen} color="gray" line size="small">
+          <Button onClick={handleOpen} type="pc" color="gray" line size="small">
             삭제
           </Button>
           <Button
             onClick={() => {
               navigate("/admin/customer/notice/register");
             }}
+            type="pc"
             color="point"
             size="small"
           >
@@ -349,7 +351,7 @@ function NoticeListPage() {
               <Button onClick={handleClose} color="gray" line size="small">
                 취소
               </Button>
-              <Button onClick={handleAlertYes} color="black" size="small" >
+              <Button onClick={handleAlertYes} color="black" size="small">
                 확인
               </Button>
             </>

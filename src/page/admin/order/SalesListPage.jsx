@@ -186,10 +186,10 @@ function SalesListPage() {
                   <Button
                     key={option.value}
                     onClick={() => handleButtonClick(option.value)}
+                    type="pc"
                     size="small"
-                    line
-                    color="gray"
-                    // line={activeButton === option.value ? " " : "light"}
+                    line={activeButton === option.value ? false : true}
+                    color={activeButton === option.value ? "point" : "gray"}
                   >
                     {option.label}
                   </Button>
@@ -215,6 +215,7 @@ function SalesListPage() {
         </Table>
         <div className="align center mt_20">
           <Button
+            type="pc"
             color="black"
             icon="Search"
             iconStyle={{
@@ -242,8 +243,8 @@ function SalesListPage() {
             총 <span className="title3">200</span>건
           </p>
         </div>
-        <Button onClick={() => {}} size="small_h35" border="point">
-          엑셀 다운로드
+        <Button onClick={() => { }} type="pc" size="small" color="point">
+          엑셀다운로드
         </Button>
       </div>
       <ContentBox>

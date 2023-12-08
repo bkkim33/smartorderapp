@@ -185,6 +185,7 @@ function ProductRegisterPage() {
                         size="small"
                         onClick={handleOpen}
                         color="point"
+                        type="pc"
                       >
                         쿠폰할인 선택
                       </Button>
@@ -246,6 +247,7 @@ function ProductRegisterPage() {
                             placeholder="옵션명 입력"
                           />
                           <Button
+                            type="pc"
                             icon="Plus"
                             line
                             color="black"
@@ -285,6 +287,7 @@ function ProductRegisterPage() {
                       </TableCell>
                       <TableCell className="top">
                         <Button
+                          type="pc"
                           icon="Plus"
                           line
                           color="black"
@@ -301,10 +304,10 @@ function ProductRegisterPage() {
             </div>
           </div>
           <div className="align center mt_20 gap_10">
-            <Button onClick={() => navigate(-1 || "/")}  color="gray" line size="small">
+            <Button onClick={() => navigate(-1 || "/")} type="pc" color="gray" line size="small">
               취소
             </Button>
-            <Button onClick={handleOpen02} color="black" size="small">
+            <Button onClick={handleOpen02} type="pc" color="black" size="small">
               저장
             </Button>
           </div>

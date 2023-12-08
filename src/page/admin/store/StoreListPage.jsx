@@ -165,6 +165,7 @@ function StoreListPage() {
         </Table>
         <div className="align center mt_20">
           <Button
+            type="pc"
             color="black"
             icon="Search"
             iconStyle={{
@@ -181,13 +182,14 @@ function StoreListPage() {
       </ContentBox>
       <hr className="secondary" />
       <div className="align end gap_10 mt_42">
-        <Button onClick={handleOpen} color="gray" line size="small">
+        <Button onClick={handleOpen} type="pc" color="gray" line size="small">
           삭제
         </Button>
         <Button
           onClick={() => {
             navigate("/admin/store/register");
           }}
+          type="pc"
           color="black"
           size="small"
         >

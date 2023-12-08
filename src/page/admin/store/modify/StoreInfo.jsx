@@ -140,9 +140,11 @@ function StoreInfo() {
               width="300px"
             />
             <Button
+              type="pc"
               onClick={handleOpen2}
               size="xsmall"
-              btntype="change"
+              color="gray"
+              line
               globalClass="ml_10"
             >
               찾기
@@ -161,7 +163,7 @@ function StoreInfo() {
               <span className="bold700 ml_10">종료</span>
               <Select options={hours} defaultValue={0} />시
               <Select options={minutes} defaultValue={0} />분
-              <Button icon="Plus" line onClick={() => {}} size="icon_s_h35">
+              <Button icon="Plus" type="pc" line color="gray" onClick={() => {}} size="icon_s">
                 옵션명 추가
               </Button>
             </div>
@@ -178,11 +180,11 @@ function StoreInfo() {
           </td>
         </tr>
       </Table>
-      <div className="align end gap_10">
-        <Button onClick={() => handleOpenAlert(1)} line size="xlarge">
+      <div className="align center gap_10">
+        <Button onClick={() => handleOpenAlert(1)} type="pc" line color="gray" size="small">
           목록
         </Button>
-        <Button onClick={() => handleOpenAlert(2)} btntype="c11" size="xlarge">
+        <Button onClick={() => handleOpenAlert(2)} type="pc" color="black" size="small">
           저장
         </Button>
       </div>
@@ -190,6 +192,7 @@ function StoreInfo() {
       <MuiAlert
         open={openAlert1}
         onClose={() => handleCloseAlert(1)}
+        type="admin"
         title={
           <>
             입력한 내용을 <br />
@@ -198,10 +201,10 @@ function StoreInfo() {
         }
         button={
           <>
-            <Button onClick={() => handleCloseAlert(1)} line>
+            <Button onClick={() => handleCloseAlert(1)} type="pc" line color="gray" size="small">
               취소
             </Button>
-            <Button onClick={() => navigate("/admin/store")} border="point">
+            <Button onClick={() => navigate("/admin/store")} type="pc" color="black" size="small">
               확인
             </Button>
           </>
@@ -210,6 +213,7 @@ function StoreInfo() {
       <MuiAlert
         open={openAlert2}
         onClose={() => handleCloseAlert(2)}
+        type="admin"
         title={
           <>
             수정된 내용을 <br />
@@ -218,10 +222,10 @@ function StoreInfo() {
         }
         button={
           <>
-            <Button onClick={() => handleCloseAlert(2)} line>
+            <Button onClick={() => handleCloseAlert(2)} type="pc" line color="gray" size="small">
               취소
             </Button>
-            <Button onClick={() => navigate("/admin/store")} border="point">
+            <Button onClick={() => navigate("/admin/store")} type="pc" color="black" size="small">
               확인
             </Button>
           </>

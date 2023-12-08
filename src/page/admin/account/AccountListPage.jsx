@@ -34,6 +34,7 @@ function AccountListPage() {
           </div>
           <div className="rgt">
             <Button
+              type="pc"
               color="point"
               size="small"
               onClick={() => navigate("./create")}

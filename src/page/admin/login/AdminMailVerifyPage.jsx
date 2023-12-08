@@ -87,6 +87,7 @@ function AdminMailVerifyPage() {
                   disabled={certification === false}
                   color="blue"
                   size="full"
+                  type="pc"
                 >
                   임시 비밀번호 전송
                 </Button>
