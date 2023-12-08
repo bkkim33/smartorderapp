@@ -131,6 +131,7 @@ function OrderHistoryListPage() {
         </Table>
         <div className="align center mt_20">
           <Button
+            type="pc"
             color="black"
             icon="Search"
             iconStyle={{

@@ -126,24 +126,21 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
                 </tr>
               </Table>
             </div>
-            <div className="align end">
-              <div className="item">
-                <Button
-                  onClick={() => {
-                    navigate("/admin/customer/notice/");
-                  }}
-                  color="gray"
-                  line
-                  size="small"
-                >
-                  취소
-                </Button>
-              </div>
-              <div className="item">
-                <Button onClick={handleOpen} color="black" size="small">
-                  저장
-                </Button>
-              </div>
+            <div className="align center gap_10">
+              <Button
+                onClick={() => {
+                  navigate("/admin/customer/notice/");
+                }}
+                type="pc"
+                color="gray"
+                line
+                size="small"
+              >
+                취소
+              </Button>
+              <Button onClick={handleOpen} type="pc" color="black" size="small">
+                저장
+              </Button>
             </div>
           </div>
         </ContentBox>

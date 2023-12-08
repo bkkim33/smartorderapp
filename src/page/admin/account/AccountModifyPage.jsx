@@ -90,54 +90,63 @@ function AccountModify() {
               </tr>
             </Table>
           </div>
-          <div className="align end">
-            <div className="rgt gap_10">
-              <Button onClick={handleOpen} 
+          <div className="align center gap_10">
+            <Button 
+              onClick={handleOpen} 
+              type="pc"
               color="red"
-                line
-                size="small">
-                계정 삭제
-              </Button>
-              <Button
-                onClick={() => {
-                  navigate("/admin/account");
-                }}
-                color="gray"
-                line
-                size="small"
-              >
-                취소
-              </Button>
-              <Button
-                onClick={() => {
-                  navigate("/admin/account");
-                }}
-                color="black"
-                size="small"
-              >
-                저장
-              </Button>
-            </div>
+              line
+              size="small"
+            >
+              계정 삭제
+            </Button>
+            <Button
+              onClick={() => {
+                navigate("/admin/account");
+              }}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => {
+                navigate("/admin/account");
+              }}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              저장
+            </Button>
           </div>
         </div>
       </ContentBox>
       <MuiAlert
         open={open}
         onClose={handleClose}
+        type="admin"
+        iconColor="red"
         title={
+          <>
+            계정을 삭제하시겠습니까?
+          </>
+        }
+        desc={
           <>
             계정을 삭제하면 <br />
             <span className="red_text">
-              계정에 연결된 모든 정보가 삭제되며, 삭제된 계정은 복구되지
-              않습니다.
+              계정에 연결된 모든 정보가 삭제되며, <br />삭제된 계정은 복구되지 않습니다.
             </span>
-            <br />
-            계정을 삭제하시겠습니까?
           </>
         }
         button={
           <>
-            <Button onClick={handleClose} 
+            <Button
+              onClick={handleClose}
+              type="pc"
               color="gray"
               line
               size="small">
@@ -147,6 +156,7 @@ function AccountModify() {
               onClick={() => {
                 navigate("/admin/account");
               }}
+              type="pc"
               color="black"
               size="small"
             >

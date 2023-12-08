@@ -108,7 +108,18 @@ function ProductDisplay() {
             </tr>
           </Table>
           <div className="align center mt_20 pb_20">
-            <Button onClick={() => {}} btntype="c11" size="xlarge">
+            <Button
+              type="pc"
+              color="black"
+              icon="Search"
+              iconStyle={{
+                fill: '#fff',
+                height: 24,
+                width: 24
+              }}
+              round
+              size="icon_l"
+            >
               검색
             </Button>
           </div>
@@ -159,17 +170,18 @@ function ProductDisplay() {
           </div>
         </div>
       </div>
-      <div className="align end gap_10">
-        <Button onClick={() => navigate("/admin/store")} line size="xlarge">
+      <div className="align center gap_10">
+        <Button onClick={() => navigate("/admin/store")} color="gray" line size="small" type="pc">
           목록
         </Button>
-        <Button onClick={handleOpen} btntype="c11" size="xlarge">
+        <Button onClick={handleOpen} color="black" size="small" type="pc">
           전시하기
         </Button>
       </div>
       <MuiAlert
         open={open}
         onClose={handleClose}
+        type="admin"
         title={
           <>
             전시상품 리스트의  <br />
@@ -179,10 +191,10 @@ function ProductDisplay() {
         }
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={handleClose} type="pc" color="gray" line size="small">
               아니오
             </Button>
-            <Button onClick={() => navigate("/admin/store")}  border="point">
+            <Button onClick={() => navigate("/admin/store")} type="pc" color="black" size="small">
               네
             </Button>
           </>

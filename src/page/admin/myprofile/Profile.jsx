@@ -55,7 +55,10 @@ function Profile() {
                 />
                 <Button
                   onClick={() => navigate("/admin/myprofile/changepassword")}
-                  size="medium_40"
+                  line
+                  color="gray"
+                  size="xsmall"
+                  type="pc"
                 >
                   변경
                 </Button>

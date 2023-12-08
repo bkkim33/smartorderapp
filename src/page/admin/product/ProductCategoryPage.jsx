@@ -107,11 +107,11 @@ function ProductCategoryPage() {
                   </div>
                 </div>
                 <div className="align end gap_5">
-                  <Button onClick={() => { }} size="small" color="gray" line>
+                  <Button onClick={() => { }} type="pc" size="small" color="gray" line>
                     순서 저장
                   </Button>
                   <Button
-                    onClick={handleAddCategory} size="small" color="point">
+                    onClick={handleAddCategory} type="pc" size="small" color="point">
                     + 카테고리 추가
                   </Button>
                 </div>
@@ -147,15 +147,17 @@ function ProductCategoryPage() {
                                   }
                                 />
                                 <Button
+                                  type="pc"
                                   icon={row.deletable ? "Delete" : "Check"}
                                   line
+                                  color="gray"
                                   onClick={() =>
                                     handleCategoryChange(
                                       row.deletable ? "" : row.category,
                                       row.id
                                     )
                                   }
-                                  size="icon_s_h35"
+                                  size="icon_s"
                                 >
                                   {row.deletable ? "옵션 삭제" : "체크"}
                                 </Button>
@@ -175,11 +177,11 @@ function ProductCategoryPage() {
               <div className="align mt_10 mb_20">
                 <h2 className="headline4">카테고리&nbsp;정보</h2>
                 <div className="align end gap_5">
-                  <Button onClick={handleOpen} color="gray" size="small" line>
+                  <Button onClick={handleOpen} type="pc" color="gray" size="small" line>
                     삭제
                   </Button>
                   <Button
-                    onClick={handleOpen02} color="point" size="small">
+                    onClick={handleOpen02} type="pc" color="point" size="small">
                     저장
                   </Button>
                 </div>
@@ -223,9 +225,11 @@ function ProductCategoryPage() {
               </Table>
             </div>
           </div>
-          <div className="align end mt_20">
+          <div className="align center mt_20">
             <Button
               onClick={() => {}}
+              type="pc"
+              size="small"
               color="black"
             >
               적용하기

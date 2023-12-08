@@ -169,6 +169,7 @@ function ProductListPage() {
         <div className="align center mt_20">
           <Button
             onClick={handleOpen}
+            type="pc"
             color="black"
             icon="Search"
             iconStyle={{
@@ -189,14 +190,17 @@ function ProductListPage() {
           <Select minwidth="200px" defaultValue={0} options={numOpt} />
         </div>
         <div className="rgt gap_5">
-          <Button onClick={handleOpen02} 
+          <Button onClick={handleOpen02}
+            type="pc" 
             color="gray"
             line
-            size="small">
+            size="small"            
+          >
             삭제
           </Button>
           <Button
             onClick={() => navigate("/admin/product/product/register")}
+            type="pc"
             color="point"
             size="small"
           >

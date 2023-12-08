@@ -183,6 +183,7 @@ function ProductDetailPage() {
                   <div className="align start">
                     <div className="item">
                       <Button
+                        type="pc"
                         color="point"
                         onClick={handleOpen}
                         size="small"
@@ -246,6 +247,7 @@ function ProductDetailPage() {
                             placeholder="온도"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -255,6 +257,7 @@ function ProductDetailPage() {
                             옵션 삭제
                           </Button>
                           <Button
+                            type="pc"
                             icon="Plus"
                             line
                             color="black"
@@ -291,6 +294,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -330,6 +334,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -369,6 +374,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -408,6 +414,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -420,6 +427,7 @@ function ProductDetailPage() {
                       </TableCell>
                       <TableCell>
                         <Button
+                          type="pc"
                           icon="Plus"
                           line
                           color="black"
@@ -444,6 +452,7 @@ function ProductDetailPage() {
                             placeholder="농도"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -453,6 +462,7 @@ function ProductDetailPage() {
                             옵션 삭제
                           </Button>
                           <Button
+                            type="pc"
                             icon="Plus"
                             line
                             color="black"
@@ -489,6 +499,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -528,6 +539,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -567,6 +579,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -606,6 +619,7 @@ function ProductDetailPage() {
                             placeholder="0원"
                           />
                           <Button
+                            type="pc"
                             icon="Delete"
                             line
                             color="black"
@@ -618,6 +632,7 @@ function ProductDetailPage() {
                       </TableCell>
                       <TableCell>
                         <Button
+                          type="pc"
                           icon="Plus"
                           line
                           color="black"
@@ -635,10 +650,10 @@ function ProductDetailPage() {
           </div>
           <div className="align center mt_20 gap_10">
             <Button
-              onClick={() => navigate("/admin/product/product")} color="gray" line size="small">
+              onClick={() => navigate("/admin/product/product")} type="pc" color="gray" line size="small">
               취소
             </Button>
-            <Button onClick={handleOpen02} color="black" size="small">
+            <Button onClick={handleOpen02} type="pc" color="black" size="small">
               저장
             </Button>
           </div>
@@ -705,10 +720,10 @@ function ProductDetailPage() {
           ))}
         </Table>
         <div className="align center mt_20 gap_5">
-          <Button onClick={handleClose} color="gray" line size="small">
+          <Button onClick={handleClose} type="pc" color="gray" line size="small">
             취소
           </Button>
-          <Button onClick={handleClose} color="black" size="small">
+          <Button onClick={handleClose} type="pc" color="black" size="small">
             확인
           </Button>
         </div>
@@ -726,11 +741,11 @@ function ProductDetailPage() {
         }
         button={
           <>
-            <Button onClick={handleClose02} color="gray" line size="small">
+            <Button onClick={handleClose02} type="pc" color="gray" line size="small">
               아니오
             </Button>
             <Button
-              onClick={() => navigate("/admin/product/product")} color="black" size="small">
+              onClick={() => navigate("/admin/product/product")} type="pc" color="black" size="small">
               네
             </Button>
           </>
