@@ -168,15 +168,15 @@
   flex-direction: column;
   height: 100%;
   flex: 1;
-  padding: 28px 40px;
+  padding: 30px 20px;
   overflow: auto;
   &_box{
     width: 100%;
     flex: 1;
     background-color: var(--cff);
-    border-radius: 16px;
-    padding: 20px 0;
-    // @include shadow(0, 0, 10px, rgba(0,0,0,0.1));
+    border-radius: 8px;
+    padding: 20px;
+    @include shadow(0, 4px, 4px, rgba(0,0,0,0.1));
     &_top,
     &_bottom{
       flex: none;

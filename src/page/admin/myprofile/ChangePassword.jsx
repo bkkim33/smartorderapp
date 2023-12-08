@@ -53,7 +53,6 @@ function ChangePassword() {
       <div className="align mb_20">
         <h1 className="headline2">비밀번호 변경</h1>
       </div>
-      <hr className="primary" />
       <ContentBox>
         <div className="admin_myprofile">
           <Table
@@ -69,7 +68,7 @@ function ChangePassword() {
                   width="400px"
                 />
                 {errorMessages.currentPasswordError && (
-                  <div className="error_txt mt_5 ml_5">
+                  <div className="red mt_5 ml_5">
                     {errorMessages.currentPasswordError}
                   </div>
                 )}
@@ -86,7 +85,7 @@ function ChangePassword() {
                 />
                 {errorMessages.newPasswordError && (
                   <div
-                    className="error_txt mt_5 ml_5"
+                    className="red mt_5 ml_5"
                     dangerouslySetInnerHTML={{
                       __html: errorMessages.newPasswordError,
                     }}
@@ -103,7 +102,7 @@ function ChangePassword() {
                   width="400px"
                 />
                 {errorMessages.confirmPasswordError && (
-                  <div className="error_txt mt_5 ml_5">
+                  <div className="red mt_5 ml_5">
                     {errorMessages.confirmPasswordError}
                   </div>
                 )}

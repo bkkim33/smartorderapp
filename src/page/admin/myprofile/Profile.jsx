@@ -12,10 +12,9 @@ function Profile() {
 
   return (
     <Layout>
-      <div className="align mb_20">
+      <div className="align mb_25">
         <h1 className="headline2">내 프로필</h1>
       </div>
-      <hr className="primary" />
       <ContentBox>
         <div className="admin_myprofile">
           <Table colgroup={[<col width="10%" />, <col width="auto" />]}>
@@ -26,7 +25,7 @@ function Profile() {
             <tr>
               <th>권한</th>
               <td>
-                <ul>
+                <ul className="pt_5 pb_5">
                   <li>- 카페서비스 관리자</li>
                   <li className="color_t_bb mt_10">- 매장 관리자</li>
                   <li className="color_t_bb mt_10">- 어드민 관리자</li>
@@ -43,19 +42,22 @@ function Profile() {
             </tr>
             <tr>
               <th>비밀번호</th>
-              <td className="align start passwordbox">
+              <td className="align start">
                 <Input
                   width="200px"
                   type="password"
                   placeholder="비밀번호를 입력해 주세요."
                   globalClass="password"
                   defaultValue="0000000000"
-                  shape="none"
+                  // shape="none"
                   disabled
                 />
                 <Button
                   onClick={() => navigate("/admin/myprofile/changepassword")}
-                  size="medium_40"
+                  color="point"
+                  size="small"
+                  type="pc"
+                  globalClass="ml_10"
                 >
                   변경
                 </Button>
