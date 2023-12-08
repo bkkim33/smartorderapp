@@ -79,15 +79,8 @@ const initialTableRows = [
 function ProductListPage() {
 
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
   const [open02, setOpen02] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
   const handleOpen02 = () => {
     setOpen02(true);
   };
@@ -168,7 +161,6 @@ function ProductListPage() {
         </Table>
         <div className="align center mt_20">
           <Button
-            onClick={handleOpen}
             type="pc"
             color="black"
             icon="Search"
@@ -284,86 +276,6 @@ function ProductListPage() {
         </div>
         <MuiPage />
       </ContentBox>
-      <MuiModal
-        open={open}
-        onClose={handleClose}
-        header={
-          <>
-            <h4>쿠폰 생성</h4>
-            <Button
-              icon="Delete"
-              none
-              onClick={handleClose}
-              size="icon_s"
-              iconStyle={{
-                fill: "var(--c99)",
-              }}
-            >
-              Close
-            </Button>
-          </>
-        }
-      >
-        <div className="align top">
-          <div className="lft" style={{ flex: 1 }}>
-            <div style={{ width: "100%" }}>
-              <h5 className="title3 mb_15">쿠폰 상세 내용</h5>
-              <div className="mt_20">
-                <label className="required body2">쿠폰 이미지 타이틀</label>
-                <Textarea
-                  Height={90}
-                  globalClass="mt_10"
-                  counton
-                  maxLength={150}
-                />
-              </div>
-              <div className="mt_20">
-                <label className="required body2">쿠폰 옵션</label>
-                <FormGroup globalClass="mt_10">
-                  <Radio
-                    name="drink"
-                    id="radio1"
-                    value="drinkables"
-                    defaultChecked
-                  >
-                    음료 1잔
-                  </Radio>
-                  <Radio name="drink" id="radio2" value="Americano">
-                    아메리카노 1잔
-                  </Radio>
-                </FormGroup>
-              </div>
-              <div className="mt_20">
-                <label className="required body2">쿠폰명</label>
-                <Input
-                  globalClass="mt_10"
-                  counton
-                  maxLength={15}
-                  onClick={() => {}}
-                />
-              </div>
-              <div className="mt_20">
-                <label className="required body2">유효기간</label>
-                <Input
-                  globalClass="mt_10"
-                  counton
-                  maxLength={15}
-                  onClick={() => {}}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="rgt" style={{ width: 400, marginLeft: 15 }}>
-            <div>
-              <h5 className="title3 ">쿠폰 미리보기</h5>
-              <p className="body2 mb_15 mt_10">
-                고객에게 실제 보여지는 쿠폰 이미지 입니다.
-              </p>
-              <div style={{}}></div>
-            </div>
-          </div>
-        </div>
-      </MuiModal>
       <MuiAlert
         open={open02}
         onClose={handleClose02}
