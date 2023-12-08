@@ -31,7 +31,7 @@ const FileUpload = forwardRef((props, ref) => {
   };
   
   return (
-    <div className={styles.fileUpload}>
+    <div className={`${styles.fileUpload} ${"align"}`}>
       <input
         type="file"
         multiple
@@ -49,18 +49,18 @@ const FileUpload = forwardRef((props, ref) => {
           className={styles.uploadButton}
           color="point"
           size="small"
+          type="pc"
         >
           파일업로드
         </Button>
       </div>
-      <div className="item">
+      <div className="item wrap gap_10">
         {visible &&
           selectedFiles.map((file, index) => (
             <Chip
               key={index}
               label={file.name}
               onClick={() => handleDelete(index)}
-              globalClass="mr_8"
             />
           ))}
       </div>

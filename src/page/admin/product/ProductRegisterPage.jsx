@@ -123,19 +123,15 @@ function ProductRegisterPage() {
       <div className="align mb_20">
         <h1 className="headline2">상품 정보 등록</h1>
       </div>
-      <hr className="primary" />
       <ContentBox>
         <div className="align column">
           <div>
-            <div className="align mt_10 mb_20">
-              <h2 className="headline4">기본 정보</h2>
-            </div>
             <Table
               colgroup={
                 <>
-                  <col width="15%" />
+                  <col width="10%" />
                   <col width="auto" />
-                  <col width="15%" />
+                  <col width="10%" />
                   <col width="auto" />
                 </>
               }
@@ -147,21 +143,14 @@ function ProductRegisterPage() {
                 </td>
                 <th className="required">상품명</th>
                 <td>
-                  <Input placeholder="상품명을 입력해주세요." />
-                </td>
-              </tr>
-              <tr>
-                <th className="required">상품 이미지</th>
-                <td colSpan={3}>
-                  <div className="align start">
-                    <FileUpload onChange={() => {}} />
-                  </div>
+                  <Input width="300px" placeholder="상품명을 입력해주세요." />
                 </td>
               </tr>
               <tr>
                 <th className="required">판매가</th>
                 <td>
                   <Input
+                    width="300px"
                     placeholder="금액을 입력해주세요."
                     type="number"
                     numtxt="원"
@@ -170,6 +159,7 @@ function ProductRegisterPage() {
                 <th>임직원 할인가</th>
                 <td>
                   <Input
+                    width="300px"
                     placeholder="금액을 입력해주세요."
                     type="number"
                     numtxt="원"
@@ -177,10 +167,15 @@ function ProductRegisterPage() {
                 </td>
               </tr>
               <tr>
+                <th className="required">상품 이미지</th>
+                <td className="vertical_top">
+                  <FileUpload onChange={() => {}} />
+                  <div className="align top start"></div>
+                </td>
                 <th>쿠폰할인 적용</th>
-                <td colSpan={3}>
-                  <div className="align start">
-                    <div className="item">
+                <td className="vertical_top">
+                  <div className="align top start">
+                    <div className="item" style={{ minWidth: "116px" }}>
                       <Button
                         size="small"
                         onClick={handleOpen}
@@ -190,30 +185,25 @@ function ProductRegisterPage() {
                         쿠폰할인 선택
                       </Button>
                     </div>
-                    <div className="item">
-                      <Chip
-                        label="C0001"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip
-                        label="C0002"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip
-                        label="C0003"
-                        onClick={() => {}}
-                        globalClass="mr_8"
-                      />
-                      <Chip label="C0004" onClick={() => {}} />
+                    <div className="item wrap gap_10">
+                      <Chip label="C0001" onClick={() => {}} />
+                      <Chip label="C0002" onClick={() => {}} />
                     </div>
                   </div>
                 </td>
               </tr>
             </Table>
-            <div className="align mt_40 mb_20">
-              <h2 className="headline4">옵션 등록</h2>
+            <div className="align mt_30 mb_10">
+              <div className="lft">
+                <Button type="pc" color="gray" line size="small">
+                  삭제
+                </Button>
+              </div>
+              <div className="rgt">
+                <Button type="pc" color="point" size="small">
+                  옵션추가
+                </Button>
+              </div>
             </div>
             <div className="tbl flex_none">
               <TableContainer>
@@ -304,7 +294,13 @@ function ProductRegisterPage() {
             </div>
           </div>
           <div className="align center mt_20 gap_10">
-            <Button onClick={() => navigate(-1 || "/")} type="pc" color="gray" line size="small">
+            <Button
+              onClick={() => navigate(-1 || "/")}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
               취소
             </Button>
             <Button onClick={handleOpen02} type="pc" color="black" size="small">
@@ -397,7 +393,10 @@ function ProductRegisterPage() {
               아니오
             </Button>
             <Button
-              onClick={() => navigate("/admin/product/product/detail")} color="black" size="small">
+              onClick={() => navigate("/admin/product/product/detail")}
+              color="black"
+              size="small"
+            >
               네
             </Button>
           </>

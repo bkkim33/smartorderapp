@@ -1,12 +1,14 @@
 @import'../common/variables';
 
 .chip{
-  display: inline-block;
-  background-color: #F5F6FA;
-  border-radius: 15px;
-  padding:   9px 9px 9px 15px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 160px;
+  // background-color: #F5F6FA;
+  border-radius: 4px;
+  padding: 9px 9px 9px 15px;
   font-size: 1.4rem;
-  border: 1px solid #1F1F1F;
+  border: 1px solid #d9d9d9;
   color: #1F1F1F;
 
   .delete {
@@ -14,11 +16,13 @@
     width: 14px;
     height: 14px;
     position: relative;
+    background-color: var(--cdd);
+    border-radius: 7px;
     &::before {
       @include before_after;
       width: 7px;
       height: 1px;
-      background-color: var(--c11);
+      background-color: var(--cff);
       transform: rotate(-45deg);
       position: absolute;
       @include m_auto;
@@ -27,11 +31,17 @@
       @include before_after;
       width: 7px;
       height: 1px;
-      background-color: var(--c11);
+      background-color: var(--cff);
       transform: rotate(45deg);
       position: absolute;
       @include m_auto;
     }
+     &:hover{
+      background-color: var(--c11);
+    }
+  }
+  &:hover{
+    border-color: var(--c11);
   }
 }
 

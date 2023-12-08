@@ -4,7 +4,7 @@ import styles from "../styles/components/input.module.scss";
 import { Icons } from "./Icon";
 
 Input.propTypes = {
-  type: PropTypes.oneOf(["text", "password", "number", "search", "tel"]),
+  type: PropTypes.oneOf(["text", "password", "number", "search", "tel", "file"]),
   shape: PropTypes.oneOf(["", "round", "line", "none"]),
   width: PropTypes.string,
   height: PropTypes.oneOf(["", "large"]),

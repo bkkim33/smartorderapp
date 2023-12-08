@@ -3,6 +3,9 @@
   align-items: center; // 세로정렬(default)
   justify-content: space-between; // 좌우정렬(default)
   width: 100%;
+  .wrap{
+    flex-wrap: wrap;
+  }
   // align 내 위 아래 정렬이 필요할 때 사용
   &.column {
     height: 100%;
@@ -36,7 +39,7 @@
     // text-align: center;
     align-items: center;
     display: inline-flex;
-    // 아이템 간격 기본 마진 20px (gap으로 변경)
+    // 아이템 간격 기본 마진 10px (gap으로 변경)
     & + .item {
       margin-left: 10px;
     }
@@ -65,4 +68,8 @@
 }
 .txt_rgt{
   text-align: right;
+}
+
+.vertical_top{
+  vertical-align: top;
 }
