@@ -18,6 +18,9 @@
       &.right{
         text-align: right;
       }
+      &.top{
+        vertical-align: top;
+      }
     }
     td {
       padding: 5px 10px;
@@ -30,6 +33,9 @@
       }
       &.right{
         text-align: right;
+      }
+      &.top{
+        vertical-align: top;
       }
     }
   } 

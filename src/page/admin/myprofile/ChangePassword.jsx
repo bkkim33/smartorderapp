@@ -115,7 +115,7 @@ function ChangePassword() {
                 취소
               </Button>
             </div>
-            <div>
+            <div className="item">
               <Button
                 onClick={() => {
                   handlePasswordUpdate();

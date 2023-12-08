@@ -34,7 +34,7 @@ export function Chip({ onClick, ...others }){
     <div className={`${styles.chip} ${globalClass || ""}`}>
       {label}
       <button className={`${styles.delete}`} 
-      onClick={handleDelete}
+        onClick={handleDelete}
       /> 
     </div>
   );
