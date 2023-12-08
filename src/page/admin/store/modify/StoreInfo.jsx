@@ -76,7 +76,6 @@ function StoreInfo() {
             <Input
               type="text"
               placeholder="가맹점명을 입력해주세요."
-              noSpecialChars={true}
               width="300px"
             />
           </td>
@@ -119,7 +118,6 @@ function StoreInfo() {
             <Input
               type="text"
               placeholder="대표자명을 입력해주세요."
-              noSpecialChars={true}
               width="300px"
             />
           </td>
@@ -139,7 +137,6 @@ function StoreInfo() {
             <Input
               type="text"
               placeholder="주소를 입력해주세요."
-              noSpecialChars={true}
               width="300px"
             />
             <Button

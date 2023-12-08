@@ -1,22 +1,22 @@
 @import'../common/variables';
 
-// 버튼의 기본크기는 large를 기준으로 합니다.
+// 버튼의 기본크기는 large를 기준
 .btn{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 120px;
-  min-height: 46px;
-  border: 0;
-  background-color: var(--point);
+  min-height: 50px;
   padding: 10px 20px;
-  @include h5(var(--c00));
+  border: 0;
   box-sizing: border-box;
+  @include h5(var(--c11));
+  line-height: 100%;
   &:disabled{
     cursor: default;
-    background-color: var(--bgf8); 
-    color: var(--cdd);  
+    background-color: var(--bgf8) !important;
+    color: var(--cdd) !important;
   }
   i{
     margin-right: 10px;
@@ -25,204 +25,155 @@
       margin-right: 0;
     }
   }
-  &.border{
-    border: 1px solid var(--primary);
-    color: var(--c11);
-    &.point{
-      @extend .border;
-      border: 1px solid var(--point);
-    }
-  }
 }
-
-.full{
-  width: 100%; 
-  min-height: 50px;
-  font-size: 1.8rem;
-}
-
-.xlarge{ 
-  min-width: 163px;
-}
-
-.medium{
-  min-width: 105px;
-  &_40{
-    min-height: 40px;
-  }
-}
-
-.small{
-  flex-wrap: wrap;
-  flex-direction: column;
-  min-width: 86px;
-  font-size: 1.6rem;
-  padding: 10px;
-  i{
-    display: block;
-    margin-bottom: 3px;
-    margin-right: 0;
-  }
-  span{
-    display: block;
-  }
-  &.round{
-    @include rounded(4px)
-  }
-  &_h35{
-    min-height: 35px;
-    padding: 9px 19px;
-    font-size: 1.4rem;
-  }
-}
-
-.xsmall{
-  min-width: 48px;
-  min-height: 26px;
-  padding: 6px 12px; 
-  font-size: 1.4rem;
-}
-
+// round
 .round{
-  @include rounded(6px)
+  @include rounded(6px);
 }
-
-.type{ 
-  &-blue{
-    background-color: var(--blue); 
-    color: var(--cff);  
-    &:disabled{
-      cursor: default;
-      background-color: var(--cdd); 
-      color: var(--cbb);  
-    }
-  }
-  &-gray{
-    background-color: var(--cee); 
-    color: var(--c77);  
-  }
-  &-change{  
-    background-color: var(--cff);
-    color: var(--c55);  
-    border:1px solid var(--ce7);
-  }
-  &-googlelogin{
-    background-color: var(--cff);
-    color: var(--c11);  
-    border: 1px solid var(--ce7);  
-  }
-  &-c11{
-    background-color: var(--c11);
-    color: var(--cff);  
-  }
-}  
-
-.line{
-  background-color: var(--cff);
-  border: 1px solid var(--primary);
-  color: var(--c11);
-  padding: 9px 19px;
-  &:disabled{
-    cursor: default;
-    background-color: var(--cff);
-    border:1px solid var(--cdd);
-    color: var(--c99);
-  }
-  &.light{
-    @extend .line;
-    color: var(--c99);
-    border: 1px solid var(--cdd);
-    &:hover{
-      border: 1px solid var(--primary);
-      color: var(--c11);
-    }
-    &:active{
-      border: 1px solid var(--primary);
-      color: var(--c11);
-    }
-  }
-}
-
-//해당 스테이트는 레드를 기준으로 합니다.
-.state{
-  background-color: var(--red);
-  @include body2(var(--cff));
-  border: 1px solid var(--red);
-  // &:hover{
-  //   background-color: var(--red);
-  // }
-  // &:active{
-  //   background-color: var(--red-active);
-  // }
-  &:disabled{
-    cursor: default;
-    background-color: var(--bgf5);
-    color: var(--ce7);
-  }
-  &.line{
-    background-color: var(--cff);
-    border: 1px solid var(--c99);
-    color: var(--c99);
-    &:hover{
-      background-color: var(--cff);
-      border: 1px solid var(--red);
-      color: var(--red);
-    }
-    &:active{
-      background-color: var(--cff);
-      border: 1px solid var(--red-active);
-      color: var(--red-active);
-    }
-    &:disabled{
-      cursor: default;
-      background-color: var(--cff);
-      color: var(--c99); 
-      border-color: var(--ce7);
-    } 
-  } 
-} 
- 
+// none
 .none{
   min-width: auto;
   min-height: auto;
-  background-color: transparent;
-  border: 0;
-  color: var(--primary);
   text-decoration: underline;
-  &:hover{
-    background-color: transparent;
-    border: 0;
-    color: var(--point-hover);
-  }
-  &:active{
-    background-color: transparent;
-    border: 0;
-    color: var(--point);
-  }
+  padding: 0;
   &:disabled{
-    cursor: default;
     background-color: transparent;
-    border: 0;
-    color: var(--c99);
   }
-  &.state{
-    color: var(--c99);
-    &:hover{
-      color: var(--red);
-    }
-    &:active{
-      color: var(--red-active);
-    }
-    &:disabled{
-      cursor: default;
-      background-color: transparent;
-      color: var(--ce7);
-    }
+}
+// color
+.point{
+  background-color: var(--point);
+  &.line{
+    border: 1px solid var(--point);    
   }
-  &.type-bule{
+}
+.black{
+  background-color: var(--primary);
+  color: var(--cff);
+  &.line{
+    border: 1px solid var(--primary);
+  }
+}
+.gray{
+  background-color: #D9D9D9;
+  &.line{
+    border: 1px solid #D9D9D9;
+  }
+}
+.red{
+  background-color: var(--red);
+  color: var(--cff);
+  &.line{
+    border: 1px solid var(--red);
+    color: var(--red);
+  }
+  &.none{
+    background-color: transparent;
+    color: var(--red);
+  }
+}
+.blue{
+  background-color: var(--blue);
+  color: var(--cff);
+  &.line{
+    border: 1px solid var(--blue);
+    color: var(--blue);
+  }
+  &.none{
+    background-color: transparent;
     color: var(--blue);
   }
 }
+.trans{  
+  color: var(--cff);
+  &.line{
+    background-color: transparent;
+    border: 1px solid var(--cff);
+  }
+}
+//line defalut
+.line {
+  background-color: var(--cff);
+  color: var(--primary);
+}
+//text color
+.txtgray{
+  color: var(--c77);
+}
+.txtwhite{
+  color: var(--cff);
+}
+//size
+.full{
+  width: 100%;
+  min-height: 50px;
+  font-size: 1.8rem;
+}
+.xlarge{
+  min-width: 150px;
+  min-height: 50px;
+  font-size: 1.7rem;
+}
+.medium{
+  min-width: 100px;
+  min-height: 40px;
+}
+.small{
+  min-width: 92px;
+  min-height: 35px;
+  font-size: 1.4rem;
+}
+.xsmall{
+  min-width: auto;
+  min-height: 35px;
+  font-size: 1.4rem;
+}
+.xxsmall{
+  min-width: auto;
+  min-height: 26px;
+  font-size: 1.4rem;
+  padding: 6px 12px;
+}
+.icon_l{
+  min-width: auto;
+  min-height: auto;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  &.round{
+    @include rounded(8px);
+  }
+  i{
+    margin: 0;
+    font-size: 0;
+  }
+}
+.icon_m{
+  min-width: auto;
+  min-height: auto;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  i{
+    margin: 0;
+    font-size: 0;
+  }
+}
+.icon_s{
+  min-width: auto;
+  min-height: auto;
+  width: 35px;
+  height: 35px;
+  padding: 7px;
+  &.round{
+    @include rounded(4px);
+  }
+  i{
+    margin: 0;
+    font-size: 0;
+  }
+}
+//badge
 .badge {
   position: absolute;
   right: 0;
@@ -230,7 +181,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  // width: max-content;
   width: 12px;
   height: 12px;
   padding: 4px;
@@ -240,49 +190,120 @@
   font-weight: 500;
   color: var(--cff);
 }
-.icon_m{
-  min-width: 50px;
-  min-height: 50px;
-  padding: 10px;
-  i{
-    margin: 0;
-  //   svg{
-  //     width: 20px;
-  //     height: 20px;
-  //   }
-  }
-  &.round{
-    @include rounded(8px)
-  }
-}
-.icon_s{
-  min-width: 30px;
-  min-height: 30px;
-  padding: 7px;
-  i{
-    margin: 0;
-    font-size: 0;
-    // svg{
-    //   width: 16px;
-    //   height: 16px;
-    // }
-  }
-  &_h35{
-    min-width: 35px;
-    min-height: 35px;
-    padding: 7px;
-    i{
-      margin: 0;
-      font-size: 0;
+
+.pc{
+  &.btn{
+    &:hover{
+      color: var(--point);
+    }
+    &:disabled {
+      &:hover{
+        background-color: var(--bgf8) !important;
+        color: var(--cdd) !important;
+      }
+    }
+    &.line{
+      &:disabled{
+        border-color: #f7f7f7 !important;
+        background-color: var(--cff) !important;
+        &:hover{
+          border-color: #f7f7f7 !important;
+          background-color: var(--cff) !important;
+          color: var(--cdd) !important;
+        }
+      }
     }
   }
-  &.round{
-    @include rounded(8px)
+  &.point{
+    &:hover{
+      background-color: #BEDD00;
+      color: var(--primary);
+    }    
   }
-  // .badge{
-  //   width: 10px;
-  //   height: 10px;
-  //   padding: 0;
-  //   font-size: 0;
-  // }
+  &.black{
+    &:hover{
+      background-color: var(--c44);
+      color: var(--cff);
+    }
+    &.line{
+      &:hover{
+        border-color: var(--point);
+        background-color: var(--cff);
+        color: var(--primary);
+      }
+    }
+  }
+  &.gray{
+    &:hover{
+      background-color: var(--cee);
+      color: var(--primary);
+    }
+    &.line{
+      &:hover{
+        border-color: var(--point);
+        background-color: var(--cff);
+      }
+    }
+  }
+  &.red{
+    &:hover{
+      background-color: var(--cff);
+      border: 1px solid var(--red);
+      color: var(--red);
+    }
+    &:disabled{
+      &:hover{
+        border-color: #f7f7f7;
+      }
+    }
+    &.line{
+      &:hover{
+        background-color: var(--red);
+        color: var(--cff);
+      }      
+    }
+  }
+  &.blue{
+    &:hover{
+      background-color: var(--cff);
+      border: 1px solid var(--blue);
+      color: var(--blue);
+    }
+    &:disabled{
+      &:hover{
+        border-color: #f7f7f7;
+      }
+    }
+    &.line{
+      &:hover{
+        background-color: var(--blue);
+        color: var(--cff);
+      }
+    }
+  }
+  &.trans{
+    &:hover{      
+      background-color: transparent;
+      border-color: var(--point);
+      color: var(--point);
+      i{
+        svg{
+          path{
+            stroke: var(--point);
+          }
+        }
+      }
+    }    
+    &.line{
+      &:disabled {
+        background-color: transparent !important;
+        border-color: var(--c44);
+        color: var(--c44);
+        &:hover{
+          background-color: transparent !important;
+        }
+      }
+    }
+    
+  }
 }

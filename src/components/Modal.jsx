@@ -29,7 +29,7 @@ export function Modal({ onClick, onClose, ...others }) {
 
     return (
       <>
-        <Button onClick={() => {handleOpenModal(true)}}>
+        <Button color="point" onClick={() => {handleOpenModal(true)}}>
             button
         </Button>
         {isModalOpen && (

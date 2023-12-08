@@ -809,6 +809,21 @@ const Setting = ({ width = 19, height = 20, fill = "var(--primary)" }) => (
   </svg>
 );
 
+const AlertIcon = ({ width = 50, height = 50, fill ="var(--blue)" }) => (
+  <svg width={width} height={height} viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z" fill={fill} />
+    <path d="M25 39.5449C23.35 39.5449 22 38.1949 22 36.5449C22 34.8949 23.35 33.5449 25 33.5449C26.65 33.5449 28 34.8949 28 36.5449C28 38.1949 26.65 39.5449 25 39.5449Z" fill="white" />
+    <rect x="22" y="8.36133" width="6" height="22.1843" rx="3" fill="white" />
+  </svg>
+);
+
+const Download = ({ width = 11, height = 18, fill = "var(--c33)" }) => (
+  <svg width={width} height={height} viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 8.41176L5.5 13M5.5 13L10 8.41176M5.5 13V0" stroke={fill} />
+    <path d="M1 17H10" stroke={fill} />
+  </svg>
+);
+
 export const Icons = {
   Logo,
   LogoIcon,
@@ -846,4 +861,6 @@ export const Icons = {
   AdminArrowBar,
   Check,
   Setting,
+  AlertIcon,
+  Download,
 };

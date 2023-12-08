@@ -84,7 +84,7 @@ function MyInfo() {
               />
               <Button 
               onClick={() => navigate("/password")}
-              size="xsmall">
+              size="xxsmall" line color="gray">
                 변경
               </Button>
           </li>

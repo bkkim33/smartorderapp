@@ -107,14 +107,11 @@ function ProductCategoryPage() {
                   </div>
                 </div>
                 <div className="align end gap_5">
-                  <Button onClick={() => {}} size="small_h35" line>
+                  <Button onClick={() => { }} size="small" color="gray" line>
                     순서 저장
                   </Button>
                   <Button
-                    onClick={handleAddCategory}
-                    size="small_h35"
-                    border="point"
-                  >
+                    onClick={handleAddCategory} size="small" color="point">
                     + 카테고리 추가
                   </Button>
                 </div>
@@ -178,14 +175,11 @@ function ProductCategoryPage() {
               <div className="align mt_10 mb_20">
                 <h2 className="headline4">카테고리&nbsp;정보</h2>
                 <div className="align end gap_5">
-                  <Button onClick={handleOpen} size="small_h35" line>
+                  <Button onClick={handleOpen} color="gray" size="small" line>
                     삭제
                   </Button>
                   <Button
-                    onClick={handleOpen02}
-                    size="small_h35"
-                    border="point"
-                  >
+                    onClick={handleOpen02} color="point" size="small">
                     저장
                   </Button>
                 </div>
@@ -232,8 +226,7 @@ function ProductCategoryPage() {
           <div className="align end mt_20">
             <Button
               onClick={() => {}}
-              size="xlarge"
-              btntype="c11"
+              color="black"
             >
               적용하기
             </Button>
@@ -242,23 +235,28 @@ function ProductCategoryPage() {
         <MuiAlert
           open={open}
           onClose={handleClose}
+          type="admin"
+          iconColor="red"
           title={
+            <>
+              카테고리를 삭제하시겠습니까?              
+            </>
+          }
+          desc={
             <>
               카테고리를 삭제하면 <br />
               <span className="red_text">
                 카테고리에 연결된 모든 상품이 매장에 노출되지 않으며, 삭제된
                 카테고리는 복구되지 않습니다.
-              </span>{" "}
-              <br />
-              카테고리를 삭제하시겠습니까?
+              </span>
             </>
           }
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} color="gray" line size="small">
                 취소
               </Button>
-              <Button onClick={handleClose} border="point">
+              <Button onClick={handleClose} color="black" size="small">
                 확인
               </Button>
             </>
@@ -267,6 +265,7 @@ function ProductCategoryPage() {
         <MuiAlert
           open={open02}
           onClose={handleClose02}
+          type="admin"
           title={
             <>
               수정된 내용을
@@ -276,10 +275,10 @@ function ProductCategoryPage() {
           }
           button={
             <>
-              <Button onClick={handleClose02} line>
+              <Button onClick={handleClose02} color="gray" line size="small">
                 아니오
               </Button>
-              <Button onClick={handleClose02} border="point">
+              <Button onClick={handleClose02} color="black" size="small">
                 네
               </Button>
             </>

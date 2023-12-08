@@ -160,8 +160,9 @@ const navigate = useNavigate();
             </div>
             <Button
               onClick={handleDropdownClick}
-              size="xsmall"
-              btntype="change"
+              size="xxsmall"
+              line
+              color="gray"
             >
               변경
             </Button>
@@ -239,6 +240,7 @@ const navigate = useNavigate();
                       휴지통
                     </Button>
                     <Button
+                      size="xsmall"
                       onClick={handleOpen}
                       none
                       globalClass="pd_0"
@@ -273,8 +275,9 @@ const navigate = useNavigate();
             onClick={() => {
               navigate("/main");
             }}
-            size="full"
+            color="black"
             line
+            size="full"
           >
             {isCartEmpty ? "메뉴 담으러 가기" : "메뉴 더 담기"}
           </Button>
@@ -295,6 +298,7 @@ const navigate = useNavigate();
                   navigate("/payment");
                 }}
                 size="full"
+                color="point"
               >
                 총 <span>{totalQuantity}</span>개 주문하기
               </Button>

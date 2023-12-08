@@ -5,95 +5,74 @@ import { Icons } from "./Icon";
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(["", "pc"]),
   round: PropTypes.bool,
-  line: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  state: PropTypes.bool,
   none: PropTypes.bool,
-  disabled: PropTypes.bool,
-  btntype: PropTypes.oneOf(["", "change", "gray", "blue", "googlelogin", "c11"]),
-  size: PropTypes.oneOf([
-    "full",
-    "xlarge",
-    "medium",
-    "small",
-    "xsmall",
-    "icon_m",
-    "icon_s",
-    "icon_s_h35",
-    "small_h35",
-    "medium_h40",
-    "",
-  ]),
-  border: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  disabled: PropTypes.bool, 
+  line: PropTypes.bool,
+  txtColor: PropTypes.oneOf(["", "txtgray", "txtwhite"]),
+  color: PropTypes.oneOf(["", "point", "black", "gray", "red", "blue", "trans"]),
+  size: PropTypes.oneOf(["", "full", "xlarge", "medium", "small", "xsmall", "xxsmall", "icon_l", "icon_m", "icon_s"]),
   icon: PropTypes.string,
-  iconposition: PropTypes.oneOf(["right", ""]),
+  iconposition: PropTypes.oneOf(["", "right"]),
   iconStyle: PropTypes.shape({
     fill: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
   }),
-  badge: PropTypes.bool,
+  badge: PropTypes.bool,  
   globalClass: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
-// 기본 상태가 필요시에만 사용됨
 Button.defaultProps = {
   children: "button",
-  size: "",
-  border: false,
+  type: "",
   round: false,
-  line: false,
-  state: false,
   none: false,
   disabled: false,
-  iconStyle: {
-    // fill: "var(--c00)",
-    // width: 20,
-    // height: 20,
-  },
+  line: false,
+  txtColor: "",
+  color: "",
+  size: "",
   icon: "",
-  globalClass: "",
-  btntype: "",
   badge: false,
+  globalClass: "",
 };
 
-export function Button({ children, onClick, app, btntype, ...others }) {
+export function Button({ children, onClick, ...others }){
   const {
-    size,
+    type,
     round,
-    line,
-    state,
     none,
     disabled,
-    globalClass,
+    line,
+    txtColor,
+    color,
+    size,
     iconStyle,
     icon,
     iconposition,
     badge,
-    border,
-    active,
+    active,    
+    globalClass,
   } = others;
   const IconComponent = icon ? Icons[icon] : null;
   const mergedIconStyle = { ...iconStyle };
-  // const appClass = app ? `color-${color}` : ``;
-  const appClass = `type-${btntype}`;
   // 탭버튼일 때 default 
   const tabdefault = active ? 'active' : '';
-
   return (
-    <button
-      className={`
-      ${styles.btn} ${styles[size]} ${round ? styles.round : ""} 
-      ${line ? styles.line : ""} 
-      ${state ? styles.state : ""} 
-      ${none ? styles.none : ""} ${globalClass || ""} 
-      ${styles[appClass]} 
-      ${line === "light" ? styles.light : ""} 
-      ${border ? styles.border : ""}
-      ${border === "point" ? styles.point : ""} 
-      ${tabdefault} 
-      `} 
+    <button className={` 
+        ${styles.btn} 
+        ${styles[type]}
+        ${round ? styles.round : ""}
+        ${none ? styles.none : ""}
+        ${line ? styles.line : ""}
+        ${styles[txtColor]}
+        ${styles[color]}
+        ${styles[size]}
+        ${tabdefault}        
+        ${globalClass || ""}
+      `}
       disabled={disabled}
       onClick={onClick}
     >
@@ -106,7 +85,7 @@ export function Button({ children, onClick, app, btntype, ...others }) {
           />
         </i>
       )}
-      {size !== "icon_m" && size !== "icon_s" && size !== "icon_s_h35" && <span>{children}</span>}
+      {size !== "icon_l" && size !== "icon_m" && size !== "icon_s" && <span>{children}</span>}
       {IconComponent && iconposition === "right" && (
         <i className={`${styles[iconposition]}`}>
           <IconComponent
@@ -121,6 +100,6 @@ export function Button({ children, onClick, app, btntype, ...others }) {
       )}
     </button>
   );
-}
+};
 
 export default Button;

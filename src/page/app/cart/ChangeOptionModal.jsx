@@ -28,8 +28,8 @@ function ChangeOptionModal({ open, handleClose }){
         }
         button={
           <>
-            <Button onClick={handleClose} line>옵션 초기화</Button>
-            <Button onClick={handleClose} globalClass="ml_10">
+            <Button onClick={handleClose} color="gray" txtColor="txtgray">옵션 초기화</Button>
+            <Button onClick={handleClose} color="point" globalClass="ml_10">
               변경 완료
             </Button>
           </>

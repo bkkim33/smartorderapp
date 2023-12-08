@@ -26,7 +26,7 @@ function OrderHistoryCard({ Data }) {
               <p className="body3">{History.time}</p>
             </div>
             <div className="ml_10">
-              <Button size="small" none onClick={() => handleOpen(index)}>
+              <Button size="medium" none onClick={() => handleOpen(index)}>
                 상세내역
               </Button>
             </div>

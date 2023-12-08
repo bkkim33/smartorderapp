@@ -132,14 +132,15 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
                   onClick={() => {
                     navigate("/admin/customer/notice/");
                   }}
-                  size="xlarge"
+                  color="gray"
                   line
+                  size="small"
                 >
                   취소
                 </Button>
               </div>
               <div className="item">
-                <Button onClick={handleOpen} size="xlarge" btntype="c11">
+                <Button onClick={handleOpen} color="black" size="small">
                   저장
                 </Button>
               </div>
@@ -156,14 +157,15 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
           }
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} color="gray" line size="small">
                 아니오
               </Button>
               <Button
                 onClick={() => {
                   navigate("/admin/customer/notice");
                 }}
-                border="point"
+                color="black"
+                size="small"
               >
                 네
               </Button>

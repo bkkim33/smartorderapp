@@ -17,10 +17,11 @@ function PayAlert({ open, handleClose }) {
       desc={<>결제를 원하시면 확인을 눌러주세요</>}
       button={
         <>
-          <Button onClick={handleClose} line>
+          <Button line color="gray" onClick={handleClose} >
             취소
           </Button>
           <Button
+            color="point"
             onClick={() => {
               navigate("/complete");
             }}

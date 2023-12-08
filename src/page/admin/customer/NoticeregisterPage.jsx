@@ -129,8 +129,9 @@ function NoticeregisterPage() {
                 onClick={() => {
                   navigate("/admin/customer/notice/");
                 }}
-                size="xlarge"
+                color="gray"
                 line
+                size="small"
               >
                 취소
               </Button>
@@ -138,8 +139,8 @@ function NoticeregisterPage() {
             <div className="item">
               <Button
                 onClick={handleOpen}
-                size="xlarge"
-                btntype="c11"
+                color="black"
+                size="small"
               >
                 저장
               </Button>
@@ -153,10 +154,16 @@ function NoticeregisterPage() {
         title={<>저장하시겠습니까?</>}
         button={
           <>
-            <Button onClick={handleClose} line>
+            <Button onClick={handleClose} 
+              color="gray"
+              line
+              size="small">
               아니오
             </Button>
-            <Button onClick={() => navigate("/admin/customer/notice")} border="point">
+            <Button onClick={() => navigate("/admin/customer/notice")} 
+              color="black"
+              size="small"
+            >
               네
             </Button>
           </>

@@ -113,7 +113,7 @@ function ChangePassword() {
                 handlePasswordUpdate();
                 handleOpen();
               }}
-              btntype="c11"
+              color="black"
               size="xlarge"
             >
               확인
@@ -126,10 +126,10 @@ function ChangePassword() {
           title={<>비밀번호를 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} color="gray" line size="xlarge">
                 취소
               </Button>
-              <Button onClick={handleOpen02} border="point">
+              <Button onClick={handleOpen02} color="point" size="xlarge">
                 확인
               </Button>
             </>
@@ -149,7 +149,8 @@ function ChangePassword() {
             <>
               <Button
                 onClick={() => navigate("/admin")}
-                border="point"
+                color="point"
+                size="xlarge"
               >
                 확인
               </Button>

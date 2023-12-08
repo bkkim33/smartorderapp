@@ -164,22 +164,32 @@ function StoreListPage() {
           </tr>
         </Table>
         <div className="align center mt_20">
-          <Button onClick={handleOpen} btntype="c11" size="xlarge">
+          <Button
+            color="black"
+            icon="Search"
+            iconStyle={{
+              fill: '#fff',
+              height: 24,
+              width: 24
+            }}
+            round
+            size="icon_l"
+          >
             검색
           </Button>
         </div>
       </ContentBox>
       <hr className="secondary" />
       <div className="align end gap_10 mt_42">
-        <Button onClick={handleOpen} size="small_h35" line>
+        <Button onClick={handleOpen} color="gray" line size="small">
           삭제
         </Button>
         <Button
           onClick={() => {
             navigate("/admin/store/register");
           }}
-          size="small_h35"
-          border="point"
+          color="black"
+          size="small"
         >
           등록
         </Button>
@@ -267,23 +277,28 @@ function StoreListPage() {
         <MuiAlert
           open={open}
           onClose={handleClose}
+          type="admin"
+          iconColor="red"
           title={
+            <>
+              가맹점을 삭제하시겠습니까?
+            </>
+          }
+          desc={
             <>
               가맹점을 삭제하면 <br />
               <span className="red_text">
-                가맹점에 연결된 모든 정보가 삭제되며, 삭제된 가맹점은 복구되지
+                가맹점에 연결된 모든 정보가 삭제되며, <br />삭제된 가맹점은 복구되지
                 않습니다.
               </span>
-              <br />
-              가맹점을 삭제하시겠습니까?
             </>
           }
           button={
             <>
-              <Button onClick={handleClose} line>
+              <Button onClick={handleClose} color="gray" line size="small">
                 아니오
               </Button>
-              <Button onClick={handleAlertYes} border="point">
+              <Button onClick={handleAlertYes} color="black" size="small">
                 네
               </Button>
             </>

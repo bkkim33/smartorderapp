@@ -23,7 +23,7 @@
     margin-bottom: 14px;
     @include h3(var(--c11));
     text-align: center;
-    line-height: 160%;
+    line-height: 2.5rem;
   }
   &_desc{
     @include body1(var(--c55));
@@ -34,8 +34,30 @@
     align-items: center;
     justify-content: center;
     gap: 13px;
-    // button {
-    //   width: 100%; 
-    // }
+  }
+}
+
+.admin{
+  .alert{
+    &_wrap{
+      min-width: 400px;
+      border-radius: 8px;
+    }
+    &_box{
+      min-height: 238px;
+      padding: 30px;
+    }
+    &_content{
+      align-items: center;
+    }
+    &_title{
+      margin-top: 34px;
+    }
+    &_desc{
+      line-height: 2rem;
+    }
+    &_btn{
+      margin-top: 20px;
+    }
   }
 }

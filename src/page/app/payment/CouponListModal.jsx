@@ -26,7 +26,7 @@ function CouponListModal({ open, handleClose, data }) {
       } 
       button={
         <>
-          <Button onClick={handleClose}>사용하기</Button>
+          <Button color="point" size="full" onClick={handleClose}>사용하기</Button>
         </>
       }
     >

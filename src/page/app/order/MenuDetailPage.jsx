@@ -4,13 +4,10 @@ import Layout from "../../../layout/AppDefaultLayout";
 import Button from "../../../components/Button";
 import TextToggle from "../../../components/TextToggle";
 import Count from "../../../components/Count";
-
-// import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-// import { Navigation, Pagination } from "swiper/modules";
 import MenuSwiper from "./MenuSwiper";
 
 const ProductData = [
@@ -135,8 +132,9 @@ function MenuDetailPage({QR}) {
         </div>
         <div className="align inner gap_9">
           <Button 
-            btntype="gray"
+            color="gray"
             size="full"
+            txtColor="txtgray"
             onClick={() => {
               // navigate("/payment");
               document.querySelector(".order_floating").classList.add("show");
@@ -146,6 +144,7 @@ function MenuDetailPage({QR}) {
           </Button>
           <Button
             size="full"
+            color="point"
             onClick={() => {
               navigate("/payment");
             }}

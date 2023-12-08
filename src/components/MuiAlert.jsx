@@ -1,14 +1,23 @@
 /** @jsxImportSource @emotion/react */
 
 import React from "react";
+import PropTypes from "prop-types";
 import Dialog from '@mui/material/Dialog';
 import styles from "../styles/components/muialert.module.scss";
+import { Icons } from "./Icon";
 
-MuiAlert.propTypes = {};
+MuiAlert.propTypes = {
+  type: PropTypes.oneOf(["","admin"]),
+  iconColor: PropTypes.oneOf(["","red"]),
+};
 
-MuiAlert.defaultProps = {};
+MuiAlert.defaultProps = {
+  type: "",
+  iconColor: "",
+};
 
-export function MuiAlert({ open, onClose, title, button, desc }) {
+export function MuiAlert({ open, onClose, title, button, desc, ...others }) {
+  const { type, iconColor } = others;
   return (
     <div>
       <Dialog
@@ -16,13 +25,19 @@ export function MuiAlert({ open, onClose, title, button, desc }) {
         onClose={onClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        className={`${styles.alert}`}
+        className={`${styles.alert} ${styles[type]}`}
         classes={{
-          paper: styles.alert_wrap,
+          paper: styles.alert_wrap,          
         }}
       >
         <div className={`${styles.alert_box}`}>
           <div className={`${styles.alert_content}`}>
+            {type === "admin" && iconColor !== "red" &&(
+              <Icons.AlertIcon></Icons.AlertIcon>
+            )}
+            {type === "admin" && iconColor === "red" && (
+              <Icons.AlertIcon fill="var(--red)"></Icons.AlertIcon>
+            )} 
             <h2 className={`${styles.alert_title}`}>{<>{title}</>}</h2>
             <p className={`${styles.alert_desc}`}>{<>{desc}</>}</p>
           </div>
