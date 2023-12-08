@@ -110,17 +110,24 @@ function ChangePassword() {
             </tr>
           </Table>
           <div className="align center mt_20">
-            <Button
-              onClick={() => {
-                handlePasswordUpdate();
-                handleOpen();
-              }}
-              type="pc"
-              color="black"
-              size="small"
-            >
-              확인
-            </Button>
+            <div className="item">
+              <Button color="gray" line size="small" type="pc">
+                취소
+              </Button>
+            </div>
+            <div>
+              <Button
+                onClick={() => {
+                  handlePasswordUpdate();
+                  handleOpen();
+                }}
+                type="pc"
+                color="black"
+                size="small"
+              >
+                확인
+              </Button>
+            </div>
           </div>
         </div>
         <MuiAlert
@@ -130,10 +137,21 @@ function ChangePassword() {
           title={<>비밀번호를 변경하시겠습니까?</>}
           button={
             <>
-              <Button onClick={handleClose} type="pc" color="gray" line size="small">
+              <Button
+                onClick={handleClose}
+                type="pc"
+                color="gray"
+                line
+                size="small"
+              >
                 취소
               </Button>
-              <Button onClick={handleOpen02} type="pc" color="black" size="small">
+              <Button
+                onClick={handleOpen02}
+                type="pc"
+                color="black"
+                size="small"
+              >
                 확인
               </Button>
             </>

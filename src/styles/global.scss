@@ -56,40 +56,29 @@
 
 //임시 테이블 글로벌 스타일 
 .tbl {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100% - 40px);
-  &.flex_none{
-    width: 100%;
-    height: auto;
-  }
   table {
-    flex: 1 1;
     width: 100%;
+    
     thead {
       background-color: var(--bgf5);
-
       th {
         font-family: 'Pretendard';
-        padding: 17px 10px;
+        padding: 14px 10px;
         @include h5(var(--c33));
         text-align: center;
-
-        &+th {
-          border-left: 1px solid var(--bgf5);
+        border-top: 1px solid var(--c11);
+        & + th{
+          border-left: 1px solid #d9d9d9;
         }
+        
       }
     }
-
     tbody {
       tr {
         border-bottom: 1px solid #f1f4f7;
-
-        &:hover {
-          background-color: #fafbfe;
-        }
+        // &:hover {
+        //   background-color: #fafbfe;
+        // }
         &.noborder {
           border-bottom: none;
         }
@@ -99,12 +88,16 @@
       }
       td {
         font-family: 'Pretendard';
-        padding: 20px 10px;
+        padding: 5px 10px;
+        height: 45px;
         // color: #354165;
         // font-size: 1.4rem;
         @include body2(var(--c33));
         text-align: center;
-        // vertical-align: top;    
+        // vertical-align: top;  
+        & + td{
+          border-left: 1px solid #d9d9d9;
+        }  
             
         &.noborder {
           border-bottom: 0;
