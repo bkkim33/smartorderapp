@@ -145,7 +145,6 @@
       color: #6D772F;
     }
   }
-  // 진현주 - phone이 disabled일 경우 인증요청 button=none 작업 추가(내정보 페이지에 사용)
   &.phone {
     &:disabled {
       .certification {

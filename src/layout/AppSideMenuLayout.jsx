@@ -76,7 +76,6 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                {/* 진현주 - Link에 내정보 페이지로 변경 */}
                 <Link to="/myinfo">
                   <Icons.MenuPrivacy width={16} height={16} fill="#3A3A3A" />
                   <span>내 정보</span>
@@ -89,7 +88,6 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
                 </Link>
               </li>
               <li className={`${styles.menu_dep1}`}>
-                {/* 진현주 - Link에 자주하는 질문 페이지로 변경 */}
                 <Link to="/faq">
                   <Icons.Question width={16} height={16} fill="#3A3A3A" />
                   <span>자주하는 질문</span>

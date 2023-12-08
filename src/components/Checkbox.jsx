@@ -14,8 +14,6 @@ Checkbox.propTypes = {
 
 // 기본 상태가 필요시에만 사용됨
 Checkbox.defaultProps = {
-  // 진현주 - 텍스트 없이 사용하여도 children에 text로 자동기입되어서 수정
-  // children: "",
   value: "value",
   name: "radio1",
   id: "radio0",
@@ -28,7 +26,6 @@ export function Checkbox({ children, id, onChange, ...others }) {
   const { value, name, checked, defaultChecked, textposition, disabled, txt } =
     others;
   
-  // 진현주 - 페이지에 사용 시 onChange의 값을 못 찾아서 수정
   // const onChange = (e) => {
   //   const { value } = e.target;
   //   console.log("clicked", value);

@@ -133,7 +133,7 @@ function OrderHistoryPage() {
               defaultActive: true,
               content: (
                 <>
-                  {OrderHistoryData?.length > 0 ? (
+                  {History1.length > 0 ? (
                     <OrderHistoryCard Data={History1} />
                   ) : (
                     <NoData
@@ -149,7 +149,7 @@ function OrderHistoryPage() {
               title: "6개월",
               content: (
                 <>
-                  {OrderHistoryData?.length > 0 ? (
+                  {History6.length > 0 ? (
                     <OrderHistoryCard Data={History6} />
                   ) : (
                     <NoData
@@ -165,7 +165,7 @@ function OrderHistoryPage() {
               title: "12개월",
               content: (
                 <>
-                  {OrderHistoryData?.length > 0 ? (
+                  {History12.length > 0 ? (
                     <OrderHistoryCard Data={History12} />
                   ) : (
                     <NoData

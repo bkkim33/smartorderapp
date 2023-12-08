@@ -19,7 +19,6 @@ export function Count({ count, handleItemQuantity, ...others }) {
   const { disabled, size } = others;
   const [currentCount, setCount] = useState(count);
 
-  // 진현주 - 코드 간소화 
   const handleMinus = () => {
     if (currentCount > 0) {
       setCount(currentCount - 1);
