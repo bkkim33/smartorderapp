@@ -201,7 +201,8 @@ hr {
   display: flex;
   width: 100%;
   align-items: center;
-  border: 1px solid var(--cdd);
+  // border: 1px solid var(--cdd);
+  border: 0;
   border-radius: 4px;
   background-color: var(--cff);
   box-sizing: border-box;
@@ -210,13 +211,17 @@ hr {
   color: var(--c11);
   text-align: left;
   padding-right: 14px;
-  padding: 10px 16px 10px 44px;
+  padding: 10px 0 10px 28px;
   cursor: pointer;
   position: relative;
+  font-size: 1.6rem;
   &:focus {
-    border: 1px solid var(--c11);
+    border: 0;
     box-shadow: 0;
     outline: none;
+  }
+  &::placeholder{
+    color: var(--c99);
   }
 }
 
@@ -233,8 +238,8 @@ hr {
       no-repeat center center;
     background-size: contain;
     position: absolute;
-    top: 8px;
-    left: 16px;
+    top: 7px;
+    left: 0;
     z-index: 3;
   }
 }

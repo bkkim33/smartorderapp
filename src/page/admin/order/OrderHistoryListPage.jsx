@@ -5,7 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
-import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
 import Modal from "./OrderDetailModal";
@@ -19,7 +18,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 const categoryOpt = [
-  { label: "- SELECT -", value: "- SELECT -" },
+  { label: "전체", value: "전체" },
   { label: "임직원 법인명", value: "임직원 법인명" },
   { label: "입주사 회사명", value: "입주사 회사명" },
   { label: "방문객", value: "방문객" },
@@ -31,17 +30,17 @@ const storeNameOpt = [
   { label: "클라우드 9 카페", value: "클라우드 9 카페" },
 ];
 
+const dateOpt = [
+  { label: "오늘", value: "오늘" },
+  { label: "1주일", value: "1주일" },
+  { label: "1개월", value: "1개월" },
+  { label: "3개월", value: "3개월" },
+];
+
 const numOpt = [
   { label: "20개씩 보기", value: "20개씩 보기" },
   { label: "30개씩 보기", value: "30개씩 보기" },
   { label: "50개씩 보기", value: "50개씩 보기" },
-];
-
-const dateFilterOptions = [
-  { label: "오늘", value: "today" },
-  { label: "1주일", value: "oneWeek" },
-  { label: "1개월", value: "oneMonth" },
-  { label: "3개월", value: "threeMonths" },
 ];
 
 function OrderHistoryListPage() {
@@ -52,108 +51,79 @@ function OrderHistoryListPage() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  // const [setStartDate] = useState(null);
-  // const [setEndDate] = useState(null);
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
-  const [activeButton, setActiveButton] = useState(null);
-  const handleButtonClick = (buttonLabel) => {
-    setActiveButton(buttonLabel);
-  };
-
   return (
     <Layout>
       <div className="align mb_20">
         <h1 className="headline2">주문 내역 관리</h1>
       </div>
-      <hr className="primary" />
       <ContentBox top>
-        <Table
-          colgroup={
-            <>
-              <col width="15%" />
-              <col width="auto" />
-              <col width="15%" />
-              <col width="auto" />
-            </>
-          }
-        >
-          <tr>
-            <th>주문자(소속)</th>
-            <td>
-              <Select maxwidth="300px" defaultValue={0} options={categoryOpt} />
-            </td>
-            <th>매장명</th>
-            <td>
-              <Select
-                maxwidth="300px"
-                defaultValue={0}
-                options={storeNameOpt}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>기간설정</th>
-            <td colSpan={3}>
-              {/* 임시 */}
-              <div className="align start gap_5">
-                {dateFilterOptions.map((option) => (
-                  <Button
-                    key={option.value}
-                    onClick={() => handleButtonClick(option.value)}
-                    type="pc"
-                    size="small"
-                    line={activeButton === option.value ? false : true}
-                    color={activeButton === option.value ? "point" : "gray"}
-                  >
-                    {option.label}
-                  </Button>
-                ))}
-                <div className="item" style={{minWidth: '400px'}}>
-                  <DatePicker
-                    dateFormat="yyyy/MM/dd"
-                    selected={startDate}
-                    className={"date_picker"}
-                    selectsRange={true}
-                    startDate={startDate}
-                    endDate={endDate}
-                    onChange={(update) => {
-                      setDateRange(update);
-                    }}
-                    isClearable={false}
-                    placeholderText="날짜를 선택해 주세요."
-                  />
-                </div>
-              </div>
-            </td>
-          </tr>
-        </Table>
-        <div className="align center mt_20">
-          <Button
-            type="pc"
-            color="black"
-            icon="Search"
-            iconStyle={{
-              fill: '#fff',
-              height: 24,
-              width: 24
-            }}
-            round
-            size="icon_l"
-          >
-            검색
-          </Button>
+        <div>
+          <Select
+            minwidth="210px"
+            round="app"
+            placeholder="주문자 (소속)"
+            options={categoryOpt}
+          />
         </div>
+        <div>
+          <Select
+            minwidth="210px"
+            round="app"
+            placeholder="매장명"
+            options={storeNameOpt}
+          />
+        </div>
+        <div>
+          <Select
+            minwidth="210px"
+            round="app"
+            placeholder="기간 선택"
+            options={dateOpt}
+          />
+        </div>
+        <div style={{ maxWidth: '250px' }}>
+          <DatePicker
+            dateFormat="yyyy/MM/dd"
+            selected={startDate}
+            className={"date_picker"}
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={(update) => {
+              setDateRange(update);
+            }}
+            isClearable={false}
+            placeholderText="상세 기간 선택"
+          />
+        </div>
+        <Button
+          type="pc"
+          color="black"
+          icon="Search"
+          iconStyle={{
+            fill: '#fff',
+            height: 24,
+            width: 24
+          }}
+          round
+          size="icon_l"
+        >
+          검색
+        </Button>        
       </ContentBox>
-      <hr className="secondary" />
-      <div className="align start gap_10 mt_42 ">
-        <Select minwidth="200px" defaultValue={0} options={numOpt} />
-        <p className="body0">
-          총 <span className="title3">200</span>건
-        </p>
-      </div>
       <ContentBox>
+        <div className="align start mb_12">
+          <div className="item">
+            <Select minwidth="200px" defaultValue={0} options={numOpt} />
+          </div>
+          <div className="item">
+            <p className="body0">
+              총 <span className="title3">200</span>건
+            </p>
+          </div>
+        </div>
         <div className="tbl">
           <TableContainer>
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
