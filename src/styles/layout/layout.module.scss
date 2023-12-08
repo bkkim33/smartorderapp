@@ -177,12 +177,28 @@
     border-radius: 8px;
     padding: 20px;
     @include shadow(0, 4px, 4px, rgba(0,0,0,0.1));
-    &_top,
-    &_bottom{
+    &_top{
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
       flex: none;
+      > div{
+        background-color: var(--cff);
+        @include shadow(0, 4px, 4px, rgba(0,0,0,0.1));
+        padding: 12px 20px;
+        border-radius: 8px;
+        & + div{
+          margin-left: 10px;
+        }
+        & + button{
+          margin-left: 10px;
+        }
+      }
+      background-color: transparent;
+      box-shadow: none;
     }
     & + .content_box{
-      margin-top: 20px;
+      margin-top: 10px;
     }
   }
 }

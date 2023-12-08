@@ -126,81 +126,59 @@ function ProductListPage() {
       <div className="align mb_20">
         <h1 className="headline2">상품관리</h1>
       </div>
-      <hr className="primary" />
       <ContentBox top>
-        <Table
-          search
-          colgroup={
-            <>
-              <col width="10%" />
-              <col width="auto" />
-              <col width="10%" />
-              <col width="auto" />
-              <col width="10%" />
-              <col width="auto" />
-            </>
-          }
+        <div>
+          <Select defaultValue={0} options={categoryOpt} />
+        </div>
+        <div>
+          <Select defaultValue={0} options={storeNameOpt} />
+        </div>
+        <div>
+          <Input
+            onClick={() => {}}
+            placeholder="상품ID 또는 상품명을 입력해주세요."
+          />
+        </div>
+        <Button
+          type="pc"
+          color="black"
+          icon="Search"
+          iconStyle={{
+            fill: "#fff",
+            height: 24,
+            width: 24,
+          }}
+          round
+          size="icon_l"
         >
-          <tr>
-            <th>상품 카테고리</th>
-            <td>
-              <Select defaultValue={0} options={categoryOpt} />
-            </td>
-            <th>판매 매장</th>
-            <td>
-              <Select defaultValue={0} options={storeNameOpt} />
-            </td>
-            <th> 상품검색 (ID, 상품명)</th>
-            <td>
-              <Input
-                onClick={() => {}}
-                placeholder="상품ID 또는 상품명을 입력해주세요."
-              />
-            </td>
-          </tr>
-        </Table>
-        <div className="align center mt_20">
-          <Button
-            type="pc"
-            color="black"
-            icon="Search"
-            iconStyle={{
-              fill: '#fff',
-              height: 24,
-              width: 24
-            }}
-            round
-            size="icon_l"
-          >
-            검색
-          </Button>
-        </div>
+          검색
+        </Button>
       </ContentBox>
-      <hr className="secondary" />
-      <div className="align mt_42">
-        <div className="lft">
-          <Select minwidth="200px" defaultValue={0} options={numOpt} />
-        </div>
-        <div className="rgt gap_5">
-          <Button onClick={handleOpen02}
-            type="pc" 
-            color="gray"
-            line
-            size="small"            
-          >
-            삭제
-          </Button>
-          <Button
-            onClick={() => navigate("/admin/product/product/register")}
-            type="pc"
-            color="point"
-            size="small"
-          >
-            신규등록
-          </Button>
-        </div>
-      </div>
       <ContentBox>
+        <div className="align mb_10">
+          <div className="lft">
+            <Select minwidth="200px" defaultValue={0} options={numOpt} />
+          </div>
+          <div className="rgt gap_5">
+            <Button
+              onClick={handleOpen02}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              삭제
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/product/product/register")}
+              type="pc"
+              color="point"
+              size="small"
+            >
+              신규등록
+            </Button>
+          </div>
+        </div>
         <div className="tbl">
           <TableContainer>
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
