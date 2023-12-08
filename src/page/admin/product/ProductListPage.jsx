@@ -4,12 +4,7 @@ import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import Textarea from "../../../components/Textarea";
-import Table from "../../../components/Table";
 import Select from "../../../components/Select";
-import MuiModal from "../../../components/MuiModal";
-import FormGroup from "../../../components/FormGroup";
-import Radio from "../../../components/Radio";
 import MuiPage from "../../../components/MuiPage";
 import Checkbox from "../../../components/Checkbox";
 import MuiAlert from "../../../components/MuiAlert";
@@ -32,19 +27,16 @@ const categoryOpt = [
   { label: "Bread", value: "Bread" },
   { label: "Bottle", value: "Bottle" },
 ]
-
 const storeNameOpt = [
   { label: "전체", value: "전체" },
   { label: "클라우드카페(역삼1호점)", value: "클라우드카페(역삼1호점)" },
   { label: "클라우드9카페(역삼2호점)", value: "클라우드9카페(역삼2호점)" },
 ];
-
 const numOpt = [
   { label: "20개씩 보기", value: "20개씩 보기" },
   { label: "30개씩 보기", value: "30개씩 보기" },
   { label: "50개씩 보기", value: "50개씩 보기" },
 ];
-
 const initialTableRows = [
   { 
     id: 1, 
@@ -128,15 +120,28 @@ function ProductListPage() {
       </div>
       <ContentBox top>
         <div>
-          <Select defaultValue={0} options={categoryOpt} />
+          <Select 
+            minwidth="210px" 
+            round="app" 
+            placeholder="상품카테고리"
+            options={categoryOpt} 
+          />
         </div>
         <div>
-          <Select defaultValue={0} options={storeNameOpt} />
+          <Select 
+            minwidth="210px" 
+            round="app"
+            placeholder="판매 매장"
+            options={storeNameOpt}
+          />
         </div>
         <div>
           <Input
             onClick={() => {}}
-            placeholder="상품ID 또는 상품명을 입력해주세요."
+            width="310px"
+            shape="none"
+            globalClass="pd_0"
+            placeholder="상품 검색 (ID, 상품명)"
           />
         </div>
         <Button
@@ -155,20 +160,24 @@ function ProductListPage() {
         </Button>
       </ContentBox>
       <ContentBox>
-        <div className="align mb_10">
+        <div className="align mb_12">
           <div className="lft">
-            <Select minwidth="200px" defaultValue={0} options={numOpt} />
+            <div className="item">
+              <Button
+                onClick={handleOpen02}
+                type="pc"
+                color="gray"
+                line
+                size="small"
+              >
+                삭제
+              </Button>
+            </div>
+            <div className="item">
+              <Select minwidth="200px" globalClass="txt_lft" defaultValue={0} options={numOpt} />
+            </div>            
           </div>
-          <div className="rgt gap_5">
-            <Button
-              onClick={handleOpen02}
-              type="pc"
-              color="gray"
-              line
-              size="small"
-            >
-              삭제
-            </Button>
+          <div className="rgt">
             <Button
               onClick={() => navigate("/admin/product/product/register")}
               type="pc"

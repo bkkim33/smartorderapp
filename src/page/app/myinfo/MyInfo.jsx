@@ -38,42 +38,49 @@ function MyInfo() {
         <ul className="myinfo inner">
           <li className="align">            
             <label htmlFor="name">이름</label>
-            <Input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="홍길동"
-              shape="none"
-              globalClass=""
-              disabled
-            />
+            <div>
+              <Input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="홍길동"
+                shape="none"
+                globalClass=""
+                disabled
+              />
+            </div>
           </li>
           <li className="align">
             <label htmlFor="email">이메일</label>
-            <Input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="xxxxxxx@mz.co.kr"
-              shape="none"
-              globalClass=""
-              disabled
-            />
+            <div>
+              <Input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="xxxxxxx@mz.co.kr"
+                shape="none"
+                globalClass=""
+                disabled
+              />
+            </div>            
           </li>
           <li className="align">
             <label htmlFor="phone">전화번호</label>
-            <Input
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="010-000-0000"
-              shape="none"
-              maxLength={13}
-              globalClass=""
-              disabled
-              phone
-            />
+            <div>
+              <Input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="010-000-0000"
+                shape="none"
+                maxLength={13}
+                globalClass=""
+                disabled
+                phone
+              />
+            </div>            
           </li>
           <li className="align">
             <label htmlFor="phone">비밀번호</label>
-            <Input
+            <div className="align">
+              <Input
                 value={password}
                 onChange={handlePasswordChange}
                 placeholder="********************"
@@ -82,11 +89,12 @@ function MyInfo() {
                 disabled
                 globalClass="password"
               />
-              <Button 
-              onClick={() => navigate("/password")}
-              size="xxsmall" line color="gray">
+              <Button
+                onClick={() => navigate("/password")}
+                size="xxsmall" line color="gray">
                 변경
               </Button>
+            </div>
           </li>
           <li>
             <dl className="align">

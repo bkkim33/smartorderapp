@@ -102,10 +102,10 @@ function OrderHistoryListPage() {
                   <Button
                     key={option.value}
                     onClick={() => handleButtonClick(option.value)}
+                    type="pc"
                     size="small"
-                    line
-                    color="gray"
-                    // line={activeButton === option.value ? " " : "light"}
+                    line={activeButton === option.value ? false : true}
+                    color={activeButton === option.value ? "point" : "gray"}
                   >
                     {option.label}
                   </Button>

@@ -2,6 +2,10 @@
   li{
     padding: 10.5px 0;
     border-bottom:  1px solid rgba(0, 0, 0, 0.1);
+    > div{
+      padding: 0 20px;
+      width: 100%;
+    }
   }
   label, dt{
     min-width: 82px;
