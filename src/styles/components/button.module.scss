@@ -10,7 +10,7 @@
   min-height: 50px;
   padding: 10px 20px;
   border: 0;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   @include h5(var(--c11));
   line-height: 100%;
   &:disabled{
@@ -95,6 +95,7 @@
 .line {
   background-color: var(--cff);
   color: var(--primary);
+  padding: 8px 20px;
 }
 //text color
 .txtgray{
@@ -240,7 +241,7 @@
     }
     &.line{
       &:hover{
-        border-color: var(--point);
+        border-color: var(--c99);
         background-color: var(--cff);
       }
     }
@@ -265,9 +266,8 @@
   }
   &.blue{
     &:hover{
-      background-color: var(--cff);
-      border: 1px solid var(--blue);
-      color: var(--blue);
+      background-color: #3649CB;
+      color: var(--cff);
     }
     &:disabled{
       &:hover{
