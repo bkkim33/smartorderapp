@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/smartorderapp/static/css/main.d7e00229.css",
-    "main.js": "/smartorderapp/static/js/main.c9c0a57c.js",
+    "main.css": "/smartorderapp/static/css/main.4e3c4cc2.css",
+    "main.js": "/smartorderapp/static/js/main.370d4bf4.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
     "static/media/main_img.gif": "/smartorderapp/static/media/main_img.83fe1e64226c08ba9f85.gif",
-    "static/media/main_img12.gif": "/smartorderapp/static/media/main_img12.f1cd4be21363ebc27d45.gif",
     "static/media/Pretendard-ExtraBold.woff": "/smartorderapp/static/media/Pretendard-ExtraBold.88651b953c5d967d1db9.woff",
     "static/media/Pretendard-Bold.woff": "/smartorderapp/static/media/Pretendard-Bold.dd56301118da9e158ce9.woff",
     "static/media/Pretendard-SemiBold.woff": "/smartorderapp/static/media/Pretendard-SemiBold.86ffe3f48b7881c55a2c.woff",
     "static/media/Pretendard-Medium.woff": "/smartorderapp/static/media/Pretendard-Medium.f0cc544dcc84cf9f03b3.woff",
     "static/media/Pretendard-Light.woff": "/smartorderapp/static/media/Pretendard-Light.d0646c81e7ffb919ebd1.woff",
     "static/media/Pretendard-Regular.woff": "/smartorderapp/static/media/Pretendard-Regular.21b4bbcb93a4b1214f7d.woff",
-    "static/media/main_img10.gif": "/smartorderapp/static/media/main_img10.2629b1cb1cd90cd027d3.gif",
     "static/media/Pretendard-ExtraBold.woff2": "/smartorderapp/static/media/Pretendard-ExtraBold.d96f7e46d4ca0cdd4912.woff2",
     "static/media/Pretendard-Bold.woff2": "/smartorderapp/static/media/Pretendard-Bold.14a8579db02dbe10e1c0.woff2",
     "static/media/Pretendard-SemiBold.woff2": "/smartorderapp/static/media/Pretendard-SemiBold.4eb0b2ea1a7a6cb1a342.woff2",
@@ -28,12 +26,12 @@
     "static/media/item01.png": "/smartorderapp/static/media/item01.c396075609bae8bceee3.png",
     "static/media/user_img.png": "/smartorderapp/static/media/user_img.1ff80bb7dfe9e6f3e62e.png",
     "index.html": "/smartorderapp/index.html",
-    "main.d7e00229.css.map": "/smartorderapp/static/css/main.d7e00229.css.map",
-    "main.c9c0a57c.js.map": "/smartorderapp/static/js/main.c9c0a57c.js.map",
+    "main.4e3c4cc2.css.map": "/smartorderapp/static/css/main.4e3c4cc2.css.map",
+    "main.370d4bf4.js.map": "/smartorderapp/static/js/main.370d4bf4.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7e00229.css",
-    "static/js/main.c9c0a57c.js"
+    "static/css/main.4e3c4cc2.css",
+    "static/js/main.370d4bf4.js"
   ]
 }
