@@ -168,7 +168,7 @@ export function Input({ onClick, ...others }) {
           <span className={`${styles.delete}`} />
         </button>
       )}
-      {!disabled && phone === true && (
+      {!disabled && phone === true && phone !== "number" && (
         <button onClick={onClick} className={`${styles.certification}`}>
           {!certification && <>인증요청</>}
           {certification && <>재전송</>}
