@@ -167,30 +167,30 @@ function StoreRegisterPage() {
             tabdefault
             active={activeTab === "storeInfo"}
           >
-            매장정보
+            매장운영일시
           </Button>
           <Button
             onClick={() => handleTabChange("pickupMethod")}
             active={activeTab === "pickupMethod"}
           >
-            수령방법
+            상품수령방법
           </Button>
-          <Button
+          {/* <Button
             onClick={() => handleTabChange("productDisplay")}
             active={activeTab === "productDisplay"}
           >
             상품전시
-          </Button>
+          </Button> */}
           <Button
             onClick={() => handleTabChange("salesStatus")}
             active={activeTab === "salesStatus"}
           >
-            판매상태
+            상품전시관리
           </Button>
         </div>
         {activeTab === "storeInfo" && <StoreInfo />}
         {activeTab === "pickupMethod" && <PickupMethod />}
-        {activeTab === "productDisplay" && <ProductDisplay />}
+        {/* {activeTab === "productDisplay" && <ProductDisplay />} */}
         {activeTab === "salesStatus" && <SalesStatus />}
       </ContentBox>
     </Layout>

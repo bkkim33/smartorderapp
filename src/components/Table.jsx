@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import styles from "../styles/components/table.module.scss";
 
 Table.propTypes = {
   globalClass: PropTypes.string,
@@ -11,9 +10,9 @@ Table.defaultProps = {
 };
 
 export function Table({ children, ...others }) {
-  const { colgroup, globalClass, search } = others;
+  const { colgroup, globalClass } = others;
   return (
-    <div className={` ${"tablebox"} ${search ? "search" : ""} ${globalClass || ""} `}>
+    <div className={` ${"tablebox"} ${globalClass || ""} `}>
       <table>
         <colgroup>
           {colgroup}

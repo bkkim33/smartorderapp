@@ -1,4 +1,4 @@
-//임시 테이블 글로벌 스타일 
+// 가로형태 테이블
 .tablebox {
   table {
     width: 100%;
@@ -38,16 +38,8 @@
       }
     }
   } 
-  &.search{
-    table{
-      table-layout: fixed;   
-      th,
-      td{
-        padding: 10px;
-      }
-    }
-  }
 }
+// 리스트 테이블
 .tbl {
   table {
     width: 100%;
