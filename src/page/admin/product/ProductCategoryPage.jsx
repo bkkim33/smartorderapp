@@ -19,15 +19,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
 
-const initialCategoryData = [
-  { id: 1, order: 1, category: "Coffee" },
-  { id: 2, order: 2, category: "Non-Coffee" },
-  { id: 3, order: 3, category: "Ade/Juice" },
-  { id: 4, order: 4, category: "Blended" },
-];
-
 function ProductCategoryPage() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -275,7 +268,7 @@ function ProductCategoryPage() {
             </MuiTable>
           </TableContainer>
         </div>
-        <div className="align center mt_20 gap_10">
+        <div className="align center mt_30 gap_10">
           <Button
             onClick={handleOpen05}
             type="pc"
@@ -356,7 +349,7 @@ function ProductCategoryPage() {
           }
         >
           <Input onClick={() => {}} placeholder="카테고리명을 입력하세요." />
-          <div className="align center mt_20 gap_5">
+          <div className="align center mt_30 gap_5">
             <Button onClick={handleClose04} color="gray" line size="small">
               취소
             </Button>
