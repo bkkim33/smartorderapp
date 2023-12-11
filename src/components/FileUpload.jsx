@@ -54,7 +54,7 @@ const FileUpload = forwardRef((props, ref) => {
           파일업로드
         </Button>
       </div>
-      <div className="item wrap gap_10">
+      <div className="item wrap gap_5">
         {visible &&
           selectedFiles.map((file, index) => (
             <Chip

@@ -10,26 +10,6 @@ import MuiAlert from "../../../components/MuiAlert";
 function ChangePassword() {
    const navigate = useNavigate();
 
-  const [errorMessages, setErrorMessages] = useState({
-    currentPasswordError: "",
-    newPasswordError: "",
-    confirmPasswordError: "",
-  });
-
-  const handlePasswordUpdate = () => {
-    const currentPassword = ""; 
-    const newPassword = ""; 
-    const confirmPassword = {newPassword}; 
-  
-    const newErrorMessages = {
-      currentPasswordError: currentPassword !== "1234" ? "* 현재 사용하고 있는 비밀번호가 아닙니다." : "",
-      newPasswordError: newPassword.length < 4 || newPassword.length > 20 ? "* 비밀번호는 4~20자 이내여야 합니다.<br/><br/>* 현재 사용하고 있는 비밀번호입니다." : "",
-      confirmPasswordError: newPassword !== confirmPassword ? "* 새로운 비밀번호와 다릅니다." : "",
-    };
-  
-    setErrorMessages(newErrorMessages);
-  };
-
   const [open, setOpen] = useState(false);
   const [open02, setOpen02] = useState(false);
 
@@ -67,11 +47,9 @@ function ChangePassword() {
                   type="password"
                   width="400px"
                 />
-                {errorMessages.currentPasswordError && (
-                  <div className="red mt_5 ml_5">
-                    {errorMessages.currentPasswordError}
-                  </div>
-                )}
+                <div className="red mt_5 ml_5">
+                  * 현재 사용하고 있는 비밀번호가 아닙니다.
+                </div>
               </td>
             </tr>
             <tr key="newPassword">
@@ -83,14 +61,9 @@ function ChangePassword() {
                   maxLength={20}
                   width="400px"
                 />
-                {errorMessages.newPasswordError && (
-                  <div
-                    className="red mt_5 ml_5"
-                    dangerouslySetInnerHTML={{
-                      __html: errorMessages.newPasswordError,
-                    }}
-                  />
-                )}
+                <div className="red mt_5 ml_5">
+                  * 비밀번호는 4~20자 이내여야 합니다.
+                </div>
               </td>
             </tr>
             <tr key="confirmPassword">
@@ -101,24 +74,27 @@ function ChangePassword() {
                   placeholder="새로운 비밀번호 재입력"
                   width="400px"
                 />
-                {errorMessages.confirmPasswordError && (
-                  <div className="red mt_5 ml_5">
-                    {errorMessages.confirmPasswordError}
-                  </div>
-                )}
+                <div className="red mt_5 ml_5">
+                  * 새로운 비밀번호와 다릅니다.
+                </div>
               </td>
             </tr>
           </Table>
           <div className="align center mt_20">
             <div className="item">
-              <Button color="gray" line size="small" type="pc">
+              <Button
+                onClick={() => navigate(-1 || "/")}
+                color="gray"
+                line
+                size="small"
+                type="pc"
+              >
                 취소
               </Button>
             </div>
             <div className="item">
               <Button
                 onClick={() => {
-                  handlePasswordUpdate();
                   handleOpen();
                 }}
                 type="pc"
