@@ -191,6 +191,7 @@ function ProductCategoryPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
+                      size="small"
                     >
                       5개
                     </Button>
@@ -266,6 +267,7 @@ function ProductCategoryPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
+                      size="small"
                     >
                       5개
                     </Button>

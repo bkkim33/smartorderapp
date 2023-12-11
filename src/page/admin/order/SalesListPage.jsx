@@ -58,13 +58,6 @@ const numOpt = [
   { label: "50개씩 보기", value: "50개씩 보기", },
 ];
 
-const dateFilterOptions = [
-  { label: "오늘", value: "today" },
-  { label: "1주일", value: "oneWeek" },
-  { label: "1개월", value: "oneMonth" },
-  { label: "3개월", value: "threeMonths" },
-];
-
 const initialTableRows = [
   {
     id: 1,
@@ -142,109 +135,99 @@ function SalesListPage() {
     <Layout>
       <div className="align mb_20">
         <h1 className="headline2">매출 관리</h1>
-      </div>
-      <hr className="primary" />
+      </div>      
       <ContentBox top>
-        <Table
-          colgroup={
-            <>
-              <col width="15%" />
-              <col width="auto" />
-              <col width="15%" />
-              <col width="auto" />
-            </>
-          }
-        >
-          <tr>
-            <th>매장명</th>
-            <td>
-              <Select defaultValue={0} options={storeNameOpt} />
-            </td>
-            <th>상품명</th>
-            <td>
-              <Select defaultValue={0} options={categoryOpt} />
-            </td>
-          </tr>
-          <tr>
-            <th>결제유형</th>
-            <td>
-              <Select defaultValue={0} options={paymentTypes} />
-            </td>
-            <th>결제수단</th>
-            <td>
-              <Select defaultValue={0} options={paymentMethods} />
-            </td>
-          </tr>
-          <tr>
-            <th>기간설정</th>
-            <td colSpan={3}>
-              <div className="align start gap_5">
-                {dateFilterOptions.map((option) => (
-                  <Button
-                    key={option.value}
-                    onClick={() => handleButtonClick(option.value)}
-                    type="pc"
-                    size="small"
-                    line={activeButton === option.value ? false : true}
-                    color={activeButton === option.value ? "point" : "gray"}
-                  >
-                    {option.label}
-                  </Button>
-                ))}
-                <div className="item" style={{ minWidth: "400px" }}>
-                  <DatePicker
-                    dateFormat="yyyy/MM/dd"
-                    selected={startDate}
-                    className={"date_picker"}
-                    selectsRange={true}
-                    startDate={startDate}
-                    endDate={endDate}
-                    onChange={(update) => {
-                      setDateRange(update);
-                    }}
-                    isClearable={false}
-                    placeholderText="날짜를 선택해 주세요."
-                  />
-                </div>
-              </div>
-            </td>
-          </tr>
-        </Table>
-        <div className="align center mt_20">
-          <Button
-            type="pc"
-            color="black"
-            icon="Search"
-            iconStyle={{
-              fill: '#fff',
-              height: 24,
-              width: 24
-            }}
-            round
-            size="icon_l"
-          >
-            검색
-          </Button>
-        </div>
-      </ContentBox>
-      <hr className="secondary" />
-      <div className="align mt_42">
-        <div className="align start gap_10">
-          <Select
-            minwidth="200px"
-            round="round"
-            defaultValue={0}
-            options={numOpt}
+        <div>
+          <Select 
+            minwidth="210px"
+            round="app"
+            placeholder="매장명"
+            options={storeNameOpt} 
           />
-          <p className="body0">
-            총 <span className="title3">200</span>건
-          </p>
         </div>
-        <Button onClick={() => { }} type="pc" size="small" color="point">
-          엑셀다운로드
+        <div>
+          <Select 
+            minwidth="210px"
+            round="app"
+            placeholder="상품명"
+            options={categoryOpt} 
+          />
+        </div>
+        <div>
+          <Select 
+            minwidth="210px"
+            round="app"
+            placeholder="결제유형"
+            options={paymentTypes}
+          />
+        </div>
+        <div>
+          <Select 
+            minwidth="210px"
+            round="app"
+            placeholder="결제수단" 
+            options={paymentMethods} 
+          />
+        </div>
+        <div style={{ width: "250px" }}>
+          <DatePicker
+            dateFormat="yyyy/MM/dd"
+            selected={startDate}
+            className={"date_picker"}
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={(update) => {
+              setDateRange(update);
+            }}
+            isClearable={false}
+            placeholderText="날짜를 선택해 주세요."
+          />
+        </div>
+        <Button
+          type="pc"
+          color="black"
+          icon="Search"
+          iconStyle={{
+            fill: '#fff',
+            height: 24,
+            width: 24
+          }}
+          round
+          size="icon_l"
+        >
+          검색
         </Button>
-      </div>
+      </ContentBox>
       <ContentBox>
+        <div className="align mb_12">
+          <div className="lft">
+            <div className="item">
+              <Select
+                minwidth="200px"
+                round="round"
+                defaultValue={0}
+                options={numOpt}
+              />
+            </div>
+            <div className="item">
+              <p className="body0">
+                총 <span className="title3">200</span>건
+              </p>
+            </div>
+          </div>
+          <div className="rgt">
+            <Button
+              onClick={() => { }}
+              type="pc"
+              size="small"
+              color="point"
+              icon="Download"
+            >
+              엑셀다운로드
+            </Button>
+          </div>
+        </div>
         <div className="tbl">
           <TableContainer>
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
@@ -264,12 +247,7 @@ function SalesListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Checkbox
-                      id="checkAll"
-                      name="checkAll"
-                      checked={selectAll}
-                      onChange={handleSelectAll}
-                    />
+                    <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>상품명</TableCell>
@@ -284,6 +262,19 @@ function SalesListPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
+                <TableRow>
+                  <TableCell><Checkbox id="check1" name="check1" /></TableCell>
+                  <TableCell>1</TableCell>
+                  <TableCell>에스프레소</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>아무개</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell>500000</TableCell>
+                  <TableCell>-2500</TableCell>
+                  <TableCell>4500</TableCell>
+                </TableRow>
                 {tableRows.map((row) => (
                   <TableRow key={row.id}>
                     <TableCell>
