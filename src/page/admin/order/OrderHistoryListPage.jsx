@@ -83,7 +83,7 @@ function OrderHistoryListPage() {
             options={dateOpt}
           />
         </div>
-        <div style={{ width: '250px' }}>
+        <div style={{ width: "250px" }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
             selected={startDate}
@@ -103,15 +103,15 @@ function OrderHistoryListPage() {
           color="black"
           icon="Search"
           iconStyle={{
-            fill: '#fff',
+            fill: "#fff",
             height: 24,
-            width: 24
+            width: 24,
           }}
           round
           size="icon_l"
         >
           검색
-        </Button>        
+        </Button>
       </ContentBox>
       <ContentBox>
         <div className="align start mb_12">
@@ -162,7 +162,7 @@ function OrderHistoryListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       에스프레소 1개 외
                     </Button>
@@ -176,7 +176,7 @@ function OrderHistoryListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       8,280원
                     </Button>
@@ -194,7 +194,7 @@ function OrderHistoryListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       에스프레소 1개 외
                     </Button>
@@ -219,20 +219,64 @@ function OrderHistoryListPage() {
                   <TableCell>000002</TableCell>
                   <TableCell>메가존</TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell>카페라떼 1개</TableCell>
-                  <TableCell>2023.10.24 09:27:20</TableCell>
-                  <TableCell>클라우드 카페</TableCell>
-                  <TableCell className="right">2,000원</TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      카페라떼 1개 외
+                    </Button>
+                  </TableCell>
+                  <TableCell>2023.10.24 09:27:10</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell className="right">
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      4,280원
+                    </Button>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>4</TableCell>
                   <TableCell>000003</TableCell>
                   <TableCell>메가존</TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell>카푸치노 1개</TableCell>
-                  <TableCell>2023.10.24 09:27:30</TableCell>
-                  <TableCell>클라우드 카페</TableCell>
-                  <TableCell className="right">2,000원</TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      카푸치노 1개 외
+                    </Button>
+                  </TableCell>
+                  <TableCell>2023.10.24 09:27:10</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell className="right">
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      2,000원
+                    </Button>
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>

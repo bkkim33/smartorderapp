@@ -131,9 +131,9 @@
         &.bottom {
           vertical-align: bottom;
         }
-        // >button {
-        //   width: 100%;
-        // }
+        >button {
+          display: inline-flex;
+        }
         // >a {
         //   text-decoration: underline;
         // }
