@@ -43,7 +43,7 @@ function AdminMailVerifyPage() {
         </div>
         <div className="adminlogin_content mt_30">
           <div className="adminlogin_box">
-          <p className="title2 mb_10">비밀번호 찾으세요?</p>
+            <p className="title2 mb_10">비밀번호 찾으세요?</p>
             <div className="adminlogin_box_input align column ">
               <div>
                 <Input
@@ -68,19 +68,19 @@ function AdminMailVerifyPage() {
                 />
               </div>
             </div>
-            <div className="error_txt required_lft mt_5 ml_5">
+            <div className="red required_lft mt_5 ml_5">
               이메일 주소를 입력해주세요.
             </div>
-            <div className="error_txt required_lft mt_5 ml_5">
+            <div className="red required_lft mt_5 ml_5">
               이메일 형식이 올바르지 않습니다.
             </div>
-            <div className="error_txt required_lft mt_5 ml_5">
-              인증번호가 맞지 않습니다. <br />
-              <span className="ml_10">다시 인증번호를 요청하세요.</span>
+            <div className="red required_lft mt_5 ml_5">
+              인증번호가 맞지 않습니다.
+              <span className="ml_5">다시 인증번호를 요청하세요.</span>
             </div>
             <div className="adminlogin_btn mt_20">
               <div>
-                <Button                  
+                <Button
                   onClick={() => {
                     navigate("/admin");
                   }}

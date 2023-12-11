@@ -41,7 +41,7 @@ function ChangePassword() {
           >
             <tr key="currentPassword">
               <th>현재 비밀번호</th>
-              <td>
+              <td className="left">
                 <Input
                   placeholder="현재 비밀번호 입력"
                   type="password"
@@ -54,7 +54,7 @@ function ChangePassword() {
             </tr>
             <tr key="newPassword">
               <th>새로운 비밀번호</th>
-              <td>
+              <td className="left">
                 <Input
                   type="password"
                   placeholder="4~20자의 영문, 숫자 특수문자 조합으로 입력"
@@ -68,7 +68,7 @@ function ChangePassword() {
             </tr>
             <tr key="confirmPassword">
               <th>비밀번호 확인</th>
-              <td>
+              <td className="left">
                 <Input
                   type="password"
                   placeholder="새로운 비밀번호 재입력"

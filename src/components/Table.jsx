@@ -13,7 +13,7 @@ Table.defaultProps = {
 export function Table({ children, ...others }) {
   const { colgroup, globalClass, search } = others;
   return (
-    <div className={` ${styles.tablebox} ${search ? styles.search : ""} ${globalClass || ""} `}>
+    <div className={` ${"tablebox"} ${search ? "search" : ""} ${globalClass || ""} `}>
       <table>
         <colgroup>
           {colgroup}
