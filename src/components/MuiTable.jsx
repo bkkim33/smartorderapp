@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+// /** @jsxImportSource @emotion/react */
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -53,4 +53,4 @@ export function MuiTable({ cols, columns, rows }) {
   );
 }
 
-export default MuiTable;
+// export default MuiTable;
