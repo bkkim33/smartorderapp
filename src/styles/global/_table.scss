@@ -1,0 +1,180 @@
+//임시 테이블 글로벌 스타일 
+.tablebox {
+  table {
+    width: 100%;
+    border-top: 1px solid var(--c11);
+    table-layout: fixed;    
+    th {
+      padding: 5px 10px;
+      background-color: var(--bgf5);
+      border-bottom: 1px solid #D9D9D9;
+      @include h5(var(--c33));
+      text-align: left;
+      height: 45px;
+      &.center{
+        text-align: center;
+      }
+      &.right{
+        text-align: right;
+      }
+      &.top{
+        vertical-align: top;
+      }
+    }
+    td {
+      padding: 5px 10px;
+      height: 45px;
+      @include body3(var(--c33));
+      font-size: 1.4rem;
+      border-bottom: 1px solid #D9D9D9;
+      &.center{
+        text-align: center;
+      }
+      &.right{
+        text-align: right;
+      }
+      &.top{
+        vertical-align: top;
+      }
+    }
+  } 
+  &.search{
+    table{
+      table-layout: fixed;   
+      th,
+      td{
+        padding: 10px;
+      }
+    }
+  }
+}
+.tbl {
+  table {
+    width: 100%;
+    
+    thead {
+      background-color: var(--bgf5);
+      th {
+        font-family: 'Pretendard';
+        padding: 14px 10px;
+        @include h5(var(--c33));
+        text-align: center;
+        border-top: 1px solid var(--c11);
+        & + th{
+          border-left: 1px solid #d9d9d9;
+        }
+        &.center{
+          text-align: center;
+        }
+        &.right{
+          text-align: right;
+        }
+        &.top{
+          vertical-align: top;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #f1f4f7;
+        // &:hover {
+        //   background-color: #fafbfe;
+        // }
+        &.noborder {
+          border-bottom: none;
+        }
+      }
+      th{
+        @include body2(var(--c33));
+        &.center{
+          text-align: center;
+        }
+        &.right{
+          text-align: right;
+        }
+        &.top{
+          vertical-align: top;
+        }
+      }
+      td {
+        font-family: 'Pretendard';
+        padding: 5px 10px;
+        height: 45px;
+        // color: #354165;
+        // font-size: 1.4rem;
+        @include body2(var(--c33));
+        text-align: center;
+        // vertical-align: top;  
+        & + td{
+          border-left: 1px solid #d9d9d9;
+        }  
+            
+        &.noborder {
+          border-bottom: 0;
+        }
+        // 왼쪽 정렬
+        &.left {
+          text-align: left;
+        }
+
+        // 오른쪽 정렬
+        &.right {
+          text-align: right;
+        }
+
+        // 위로 정렬
+        &.top {
+          vertical-align: top;
+          padding-top: 5px !important;
+        }
+
+        &.bottom {
+          vertical-align: bottom;
+        }
+        >button {
+          width: 100%;
+        }
+        >a {
+          text-decoration: underline;
+        }
+      }
+    }
+    tfoot{
+      td {
+        font-family: 'Pretendard';
+        padding: 20px 10px;
+        @include h5(var(--c33));
+        text-align: center;
+        vertical-align: top;
+        &.red_text{
+          color: var(--red-text);
+        }
+         &+td {
+          border-bottom: 1px solid #D9D9D9;
+        }
+        &.noborder {
+          border-bottom: 0;
+        }
+        &.left {
+          text-align: left;
+        }
+        &.right {
+          text-align: right;
+        }
+        &.top {
+          vertical-align: top;
+          padding-top: 18px !important;
+        }
+        &.bottom {
+          vertical-align: bottom;
+        }
+        >button {
+          width: 100%;
+        }
+        >a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
