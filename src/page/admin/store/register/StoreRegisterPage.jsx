@@ -3,25 +3,21 @@ import { useNavigate } from "react-router-dom";
 import Layout from '../../../../layout/DefaultLayout'
 import ContentBox from "../../../../layout/ContentBox";
 import Button from "../../../../components/Button";
+import Tabs from "../../../../components/Tabs";
 import StoreInfo from "./StoreInfo"; 
 import PickupMethod from "./PickupMethod";
-import ProductDisplay from "./ProductDisplay";
 import SalesStatus from "./SalesStatus";
+import Modal from "./AdrresModal";
+import MuiAlert from "../../../../components/MuiAlert";
 
 import Input from "../../../../components/Input";
 import Table from "../../../../components/Table";
 import FormGroup from "../../../../components/FormGroup";
 import Radio from "../../../../components/Radio";
-import ContactInfo from "../../../../components/ContactInfo";
-import Select from "../../../../components/Select";
 
 function StoreRegisterPage() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("storeInfo");
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
 
   const [openAlert1, setOpenAlert1] = useState(false);
   const [openAlert2, setOpenAlert2] = useState(false);
@@ -152,8 +148,7 @@ function StoreRegisterPage() {
                   type="pc"
                   size="xsmall"
                   globalClass="ml_10"
-                  line
-                  color="gray"
+                  color="point"
                 >
                   찾기
                 </Button>
@@ -161,38 +156,124 @@ function StoreRegisterPage() {
             </td>
           </tr>
         </Table>
-        <div className="tabbox align mt_30">
+        <div className="mt_30">
+          <Tabs
+            type="admin"
+            globalClass="admin_tab"
+            TabsData={[
+              {
+                id: 1,
+                title: "매장운영일시",
+                defaultActive: true,
+                content: (
+                  <>
+                    <StoreInfo />
+                  </>
+                ),
+              },
+              {
+                id: 2,
+                title: "상품수령방법",
+                content: (
+                  <>
+                    <PickupMethod />
+                  </>
+                ),
+              },
+              {
+                id: 3,
+                title: "상품전시관리",
+                content: (
+                  <>
+                    <SalesStatus />
+                  </>
+                ),
+              },
+            ]}
+          />
+        </div>
+        <div className="align center gap_10 mt_30">
           <Button
-            onClick={() => handleTabChange("storeInfo")}
-            tabdefault
-            active={activeTab === "storeInfo"}
+            onClick={() => handleOpenAlert(2)}
+            type="pc"
+            color="gray"
+            line
+            size="small"
           >
-            매장운영일시
+            목록
           </Button>
           <Button
-            onClick={() => handleTabChange("pickupMethod")}
-            active={activeTab === "pickupMethod"}
+            onClick={() => handleOpenAlert(1)}
+            type="pc"
+            color="black"
+            size="small"
           >
-            상품수령방법
-          </Button>
-          {/* <Button
-            onClick={() => handleTabChange("productDisplay")}
-            active={activeTab === "productDisplay"}
-          >
-            상품전시
-          </Button> */}
-          <Button
-            onClick={() => handleTabChange("salesStatus")}
-            active={activeTab === "salesStatus"}
-          >
-            상품전시관리
+            저장
           </Button>
         </div>
-        {activeTab === "storeInfo" && <StoreInfo />}
-        {activeTab === "pickupMethod" && <PickupMethod />}
-        {/* {activeTab === "productDisplay" && <ProductDisplay />} */}
-        {activeTab === "salesStatus" && <SalesStatus />}
       </ContentBox>
+      <Modal open={open2} handleClose={handleClose2} />
+      <MuiAlert
+        open={openAlert1}
+        onClose={() => handleCloseAlert(1)}
+        type="admin"
+        title={
+          <>
+            입력한 내용을 <br />
+            저장하시겠습니까?
+          </>
+        }
+        button={
+          <>
+            <Button
+              onClick={() => handleCloseAlert(1)}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/store")}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              확인
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={openAlert2}
+        onClose={() => handleCloseAlert(2)}
+        type="admin"
+        iconColor="red"
+        title={<>목록으로 이동하시겠습니까?</>}
+        desc={<>현제 작성된 내용이 있으면 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button
+              onClick={() => handleCloseAlert(2)}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/store")}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              확인
+            </Button>
+          </>
+        }
+      />
     </Layout>
   );
 }
