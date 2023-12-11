@@ -513,7 +513,7 @@ function ProductDetailPage() {
         open={open03}
         onClose={handleClose03}
         type="admin"
-        title={<>옵션을 하시겠습니까?</>}
+        title={<>옵션을 삭제 하시겠습니까?</>}
         iconColor="red"
         desc={
           <>

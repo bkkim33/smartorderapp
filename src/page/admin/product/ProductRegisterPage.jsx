@@ -58,6 +58,14 @@ function ProductRegisterPage() {
     setOpen03(false);
   };
 
+  const [open04, setOpen04] = useState(false);
+  const handleOpen04 = () => {
+    setOpen04(true);
+  };
+  const handleClose04 = () => {
+    setOpen04(false);
+  };
+
   return (
     <Layout>
       <div className="align mb_20">
@@ -143,7 +151,7 @@ function ProductRegisterPage() {
             </Button>
           </div>
           <div className="rgt">
-            <Button type="pc" color="point" size="small">
+            <Button onClick={handleOpen04} type="pc" color="point" size="small">
               옵션추가
             </Button>
           </div>
@@ -355,6 +363,40 @@ function ProductRegisterPage() {
           </Button>
         </div>
       </MuiModal>
+      <MuiModal
+        minSize
+        open={open04}
+        onClose={handleClose04}
+        header={
+          <>
+            <h4>옵션추가</h4>
+            <Button
+              icon="Delete"
+              none
+              onClick={handleClose04}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--c99)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+      >
+        <Input
+          onClick={() => {}}
+          placeholder="옵션명을 입력하세요."
+        />
+        <div className="align center mt_20 gap_5">
+          <Button onClick={handleClose04} color="gray" line size="small">
+            취소
+          </Button>
+          <Button onClick={handleClose04} color="black" size="small">
+            확인
+          </Button>
+        </div>
+      </MuiModal>
       <MuiAlert
         open={open02}
         onClose={handleClose02}
@@ -379,7 +421,7 @@ function ProductRegisterPage() {
         open={open03}
         onClose={handleClose03}
         type="admin"
-        title={<>옵션을 하시겠습니까?</>}
+        title={<>옵션을 삭제 하시겠습니까?</>}
         iconColor="red"
         desc={
           <>

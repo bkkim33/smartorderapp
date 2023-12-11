@@ -27,15 +27,19 @@
 
 // 카테고리 관리 버튼박스
 .btn_set{
-  display: flex;
-  align-items: center;
-  width: fit-content;
+  // display: flex;
+  // align-items: center;
+  // width: fit-content;
   button{
-    background-color: #fff;
-    border: 1px solid var(--primary);
-    border-right: 0;
+    border-right: 0 !important;
     &:last-child{
-      border-right: 1px solid var(--primary);
+      border-right: 1px solid #d9d9d9 !important;
+    }
+    &:hover{
+      border: 1px solid var(--c11) !important;
+      & + button{
+        border-left: 0 !important;
+      }
     }
     &:nth-child(even){
       transform: rotateX(180deg)
