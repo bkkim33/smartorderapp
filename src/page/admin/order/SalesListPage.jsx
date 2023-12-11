@@ -271,51 +271,64 @@ function SalesListPage() {
                   <TableCell>아무개</TableCell>
                   <TableCell>네이버페이</TableCell>
                   <TableCell>신한카드</TableCell>
-                  <TableCell>500000</TableCell>
-                  <TableCell>-2500</TableCell>
-                  <TableCell>4500</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-4,000 원</TableCell>
+                  <TableCell className="right">4,280 원</TableCell>
                 </TableRow>
-                {tableRows.map((row) => (
-                  <TableRow key={row.id}>
-                    <TableCell>
-                      <Checkbox
-                        id={`check${row.id}`}
-                        name={`check${row.id}`}
-                        checked={checkedItems[row.id] || false}
-                        onChange={() => handleCheckboxChange(row.id)}
-                      />
-                    </TableCell>
-                    <TableCell>{row.orderNumber}</TableCell>
-                    <TableCell className="left">{row.productName}</TableCell>
-                    <TableCell>{row.storeName}</TableCell>
-                    <TableCell>{row.orderDateTime}</TableCell>
-                    <TableCell>{row.payer}</TableCell>
-                    <TableCell>{row.paymentType}</TableCell>
-                    <TableCell>{row.paymentMethod}</TableCell>
-                    <TableCell className="right">
-                      {row.originalAmount.toString()}
-                    </TableCell>
-                    <TableCell className="right">
-                      {row.discountAmount.toString()}
-                    </TableCell>
-                    <TableCell className="right">
-                      {row.totalPaymentAmount.toString()}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-              <TableFooter>
                 <TableRow>
-                  <TableCell colSpan={8} className="bg_f5">
-                    총 매출액
-                  </TableCell>
-                  <TableCell className="right">1,500,000</TableCell>
-                  <TableCell className="right">-250,000</TableCell>
-                  <TableCell className="right red_text">1,250,000</TableCell>
+                  <TableCell><Checkbox id="check2" name="check2" /></TableCell>
+                  <TableCell>2</TableCell>
+                  <TableCell>카라멜 마끼아또</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>아무개</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-8,280 원</TableCell>
+                  <TableCell className="right">0 원</TableCell>
                 </TableRow>
-              </TableFooter>
+                <TableRow>
+                  <TableCell><Checkbox id="check3" name="check3" /></TableCell>
+                  <TableCell>3</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>                
+              </TableBody>              
             </MuiTable>
           </TableContainer>
+        </div>
+        <div className="admin_ordersales">
+          <div className="total_box">
+            <div className="total_item">
+              <div className="total_tit">합계금액</div>
+              <div className="total_price">
+                <p>21,100</p>
+                <span>원</span>
+              </div>
+            </div>
+            <div className="total_item">
+              <div className="total_tit">총 할인 금액</div>
+              <div className="total_price">
+                <p>-106,820</p>
+                <span>원</span>
+              </div>
+            </div>
+            <div className="total_item">
+              <div className="total_tit">총 결제 금액</div>
+              <div className="total_price">
+                <p className="red_text">4,280</p>
+                <span>원</span>
+              </div>
+            </div>
+          </div>
         </div>
         <MuiPage />
       </ContentBox>

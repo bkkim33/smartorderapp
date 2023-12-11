@@ -167,12 +167,18 @@ function TermsListPage() {
                 <TableRow>
                   <TableCell><Checkbox id="check1" name="check1" /></TableCell>
                   <TableCell>1</TableCell>
-                  <TableCell
-                    className="left"
-                    onClick={() => navigate("/admin/customer/terms/modify")}
-                  >
-                    이용약관 제목입니다.
-                  </TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/customer/terms/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      이용약관 제목입니다.
+                    </Button>
+                  </TableCell>                  
                   <TableCell>전체</TableCell>
                   <TableCell>2023. 10. 30</TableCell>
                   <TableCell>Y</TableCell>
@@ -181,12 +187,18 @@ function TermsListPage() {
                 <TableRow>
                   <TableCell><Checkbox id="check2" name="check2" /></TableCell>
                   <TableCell>2</TableCell>
-                  <TableCell
-                    className="left"
-                    onClick={() => navigate("/admin/customer/terms/modify")}
-                  >
-                    이용약관 제목입니다.
-                  </TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/customer/terms/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      이용약관 제목입니다.
+                    </Button>
+                  </TableCell> 
                   <TableCell>임직원</TableCell>
                   <TableCell>2023. 10. 31</TableCell>
                   <TableCell>Y</TableCell>
@@ -195,12 +207,18 @@ function TermsListPage() {
                 <TableRow>
                   <TableCell><Checkbox id="check3" name="check3" /></TableCell>
                   <TableCell>3</TableCell>
-                  <TableCell
-                    className="left"
-                    onClick={() => navigate("/admin/customer/terms/modify")}
-                  >
-                    이용약관 제목입니다.
-                  </TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/customer/terms/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      이용약관 제목입니다.
+                    </Button>
+                  </TableCell> 
                   <TableCell>방문객</TableCell>
                   <TableCell>2023. 10. 30</TableCell>
                   <TableCell>N</TableCell>
@@ -209,12 +227,18 @@ function TermsListPage() {
                 <TableRow>
                   <TableCell><Checkbox id="check4" name="check4" /></TableCell>
                   <TableCell>4</TableCell>
-                  <TableCell
-                    className="left"
-                    onClick={() => navigate("/admin/customer/terms/modify")}
-                  >
-                    이용약관 제목입니다.
-                  </TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/customer/terms/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      이용약관 제목입니다.
+                    </Button>
+                  </TableCell> 
                   <TableCell>방문객</TableCell>
                   <TableCell>2023. 11. 01</TableCell>
                   <TableCell>Y</TableCell>
@@ -223,12 +247,18 @@ function TermsListPage() {
                 <TableRow>
                   <TableCell><Checkbox id="check5" name="check5" /></TableCell>
                   <TableCell>5</TableCell>
-                  <TableCell
-                    className="left"
-                    onClick={() => navigate("/admin/customer/terms/modify")}
-                  >
-                    이용약관 제목입니다.
-                  </TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/customer/terms/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      이용약관 제목입니다.
+                    </Button>
+                  </TableCell> 
                   <TableCell>전체</TableCell>
                   <TableCell>2023. 11. 02</TableCell>
                   <TableCell>Y</TableCell>
