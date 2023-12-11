@@ -70,7 +70,7 @@ function TermsListPage() {
             options={displayOpt} 
           />
         </div>
-        <div style={{ maxWidth: '250px' }}>
+        <div style={{ width: '250px' }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
             selected={startDate}
