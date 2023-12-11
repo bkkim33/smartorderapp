@@ -34,8 +34,8 @@ function OrderDetailModal({ open, handleClose }){
     >
       <div className="admin_ordersales">
         <div className="tbl">
-          <TableContainer>
-            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableContainer sx={{ maxHeight: 500 }}>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="sticky table" stickyHeader>
               <colgroup>
                 <col width="60%" />
                 <col width="40%" />
@@ -62,6 +62,30 @@ function OrderDetailModal({ open, handleClose }){
                 <TableRow>
                   <TableCell className="left"><p className="discount">[임직원할인] 아메리카노 할인</p></TableCell>
                   <TableCell className="right"><span className="red_text">-2,810 원</span></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="left">플레인요거트스무디 1개 (ICED Only)</TableCell>
+                  <TableCell className="right">4,200 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="left"><p className="discount">[할인] 입사쿠폰 모든음료1</p></TableCell>
+                  <TableCell className="right"><span className="red_text">-4,200 원</span></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="left">플레인요거트스무디 1개 (ICED Only)</TableCell>
+                  <TableCell className="right">4,200 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="left"><p className="discount">[할인] 입사쿠폰 모든음료1</p></TableCell>
+                  <TableCell className="right"><span className="red_text">-4,200 원</span></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="left">플레인요거트스무디 1개 (ICED Only)</TableCell>
+                  <TableCell className="right">4,200 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="left"><p className="discount">[할인] 입사쿠폰 모든음료1</p></TableCell>
+                  <TableCell className="right"><span className="red_text">-4,200 원</span></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="left">플레인요거트스무디 1개 (ICED Only)</TableCell>

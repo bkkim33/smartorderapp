@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
-import Table from "../../../components/Table";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
 import Checkbox from "../../../components/Checkbox";
@@ -16,7 +15,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import TableFooter from '@mui/material/TableFooter';
 
 const storeNameOpt = [
   { label: "전체", value: "전체", },
@@ -58,78 +56,9 @@ const numOpt = [
   { label: "50개씩 보기", value: "50개씩 보기", },
 ];
 
-const initialTableRows = [
-  {
-    id: 1,
-    orderNumber: 1 ,
-    productName: "에스프레소",
-    storeName: "클라우드 9 카페",
-    orderDateTime: "2023.10.24 09:27:00",
-    payer: "아무개",
-    paymentType: "네이버페이",
-    paymentMethod: "신한카드",
-    originalAmount: "500000",
-    discountAmount: "-2500",
-    totalPaymentAmount: "4500",
-  },
-  {
-    id: 2,
-    orderNumber: 2 ,
-    productName: "카라멜 마끼아또",
-    storeName: "클라우드 9 카페",
-    orderDateTime: "2023.10.24 09:27:00",
-    payer: "아무개",
-    paymentType: "네이버페이",
-    paymentMethod: "신한카드",
-    originalAmount: "500000",
-    discountAmount: "",
-    totalPaymentAmount: "4500",
-  },
-  {
-    id: 3,
-    orderNumber: 3 ,
-    productName: "디카페인콜드브루",
-    storeName: "클라우드 9 카페",
-    orderDateTime: "2023.10.24 09:27:00",
-    payer: "010-5012-0165",
-    paymentType: "네이버페이",
-    paymentMethod: "신한카드",
-    originalAmount: "500000",
-    discountAmount: "-2500",
-    totalPaymentAmount: "4500",
-  },
-];
-
 function SalesListPage() {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
-
-  const [selectAll, setSelectAll] = useState(false);
-  const [checkedItems, setCheckedItems] = useState({});
-
-  const handleSelectAll = () => {
-    setSelectAll(!selectAll);
-    const newCheckedItems = {};
-    if (!selectAll) {
-      initialTableRows.forEach((item) => {
-        newCheckedItems[item.id] = true;
-      });
-    }
-    setCheckedItems(newCheckedItems);
-  };
-
-  const handleCheckboxChange = (itemId) => {
-    setCheckedItems((prev) => ({
-      ...prev,
-      [itemId]: !prev[itemId],
-    }));
-  };
-
-  const [tableRows] = useState(initialTableRows);
-  const [activeButton, setActiveButton] = useState(null); 
-  const handleButtonClick = (buttonLabel) => {
-    setActiveButton(buttonLabel);
-  };
 
   return (
     <Layout>
@@ -229,8 +158,8 @@ function SalesListPage() {
           </div>
         </div>
         <div className="tbl">
-          <TableContainer>
-            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableContainer sx={{ maxHeight: 500 }}>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="sticky table" stickyHeader>
               <colgroup>
                 <col width="2%" />
                 <col width="3%" />
@@ -300,7 +229,124 @@ function SalesListPage() {
                   <TableCell className="right">8,280 원</TableCell>
                   <TableCell className="right">-2,580 원</TableCell>
                   <TableCell className="right">6,000 원</TableCell>
-                </TableRow>                
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check4" name="check4" /></TableCell>
+                  <TableCell>4</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check5" name="check5" /></TableCell>
+                  <TableCell>5</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check6" name="check6" /></TableCell>
+                  <TableCell>6</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check7" name="check7" /></TableCell>
+                  <TableCell>7</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check8" name="check8" /></TableCell>
+                  <TableCell>8</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check9" name="check9" /></TableCell>
+                  <TableCell>9</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check10" name="check10" /></TableCell>
+                  <TableCell>10</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check11" name="check11" /></TableCell>
+                  <TableCell>11</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check12" name="check12" /></TableCell>
+                  <TableCell>12</TableCell>
+                  <TableCell>디카페인콜드브루</TableCell>
+                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+                  <TableCell>010-5012-0165</TableCell>
+                  <TableCell>네이버페이</TableCell>
+                  <TableCell>신한카드</TableCell>
+                  <TableCell className="right">8,280 원</TableCell>
+                  <TableCell className="right">-2,580 원</TableCell>
+                  <TableCell className="right">6,000 원</TableCell>
+                </TableRow>
               </TableBody>              
             </MuiTable>
           </TableContainer>
