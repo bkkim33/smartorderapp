@@ -28,7 +28,6 @@ function NoticeregisterPage() {
       <div className="align mb_20">
         <h1 className="headline2">공지사항 등록</h1>
       </div>
-      <hr className="primary" />
       <ContentBox>
         <div className="align column">
           <div className="mb_20">
