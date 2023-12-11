@@ -37,6 +37,7 @@
   text-decoration: underline;
   padding: 0;
   background-color: transparent !important;
+  font-weight: 400;
   &:disabled{
     background-color: transparent;
   }
@@ -133,17 +134,20 @@
   min-width: 92px;
   min-height: 35px;
   font-size: 1.4rem;
+  font-weight: 400;
 }
 .xsmall{
   min-width: auto;
   min-height: 35px;
   font-size: 1.4rem;
+  font-weight: 400;
 }
 .xxsmall{
   min-width: auto;
   min-height: 26px;
   font-size: 1.4rem;
   padding: 6px 12px;
+  font-weight: 400;
 }
 .icon_l{
   min-width: auto;
