@@ -176,7 +176,7 @@ function NoticeListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       공지사항 제목입니다.
                     </Button>
@@ -198,7 +198,7 @@ function NoticeListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       공지사항 제목입니다.
                     </Button>
@@ -220,7 +220,7 @@ function NoticeListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       공지사항 제목입니다.
                     </Button>
@@ -242,7 +242,7 @@ function NoticeListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       공지사항 제목입니다.
                     </Button>
@@ -264,7 +264,7 @@ function NoticeListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       데이터 확인중입니다
                     </Button>

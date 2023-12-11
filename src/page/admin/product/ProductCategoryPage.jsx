@@ -297,7 +297,7 @@ function ProductCategoryPage() {
                 onClick={handleClose03}
                 size="icon_s"
                 iconStyle={{
-                  fill: "var(--c99)",
+                  fill: "var(--primary)",
                 }}
               >
                 Close

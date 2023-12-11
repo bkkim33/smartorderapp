@@ -174,7 +174,7 @@ function TermsListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       이용약관 제목입니다.
                     </Button>
@@ -194,7 +194,7 @@ function TermsListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       이용약관 제목입니다.
                     </Button>
@@ -214,7 +214,7 @@ function TermsListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       이용약관 제목입니다.
                     </Button>
@@ -234,7 +234,7 @@ function TermsListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       이용약관 제목입니다.
                     </Button>
@@ -254,7 +254,7 @@ function TermsListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       이용약관 제목입니다.
                     </Button>

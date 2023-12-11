@@ -85,11 +85,11 @@ function ProductRegisterPage() {
           <tr>
             <th className="required">상품 카테고리</th>
             <td>
-              <Select maxwidth="300px" options={categoryOpt} />
+              <Select placeholder="옵션을 선택해 주세요." maxwidth="300px" options={categoryOpt} />
             </td>
             <th className="required">상품명</th>
             <td>
-              <Input width="300px" placeholder="상품명을 입력해주세요." />
+              <Input width="300px" placeholder="상품명을 입력해 주세요." />
             </td>
           </tr>
           <tr>
@@ -97,7 +97,7 @@ function ProductRegisterPage() {
             <td>
               <Input
                 width="300px"
-                placeholder="금액을 입력해주세요."
+                placeholder="금액을 입력해 주세요."
                 type="number"
                 numtxt="원"
               />
@@ -106,7 +106,7 @@ function ProductRegisterPage() {
             <td>
               <Input
                 width="300px"
-                placeholder="금액을 입력해주세요."
+                placeholder="금액을 입력해 주세요."
                 type="number"
                 numtxt="원"
               />
@@ -290,7 +290,7 @@ function ProductRegisterPage() {
               onClick={handleClose}
               size="icon_s"
               iconStyle={{
-                fill: "var(--c99)",
+                fill: "var(--primary)",
               }}
             >
               Close
@@ -376,7 +376,7 @@ function ProductRegisterPage() {
               onClick={handleClose04}
               size="icon_s"
               iconStyle={{
-                fill: "var(--c99)",
+                fill: "var(--primary)",
               }}
             >
               Close

@@ -6,11 +6,10 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import styles from "../styles/components/muitable.module.scss";
 
 export function MuiTable({ cols, columns, rows }) {
   return (
-    <div className={`${styles.tbl}`}>
+    <div className="tbl">
       <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <colgroup>
@@ -31,14 +30,14 @@ export function MuiTable({ cols, columns, rows }) {
                 {row.rowdata.map((rowdata, index) =>
                   rowdata.fnc === true ? (
                     <TableCell
-                      className={`${styles[rowdata.align]}`}
+                      className={[rowdata.align]}
                       key={index}
                     >
                       <button>{rowdata.data}</button>
                     </TableCell>
                   ) : (
                     <TableCell
-                      className={`${styles[rowdata.align]}`}
+                        className={[rowdata.align]}
                       key={index}
                     >
                       {rowdata.data}

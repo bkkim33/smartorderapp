@@ -202,6 +202,10 @@ function ProductDetailPage() {
                               size="icon_s"
                               txtColor="txtgray"
                               type="pc"
+                              iconStyle={{
+                                width : 14,
+                                height : 14,
+                              }}
                             >
                               삭제
                             </Button>
@@ -232,6 +236,10 @@ function ProductDetailPage() {
                               size="icon_s"
                               txtColor="txtgray"
                               type="pc"
+                              iconStyle={{
+                                width: 14,
+                                height: 14,
+                              }}
                             >
                               삭제
                             </Button>
@@ -295,6 +303,10 @@ function ProductDetailPage() {
                               size="icon_s"
                               txtColor="txtgray"
                               type="pc"
+                              iconStyle={{
+                                width: 14,
+                                height: 14,
+                              }}
                             >
                               삭제
                             </Button>
@@ -325,6 +337,10 @@ function ProductDetailPage() {
                               size="icon_s"
                               txtColor="txtgray"
                               type="pc"
+                              iconStyle={{
+                                width: 14,
+                                height: 14,
+                              }}
                             >
                               삭제
                             </Button>
@@ -355,6 +371,10 @@ function ProductDetailPage() {
                               size="icon_s"
                               txtColor="txtgray"
                               type="pc"
+                              iconStyle={{
+                                width: 14,
+                                height: 14,
+                              }}
                             >
                               삭제
                             </Button>

@@ -174,7 +174,7 @@ function QnaListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       Q. 자주하는 질문 제목입니다.
                     </Button>
@@ -196,7 +196,7 @@ function QnaListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       Q. 자주하는 질문 제목입니다.
                     </Button>
@@ -218,7 +218,7 @@ function QnaListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       Q. 자주하는 질문 제목입니다.
                     </Button>
@@ -240,7 +240,7 @@ function QnaListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       Q. 자주하는 질문 제목입니다.
                     </Button>
@@ -262,7 +262,7 @@ function QnaListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       Q. 자주하는 질문 제목입니다.
                     </Button>

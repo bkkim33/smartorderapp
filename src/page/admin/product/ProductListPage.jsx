@@ -168,7 +168,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       유자차
                     </Button>
@@ -180,7 +180,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       클라우드 카페 외 1개
                     </Button>
@@ -198,7 +198,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       에스프레소
                     </Button>
@@ -210,7 +210,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       클라우드카페(역삼1호점)
                     </Button>
@@ -228,7 +228,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       바닐라라떼
                     </Button>
@@ -240,7 +240,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       클라우드9카페(역삼2호점)
                     </Button>
@@ -258,7 +258,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       캬라멜마끼아또
                     </Button>
@@ -270,7 +270,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       클라우드 카페 외 1개
                     </Button>
@@ -332,7 +332,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       클라우드 9 카페
                     </Button>
@@ -349,7 +349,7 @@ function ProductListPage() {
                       none
                       txtColor="txtgray"
                       type="pc"
-                      size="small"
+                      size="xsmall"
                     >
                       클라우드 9카페
                     </Button>
