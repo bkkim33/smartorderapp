@@ -414,7 +414,7 @@ function ProductCategoryPage() {
           type="admin"
           iconColor="red"
           title={<>이전에 저장된 내용으로 되돌리시겠습니까?</>}
-          desc={<>현제 작성된 내용이 있으면 저장되지 않습니다.</>}
+          desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
           button={
             <>
               <Button onClick={handleClose05} color="gray" line size="small">

@@ -33,7 +33,7 @@ function TermsModifyPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">이용약관 상세</h1>
+        <h1 className="headline2">이용약관 수정</h1>
       </div>
       <ContentBox>
         <Table

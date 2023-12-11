@@ -29,7 +29,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
     return (
       <Layout>
         <div className="align mb_20">
-          <h1 className="headline2">공지사항 상세</h1>
+          <h1 className="headline2">공지사항 수정</h1>
         </div>
         <ContentBox>
           <Table
