@@ -156,12 +156,30 @@ function OrderHistoryListPage() {
                   <TableCell>메가존 클라우드</TableCell>
                   <TableCell>홍길동</TableCell>
                   <TableCell>
-                    <Link onClick={handleOpen}>에스프레소 1개 외</Link>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      에스프레소 1개 외
+                    </Button>
                   </TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>클라우드 카페</TableCell>
                   <TableCell className="right">
-                    <Link onClick={handleOpen}>8,280원</Link>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      8,280원
+                    </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -170,12 +188,30 @@ function OrderHistoryListPage() {
                   <TableCell>메가존 클라우드</TableCell>
                   <TableCell>홍길동</TableCell>
                   <TableCell>
-                    <Link onClick={handleOpen}>에스프레소 1개 외</Link>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      에스프레소 1개 외
+                    </Button>
                   </TableCell>
                   <TableCell>2023.10.24 09:27:10</TableCell>
                   <TableCell>클라우드 9 카페</TableCell>
                   <TableCell className="right">
-                    <Link onClick={handleOpen}>4,280원</Link>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      4,280원
+                    </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>

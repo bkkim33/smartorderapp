@@ -2,6 +2,14 @@ import React from "react";
 import MuiModal from "../../../components/MuiModal";
 import Button from "../../../components/Button";
 
+//mui table import
+import MuiTable from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+
 function OrderDetailModal({ open, handleClose }){
   return (
     <MuiModal
@@ -23,93 +31,53 @@ function OrderDetailModal({ open, handleClose }){
           </Button>
         </>
       }
-    >      
-    <div className="admin_orderhistory_modal_receipt">
-      <div className="align">
-        <p className="title3 color_t_99 ml_10">메뉴명 / 할인내역</p>
-        <p className="title3 color_t_99 mr_10">금액</p>
+    >
+      <div className="tbl">
+        <TableContainer>
+          <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+            <colgroup>
+              <col width="60%" />
+              <col width="40%" />
+            </colgroup>
+            <TableHead>
+              <TableRow>
+                <TableCell>메뉴명 / 할인내역</TableCell>
+                <TableCell>금액</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell className="left">아메리카노 2개 (ICED / 연하게)</TableCell>
+                <TableCell className="right">7,600 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="left">아메리카노 2개 (ICED / 연하게)</TableCell>
+                <TableCell className="right">7,600 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="left">[쿠폰할인] 입사환영 아메리카노 1잔</TableCell>
+                <TableCell className="right">-3,800 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="left">[임직원할인] 아메리카노 할인</TableCell>
+                <TableCell className="right">-2,810 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="left">플레인요거트스무디 1개 (ICED Only)</TableCell>
+                <TableCell className="right">4,200 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="left">[할인] 입사쿠폰 모든음료1</TableCell>
+                <TableCell className="right">-4,200 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="left">[할인] 입사쿠폰 모든음료1</TableCell>
+                <TableCell className="right">-4,200 원</TableCell>
+              </TableRow>
+            </TableBody>
+          </MuiTable>
+        </TableContainer>
       </div>
-      <div className="receipt_bottom">
-        <ul className="receipt_list">
-          <li>
-            <div className="receipt_list_product">
-              <p>
-                <strong className="body2">
-                  아메리카노 2개
-                </strong>
-                <span className="mt_5 body2 ml_3">
-                  <em>ICED</em>&nbsp;/&nbsp;
-                  <em>연하게</em>
-                </span>
-              </p>
-              <p className="body2"> 7,600원</p>
-            </div>
-            <ul className="receipt_list_discount">
-              <li>
-                <p className="body2">
-                  <span>[쿠폰할인]</span>
-                  <span className="ml_3">입사환영 아메리카노 1잔</span>
-                </p>
-                <p className="body2">-3,800원</p>
-              </li>
-              <li>
-                <p className="body2">
-                  <span>[임직원할인]</span>
-                  <span className="ml_3">아메리카노 할인</span>
-                </p>
-                <p className="body2">-2,810원</p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div className="receipt_list_product">
-              <p>
-                <strong className="body2">
-                  플레인요거트스무디 1개
-                </strong>
-                <span className="mt_5 body2 ml_3">
-                  <em>ICED Only</em>
-                </span>
-              </p>
-              <p className="body2">4,200원</p>
-            </div>
-            <ul className="receipt_list_discount">
-              <li>
-                <p className="body2">
-                  <span>[할인]</span>
-                  <span className="ml_3">입사쿠폰 모든음료1</span>
-                </p>
-                <p className="body2">-4,200원</p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div className="receipt_list_sum">
-              <p>
-                <strong className="body2">합계금액</strong>
-              </p>
-              <p className="body2">21,100원</p>
-            </div>
-            <ul className="receipt_list_sum_discount">
-              <li>
-                <p>
-                  <strong className="body2 red">총 할인</strong>
-                </p>
-                <p className="body2 red">-16,820원</p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div className="receipt_list_sum mt_5">
-              <p>
-                <strong className="headline5">결제금액</strong>
-              </p>
-              <p className="headline5">4,280원</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
     </MuiModal>
   );
 }

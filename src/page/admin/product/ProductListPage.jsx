@@ -7,6 +7,7 @@ import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import MuiPage from "../../../components/MuiPage";
 import Checkbox from "../../../components/Checkbox";
+import MuiModal from "../../../components/MuiModal";
 import MuiAlert from "../../../components/MuiAlert";
 
 //mui table import
@@ -37,80 +38,23 @@ const numOpt = [
   { label: "30개씩 보기", value: "30개씩 보기" },
   { label: "50개씩 보기", value: "50개씩 보기" },
 ];
-const initialTableRows = [
-  { 
-    id: 1, 
-    affiliation: "P00001", 
-    productId: "Coffee", 
-    productName: "유자차", 
-    role: "클라우드 카페 외 1개" 
-  },
-  { 
-    id: 2, 
-    affiliation: "P00002", 
-    productId: "Coffee", 
-    productName: "에스프레소", 
-    role: "클라우드카페(역삼1호점)" 
-  },
-  { 
-    id: 3, 
-    affiliation: "P00003", 
-    productId: "Tea", 
-    productName: "바닐라라떼", 
-    role: "클라우드9카페(역삼2호점)" 
-  },
-  { 
-    id: 4, 
-    affiliation: "P00004", 
-    productId: "Tea", 
-    productName: "캬라멜마끼아또", 
-    role: "클라우드 카페 외 1개" 
-  },
-];
 
 function ProductListPage() {
 
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [open02, setOpen02] = useState(false);
-
   const handleOpen02 = () => {
     setOpen02(true);
   };
   const handleClose02 = () => {
     setOpen02(false);
-  };
-
-  const [selectAll, setSelectAll] = useState(false);
-  const [checkedItems, setCheckedItems] = useState({});
-
-  const handleSelectAll = () => {
-    setSelectAll(!selectAll);
-    const newCheckedItems = {};
-    if (!selectAll) {
-      initialTableRows.forEach((item) => {
-        newCheckedItems[item.id] = true;
-      });
-    }
-    setCheckedItems(newCheckedItems);
-  };
-
-  const handleCheckboxChange = (itemId) => {
-    setCheckedItems((prev) => ({
-      ...prev,
-      [itemId]: !prev[itemId],
-    }));
-  };
-
-  const [tableRows, setTableRows] = useState(initialTableRows);
-  // MuiAlert 확인 후 데이터 삭제
-  const handleAlertYes = () => {
-    const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
-    setCheckedItems({});
-    setSelectAll(false);
-    const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
-    console.log(deletedItems);
-    setTableRows(updatedTableRows);
-    handleClose02(false);
   };
 
   return (
@@ -202,12 +146,7 @@ function ProductListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Checkbox
-                      id="checkAll"
-                      name="checkAll"
-                      checked={selectAll}
-                      onChange={handleSelectAll}
-                    />
+                    <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>상품 ID</TableCell>
@@ -217,43 +156,126 @@ function ProductListPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {tableRows.map((row) => (
-                  <TableRow key={row.id} className="crsor_poin">
-                    <TableCell>
-                      <Checkbox
-                        id={`check${row.id}`}
-                        name={`check${row.id}`}
-                        checked={checkedItems[row.id] || false}
-                        onChange={() => handleCheckboxChange(row.id)}
-                      />
-                    </TableCell>
-                    <TableCell
+                <TableRow>
+                  <TableCell><Checkbox id="check1" name="check1" /></TableCell>
+                  <TableCell>1</TableCell>
+                  <TableCell>P00001</TableCell>
+                  <TableCell>Tea</TableCell>
+                  <TableCell>
+                    <Button
                       onClick={() => navigate("/admin/product/product/detail")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
                     >
-                      {row.id}
-                    </TableCell>
-                    <TableCell
+                      유자차
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      클라우드 카페 외 1개
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check2" name="check2" /></TableCell>
+                  <TableCell>2</TableCell>
+                  <TableCell>P00002</TableCell>
+                  <TableCell>Coffee</TableCell>
+                  <TableCell>
+                    <Button
                       onClick={() => navigate("/admin/product/product/detail")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
                     >
-                      {row.affiliation}
-                    </TableCell>
-                    <TableCell
+                      에스프레소
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      클라우드카페(역삼1호점)
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check3" name="check3" /></TableCell>
+                  <TableCell>3</TableCell>
+                  <TableCell>P00003</TableCell>
+                  <TableCell>Coffee</TableCell>
+                  <TableCell>
+                    <Button
                       onClick={() => navigate("/admin/product/product/detail")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
                     >
-                      {row.productId}
-                    </TableCell>
-                    <TableCell
+                      바닐라라떼
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      클라우드9카페(역삼2호점)
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell><Checkbox id="check4" name="check4" /></TableCell>
+                  <TableCell>4</TableCell>
+                  <TableCell>P00004</TableCell>
+                  <TableCell>Coffee</TableCell>
+                  <TableCell>
+                    <Button
                       onClick={() => navigate("/admin/product/product/detail")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
                     >
-                      {row.productName}
-                    </TableCell>
-                    <TableCell
-                      onClick={() => navigate("/admin/product/product/detail")}
+                      캬라멜마끼아또
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
                     >
-                      {row.role}
-                    </TableCell>
-                  </TableRow>
-                ))}
+                      클라우드 카페 외 1개
+                    </Button>
+                  </TableCell>
+                </TableRow>                
                 <TableRow>
                   <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
@@ -263,6 +285,83 @@ function ProductListPage() {
         </div>
         <MuiPage />
       </ContentBox>
+      <MuiModal        
+        open={open}
+        onClose={handleClose}
+        header={
+          <>
+            <h4>판매 매장 정보</h4>
+            <Button
+              icon="Delete"
+              none
+              onClick={handleClose}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--c99)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+      >
+        <div className="tbl">
+          <TableContainer>
+            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
+              <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="15%" />
+                <col width="45%" />
+              </colgroup>
+              <TableHead>
+                <TableRow>
+                  <TableCell>사업자번호</TableCell>
+                  <TableCell>가맹점명</TableCell>
+                  <TableCell>대표자명</TableCell>
+                  <TableCell>주소</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>12345678</TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/store")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      클라우드 9 카페
+                    </Button>
+                  </TableCell>
+                  <TableCell>홍길동</TableCell>
+                  <TableCell className="left">서울특별시 강남구 논현로 85길 46</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>12345678</TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/store")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      클라우드 9카페
+                    </Button>
+                  </TableCell>
+                  <TableCell>홍길동</TableCell>
+                  <TableCell className="left">서울특별시 강남구 논현로 85길 46</TableCell>
+                </TableRow>
+              </TableBody>
+            </MuiTable>
+          </TableContainer>
+        </div>
+      </MuiModal>
       <MuiAlert
         open={open02}
         onClose={handleClose02}
@@ -274,7 +373,7 @@ function ProductListPage() {
             <Button color="gray" line size="small" onClick={handleClose02}>
               취소
             </Button>
-            <Button color="black" size="small" onClick={handleAlertYes}>
+            <Button color="black" size="small" onClick={handleClose02}>
               확인
             </Button>
           </>
