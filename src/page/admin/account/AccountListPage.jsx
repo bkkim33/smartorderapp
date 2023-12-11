@@ -21,17 +21,32 @@ function AccountListPage() {
       <div className="align mb_20">
         <h1 className="headline2">계정/권한 관리</h1>
       </div>
-      <hr className="primary" />
+      <ContentBox top>
+        <div>
+          <Input
+            onClick={() => { }}
+            shape="none"
+            width="310px"
+            placeholder="관리자 검색 (관리자 ID, 관리자명)"
+          />
+        </div>
+        <Button
+          type="pc"
+          color="black"
+          icon="Search"
+          iconStyle={{
+            fill: '#fff',
+            height: 24,
+            width: 24
+          }}
+          round
+          size="icon_l"
+        >
+          검색
+        </Button>
+      </ContentBox>
       <ContentBox>
-        <div className="align mb_20">
-          <div className="lft">
-            <Input
-              onClick={() => {}}
-              placeholder="관리자 검색 (관리자 ID, 관리자명)"
-              type="search"
-              width="300px"
-            />
-          </div>
+        <div className="align mb_12">
           <div className="rgt">
             <Button
               type="pc"

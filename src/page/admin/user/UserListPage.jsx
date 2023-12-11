@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
+import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import MuiPage from "../../../components/MuiPage";
 
@@ -18,17 +19,31 @@ function UserListPage() {
       <div className="align mb_20">
         <h1 className="headline2">사용자 관리</h1>
       </div>
-      <hr className="primary" />
-      <ContentBox>
-        <div className="mb_20">
+      <ContentBox top>
+        <div>
           <Input
             onClick={() => { }}
+            shape="none"
+            width="310px"
             placeholder="사용자 검색 (사용자 ID, 관리자명)"
-            shape="round"
-            type="search"
-            width="300px"
-          />          
+          />
         </div>
+        <Button
+          type="pc"
+          color="black"
+          icon="Search"
+          iconStyle={{
+            fill: '#fff',
+            height: 24,
+            width: 24
+          }}
+          round
+          size="icon_l"
+        >
+          검색
+        </Button>
+      </ContentBox>
+      <ContentBox>
         <div className="tbl">
           <TableContainer>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -52,116 +67,108 @@ function UserListPage() {
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell className="center">1</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존클라우드</TableCell>
-                  <TableCell className="center">admin01@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동1</TableCell>
-                  <TableCell className="center">010-****-7532</TableCell>
+                  <TableCell>1</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>메가존클라우드</TableCell>
+                  <TableCell>admin01@mz.co.kr</TableCell>
+                  <TableCell>홍길동1</TableCell>
+                  <TableCell>010-****-7532</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">2</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존</TableCell>
-                  <TableCell className="center">admin02@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동2</TableCell>
-                  <TableCell className="center">010-****-1741</TableCell>
+                  <TableCell>2</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>메가존</TableCell>
+                  <TableCell>admin02@mz.co.kr</TableCell>
+                  <TableCell>홍길동2</TableCell>
+                  <TableCell>010-****-1741</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">3</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존</TableCell>
-                  <TableCell className="center">admin03@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동3</TableCell>
-                  <TableCell className="center">010-****-8234</TableCell>
+                  <TableCell>3</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>메가존</TableCell>
+                  <TableCell>admin03@mz.co.kr</TableCell>
+                  <TableCell>홍길동3</TableCell>
+                  <TableCell>010-****-8234</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">3</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존클라우드</TableCell>
-                  <TableCell className="center">admin04@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동4</TableCell>
-                  <TableCell className="center">010-****-4253</TableCell>
+                  <TableCell>3</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>메가존클라우드</TableCell>
+                  <TableCell>admin04@mz.co.kr</TableCell>
+                  <TableCell>홍길동4</TableCell>
+                  <TableCell>010-****-4253</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">4</TableCell>
-                  <TableCell className="center">방문객</TableCell>
-                  <TableCell className="center">-</TableCell>
-                  <TableCell className="center">-</TableCell>
-                  <TableCell className="center">9876</TableCell>
-                  <TableCell className="center">010-****-9876</TableCell>
+                  <TableCell>4</TableCell>
+                  <TableCell>방문객</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>9876</TableCell>
+                  <TableCell>010-****-9876</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">5</TableCell>
-                  <TableCell className="center">방문객</TableCell>
-                  <TableCell className="center">-</TableCell>
-                  <TableCell className="center">-</TableCell>
-                  <TableCell className="center">1234</TableCell>
-                  <TableCell className="center">010-****-1234</TableCell>
+                  <TableCell>5</TableCell>
+                  <TableCell>방문객</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>1234</TableCell>
+                  <TableCell>010-****-1234</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">6</TableCell>
-                  <TableCell className="center">방문객</TableCell>
-                  <TableCell className="center">-</TableCell>
-                  <TableCell className="center">-</TableCell>
-                  <TableCell className="center">5678</TableCell>
-                  <TableCell className="center">010-****-5678</TableCell>
+                  <TableCell>6</TableCell>
+                  <TableCell>방문객</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>5678</TableCell>
+                  <TableCell>010-****-5678</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">7</TableCell>
-                  <TableCell className="center">입주사</TableCell>
-                  <TableCell className="center">쿠버릭스</TableCell>
-                  <TableCell className="center">admin17@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동17</TableCell>
-                  <TableCell className="center">010-****-8523</TableCell>
+                  <TableCell>7</TableCell>
+                  <TableCell>입주사</TableCell>
+                  <TableCell>쿠버릭스</TableCell>
+                  <TableCell>admin17@mz.co.kr</TableCell>
+                  <TableCell>홍길동17</TableCell>
+                  <TableCell>010-****-8523</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">8</TableCell>
-                  <TableCell className="center">입주사</TableCell>
-                  <TableCell className="center">쿠버릭스</TableCell>
-                  <TableCell className="center">admin18@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동18</TableCell>
-                  <TableCell className="center">010-****-7436</TableCell>
+                  <TableCell>8</TableCell>
+                  <TableCell>입주사</TableCell>
+                  <TableCell>쿠버릭스</TableCell>
+                  <TableCell>admin18@mz.co.kr</TableCell>
+                  <TableCell>홍길동18</TableCell>
+                  <TableCell>010-****-7436</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">9</TableCell>
-                  <TableCell className="center">입주사</TableCell>
-                  <TableCell className="center">쿠버릭스</TableCell>
-                  <TableCell className="center">admin19@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동19</TableCell>
-                  <TableCell className="center">010-****-3267</TableCell>
+                  <TableCell>9</TableCell>
+                  <TableCell>입주사</TableCell>
+                  <TableCell>쿠버릭스</TableCell>
+                  <TableCell>admin19@mz.co.kr</TableCell>
+                  <TableCell>홍길동19</TableCell>
+                  <TableCell>010-****-3267</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">10</TableCell>
-                  <TableCell className="center">입주사</TableCell>
-                  <TableCell className="center">쿠버릭스</TableCell>
-                  <TableCell className="center">admin20@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동20</TableCell>
-                  <TableCell className="center">010-****-3697</TableCell>
+                  <TableCell>10</TableCell>
+                  <TableCell>입주사</TableCell>
+                  <TableCell>쿠버릭스</TableCell>
+                  <TableCell>admin20@mz.co.kr</TableCell>
+                  <TableCell>홍길동20</TableCell>
+                  <TableCell>010-****-3697</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">11</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존클라우드</TableCell>
-                  <TableCell className="center">admin01@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동1</TableCell>
-                  <TableCell className="center">010-****-7532</TableCell>
+                  <TableCell>11</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>메가존클라우드</TableCell>
+                  <TableCell>admin01@mz.co.kr</TableCell>
+                  <TableCell>홍길동1</TableCell>
+                  <TableCell>010-****-7532</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="center">12</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존</TableCell>
-                  <TableCell className="center">admin02@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동2</TableCell>
-                  <TableCell className="center">010-****-1741</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="center">13</TableCell>
-                  <TableCell className="center">임직원</TableCell>
-                  <TableCell className="center">메가존</TableCell>
-                  <TableCell className="center">admin03@mz.co.kr</TableCell>
-                  <TableCell className="center">홍길동3</TableCell>
-                  <TableCell className="center">010-****-8234</TableCell>
+                  <TableCell>12</TableCell>
+                  <TableCell>임직원</TableCell>
+                  <TableCell>메가존</TableCell>
+                  <TableCell>admin02@mz.co.kr</TableCell>
+                  <TableCell>홍길동2</TableCell>
+                  <TableCell>010-****-1741</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

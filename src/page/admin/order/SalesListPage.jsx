@@ -138,9 +138,6 @@ function SalesListPage() {
     setActiveButton(buttonLabel);
   };
 
-  // const [setStartDate] = useState(null);
-  // const [setEndDate] = useState(null);
-
   return (
     <Layout>
       <div className="align mb_20">
