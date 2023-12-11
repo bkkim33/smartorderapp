@@ -120,7 +120,7 @@ function ProductRegisterPage() {
             <th>쿠폰할인 적용</th>
             <td className="vertical_top">
               <div className="align top start">
-                <div className="item" style={{ minWidth: "116px" }}>
+                <div className="item" style={{ minWidth: "117px" }}>
                   <Button
                     size="small"
                     onClick={handleOpen}
@@ -263,7 +263,7 @@ function ProductRegisterPage() {
             </MuiTable>
           </TableContainer>
         </div>
-        <div className="align center mt_20 gap_10">
+        <div className="align center mt_30 gap_10">
           <Button
             onClick={() => navigate(-1 || "/")}
             type="pc"
@@ -354,7 +354,7 @@ function ProductRegisterPage() {
             </MuiTable>
           </TableContainer>
         </div>
-        <div className="align center mt_20 gap_5">
+        <div className="align center mt_30 gap_5">
           <Button onClick={handleClose} color="gray" line size="small">
             취소
           </Button>
@@ -388,7 +388,7 @@ function ProductRegisterPage() {
           onClick={() => {}}
           placeholder="옵션명을 입력하세요."
         />
-        <div className="align center mt_20 gap_5">
+        <div className="align center mt_30 gap_5">
           <Button onClick={handleClose04} color="gray" line size="small">
             취소
           </Button>

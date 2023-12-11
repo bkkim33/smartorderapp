@@ -343,6 +343,27 @@ hr {
   width: 100%;
 }
 
+.date_picker_box{
+  width: 300px;
+  border: 1px solid #d9d9d9;
+  padding: 0 10px;
+  &:hover{
+    border:  1px solid var(--c11);
+  }
+}
+
+.react-datepicker__close-icon{
+  &::after{
+    background-color: var(--c99)!important;
+    
+  }
+  &:hover{
+    &:after{
+      background-color: #444 !important;
+    }
+  }
+}
+
 .date_picker {
   display: flex;
   width: 100%;

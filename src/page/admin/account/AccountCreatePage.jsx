@@ -34,81 +34,73 @@ function AccountCreate() {
       <div className="align mb_20">
         <h1 className="headline2">계정 생성</h1>
       </div>
-      <hr className="primary" />
       <ContentBox>
-        <div className="align column">
-          <Table
-            colgroup={
-              <>
-                <col width="20%" />
-                <col />
-              </>
-            }
+        <Table
+          colgroup={
+            <>
+              <col width="12%" />
+              <col />
+            </>
+          }
+        >
+          <tr>
+            <th className="required">소속</th>
+            <td className="left">
+              <Select placeholder="소속 선택" options={companyOpt} />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">관리자명</th>
+            <td className="left">
+              <Input onClick={() => {}} />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">ID</th>
+            <td className="left">
+              <Input onClick={() => {}} placeholder="ID를 입력해 주세요." />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">비밀번호</th>
+            <td className="left">
+              <Input
+                onClick={() => {}}
+                type="password"
+                placeholder="비밀번호를 입력해 주세요."
+              />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">비밀번호 확인</th>
+            <td className="left">
+              <Input
+                onClick={() => {}}
+                type="password"
+                placeholder="비밀번호를 입력해 주세요."
+              />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">어드민 권한</th>
+            <td className="left">
+              <Select placeholder="선택" options={rightOpt} />
+            </td>
+          </tr>
+        </Table>
+        <div className="align center mt_30 gap_10">
+          <Button
+            onClick={() => navigate("/admin/account")}
+            type="pc"
+            size="small"
+            color="gray"
+            line
           >
-            <tr>
-              <th className="required">소속</th>
-              <td>
-                <Select placeholder="소속 선택" options={companyOpt} />
-              </td>
-            </tr>
-            <tr>
-              <th className="required">관리자명</th>
-              <td>
-                <Input onClick={() => {}} />
-              </td>
-            </tr>
-            <tr>
-              <th className="required">ID</th>
-              <td>
-                <Input onClick={() => {}} placeholder="ID를 입력해 주세요." />
-              </td>
-            </tr>
-            <tr>
-              <th className="required">비밀번호</th>
-              <td>
-                <Input
-                  onClick={() => {}}
-                  type="password"
-                  placeholder="비밀번호를 입력해 주세요."
-                />
-              </td>
-            </tr>
-            <tr>
-              <th className="required">비밀번호 확인</th>
-              <td>
-                <Input
-                  onClick={() => {}}
-                  type="password"
-                  placeholder="비밀번호를 입력해 주세요."
-                />
-              </td>
-            </tr>
-            <tr>
-              <th className="required">어드민 권한</th>
-              <td>
-                <Select placeholder="선택" options={rightOpt} />
-              </td>
-            </tr>
-          </Table>
-          <div className="align center mt_20 gap_10">
-            <Button
-              onClick={() => navigate("/admin/account")}
-              type="pc"
-              size="small"
-              color="gray"
-              line
-            >
-              취소
-            </Button>
-            <Button 
-              onClick={handleOpen} 
-              type="pc" 
-              size="small" 
-              color="black"
-            >
-              계정 생성
-            </Button>
-          </div>
+            취소
+          </Button>
+          <Button onClick={handleOpen} type="pc" size="small" color="black">
+            계정 생성
+          </Button>
         </div>
         <MuiAlert
           open={open}
@@ -122,10 +114,21 @@ function AccountCreate() {
           }
           button={
             <>
-              <Button onClick={handleClose} type="pc" color="gray" line size="small">
+              <Button
+                onClick={handleClose}
+                type="pc"
+                color="gray"
+                line
+                size="small"
+              >
                 아니오
               </Button>
-              <Button onClick={() => navigate("/admin/account")} type="pc" color="black" size="small">
+              <Button
+                onClick={() => navigate("/admin/account")}
+                type="pc"
+                color="black"
+                size="small"
+              >
                 네
               </Button>
             </>
