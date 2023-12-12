@@ -83,9 +83,14 @@ function HeaderLayout({ Coupon, Cart, Menu, Back, Title, Close }) {
             {Menu && (
               <Button
                 none
+                icon="Hamburger"
+                iconStyle={{
+                  fill: "#000000",
+                  width: 24,
+                }}
                 onClick={handleOpen}
-                size="small"
-                globalClass="pd_0 hamburger"
+                size="icon_s"
+                globalClass="pd_0"
               >
                 매뉴오픈
               </Button>

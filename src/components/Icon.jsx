@@ -902,6 +902,20 @@ const AlertIcon = ({ width = 50, height = 50, fill ="var(--blue)" }) => (
   </svg>
 );
 
+const Hamburger = ({ width = 26, height = 26, fill = "#000000" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 26 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M4 5L22 5" stroke={fill} strokeWidth="2" />
+    <path d="M4 13L22 13" stroke={fill} strokeWidth="2" />
+    <path d="M4 21L22 21" stroke={fill} strokeWidth="2" />
+  </svg>
+);
+
 export const Icons = {
   Logo,
   LogoIcon,
@@ -944,4 +958,5 @@ export const Icons = {
   ErrorInfo,
   AlertIcon,
   Download,
+  Hamburger,
 };

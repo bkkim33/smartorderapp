@@ -32,11 +32,11 @@ function MyInfo() {
 
   return (
     <Layout Back Title="내 정보" Menu>
-      <form 
+      <form
       // onSubmit={handleFormSubmit}
       >
         <ul className="myinfo inner">
-          <li className="align">            
+          <li className="align">
             <label htmlFor="name">이름</label>
             <div>
               <Input
@@ -60,7 +60,7 @@ function MyInfo() {
                 globalClass=""
                 disabled
               />
-            </div>            
+            </div>
           </li>
           <li className="align">
             <label htmlFor="phone">전화번호</label>
@@ -75,7 +75,7 @@ function MyInfo() {
                 disabled
                 phone
               />
-            </div>            
+            </div>
           </li>
           <li className="align">
             <label htmlFor="phone">비밀번호</label>
@@ -83,15 +83,18 @@ function MyInfo() {
               <Input
                 value={password}
                 onChange={handlePasswordChange}
-                placeholder="********************"
-                type='password'
+                defaultValue="1231456"
+                type="password"
                 shape="none"
                 disabled
                 globalClass="password"
               />
               <Button
                 onClick={() => navigate("/password")}
-                size="xxsmall" line color="gray">
+                size="xxsmall"
+                line
+                color="gray"
+              >
                 변경
               </Button>
             </div>
@@ -102,22 +105,17 @@ function MyInfo() {
               <dd>
                 {isSingle ? (
                   <Select
-                    options={[
-                      {
-                        value: "default",
-                        label: "겸임이 아닐 경우",
-                      },
-                    ]}
+                    options={sector}
                     round="app"
-                    defaultValue={0}
+                    defaultValue={sector[0]}
                     disabled
                   />
                 ) : (
-                  <Select 
-                  options={sector} 
-                  round="app" 
-                  placeholder="메가존.디지털"
-                   />
+                  <Select
+                    options={sector}
+                    defaultValue={sector[0]}
+                    round="app"
+                  />
                 )}
               </dd>
             </dl>

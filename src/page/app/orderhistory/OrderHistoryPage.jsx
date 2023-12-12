@@ -133,9 +133,8 @@ function OrderHistoryPage() {
               defaultActive: true,
               content: (
                 <>
-                  {History1.length > 0 ? (
-                    <OrderHistoryCard Data={History1} />
-                  ) : (
+                  {History1 && <OrderHistoryCard Data={History1} />}
+                  {!History1 && (
                     <NoData
                       globalClass="mt_80 mb_80"
                       txt="1개월 동안에 주문하신 내역이 없습니다."
@@ -149,9 +148,8 @@ function OrderHistoryPage() {
               title: "6개월",
               content: (
                 <>
-                  {History6.length > 0 ? (
-                    <OrderHistoryCard Data={History6} />
-                  ) : (
+                  {History6 && <OrderHistoryCard Data={History6} />}
+                  {!History6 && (
                     <NoData
                       globalClass="mt_80 mb_80"
                       txt="6개월 동안에 주문하신 내역이 없습니다."
@@ -165,9 +163,8 @@ function OrderHistoryPage() {
               title: "12개월",
               content: (
                 <>
-                  {History12.length > 0 ? (
-                    <OrderHistoryCard Data={History12} />
-                  ) : (
+                  {History12 && <OrderHistoryCard Data={History12} />}
+                  {!History12 && (
                     <NoData
                       globalClass="mt_80 mb_80"
                       txt="12개월 동안에 주문하신 내역이 없습니다."
