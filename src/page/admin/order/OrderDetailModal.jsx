@@ -34,7 +34,7 @@ function OrderDetailModal({ open, handleClose }){
     >
       <div className="admin_ordersales">
         <div className="tbl">
-          <TableContainer sx={{ maxHeight: 500 }}>
+          <TableContainer sx={{ maxHeight: 495 }}>
             <MuiTable sx={{ minWidth: 650 }} aria-label="sticky table" stickyHeader>
               <colgroup>
                 <col width="60%" />

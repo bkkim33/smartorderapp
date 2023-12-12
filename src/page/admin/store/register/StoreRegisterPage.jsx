@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import Layout from '../../../../layout/DefaultLayout'
 import ContentBox from "../../../../layout/ContentBox";
 import Button from "../../../../components/Button";
@@ -16,27 +16,7 @@ import FormGroup from "../../../../components/FormGroup";
 import Radio from "../../../../components/Radio";
 
 function StoreRegisterPage() {
-  const navigate = useNavigate();
-
-
-  const [openAlert1, setOpenAlert1] = useState(false);
-  const [openAlert2, setOpenAlert2] = useState(false);
-
-  const handleOpenAlert = (alertNumber) => {
-    if (alertNumber === 1) {
-      setOpenAlert1(true);
-    } else if (alertNumber === 2) {
-      setOpenAlert2(true);
-    }
-  };
-  const handleCloseAlert = (alertNumber) => {
-    if (alertNumber === 1) {
-      setOpenAlert1(false);
-    } else if (alertNumber === 2) {
-      setOpenAlert2(false);
-    }
-  };
-
+  
   const [open2, setOpen2] = useState(false);
 
   const handleOpen2 = () => {
@@ -191,89 +171,9 @@ function StoreRegisterPage() {
               },
             ]}
           />
-        </div>
-        <div className="align center gap_10 mt_30">
-          <Button
-            onClick={() => handleOpenAlert(2)}
-            type="pc"
-            color="gray"
-            line
-            size="small"
-          >
-            목록
-          </Button>
-          <Button
-            onClick={() => handleOpenAlert(1)}
-            type="pc"
-            color="black"
-            size="small"
-          >
-            저장
-          </Button>
-        </div>
+        </div>        
       </ContentBox>
-      <Modal open={open2} handleClose={handleClose2} />
-      <MuiAlert
-        open={openAlert1}
-        onClose={() => handleCloseAlert(1)}
-        type="admin"
-        title={
-          <>
-            입력한 내용을 <br />
-            저장하시겠습니까?
-          </>
-        }
-        button={
-          <>
-            <Button
-              onClick={() => handleCloseAlert(1)}
-              type="pc"
-              color="gray"
-              line
-              size="small"
-            >
-              취소
-            </Button>
-            <Button
-              onClick={() => navigate("/admin/store")}
-              type="pc"
-              color="black"
-              size="small"
-            >
-              확인
-            </Button>
-          </>
-        }
-      />
-      <MuiAlert
-        open={openAlert2}
-        onClose={() => handleCloseAlert(2)}
-        type="admin"
-        iconColor="red"
-        title={<>목록으로 이동하시겠습니까?</>}
-        desc={<>현제 작성된 내용이 있으면 저장되지 않습니다.</>}
-        button={
-          <>
-            <Button
-              onClick={() => handleCloseAlert(2)}
-              type="pc"
-              color="gray"
-              line
-              size="small"
-            >
-              취소
-            </Button>
-            <Button
-              onClick={() => navigate("/admin/store")}
-              type="pc"
-              color="black"
-              size="small"
-            >
-              확인
-            </Button>
-          </>
-        }
-      />
+      <Modal open={open2} handleClose={handleClose2} />      
     </Layout>
   );
 }

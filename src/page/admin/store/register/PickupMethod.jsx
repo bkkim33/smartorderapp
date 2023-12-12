@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button";
 import Input from "../../../../components/Input";
 import FormGroup from "../../../../components/FormGroup";
@@ -17,6 +18,24 @@ import TableRow from '@mui/material/TableRow';
 
 
 function PickupMethod() {
+  const navigate = useNavigate();
+  const [openAlert1, setOpenAlert1] = useState(false);
+  const [openAlert2, setOpenAlert2] = useState(false);
+
+  const handleOpenAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(true);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(true);
+    }
+  };
+  const handleCloseAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(false);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(false);
+    }
+  };
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -135,13 +154,93 @@ function PickupMethod() {
             </TableRow>
           </TableBody>
         </MuiTable>
+        <div className="align center gap_10 mt_30">
+          <Button
+            onClick={() => handleOpenAlert(2)}
+            type="pc"
+            color="gray"
+            line
+            size="small"
+          >
+            목록
+          </Button>
+          <Button
+            onClick={() => handleOpenAlert(1)}
+            type="pc"
+            color="black"
+            size="small"
+          >
+            저장
+          </Button>
+        </div>
       </div>
+      <MuiAlert
+        open={openAlert1}
+        onClose={() => handleCloseAlert(1)}
+        type="admin"
+        title={
+          <>
+            입력한 내용을 <br />
+            저장하시겠습니까?
+          </>
+        }
+        button={
+          <>
+            <Button
+              onClick={() => handleCloseAlert(1)}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/store")}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              확인
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={openAlert2}
+        onClose={() => handleCloseAlert(2)}
+        type="admin"
+        iconColor="red"
+        title={<>목록으로 이동하시겠습니까?</>}
+        desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button
+              onClick={() => handleCloseAlert(2)}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/store")}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              확인
+            </Button>
+          </>
+        }
+      />
       <MuiAlert
         open={open}
         onClose={handleClose}
         type="admin"
         iconColor="red"
-        title={<>수량방법을 삭제하시겠습니까?</>}
+        title={<>수령방법을 삭제하시겠습니까?</>}
         // desc={
         //   <>
         //     수령 방법을 삭제하시면 <br />
@@ -174,7 +273,7 @@ function PickupMethod() {
               onClick={handleClose04}
               size="icon_s"
               iconStyle={{
-                fill: "var(--c99)",
+                fill: "var(--primary)",
               }}
             >
               Close

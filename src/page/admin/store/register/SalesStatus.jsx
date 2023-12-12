@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../../../../components/Input";
 import Select from "../../../../components/Select";
 import Button from "../../../../components/Button";
 import MuiPage from "../../../../components/MuiPage";
 import FormGroup from "../../../../components/FormGroup";
 import Radio from "../../../../components/Radio";
+import MuiAlert from "../../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -31,6 +33,24 @@ const salesStatusData = [
 ];
 
 function SalesStatus() {
+  const navigate = useNavigate();
+  const [openAlert1, setOpenAlert1] = useState(false);
+  const [openAlert2, setOpenAlert2] = useState(false);
+
+  const handleOpenAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(true);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(true);
+    }
+  };
+  const handleCloseAlert = (alertNumber) => {
+    if (alertNumber === 1) {
+      setOpenAlert1(false);
+    } else if (alertNumber === 2) {
+      setOpenAlert2(false);
+    }
+  };
   return (
     <div style={{ width: "100%" }}>
       <div className="align start mb_10 mt_10">
@@ -251,6 +271,86 @@ function SalesStatus() {
         </MuiTable>
       </div>
       <MuiPage />
+      <div className="align center gap_10 mt_30">
+        <Button
+          onClick={() => handleOpenAlert(2)}
+          type="pc"
+          color="gray"
+          line
+          size="small"
+        >
+          목록
+        </Button>
+        <Button
+          onClick={() => handleOpenAlert(1)}
+          type="pc"
+          color="black"
+          size="small"
+        >
+          저장
+        </Button>
+      </div>
+      <MuiAlert
+        open={openAlert1}
+        onClose={() => handleCloseAlert(1)}
+        type="admin"
+        title={
+          <>
+            입력한 내용을 <br />
+            저장하시겠습니까?
+          </>
+        }
+        button={
+          <>
+            <Button
+              onClick={() => handleCloseAlert(1)}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/store")}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              확인
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={openAlert2}
+        onClose={() => handleCloseAlert(2)}
+        type="admin"
+        iconColor="red"
+        title={<>목록으로 이동하시겠습니까?</>}
+        desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button
+              onClick={() => handleCloseAlert(2)}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
+              취소
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/store")}
+              type="pc"
+              color="black"
+              size="small"
+            >
+              확인
+            </Button>
+          </>
+        }
+      />
     </div>
   );
 }
