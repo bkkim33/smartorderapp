@@ -62,8 +62,8 @@ function SalesStatus() {
             icon="Search"
             iconStyle={{
               fill: "#fff",
-              height: 24,
-              width: 24,
+              height: 15,
+              width: 15,
             }}
             round
             size="icon_s"

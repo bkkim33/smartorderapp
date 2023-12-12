@@ -105,7 +105,7 @@ function SideMenuLayout({ globalstyle, onClose, open }) {
               onClick={() => {
                 navigate("/");
               }}
-              size="small"
+              size="xsmall"
             >
               로그아웃
             </Button>
