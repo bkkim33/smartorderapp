@@ -135,7 +135,7 @@ function SalesListPage() {
               <Select
                 minwidth="200px"
                 round="round"
-                defaultValue={0}
+                defaultValue={numOpt[0]}
                 options={numOpt}
               />
             </div>

@@ -121,7 +121,7 @@ function ProductListPage() {
               <Select
                 minwidth="200px"
                 globalClass="txt_lft"
-                defaultValue={0}
+                defaultValue={numOpt[0]}
                 options={numOpt}
               />
             </div>

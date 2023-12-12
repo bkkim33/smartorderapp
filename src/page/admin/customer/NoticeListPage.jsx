@@ -120,7 +120,7 @@ function NoticeListPage() {
             <div className="item">
               <Select 
                 minwidth="200px" 
-                defaultValue={0} 
+                defaultValue={numOpt[0]} 
                 options={numOpt} 
               />
             </div>            
