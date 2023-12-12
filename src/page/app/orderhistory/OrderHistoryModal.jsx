@@ -40,7 +40,6 @@ function OrderHistoryModal({ open, handleClose, data }) {
   const pricesum = productprice + otherprice;
   const discountsum = productdiscount + otherdiscount;
   const Sum = pricesum - discountsum;
-  console.log(pricesum);
   return (
     <>
       <MuiModal

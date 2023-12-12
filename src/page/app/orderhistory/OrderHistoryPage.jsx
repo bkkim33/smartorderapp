@@ -102,9 +102,13 @@ const OrderHistoryData = [
 const today = new Date();
 // 현재 날짜를 가져옵니다.
 
+
+
 const oneMonthAgo = new Date(today.setMonth(today.getMonth() - 1));
 const sixMonthAgo = new Date(today.setMonth(today.getMonth() - 6));
 const twelveMonthAgo = new Date(today.setMonth(today.getMonth() - 12));
+
+
 
 const History1 = OrderHistoryData.filter(
   (History) => History.date >= moment(oneMonthAgo).format("YYYY.MM.DD")
@@ -117,6 +121,8 @@ const History6 = OrderHistoryData.filter(
 const History12 = OrderHistoryData.filter(
   (History) => History.date >= moment(twelveMonthAgo).format("YYYY.MM.DD")
 );
+
+console.log(History1);
 
 
 function OrderHistoryPage() {
@@ -133,8 +139,9 @@ function OrderHistoryPage() {
               defaultActive: true,
               content: (
                 <>
-                  {History1 && <OrderHistoryCard Data={History1} />}
-                  {!History1 && (
+                  {History1.length > 0 ? (
+                    <OrderHistoryCard Data={History1} />
+                  ) : (
                     <NoData
                       globalClass="mt_80 mb_80"
                       txt="1개월 동안에 주문하신 내역이 없습니다."
@@ -148,8 +155,9 @@ function OrderHistoryPage() {
               title: "6개월",
               content: (
                 <>
-                  {History6 && <OrderHistoryCard Data={History6} />}
-                  {!History6 && (
+                  {History6.length > 0 ? (
+                    <OrderHistoryCard Data={History6} />
+                  ) : (
                     <NoData
                       globalClass="mt_80 mb_80"
                       txt="6개월 동안에 주문하신 내역이 없습니다."
@@ -163,8 +171,9 @@ function OrderHistoryPage() {
               title: "12개월",
               content: (
                 <>
-                  {History12 && <OrderHistoryCard Data={History12} />}
-                  {!History12 && (
+                  {History12.length > 0 ? (
+                    <OrderHistoryCard Data={History12} />
+                  ) : (
                     <NoData
                       globalClass="mt_80 mb_80"
                       txt="12개월 동안에 주문하신 내역이 없습니다."
