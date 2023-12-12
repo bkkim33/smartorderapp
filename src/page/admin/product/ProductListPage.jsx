@@ -64,16 +64,16 @@ function ProductListPage() {
       </div>
       <ContentBox top>
         <div>
-          <Select 
-            minwidth="210px" 
-            round="app" 
+          <Select
+            minwidth="210px"
+            round="app"
             placeholder="상품카테고리"
-            options={categoryOpt} 
+            options={categoryOpt}
           />
         </div>
         <div>
-          <Select 
-            minwidth="210px" 
+          <Select
+            minwidth="210px"
             round="app"
             placeholder="판매 매장"
             options={storeNameOpt}
@@ -118,8 +118,13 @@ function ProductListPage() {
               </Button>
             </div>
             <div className="item">
-              <Select minwidth="200px" globalClass="txt_lft" defaultValue={0} options={numOpt} />
-            </div>            
+              <Select
+                minwidth="200px"
+                globalClass="txt_lft"
+                defaultValue={0}
+                options={numOpt}
+              />
+            </div>
           </div>
           <div className="rgt">
             <Button
@@ -157,7 +162,9 @@ function ProductListPage() {
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell><Checkbox id="check1" name="check1" /></TableCell>
+                  <TableCell>
+                    <Checkbox id="check1" name="check1" />
+                  </TableCell>
                   <TableCell>1</TableCell>
                   <TableCell>P00001</TableCell>
                   <TableCell>Tea</TableCell>
@@ -187,7 +194,9 @@ function ProductListPage() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell><Checkbox id="check2" name="check2" /></TableCell>
+                  <TableCell>
+                    <Checkbox id="check2" name="check2" />
+                  </TableCell>
                   <TableCell>2</TableCell>
                   <TableCell>P00002</TableCell>
                   <TableCell>Coffee</TableCell>
@@ -217,7 +226,9 @@ function ProductListPage() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell><Checkbox id="check3" name="check3" /></TableCell>
+                  <TableCell>
+                    <Checkbox id="check3" name="check3" />
+                  </TableCell>
                   <TableCell>3</TableCell>
                   <TableCell>P00003</TableCell>
                   <TableCell>Coffee</TableCell>
@@ -247,7 +258,9 @@ function ProductListPage() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell><Checkbox id="check4" name="check4" /></TableCell>
+                  <TableCell>
+                    <Checkbox id="check4" name="check4" />
+                  </TableCell>
                   <TableCell>4</TableCell>
                   <TableCell>P00004</TableCell>
                   <TableCell>Coffee</TableCell>
@@ -275,7 +288,7 @@ function ProductListPage() {
                       클라우드 카페 외 1개
                     </Button>
                   </TableCell>
-                </TableRow>                
+                </TableRow>
                 <TableRow>
                   <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
@@ -285,7 +298,7 @@ function ProductListPage() {
         </div>
         <MuiPage />
       </ContentBox>
-      <MuiModal        
+      <MuiModal
         open={open}
         onClose={handleClose}
         header={
@@ -327,7 +340,7 @@ function ProductListPage() {
                   <TableCell>12345678</TableCell>
                   <TableCell className="left">
                     <Button
-                      onClick={() => navigate("/admin/store")}
+                      onClick={() => navigate("/admin/store/modify")}
                       color="gray"
                       none
                       txtColor="txtgray"
@@ -338,13 +351,15 @@ function ProductListPage() {
                     </Button>
                   </TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell className="left">서울특별시 강남구 논현로 85길 46</TableCell>
+                  <TableCell className="left">
+                    서울특별시 강남구 논현로 85길 46
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>12345678</TableCell>
                   <TableCell className="left">
                     <Button
-                      onClick={() => navigate("/admin/store")}
+                      onClick={() => navigate("/admin/store/modify")}
                       color="gray"
                       none
                       txtColor="txtgray"
@@ -355,7 +370,9 @@ function ProductListPage() {
                     </Button>
                   </TableCell>
                   <TableCell>홍길동</TableCell>
-                  <TableCell className="left">서울특별시 강남구 논현로 85길 46</TableCell>
+                  <TableCell className="left">
+                    서울특별시 강남구 논현로 85길 46
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>

@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import ContentBox from "../../../../layout/ContentBox";
+import React from "react";
 import Input from "../../../../components/Input";
-import Table from "../../../../components/Table";
 import Select from "../../../../components/Select";
 import Button from "../../../../components/Button";
-import Checkbox from "../../../../components/Checkbox";
-import MuiAlert from "../../../../components/MuiAlert";
 import MuiPage from "../../../../components/MuiPage";
 import FormGroup from "../../../../components/FormGroup";
 import Radio from "../../../../components/Radio";
@@ -15,7 +10,6 @@ import Radio from "../../../../components/Radio";
 import MuiTable from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
@@ -31,48 +25,12 @@ const categoryOpt = [
 ]
 
 const salesStatusData = [
-  { label: "전체", value: 0, red: false },
-  { label: "판매중", value: 1, red: false },
-  { label: "품절", value: 2, red: true },
-  { label: "판매중지", value: 3, red: false },
-  { label: "미설정", value: 4, red: false },
+  { label: "판매중", value: 0},
+  { label: "품절", value: 1},
+  { label: "판매중지", value: 2 },
 ];
 
 function SalesStatus() {
-
-  const navigate = useNavigate();
-  const [openAlert1, setOpenAlert1] = useState(false);
-  const [openAlert2, setOpenAlert2] = useState(false);
-  const [openAlert3, setOpenAlert3] = useState(false);
-  const handleOpenAlert = (alertNumber) => {
-    if (alertNumber === 1) {
-      setOpenAlert1(true);
-    } else if (alertNumber === 2) {
-      setOpenAlert2(true);
-    } else if (alertNumber === 3) {
-      setOpenAlert3(true);
-    }
-  };
-  const handleCloseAlert = (alertNumber) => {
-    if (alertNumber === 1) {
-      setOpenAlert1(false);
-    } else if (alertNumber === 2) {
-      setOpenAlert2(false);
-    } else if (alertNumber === 3) {
-      setOpenAlert3(false);
-    }
-  };
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const [selectAll, setSelectAll] = useState(false);
-  const [checkedItems, setCheckedItems] = useState({});
-
   return (
     <div style={{ width: "100%" }}>
       <div className="align start mb_10 mt_10">
@@ -158,16 +116,16 @@ function SalesStatus() {
               <TableCell className="left">
                 <Select
                   disabled
-                  placeholder="미설정"
+                  placeholder="판매상태를 선택하세요"
                   options={salesStatusData}
                 />
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>1</TableCell>
-              <TableCell>P00001</TableCell>
+              <TableCell>2</TableCell>
+              <TableCell>P00002</TableCell>
               <TableCell>Coffee</TableCell>
-              <TableCell>에스프레소</TableCell>
+              <TableCell>아메리카노</TableCell>
               <TableCell>
                 <FormGroup globalClass="align center">
                   <Radio
@@ -184,8 +142,110 @@ function SalesStatus() {
                 </FormGroup>
               </TableCell>
               <TableCell className="left">
-                <Select placeholder="미설정" options={salesStatusData} />
+                <Select
+                  placeholder="판매상태를 선택하세요"
+                  options={salesStatusData}
+                />
               </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>3</TableCell>
+              <TableCell>P00003</TableCell>
+              <TableCell>Coffee</TableCell>
+              <TableCell>카푸치노</TableCell>
+              <TableCell>
+                <FormGroup globalClass="align center">
+                  <Radio
+                    defaultChecked
+                    name="contact111111"
+                    id="radio111111"
+                    value="exposure"
+                  >
+                    전시
+                  </Radio>
+                  <Radio
+                    name="contact111111"
+                    id="radio111112"
+                    value="nonexposed"
+                  >
+                    미전시
+                  </Radio>
+                </FormGroup>
+              </TableCell>
+              <TableCell className="left">
+                <Select
+                  placeholder="판매상태를 선택하세요"
+                  options={salesStatusData}
+                  defaultValue={salesStatusData[0]}
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>4</TableCell>
+              <TableCell>P00004</TableCell>
+              <TableCell>Coffee</TableCell>
+              <TableCell>카페라떼</TableCell>
+              <TableCell>
+                <FormGroup globalClass="align center">
+                  <Radio
+                    defaultChecked
+                    name="contact1111111"
+                    id="radio1111111"
+                    value="exposure"
+                  >
+                    전시
+                  </Radio>
+                  <Radio
+                    name="contact1111111"
+                    id="radio1111112"
+                    value="nonexposed"
+                  >
+                    미전시
+                  </Radio>
+                </FormGroup>
+              </TableCell>
+              <TableCell className="left">
+                <Select
+                  placeholder="판매상태를 선택하세요"
+                  options={salesStatusData}
+                  defaultValue={salesStatusData[1]}
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>5</TableCell>
+              <TableCell>P00005</TableCell>
+              <TableCell>Coffee</TableCell>
+              <TableCell>콜드부르</TableCell>
+              <TableCell>
+                <FormGroup globalClass="align center">
+                  <Radio
+                    defaultChecked
+                    name="contact11111111"
+                    id="radio11111111"
+                    value="exposure"
+                  >
+                    전시
+                  </Radio>
+                  <Radio
+                    name="contact11111111"
+                    id="radio11111112"
+                    value="nonexposed"
+                  >
+                    미전시
+                  </Radio>
+                </FormGroup>
+              </TableCell>
+              <TableCell className="left">
+                <Select
+                  placeholder="판매상태를 선택하세요"
+                  options={salesStatusData}
+                  defaultValue={salesStatusData[2]}
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
             </TableRow>
           </TableBody>
         </MuiTable>

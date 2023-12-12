@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button";
 import Input from "../../../../components/Input";
-import Table from "../../../../components/Table";
 import FormGroup from "../../../../components/FormGroup";
 import Radio from "../../../../components/Radio";
-import ContactInfo from "../../../../components/ContactInfo";
-import Select from "../../../../components/Select";
 import Checkbox from "../../../../components/Checkbox";
 import MuiModal from "../../../../components/MuiModal";
 import MuiAlert from "../../../../components/MuiAlert";
@@ -19,13 +15,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 // import TableContainer from '@mui/material/TableContainer';
 
-const inUse = [
-  { value: "Y", label: "Y" },
-  { value: "N", label: "N" },
-];
 
 function PickupMethod() {
-  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -33,19 +24,6 @@ function PickupMethod() {
   };
   const handleClose = () => {
     setOpen(false);
-  };
-  const [receiptMethodsData, setReceiptMethodsData] = useState([
-    { id: 1, name: "매장픽업", selectedOption: "Y" },
-    { id: 2, name: "테이블 수령", selectedOption: "Y" },
-    { id: 3, name: "배달 요청", selectedOption: "N" },
-  ]);
-
-  const handleSelectChange = (id, value) => {
-    setReceiptMethodsData((prevData) =>
-      prevData.map((method) =>
-        method.id === id ? { ...method, selectedOption: value } : method
-      )
-    );
   };
 
   const [open04, setOpen04] = useState(false);

@@ -33,7 +33,7 @@ const Input = (props) => (
 
 export function Select({ options, ...others }) {
   const { round, maxwidth, minwidth, placeholder, disabled, multi, defaultValue } = others;
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(defaultValue || null);
     return (
       <div
         style={{
@@ -50,7 +50,7 @@ export function Select({ options, ...others }) {
           className={`${"select"} ${round || ""}`}
           classNamePrefix="select"
           placeholder={placeholder}
-          defaultValue={options[defaultValue] || selectedOption}
+          defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}
           isReadOnly={true}
@@ -58,7 +58,14 @@ export function Select({ options, ...others }) {
           styles={{
             control: (baseStyles, state) => ({
               ...baseStyles,
-              color: selectedOption?.red === true ? "red" : "",
+              color:
+                selectedOption?.label === "품절"
+                  ? "red"
+                  : "" || (selectedOption?.label === "판매중지")
+                  ? "orange"
+                  : "" || (selectedOption?.label === "판매중")
+                  ? "green"
+                  : "",
             }),
           }}
         />

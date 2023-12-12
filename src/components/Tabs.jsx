@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "../styles/components/tabs.module.scss"
 
 Tabs.propTypes = {
-  type: PropTypes.oneOf(["", "round", "poingbg"]),
+  type: PropTypes.oneOf(["", "round", "poingbg", "admin"]),
   globalClass: PropTypes.string,
 };
 

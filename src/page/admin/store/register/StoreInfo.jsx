@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button";
-import Input from "../../../../components/Input";
-import Table from "../../../../components/Table";
 import FormGroup from "../../../../components/FormGroup";
-import Radio from "../../../../components/Radio";
-import ContactInfo from "../../../../components/ContactInfo";
 import Select from "../../../../components/Select";
 import Checkbox from "../../../../components/Checkbox";
 import MuiModal from "../../../../components/MuiModal";
@@ -20,7 +15,6 @@ import TableRow from '@mui/material/TableRow';
 // import TableContainer from '@mui/material/TableContainer';
 
 function StoreInfo() {
-  const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
 
@@ -128,15 +122,15 @@ function StoreInfo() {
               <TableCell className="left">
                 <div className="align start">
                   <span className="bold700 mr_10">시작</span>
-                  <Select minwidth="80px" options={hours} defaultValue={0} />
+                  <Select minwidth="80px" options={hours} placeholder="시간" />
                   <span className="ml_10 mr_10">시</span>
-                  <Select minwidth="80px" options={minutes} defaultValue={0} />
+                  <Select minwidth="80px" options={minutes} placeholder="분" />
                   <span className="ml_10 mr_10">분</span>
                   <span className="ml_10 mr_10">~</span>
                   <span className="bold700 ml_10 mr_10">종료</span>
-                  <Select minwidth="80px" options={hours} defaultValue={0} />
+                  <Select minwidth="80px" options={hours} placeholder="시간" />
                   <span className="ml_10 mr_10">시</span>
-                  <Select minwidth="80px" options={minutes} defaultValue={0} />
+                  <Select minwidth="80px" options={minutes} placeholder="분" />
                   <span className="ml_10 mr_10">분</span>
                 </div>
               </TableCell>
