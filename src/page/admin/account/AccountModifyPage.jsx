@@ -8,6 +8,12 @@ import Select from "../../../components/Select";
 import Button from "../../../components/Button";
 import MuiAlert from "../../../components/MuiAlert";
 
+const rightOpt = [
+  { label: '카페서비스 관리자', value: '카페서비스 관리자' },
+  { label: '매장 관리자', value: '매장 관리자' },
+  { label: '어드민 관리자', value: '어드민 관리자' },
+]
+
 function AccountModify() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -77,21 +83,8 @@ function AccountModify() {
               <Select
                 maxwidth="350px"
                 placeholder="선택"
-                defaultValue={0}
-                options={[
-                  {
-                    label: "카페서비스 관리자",
-                    value: "카페서비스 관리자",
-                  },
-                  {
-                    label: "매장 관리자",
-                    value: "매장 관리자",
-                  },
-                  {
-                    label: "어드민 관리자",
-                    value: "어드민 관리자",
-                  },
-                ]}
+                defaultValue={rightOpt[0]}
+                options={rightOpt}
               />
             </td>
           </tr>
