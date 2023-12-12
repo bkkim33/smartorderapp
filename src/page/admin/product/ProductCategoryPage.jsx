@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
@@ -20,7 +19,6 @@ import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
 
 function ProductCategoryPage() {
-  // const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -101,7 +99,7 @@ function ProductCategoryPage() {
                   <TableCell>
                     <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
-                  <TableCell>NO</TableCell>
+                  <TableCell>No.</TableCell>
                   <TableCell>순서변경</TableCell>
                   <TableCell>카테고리명</TableCell>
                   <TableCell>노출여부</TableCell>
@@ -317,14 +315,14 @@ function ProductCategoryPage() {
               <th className="center">
                 연결된 상품 <br /> 5개
               </th>
-              <td>
+              <td className="center">
                 <p>아메리카노(P1084)</p>
-                <p>아메리카노(P1084)</p>
-                <p>아메리카노(P1084)</p>
-                <p>아메리카노(P1084)</p>
-                <p>아메리카노(P1084)</p>
-                <p>아메리카노(P1084)</p>
-                <p>아메리카노(P1084)</p>
+                <p className="mt_6">아메리카노(P1084)</p>
+                <p className="mt_6">아메리카노(P1084)</p>
+                <p className="mt_6">아메리카노(P1084)</p>
+                <p className="mt_6">아메리카노(P1084)</p>
+                <p className="mt_6">아메리카노(P1084)</p>
+                <p className="mt_6">아메리카노(P1084)</p>
               </td>
             </tr>
           </Table>
@@ -342,7 +340,7 @@ function ProductCategoryPage() {
                 onClick={handleClose04}
                 size="icon_s"
                 iconStyle={{
-                  fill: "var(--c99)",
+                  fill: "var(--primary)",
                 }}
               >
                 Close

@@ -161,14 +161,9 @@ function UserListPage() {
                   <TableCell>admin01@mz.co.kr</TableCell>
                   <TableCell>홍길동1</TableCell>
                   <TableCell>010-****-7532</TableCell>
-                </TableRow>
+                </TableRow>                
                 <TableRow>
-                  <TableCell>12</TableCell>
-                  <TableCell>임직원</TableCell>
-                  <TableCell>메가존</TableCell>
-                  <TableCell>admin02@mz.co.kr</TableCell>
-                  <TableCell>홍길동2</TableCell>
-                  <TableCell>010-****-1741</TableCell>
+                  <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

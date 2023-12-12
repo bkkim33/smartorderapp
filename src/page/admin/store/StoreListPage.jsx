@@ -310,6 +310,9 @@ function StoreListPage() {
                     월~금 오전 8시 ~ 오후 10시
                   </TableCell>
                 </TableRow>
+                <TableRow>
+                  <TableCell colSpan={8}>검색된 결과가 없습니다.</TableCell>
+                </TableRow>
               </TableBody>
             </MuiTable>
           </TableContainer>

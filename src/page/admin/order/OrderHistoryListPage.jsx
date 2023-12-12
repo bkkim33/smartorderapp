@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,20 +22,17 @@ const categoryOpt = [
   { label: "입주사 회사명", value: "입주사 회사명" },
   { label: "방문객", value: "방문객" },
 ]
-
 const storeNameOpt = [
   { label: "전체", value: "전체" },
   { label: "클라우드 카페", value: "클라우드 카페" },
   { label: "클라우드 9 카페", value: "클라우드 9 카페" },
 ];
-
 const dateOpt = [
   { label: "오늘", value: "오늘" },
   { label: "1주일", value: "1주일" },
   { label: "1개월", value: "1개월" },
   { label: "3개월", value: "3개월" },
 ];
-
 const numOpt = [
   { label: "20개씩 보기", value: "20개씩 보기" },
   { label: "30개씩 보기", value: "30개씩 보기" },
@@ -277,6 +273,9 @@ function OrderHistoryListPage() {
                       2,000원
                     </Button>
                   </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell colSpan={8}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>

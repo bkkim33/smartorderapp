@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/DefaultLayout'
 import ContentBox from "../../../layout/ContentBox";
@@ -7,9 +7,7 @@ import Input from "../../../components/Input"
 import Button from "../../../components/Button"
 
 function Profile() {
-
   const navigate = useNavigate();
-
   return (
     <Layout>
       <div className="align mb_25">
@@ -50,7 +48,6 @@ function Profile() {
                     placeholder="비밀번호를 입력해 주세요."
                     globalClass="password"
                     defaultValue="0000000000"
-                    // shape="none"
                     disabled
                   />
                   <Button

@@ -347,6 +347,9 @@ function SalesListPage() {
                   <TableCell className="right">-2,580 원</TableCell>
                   <TableCell className="right">6,000 원</TableCell>
                 </TableRow>
+                <TableRow>
+                  <TableCell colSpan={11}>검색된 결과가 없습니다.</TableCell>
+                </TableRow>
               </TableBody>              
             </MuiTable>
           </TableContainer>
