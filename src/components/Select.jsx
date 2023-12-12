@@ -34,31 +34,36 @@ const Input = (props) => (
 export function Select({ options, ...others }) {
   const { round, maxwidth, minwidth, placeholder, disabled, multi, defaultValue } = others;
   const [selectedOption, setSelectedOption] = useState(null);
-
-  return (
-    <div
-      style={{
-        maxWidth: maxwidth ? maxwidth : "100%",
-        minWidth: minwidth ? minwidth : "",
-        // width: "max-content",
-      }}
-    >
-      <RS
-        unstyled
-        components={{ Input }}
-        isSearchable
-        isMulti={multi}
-        className={`${"select"} ${round || ""}`}
-        classNamePrefix="select"
-        placeholder={placeholder}
-        defaultValue={options[defaultValue] || selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-        isReadOnly={true}
-        isDisabled={disabled}
-      />
-    </div>
-  );
+    return (
+      <div
+        style={{
+          maxWidth: maxwidth ? maxwidth : "100%",
+          minWidth: minwidth ? minwidth : "",
+          // width: "max-content",
+        }}
+      >
+        <RS
+          unstyled
+          components={{ Input }}
+          isSearchable
+          isMulti={multi}
+          className={`${"select"} ${round || ""}`}
+          classNamePrefix="select"
+          placeholder={placeholder}
+          defaultValue={options[defaultValue] || selectedOption}
+          onChange={setSelectedOption}
+          options={options}
+          isReadOnly={true}
+          isDisabled={disabled}
+          styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              color: selectedOption?.red === true ? "red" : "",
+            }),
+          }}
+        />
+      </div>
+    );
 }
 
 export default Select;

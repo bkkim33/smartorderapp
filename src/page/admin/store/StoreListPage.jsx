@@ -24,64 +24,6 @@ const targetOpt = [
   { label: "과천 클라우드 카페", value: "과천 클라우드 카페" }
 ]
 
-const initialTableRows = [
-  {
-    id: 1,
-    storeName: "클라우드 카페",
-    businessNumber: "123456789",
-    ownerName: "양땡열",
-    contact: "010-1234-5678",
-    address: "서울특별시 강남구 논현로85길 46",
-    operatingHours: "월~금 오전 8시 ~ 오후 10시",
-  },
-  {
-    id: 2,
-    storeName: "클라우드 9 카페",
-    businessNumber: "123456789",
-    ownerName: "이땡아",
-    contact: "010-9876-5432",
-    address: "서울특별시 강남구 역삼로17길 57",
-    operatingHours: "월~금 오전 8시 ~ 오후 10시",
-  },
-  {
-    id: 3,
-    storeName: "과천 클라우드 카페",
-    businessNumber: "123456789",
-    ownerName: "양땡열",
-    contact: "010-1234-5678",
-    address: "서울특별시 강남구 논현로85길 46",
-    operatingHours:
-      "월~금 오전 8시 ~ 오후 10시 <br /> 토~일 오전 10시 ~ 오후 06시",
-  },
-  {
-    id: 4,
-    storeName: "클라우드 카페",
-    businessNumber: "123456789",
-    ownerName: "양땡열",
-    contact: "010-1234-5678",
-    address: "서울특별시 강남구 논현로85길 46",
-    operatingHours: "월~금 오전 8시 ~ 오후 10시",
-  },
-  {
-    id: 5,
-    storeName: "클라우드 카페",
-    businessNumber: "123456789",
-    ownerName: "양땡열",
-    contact: "010-1234-5678",
-    address: "서울특별시 강남구 논현로85길 46",
-    operatingHours: "월~금 오전 8시 ~ 오후 10시",
-  },
-  {
-    id: 6,
-    storeName: "클라우드 카페",
-    businessNumber: "123456789",
-    ownerName: "양땡열",
-    contact: "010-1234-5678",
-    address: "서울특별시 강남구 논현로85길 46",
-    operatingHours: "월~금 오전 8시 ~ 오후 10시",
-  },
-];
-
 function StoreListPage() {
 
   const navigate = useNavigate();
@@ -93,52 +35,6 @@ function StoreListPage() {
 
   const handleClose = () => {
     setOpen(false);
-  };
-// MuiAlert 확인 후 데이터 삭제
-  const handleAlertYes = () => {
-    const updatedTableRows = tableRows.filter((item) => !checkedItems[item.id]);
-    setCheckedItems({});
-    setSelectAll(false);
-    const deletedItems = tableRows.filter((item) => checkedItems[item.id]);
-    console.log(deletedItems);
-    setTableRows(updatedTableRows);
-    handleClose(false);
-  };
-
-
-  const [selectAll, setSelectAll] = useState(false);
-  const [checkedItems, setCheckedItems] = useState({});
-
-  const handleSelectAll = () => {
-    setSelectAll(!selectAll);
-    const newCheckedItems = {};
-    if (!selectAll) {
-      initialTableRows.forEach((item) => {
-        newCheckedItems[item.id] = true;
-      });
-    }
-    setCheckedItems(newCheckedItems);
-  };
-
-  const handleCheckboxChange = (itemId) => {
-    setCheckedItems((prev) => ({
-      ...prev,
-      [itemId]: !prev[itemId],
-    }));
-  };
-
-  const [tableRows, setTableRows] = useState(initialTableRows);
-
-  const handleTableRowClick = (e, row) => {
-    const isCheckbox = e.target.tagName === 'INPUT' && e.target.type === 'checkbox';
-    if (!isCheckbox) {
-      const isChildOfCheckbox = e.target.closest('input[type="checkbox"]');
-      if (!isChildOfCheckbox) {
-        navigate("/admin/store/modify");
-      }
-    } else {
-      handleCheckboxChange(row.id);
-    }
   };
 
   return (
@@ -212,12 +108,7 @@ function StoreListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Checkbox
-                      id="checkAll"
-                      name="checkAll"
-                      checked={selectAll}
-                      onChange={handleSelectAll}
-                    />
+                    <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>가맹점명</TableCell>
@@ -339,7 +230,7 @@ function StoreListPage() {
             <Button onClick={handleClose} color="gray" line size="small">
               아니오
             </Button>
-            <Button onClick={handleAlertYes} color="black" size="small">
+            <Button onClick={handleClose} color="black" size="small">
               네
             </Button>
           </>

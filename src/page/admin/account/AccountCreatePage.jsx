@@ -46,25 +46,34 @@ function AccountCreate() {
           <tr>
             <th className="required">소속</th>
             <td className="left">
-              <Select placeholder="소속 선택" options={companyOpt} />
+              <Select
+                maxwidth="400px"
+                placeholder="소속 선택"
+                options={companyOpt}
+              />
             </td>
           </tr>
           <tr>
             <th className="required">관리자명</th>
             <td className="left">
-              <Input onClick={() => {}} />
+              <Input width="400px" onClick={() => {}} />
             </td>
           </tr>
           <tr>
             <th className="required">ID</th>
             <td className="left">
-              <Input onClick={() => {}} placeholder="ID를 입력해 주세요." />
+              <Input
+                width="400px"
+                onClick={() => {}}
+                placeholder="ID를 입력해 주세요."
+              />
             </td>
           </tr>
           <tr>
             <th className="required">비밀번호</th>
             <td className="left">
               <Input
+                width="400px"
                 onClick={() => {}}
                 type="password"
                 placeholder="비밀번호를 입력해 주세요."
@@ -75,6 +84,7 @@ function AccountCreate() {
             <th className="required">비밀번호 확인</th>
             <td className="left">
               <Input
+                width="400px"
                 onClick={() => {}}
                 type="password"
                 placeholder="비밀번호를 입력해 주세요."
@@ -84,7 +94,7 @@ function AccountCreate() {
           <tr>
             <th className="required">어드민 권한</th>
             <td className="left">
-              <Select placeholder="선택" options={rightOpt} />
+              <Select maxwidth="400px" placeholder="선택" options={rightOpt} />
             </td>
           </tr>
         </Table>
