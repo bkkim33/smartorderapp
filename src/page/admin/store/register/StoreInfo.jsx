@@ -8,7 +8,7 @@ import Radio from "../../../../components/Radio";
 import ContactInfo from "../../../../components/ContactInfo";
 import Select from "../../../../components/Select";
 import Checkbox from "../../../../components/Checkbox";
-import Modal from "./AdrresModal";
+import MuiModal from "../../../../components/MuiModal";
 import MuiAlert from "../../../../components/MuiAlert";
 
 //mui table import
@@ -31,6 +31,14 @@ function StoreInfo() {
     setOpen(false);
   };
 
+  const [open04, setOpen04] = useState(false);
+  const handleOpen04 = () => {
+    setOpen04(true);
+  };
+  const handleClose04 = () => {
+    setOpen04(false);
+  };
+
   const hours = Array.from({ length: 24 }, (_, index) => ({
     value: index.toString().padStart(2, "0"),
     label: index.toString().padStart(2, "0"),
@@ -50,7 +58,7 @@ function StoreInfo() {
           </Button>
         </div>
         <div className="rgt">
-          <Button type="pc" color="point" size="small">
+          <Button onClick={handleOpen04} type="pc" color="point" size="small">
             요일 추가
           </Button>
         </div>
@@ -79,16 +87,40 @@ function StoreInfo() {
               <TableCell className="left">
                 <FormGroup>
                   <Checkbox
+                    defaultChecked
                     name="contact00"
                     id="check1"
                     value="월"
-                    defaultChecked
                     txt="월"
                   />
-                  <Checkbox name="contact00" id="check2" value="화" txt="화" />
-                  <Checkbox name="contact00" id="check3" value="수" txt="수" />
-                  <Checkbox name="contact00" id="check4" value="목" txt="목" />
-                  <Checkbox name="contact00" id="check5" value="금" txt="금" />
+                  <Checkbox
+                    defaultChecked
+                    name="contact00"
+                    id="check2"
+                    value="화"
+                    txt="화"
+                  />
+                  <Checkbox
+                    defaultChecked
+                    name="contact00"
+                    id="check3"
+                    value="수"
+                    txt="수"
+                  />
+                  <Checkbox
+                    defaultChecked
+                    name="contact00"
+                    id="check4"
+                    value="목"
+                    txt="목"
+                  />
+                  <Checkbox
+                    defaultChecked
+                    name="contact00"
+                    id="check5"
+                    value="금"
+                    txt="금"
+                  />
                   <Checkbox name="contact00" id="check6" value="토" txt="토" />
                   <Checkbox name="contact00" id="check7" value="일" txt="일" />
                 </FormGroup>
@@ -112,6 +144,80 @@ function StoreInfo() {
           </TableBody>
         </MuiTable>
       </div>
+      <MuiModal
+        midSize
+        open={open04}
+        onClose={handleClose04}
+        header={
+          <>
+            <h4>요일추가</h4>
+            <Button
+              icon="Delete"
+              none
+              onClick={handleClose04}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--c99)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+      >
+        <FormGroup>
+          <Checkbox
+            defaultChecked
+            disabled
+            name="contact001"
+            id="check11"
+            value="월"
+            txt="월"
+          />
+          <Checkbox
+            defaultChecked
+            disabled
+            name="contact001"
+            id="check21"
+            value="화"
+            txt="화"
+          />
+          <Checkbox
+            defaultChecked
+            disabled
+            name="contact001"
+            id="check31"
+            value="수"
+            txt="수"
+          />
+          <Checkbox
+            defaultChecked
+            disabled
+            name="contact001"
+            id="check41"
+            value="목"
+            txt="목"
+          />
+          <Checkbox
+            defaultChecked
+            disabled
+            name="contact001"
+            id="check51"
+            value="금"
+            txt="금"
+          />
+          <Checkbox name="contact001" id="check61" value="토" txt="토" />
+          <Checkbox name="contact001" id="check71" value="일" txt="일" />
+        </FormGroup>
+        <div className="align center mt_30 gap_5">
+          <Button onClick={handleClose04} color="gray" line size="small">
+            취소
+          </Button>
+          <Button onClick={handleClose04} color="black" size="small">
+            확인
+          </Button>
+        </div>
+      </MuiModal>
       <MuiAlert
         open={open}
         onClose={handleClose}
@@ -122,7 +228,7 @@ function StoreInfo() {
           <>
             운영시간이 존재 하지 않으면 <br />
             <span className="red_text">
-              매장 상태가 준비중 상태로 되며, <br/>
+              매장 상태가 준비중 상태로 되며, <br />
               주문을 받을 수 없는 상태가 됩니다.
             </span>
           </>

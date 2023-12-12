@@ -7,7 +7,16 @@ MuiModal.propTypes = {};
 
 MuiModal.defaultProps = {};
 
-export function MuiModal({ open, onClose, header, button, footer, children, minSize }) {
+export function MuiModal({
+  open,
+  onClose,
+  header,
+  button,
+  footer,
+  children,
+  minSize,
+  midSize,
+}) {
   return (
     <div>
       <Modal
@@ -15,7 +24,9 @@ export function MuiModal({ open, onClose, header, button, footer, children, minS
         onClose={onClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className={`${styles.modal} ${minSize ? styles.minsize : ""}`}
+        className={`${styles.modal} ${minSize ? styles.minsize : ""} ${
+          midSize ? styles.midsize : ""
+        }`}
       >
         <div className={`${styles.modal_box}`}>
           <div className={`${styles.modal_header}`}>{header}</div>

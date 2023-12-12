@@ -6,6 +6,11 @@
       width: 400px;
     }
   }
+  &.midsize{
+    .modal_box{
+      width: 500px;
+    }
+  }
   &_box {
     background-color: var(--cff);
     width: 800px;

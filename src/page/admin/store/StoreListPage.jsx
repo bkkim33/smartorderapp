@@ -148,11 +148,11 @@ function StoreListPage() {
       </div>
       <ContentBox top>
         <div>
-          <Select 
+          <Select
             minwidth="210px"
             round="app"
             placeholder="가맹점명"
-            options={targetOpt} 
+            options={targetOpt}
           />
         </div>
         <Button
@@ -160,9 +160,9 @@ function StoreListPage() {
           color="black"
           icon="Search"
           iconStyle={{
-            fill: '#fff',
+            fill: "#fff",
             height: 24,
-            width: 24
+            width: 24,
           }}
           round
           size="icon_l"
@@ -173,7 +173,13 @@ function StoreListPage() {
       <ContentBox>
         <div className="align mb_12">
           <div className="item">
-            <Button onClick={handleOpen} type="pc" color="gray" line size="small">
+            <Button
+              onClick={handleOpen}
+              type="pc"
+              color="gray"
+              line
+              size="small"
+            >
               삭제
             </Button>
           </div>
@@ -188,7 +194,7 @@ function StoreListPage() {
             >
               등록
             </Button>
-          </div>          
+          </div>
         </div>
         <div className="tbl">
           <TableContainer>
@@ -223,47 +229,87 @@ function StoreListPage() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {tableRows.map((row) => (
-                  <TableRow key={row.id} className="crsor_poin">
-                    <TableCell>
-                      <Checkbox
-                        id={`check${row.id}`}
-                        name={`check${row.id}`}
-                        checked={checkedItems[row.id] || false}
-                        onChange={() => handleCheckboxChange(row.id)}
-                      />
-                    </TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
-                      {row.id}
-                    </TableCell>
-                    <TableCell
-                      className="left"
-                      onClick={(e) => handleTableRowClick(e, row)}
+                <TableRow>
+                  <TableCell>
+                    <Checkbox id="check1" name="check1" />
+                  </TableCell>
+                  <TableCell>1</TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/store/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
                     >
-                      {row.storeName}
-                    </TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
-                      {row.businessNumber}
-                    </TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
-                      {row.ownerName}
-                    </TableCell>
-                    <TableCell onClick={(e) => handleTableRowClick(e, row)}>
-                      {row.contact}
-                    </TableCell>
-                    <TableCell
-                      className="left"
-                      onClick={(e) => handleTableRowClick(e, row)}
+                      클라우드 9 카페
+                    </Button>
+                  </TableCell>
+                  <TableCell>123456789</TableCell>
+                  <TableCell>양땡열</TableCell>
+                  <TableCell>010-1234-5678</TableCell>
+                  <TableCell className="left">
+                    서울특별시 강남구 논현로85길 46
+                  </TableCell>
+                  <TableCell className="left">
+                    월~금 오전 8시 ~ 오후 10시
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox id="check1" name="check1" />
+                  </TableCell>
+                  <TableCell>2</TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/store/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
                     >
-                      {row.address}
-                    </TableCell>
-                    <TableCell
-                      className="left"
-                      onClick={(e) => handleTableRowClick(e, row)}
-                      dangerouslySetInnerHTML={{ __html: row.operatingHours }}
-                    />
-                  </TableRow>
-                ))}
+                      클라우드 카페
+                    </Button>
+                  </TableCell>
+                  <TableCell>123456789</TableCell>
+                  <TableCell>양땡열</TableCell>
+                  <TableCell>010-1234-5678</TableCell>
+                  <TableCell className="left">
+                    서울특별시 강남구 논현로85길 46
+                  </TableCell>
+                  <TableCell className="left">
+                    월~금 오전 8시 ~ 오후 10시
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox id="check1" name="check1" />
+                  </TableCell>
+                  <TableCell>3</TableCell>
+                  <TableCell className="left">
+                    <Button
+                      onClick={() => navigate("/admin/store/modify")}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      과천 클라우드 카페
+                    </Button>
+                  </TableCell>
+                  <TableCell>123456789</TableCell>
+                  <TableCell>양땡열</TableCell>
+                  <TableCell>010-1234-5678</TableCell>
+                  <TableCell className="left">
+                    서울특별시 강남구 논현로85길 46
+                  </TableCell>
+                  <TableCell className="left">
+                    월~금 오전 8시 ~ 오후 10시
+                  </TableCell>
+                </TableRow>
               </TableBody>
             </MuiTable>
           </TableContainer>
@@ -275,17 +321,13 @@ function StoreListPage() {
         onClose={handleClose}
         type="admin"
         iconColor="red"
-        title={
-          <>
-            가맹점을 삭제하시겠습니까?
-          </>
-        }
+        title={<>가맹점을 삭제하시겠습니까?</>}
         desc={
           <>
             가맹점을 삭제하면 <br />
             <span className="red_text">
-              가맹점에 연결된 모든 정보가 삭제되며, <br />삭제된 가맹점은 복구되지
-              않습니다.
+              가맹점에 연결된 모든 정보가 삭제되며, <br />
+              삭제된 가맹점은 복구되지 않습니다.
             </span>
           </>
         }
