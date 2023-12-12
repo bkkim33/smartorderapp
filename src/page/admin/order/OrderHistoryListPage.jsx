@@ -112,7 +112,7 @@ function OrderHistoryListPage() {
       <ContentBox>
         <div className="align start mb_12">
           <div className="item">
-            <Select minwidth="200px" defaultValue={0} options={numOpt} />
+            <Select minwidth="200px" defaultValue={numOpt[0]} options={numOpt} />
           </div>
           <div className="item">
             <p className="body0">
