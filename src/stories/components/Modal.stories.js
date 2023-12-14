@@ -10,11 +10,9 @@ export default {
   },
 };
 
-  
-  export const Default = (args) => 
-  <>
-    <Modal {...args}>
-      {args.children}
-    </Modal>
-  </>;
-  
+export const Default = (args) => 
+<>
+  <Modal {...args}>
+    {args.children}
+  </Modal>
+</>;

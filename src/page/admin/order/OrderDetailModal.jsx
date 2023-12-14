@@ -33,6 +33,29 @@ function OrderDetailModal({ open, handleClose }){
       }
     >
       <div className="admin_ordersales">
+        <div className="total_box">
+          <div className="total_item">
+            <div className="total_tit">합계금액</div>
+            <div className="total_price">
+              <p>21,100</p>
+              <span>원</span>
+            </div>
+          </div>
+          <div className="total_item">
+            <div className="total_tit">총 할인 금액</div>
+            <div className="total_price">
+              <p>-106,820</p>
+              <span>원</span>
+            </div>
+          </div>
+          <div className="total_item">
+            <div className="total_tit">총 결제 금액</div>
+            <div className="total_price">
+              <p className="red_text">4,280</p>
+              <span>원</span>
+            </div>
+          </div>
+        </div>
         <div className="tbl">
           <TableContainer sx={{ maxHeight: 495 }}>
             <MuiTable sx={{ minWidth: 650 }} aria-label="sticky table" stickyHeader>
@@ -98,30 +121,7 @@ function OrderDetailModal({ open, handleClose }){
               </TableBody>
             </MuiTable>
           </TableContainer>
-        </div>
-        <div className="total_box">
-          <div className="total_item">
-            <div className="total_tit">합계금액</div>
-            <div className="total_price">
-              <p>21,100</p>
-              <span>원</span>
-            </div>
-          </div>
-          <div className="total_item">
-            <div className="total_tit">총 할인 금액</div>
-            <div className="total_price">
-              <p>-106,820</p>
-              <span>원</span>
-            </div>
-          </div>
-          <div className="total_item">
-            <div className="total_tit">총 결제 금액</div>
-            <div className="total_price">
-              <p className="red_text">4,280</p>
-              <span>원</span>
-            </div>
-          </div>
-        </div>
+        </div>        
       </div>      
     </MuiModal>
   );

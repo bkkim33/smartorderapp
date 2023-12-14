@@ -14,8 +14,6 @@ export const Default = (args) => (
   </>
 );
 
-// 
-
 export const DefaultChecked = () => (
   <>
     <Radio name="contact1" id="radio1" value="text" defaultChecked>

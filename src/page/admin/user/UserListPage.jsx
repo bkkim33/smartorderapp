@@ -34,13 +34,23 @@ function UserListPage() {
           icon="Search"
           iconStyle={{
             fill: '#fff',
-            height: 24,
-            width: 24
+            height: 18,
+            width: 18
           }}
           round
           size="icon_l"
         >
           검색
+        </Button>
+        <Button
+          type="pc"
+          color="white"
+          size="icon_l"
+          round
+          icon="Refresh"
+          globalClass="ml_10"
+        >
+          초기화
         </Button>
       </ContentBox>
       <ContentBox>

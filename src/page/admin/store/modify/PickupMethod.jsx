@@ -81,7 +81,7 @@ function PickupMethod() {
               <TableCell>
                 <Checkbox id="checkAll" name="checkAll" />
               </TableCell>
-              <TableCell>NO</TableCell>
+              <TableCell>No.</TableCell>
               <TableCell>순서변경</TableCell>
               <TableCell>수령방법</TableCell>
               <TableCell>노출여부</TableCell>

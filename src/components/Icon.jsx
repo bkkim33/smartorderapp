@@ -888,14 +888,26 @@ const ErrorInfo = ({ width = 63, height = 63, fill = "#ED5151" }) => (
 );
 
 const Download = ({ width = 11, height = 18, fill = "var(--c33)" }) => (
-  <svg width={width} height={height} viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg 
+    width={width} 
+    height={height} 
+    viewBox="0 0 11 18" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M1 8.41176L5.5 13M5.5 13L10 8.41176M5.5 13V0" stroke={fill} />
     <path d="M1 17H10" stroke={fill} />
   </svg>
 );
 
 const AlertIcon = ({ width = 50, height = 50, fill ="var(--blue)" }) => (
-  <svg width={width} height={height} viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg 
+    width={width} 
+    height={height} 
+    viewBox="0 0 50 50" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z" fill={fill} />
     <path d="M25 39.5449C23.35 39.5449 22 38.1949 22 36.5449C22 34.8949 23.35 33.5449 25 33.5449C26.65 33.5449 28 34.8949 28 36.5449C28 38.1949 26.65 39.5449 25 39.5449Z" fill="white" />
     <rect x="22" y="8.36133" width="6" height="22.1843" rx="3" fill="white" />
@@ -913,6 +925,21 @@ const Hamburger = ({ width = 26, height = 26, fill = "#000000" }) => (
     <path d="M4 5L22 5" stroke={fill} strokeWidth="2" />
     <path d="M4 13L22 13" stroke={fill} strokeWidth="2" />
     <path d="M4 21L22 21" stroke={fill} strokeWidth="2" />
+  </svg>
+);
+
+const Refresh = ({ width = 23, height = 19, fill= "var(--primary)" }) => (
+  <svg 
+    width={width} 
+    height={height} 
+    viewBox="0 0 23 19" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M4.30806 9.01261C4.30587 12.3191 6.50918 15.3457 9.85086 16.2422C12.7945 17.0318 15.7988 15.9477 17.6002 13.7202" stroke={fill} strokeWidth="2" strokeLinecap="round" />
+    <path d="M19.2632 9.01278C19.2654 5.70631 17.0621 2.67964 13.7204 1.78322C10.7767 0.993564 7.77248 2.07766 5.97111 4.30523" stroke={fill} strokeWidth="2" strokeLinecap="round" />
+    <path d="M2.19372 10.0459C1.74853 10.0459 1.52557 9.50699 1.84037 9.19183L4.15809 6.87147C4.35324 6.6761 4.66965 6.6761 4.8648 6.87147L7.18252 9.19183C7.49732 9.50699 7.27436 10.0459 6.82916 10.0459L2.19372 10.0459Z" fill={fill} />
+    <path d="M21.7809 7.97903C22.2261 7.97903 22.449 8.51791 22.1342 8.83307L19.8165 11.1534C19.6214 11.3488 19.305 11.3488 19.1098 11.1534L16.7921 8.83307C16.4773 8.51791 16.7002 7.97903 17.1454 7.97903L21.7809 7.97903Z" fill={fill} />
   </svg>
 );
 
@@ -959,4 +986,5 @@ export const Icons = {
   AlertIcon,
   Download,
   Hamburger,
+  Refresh,
 };

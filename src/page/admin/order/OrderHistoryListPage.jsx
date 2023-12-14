@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import ContentBox from "../../../layout/ContentBox";
 import Button from "../../../components/Button";
 import Select from "../../../components/Select";
+import Input from "../../../components/Input";
 import MuiPage from "../../../components/MuiPage";
 import Modal from "./OrderDetailModal";
 
@@ -72,6 +73,14 @@ function OrderHistoryListPage() {
           />
         </div>
         <div>
+          <Input
+            width="210px"
+            placeholder="주문번호"
+            shape="none"
+            onClick={() => { }}
+          />
+        </div>
+        <div>
           <Select
             minwidth="210px"
             round="app"
@@ -100,13 +109,28 @@ function OrderHistoryListPage() {
           icon="Search"
           iconStyle={{
             fill: "#fff",
-            height: 24,
-            width: 24,
+            height: 18,
+            width: 18,
           }}
           round
           size="icon_l"
         >
           검색
+        </Button>
+        <Button
+          type="pc"
+          color="white"
+          size="icon_l"
+          round
+          icon="Refresh"
+          iconStyle={{
+            fill: "var(--primary)",
+            height: 23,
+            width: 19,
+          }}
+          globalClass="ml_10"
+        >
+          초기화
         </Button>
       </ContentBox>
       <ContentBox>

@@ -32,4 +32,3 @@ export const Tag = (args) => (
     </MuiTooltip>
   </>
 );
-

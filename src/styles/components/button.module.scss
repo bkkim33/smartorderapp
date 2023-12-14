@@ -102,6 +102,11 @@
     border: 1px solid var(--c99);
   }
 }
+.white{
+  background-color: var(--cff);
+  color: var(--primary);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+}
 //line defalut
 .line {
   background-color: var(--cff);
@@ -343,6 +348,11 @@
           background-color: transparent !important;
         }
       }
+    }
+  }
+  &.white{
+    &:hover{
+      background-color: var(--cdd);
     }
   }
 }
