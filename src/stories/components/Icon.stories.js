@@ -143,6 +143,12 @@ export const Default = () => (
       <div className="item">
         <Icons.Download width={11} height={18} fill="var(--c33)" />
       </div>
+      <div className="item">
+        <Icons.Hamburger width={26} height={26} fill="#000000" />
+      </div>
+      <div className="item">
+        <Icons.Refresh width={23} height={19} fill="var(--primary)" />
+      </div>
     </div>
   </>
 );

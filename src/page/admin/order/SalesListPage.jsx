@@ -56,6 +56,12 @@ const numOpt = [
   { label: "50개씩 보기", value: "50개씩 보기", },
 ];
 
+const periodOpt = [
+  { label: "1주일", value: "1주일", },
+  { label: "1개월", value: "1개월", },
+  { label: "3개월", value: "3개월", },
+];
+
 function SalesListPage() {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
@@ -98,6 +104,15 @@ function SalesListPage() {
             options={paymentMethods} 
           />
         </div>
+        <div>
+          <Select
+            minwidth="78px"
+            round="app"
+            placeholder="기간 선택"
+            defaultValue={periodOpt[0]}
+            options={periodOpt}
+          />
+        </div>
         <div style={{ width: "250px" }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
@@ -112,23 +127,63 @@ function SalesListPage() {
             isClearable={false}
             placeholderText="날짜를 선택해 주세요."
           />
-        </div>
+        </div>        
         <Button
           type="pc"
           color="black"
           icon="Search"
           iconStyle={{
             fill: '#fff',
-            height: 24,
-            width: 24
+            height: 18,
+            width: 18
           }}
           round
           size="icon_l"
         >
           검색
         </Button>
+        <Button
+          type="pc"
+          color="white"
+          size="icon_l"
+          round
+          icon="Refresh"
+          iconStyle={{
+            fill: "var(--primary)",
+            height: 23,
+            width: 19,
+          }}
+          globalClass="ml_10"
+        >
+          초기화
+        </Button>
       </ContentBox>
       <ContentBox>
+        <div className="admin_ordersales">
+          <div className="total_box">
+            <div className="total_item">
+              <div className="total_tit">합계금액</div>
+              <div className="total_price">
+                <p>21,100</p>
+                <span>원</span>
+              </div>
+            </div>
+            <div className="total_item">
+              <div className="total_tit">총 할인 금액</div>
+              <div className="total_price">
+                <p>-106,820</p>
+                <span>원</span>
+              </div>
+            </div>
+            <div className="total_item">
+              <div className="total_tit">총 결제 금액</div>
+              <div className="total_price">
+                <p className="red_text">4,280</p>
+                <span>원</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="align mb_12">
           <div className="lft">
             <div className="item">
@@ -156,7 +211,7 @@ function SalesListPage() {
               엑셀다운로드
             </Button>
           </div>
-        </div>
+        </div>        
         <div className="tbl">
           <TableContainer sx={{ maxHeight: 495 }}>
             <MuiTable sx={{ minWidth: 650 }} aria-label="sticky table" stickyHeader>
@@ -353,32 +408,7 @@ function SalesListPage() {
               </TableBody>              
             </MuiTable>
           </TableContainer>
-        </div>
-        <div className="admin_ordersales">
-          <div className="total_box">
-            <div className="total_item">
-              <div className="total_tit">합계금액</div>
-              <div className="total_price">
-                <p>21,100</p>
-                <span>원</span>
-              </div>
-            </div>
-            <div className="total_item">
-              <div className="total_tit">총 할인 금액</div>
-              <div className="total_price">
-                <p>-106,820</p>
-                <span>원</span>
-              </div>
-            </div>
-            <div className="total_item">
-              <div className="total_tit">총 결제 금액</div>
-              <div className="total_price">
-                <p className="red_text">4,280</p>
-                <span>원</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>        
         <MuiPage />
       </ContentBox>
     </Layout>

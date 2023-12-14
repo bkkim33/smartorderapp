@@ -27,7 +27,7 @@ export default {
     },
     icon: {
       control: "select",
-      options: ["Heart", "Delete", "Search", "Google", "Home", "Cart", "Cup", "Like", "LikeOff", "LogoOnly", "Location", "MenuOrder", "MenuLike", "MenuOrderdetails", "MenuCoupon", "MenuPrivacy", "MenuNotice", "Infomation", "Question", "Trash", "Logout", "OrderComplete", "Coupon", "Back", "ArrowBg", "Plus", "Setting", "Download", "" ]
+      options: ["Heart", "Delete", "Search", "Google", "Home", "Cart", "Cup", "Like", "LikeOff", "LogoOnly", "Location", "MenuOrder", "MenuLike", "MenuOrderdetails", "MenuCoupon", "MenuPrivacy", "MenuNotice", "Infomation", "Question", "Trash", "Logout", "OrderComplete", "Coupon", "Back", "ArrowBg", "Plus", "Setting", "Download", "Hamburger", "Refresh", "" ]
     },
     iconStyle: {
       control: "object",
