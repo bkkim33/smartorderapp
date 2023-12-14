@@ -43,14 +43,6 @@ function ProductCategoryPage() {
     setOpen03(false);
   };
 
-  const [open04, setOpen04] = useState(false);
-  const handleOpen04 = () => {
-    setOpen04(true);
-  };
-  const handleClose04 = () => {
-    setOpen04(false);
-  };
-
   const [open05, setOpen05] = useState(false);
   const handleOpen05 = () => {
     setOpen05(true);
@@ -78,7 +70,7 @@ function ProductCategoryPage() {
             </Button>
           </div>
           <div className="rgt">
-            <Button onClick={handleOpen04} type="pc" color="point" size="small">
+            <Button onClick={() => { }} type="pc" color="point" size="small">
               카테고리추가
             </Button>
           </div>
@@ -326,37 +318,6 @@ function ProductCategoryPage() {
               </td>
             </tr>
           </Table>
-        </MuiModal>
-        <MuiModal
-          minSize
-          open={open04}
-          onClose={handleClose04}
-          header={
-            <>
-              <h4>카테고리추가</h4>
-              <Button
-                icon="Delete"
-                none
-                onClick={handleClose04}
-                size="icon_s"
-                iconStyle={{
-                  fill: "var(--primary)",
-                }}
-              >
-                Close
-              </Button>
-            </>
-          }
-        >
-          <Input onClick={() => {}} placeholder="카테고리명을 입력하세요." />
-          <div className="align center mt_30 gap_5">
-            <Button onClick={handleClose04} color="gray" line size="small">
-              취소
-            </Button>
-            <Button onClick={handleClose04} color="black" size="small">
-              확인
-            </Button>
-          </div>
         </MuiModal>
         <MuiAlert
           open={open}
