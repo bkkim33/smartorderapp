@@ -25,7 +25,7 @@ function UserListPage() {
             onClick={() => { }}
             shape="none"
             width="310px"
-            placeholder="사용자 검색 (사용자 ID, 관리자명)"
+            placeholder="사용자 검색 (사용자 ID, 사용자명)"
           />
         </div>
         <Button

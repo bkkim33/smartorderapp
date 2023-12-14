@@ -42,6 +42,14 @@ function ProductRegisterPage() {
     setOpen(false);
   };
 
+  const [open01, setOpen01] = useState(false);
+  const handleOpen01 = () => {
+    setOpen01(true);
+  };
+  const handleClose01 = () => {
+    setOpen01(false);
+  };
+
   const [open02, setOpen02] = useState(false);
   const handleOpen02 = () => {
     setOpen02(true);
@@ -125,6 +133,27 @@ function ProductRegisterPage() {
                     type="pc"
                   >
                     쿠폰할인 선택
+                  </Button>
+                </div>
+                <div className="item wrap gap_10">
+                  {/* <Chip label="C0001" onClick={() => {}} />
+                  <Chip label="C0002" onClick={() => {}} /> */}
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th className="required">판매매장</th>
+            <td colSpan={3}>
+              <div className="align top start">
+                <div className="item" style={{ minWidth: "117px" }}>
+                  <Button
+                    size="small"
+                    onClick={handleOpen01}
+                    color="point"
+                    type="pc"
+                  >
+                    판매매장 선택
                   </Button>
                 </div>
                 <div className="item wrap gap_10">
@@ -361,6 +390,81 @@ function ProductRegisterPage() {
           <Button onClick={handleClose} color="black" size="small">
             확인
           </Button>
+        </div>
+      </MuiModal>
+      <MuiModal
+        open={open01}
+        onClose={handleClose01}
+        header={
+          <>
+            <h4>판매 매장 선택</h4>
+            <Button
+              icon="Delete"
+              none
+              onClick={handleClose01}
+              size="icon_s"
+              iconStyle={{
+                fill: "var(--primary)",
+              }}
+            >
+              Close
+            </Button>
+          </>
+        }
+      >
+        <div className="tbl">
+          <MuiTable aria-label="simple table">
+            <colgroup>
+              <col width="2%" />
+              <col width="20%" />
+              <col width="20%" />
+              <col width="15%" />
+              <col width="45%" />
+            </colgroup>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  <Checkbox id="checkAll1111" name="checkAll1111" />
+                </TableCell>
+                <TableCell>사업자번호</TableCell>
+                <TableCell>가맹점명</TableCell>
+                <TableCell>대표자명</TableCell>
+                <TableCell>주소</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell>
+                  <Checkbox id="check11111" name="check11111" />
+                </TableCell>
+                <TableCell>12345678</TableCell>
+                <TableCell className="left">클라우드 9 카페</TableCell>
+                <TableCell>홍길동</TableCell>
+                <TableCell className="left">
+                  서울특별시 강남구 논현로 85길 46
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>
+                  <Checkbox id="check11112" name="check11111" />
+                </TableCell>
+                <TableCell>12345678</TableCell>
+                <TableCell className="left">클라우드 9카페</TableCell>
+                <TableCell>홍길동</TableCell>
+                <TableCell className="left">
+                  서울특별시 강남구 논현로 85길 46
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </MuiTable>
+          <div className="align center mt_30 gap_5">
+            <Button onClick={handleClose01} color="gray" line size="small">
+              취소
+            </Button>
+            <Button onClick={handleClose01} color="black" size="small">
+              확인
+            </Button>
+          </div>
         </div>
       </MuiModal>
       <MuiAlert

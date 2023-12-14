@@ -152,11 +152,11 @@ function ProductListPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="2%" />
-                <col width="3%" />
-                <col width="20%" />
+                <col width="8%" />
+                <col width="15%" />
+                <col width="24%" />
                 <col width="auto" />
-                <col width="20%" />
-                <col width="20%" />
+                <col width="24%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -190,18 +190,7 @@ function ProductListPage() {
                       유자차
                     </Button>
                   </TableCell>
-                  <TableCell>
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      클라우드 카페 외 1개
-                    </Button>
-                  </TableCell>
+                  <TableCell>클라우드 카페 외 1개</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
@@ -222,18 +211,7 @@ function ProductListPage() {
                       에스프레소
                     </Button>
                   </TableCell>
-                  <TableCell>
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      클라우드카페(역삼1호점)
-                    </Button>
-                  </TableCell>
+                  <TableCell>클라우드카페(역삼1호점)</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
@@ -254,18 +232,7 @@ function ProductListPage() {
                       바닐라라떼
                     </Button>
                   </TableCell>
-                  <TableCell>
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      클라우드9카페(역삼2호점)
-                    </Button>
-                  </TableCell>
+                  <TableCell>클라우드9카페(역삼2호점)</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
@@ -286,18 +253,7 @@ function ProductListPage() {
                       캬라멜마끼아또
                     </Button>
                   </TableCell>
-                  <TableCell>
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      클라우드 카페 외 1개
-                    </Button>
-                  </TableCell>
+                  <TableCell>클라우드 카페 외 1개</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
@@ -308,87 +264,6 @@ function ProductListPage() {
         </div>
         <MuiPage />
       </ContentBox>
-      <MuiModal
-        open={open}
-        onClose={handleClose}
-        header={
-          <>
-            <h4>판매 매장 정보</h4>
-            <Button
-              icon="Delete"
-              none
-              onClick={handleClose}
-              size="icon_s"
-              iconStyle={{
-                fill: "var(--primary)",
-              }}
-            >
-              Close
-            </Button>
-          </>
-        }
-      >
-        <div className="tbl">
-          <TableContainer>
-            <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
-              <colgroup>
-                <col width="20%" />
-                <col width="20%" />
-                <col width="15%" />
-                <col width="45%" />
-              </colgroup>
-              <TableHead>
-                <TableRow>
-                  <TableCell>사업자번호</TableCell>
-                  <TableCell>가맹점명</TableCell>
-                  <TableCell>대표자명</TableCell>
-                  <TableCell>주소</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell>12345678</TableCell>
-                  <TableCell className="left">
-                    <Button
-                      onClick={() => navigate("/admin/store/modify")}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      클라우드 9 카페
-                    </Button>
-                  </TableCell>
-                  <TableCell>홍길동</TableCell>
-                  <TableCell className="left">
-                    서울특별시 강남구 논현로 85길 46
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>12345678</TableCell>
-                  <TableCell className="left">
-                    <Button
-                      onClick={() => navigate("/admin/store/modify")}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      클라우드 9카페
-                    </Button>
-                  </TableCell>
-                  <TableCell>홍길동</TableCell>
-                  <TableCell className="left">
-                    서울특별시 강남구 논현로 85길 46
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </MuiTable>
-          </TableContainer>
-        </div>
-      </MuiModal>
       <MuiAlert
         open={open02}
         onClose={handleClose02}

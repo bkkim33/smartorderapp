@@ -122,8 +122,6 @@ const History12 = OrderHistoryData.filter(
   (History) => History.date >= moment(twelveMonthAgo).format("YYYY.MM.DD")
 );
 
-console.log(History1);
-
 
 function OrderHistoryPage() {
   return (
