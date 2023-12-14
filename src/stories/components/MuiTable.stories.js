@@ -84,5 +84,3 @@ export const Default = (args) => (
     <MuiTable cols={cols} columns={columns} rows={rows}></MuiTable>
   </>
 );
-
-

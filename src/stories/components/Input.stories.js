@@ -78,7 +78,6 @@ export const AdminNumericOnly = () => (
   </>
 );
 
-
 export const AdminNoSpecialChars = () => (
   <>
     <Input

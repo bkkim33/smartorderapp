@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { MuiAlert } from "../../components/MuiAlert";
 import { Button } from "../../components/Button";
 
-
 export default {
   title: "components/Lib/MuiAlert",
   component: MuiAlert,

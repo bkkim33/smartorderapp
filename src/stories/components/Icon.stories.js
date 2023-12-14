@@ -142,7 +142,7 @@ export const Default = () => (
       </div>
       <div className="item">
         <Icons.Download width={11} height={18} fill="var(--c33)" />
-      </div> 
+      </div>
     </div>
   </>
 );

@@ -16,8 +16,6 @@ export const Default = (args) => (
   </>
 );
 
-// 
-
 export const RadioDefault = () => (
   <FormGroup>
     <Radio name="contact0" id="radio1" value="EMAIL" defaultChecked>
