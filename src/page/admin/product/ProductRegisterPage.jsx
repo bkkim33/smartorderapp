@@ -58,13 +58,6 @@ function ProductRegisterPage() {
     setOpen03(false);
   };
 
-  const [open04, setOpen04] = useState(false);
-  const handleOpen04 = () => {
-    setOpen04(true);
-  };
-  const handleClose04 = () => {
-    setOpen04(false);
-  };
 
   return (
     <Layout>
@@ -85,7 +78,11 @@ function ProductRegisterPage() {
           <tr>
             <th className="required">상품 카테고리</th>
             <td>
-              <Select placeholder="옵션을 선택해 주세요." maxwidth="300px" options={categoryOpt} />
+              <Select
+                placeholder="옵션을 선택해 주세요."
+                maxwidth="300px"
+                options={categoryOpt}
+              />
             </td>
             <th className="required">상품명</th>
             <td>
@@ -151,7 +148,7 @@ function ProductRegisterPage() {
             </Button>
           </div>
           <div className="rgt">
-            <Button onClick={handleOpen04} type="pc" color="point" size="small">
+            <Button type="pc" color="point" size="small">
               옵션추가
             </Button>
           </div>
@@ -161,8 +158,8 @@ function ProductRegisterPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="2%" />
-                <col width="49%" />
-                <col width="49%" />
+                <col width="39%" />
+                <col width="59%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -181,11 +178,14 @@ function ProductRegisterPage() {
                     </div>
                   </TableCell>
                   <TableCell className="top">
-                    <Input width="440px" placeholder="옵션명 입력" />
+                    <Input width="300px" placeholder="옵션명 입력" />
                   </TableCell>
                   <TableCell className="top">
-                    <div className="align bottom">
-                      <div className="item wrap">
+                    <div className="align start bottom">
+                      <div
+                        className="item wrap"
+                        style={{ width: "min-content" }}
+                      >
                         <div className="align top start">
                           {/* <div className="item">
                             <Button
@@ -201,7 +201,7 @@ function ProductRegisterPage() {
                           </div> */}
                           <div className="item">
                             <Input
-                              width="440px"
+                              width="300px"
                               placeholder="상세옵션명 입력"
                             />
                           </div>
@@ -359,40 +359,6 @@ function ProductRegisterPage() {
             취소
           </Button>
           <Button onClick={handleClose} color="black" size="small">
-            확인
-          </Button>
-        </div>
-      </MuiModal>
-      <MuiModal
-        minSize
-        open={open04}
-        onClose={handleClose04}
-        header={
-          <>
-            <h4>옵션추가</h4>
-            <Button
-              icon="Delete"
-              none
-              onClick={handleClose04}
-              size="icon_s"
-              iconStyle={{
-                fill: "var(--primary)",
-              }}
-            >
-              Close
-            </Button>
-          </>
-        }
-      >
-        <Input
-          onClick={() => {}}
-          placeholder="옵션명을 입력하세요."
-        />
-        <div className="align center mt_30 gap_5">
-          <Button onClick={handleClose04} color="gray" line size="small">
-            취소
-          </Button>
-          <Button onClick={handleClose04} color="black" size="small">
             확인
           </Button>
         </div>
