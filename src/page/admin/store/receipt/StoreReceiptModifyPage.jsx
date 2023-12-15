@@ -375,7 +375,7 @@ function StoreReceiptModifyPage() {
                     취소
                   </Button>
                   <Button
-                    onClick={() => navigate("/admin/store/receipt")}
+                    onClick={() => handleCloseAlert(1)}
                     type="pc"
                     color="black"
                     size="small"
@@ -385,6 +385,7 @@ function StoreReceiptModifyPage() {
                 </>
               }
             />
+            {/* 카페관리자 및 슈퍼 어드민이 취소버튼 클릭시 해당 팝업 노출 */}
             <MuiAlert
               open={openAlert2}
               onClose={() => handleCloseAlert(2)}
@@ -414,6 +415,34 @@ function StoreReceiptModifyPage() {
                 </>
               }
             />
+            {/* 매장 관리자가 취소 버튼 클릭시 해당 팝업 노충 */}
+            {/* <MuiAlert
+              open={openAlert2}
+              onClose={() => handleCloseAlert(2)}
+              type="admin"
+              iconColor="red"
+              title={<>이전에 저장된 내용으로 되돌리시겠습니까?</>}
+              desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
+              button={
+                <>
+                  <Button
+                    onClick={() => handleCloseAlert(2)}
+                    color="gray"
+                    line
+                    size="small"
+                  >
+                    아니오
+                  </Button>
+                  <Button
+                    onClick={() => handleCloseAlert(2)}
+                    color="black"
+                    size="small"
+                  >
+                    네
+                  </Button>
+                </>
+              }
+            /> */}
             <MuiAlert
               open={open}
               onClose={handleClose}
