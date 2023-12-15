@@ -115,7 +115,7 @@ function ProductDetailPage() {
             </td>
           </tr>
           <tr>
-            <th className="required">상품 이미지</th>
+            <th className="required">APP 이미지</th>
             <td className="vertical_top">
               <FileUpload onChange={() => {}} />
             </td>
@@ -135,12 +135,21 @@ function ProductDetailPage() {
                 <div className="item wrap gap_5">
                   <Chip label="C0001" onClick={() => {}} />
                   <Chip label="C0002" onClick={() => {}} />
-                  <Chip label="C0003" onClick={() => {}} />
-                  <Chip label="C0004" onClick={() => {}} />
                 </div>
               </div>
             </td>
           </tr>
+          {/* 이 부분은 개발요건 -- 현제는 사용 안하지만 나중에 사용 함으로 개발은 필요 */}
+          {/* <tr>
+            <th className="">키오스크 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+            </td>
+            <th className="">DID 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+            </td>
+          </tr> */}
           <tr>
             <th className="required">판매매장</th>
             <td colSpan={3}>

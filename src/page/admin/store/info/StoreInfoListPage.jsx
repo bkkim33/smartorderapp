@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from '../../../layout/DefaultLayout'
-import ContentBox from "../../../layout/ContentBox";
-import Button from "../../../components/Button";
-import Table from "../../../components/Table";
-import Select from "../../../components/Select";
-import MuiPage from "../../../components/MuiPage";
-import Checkbox from "../../../components/Checkbox";
-import MuiAlert from "../../../components/MuiAlert";
+import Layout from "../../../../layout/DefaultLayout";
+import ContentBox from "../../../../layout/ContentBox";
+import Button from "../../../../components/Button";
+import Table from "../../../../components/Table";
+import Select from "../../../../components/Select";
+import MuiPage from "../../../../components/MuiPage";
+import Checkbox from "../../../../components/Checkbox";
+import MuiAlert from "../../../../components/MuiAlert";
 
 //mui table import
 import MuiTable from '@mui/material/Table';
@@ -24,7 +24,7 @@ const targetOpt = [
   { label: "과천 클라우드 카페", value: "과천 클라우드 카페" }
 ]
 
-function StoreListPage() {
+function StoreInfoListPage() {
 
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -40,7 +40,7 @@ function StoreListPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">매장정보 관리</h1>
+        <h1 className="headline2">매장정보</h1>
       </div>
       <ContentBox top>
         <div>
@@ -250,4 +250,4 @@ function StoreListPage() {
   );
 }
 
-export default StoreListPage;
+export default StoreInfoListPage;

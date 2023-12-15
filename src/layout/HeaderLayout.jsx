@@ -12,7 +12,7 @@ function HeaderLayout() {
 
   return (
     <header className={`${styles.header}`}>
-      <div className="pt_30">
+      <div className="pt_10">
         <Icons.AdminHeaderLogo width={"100%"} height={66} fill="#fff" />
       </div>
       <div className={`${styles.user_util} ${"mt_30"}`}>
@@ -32,7 +32,7 @@ function HeaderLayout() {
           프로필
         </Button>
       </div>
-      <SideMenu globalstyle="mt_47" />
+      <SideMenu globalstyle="mt_30" />
     </header>
   );
 }

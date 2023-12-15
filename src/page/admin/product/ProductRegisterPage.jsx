@@ -118,7 +118,7 @@ function ProductRegisterPage() {
             </td>
           </tr>
           <tr>
-            <th className="required">상품 이미지</th>
+            <th className="required">APP 이미지</th>
             <td className="vertical_top">
               <FileUpload onChange={() => {}} />
             </td>
@@ -132,16 +132,27 @@ function ProductRegisterPage() {
                     color="point"
                     type="pc"
                   >
-                    쿠폰할인 선택
+                    쿠폰할인선택
                   </Button>
                 </div>
                 <div className="item wrap gap_10">
                   {/* <Chip label="C0001" onClick={() => {}} />
                   <Chip label="C0002" onClick={() => {}} /> */}
                 </div>
-              </div>
+              </div> 
             </td>
           </tr>
+          {/* 이 부분은 개발요건 -- 현제는 사용 안하지만 나중에 사용 함으로 개발은 필요 */}
+          {/* <tr>
+            <th className="">키오스크 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+            </td>
+            <th className="">DID 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+            </td>
+          </tr> */}
           <tr>
             <th className="required">판매매장</th>
             <td colSpan={3}>
@@ -153,7 +164,7 @@ function ProductRegisterPage() {
                     color="point"
                     type="pc"
                   >
-                    판매매장 선택
+                    판매매장선택
                   </Button>
                 </div>
                 <div className="item wrap gap_10">

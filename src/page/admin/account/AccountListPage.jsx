@@ -24,7 +24,7 @@ function AccountListPage() {
       <ContentBox top>
         <div>
           <Input
-            onClick={() => { }}
+            onClick={() => {}}
             shape="none"
             width="310px"
             placeholder="관리자 검색 (관리자 ID, 관리자명)"
@@ -35,9 +35,9 @@ function AccountListPage() {
           color="black"
           icon="Search"
           iconStyle={{
-            fill: '#fff',
+            fill: "#fff",
             height: 18,
-            width: 18
+            width: 18,
           }}
           round
           size="icon_l"

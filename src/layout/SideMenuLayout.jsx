@@ -131,27 +131,34 @@ function SideMenuLayout({globalstyle}) {
               splitLocation[2] === "store" ? styles.menu_dep1_active : ""
             }`}
           >
-            <Link
+            {/* <Link
               to="/admin/store/"
               className={` ${
                 splitLocation[2] === "store" ? styles.active : ""
               }`}
-            >
+            ></Link> */}
+            <p>
               <span>매장별 설정 관리</span>
-            </Link>
-            {/* <p>
-              <span></span>
             </p>
             <ul className={`${styles.menu_dep2_wrap}`}>
-              <li className={`${styles.menu_dep2}`}></li>
               <li className={`${styles.menu_dep2}`}>
                 <Link
-                  to="/admin/store/receive"
+                  to="/admin/store/info"
                   className={` ${
-                    splitLocation[3] === "receive" ? styles.active : ""
+                    splitLocation[3] === "info" ? styles.active : ""
                   }`}
                 >
-                  <span>수령 방법</span>
+                  <span>매장정보</span>
+                </Link>
+              </li>
+              <li className={`${styles.menu_dep2}`}>
+                <Link
+                  to="/admin/store/receipt"
+                  className={` ${
+                    splitLocation[3] === "receipt" ? styles.active : ""
+                  }`}
+                >
+                  <span>상품 수령방법</span>
                 </Link>
               </li>
               <li className={`${styles.menu_dep2}`}>
@@ -161,20 +168,10 @@ function SideMenuLayout({globalstyle}) {
                     splitLocation[3] === "display" ? styles.active : ""
                   }`}
                 >
-                  <span>상품 전시</span>
+                  <span>상품 전시관리</span>
                 </Link>
               </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/store/status"
-                  className={` ${
-                    splitLocation[3] === "status" ? styles.active : ""
-                  }`}
-                >
-                  <span>판매 상태</span>
-                </Link>
-              </li>
-            </ul> */}
+            </ul>
           </li>
           <li
             className={`${styles.menu_dep1} ${
