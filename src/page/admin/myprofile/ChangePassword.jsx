@@ -37,43 +37,56 @@ function ChangePassword() {
         <div className="admin_myprofile">
           <Table
             globalClass="changepasswordbox"
-            colgroup={[<col key="col1" width="10%" />, <col key="col2" />]}
+            colgroup={
+              <>
+                <col width="10%" />
+                <col width="auto" />
+              </>
+            }
           >
-            <tr key="currentPassword">
+            <tr>
               <th>현재 비밀번호</th>
               <td className="left">
-                <Input
-                  placeholder="현재 비밀번호 입력"
-                  type="password"
-                  width="400px"
-                />
+                <form>
+                  <Input
+                    placeholder="현재 비밀번호 입력"
+                    type="password"
+                    width="400px"
+                  />
+                </form>
+
                 <div className="red mt_5 ml_5">
                   * 현재 사용하고 있는 비밀번호가 아닙니다.
                 </div>
               </td>
             </tr>
-            <tr key="newPassword">
+            <tr>
               <th>새로운 비밀번호</th>
               <td className="left">
-                <Input
-                  type="password"
-                  placeholder="4~20자의 영문, 숫자 특수문자 조합으로 입력"
-                  maxLength={20}
-                  width="400px"
-                />
+                <form>
+                  <Input
+                    type="password"
+                    placeholder="4~20자의 영문, 숫자 특수문자 조합으로 입력"
+                    width="400px"
+                  />
+                </form>
+
                 <div className="red mt_5 ml_5">
                   * 비밀번호는 4~20자 이내여야 합니다.
                 </div>
               </td>
             </tr>
-            <tr key="confirmPassword">
+            <tr>
               <th>비밀번호 확인</th>
               <td className="left">
-                <Input
-                  type="password"
-                  placeholder="새로운 비밀번호 재입력"
-                  width="400px"
-                />
+                <form>
+                  <Input
+                    type="password"
+                    placeholder="새로운 비밀번호 재입력"
+                    width="400px"
+                  />
+                </form>
+
                 <div className="red mt_5 ml_5">
                   * 새로운 비밀번호와 다릅니다.
                 </div>

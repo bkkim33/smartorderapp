@@ -15,7 +15,14 @@ function Profile() {
       </div>
       <ContentBox>
         <div className="admin_myprofile">
-          <Table colgroup={[<col width="10%" />, <col width="auto" />]}>
+          <Table
+            colgroup={
+              <>
+                <col width="10%" />
+                <col width="auto" />
+              </>
+            }
+          >
             <tr>
               <th>소속</th>
               <td className="left">메가존 디지털</td>
