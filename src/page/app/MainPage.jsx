@@ -135,7 +135,7 @@ function MainPage() {
 
   const date = new Date();
 
-  const hours = Number(date.getHours());
+  // const hours = Number(date.getHours());
 
   // const currentTimer = () => {
   //   const date = new Date();
