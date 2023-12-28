@@ -131,47 +131,14 @@ function SideMenuLayout({globalstyle}) {
               splitLocation[2] === "store" ? styles.menu_dep1_active : ""
             }`}
           >
-            {/* <Link
-              to="/admin/store/"
+            <Link
+              to="/admin/store"
               className={` ${
                 splitLocation[2] === "store" ? styles.active : ""
               }`}
-            ></Link> */}
-            <p>
+            >
               <span>매장별 설정 관리</span>
-            </p>
-            <ul className={`${styles.menu_dep2_wrap}`}>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/store/info"
-                  className={` ${
-                    splitLocation[3] === "info" ? styles.active : ""
-                  }`}
-                >
-                  <span>매장정보</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/store/receipt"
-                  className={` ${
-                    splitLocation[3] === "receipt" ? styles.active : ""
-                  }`}
-                >
-                  <span>상품 수령방법</span>
-                </Link>
-              </li>
-              <li className={`${styles.menu_dep2}`}>
-                <Link
-                  to="/admin/store/display"
-                  className={` ${
-                    splitLocation[3] === "display" ? styles.active : ""
-                  }`}
-                >
-                  <span>상품 전시관리</span>
-                </Link>
-              </li>
-            </ul>
+            </Link>
           </li>
           <li
             className={`${styles.menu_dep1} ${

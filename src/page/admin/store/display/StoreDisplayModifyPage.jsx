@@ -73,8 +73,6 @@ function StoreDisplayModifyPage() {
               <col width="8%" />
               <col width="10%" />
               <col width="8%" />
-              <col width="10%" />
-              <col width="8%" />
               <col width="auto" />
             </>
           }
@@ -82,8 +80,6 @@ function StoreDisplayModifyPage() {
           <tr>
             <th className="">가맹점명</th>
             <td>클라우드카페</td>
-            <th className="">사업자번호</th>
-            <td>02-1234-1234</td>
             <th className="">대표자명</th>
             <td>홍길동</td>
             <th className="">연락처</th>
@@ -116,6 +112,7 @@ function StoreDisplayModifyPage() {
                   placeholder="상품ID 또는 상품명을 입력해주세요."
                 />
               </div>
+
               <div className="item">
                 <Button
                   type="pc"
@@ -125,6 +122,22 @@ function StoreDisplayModifyPage() {
                     fill: "#fff",
                     height: 15,
                     width: 15,
+                  }}
+                  round
+                  size="icon_s"
+                >
+                  검색
+                </Button>
+              </div>
+              <div className="item">
+                <Button
+                  type="pc"
+                  color="white"
+                  icon="Refresh"
+                  iconStyle={{
+                    fill: "#000",
+                    height: 18,
+                    width: 18,
                   }}
                   round
                   size="icon_s"
@@ -401,7 +414,7 @@ function StoreDisplayModifyPage() {
                     취소
                   </Button>
                   <Button
-                    onClick={() => navigate("/admin/store/display")}
+                    onClick={() => navigate("/admin/store/")}
                     type="pc"
                     color="black"
                     size="small"
@@ -411,34 +424,6 @@ function StoreDisplayModifyPage() {
                 </>
               }
             />
-            {/* 매장 관리자가 취소 버튼 클릭시 해당 팝업 노충 */}
-            {/* <MuiAlert
-              open={openAlert2}
-              onClose={() => handleCloseAlert(2)}
-              type="admin"
-              iconColor="red"
-              title={<>이전에 저장된 내용으로 되돌리시겠습니까?</>}
-              desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
-              button={
-                <>
-                  <Button
-                    onClick={() => handleCloseAlert(2)}
-                    color="gray"
-                    line
-                    size="small"
-                  >
-                    아니오
-                  </Button>
-                  <Button
-                    onClick={() => handleCloseAlert(2)}
-                    color="black"
-                    size="small"
-                  >
-                    네
-                  </Button>
-                </>
-              }
-            /> */}
           </div>
         </div>
       </ContentBox>

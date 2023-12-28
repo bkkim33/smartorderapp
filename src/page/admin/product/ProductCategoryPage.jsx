@@ -71,7 +71,7 @@ function ProductCategoryPage() {
           </div>
           <div className="rgt">
             <Button onClick={() => { }} type="pc" color="point" size="small">
-              카테고리추가
+              카테고리 추가
             </Button>
           </div>
         </div>
@@ -95,7 +95,7 @@ function ProductCategoryPage() {
                   <TableCell>순서변경</TableCell>
                   <TableCell>카테고리명</TableCell>
                   <TableCell>노출여부</TableCell>
-                  <TableCell>연결된 상품</TableCell>
+                  <TableCell>연결 상품</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -305,7 +305,7 @@ function ProductCategoryPage() {
           >
             <tr>
               <th className="center">
-                연결된 상품 <br /> 5개
+                연결 상품 <br /> 5개
               </th>
               <td className="center">
                 <p>아메리카노(P1084)</p>
@@ -373,7 +373,7 @@ function ProductCategoryPage() {
           type="admin"
           iconColor="red"
           title={<>이전에 저장된 내용으로 되돌리시겠습니까?</>}
-          desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
+          desc={<>작성된 내용이 저장되지 않습니다.</>}
           button={
             <>
               <Button onClick={handleClose05} color="gray" line size="small">

@@ -31,7 +31,13 @@ function AccountModify() {
   const handleClose01 = () => {
     setOpen01(false);
   };
-  
+  const [open05, setOpen05] = useState(false);
+  const handleOpen05 = () => {
+    setOpen05(true);
+  };
+  const handleClose05 = () => {
+    setOpen05(false);
+  };
   return (
     <Layout>
       <div className="align mb_20">
@@ -94,9 +100,7 @@ function AccountModify() {
             계정 삭제
           </Button>
           <Button
-            onClick={() => {
-              navigate("/admin/account");
-            }}
+            onClick={handleOpen05}
             type="pc"
             color="gray"
             line
@@ -171,6 +175,28 @@ function AccountModify() {
             <Button
               onClick={() => navigate("/admin/account")}
               type="pc"
+              color="black"
+              size="small"
+            >
+              네
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={open05}
+        onClose={handleClose05}
+        type="admin"
+        iconColor="red"
+        title={<>계정 생성을 취소하시겠습니까?</>}
+        desc={<>작성된 내용이 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button onClick={handleClose05} color="gray" line size="small">
+              아니오
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/account")}
               color="black"
               size="small"
             >

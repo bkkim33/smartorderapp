@@ -47,7 +47,7 @@ function StoreListPage() {
           <Select
             minwidth="210px"
             round="app"
-            placeholder="가맹점명"
+            placeholder="판매 매장"
             options={targetOpt}
           />
         </div>
@@ -95,10 +95,10 @@ function StoreListPage() {
                 navigate("/admin/store/info/register");
               }}
               type="pc"
-              color="black"
+              color="point"
               size="small"
             >
-              등록
+              신규등록
             </Button>
           </div>
         </div>
@@ -109,11 +109,12 @@ function StoreListPage() {
                 <col width="2%" />
                 <col width="3%" />
                 <col width="12%" />
-                <col width="10%" />
                 <col width="7%" />
                 <col width="15%" />
                 <col width="auto" />
                 <col width="20%" />
+                <col width="8%" />
+                <col width="8%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -121,12 +122,13 @@ function StoreListPage() {
                     <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
                   <TableCell>No.</TableCell>
-                  <TableCell>가맹점명</TableCell>
-                  <TableCell>사업자번호</TableCell>
+                  <TableCell>판매 매장</TableCell>
                   <TableCell>대표자명</TableCell>
                   <TableCell>연락처</TableCell>
                   <TableCell>주소</TableCell>
                   <TableCell>운영시간</TableCell>
+                  <TableCell>전시관리</TableCell>
+                  <TableCell>수령방법</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -147,7 +149,6 @@ function StoreListPage() {
                       클라우드 9 카페
                     </Button>
                   </TableCell>
-                  <TableCell>123456789</TableCell>
                   <TableCell>양땡열</TableCell>
                   <TableCell>010-1234-5678</TableCell>
                   <TableCell className="left">
@@ -155,6 +156,30 @@ function StoreListPage() {
                   </TableCell>
                   <TableCell className="left">
                     월~금 오전 8시 ~ 오후 10시
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/admin/store/display/modify");
+                      }}
+                      type="pc"
+                      color="point"
+                      size="small"
+                    >
+                      설정
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/admin/store/receipt/modify");
+                      }}
+                      type="pc"
+                      color="point"
+                      size="small"
+                    >
+                      설정
+                    </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -174,7 +199,6 @@ function StoreListPage() {
                       클라우드 카페
                     </Button>
                   </TableCell>
-                  <TableCell>123456789</TableCell>
                   <TableCell>양땡열</TableCell>
                   <TableCell>010-1234-5678</TableCell>
                   <TableCell className="left">
@@ -182,6 +206,30 @@ function StoreListPage() {
                   </TableCell>
                   <TableCell className="left">
                     월~금 오전 8시 ~ 오후 10시
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/admin/store/display/modify");
+                      }}
+                      type="pc"
+                      color="point"
+                      size="small"
+                    >
+                      설정
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/admin/store/receipt/modify");
+                      }}
+                      type="pc"
+                      color="point"
+                      size="small"
+                    >
+                      설정
+                    </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -201,7 +249,6 @@ function StoreListPage() {
                       과천 클라우드 카페
                     </Button>
                   </TableCell>
-                  <TableCell>123456789</TableCell>
                   <TableCell>양땡열</TableCell>
                   <TableCell>010-1234-5678</TableCell>
                   <TableCell className="left">
@@ -210,9 +257,33 @@ function StoreListPage() {
                   <TableCell className="left">
                     월~금 오전 8시 ~ 오후 10시
                   </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/admin/store/display/modify");
+                      }}
+                      type="pc"
+                      color="point"
+                      size="small"
+                    >
+                      설정
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/admin/store/receipt/modify");
+                      }}
+                      type="pc"
+                      color="point"
+                      size="small"
+                    >
+                      설정
+                    </Button>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell colSpan={8}>검색된 결과가 없습니다.</TableCell>
+                  <TableCell colSpan={10}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>

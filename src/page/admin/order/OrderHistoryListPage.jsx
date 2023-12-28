@@ -68,26 +68,18 @@ function OrderHistoryListPage() {
           <Select
             minwidth="210px"
             round="app"
-            placeholder="매장명"
+            placeholder="판매 매장"
             options={storeNameOpt}
           />
         </div>
-        <div>
-          <Input
-            width="210px"
-            placeholder="주문번호"
-            shape="none"
-            onClick={() => { }}
-          />
-        </div>
-        <div>
+        {/* <div>
           <Select
             minwidth="210px"
             round="app"
             placeholder="기간 선택"
             options={dateOpt}
           />
-        </div>
+        </div> */}
         <div style={{ width: "250px" }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
@@ -100,7 +92,15 @@ function OrderHistoryListPage() {
               setDateRange(update);
             }}
             isClearable={false}
-            placeholderText="상세 기간 선택"
+            placeholderText="기간 선택"
+          />
+        </div>
+        <div>
+          <Input
+            width="210px"
+            placeholder="주문번호"
+            shape="none"
+            onClick={() => {}}
           />
         </div>
         <Button
@@ -136,7 +136,11 @@ function OrderHistoryListPage() {
       <ContentBox>
         <div className="align start mb_12">
           <div className="item">
-            <Select minwidth="200px" defaultValue={numOpt[0]} options={numOpt} />
+            <Select
+              minwidth="200px"
+              defaultValue={numOpt[0]}
+              options={numOpt}
+            />
           </div>
           <div className="item">
             <p className="body0">
@@ -165,7 +169,7 @@ function OrderHistoryListPage() {
                   <TableCell>주문자명</TableCell>
                   <TableCell>주문명</TableCell>
                   <TableCell>주문일시</TableCell>
-                  <TableCell>매장명</TableCell>
+                  <TableCell>판매 매장</TableCell>
                   <TableCell>결제금액</TableCell>
                 </TableRow>
               </TableHead>

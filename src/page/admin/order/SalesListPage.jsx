@@ -76,7 +76,7 @@ function SalesListPage() {
           <Select 
             minwidth="210px"
             round="app"
-            placeholder="매장명"
+            placeholder="판매 매장"
             options={storeNameOpt} 
           />
         </div>
@@ -104,7 +104,7 @@ function SalesListPage() {
             options={paymentMethods} 
           />
         </div>
-        <div>
+        {/* <div>
           <Select
             minwidth="78px"
             round="app"
@@ -112,7 +112,7 @@ function SalesListPage() {
             defaultValue={periodOpt[0]}
             options={periodOpt}
           />
-        </div>
+        </div> */}
         <div style={{ width: "250px" }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
@@ -235,7 +235,7 @@ function SalesListPage() {
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>상품명</TableCell>
-                  <TableCell>매장명</TableCell>
+                  <TableCell>판매 매장</TableCell>
                   <TableCell>주문일시</TableCell>
                   <TableCell>결제자</TableCell>
                   <TableCell>결제유형</TableCell>

@@ -98,7 +98,7 @@ function StoreInfoModifyPage() {
           }
         >
           <tr>
-            <th className="required">가맹점명</th>
+            <th className="required">판매 매장명</th>
             <td>
               <Input
                 type="text"
@@ -478,7 +478,7 @@ function StoreInfoModifyPage() {
                     취소
                   </Button>
                   <Button
-                    onClick={() => navigate("/admin/store/info")}
+                    onClick={() => navigate("/admin/store/")}
                     type="pc"
                     color="black"
                     size="small"
@@ -494,7 +494,7 @@ function StoreInfoModifyPage() {
               type="admin"
               iconColor="red"
               title={<>목록으로 이동하시겠습니까?</>}
-              desc={<>현재 작성된 내용이 있으면 저장되지 않습니다.</>}
+              desc={<>작성된 내용이 저장되지 않습니다.</>}
               button={
                 <>
                   <Button
@@ -507,7 +507,7 @@ function StoreInfoModifyPage() {
                     취소
                   </Button>
                   <Button
-                    onClick={() => navigate("/admin/store/info")}
+                    onClick={() => navigate("/admin/store/")}
                     type="pc"
                     color="black"
                     size="small"

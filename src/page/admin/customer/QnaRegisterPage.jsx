@@ -23,6 +23,14 @@ function QnaRegistrationPage() {
     setOpen(false);
   };
 
+  const [open05, setOpen05] = useState(false);
+  const handleOpen05 = () => {
+    setOpen05(true);
+  };
+  const handleClose05 = () => {
+    setOpen05(false);
+  };
+
   return (
     <Layout>
       <div className="align mb_20">
@@ -112,9 +120,7 @@ function QnaRegistrationPage() {
         </Table>
         <div className="align center gap_10 mt_30">
           <Button
-            onClick={() => {
-              navigate("/admin/customer/qna/");
-            }}
+            onClick={handleOpen05}
             type="pc"
             color="gray"
             line
@@ -146,6 +152,28 @@ function QnaRegistrationPage() {
             <Button
               onClick={() => navigate("/admin/customer/qna")}
               type="pc"
+              color="black"
+              size="small"
+            >
+              네
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={open05}
+        onClose={handleClose05}
+        type="admin"
+        iconColor="red"
+        title={<>등록을 취소하시겠습니까?</>}
+        desc={<>작성된 내용이 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button onClick={handleClose05} color="gray" line size="small">
+              아니오
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/customer/qna")}
               color="black"
               size="small"
             >

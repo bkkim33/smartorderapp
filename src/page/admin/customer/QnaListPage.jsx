@@ -142,7 +142,7 @@ function QnaListPage() {
               color="point"
               size="small"
             >
-              등록하기
+              신규등록
             </Button>
           </div>
         </div>

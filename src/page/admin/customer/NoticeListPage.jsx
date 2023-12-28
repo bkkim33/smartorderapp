@@ -47,6 +47,7 @@ function NoticeListPage() {
   const handleClose = () => {
     setOpen(false);
   };
+  
 
   return (
     <Layout>
@@ -55,22 +56,22 @@ function NoticeListPage() {
       </div>
       <ContentBox top>
         <div>
-          <Select 
+          <Select
             minwidth="210px"
             round="app"
             placeholder="공개 대상"
-            options={targetOpt} 
+            options={targetOpt}
           />
         </div>
         <div>
-          <Select 
-            minwidth="210px" 
+          <Select
+            minwidth="210px"
             round="app"
             placeholder="노출 여부"
-            options={displayOpt} 
+            options={displayOpt}
           />
         </div>
-        <div style={{ width: '250px' }}>
+        <div style={{ width: "250px" }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
             selected={startDate}
@@ -86,16 +87,21 @@ function NoticeListPage() {
           />
         </div>
         <div>
-          <Input onClick={() => { }} width="310px" shape="none" placeholder="제목을 입력해 주세요." />
+          <Input
+            onClick={() => {}}
+            width="310px"
+            shape="none"
+            placeholder="제목을 입력해 주세요."
+          />
         </div>
         <Button
           type="pc"
           color="black"
           icon="Search"
           iconStyle={{
-            fill: '#fff',
+            fill: "#fff",
             height: 18,
-            width: 18
+            width: 18,
           }}
           round
           size="icon_l"
@@ -117,25 +123,25 @@ function NoticeListPage() {
         <div className="align mb_12">
           <div className="lft">
             <div className="item">
-              <Button 
-                onClick={handleOpen} 
-                type="pc" 
-                color="gray" 
-                line 
+              <Button
+                onClick={handleOpen}
+                type="pc"
+                color="gray"
+                line
                 size="small"
               >
                 삭제
               </Button>
             </div>
             <div className="item">
-              <Select 
-                minwidth="200px" 
-                defaultValue={numOpt[0]} 
-                options={numOpt} 
+              <Select
+                minwidth="200px"
+                defaultValue={numOpt[0]}
+                options={numOpt}
               />
-            </div>            
+            </div>
           </div>
-          <div className="rgt">            
+          <div className="rgt">
             <Button
               onClick={() => {
                 navigate("/admin/customer/notice/register");
@@ -144,7 +150,7 @@ function NoticeListPage() {
               color="point"
               size="small"
             >
-              등록하기
+              신규 등록
             </Button>
           </div>
         </div>
@@ -218,7 +224,9 @@ function NoticeListPage() {
                   <TableCell>Y</TableCell>
                   <TableCell>admin</TableCell>
                 </TableRow>
-                <TableRow onClick={() => navigate("/admin/customer/notice/modify")}>
+                <TableRow
+                  onClick={() => navigate("/admin/customer/notice/modify")}
+                >
                   <TableCell>
                     <Checkbox id="check3" name="check3" />
                   </TableCell>
@@ -240,7 +248,9 @@ function NoticeListPage() {
                   <TableCell>N</TableCell>
                   <TableCell>user</TableCell>
                 </TableRow>
-                <TableRow onClick={() => navigate("/admin/customer/notice/modify")}>
+                <TableRow
+                  onClick={() => navigate("/admin/customer/notice/modify")}
+                >
                   <TableCell>
                     <Checkbox id="check4" name="check4" />
                   </TableCell>
@@ -262,7 +272,9 @@ function NoticeListPage() {
                   <TableCell>Y</TableCell>
                   <TableCell>admin</TableCell>
                 </TableRow>
-                <TableRow onClick={() => navigate("/admin/customer/notice/modify")}>
+                <TableRow
+                  onClick={() => navigate("/admin/customer/notice/modify")}
+                >
                   <TableCell>
                     <Checkbox id="check5" name="check5" />
                   </TableCell>
@@ -310,6 +322,7 @@ function NoticeListPage() {
           </>
         }
       />
+      
     </Layout>
   );
 }

@@ -132,7 +132,7 @@ function ProductRegisterPage() {
                     color="point"
                     type="pc"
                   >
-                    쿠폰할인선택
+                    쿠폰할인 선택
                   </Button>
                 </div>
                 <div className="item wrap gap_10">
@@ -154,7 +154,7 @@ function ProductRegisterPage() {
             </td>
           </tr> */}
           <tr>
-            <th className="required">판매매장</th>
+            <th className="required">판매 매장</th>
             <td colSpan={3}>
               <div className="align top start">
                 <div className="item" style={{ minWidth: "117px" }}>
@@ -164,7 +164,7 @@ function ProductRegisterPage() {
                     color="point"
                     type="pc"
                   >
-                    판매매장선택
+                    매장 선택
                   </Button>
                 </div>
                 <div className="item wrap gap_10">
@@ -408,7 +408,7 @@ function ProductRegisterPage() {
         onClose={handleClose01}
         header={
           <>
-            <h4>판매 매장 선택</h4>
+            <h4>매장 선택</h4>
             <Button
               icon="Delete"
               none

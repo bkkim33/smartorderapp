@@ -28,6 +28,14 @@ function TermsModifyPage() {
     setOpen(false);
   };
 
+  const [open05, setOpen05] = useState(false);
+  const handleOpen05 = () => {
+    setOpen05(true);
+  };
+  const handleClose05 = () => {
+    setOpen05(false);
+  };
+
   // const [setStartDate] = useState(null);
 
   return (
@@ -136,9 +144,7 @@ function TermsModifyPage() {
         </Table>
         <div className="align center gap_10 mt_30">
           <Button
-            onClick={() => {
-              navigate("/admin/customer/terms/");
-            }}
+            onClick={handleOpen05}
             color="gray"
             line
             size="small"
@@ -169,6 +175,28 @@ function TermsModifyPage() {
               onClick={() => {
                 navigate("/admin/customer/terms");
               }}
+              color="black"
+              size="small"
+            >
+              네
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={open05}
+        onClose={handleClose05}
+        type="admin"
+        iconColor="red"
+        title={<>이전에 저장된 내용으로 되돌리시겠습니까?</>}
+        desc={<>작성된 내용이 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button onClick={handleClose05} color="gray" line size="small">
+              아니오
+            </Button>
+            <Button
+              onClick={() => navigate("/admin/customer/terms")}
               color="black"
               size="small"
             >
