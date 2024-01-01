@@ -60,14 +60,14 @@ function ProductListPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">상품관리</h1>
+        <h1 className="headline2">상품 관리</h1>
       </div>
       <ContentBox top>
         <div>
           <Select
             minwidth="210px"
             round="app"
-            placeholder="상품카테고리"
+            placeholder="상품 카테고리"
             options={categoryOpt}
           />
         </div>
