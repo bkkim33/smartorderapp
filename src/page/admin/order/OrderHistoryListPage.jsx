@@ -174,10 +174,12 @@ function OrderHistoryListPage() {
               <TableBody>
                 <TableRow>
                   <TableCell>1</TableCell>
-                  <TableCell className="left">홍길동(메가존 클라우드)</TableCell>
+                  <TableCell className="left">
+                    홍길동(메가존 클라우드)
+                  </TableCell>
                   <TableCell>클라우드 카페</TableCell>
                   <TableCell>000000</TableCell>
-                  
+
                   <TableCell>
                     <Button
                       onClick={handleOpen}
@@ -191,7 +193,7 @@ function OrderHistoryListPage() {
                     </Button>
                   </TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
-                  
+
                   <TableCell className="right">
                     <Button
                       onClick={handleOpen}
@@ -207,9 +209,12 @@ function OrderHistoryListPage() {
                 </TableRow>
                 <TableRow>
                   <TableCell>2</TableCell>
+                  <TableCell className="left">
+                    홍길동(메가존 클라우드)
+                  </TableCell>
+                  <TableCell>클라우드 9카페</TableCell>
                   <TableCell>000001</TableCell>
-                  <TableCell>메가존 클라우드</TableCell>
-                  <TableCell>홍길동</TableCell>
+
                   <TableCell>
                     <Button
                       onClick={handleOpen}
@@ -219,11 +224,11 @@ function OrderHistoryListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      에스프레소 1개 외
+                      카페라떼 1개 외
                     </Button>
                   </TableCell>
-                  <TableCell>2023.10.24 09:27:10</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+
                   <TableCell className="right">
                     <Button
                       onClick={handleOpen}
@@ -239,9 +244,12 @@ function OrderHistoryListPage() {
                 </TableRow>
                 <TableRow>
                   <TableCell>3</TableCell>
+                  <TableCell className="left">
+                    010-****-1234(외부인)
+                  </TableCell>
+                  <TableCell>클라우드 카페</TableCell>
                   <TableCell>000002</TableCell>
-                  <TableCell>메가존</TableCell>
-                  <TableCell>홍길동</TableCell>
+
                   <TableCell>
                     <Button
                       onClick={handleOpen}
@@ -251,11 +259,46 @@ function OrderHistoryListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      카페라떼 1개 외
+                      에스프레소 1개 외
                     </Button>
                   </TableCell>
-                  <TableCell>2023.10.24 09:27:10</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+
+                  <TableCell className="right">
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      8,280원
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>4</TableCell>
+                  <TableCell className="left">
+                    홍길동(메가존)
+                  </TableCell>
+                  <TableCell>클라우드 9카페</TableCell>
+                  <TableCell>000004</TableCell>
+
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="xsmall"
+                    >
+                      아메리카노 1개 외
+                    </Button>
+                  </TableCell>
+                  <TableCell>2023.10.24 09:27:00</TableCell>
+
                   <TableCell className="right">
                     <Button
                       onClick={handleOpen}
@@ -270,39 +313,7 @@ function OrderHistoryListPage() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>4</TableCell>
-                  <TableCell>000003</TableCell>
-                  <TableCell>메가존</TableCell>
-                  <TableCell>홍길동</TableCell>
-                  <TableCell>
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      카푸치노 1개 외
-                    </Button>
-                  </TableCell>
-                  <TableCell>2023.10.24 09:27:10</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell className="right">
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      2,000원
-                    </Button>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell colSpan={8}>검색된 결과가 없습니다.</TableCell>
+                  <TableCell colSpan={7}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>
