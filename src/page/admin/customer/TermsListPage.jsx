@@ -59,14 +59,14 @@ function TermsListPage() {
           <Select 
             minwidth="210px"
             round="app"
-            placeholder="공개 대상"
+            placeholder="공개대상"
             options={targetOpt} />
         </div>
         <div>
           <Select 
             minwidth="210px"
             round="app"
-            placeholder="노출 여부"
+            placeholder="노출여부"
             options={displayOpt} 
           />
         </div>

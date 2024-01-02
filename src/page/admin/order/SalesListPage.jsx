@@ -169,14 +169,14 @@ function SalesListPage() {
               </div>
             </div>
             <div className="total_item">
-              <div className="total_tit">총 할인 금액</div>
+              <div className="total_tit">총 할인금액</div>
               <div className="total_price">
                 <p>-106,820</p>
                 <span>원</span>
               </div>
             </div>
             <div className="total_item">
-              <div className="total_tit">총 결제 금액</div>
+              <div className="total_tit">총 결제금액</div>
               <div className="total_price">
                 <p className="red_text">4,280</p>
                 <span>원</span>
