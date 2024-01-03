@@ -21,7 +21,7 @@ function HeaderLayout() {
   return (
     <header className={`${styles.header}`}>
       <div>
-        <Icons.AdminLogo width={"100%"} height={28} fill="#303033" />
+        <Icons.AdminHeaderLogo width={"100%"} height={66} fill="#fff" />
         <p>
           <span>클라우드카페</span>
           <span>2023.11.10 (금)</span>
