@@ -1,17 +1,53 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { Icons } from "../components/Icon";
 import styles from "../styles/layout/kdslayout.module.scss";
-import Userimg from "../images/user_img.png";
-import SideMenu from "./SideMenuLayout";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function HeaderLayout() {
   
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    //destructuring pathname from location
+    const { pathname } = location;
+
+    //Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
+
+    useEffect(() => {
+      // console.log(URL);
+    }, [URL]);
 
   return (
     <header className={`${styles.header}`}>
-      <Icons.AdminLogo width={"100%"} height={50} fill="#303033" />
+      <div>
+        <Icons.AdminLogo width={"100%"} height={28} fill="#303033" />
+        <p>
+          <span>클라우드카페</span>
+          <span>2023.11.10 (금)</span>
+          <span>15:52:25</span>
+        </p>
+        <ul>
+          <li>
+            <Link
+              to="/admin/customer/qna"
+              className={` ${splitLocation[3] === "qna" ? styles.active : ""}
+                `}
+            >
+              제조현황
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/admin/customer/qna"
+              className={` ${splitLocation[3] === "qna" ? styles.active : ""}
+                `}
+            >
+              제조완료
+            </Link>
+          </li>
+        </ul>
+      </div>
       <div className={`${styles.user_util} ${"mt_20"}`}>
         <button
           onClick={() => navigate("/admin/myprofile/profile")}
@@ -29,8 +65,6 @@ function HeaderLayout() {
           <span>로그아웃</span>
         </button>
       </div>
-
-      <SideMenu globalstyle="mt_30" />
     </header>
   );
 }
