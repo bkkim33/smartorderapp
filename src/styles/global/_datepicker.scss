@@ -16,7 +16,6 @@
 .react-datepicker__close-icon{
   &::after{
     background-color: var(--c99)!important;
-    
   }
   &:hover{
     &:after{
@@ -145,7 +144,7 @@
       margin: 0 5px;
       &:hover {
         background-color: transparent;
-        color:  #111;
+        color:  #111 !important;
         &:after {
           content: '';
           display: block;
