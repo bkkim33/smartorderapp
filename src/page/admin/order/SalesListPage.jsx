@@ -114,7 +114,7 @@ function SalesListPage() {
             options={periodOpt}
           />
         </div> */}
-        <div style={{ width: "250px" }}>
+        <div style={{ width: "260px" }}>
           <DatePicker
             dateFormat="yyyy/MM/dd"
             selected={startDate}
