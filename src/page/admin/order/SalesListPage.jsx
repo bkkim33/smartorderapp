@@ -23,14 +23,10 @@ const storeNameOpt = [
 ];
 
 const categoryOpt = [
-  { label: "전체", value: "전체", },
-  { label: 'Coffee', value: 'Coffee', },
-  { label: 'Non-Coffee', value: 'Non-Coffee', },
-  { label: 'Ade/Juice', value: 'Ade/Juice', },
-  { label: 'Blended', value: 'Blended', },
-  { label: 'Tea', value: 'Tea', },
-  { label: 'Bread', value: 'Bread', },
-  { label: 'Bottle', value: 'Bottle', },
+  { label: "전체", value: "전체" },
+  { label: "일별 통계", value: "일별 통계" },
+  { label: "주별 통계", value: "주별 통계" },
+  { label: "월별 통계", value: "월별 통계" },
 ];
 
 const paymentTypes = [
@@ -57,9 +53,14 @@ const numOpt = [
 ];
 
 const periodOpt = [
-  { label: "1주일", value: "1주일", },
-  { label: "1개월", value: "1개월", },
-  { label: "3개월", value: "3개월", },
+  { label: "최근 1주일", value: "최근 1주일", },
+  { label: "최근 1개월", value: "최근 1개월", },
+  { label: "최근 6개월", value: "최근 6개월", },
+  { label: "최근 1년", value: "최근 1년", },
+  { label: "이번달", value: "이번달", },
+  { label: "지난달", value: "지난달", },
+  { label: "올해", value: "올해", },
+  { label: "지난해", value: "지난해", },
 ];
 
 function SalesListPage() {
@@ -70,40 +71,40 @@ function SalesListPage() {
     <Layout>
       <div className="align mb_20">
         <h1 className="headline2">매출 관리</h1>
-      </div>      
+      </div>
       <ContentBox top>
         <div>
-          <Select 
+          <Select
             minwidth="210px"
             round="app"
             placeholder="판매 매장"
-            options={storeNameOpt} 
+            options={storeNameOpt}
           />
         </div>
         <div>
-          <Select 
+          <Select
             minwidth="210px"
             round="app"
-            placeholder="상품명"
-            options={categoryOpt} 
+            placeholder="통계기간"
+            options={categoryOpt}
           />
         </div>
         <div>
-          <Select 
+          <Select
             minwidth="210px"
             round="app"
-            placeholder="결제유형"
-            options={paymentTypes}
+            placeholder="기간선택"
+            options={periodOpt}
           />
         </div>
-        <div>
-          <Select 
+        {/* <div>
+          <Select
             minwidth="210px"
             round="app"
-            placeholder="결제수단" 
-            options={paymentMethods} 
+            placeholder="결제수단"
+            options={paymentMethods}
           />
-        </div>
+        </div> */}
         {/* <div>
           <Select
             minwidth="78px"
@@ -127,15 +128,15 @@ function SalesListPage() {
             isClearable={false}
             placeholderText="날짜를 선택해 주세요."
           />
-        </div>        
+        </div>
         <Button
           type="pc"
           color="black"
           icon="Search"
           iconStyle={{
-            fill: '#fff',
+            fill: "#fff",
             height: 18,
-            width: 18
+            width: 18,
           }}
           round
           size="icon_l"
@@ -159,7 +160,7 @@ function SalesListPage() {
         </Button>
       </ContentBox>
       <ContentBox>
-        <div className="admin_ordersales">
+        {/* <div className="admin_ordersales">
           <div className="total_box">
             <div className="total_item">
               <div className="total_tit">합계금액</div>
@@ -183,9 +184,9 @@ function SalesListPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="align mb_12">
-          <div className="lft">
+          {/* <div className="lft">
             <div className="item">
               <Select
                 minwidth="200px"
@@ -199,10 +200,10 @@ function SalesListPage() {
                 총 <span className="title3">200</span>건
               </p>
             </div>
-          </div>
+          </div> */}
           <div className="rgt">
             <Button
-              onClick={() => { }}
+              onClick={() => {}}
               type="pc"
               size="small"
               color="point"
@@ -211,205 +212,63 @@ function SalesListPage() {
               엑셀다운로드
             </Button>
           </div>
-        </div>        
-        <div className="tbl">
-          <TableContainer sx={{ maxHeight: 495 }}>
-            <MuiTable sx={{ minWidth: 650 }} aria-label="sticky table" stickyHeader>
-              <colgroup>
-                <col width="2%" />
-                <col width="3%" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-                <col width="auto" />
-              </colgroup>
-              <TableHead>
-                <TableRow>
-                  <TableCell>
-                    <Checkbox id="checkAll" name="checkAll" />
-                  </TableCell>
-                  <TableCell>No.</TableCell>
-                  <TableCell>상품명</TableCell>
-                  <TableCell>판매 매장</TableCell>
-                  <TableCell>주문일시</TableCell>
-                  <TableCell>결제자</TableCell>
-                  <TableCell>결제유형</TableCell>
-                  <TableCell>결제수단</TableCell>
-                  <TableCell>정상금액</TableCell>
-                  <TableCell>할인금액</TableCell>
-                  <TableCell>총 결제금액</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell><Checkbox id="check1" name="check1" /></TableCell>
-                  <TableCell>1</TableCell>
-                  <TableCell>에스프레소</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>아무개</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-4,000 원</TableCell>
-                  <TableCell className="right">4,280 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check2" name="check2" /></TableCell>
-                  <TableCell>2</TableCell>
-                  <TableCell>카라멜 마끼아또</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>아무개</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-8,280 원</TableCell>
-                  <TableCell className="right">0 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check3" name="check3" /></TableCell>
-                  <TableCell>3</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check4" name="check4" /></TableCell>
-                  <TableCell>4</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check5" name="check5" /></TableCell>
-                  <TableCell>5</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check6" name="check6" /></TableCell>
-                  <TableCell>6</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check7" name="check7" /></TableCell>
-                  <TableCell>7</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check8" name="check8" /></TableCell>
-                  <TableCell>8</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check9" name="check9" /></TableCell>
-                  <TableCell>9</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check10" name="check10" /></TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check11" name="check11" /></TableCell>
-                  <TableCell>11</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell><Checkbox id="check12" name="check12" /></TableCell>
-                  <TableCell>12</TableCell>
-                  <TableCell>디카페인콜드브루</TableCell>
-                  <TableCell>클라우드 9 카페</TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-                  <TableCell>010-5012-0165</TableCell>
-                  <TableCell>네이버페이</TableCell>
-                  <TableCell>신한카드</TableCell>
-                  <TableCell className="right">8,280 원</TableCell>
-                  <TableCell className="right">-2,580 원</TableCell>
-                  <TableCell className="right">6,000 원</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell colSpan={11}>검색된 결과가 없습니다.</TableCell>
-                </TableRow>
-              </TableBody>              
-            </MuiTable>
-          </TableContainer>
-        </div>        
-        <MuiPage />
+        </div>
+        <div className="admin_grapbox"></div>
+
+        <div className="tbl mt_12">
+          <MuiTable>
+            <colgroup>
+              <col width="2%" />
+              <col width="3%" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+              <col width="auto" />
+            </colgroup>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  <Checkbox id="checkAll" name="checkAll" />
+                </TableCell>
+                <TableCell>No.</TableCell>
+                <TableCell>상품명</TableCell>
+                <TableCell>판매 매장</TableCell>
+                <TableCell>주문일시</TableCell>
+                <TableCell>결제자</TableCell>
+                <TableCell>결제유형</TableCell>
+                <TableCell>결제수단</TableCell>
+                <TableCell>정상금액</TableCell>
+                <TableCell>할인금액</TableCell>
+                <TableCell>총 결제금액</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell>
+                  <Checkbox id="check1" name="check1" />
+                </TableCell>
+                <TableCell>1</TableCell>
+                <TableCell>에스프레소</TableCell>
+                <TableCell>클라우드 9 카페</TableCell>
+                <TableCell>2023.10.24 09:27:00</TableCell>
+                <TableCell>아무개</TableCell>
+                <TableCell>네이버페이</TableCell>
+                <TableCell>신한카드</TableCell>
+                <TableCell className="right">8,280 원</TableCell>
+                <TableCell className="right">-4,000 원</TableCell>
+                <TableCell className="right">4,280 원</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell colSpan={11}>검색된 결과가 없습니다.</TableCell>
+              </TableRow>
+            </TableBody>
+          </MuiTable>
+        </div>
       </ContentBox>
     </Layout>
   );
