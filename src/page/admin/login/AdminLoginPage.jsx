@@ -58,7 +58,7 @@ function AdminLoginPage() {
                     navigate("product/product");
                   }}
                 >
-                  로그인
+                  Login
                 </Button>
               </div>
             </div>
@@ -68,7 +68,7 @@ function AdminLoginPage() {
                   name="contact00"
                   id="check1"
                   value="Login"
-                  txt={"로그인 상태 유지"}
+                  txt={"로그인 유지"}
                 />
               </FormGroup>
               <Button

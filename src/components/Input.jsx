@@ -64,7 +64,7 @@ export function Input({ onClick, ...others }) {
     slice,
   } = others;
   const [focus, setFocus] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue);
 
   const onChange = (e) => {
     let inputValue = e.target.value;
@@ -152,7 +152,7 @@ export function Input({ onClick, ...others }) {
         className={`${styles.input} ${styles[placeholderColor]}`}
         type={type}
         onChange={onChange}
-        value={defaultValue ? defaultValue : value}
+        value={value}
         placeholder={placeholder}
         disabled={disabled}
         maxLength={maxLength}
@@ -160,7 +160,7 @@ export function Input({ onClick, ...others }) {
         onFocus={(event) => handleFocusOn(event)}
         onBlur={(event) => handleFocusOut(event)}
       ></input>
-      {type === "text" && !timer && (
+      {type === "text" && !timer && !readonly && !disabled && (
         <button
           onClick={onReset}
           className={`${styles.delete} ${value ? styles.block : ""}`}

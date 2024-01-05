@@ -65,6 +65,14 @@ function ProductDetailPage() {
     setOpen03(false);
   };
 
+  const [open05, setOpen05] = useState(false);
+  const handleOpen05 = () => {
+    setOpen05(true);
+  };
+  const handleClose05 = () => {
+    setOpen05(false);
+  };
+
 
   return (
     <Layout>
@@ -85,7 +93,11 @@ function ProductDetailPage() {
           <tr>
             <th className="required">상품 카테고리</th>
             <td>
-              <Select maxwidth="300px" options={categoryOpt} defaultValue={0} />
+              <Select
+                maxwidth="300px"
+                options={categoryOpt}
+                defaultValue={categoryOpt[0]}
+              />
             </td>
             <th className="required">상품명</th>
             <td>
@@ -139,17 +151,6 @@ function ProductDetailPage() {
               </div>
             </td>
           </tr>
-          {/* 이 부분은 개발요건 -- 현제는 사용 안하지만 나중에 사용 함으로 개발은 필요 */}
-          {/* <tr>
-            <th className="">키오스크 이미지</th>
-            <td className="vertical_top">
-              <FileUpload onChange={() => {}} />
-            </td>
-            <th className="">DID 이미지</th>
-            <td className="vertical_top">
-              <FileUpload onChange={() => {}} />
-            </td>
-          </tr> */}
           <tr>
             <th className="required">판매 매장</th>
             <td colSpan={3}>
@@ -161,7 +162,7 @@ function ProductDetailPage() {
                     color="point"
                     type="pc"
                   >
-                    매장 선택
+                    판매 매장 선택
                   </Button>
                 </div>
                 <div className="item wrap gap_10">
@@ -186,7 +187,7 @@ function ProductDetailPage() {
           </div>
           <div className="rgt">
             <Button type="pc" color="point" size="small">
-              옵션추가
+              옵션 추가
             </Button>
           </div>
         </div>
@@ -204,7 +205,7 @@ function ProductDetailPage() {
                     <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
                   <TableCell>옵션명</TableCell>
-                  <TableCell>상세옵션명</TableCell>
+                  <TableCell>상세옵션</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -456,7 +457,7 @@ function ProductDetailPage() {
         </div>
         <div className="align center mt_30 gap_10">
           <Button
-            onClick={() => navigate(-1 || "/")}
+            onClick={handleOpen05}
             type="pc"
             color="gray"
             line
@@ -514,7 +515,7 @@ function ProductDetailPage() {
                     <Checkbox id="checkbox02" name="checkbox02" />
                   </TableCell>
                   <TableCell>C0001</TableCell>
-                  <TableCell className="left">아메리카노1잔</TableCell>
+                  <TableCell className="left">[방문]아메리카노1잔</TableCell>
                   <TableCell className="right">-3,800 원</TableCell>
                 </TableRow>
                 <TableRow>
@@ -522,7 +523,7 @@ function ProductDetailPage() {
                     <Checkbox id="checkbox03" name="checkbox02" />
                   </TableCell>
                   <TableCell>C0001</TableCell>
-                  <TableCell className="left">아메리카노1잔</TableCell>
+                  <TableCell className="left">[방문]모든음료1잔</TableCell>
                   <TableCell className="right">-3,800 원</TableCell>
                 </TableRow>
                 <TableRow>
@@ -530,7 +531,7 @@ function ProductDetailPage() {
                     <Checkbox id="checkbox04" name="checkbox02" />
                   </TableCell>
                   <TableCell>C0001</TableCell>
-                  <TableCell className="left">아메리카노1잔</TableCell>
+                  <TableCell className="left">[입사]아메리카노1잔</TableCell>
                   <TableCell className="right">-3,800 원</TableCell>
                 </TableRow>
                 <TableRow>
@@ -538,7 +539,7 @@ function ProductDetailPage() {
                     <Checkbox id="checkbox05" name="checkbox02" />
                   </TableCell>
                   <TableCell>C0001</TableCell>
-                  <TableCell className="left">아메리카노1잔</TableCell>
+                  <TableCell className="left">[입사]모든음료1잔</TableCell>
                   <TableCell className="right">-3,800 원</TableCell>
                 </TableRow>
               </TableBody>
@@ -550,7 +551,7 @@ function ProductDetailPage() {
             취소
           </Button>
           <Button onClick={handleClose} color="black" size="small">
-            확인
+            저장
           </Button>
         </div>
       </MuiModal>
@@ -559,7 +560,7 @@ function ProductDetailPage() {
         onClose={handleClose01}
         header={
           <>
-            <h4>매장 선택</h4>
+            <h4>판매 매장 선택</h4>
             <Button
               icon="Delete"
               none
@@ -624,7 +625,7 @@ function ProductDetailPage() {
               취소
             </Button>
             <Button onClick={handleClose01} color="black" size="small">
-              확인
+              저장
             </Button>
           </div>
         </div>
@@ -672,6 +673,24 @@ function ProductDetailPage() {
             </Button>
             <Button color="black" onClick={handleClose03} size="small">
               확인
+            </Button>
+          </>
+        }
+      />
+      <MuiAlert
+        open={open05}
+        onClose={handleClose05}
+        type="admin"
+        iconColor="red"
+        title={<>이전에 저장된 내용으로 되돌리시겠습니까?</>}
+        desc={<>작성된 내용이 저장되지 않습니다.</>}
+        button={
+          <>
+            <Button onClick={handleClose05} color="gray" line size="small">
+              아니오
+            </Button>
+            <Button onClick={handleClose05} color="black" size="small">
+              네
             </Button>
           </>
         }

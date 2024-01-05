@@ -60,7 +60,7 @@ function OrderHistoryListPage() {
           <Select
             minwidth="210px"
             round="app"
-            placeholder="주문자 (소속)"
+            placeholder="구분"
             options={categoryOpt}
           />
         </div>
@@ -99,6 +99,14 @@ function OrderHistoryListPage() {
           <Input
             width="210px"
             placeholder="주문번호"
+            shape="none"
+            onClick={() => {}}
+          />
+        </div>
+        <div>
+          <Input
+            width="210px"
+            placeholder="주문자명"
             shape="none"
             onClick={() => {}}
           />
@@ -153,33 +161,32 @@ function OrderHistoryListPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="5%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
                 <col width="15%" />
                 <col width="15%" />
-                <col width="15%" />
-                <col width="20%" />
                 <col width="15%" />
                 <col width="10%" />
               </colgroup>
               <TableHead>
                 <TableRow>
                   <TableCell>No.</TableCell>
-                  <TableCell>주문자(소속)</TableCell>
-                  <TableCell>판매 매장</TableCell>
                   <TableCell>주문번호</TableCell>
-                  <TableCell>주문명</TableCell>
+                  <TableCell>구분</TableCell>
+                  <TableCell>주문자</TableCell>
+                  <TableCell>주문내역</TableCell>
                   <TableCell>주문일시</TableCell>
+                  <TableCell>판매 매장명</TableCell>
                   <TableCell>결제금액</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
                   <TableCell>1</TableCell>
-                  <TableCell className="left">
-                    홍길동(메가존 클라우드)
-                  </TableCell>
-                  <TableCell>클라우드 카페</TableCell>
                   <TableCell>000000</TableCell>
-
+                  <TableCell>메가존 클라우드</TableCell>
+                  <TableCell>홍길동</TableCell>
                   <TableCell>
                     <Button
                       onClick={handleOpen}
@@ -193,7 +200,7 @@ function OrderHistoryListPage() {
                     </Button>
                   </TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
-
+                  <TableCell>클라우드 카페</TableCell>
                   <TableCell className="right">
                     <Button
                       onClick={handleOpen}
@@ -209,12 +216,9 @@ function OrderHistoryListPage() {
                 </TableRow>
                 <TableRow>
                   <TableCell>2</TableCell>
-                  <TableCell className="left">
-                    홍길동(메가존 클라우드)
-                  </TableCell>
-                  <TableCell>클라우드 9카페</TableCell>
                   <TableCell>000001</TableCell>
-
+                  <TableCell>메가존</TableCell>
+                  <TableCell>홍길동</TableCell>
                   <TableCell>
                     <Button
                       onClick={handleOpen}
@@ -228,42 +232,7 @@ function OrderHistoryListPage() {
                     </Button>
                   </TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
-
-                  <TableCell className="right">
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      4,280원
-                    </Button>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>3</TableCell>
-                  <TableCell className="left">
-                    010-****-1234(외부인)
-                  </TableCell>
-                  <TableCell>클라우드 카페</TableCell>
-                  <TableCell>000002</TableCell>
-
-                  <TableCell>
-                    <Button
-                      onClick={handleOpen}
-                      color="gray"
-                      none
-                      txtColor="txtgray"
-                      type="pc"
-                      size="xsmall"
-                    >
-                      에스프레소 1개 외
-                    </Button>
-                  </TableCell>
-                  <TableCell>2023.10.24 09:27:00</TableCell>
-
+                  <TableCell>클라우드 9 카페</TableCell>
                   <TableCell className="right">
                     <Button
                       onClick={handleOpen}
@@ -278,13 +247,10 @@ function OrderHistoryListPage() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>4</TableCell>
-                  <TableCell className="left">
-                    홍길동(메가존)
-                  </TableCell>
-                  <TableCell>클라우드 9카페</TableCell>
-                  <TableCell>000004</TableCell>
-
+                  <TableCell>3</TableCell>
+                  <TableCell>000002</TableCell>
+                  <TableCell>방문객</TableCell>
+                  <TableCell>1234</TableCell>
                   <TableCell>
                     <Button
                       onClick={handleOpen}
@@ -294,11 +260,11 @@ function OrderHistoryListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      아메리카노 1개 외
+                      카페라떼 1개 외
                     </Button>
                   </TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
-
+                  <TableCell>클라우드 9 카페</TableCell>
                   <TableCell className="right">
                     <Button
                       onClick={handleOpen}
@@ -308,12 +274,12 @@ function OrderHistoryListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      4,280원
+                      8,280원
                     </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell colSpan={7}>검색된 결과가 없습니다.</TableCell>
+                  <TableCell colSpan={8}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>

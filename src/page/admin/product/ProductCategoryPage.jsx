@@ -92,7 +92,7 @@ function ProductCategoryPage() {
                     <Checkbox id="checkAll" name="checkAll" />
                   </TableCell>
                   <TableCell>No.</TableCell>
-                  <TableCell>순서변경</TableCell>
+                  <TableCell>순서설정</TableCell>
                   <TableCell>카테고리명</TableCell>
                   <TableCell>노출여부</TableCell>
                   <TableCell>연결 상품</TableCell>

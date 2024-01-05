@@ -94,7 +94,7 @@ function ChangePassword() {
             </tr>
           </Table>
           <div className="align center mt_20">
-            <div className="item">
+            {/* <div className="item">
               <Button
                 onClick={() => navigate(-1 || "/")}
                 color="gray"
@@ -104,7 +104,7 @@ function ChangePassword() {
               >
                 취소
               </Button>
-            </div>
+            </div> */}
             <div className="item">
               <Button
                 onClick={() => {

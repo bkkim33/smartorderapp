@@ -17,7 +17,7 @@ function OrderDetailModal({ open, handleClose }){
       onClose={handleClose}
       header={
         <>
-          <h4>주문 상세내역</h4>
+          <h4>주문 상세내역 (총 주문 메뉴 6개)</h4>
           <Button
             icon="Delete"
             none

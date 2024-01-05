@@ -146,7 +146,7 @@ function SideMenuLayout({globalstyle}) {
             }`}
           >
             <Link to="/admin/user">
-              <span>사용자 관리</span>
+              <span>고객 관리</span>
             </Link>
           </li>
           <li
