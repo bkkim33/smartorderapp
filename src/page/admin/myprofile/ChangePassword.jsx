@@ -66,7 +66,7 @@ function ChangePassword() {
                 <form>
                   <Input
                     type="password"
-                    placeholder="4~20자의 영문, 숫자 특수문자 조합으로 입력"
+                    placeholder="4~20자의 영문, 숫자, 특수문자 조합으로 입력"
                     width="400px"
                   />
                 </form>

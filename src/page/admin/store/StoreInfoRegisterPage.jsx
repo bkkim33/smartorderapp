@@ -97,7 +97,7 @@ function StoreInfoRegisterPage() {
             <td>
               <Input
                 type="text"
-                placeholder="가맹점명을 입력해주세요."
+                placeholder="매장명을 입력해주세요."
                 width="300px"
               />
             </td>
@@ -149,7 +149,7 @@ function StoreInfoRegisterPage() {
                 <Input
                   onClick={certifications}
                   certification={certification}
-                  placeholder="핸드폰 번호 입력"
+                  placeholder="전화번호를 입력해 주세요."
                   phone="number"
                   maxLength={13}
                   width="300px"
@@ -185,7 +185,7 @@ function StoreInfoRegisterPage() {
               <div className="align start">
                 <Input
                   type="text"
-                  placeholder="사업자번호를 입력해주세요."
+                  placeholder="테이블 수를 입력해주세요."
                   numericOnly={true}
                   width="300px"
                 />

@@ -104,7 +104,7 @@ function AccountListPage() {
                   <TableCell>메가존클라우드</TableCell>
                   <TableCell>admin01</TableCell>
                   <TableCell>이름</TableCell>
-                  <TableCell className="left">
+                  <TableCell>
                     <Button
                       onClick={() => navigate("/admin/account/modify")}
                       color="gray"
@@ -122,7 +122,7 @@ function AccountListPage() {
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin02</TableCell>
                   <TableCell>010-***-1234</TableCell>
-                  <TableCell className="left">
+                  <TableCell>
                     <Button
                       onClick={() => navigate("/admin/account/modify")}
                       color="gray"
@@ -140,7 +140,7 @@ function AccountListPage() {
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin03</TableCell>
                   <TableCell>홍길동3</TableCell>
-                  <TableCell className="left">
+                  <TableCell>
                     <Button
                       onClick={() => navigate("/admin/account/modify")}
                       color="gray"
@@ -158,7 +158,7 @@ function AccountListPage() {
                   <TableCell>클라우드카페</TableCell>
                   <TableCell>admin04</TableCell>
                   <TableCell>홍길동4</TableCell>
-                  <TableCell className="left">
+                  <TableCell>
                     <Button
                       onClick={() => navigate("/admin/account/modify")}
                       color="gray"

@@ -188,7 +188,7 @@ function AccountModify() {
         onClose={handleClose05}
         type="admin"
         iconColor="red"
-        title={<>계정 생성을 취소하시겠습니까?</>}
+        title={<>권한 변경을 취소하시겠습니까?</>}
         desc={<>작성된 내용이 저장되지 않습니다.</>}
         button={
           <>

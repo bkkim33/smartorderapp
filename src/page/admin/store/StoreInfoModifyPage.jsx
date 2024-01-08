@@ -84,7 +84,7 @@ function StoreInfoModifyPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">매장 정보 상세</h1>
+        <h1 className="headline2">매장 정보 수정</h1>
       </div>
       <ContentBox>
         <Table
@@ -527,7 +527,7 @@ function StoreInfoModifyPage() {
               type="admin"
               title={
                 <>
-                  입력한 내용을 <br />
+                  수정된 내용을 <br />
                   저장하시겠습니까?
                 </>
               }

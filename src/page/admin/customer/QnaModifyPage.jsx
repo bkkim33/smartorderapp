@@ -112,7 +112,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
               </td>
             </tr>
             <tr>
-              <th>이미지 등록</th>
+              <th>첨부 파일</th>
               <td>
                 <FileUpload onChange={() => {}} />
               </td>

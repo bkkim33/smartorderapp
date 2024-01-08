@@ -40,7 +40,7 @@ function StoreListPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">매장정보 관리</h1>
+        <h1 className="headline2">매장 정보 관리</h1>
       </div>
       <ContentBox top>
         <div>

@@ -435,7 +435,7 @@ function ProductRegisterPage() {
                   <Checkbox id="checkAll1111" name="checkAll1111" />
                 </TableCell>
                 <TableCell>사업자번호</TableCell>
-                <TableCell>가맹점명</TableCell>
+                <TableCell>판매 매장</TableCell>
                 <TableCell>대표자명</TableCell>
                 <TableCell>주소</TableCell>
               </TableRow>
