@@ -15,10 +15,7 @@ export function Error({title, txt, btn, type}) {
         <h1 className={`${styles.error_title} ${"mt_50"}`}>{title}</h1>
         <p className={`${styles.error_txt} ${"mt_30 pb_100"}`}>{txt}</p>
         {btn && (
-          <Button
-            onClick={() => navigate("/main")}
-            size="medium_h40"
-          >
+          <Button onClick={() => navigate("/main")} color="point" size="xlarge">
             홈으로 돌아가기
           </Button>
         )}

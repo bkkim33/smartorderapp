@@ -225,7 +225,11 @@ function ProductCategoryPage() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Input width="440px" placeholder="카테고리명을 입력하세요." defaultValue="Non-Coffee" />
+                    <Input
+                      width="440px"
+                      placeholder="카테고리명을 입력하세요."
+                      defaultValue="Non-Coffee"
+                    />
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
@@ -301,7 +305,11 @@ function ProductCategoryPage() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Input width="440px" placeholder="카테고리명을 입력하세요." defaultValue="Ade/Juice" />
+                    <Input
+                      width="440px"
+                      placeholder="카테고리명을 입력하세요."
+                      defaultValue="Ade/Juice"
+                    />
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
@@ -377,7 +385,10 @@ function ProductCategoryPage() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Input width="440px" placeholder="카테고리명을 입력하세요." />
+                    <Input
+                      width="440px"
+                      placeholder="카테고리명을 입력하세요."
+                    />
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
@@ -395,16 +406,17 @@ function ProductCategoryPage() {
                     </FormGroup>
                   </TableCell>
                   <TableCell>
-                    <Button
-                      onClick={handleOpen03}
+                    {/* <Button
+                      onClick={() => {}}
                       color="gray"
                       none
                       txtColor="txtgray"
                       type="pc"
                       size="small"
                     >
-                      5개
-                    </Button>
+                      0개
+                    </Button> */}
+                    0개
                   </TableCell>
                 </TableRow>
               </TableBody>
