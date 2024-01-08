@@ -70,7 +70,7 @@ function ProductCategoryPage() {
             </Button>
           </div>
           <div className="rgt">
-            <Button onClick={() => { }} type="pc" color="point" size="small">
+            <Button onClick={() => {}} type="pc" color="point" size="small">
               카테고리 추가
             </Button>
           </div>
@@ -147,9 +147,8 @@ function ProductCategoryPage() {
                   <TableCell>
                     <Input
                       width="440px"
-                      placeholder="옵션명 입력"
+                      placeholder="카테고리명을 입력하세요."
                       defaultValue="Coffee"
-                      disabled
                     />
                   </TableCell>
                   <TableCell>
@@ -226,7 +225,7 @@ function ProductCategoryPage() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Input width="440px" placeholder="옵션명 입력" />
+                    <Input width="440px" placeholder="카테고리명을 입력하세요." defaultValue="Non-Coffee" />
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
@@ -236,6 +235,158 @@ function ProductCategoryPage() {
                       <Radio
                         name="contact01"
                         id="radio02"
+                        value="비노출"
+                        defaultChecked
+                      >
+                        비노출
+                      </Radio>
+                    </FormGroup>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen03}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      5개
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox id="checkbox01" name="checkbox01" />
+                  </TableCell>
+                  <TableCell>3</TableCell>
+                  <TableCell>
+                    <div className="btn_set align center">
+                      <Button
+                        icon="AdminArrow"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        위로
+                      </Button>
+                      <Button
+                        icon="AdminArrow"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        아래로
+                      </Button>
+                      <Button
+                        icon="AdminArrowBar"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        한 페이지 위로
+                      </Button>
+                      <Button
+                        icon="AdminArrowBar"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        한 페이지 아래로
+                      </Button>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <Input width="440px" placeholder="카테고리명을 입력하세요." defaultValue="Ade/Juice" />
+                  </TableCell>
+                  <TableCell>
+                    <FormGroup globalClass="align center">
+                      <Radio name="contact011" id="radio011" value="노출">
+                        노출
+                      </Radio>
+                      <Radio
+                        name="contact011"
+                        id="radio021"
+                        value="비노출"
+                        defaultChecked
+                      >
+                        비노출
+                      </Radio>
+                    </FormGroup>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={handleOpen03}
+                      color="gray"
+                      none
+                      txtColor="txtgray"
+                      type="pc"
+                      size="small"
+                    >
+                      5개
+                    </Button>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <Checkbox id="checkbox01" name="checkbox01" />
+                  </TableCell>
+                  <TableCell>4</TableCell>
+                  <TableCell>
+                    <div className="btn_set align center">
+                      <Button
+                        icon="AdminArrow"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        위로
+                      </Button>
+                      <Button
+                        icon="AdminArrow"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        아래로
+                      </Button>
+                      <Button
+                        icon="AdminArrowBar"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        한 페이지 위로
+                      </Button>
+                      <Button
+                        icon="AdminArrowBar"
+                        onClick={() => {}}
+                        color="gray"
+                        line
+                        size="icon_s"
+                      >
+                        한 페이지 아래로
+                      </Button>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <Input width="440px" placeholder="카테고리명을 입력하세요." />
+                  </TableCell>
+                  <TableCell>
+                    <FormGroup globalClass="align center">
+                      <Radio name="contact012" id="radio012" value="노출">
+                        노출
+                      </Radio>
+                      <Radio
+                        name="contact012"
+                        id="radio022"
                         value="비노출"
                         defaultChecked
                       >

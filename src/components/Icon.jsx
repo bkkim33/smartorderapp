@@ -900,6 +900,19 @@ const Download = ({ width = 11, height = 18, fill = "var(--c33)" }) => (
   </svg>
 );
 
+const Upload = ({ width = 11, height = 18, fill = "var(--c33)" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 11 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M10 9.58824L5.5 5M5.5 5L1 9.58823M5.5 5L5.5 18" stroke={fill} />
+    <path d="M10 1L1 0.999999" stroke={fill} />
+  </svg>
+);
+
 const AlertIcon = ({ width = 50, height = 50, fill ="var(--blue)" }) => (
   <svg 
     width={width} 
@@ -985,6 +998,7 @@ export const Icons = {
   ErrorInfo,
   AlertIcon,
   Download,
+  Upload,
   Hamburger,
   Refresh,
 };

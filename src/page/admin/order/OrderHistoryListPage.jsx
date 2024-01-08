@@ -161,7 +161,7 @@ function OrderHistoryListPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="5%" />
-                <col width="10%" />
+                <col width="6%" />
                 <col width="10%" />
                 <col width="10%" />
                 <col width="15%" />
@@ -174,7 +174,7 @@ function OrderHistoryListPage() {
                   <TableCell>No.</TableCell>
                   <TableCell>주문번호</TableCell>
                   <TableCell>구분</TableCell>
-                  <TableCell>주문자</TableCell>
+                  <TableCell>주문자명</TableCell>
                   <TableCell>주문내역</TableCell>
                   <TableCell>주문일시</TableCell>
                   <TableCell>판매 매장명</TableCell>

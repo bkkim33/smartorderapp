@@ -115,6 +115,7 @@ function StoreListPage() {
                 <col width="20%" />
                 <col width="8%" />
                 <col width="8%" />
+                <col width="8%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -127,6 +128,7 @@ function StoreListPage() {
                   <TableCell>연락처</TableCell>
                   <TableCell>주소</TableCell>
                   <TableCell>운영시간</TableCell>
+                  <TableCell>테이블 수</TableCell>
                   <TableCell>전시관리</TableCell>
                   <TableCell>수령방법</TableCell>
                 </TableRow>
@@ -157,6 +159,7 @@ function StoreListPage() {
                   <TableCell className="left">
                     월~금 오전 8시 ~ 오후 10시
                   </TableCell>
+                  <TableCell>12</TableCell>
                   <TableCell>
                     <Button
                       onClick={() => {
@@ -207,6 +210,7 @@ function StoreListPage() {
                   <TableCell className="left">
                     월~금 오전 8시 ~ 오후 10시
                   </TableCell>
+                  <TableCell>24</TableCell>
                   <TableCell>
                     <Button
                       onClick={() => {
@@ -257,6 +261,7 @@ function StoreListPage() {
                   <TableCell className="left">
                     월~금 오전 8시 ~ 오후 10시
                   </TableCell>
+                  <TableCell>24</TableCell>
                   <TableCell>
                     <Button
                       onClick={() => {
@@ -283,13 +288,13 @@ function StoreListPage() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell colSpan={10}>검색된 결과가 없습니다.</TableCell>
+                  <TableCell colSpan={11}>검색된 결과가 없습니다.</TableCell>
                 </TableRow>
               </TableBody>
             </MuiTable>
           </TableContainer>
         </div>
-        <MuiPage />
+        {/* <MuiPage /> */}
       </ContentBox>
       <MuiAlert
         open={open}

@@ -85,7 +85,7 @@ function SalesListPage() {
           <Select
             minwidth="210px"
             round="app"
-            placeholder="통계기간"
+            placeholder="기간 범위"
             options={categoryOpt}
           />
         </div>
@@ -93,7 +93,7 @@ function SalesListPage() {
           <Select
             minwidth="210px"
             round="app"
-            placeholder="기간선택"
+            placeholder="기간 설정"
             options={periodOpt}
           />
         </div>
@@ -215,56 +215,61 @@ function SalesListPage() {
         </div>
         <div className="admin_grapbox"></div>
 
-        <div className="tbl mt_12">
+        <div className="tbl mt_20">
           <MuiTable>
             <colgroup>
-              <col width="2%" />
-              <col width="3%" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
-              <col width="auto" />
+              <col width="16.66%" />
+              <col width="16.66%" />
+              <col width="16.66%" />
+              <col width="16.66%" />
+              <col width="16.66%" />
+              <col width="16.66%" />
             </colgroup>
             <TableHead>
               <TableRow>
-                <TableCell>
-                  <Checkbox id="checkAll" name="checkAll" />
-                </TableCell>
-                <TableCell>No.</TableCell>
-                <TableCell>상품명</TableCell>
-                <TableCell>판매 매장</TableCell>
-                <TableCell>주문일시</TableCell>
-                <TableCell>결제자</TableCell>
-                <TableCell>결제유형</TableCell>
-                <TableCell>결제수단</TableCell>
-                <TableCell>정상금액</TableCell>
-                <TableCell>할인금액</TableCell>
-                <TableCell>총 결제금액</TableCell>
+                <TableCell>날짜</TableCell>
+                <TableCell>판매액</TableCell>
+                <TableCell>판매액 증감</TableCell>
+                <TableCell>누적 판매액</TableCell>
+                <TableCell>주문수</TableCell>
+                <TableCell>주문수 증감</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>
-                  <Checkbox id="check1" name="check1" />
-                </TableCell>
-                <TableCell>1</TableCell>
-                <TableCell>에스프레소</TableCell>
-                <TableCell>클라우드 9 카페</TableCell>
-                <TableCell>2023.10.24 09:27:00</TableCell>
-                <TableCell>아무개</TableCell>
-                <TableCell>네이버페이</TableCell>
-                <TableCell>신한카드</TableCell>
-                <TableCell className="right">8,280 원</TableCell>
-                <TableCell className="right">-4,000 원</TableCell>
-                <TableCell className="right">4,280 원</TableCell>
+                <TableCell>2023.12.08</TableCell>
+                <TableCell className="right">1,232,000 원</TableCell>
+                <TableCell className="right"></TableCell>
+                <TableCell className="right">1,232,000 원</TableCell>
+                <TableCell className="right">253 개</TableCell>
+                <TableCell className="right"></TableCell>
               </TableRow>
               <TableRow>
-                <TableCell colSpan={11}>검색된 결과가 없습니다.</TableCell>
+                <TableCell>2023.12.09</TableCell>
+                <TableCell className="right">1,832,000 원</TableCell>
+                <TableCell className="right">
+                  <span className="blue">+ 600,000 원</span>
+                </TableCell>
+                <TableCell className="right">1,232,000 원</TableCell>
+                <TableCell className="right">367 개</TableCell>
+                <TableCell className="right">
+                  <span className="blue">+ 114 개</span>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>2023.12.10</TableCell>
+                <TableCell className="right">1,832,000 원</TableCell>
+                <TableCell className="right">
+                  <span className="red">- 600,000 원</span>
+                </TableCell>
+                <TableCell className="right">1,232,000 원</TableCell>
+                <TableCell className="right">367 개</TableCell>
+                <TableCell className="right">
+                  <span className="red">- 55 개</span>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell colSpan={6}>검색된 결과가 없습니다.</TableCell>
               </TableRow>
             </TableBody>
           </MuiTable>

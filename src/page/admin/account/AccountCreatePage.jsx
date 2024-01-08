@@ -69,33 +69,46 @@ function AccountCreate() {
           <tr>
             <th className="required">ID</th>
             <td className="left">
-              <Input
-                width="400px"
-                onClick={() => {}}
-                placeholder="ID를 입력해 주세요."
-              />
+              <div className="align start">
+                <Input
+                  width="400px"
+                  onClick={() => {}}
+                  placeholder="ID를 입력해 주세요."
+                />
+                <span className="required_lft red ml_10">ID를 입력하세요.</span>
+              </div>
             </td>
           </tr>
           <tr>
             <th className="required">비밀번호</th>
             <td className="left">
-              <Input
-                width="400px"
-                onClick={() => {}}
-                type="password"
-                placeholder="비밀번호를 입력해 주세요."
-              />
+              <div className="align start">
+                <Input
+                  width="400px"
+                  onClick={() => {}}
+                  type="password"
+                  placeholder="비밀번호를 입력해 주세요."
+                />
+                <span className="required_lft red ml_10">
+                  비밀번호는 4~20자 이내여야 합니다.
+                </span>
+              </div>
             </td>
           </tr>
           <tr>
             <th className="required">비밀번호 확인</th>
             <td className="left">
-              <Input
-                width="400px"
-                onClick={() => {}}
-                type="password"
-                placeholder="비밀번호를 입력해 주세요."
-              />
+              <div className="align start">
+                <Input
+                  width="400px"
+                  onClick={() => {}}
+                  type="password"
+                  placeholder="비밀번호를 입력해 주세요."
+                />
+                <span className="required_lft red ml_10">
+                  비밀번호가 다릅니다.
+                </span>
+              </div>
             </td>
           </tr>
           <tr>

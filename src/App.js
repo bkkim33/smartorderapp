@@ -47,16 +47,20 @@ import TermsModify from "./page/admin/customer/TermsModifyPage";
 // 매장별 설정관리
 
 import Store from "./page/admin/store/StoreListPage";
+import StoreRegister from "./page/admin/store/StoreInfoRegisterPage";
+import StoreInfoModify from "./page/admin/store/StoreInfoModifyPage";
+import StoreReceiptModify from "./page/admin/store/StoreReceiptModifyPage";
+import StoreDisplayModify from "./page/admin/store/StoreDisplayModifyPage";
 
-import StoreInfo from "./page/admin/store/info/StoreInfoListPage";
-import StoreRegister from "./page/admin/store/info/StoreInfoRegisterPage";
-import StoreInfoModify from "./page/admin/store/info/StoreInfoModifyPage";
+// import StoreInfo from "./page/admin/store/info/StoreInfoListPage";
+// import StoreRegister from "./page/admin/store/info/StoreInfoRegisterPage";
+// import StoreInfoModify from "./page/admin/store/info/StoreInfoModifyPage";
 
-import StoreReceipt from "./page/admin/store/receipt/StoreReceiptListPage";
-import StoreReceiptModify from "./page/admin/store/receipt/StoreReceiptModifyPage";
+// import StoreReceipt from "./page/admin/store/receipt/StoreReceiptListPage";
+// import StoreReceiptModify from "./page/admin/store/receipt/StoreReceiptModifyPage";
 
-import StoreDisplay from "./page/admin/store/display/StoreDisplayListPage";
-import StoreDisplayModify from "./page/admin/store/display/StoreDisplayModifyPage";
+// import StoreDisplay from "./page/admin/store/display/StoreDisplayListPage";
+// import StoreDisplayModify from "./page/admin/store/display/StoreDisplayModifyPage";
 
 // 사용자 관리
 import UserList from "./page/admin/user/UserListPage";
@@ -259,14 +263,14 @@ function App() {
         <Route path="/admin/store" element={<Store />} />
 
         {/* ADMIN 매장별 설정관리 - 매장관리 리스트 */}
-        <Route path="/admin/store/info" element={<StoreInfo />} />
+        {/* <Route path="/admin/store/info" element={<StoreInfo />} /> */}
         {/* ADMIN 매장별 설정관리 - 매장관리 등록 */}
         <Route path="/admin/store/info/register" element={<StoreRegister />} />
         {/* ADMIN 매장별 설정관리 - 매장관리 상세 */}
         <Route path="/admin/store/info/modify" element={<StoreInfoModify />} />
 
         {/* ADMIN 매장별 설정관리 - 상품 수령방법 리스트 */}
-        <Route path="/admin/store/receipt" element={<StoreReceipt />} />
+        {/* <Route path="/admin/store/receipt" element={<StoreReceipt />} /> */}
         {/* ADMIN 매장별 설정관리 - 상품 수령방법 상세 */}
         <Route
           path="/admin/store/receipt/modify"
@@ -274,7 +278,7 @@ function App() {
         />
 
         {/* ADMIN 매장별 설정관리 - 상품 전시관리 리스트 */}
-        <Route path="/admin/store/display" element={<StoreDisplay />} />
+        {/* <Route path="/admin/store/display" element={<StoreDisplay />} /> */}
         {/* ADMIN 매장별 설정관리 - 상품 전시관리 상세 */}
         <Route
           path="/admin/store/display/modify"
