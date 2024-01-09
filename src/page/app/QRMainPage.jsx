@@ -11,22 +11,29 @@ const LocationsData = [
     id: 1,
     title: "클라우드 카페",
     location: "서울 강남구 논현로 85길 46 메가존빌딩 1F",
-    time: "매일 08:00~22:00",
-    state: "주문가능",
+    time: "08:00~22:00",
+    state: "영업중",
   },
   {
     id: 2,
     title: "클라우드9 카페",
     location: "서울 강남구 역삼로17길 57 1F",
-    time: "매일 08:00~22:00",
-    state: "준비중",
+    time: "08:00~22:00",
+    state: "영업전",
   },
   {
     id: 3,
     title: "클라우드 카페",
     location: "경기 과천시 갈현동 471-1",
-    time: "매일 08:00~22:00",
-    state: "준비중",
+    time: "08:00~22:00",
+    state: "영업종료",
+  },
+  {
+    id: 4,
+    title: "클라우드 카페",
+    location: "경기 과천시 갈현동 471-1",
+    time: "08:00~22:00",
+    state: "휴점",
   },
 ];
 
@@ -46,11 +53,13 @@ function Locations() {
     setOpen(!open);
     setTitleSelect(
       <p>
-        <span className="headline1">{location.title}</span>
+        <span className="align center">
+          <span className="headline1">{location.title}</span>
+        </span>
         <span className="mt_12">
-          {location.state === "준비중" && <em>준비중</em>}
-          {location.state === "주문가능" && (
-            <em className="red_bg">주문가능</em>
+          {location.state !== "영업중" && <em>{location.state}</em>}
+          {location.state === "영업중" && (
+            <em className="red_bg mr_10">영업중</em>
           )}
           {location.time}
         </span>
@@ -74,22 +83,46 @@ function Locations() {
         <ul>
           {LocationsData.map((location) => (
             <li key={location.id}>
-              <button onClick={() => ListCLick(location)}>
-                <i>
-                  <Icons.LogoOnly width={20} height={20} />
-                </i>
-                <p className="optionItem">
-                  <span>{location.title}</span>
-                  <span>{location.location}</span>
-                  <span>{location.time}</span>
-                </p>
-              </button>
+              {location.state === "영업중" && (
+                <button onClick={() => ListCLick(location)}>
+                  <i>
+                    <Icons.LogoOnly width={20} height={20} />
+                  </i>
+                  <p className="optionItem">
+                    <span>
+                      {location.title}
+                      {location.state === "영업중" && (
+                        <em className="red_bg ml_10">영업중</em>
+                      )}
+                    </span>
+                    <span className="mt_10">{location.location}</span>
+                    <span>{location.time}</span>
+                  </p>
+                </button>
+              )}
+              {location.state !== "영업중" && (
+                <button style={{ cursor: "default" }}>
+                  <i>
+                    <Icons.LogoOnly width={20} height={20} fill="#838F39" />
+                  </i>
+                  <p className="optionItem" style={{ color: "#838F39" }}>
+                    <span>
+                      {location.title}
+                      {location.state !== "영업중" && (
+                        <em className="ml_10">{location.state}</em>
+                      )}
+                    </span>
+                    <span className="mt_10">{location.location}</span>
+                    <span>{location.time}</span>
+                  </p>
+                </button>
+              )}
             </li>
           ))}
         </ul>
       </div>
     </div>
-  ); 
+  );
 }
 
 const MenuList = [

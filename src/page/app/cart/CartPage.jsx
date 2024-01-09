@@ -189,13 +189,6 @@ const navigate = useNavigate();
             checked={selectAll}
             txt={"전체 선택"}
           ></Checkbox>
-          <Button
-            onClick={handleDeleteSelected}
-            none
-            globalClass="deleteselect pd_0"
-          >
-            선택삭제
-          </Button>
         </div>
         <hr />
         <div className="shoppingcart inner">

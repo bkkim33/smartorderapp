@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from "../../../layout/LoginLayout";
+import Layout from "../../../layout/KDSLoginLayout";
 // import Mainimg10 from "../../../images/main_img10.gif";
 // import Mainimg12 from "../../../images/main_img12.gif";
 // import MainimgDefult from "../../../images/main_img.gif";
@@ -34,20 +34,20 @@ function KDSLoginPage() {
   const navigate = useNavigate();
   return (
     <Layout>
-      <div className="adminlogin">
-        <div className="adminlogin_visual">
+      <div className="kdslogin">
+        <div className="kdslogin_visual">
           <i>
-            <Icons.AdminLogo width={"100%"} height={50} fill="#303033" />
+            <Icons.AdminHeaderLogo width={"100%"} height={152} fill="#fff" />
           </i>
         </div>
-        <div className="adminlogin_content mt_30">
-          <div className="adminlogin_box">
-            <div className="adminlogin_box_input align column ">
+        <div className="kdslogin_content mt_30">
+          <div className="kdslogin_box">
+            <div className="kdslogin_box_input align column ">
               <div>
                 <Input
                   onClick={() => {}}
                   shape="none"
-                  globalClass="adminlogin_input"
+                  globalClass="kdslogin_input"
                   placeholder="ID를 입력해주세요."
                 />
               </div>
@@ -55,7 +55,7 @@ function KDSLoginPage() {
                 <Input
                   onClick={() => {}}
                   shape="none"
-                  globalClass="adminlogin_input"
+                  globalClass="kdslogin_input"
                   type="password"
                   placeholder="비밀번호를 입력해주세요."
                 />
@@ -73,7 +73,7 @@ function KDSLoginPage() {
             <div className="error_txt required_lft mt_5 ml_5">
               ID 또는 비밀번호를 확인해주세요.
             </div> */}
-            <div className="adminlogin_btn mt_20">
+            <div className="kdslogin_btn mt_20">
               <div>
                 <Button
                   color="blue"
@@ -82,7 +82,7 @@ function KDSLoginPage() {
                   }}
                   size="full"
                 >
-                  로그인
+                  Login
                 </Button>
               </div>
             </div>
@@ -92,7 +92,7 @@ function KDSLoginPage() {
                   name="contact00"
                   id="check1"
                   value="Login"
-                  txt={"로그인 상태 유지"}
+                  txt={"로그인 유지"}
                 />
               </FormGroup>
               <Button

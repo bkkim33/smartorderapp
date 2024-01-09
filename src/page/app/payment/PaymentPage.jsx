@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../../../layout/AppDefaultLayout";
 import MuiTooltip from "../../../components/MuiTooltip";
+import Tabs from "../../../components/Tabs";
 import TextToggle from "../../../components/TextToggle";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
@@ -160,10 +161,22 @@ function PaymentPage() {
               placements="bottom-start"
               arrow
             >
-              수령 방법 툴팁 텍스트
+              <dl>
+                <dt className="bold500">[본인 픽업]</dt>
+                <dd className="mt_8">카운터에서 직접 수령합니다.</dd>
+              </dl>
+              <dl className="mt_16">
+                <dt className="bold500">[테이블 수령]</dt>
+                <dd className="mt_8">입력하신 테이블로 서빙해 드립니다.</dd>
+              </dl>
+              <dl className="mt_16">
+                <dt className="bold500">[배달 요청]</dt>
+                <dd className="mt_8">- 입력해 주신 곳으로 배달해 드립니다.</dd>
+                <dd className="mt_5">- 건물 외부로 배달은 불가합니다.</dd>
+              </dl>
             </MuiTooltip>
           </div>
-          <TextToggle
+          {/* <TextToggle
             data={[
               {
                 defaultActive: true,
@@ -183,6 +196,69 @@ function PaymentPage() {
               },
             ]}
             type="linebox"
+          /> */}
+          <Tabs
+            type="linebox"
+            TabsData={[
+              {
+                id: 0,
+                title: "본인픽업",
+                defaultActive: true,
+                content: <></>,
+              },
+              {
+                id: 1,
+                title: "테이블수령",
+                content: (
+                  <div style={{ width: "100%" }}>
+                    <div className="align gap_10 mt_15">
+                      <Input
+                        height="large"
+                        defaultValue=""
+                        placeholder="테이블 번호를 입력해 주세요."
+                      />
+                      <Button
+                        size="large"
+                        color="black"
+                        line
+                        onClick={() => {}}
+                      >
+                        입력
+                      </Button>
+                    </div>
+                    <p className="mt_10 body1">
+                      <strong>23</strong>번 테이블로 서빙해 드립니다.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                id: 2,
+                title: "배달요청",
+                content: (
+                  <div style={{ width: "100%" }}>
+                    <div className="align gap_10 mt_15">
+                      <Input
+                        height="large"
+                        defaultValue=""
+                        placeholder="배달 위치를 입력해 주세요."
+                      />
+                      <Button
+                        size="large"
+                        color="black"
+                        line
+                        onClick={() => {}}
+                      >
+                        입력
+                      </Button>
+                    </div>
+                    <p className="mt_10 body1">
+                      <strong>5층 CX 운영팀</strong>으로 배달해 드립니다.
+                    </p>
+                  </div>
+                ),
+              },
+            ]}
           />
         </div>
         <hr />
@@ -195,7 +271,7 @@ function PaymentPage() {
               placeholder="쿠폰을 선택해 주세요."
               readonly
             />
-            <Button color="black" line onClick={handleOpen}>
+            <Button size="large" color="black" line onClick={handleOpen}>
               조회
             </Button>
           </div>

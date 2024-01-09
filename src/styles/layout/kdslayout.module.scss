@@ -13,7 +13,7 @@
 .layout{
   display: flex;
   height: 100%;
-  background-color: var(--cff);
+  background-color: #E6E8EB;
 }
 
 .header{
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: space-between;
   min-width: 180px;
-  background-color: #F6F5F0;
+  background-color: #3E4B57;
   padding: 20px 0 0;
 }
 
@@ -167,7 +167,7 @@
 .kdslogin{
   align-items: center;
   justify-content: center;
-  background-color: #F6F5F0;
+  background-color: #000;
   .content{
     flex: 1;
     display: flex;

@@ -42,6 +42,31 @@
   }
 }
 
+.linebox{
+  flex-wrap: nowrap;
+  gap: 10px;
+  .btn {
+    &.active {
+      z-index: 0;
+    }
+  }
+  button {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #E7E7E7;
+    @include h5(var(--c99));
+    font-weight: 400;
+    &::before{
+      display: none;
+    }
+    &.active {
+      border-color: var(----primary);
+      font-weight: 700;
+      color: var(--c11);
+    } 
+  }
+}
+
 .admin {
   width: 100%;
   overflow-x: auto;

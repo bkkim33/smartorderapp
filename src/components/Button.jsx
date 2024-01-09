@@ -12,7 +12,7 @@ Button.propTypes = {
   line: PropTypes.bool,
   txtColor: PropTypes.oneOf(["", "txtgray", "txtwhite"]),
   color: PropTypes.oneOf(["", "point", "black", "gray", "red", "blue", "trans", "white", ""]),
-  size: PropTypes.oneOf(["", "full", "xlarge", "medium", "small", "xsmall", "xxsmall", "icon_l", "icon_m", "icon_s"]),
+  size: PropTypes.oneOf(["", "full", "xlarge", "large", "medium", "small", "xsmall", "xxsmall", "icon_l", "icon_m", "icon_s"]),
   icon: PropTypes.string,
   iconposition: PropTypes.oneOf(["", "right"]),
   iconStyle: PropTypes.shape({
