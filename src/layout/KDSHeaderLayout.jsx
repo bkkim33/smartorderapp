@@ -20,10 +20,10 @@ function HeaderLayout() {
 
   return (
     <header className={`${styles.header}`}>
-      <div>
-        <Icons.AdminHeaderLogo width={"100%"} height={66} fill="#fff" />
-        <p>
-          <span>클라우드카페</span>
+      <div className={`${styles.header_top}`}>
+        <Icons.AdminHeaderLogo width={"100%"} height={60} fill="#fff" />
+        <p className={`${styles.util} ${"mt_30"}`}>
+          <span className={`${styles.util_title}`}>클라우드카페</span>
           <span>2023.11.10 (금)</span>
           <span>15:52:25</span>
         </p>

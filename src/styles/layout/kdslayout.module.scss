@@ -23,7 +23,30 @@
   justify-content: space-between;
   min-width: 180px;
   background-color: #3E4B57;
-  padding: 20px 0 0;
+  padding: 50px 18px 50px;
+  &_top{
+    width: 100%;
+  }
+}
+
+.util{
+  padding-top: 45px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  span{
+    display: block;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    opacity: 0.8;
+    color: var(--cff);
+    &.util_title{
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--cff);
+      opacity: 1;
+    }
+  }
+  
 }
 
 .user{
@@ -167,7 +190,9 @@
 .kdslogin{
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  // background-color: #000;
+  background: url("../../images/KDS_bg.png") no-repeat center;
+  background-size: cover;
   .content{
     flex: 1;
     display: flex;

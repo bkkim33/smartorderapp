@@ -38,8 +38,8 @@ function MenuSwiper({data}) {
   }, [sec]);
   return (
     <Swiper {...swiperParams}>
-      {data.map((order) => (
-        <SwiperSlide key={order.id} className={`${"order_visual_card"} `}>
+      {data.map((order, index) => (
+        <SwiperSlide key={index} className={`${"order_visual_card"} `}>
           <div>
             <div>
               <p>{order.id}</p>
