@@ -48,6 +48,7 @@
     }
     &_input{
       > div{
+        position: relative;
         display: flex;
         align-items: center;
         background-color: rgba($color: #fff, $alpha: 0.15);
@@ -70,6 +71,11 @@
         &::placeholder{
           color: #fff;
         }
+      }
+      .input_time__NYLmd{
+        position: absolute;
+        right: 10px;
+        color:#fff !important;
       }
       .adminlogin_input{
         flex: 1;

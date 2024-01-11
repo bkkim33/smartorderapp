@@ -46,12 +46,22 @@ function KDSMailVerifyPage() {
                   timer={certification === true}
                 />
               </div>
-              <Button
-                globalClass="kdslogin_btn_blue"                
-                onClick={certifications}
-              >
-                인증요청
-              </Button>
+              {certification === false ? (
+                  <Button
+                    globalClass="kdslogin_btn_blue"
+                    onClick={certifications}
+                  >
+                    인증요청
+                  </Button>
+                ) : (
+                  <Button
+                    globalClass="kdslogin_btn_blue"
+                  >
+                    재전송
+                  </Button>
+                )
+              }
+              
             </div>
             <div className="error_txt mt_15">
               인증번호가 맞지 않습니다. <br />
