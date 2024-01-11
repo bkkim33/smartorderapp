@@ -1004,6 +1004,18 @@ const KDSPWinput = ({ width = 17, height = 19, fill = "white" }) => (
   </svg>
 );
 
+const KDSAUTHinput = ({ width = 14, height = 16, fill = "white" }) => (
+  <svg
+   width={width} 
+   height={height} 
+   viewBox="0 0 27 33" 
+   fill="none" 
+   xmlns="http://www.w3.org/2000/svg"
+  >
+    <path fillRule="evenodd" clipRule="evenodd" d="M0 6C0 2.68629 2.68629 0 6 0H21C24.3137 0 27 2.68629 27 6V27C27 30.3137 24.3137 33 21 33H6C2.68629 33 0 30.3137 0 27V6ZM6 8C6 6.89543 6.89543 6 8 6H19C20.1046 6 21 6.89543 21 8V11C21 12.1046 20.1046 13 19 13H8C6.89543 13 6 12.1046 6 11V8ZM7 18C6.44772 18 6 18.4477 6 19C6 19.5523 6.44772 20 7 20H10C10.5523 20 11 19.5523 11 19C11 18.4477 10.5523 18 10 18H7ZM17 18C16.4477 18 16 18.4477 16 19C16 19.5523 16.4477 20 17 20H20C20.5523 20 21 19.5523 21 19C21 18.4477 20.5523 18 20 18H17ZM7 25C6.44772 25 6 25.4477 6 26C6 26.5523 6.44772 27 7 27H10C10.5523 27 11 26.5523 11 26C11 25.4477 10.5523 25 10 25H7ZM17 25C16.4477 25 16 25.4477 16 26C16 26.5523 16.4477 27 17 27H20C20.5523 27 21 26.5523 21 26C21 25.4477 20.5523 25 20 25H17Z" fill={fill} />
+  </svg>
+);
+
 export const Icons = {
   Logo,
   LogoIcon,
@@ -1051,4 +1063,5 @@ export const Icons = {
   Refresh,
   KDSIDinput,
   KDSPWinput,
+  KDSAUTHinput,
 };
