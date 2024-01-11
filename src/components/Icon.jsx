@@ -982,7 +982,7 @@ const KDSIDinput = ({ width = 16, height = 13, fill = "white" }) => (
   </svg>
 );
 
-const KDSinput = ({ width = 17, height = 19, fill = "white" }) => (
+const KDSPWinput = ({ width = 17, height = 19, fill = "white" }) => (
   <svg
     width={width}
     height={height}
@@ -1050,5 +1050,5 @@ export const Icons = {
   Hamburger,
   Refresh,
   KDSIDinput,
-  KDSinput,
+  KDSPWinput,
 };

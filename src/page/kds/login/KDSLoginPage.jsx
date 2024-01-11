@@ -56,7 +56,7 @@ function KDSLoginPage() {
               </div>
               <div className="mt_20">
                 <label htmlFor="">
-                  <Icons.KDSinput fill="#fff" />
+                  <Icons.KDSPWinput fill="#fff" />
                 </label>
                 <Input
                   onClick={() => {}}
