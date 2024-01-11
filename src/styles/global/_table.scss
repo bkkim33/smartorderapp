@@ -37,7 +37,26 @@
         vertical-align: top;
       }
     }
-  } 
+  }
+  &.kds_tablebox {
+    border-top: 1px solid var(--c11);
+    border-bottom: 1px solid var(--ce7);
+    padding: 40px;
+    table{
+      border-top: 0;
+    }
+    th{
+      border: 0 ;
+      background-color: var(--cff) ;
+      color: var(--c00) ;
+      font-size: 1.8rem ;
+    }
+    td{
+      padding: 20px 10px ;
+      border: 0 ;
+      font-size: 1.8rem ;
+    }
+  }
 }
 // 리스트 테이블
 .tbl {
@@ -178,3 +197,4 @@
     }
   }
 }
+// kds 환경설정 테이블

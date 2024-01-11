@@ -6,8 +6,12 @@ import Loading from "./components/Loading";
 // KDS import
 import "./styles/kdsglobal.scss";
 import KDSLogin from "./page/kds/login/KDSLoginPage";
-// 비밀번호 변경
+// 비밀번호 찾기
 import KDSMailVerify from "./page/kds/login/KDSMailVerifyPage";
+// 환경설정
+import KDSSetting from "./page/kds/setting/KDSSettingPage";
+// 비밀번호 변경
+import KDSChangePW from "./page/kds/setting/KDSChangePWPage";
 // 제조현황
 import KDSMain from "./page/kds/MainPage";
 
@@ -301,6 +305,10 @@ function App() {
         <Route path="/kds" element={<KDSLogin />} />
         {/* KDS 비밀번호 찾기 */}
         <Route path="/kds/mail" element={<KDSMailVerify />} />
+        {/* KDS 환경설정 */}
+        <Route path="/kds/setting" element={<KDSSetting />} />
+        {/* KDS 비밀번호 변경 */}
+        <Route path="/kds/setting/changepassword" element={<KDSChangePW />} />
         {/* KDS 제조현황 */}
         <Route path="/kds/main" element={<KDSMain />} />
       </Route>

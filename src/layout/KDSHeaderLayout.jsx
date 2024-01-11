@@ -50,7 +50,7 @@ function HeaderLayout() {
       </div>
       <div className={`${styles.user_util} ${"mt_20"}`}>
         <button
-          onClick={() => navigate("/admin/myprofile/profile")}
+          onClick={() => navigate("/kds/setting")}
           className={`${styles.user_button} ${""}`}
         >
           <Icons.Setting width={16} height={16} fill="#3A3A3A" />
