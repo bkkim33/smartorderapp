@@ -4,3 +4,39 @@
 
 //KDS에만 별도로 사용되는 scss 구성 
 @import './global/kds/kdslogin';
+
+.kds_btn{
+  border-radius: 6px;
+  background-color: #3E4B57;
+  padding: 0 15px;
+  height: 40px;
+  font-size: 16px;
+  color: var(--cff);
+  font-weight: 700;
+}
+
+.KDS_pagenation{
+  margin-top: 30px;
+  button{
+    min-width: 30px;
+    height: 30px;
+    font-family: 'Pretendard';
+    font-size: 1.6em;
+    padding: 0 5px;
+    &:hover {
+      background-color: transparent;
+    }
+    &[aria-current="true"]{
+      font-weight: 700;
+      background-color: #3E4B57 !important;
+      color: var(--cff);
+      &:hover {
+        background-color: #3E4B57 !important;
+      }
+    }
+    svg{
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

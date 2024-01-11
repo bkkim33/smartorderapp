@@ -2,12 +2,15 @@ import { Route, Routes } from "react-router-dom";
 
 import Error from "./page/Error";
 import Loading from "./components/Loading";
+import KDSLoading from "./components/KDSLoading";
 
 // KDS import
 import "./styles/kdsglobal.scss";
 import KDSLogin from "./page/kds/login/KDSLoginPage";
 // 비밀번호 변경
 import KDSMailVerify from "./page/kds/login/KDSMailVerifyPage";
+// 제조완료
+import EndOrder from "./page/kds/endorder/EndOrderPage";
 // 제조현황
 import KDSMain from "./page/kds/MainPage";
 
@@ -156,6 +159,7 @@ function App() {
           }
         />
         <Route exact path="/loading" element={<Loading />} />
+        <Route exact path="/kdsloading" element={<KDSLoading />} />
       </Route>
       {/* APP : 각 페이지에 레이어 팝업이 있을시 페이지 내부에 존재합니다. */}
       <Route>
@@ -301,6 +305,8 @@ function App() {
         <Route path="/kds" element={<KDSLogin />} />
         {/* KDS 비밀번호 찾기 */}
         <Route path="/kds/mail" element={<KDSMailVerify />} />
+        {/* KDS 제조완료 */}
+        <Route path="/kds/endorder" element={<EndOrder />} />
         {/* KDS 제조현황 */}
         <Route path="/kds/main" element={<KDSMain />} />
       </Route>

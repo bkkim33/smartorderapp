@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from '../../layout/KDSDefaultLayout'
-import ContentBox from "../../layout/ContentBox";
+import KDSContentBox from "../../layout/KDSContentBox";
 import MenuSwiper from "./MenuSwiper";
 
 const OrderData = [
@@ -158,8 +158,8 @@ const OrderData = [
    
 function MainPage() {
   return (
-    <Layout>
-      <ContentBox top>
+    <Layout pdnone>
+      <KDSContentBox top>
         <ul>
           <li>
             <span>1</span>
@@ -202,10 +202,10 @@ function MainPage() {
             </div>
           </li>
         </ul>
-      </ContentBox>
-      <ContentBox>
+      </KDSContentBox>
+      <KDSContentBox bottom>
         <MenuSwiper data={OrderData} />
-      </ContentBox>
+      </KDSContentBox>
     </Layout>
   );
 }

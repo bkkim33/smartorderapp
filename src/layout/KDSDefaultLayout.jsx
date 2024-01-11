@@ -5,14 +5,16 @@ import Header from './KDSHeaderLayout'
 import styles from "../styles/layout/kdslayout.module.scss";
 import "../styles/global.scss";
 
-function AdminDefaultLayout({children}) {
+function AdminDefaultLayout({children, pdnone}) {
   return (
     <>
       {/* <Header /> */}
       <div className={`${styles.layout}`}>
         {/* <SideMenu /> */}
         <Header />
-        <div className={`${styles.content}`}>{children}</div>
+        <div className={`${styles.content} ${pdnone ? styles.pdnone : ""}`}>
+          {children}
+        </div>
       </div>
 
       {/* <Footer /> */}
