@@ -1,0 +1,37 @@
+.kdssetting{
+  &_btn{
+    &_small{
+      min-width: 70px;
+      min-height: 40px;
+      font-size: 1.6rem;
+      border-radius: 6px;
+      background-color: #3E4B57;
+      color: var(--cff);
+    }
+    &_large{
+      min-width: 237px;
+      min-height: 65px;
+      font-size: 2rem;
+      border-radius: 6px;
+      background-color: #3E4B57;
+      color: var(--cff);
+    }
+  }
+
+  &_input{
+    background-color: var(--cff) !important;
+    padding: 0 !important;
+    border: 0 !important;
+    input{
+      background-color: var(--cff);
+      color: var(--c33) !important;
+    }
+    &_line{
+      height: 55px !important;
+      padding: 20px !important;
+      border: 3px solid var(--cdd);
+      border-radius: 6px;
+      background-color: var(--cff) !important;
+    }
+  }
+}
