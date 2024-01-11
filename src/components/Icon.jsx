@@ -965,6 +965,45 @@ const Refresh = ({ width = 23, height = 19, fill= "var(--primary)" }) => (
   </svg>
 );
 
+const KDSIDinput = ({ width = 16, height = 13, fill = "white" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 33 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 0C2.68629 0 0 2.68629 0 6V20C0 23.3137 2.68629 26 6 26H27C30.3137 26 33 23.3137 33 20V6C33 2.68629 30.3137 0 27 0H6ZM9.66921 9.25693C9.25882 8.88733 8.62652 8.9204 8.25693 9.33079C7.88733 9.74118 7.9204 10.3735 8.33079 10.7431C13.1527 15.0856 19.8473 15.0856 24.6692 10.7431C25.0796 10.3735 25.1127 9.74118 24.7431 9.33079C24.3735 8.9204 23.7412 8.88733 23.3308 9.25693C19.2697 12.9144 13.7303 12.9144 9.66921 9.25693Z"
+      fill={fill}
+    />
+  </svg>
+);
+
+const KDSinput = ({ width = 17, height = 19, fill = "white" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 34 38"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M25 14V10C25 5.58172 21.4183 2 17 2V2C12.5817 2 9 5.58172 9 10L9 14"
+      stroke={fill}
+      strokeWidth="3"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 12C2.68629 12 0 14.6863 0 18V32C0 35.3137 2.68629 38 6 38H28C31.3137 38 34 35.3137 34 32V18C34 14.6863 31.3137 12 28 12H6ZM18.5 23C18.5 22.1716 17.8284 21.5 17 21.5C16.1716 21.5 15.5 22.1716 15.5 23V27C15.5 27.8284 16.1716 28.5 17 28.5C17.8284 28.5 18.5 27.8284 18.5 27V23Z"
+      fill={fill}
+    />
+  </svg>
+);
+
 export const Icons = {
   Logo,
   LogoIcon,
@@ -1010,4 +1049,6 @@ export const Icons = {
   Upload,
   Hamburger,
   Refresh,
+  KDSIDinput,
+  KDSinput,
 };

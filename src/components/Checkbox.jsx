@@ -10,6 +10,7 @@ Checkbox.propTypes = {
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   textposition: PropTypes.oneOf(["left", ""]),
+  globalClass: PropTypes.string,
 };
 
 // 기본 상태가 필요시에만 사용됨
@@ -20,11 +21,20 @@ Checkbox.defaultProps = {
   // defaultChecked: false,
   disabled: false,
   textposition: "",
+  globalClass: "",
 };
 
 export function Checkbox({ children, id, onChange, ...others }) {
-  const { value, name, checked, defaultChecked, textposition, disabled, txt } =
-    others;
+  const {
+    value,
+    name,
+    checked,
+    defaultChecked,
+    textposition,
+    disabled,
+    txt,
+    globalClass,
+  } = others;
   
   // const onChange = (e) => {
   //   const { value } = e.target;
@@ -38,7 +48,10 @@ export function Checkbox({ children, id, onChange, ...others }) {
   };
   
   return (
-    <label htmlFor={id} className={`${styles.checkboxlabel}`}>
+    <label
+      htmlFor={id}
+      className={`${styles.checkboxlabel} ${globalClass || ""}`}
+    >
       <input
         className={`${styles.checkboxinput}`}
         type="checkbox"

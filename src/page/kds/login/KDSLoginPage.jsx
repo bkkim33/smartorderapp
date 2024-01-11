@@ -40,30 +40,35 @@ function KDSLoginPage() {
             <Icons.AdminHeaderLogo width={"100%"} height={152} fill="#fff" />
           </i>
         </div>
-        <div className="kdslogin_content mt_30">
+        <div className="kdslogin_content mt_60">
           <div className="kdslogin_box">
             <div className="kdslogin_box_input align column ">
               <div>
+                <label htmlFor="">
+                  <Icons.KDSIDinput fill="#fff" />
+                </label>
                 <Input
                   onClick={() => {}}
                   shape="none"
                   globalClass="kdslogin_input"
-                  placeholder="ID를 입력해주세요."
+                  placeholder="ID (@ 앞 부분만 입력)"
                 />
               </div>
-              <div>
+              <div className="mt_20">
+                <label htmlFor="">
+                  <Icons.KDSinput fill="#fff" />
+                </label>
                 <Input
                   onClick={() => {}}
                   shape="none"
                   globalClass="kdslogin_input"
                   type="password"
-                  placeholder="비밀번호를 입력해주세요."
+                  placeholder="Password"
                 />
               </div>
             </div>
-            <div className="error_txt required_lft mt_5 ml_5">
-              ID를 입력해주세요.
-            </div>
+            <div className="error_txt mt_15">ID를 입력해주세요.</div>
+
             {/* <div className="error_txt required_lft mt_5 ml_5">
               비밀번호가 맞지 않습니다.
             </div>
@@ -73,9 +78,10 @@ function KDSLoginPage() {
             <div className="error_txt required_lft mt_5 ml_5">
               ID 또는 비밀번호를 확인해주세요.
             </div> */}
-            <div className="kdslogin_btn mt_20">
+            <div className="kdslogin_btn_box mt_24">
               <div>
                 <Button
+                  globalClass="kdslogin_btn"
                   color="blue"
                   onClick={() => {
                     navigate("/kds/main");
@@ -86,13 +92,14 @@ function KDSLoginPage() {
                 </Button>
               </div>
             </div>
-            <div className="align mt_20">
+            <div className="align mt_25">
               <FormGroup>
                 <Checkbox
                   name="contact00"
                   id="check1"
                   value="Login"
                   txt={"로그인 유지"}
+                  globalClass="kdslogin_check"
                 />
               </FormGroup>
               <Button
@@ -100,8 +107,7 @@ function KDSLoginPage() {
                 onClick={() => {
                   navigate("/kds/mail");
                 }}
-                size="small"
-                color="blue"
+                globalClass="kdslogin_link"
               >
                 비밀번호 찾기
               </Button>

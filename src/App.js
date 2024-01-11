@@ -4,6 +4,7 @@ import Error from "./page/Error";
 import Loading from "./components/Loading";
 
 // KDS import
+import "./styles/kdsglobal.scss";
 import KDSLogin from "./page/kds/login/KDSLoginPage";
 // 비밀번호 변경
 import KDSMailVerify from "./page/kds/login/KDSMailVerifyPage";
