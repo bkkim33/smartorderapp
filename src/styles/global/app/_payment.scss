@@ -181,7 +181,8 @@
   }
   &_card{
     display: flex;
-    align-items: flex-start;       
+    align-items: flex-start;    
+    flex: 1;   
     &_img{
       display: flex;
       align-items: center;
@@ -189,7 +190,7 @@
       flex-shrink: 0;
       width: 80px;
       height: 80px;
-      padding: 8px;
+      // padding: 8px;
       background-color: #f3f4f5;
     }
     &_info{
@@ -205,5 +206,19 @@
         @include body2(var(--c77));
       }
     }
+  }
+}
+
+@media (max-width : "320px") {
+  .couponlist_card{
+    flex-wrap: wrap;
+    margin-left: 10px;
+    &_img{
+      width: 100%;
+      height: auto;
+      margin: 0!important;
+      margin-bottom: 10px !important;
+    }
+    
   }
 }

@@ -27,7 +27,7 @@ function HeaderLayout() {
           <span>2023.11.10 (금)</span>
           <span>15:52:25</span>
         </p>
-        <ul>
+        <ul className={`${styles.link_btn} ${"mt_50"}`}>
           <li>
             <Link
               to="/admin/customer/qna"
@@ -48,7 +48,7 @@ function HeaderLayout() {
           </li>
         </ul>
       </div>
-      <div className={`${styles.user_util} ${"mt_20"}`}>
+      <div className={`${styles.user_util} ${"mt_50"}`}>
         <button
           onClick={() => navigate("/kds/setting")}
           className={`${styles.user_button} ${""}`}

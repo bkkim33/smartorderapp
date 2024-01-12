@@ -196,5 +196,24 @@
       }
     }
   }
+  &.kds{
+    thead{
+      th{
+        border-left: 0;
+        height: 58px;
+        font-size: 18px;
+      }
+    }
+    tbody{
+      tr{
+        td{
+          border-right: 0;
+          border-left: 0;
+          height: 56px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
 // kds 환경설정 테이블

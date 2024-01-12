@@ -79,26 +79,33 @@ const OrderListData = [
 const CouponListData = [
   {
     id: 1,
-    image: require("../../../images/item.png"),
+    image: require("../../../images/itemcoupon01.png"),
     issuer: "MEGAZONE",
-    title: "방문자 환영 쿠폰 아메리카노 1잔",
+    title: "입사자 환영 쿠폰 아메리카노 1잔",
     date: "2023.10.31",
   },
   {
     id: 2,
-    image: require("../../../images/item.png"),
+    image: require("../../../images/itemcoupon02.png"),
     issuer: "MEGAZONE",
-    title: "방문자 환영 쿠폰 아메리카노 1잔",
+    title: "입사자 환영 쿠폰 음료 1잔",
     date: "2023.10.31",
   },
   {
     id: 3,
-    image: require("../../../images/item.png"),
+    image: require("../../../images/itemcoupon01.png"),
     issuer: "MEGAZONE",
-    title: "방문자 환영 쿠폰 아메리카노 1잔",
-    date: "2023.10.31"
+    title: "방문자 감사 쿠폰 아메리카노 1잔",
+    date: "2023.10.31",
   },
-]
+  {
+    id: 4,
+    image: require("../../../images/itemcoupon02.png"),
+    issuer: "MEGAZONE",
+    title: "방문자 감사 쿠폰 음료 1잔",
+    date: "2023.10.31",
+  },
+];
 
 function PaymentPage() {
   

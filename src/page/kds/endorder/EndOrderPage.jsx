@@ -33,17 +33,17 @@ function EndOrderPage() {
             </p>
           </div>
         </div>
-        <div className="tbl">
+        <div className="tbl kds">
           <TableContainer>
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
-                <col width="5%" />
-                <col width="6%" />
                 <col width="10%" />
+                <col width="12%" />
+                <col width="18%" />
+                <col width="auto" />
+                <col width="18%" />
+                <col width="12%" />
                 <col width="15%" />
-                <col width="15%" />
-                <col width="15%" />
-                <col width="10%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -60,29 +60,29 @@ function EndOrderPage() {
                 <TableRow>
                   <TableCell>1</TableCell>
                   <TableCell>000000</TableCell>
-                  <TableCell>홍길동</TableCell>
+                  <TableCell>010-****-1234</TableCell>
                   <TableCell>에스프레소 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>매장픽업</TableCell>
-                  <TableCell className="right">8,280원</TableCell>
+                  <TableCell>8,280원</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>2</TableCell>
                   <TableCell>000001</TableCell>
-                  <TableCell>홍길동</TableCell>
+                  <TableCell>010-****-1234</TableCell>
                   <TableCell>에스프레소 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>테이블 수령</TableCell>
-                  <TableCell className="right">8,280원</TableCell>
+                  <TableCell>8,280원</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>3</TableCell>
                   <TableCell>000002</TableCell>
-                  <TableCell>1234</TableCell>
+                  <TableCell>010-****-1234</TableCell>
                   <TableCell>에스프레소 1개 외</TableCell>
                   <TableCell>2023.10.24 09:27:00</TableCell>
                   <TableCell>매장픽업</TableCell>
-                  <TableCell className="right">8,280원</TableCell>
+                  <TableCell>8,280원</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell colSpan={8}>검색된 결과가 없습니다.</TableCell>

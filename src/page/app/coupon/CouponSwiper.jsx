@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Icons } from "../../../components/Icon";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -37,7 +38,7 @@ function CouponSwiper ({data}) {
         </p>
       </div>
       <>
-        <Swiper          
+        <Swiper
           onSlideChange={(swiper) => setCountSlide(swiper.activeIndex + 1)}
           {...swiperParams}
         >
@@ -49,12 +50,28 @@ function CouponSwiper ({data}) {
                     Coupon.use === true ? "dimd" : ""
                   }`}
                 >
-                  {Coupon.use === true && <p>{Coupon.usename}</p>}
-                  <img
-                    src={Coupon.image}
-                    alt={Coupon.title}
-                    // className={`${styles.img}`}
-                  />
+                  {Coupon.use === true && (
+                    <p className="coupon_slidecard_use">{Coupon.usename}</p>
+                  )}
+                  <div className="coupon_slidecard_img_box">
+                    <Icons.Logo width={"100%"} height={46} fill="#303033" />
+                    <p className="coupon_slidecard_img_box_title mt_15">
+                      {Coupon.imgtitle}
+                    </p>
+                    <p className="coupon_slidecard_img_box_txt mt_15">
+                      {Coupon.imgtxt}
+                    </p>
+                    <p className="coupon_slidecard_img_box_typetxt mt_15">
+                      "{Coupon.typetxt}"
+                    </p>
+                  </div>
+                  <div className="coupon_slidecard_img_bg">
+                    <img
+                      src={Coupon.image}
+                      alt={Coupon.title}
+                      // className={`${styles.img}`}
+                    />
+                  </div>
                 </div>
                 <div className="coupon_slidecard_txt">
                   <dl>
