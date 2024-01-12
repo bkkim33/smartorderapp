@@ -32,7 +32,7 @@ function ChangePassword() {
     <Layout>
       
       <KDSContentBox>
-        <div className="kdssetting">
+        <div className="kdssetting mt_56">
           <h1 className="headline1 mb_20">비밀번호 변경</h1>
           <Table
             globalClass="kds_tablebox"
