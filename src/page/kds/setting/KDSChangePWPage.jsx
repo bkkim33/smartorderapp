@@ -110,35 +110,29 @@ function ChangePassword() {
         <MuiAlert
           open={open}
           onClose={handleClose}
-          type="admin"
+          type="kds"
           title={<>비밀번호를 변경하시겠습니까?</>}
           button={
             <>
               <Button
                 onClick={handleClose}
-                type="pc"
-                color="gray"
-                line
-                size="small"
+                globalClass="kdsalert_btn cancle"
               >
                 취소
               </Button>
               <Button
                 onClick={handleOpen02}
-                type="pc"
-                color="black"
-                size="small"
+                globalClass="kdsalert_btn confirm"
               >
                 확인
               </Button>
             </>
           }
-          minWidth
         />
         <MuiAlert
           open={open02}
           onClose={handleClose02}
-          type="admin"
+          type="kds"
           title={
             <>
               비밀번호가 변경되었습니다.
@@ -149,16 +143,13 @@ function ChangePassword() {
           button={
             <>
               <Button
-                type="pc"
-                onClick={() => navigate("/admin")}
-                color="black"
-                size="small"
+                onClick={() => navigate("/kds")}
+                globalClass="kdsalert_btn confirm"
               >
                 확인
               </Button>
             </>
           }
-          minWidth
         />
       </ContentBox>
     </Layout>

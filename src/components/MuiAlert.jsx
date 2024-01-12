@@ -7,7 +7,7 @@ import styles from "../styles/components/muialert.module.scss";
 import { Icons } from "./Icon";
 
 MuiAlert.propTypes = {
-  type: PropTypes.oneOf(["","admin"]),
+  type: PropTypes.oneOf(["","admin","kds"]),
   iconColor: PropTypes.oneOf(["","red"]),
 };
 
@@ -37,7 +37,10 @@ export function MuiAlert({ open, onClose, title, button, desc, ...others }) {
             )}
             {type === "admin" && iconColor === "red" && (
               <Icons.AlertIcon fill="var(--red)"></Icons.AlertIcon>
-            )} 
+            )}
+            {type === "kds" && iconColor !== "red" && (
+              <Icons.AlertIcon width="80px" height="80px"></Icons.AlertIcon>
+            )}
             <h2 className={`${styles.alert_title}`}>{<>{title}</>}</h2>
             <p className={`${styles.alert_desc}`}>{<>{desc}</>}</p>
           </div>

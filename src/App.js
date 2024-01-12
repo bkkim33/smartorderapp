@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import Error from "./page/Error";
+import KDSError from "./page/kds/KDSError";
 import Loading from "./components/Loading";
 import KDSLoading from "./components/KDSLoading";
 
@@ -158,6 +159,19 @@ function App() {
                 "원하시는 페이지를 찾을 수 없습니다.\n 잠시 후 다시 이용해 주세요."
               }
               type="404"
+              btn
+            />
+          }
+        />
+        <Route
+          exact
+          path="/kdserror"
+          element={
+            <KDSError
+              title="인터넷 연결 없음"
+              txt={
+                "원하시는 페이지를 찾을 수 없습니다.\n 잠시 후 다시 이용해 주세요."
+              }
               btn
             />
           }

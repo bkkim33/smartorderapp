@@ -35,3 +35,18 @@
     }
   }
 }
+.kdsalert{
+  &_btn{
+    min-width: 175px;
+    min-height: 65px;
+    border-radius: 6px;
+    color: var(--cff);
+    font-size: 2rem;
+    &.cancle{
+      background-color: #ADB1B4;
+    }
+        &.confirm{
+      background-color: #3E4B57;
+    }
+  }
+}
