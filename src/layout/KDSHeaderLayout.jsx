@@ -29,21 +29,15 @@ function HeaderLayout() {
         </p>
         <ul className={`${styles.link_btn} ${"mt_50"}`}>
           <li>
-            <Link
-              to="/admin/customer/qna"
-              className={` ${splitLocation[3] === "qna" ? styles.active : ""}
-                `}
-            >
-              제조현황
+            <Link to="/kds/main">
+              <Icons.KDSMenu1 fill="#3A3A3A" />
+              <span>제조현황</span>
             </Link>
           </li>
-          <li>
-            <Link
-              to="/admin/customer/qna"
-              className={` ${splitLocation[3] === "qna" ? styles.active : ""}
-                `}
-            >
-              제조완료
+          <li className="mt_20">
+            <Link to="/kds/endorder">
+              <Icons.KDSMenu2 />
+              <span>제조완료</span>
             </Link>
           </li>
         </ul>
