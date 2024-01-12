@@ -106,7 +106,12 @@
       background-color: var(--blue);
     }
   }
-
+  &_input{
+    span{
+      color: var(--cff) !important;
+      font-size: 16px !important;
+    }
+  }
   &_check{
     align-items: center !important;
     span{
