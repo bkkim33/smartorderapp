@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/KDSDefaultLayout";
-import ContentBox from "../../../layout/ContentBox";
+import KDSContentBox from "../../../layout/KDSContentBox";
 import Table from "../../../components/Table";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
@@ -31,7 +31,7 @@ function ChangePassword() {
   return (
     <Layout>
       
-      <ContentBox>
+      <KDSContentBox>
         <div className="kdssetting">
           <h1 className="headline1 mb_20">비밀번호 변경</h1>
           <Table
@@ -151,7 +151,7 @@ function ChangePassword() {
             </>
           }
         />
-      </ContentBox>
+      </KDSContentBox>
     </Layout>
   );
 }

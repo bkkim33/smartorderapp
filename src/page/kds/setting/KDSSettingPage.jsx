@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/KDSDefaultLayout'
-import ContentBox from "../../../layout/ContentBox";
+import KDSContentBox from "../../../layout/KDSContentBox";
 import Table from "../../../components/Table";
 import Input from "../../../components/Input"
 import Button from "../../../components/Button"
@@ -10,7 +10,7 @@ function KDSSettingPage() {
   const navigate = useNavigate();
   return (
     <Layout>
-      <ContentBox>
+      <KDSContentBox>
         <div className="kdssetting">
           <div className="kdssetting_box">
             <h1 className="headline1 mb_20">환경설정</h1>
@@ -75,7 +75,7 @@ function KDSSettingPage() {
             </Table>
           </div>
         </div>
-      </ContentBox>
+      </KDSContentBox>
     </Layout>
   );
 }
