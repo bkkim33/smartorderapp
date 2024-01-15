@@ -211,7 +211,7 @@ function ProductListPage() {
                       에스프레소
                     </Button>
                   </TableCell>
-                  <TableCell>클라우드카페(역삼1호점)</TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
