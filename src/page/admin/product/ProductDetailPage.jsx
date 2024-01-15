@@ -41,13 +41,13 @@ function ProductDetailPage() {
     setOpen(false);
   };
 
-  const [open01, setOpen01] = useState(false);
-  const handleOpen01 = () => {
-    setOpen01(true);
-  };
-  const handleClose01 = () => {
-    setOpen01(false);
-  }; 
+  // const [open01, setOpen01] = useState(false);
+  // const handleOpen01 = () => {
+  //   setOpen01(true);
+  // };
+  // const handleClose01 = () => {
+  //   setOpen01(false);
+  // }; 
 
   const [open02, setOpen02] = useState(false);
   const handleOpen02 = () => {
@@ -151,7 +151,7 @@ function ProductDetailPage() {
               </div>
             </td>
           </tr>
-          <tr>
+          {/* <tr>
             <th className="required">판매 매장</th>
             <td colSpan={3}>
               <div className="align top start">
@@ -171,7 +171,7 @@ function ProductDetailPage() {
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> */}
         </Table>
         <div className="align mt_30 mb_10">
           <div className="lft">
@@ -555,7 +555,7 @@ function ProductDetailPage() {
           </Button>
         </div>
       </MuiModal>
-      <MuiModal
+      {/* <MuiModal
         open={open01}
         onClose={handleClose01}
         header={
@@ -629,7 +629,7 @@ function ProductDetailPage() {
             </Button>
           </div>
         </div>
-      </MuiModal>
+      </MuiModal> */}
       <MuiAlert
         open={open02}
         onClose={handleClose02}
