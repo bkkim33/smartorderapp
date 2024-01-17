@@ -5,6 +5,8 @@
 //KDS에만 별도로 사용되는 scss 구성 
 @import './global/kds/kdslogin';
 
+@import './global/kds/kdsmain';
+
 .kds_btn{
   border-radius: 6px;
   background-color: #3E4B57;

@@ -3,9 +3,33 @@ import Layout from '../../layout/KDSDefaultLayout'
 import KDSContentBox from "../../layout/KDSContentBox";
 import MenuSwiper from "./MenuSwiper";
 
+const TopOrderData = [
+  {
+    product: "아메리카노",
+    opt: "ICE",
+    num: 9999,
+  },
+  {
+    product: "배도라지 모과차",
+    opt: "HOT",
+    num: 10,
+  },
+  {
+    product: "블루베리 요거트 스무디",
+    opt: "ETC",
+    num: 9,
+  },
+  {
+    product: "바닐라라떼",
+    opt: "HOT",
+    num: 3,
+  },
+];
+
 const OrderData = [
   {
-    id: "D011",
+    id: "011",
+    pickup: "D",
     ordertime: "08:34:37",
     ProductData: [
       {
@@ -21,14 +45,14 @@ const OrderData = [
         num: 1,
       },
       {
-        product: "배도라지모과차",
+        product: "배도라지 모과차",
         opt: "HOT",
         detopt: "",
         num: 2,
       },
       {
         product: "한라봉 스무디",
-        opt: "",
+        opt: "ETC",
         detopt: "",
         num: 1,
       },
@@ -46,7 +70,7 @@ const OrderData = [
       },
       {
         product: "딸기 요거트 스무디",
-        opt: "",
+        opt: "ETC",
         detopt: "",
         num: 1,
       },
@@ -65,7 +89,8 @@ const OrderData = [
     ],
   },
   {
-    id: "P012",
+    id: "012",
+    pickup: "P",
     ordertime: "08:34:37",
     ProductData: [
       {
@@ -75,14 +100,14 @@ const OrderData = [
         num: 2,
       },
       {
-        product: "배도라지모과차",
+        product: "배도라지 모과차",
         opt: "HOT",
         detopt: "",
         num: 1,
       },
       {
         product: "블루베리 요거트 스무디",
-        opt: "",
+        opt: "ETC",
         detopt: "",
         num: 1,
       },
@@ -101,7 +126,8 @@ const OrderData = [
     ],
   },
   {
-    id: "S013",
+    id: "013",
+    pickup: "S",
     ordertime: "08:34:37",
     ProductData: [
       {
@@ -119,7 +145,8 @@ const OrderData = [
     ],
   },
   {
-    id: "S013",
+    id: "013",
+    pickup: "S",
     ordertime: "08:34:37",
     ProductData: [
       {
@@ -137,7 +164,46 @@ const OrderData = [
     ],
   },
   {
-    id: "S013",
+    id: "013",
+    pickup: "S",
+    ordertime: "08:34:37",
+    ProductData: [
+      {
+        product: "아메리카노",
+        opt: "ICE",
+        detopt: "진하게",
+        num: 4,
+      },
+      {
+        product: "아메리카노",
+        opt: "HOT",
+        detopt: "연하게",
+        num: 1,
+      },
+    ],
+  },
+  {
+    id: "013",
+    pickup: "S",
+    ordertime: "08:34:37",
+    ProductData: [
+      {
+        product: "아메리카노",
+        opt: "ICE",
+        detopt: "진하게",
+        num: 4,
+      },
+      {
+        product: "아메리카노",
+        opt: "HOT",
+        detopt: "연하게",
+        num: 1,
+      },
+    ],
+  },
+  {
+    id: "013",
+    pickup: "S",
     ordertime: "08:34:37",
     ProductData: [
       {
@@ -160,47 +226,22 @@ function MainPage() {
   return (
     <Layout pdnone>
       <KDSContentBox top>
-        <ul>
-          <li>
-            <span>1</span>
-            <div>ice</div>
-            <div>
-              <p>아메리카노</p>
-              <span>
-                <em>9</em>잔
-              </span>
-            </div>
-          </li>
-          <li>
-            <span>1</span>
-            <div>ice</div>
-            <div>
-              <p>아메리카노</p>
-              <span>
-                <em>9</em>잔
-              </span>
-            </div>
-          </li>
-          <li>
-            <span>1</span>
-            <div>ice</div>
-            <div>
-              <p>아메리카노</p>
-              <span>
-                <em>9</em>잔
-              </span>
-            </div>
-          </li>
-          <li>
-            <span>1</span>
-            <div>ice</div>
-            <div>
-              <p>아메리카노</p>
-              <span>
-                <em>9</em>잔
-              </span>
-            </div>
-          </li>
+        <ul className="kds_main_top">
+          {TopOrderData.map((toporder, index) => (
+            <li key={index}>
+              <div className="kds_main_list">
+                <span className="kds_main_opt mr_15">{toporder.opt}</span>
+                <span className="kds_main_product">{toporder.product}</span>
+                <span
+                  className={`${"kds_main_num ml_20"} ${
+                    toporder.opt === "ICE" ? "blue" : ""
+                  }  ${toporder.opt === "HOT" ? "red" : ""}`}
+                >
+                  <em>{toporder.num}</em>잔
+                </span>
+              </div>
+            </li>
+          ))}
         </ul>
       </KDSContentBox>
       <KDSContentBox bottom>

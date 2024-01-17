@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Icons } from "../../components/Icon";
+import EndOrderModal from "./EndOrderModal";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,9 +13,32 @@ function MenuSwiper({data}) {
       el: `${".swiper-pagination"}`,
       clickable: true,
     },
-    slidesPerGroup: 4,
-    slidesPerView: 4,
+    spaceBetween: 10,
+    slidesPerGroup: 6,
+    slidesPerView: 6,
     modules: [Pagination],
+    breakpoints: {
+      280: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      1300: {
+        slidesPerView: 5,
+        spaceBetween: 10,
+      },
+      1450: {
+        slidesPerView: 6,
+        spaceBetween: 10,
+      },
+      1700: {
+        slidesPerView: 7,
+        spaceBetween: 10,
+      },
+      1900: {
+        slidesPerView: 9,
+        spaceBetween: 10,
+      },
+    },
   };
 
   const [min, setMin] = useState(0);
@@ -37,38 +62,62 @@ function MenuSwiper({data}) {
     }
   }, [sec]);
   return (
-    <Swiper {...swiperParams}>
-      {data.map((order, index) => (
-        <SwiperSlide key={index} className={`${"order_visual_card"} `}>
-          <div>
-            <div>
-              <p>{order.id}</p>
-              <div>
-                <p>
-                  {min < 10 ? `0${min}` : min}:{sec < 10 ? `0${sec}` : sec}
-                </p>
-                <p>{order.ordertime}</p>
+    <>
+      <Swiper {...swiperParams} className={`${"kds_main_order_swiper"} `}>
+        {data.map((order, index) => (
+          <SwiperSlide key={index} className={`${"kds_main_order"} `}>
+            <div className={`${"kds_main_order_box"} `}>
+              <button
+                // onDoubleClick
+                className={`${"kds_main_order_top"} ${
+                  min > 2 ? "warning" : ""
+                } ${min > 4 ? "issue" : ""}`}
+              >
+                <div className="kds_main_order_top_pick">
+                  <p className="pick">{order.pickup}</p>
+                  <p className="num ml_12">{order.id}</p>
+                </div>
+                <div className="kds_main_order_top_pick mt_10">
+                  <div className="lft">
+                    <Icons.KDSTime />
+                    <p className="clock ml_5">
+                      {min < 10 ? `0${min}` : min}:{sec < 10 ? `0${sec}` : sec}
+                    </p>
+                  </div>
+                  <div className="rgt">
+                    <p className="ordertime">{order.ordertime}</p>
+                  </div>
+                </div>
+              </button>
+              <div className={`${"kds_main_order_bottom"} `}>
+                <ul>
+                  {order?.ProductData.map((orderlist, index) => (
+                    <li key={index}>
+                      <div className="kds_main_list">
+                        <span className="kds_main_opt mr_10">{orderlist.opt}</span>
+                        <span className="kds_main_product">
+                          {orderlist.product}
+                          {orderlist.detopt && <span>{orderlist.detopt}</span>}
+                        </span>
+                        <span
+                          className={`${"kds_main_num ml_10"} ${
+                            orderlist.opt === "ICE" ? "blue" : ""
+                          }  ${orderlist.opt === "HOT" ? "red" : ""}`}
+                        >
+                          <em>{orderlist.num}</em>잔
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <div>
-              <ul>
-                {order?.ProductData.map((orderlist, index) => (
-                  <li key={index}>
-                    <span>{orderlist.num}</span>
-                    <p>
-                      <span>{orderlist.opt}</span>
-                      <span>{orderlist.product}</span>
-                    </p>
-                    {orderlist.detopt && <p>{orderlist.detopt}</p>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-      <div className={`${"swiper-pagination"} ${"menudetail"}`}></div>
-    </Swiper>
+          </SwiperSlide>
+        ))}
+        <div className={`${"swiper-pagination"} ${"menudetail"}`}></div>
+      </Swiper>
+      <EndOrderModal/>
+    </>
   );
 
 }

@@ -21,7 +21,7 @@ function HeaderLayout() {
   return (
     <header className={`${styles.header}`}>
       <div className={`${styles.header_top}`}>
-        <Icons.AdminHeaderLogo width={"100%"} height={60} fill="#fff" />
+        <Icons.AdminHeaderLogo width={"100%"} height={45} fill="#fff" />
         <p className={`${styles.util} ${"mt_30"}`}>
           <span className={`${styles.util_title}`}>클라우드카페</span>
           <span>2023.11.10 (금)</span>
@@ -31,13 +31,13 @@ function HeaderLayout() {
           <li>
             <Link to="/kds/main">
               <Icons.KDSMenu1 fill="#3A3A3A" />
-              <span>제조현황</span>
+              <span style={{ display: "none" }}>제조현황</span>
             </Link>
           </li>
           <li className="mt_20">
             <Link to="/kds/endorder">
               <Icons.KDSMenu2 />
-              <span>제조완료</span>
+              <span style={{ display: "none" }}>제조완료</span>
             </Link>
           </li>
         </ul>
@@ -47,7 +47,7 @@ function HeaderLayout() {
           onClick={() => navigate("/kds/setting")}
           className={`${styles.user_button} ${""}`}
         >
-          <Icons.Setting width={16} height={16} fill="#3A3A3A" />
+          <Icons.KDSSet />
           <span className="ml_7">환경설정</span>
         </button>
         <button
@@ -56,7 +56,8 @@ function HeaderLayout() {
           }}
           className={`${styles.user_button} ${""}`}
         >
-          <span>로그아웃</span>
+          <Icons.KDSlog />
+          <span className="ml_7">로그아웃</span>
         </button>
       </div>
     </header>
