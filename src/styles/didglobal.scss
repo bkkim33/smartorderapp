@@ -49,8 +49,8 @@
     padding-top: 7.31vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 1.56vw;
-    row-gap: 2.78vh;
+    column-gap: 1.04vw;
+    row-gap: 1.85vh;
     li{
       display: flex;
       align-items: center;
@@ -76,6 +76,7 @@
       svg{
         width: 8.61vh;
         height: 4.84vw;
+        opacity: 0.2;
       }
     }
   }
