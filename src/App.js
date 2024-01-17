@@ -5,6 +5,10 @@ import KDSError from "./page/kds/KDSError";
 import Loading from "./components/Loading";
 import KDSLoading from "./components/KDSLoading";
 
+// DID import
+import "./styles/didglobal.scss";
+import DIDMain from "./page/did/MainPage";
+
 // KDS import
 import "./styles/kdsglobal.scss";
 import KDSLogin from "./page/kds/login/KDSLoginPage";
@@ -331,6 +335,11 @@ function App() {
         <Route path="/kds/setting/changepassword" element={<KDSChangePW />} />
         {/* KDS 제조현황 */}
         <Route path="/kds/main" element={<KDSMain />} />
+      </Route>
+
+      <Route>
+        {/* DID 메인 */}
+        <Route path="/did/main" element={<DIDMain />} />
       </Route>
       {/* <Route path="/*" element={<Main />} /> */}
     </Routes>
