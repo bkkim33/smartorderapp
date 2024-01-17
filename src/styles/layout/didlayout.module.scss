@@ -3,6 +3,7 @@
 .layout{
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 .content{
   display: flex;
@@ -10,18 +11,18 @@
   flex: 1;
   &_box{
     width: 100%;
+    height: 100vh;
     > img {
+      width: 100%;
       height: 100%;
       object-fit: cover;
     }
     &_left{
-      position: relative;
-      
+      position: relative;      
       background: #DAEE5F;
       flex: 1;
     }
-    &_right{
-      padding: 3.91vw 2.47vw;
+    &_right{      
       width: 26.04vw;
       background: #3E4B57;
     }
