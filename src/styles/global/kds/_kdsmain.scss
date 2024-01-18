@@ -2,16 +2,26 @@
   &_top{
     display: flex;
     background-color: var(--cff);
-    box-shadow: 0px 30px 49px 0px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
-    padding: 22px 75px;
+    padding: 15px 0;
     li{
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex: 1;
+      padding: 0 35px;
+      
       & + li{
-        margin-left: 30px;
+        position: relative;
+        &::before{
+          content: '';
+          display: block;
+          width: 2px;
+          height: 40px;
+          background-color: #e7e7e7;
+          position: absolute;
+          left: 0;
+        }
       }
     }
   }
@@ -24,12 +34,41 @@
     display: inline-block;
     text-align: center;
     min-width: 36px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--cff);
-    background: #5A6983;
     border-radius: 3px;
-    padding: 4px 2px;
+    position: relative;
+    &.ice{
+      .kds_main_opt_txt{
+        span{
+          color: #3048EC;
+        }
+      }
+    }
+    &.hot{
+      .kds_main_opt_txt{
+        span{
+          color: #E82A33;
+        }
+      }
+    }
+    &_txt{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 7px 5px;
+      span{
+        display: block;
+        color: #3E4B57;
+        font-weight: 700;
+        font-size: 14px;
+        &.num{
+          em{
+            font-size: 22px;
+          }
+        }
+      }
+    }
   }
   &_product{
     flex: 1;
@@ -58,11 +97,25 @@
       background: var(--cff);
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.10);
     }
     &_swiper{
       height: 100%;
       padding: 0 35px 70px !important;
+      &_pagination{
+        .swiper-pagination-bullet{
+          width: 20px;
+          height: 20px;
+          border-radius: 10px;
+          background-color: rgba($color: #3E4B57, $alpha: 0.4) !important;
+          opacity: 1 !important;
+          &-active{
+            background-color: #3E4B57 !important;
+          }
+          & + .swiper-pagination-bullet{
+            margin-left: 10px;
+          }
+        }
+      }
     }
     &_top{
       width: 100%;
@@ -86,7 +139,6 @@
           height: 33px;
           border-radius: 4px;
           background: rgba($color: #000000, $alpha: 0.4);
-          box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.50);
           color: var(--cff);
           font-size: 25px;
           font-weight: 700;
@@ -122,26 +174,27 @@
       max-height: calc(100% - 100px);
       margin: 10px 4px 10px 0;
       &::-webkit-scrollbar-track {
-        border-radius: 4px;
+        width: 8px;
+        // border-radius: 5px;
         background-color: var(--cff);
       }
 
       &::-webkit-scrollbar {
-        width: 8px;
-        border-radius: 4px;
-        background-color: var(--cdd);
+        width: 4px;
+        border-radius: 3px;
+        background-color: #3E4B57;
       }
 
       &::-webkit-scrollbar-thumb {
-        border-radius: 4px;
-        width: 4px;
-        border: 4px solid var(--cdd);
-        background-color: var(--cdd);
+        border-radius: 3px;
+        width: 5px;
+        border: 5px solid #3E4B57;
+        background-color: #3E4B57;
       }
       ul{
         padding: 0 5px 0 10px;
         li{
-          padding: 15px 5px;
+          padding: 15px 10px;
           & + li{
             border-top: 1px solid #E7E7E7;
           }
@@ -168,6 +221,46 @@
               height: 5px;
               border-left: 1px solid #bbb;
               border-bottom: 1px solid #bbb;
+            }
+          }
+        }
+        .kds_main_opt{
+          display: inline-block;
+          text-align: center;
+          min-width: 36px;
+          border-radius: 3px;
+          position: relative;
+          &.ice{
+            .kds_main_opt_txt{
+              span{
+                color: #3048EC;
+              }
+            }
+          }
+          &.hot{
+            .kds_main_opt_txt{
+              span{
+                color: #E82A33;
+              }
+            }
+          }
+          &_txt{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 6px 5px;
+            span{
+              display: block;
+              color: #3E4B57;
+              font-weight: 700;
+              font-size: 10px;
+              &.num{
+                em{
+                  font-size: 16px;
+                }
+              }
             }
           }
         }
@@ -212,5 +305,15 @@
   }
   &_btn{
 
+  }
+}
+
+@media (max-width: "1200px") {
+  .kds_main{
+    &_top{
+      li{
+        padding: 0 15px;
+      }
+    }
   }
 }

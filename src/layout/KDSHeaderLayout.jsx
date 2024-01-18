@@ -21,27 +21,28 @@ function HeaderLayout() {
   return (
     <header className={`${styles.header}`}>
       <div className={`${styles.header_top}`}>
-        <Icons.AdminHeaderLogo width={"100%"} height={45} fill="#fff" />
-        <p className={`${styles.util} ${"mt_30"}`}>
+        <button></button>
+        <Icons.AdminHeaderLogo width={"100%"} fill="#fff" />
+        <p className={`${styles.util} ${"mt_20"}`}>
           <span className={`${styles.util_title}`}>클라우드카페</span>
-          <span>2023.11.10 (금)</span>
+          <span className="mt_10">2023.11.10 (금)</span>
           <span>15:52:25</span>
         </p>
-        <ul className={`${styles.link_btn} ${"mt_50"}`}>
-          <li>
-            <Link to="/kds/main">
-              <Icons.KDSMenu1 fill="#3A3A3A" />
-              <span style={{ display: "none" }}>제조현황</span>
-            </Link>
-          </li>
-          <li className="mt_20">
-            <Link to="/kds/endorder">
-              <Icons.KDSMenu2 />
-              <span style={{ display: "none" }}>제조완료</span>
-            </Link>
-          </li>
-        </ul>
       </div>
+      <ul className={`${styles.link_btn}`}>
+        <li>
+          <Link to="/kds/main">
+            <Icons.KDSMenu1 width={39} height={39} fill="#3A3A3A" />
+            <span>제조현황</span>
+          </Link>
+        </li>
+        <li className="mt_20">
+          <Link to="/kds/endorder">
+            <Icons.KDSMenu2 width={39} height={39} />
+            <span>제조완료</span>
+          </Link>
+        </li>
+      </ul>
       <div className={`${styles.user_util} ${"mt_50"}`}>
         <button
           onClick={() => navigate("/kds/setting")}

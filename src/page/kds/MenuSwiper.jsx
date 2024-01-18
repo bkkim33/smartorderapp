@@ -94,17 +94,48 @@ function MenuSwiper({data}) {
                   {order?.ProductData.map((orderlist, index) => (
                     <li key={index}>
                       <div className="kds_main_list">
-                        <span className="kds_main_opt mr_10">{orderlist.opt}</span>
+                        <div
+                          className={`${"kds_main_opt mr_15"} ${
+                            orderlist.opt === "ICE" ? "ice" : ""
+                          }  ${orderlist.opt === "HOT" ? "hot" : ""}`}
+                        >
+                          <div className="kds_main_opt_txt">
+                            <span>{orderlist.opt}</span>
+                            <span className="num mt_2">
+                              <em>{orderlist.num}</em>잔
+                            </span>
+                          </div>
+                          <div className="kds_main_opt_bg">
+                            {orderlist.opt === "ICE" && (
+                              <Icons.KDSOrder
+                                width={40}
+                                height={44}
+                                fill="#F2F4FF"
+                                stroke="#D9DEFF"
+                              />
+                            )}
+                            {orderlist.opt === "HOT" && (
+                              <Icons.KDSOrder
+                                width={40}
+                                height={44}
+                                fill="#FFF2F2"
+                                stroke="#FFD9D9"
+                              />
+                            )}
+                            {orderlist.opt !== "ICE" &&
+                              orderlist.opt !== "HOT" && (
+                                <Icons.KDSOrder
+                                  width={40}
+                                  height={44}
+                                  fill="#F5F6F7"
+                                  stroke="#C5C9CD"
+                                />
+                              )}
+                          </div>
+                        </div>
                         <span className="kds_main_product">
                           {orderlist.product}
                           {orderlist.detopt && <span>{orderlist.detopt}</span>}
-                        </span>
-                        <span
-                          className={`${"kds_main_num ml_10"} ${
-                            orderlist.opt === "ICE" ? "blue" : ""
-                          }  ${orderlist.opt === "HOT" ? "red" : ""}`}
-                        >
-                          <em>{orderlist.num}</em>잔
                         </span>
                       </div>
                     </li>
@@ -114,9 +145,11 @@ function MenuSwiper({data}) {
             </div>
           </SwiperSlide>
         ))}
-        <div className={`${"swiper-pagination"} ${"menudetail"}`}></div>
+        <div
+          className={`${"swiper-pagination"} ${"kds_main_order_swiper_pagination"}`}
+        ></div>
       </Swiper>
-      <EndOrderModal/>
+      <EndOrderModal />
     </>
   );
 

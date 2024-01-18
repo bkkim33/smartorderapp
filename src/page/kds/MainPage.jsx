@@ -1,13 +1,14 @@
 import React from "react";
 import Layout from '../../layout/KDSDefaultLayout'
 import KDSContentBox from "../../layout/KDSContentBox";
+import { Icons } from "../../components/Icon";
 import MenuSwiper from "./MenuSwiper";
 
 const TopOrderData = [
   {
     product: "아메리카노",
     opt: "ICE",
-    num: 9999,
+    num: 99,
   },
   {
     product: "배도라지 모과차",
@@ -230,15 +231,30 @@ function MainPage() {
           {TopOrderData.map((toporder, index) => (
             <li key={index}>
               <div className="kds_main_list">
-                <span className="kds_main_opt mr_15">{toporder.opt}</span>
-                <span className="kds_main_product">{toporder.product}</span>
-                <span
-                  className={`${"kds_main_num ml_20"} ${
-                    toporder.opt === "ICE" ? "blue" : ""
-                  }  ${toporder.opt === "HOT" ? "red" : ""}`}
+                <div
+                  className={`${"kds_main_opt mr_15"} ${
+                    toporder.opt === "ICE" ? "ice" : ""
+                  }  ${toporder.opt === "HOT" ? "hot" : ""}`}
                 >
-                  <em>{toporder.num}</em>잔
-                </span>
+                  <div className="kds_main_opt_txt">
+                    <span>{toporder.opt}</span>
+                    <span className="num mt_3">
+                      <em>{toporder.num}</em>잔
+                    </span>
+                  </div>
+                  <div className="kds_main_opt_bg">
+                    {toporder.opt === "ICE" && (
+                      <Icons.KDSOrder fill="#F2F4FF" stroke="#D9DEFF" />
+                    )}
+                    {toporder.opt === "HOT" && (
+                      <Icons.KDSOrder fill="#FFF2F2" stroke="#FFD9D9" />
+                    )}
+                    {toporder.opt !== "ICE" && toporder.opt !== "HOT" && (
+                      <Icons.KDSOrder fill="#F5F6F7" stroke="#C5C9CD" />
+                    )}
+                  </div>
+                </div>
+                <span className="kds_main_product">{toporder.product}</span>
               </div>
             </li>
           ))}
