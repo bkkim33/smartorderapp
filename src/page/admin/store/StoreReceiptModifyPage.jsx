@@ -147,12 +147,12 @@ function StoreReceiptModifyPage() {
                     <TableCell rowSpan={2}>테이블 수령</TableCell>
                     <TableCell>직원 서빙</TableCell>
                     <TableCell>
-                      <Input
+                      {/* <Input
                         width="440px"
                         numericOnly={true}
                         placeholder="서빙 직원 수"
                         // defaultValue={4}
-                      />
+                      /> */}
                     </TableCell>
                     <TableCell>
                       <FormGroup globalClass="align center">

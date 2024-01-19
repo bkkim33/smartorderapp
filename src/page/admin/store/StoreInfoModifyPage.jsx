@@ -9,6 +9,7 @@ import Checkbox from "../../../components/Checkbox";
 import Modal from "./AdrresModal";
 import MuiAlert from "../../../components/MuiAlert";
 import Chip from "../../../components/Chip";
+import FileUpload from "../../../components/FileUpload";
 
 // import Tabs from "../../../../components/Tabs";
 // import StoreInfo from "./StoreInfo";
@@ -91,9 +92,9 @@ function StoreInfoModifyPage() {
           globalClass="flex1"
           colgroup={
             <>
-              <col width="10%" />
+              <col width="12%" />
               <col width="auto" />
-              <col width="10%" />
+              <col width="12%" />
               <col width="auto" />
             </>
           }
@@ -223,6 +224,16 @@ function StoreInfoModifyPage() {
             </td>
           </tr>
           <tr>
+            <th className="required">DID 영업 전 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+            </td>
+            <th className="required">DID 영업 종료 이미지</th>
+            <td className="vertical_top">
+              <FileUpload onChange={() => {}} />
+            </td>
+          </tr>
+          <tr>
             <th className="required">직원</th>
             <td colSpan={3}>
               <div className="align start">
@@ -252,6 +263,30 @@ function StoreInfoModifyPage() {
                   <Chip label="박민수2" onClick={() => {}} />
                 </div>
               </div>
+            </td>
+          </tr>
+          <tr>
+            <th className="required">영업상태</th>
+            <td colSpan={3}>
+              <FormGroup>
+                <Radio
+                  name="contact11"
+                  id="radio51"
+                  value="exposure"
+                  defaultChecked
+                >
+                  영업중
+                </Radio>
+                <Radio name="contact11" id="radio61" value="nonexposed">
+                  영업전
+                </Radio>
+                <Radio name="contact11" id="radio71" value="nonexposed">
+                  영업 종료
+                </Radio>
+                <Radio name="contact11" id="radio81" value="nonexposed">
+                  휴점
+                </Radio>
+              </FormGroup>
             </td>
           </tr>
         </Table>

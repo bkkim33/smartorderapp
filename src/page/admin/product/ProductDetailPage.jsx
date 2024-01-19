@@ -7,6 +7,8 @@ import Input from "../../../components/Input";
 import Select from "../../../components/Select";
 import Table from "../../../components/Table";
 import FileUpload from "../../../components/FileUpload";
+import FormGroup from "../../../components/FormGroup";
+import Radio from "../../../components/Radio";
 import Chip from "../../../components/Chip";
 import Checkbox from "../../../components/Checkbox";
 import MuiModal from "../../../components/MuiModal";
@@ -196,8 +198,9 @@ function ProductDetailPage() {
             <MuiTable sx={{ minWidth: 650 }} aria-label="simple table">
               <colgroup>
                 <col width="2%" />
-                <col width="39%" />
-                <col width="59%" />
+                <col width="30%" />
+                <col width="50%" />
+                <col width="18%" />
               </colgroup>
               <TableHead>
                 <TableRow>
@@ -206,9 +209,82 @@ function ProductDetailPage() {
                   </TableCell>
                   <TableCell>옵션명</TableCell>
                   <TableCell>상세옵션</TableCell>
+                  <TableCell>사용여부</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
+                <TableRow>
+                  <TableCell className="top"></TableCell>
+                  <TableCell className="top">
+                    <Input width="300px" defaultValue="HOT/ICE" disabled />
+                  </TableCell>
+                  <TableCell className="top">
+                    <div className="align start bottom">
+                      <div
+                        className="item wrap"
+                        style={{ width: "min-content" }}
+                      >
+                        <div className="align top start">
+                          <div className="item">
+                            <div className="pt_5 ml_5 mr_5">
+                              <Checkbox
+                                id="checkbox02221"
+                                name="checkbox02221"
+                              />
+                            </div>
+                          </div>
+                          <div className="item">
+                            <Input width="300px" defaultValue="HOT" disabled />
+                          </div>
+                          <div className="item">
+                            <Input
+                              width="300px"
+                              placeholder="숫자만 입력"
+                              type="number"
+                              numtxt="원"
+                            />
+                          </div>
+                        </div>
+                        <div className="align top start mt_10">
+                          <div className="item">
+                            <div className="pt_5 ml_5 mr_5">
+                              <Checkbox
+                                id="checkbox02222"
+                                name="checkbox02221"
+                              />
+                            </div>
+                          </div>
+                          <div className="item">
+                            <Input width="300px" defaultValue="ICE" disabled />
+                          </div>
+                          <div className="item">
+                            <Input
+                              width="300px"
+                              placeholder="숫자만 입력"
+                              type="number"
+                              numtxt="원"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <FormGroup globalClass="align center">
+                      <Radio
+                        name="contact0"
+                        id="radio1"
+                        value="노출"
+                        defaultChecked
+                      >
+                        사용
+                      </Radio>
+                      <Radio name="contact0" id="radio2" value="비노출">
+                        미사용
+                      </Radio>
+                    </FormGroup>
+                  </TableCell>
+                </TableRow>
                 <TableRow>
                   <TableCell className="top">
                     <div className="pt_5">
@@ -311,6 +387,21 @@ function ProductDetailPage() {
                         </Button>
                       </div>
                     </div>
+                  </TableCell>
+                  <TableCell>
+                    <FormGroup globalClass="align center">
+                      <Radio
+                        name="contact0"
+                        id="radio1"
+                        value="노출"
+                        defaultChecked
+                      >
+                        사용
+                      </Radio>
+                      <Radio name="contact0" id="radio2" value="비노출">
+                        미사용
+                      </Radio>
+                    </FormGroup>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -449,6 +540,21 @@ function ProductDetailPage() {
                         </Button>
                       </div>
                     </div>
+                  </TableCell>
+                  <TableCell>
+                    <FormGroup globalClass="align center">
+                      <Radio
+                        name="contact0"
+                        id="radio1"
+                        value="노출"
+                        defaultChecked
+                      >
+                        사용
+                      </Radio>
+                      <Radio name="contact0" id="radio2" value="비노출">
+                        미사용
+                      </Radio>
+                    </FormGroup>
                   </TableCell>
                 </TableRow>
               </TableBody>
