@@ -6,7 +6,14 @@ function EndOrderModal({ data }) {
     <div className="kds_modal">
       <div className="kds_modal_box">
         <div className="kds_modal_pick">
-          <h3>픽업대 선택</h3>
+          <div className="align">
+            <div className="lft">
+              <h3>픽업대 선택</h3>
+            </div>
+            <div className="rgt">
+              <p>주문번호 <em>110</em></p>
+            </div>
+          </div>
           <div>
             <ul>
               <li>

@@ -3,6 +3,7 @@ import Layout from '../../layout/KDSDefaultLayout'
 import KDSContentBox from "../../layout/KDSContentBox";
 import { Icons } from "../../components/Icon";
 import MenuSwiper from "./MenuSwiper";
+import Nodata from "./NoOrder";
 
 const TopOrderData = [
   {
@@ -14,6 +15,16 @@ const TopOrderData = [
     product: "배도라지 모과차",
     opt: "HOT",
     num: 10,
+  },
+  {
+    product: "블루베리 요거트 스무디",
+    opt: "ETC",
+    num: 9,
+  },
+  {
+    product: "바닐라라떼",
+    opt: "HOT",
+    num: 3,
   },
   {
     product: "블루베리 요거트 스무디",
@@ -223,47 +234,61 @@ const OrderData = [
   },
 ];
    
+
+// const OrderData = []
+
+
 function MainPage() {
   return (
-    <Layout pdnone>
-      <KDSContentBox top>
-        <ul className="kds_main_top">
-          {TopOrderData.map((toporder, index) => (
-            <li key={index}>
-              <div className="kds_main_list">
-                <div
-                  className={`${"kds_main_opt mr_15"} ${
-                    toporder.opt === "ICE" ? "ice" : ""
-                  }  ${toporder.opt === "HOT" ? "hot" : ""}`}
-                >
-                  <div className="kds_main_opt_txt">
-                    <span>{toporder.opt}</span>
-                    <span className="num mt_3">
-                      <em>{toporder.num}</em>잔
-                    </span>
-                  </div>
-                  <div className="kds_main_opt_bg">
-                    {toporder.opt === "ICE" && (
-                      <Icons.KDSOrder fill="#F2F4FF" stroke="#D9DEFF" />
-                    )}
-                    {toporder.opt === "HOT" && (
-                      <Icons.KDSOrder fill="#FFF2F2" stroke="#FFD9D9" />
-                    )}
-                    {toporder.opt !== "ICE" && toporder.opt !== "HOT" && (
-                      <Icons.KDSOrder fill="#F5F6F7" stroke="#C5C9CD" />
-                    )}
-                  </div>
-                </div>
-                <span className="kds_main_product">{toporder.product}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </KDSContentBox>
-      <KDSContentBox bottom>
-        <MenuSwiper data={OrderData} />
-      </KDSContentBox>
-    </Layout>
+    <>
+      <Layout pdnone={OrderData?.length > 0}>
+        {OrderData?.length > 0 ? (
+          <>
+            <KDSContentBox top>
+              <ul className="kds_main_top">
+                {TopOrderData.map((toporder, index) => (
+                  <li key={index}>
+                    <div className="kds_main_list">
+                      <div
+                        className={`${"kds_main_opt mr_15"} ${
+                          toporder.opt === "ICE" ? "ice" : ""
+                        }  ${toporder.opt === "HOT" ? "hot" : ""}`}
+                      >
+                        <div className="kds_main_opt_txt">
+                          <span>{toporder.opt}</span>
+                          <span className="num mt_3">
+                            <em>{toporder.num}</em>잔
+                          </span>
+                        </div>
+                        <div className="kds_main_opt_bg">
+                          {toporder.opt === "ICE" && (
+                            <Icons.KDSOrder fill="#F2F4FF" stroke="#D9DEFF" />
+                          )}
+                          {toporder.opt === "HOT" && (
+                            <Icons.KDSOrder fill="#FFF2F2" stroke="#FFD9D9" />
+                          )}
+                          {toporder.opt !== "ICE" && toporder.opt !== "HOT" && (
+                            <Icons.KDSOrder fill="#F5F6F7" stroke="#C5C9CD" />
+                          )}
+                        </div>
+                      </div>
+                      <span className="kds_main_product">
+                        {toporder.product}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </KDSContentBox>
+            <KDSContentBox bottom>
+              <MenuSwiper data={OrderData} />
+            </KDSContentBox>
+          </>
+        ) : (
+          <Nodata />
+        )}
+      </Layout>
+    </>
   );
 }
 
