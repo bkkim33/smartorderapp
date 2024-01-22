@@ -216,7 +216,7 @@ function ProductDetailPage() {
                 <TableRow>
                   <TableCell className="top"></TableCell>
                   <TableCell className="top">
-                    <Input width="300px" defaultValue="HOT/ICE" disabled />
+                    <Input width="300px" defaultValue="HOT/ICED" disabled />
                   </TableCell>
                   <TableCell className="top">
                     <div className="align start bottom">
@@ -255,7 +255,7 @@ function ProductDetailPage() {
                             </div>
                           </div>
                           <div className="item">
-                            <Input width="300px" defaultValue="ICE" disabled />
+                            <Input width="300px" defaultValue="ICED" disabled />
                           </div>
                           <div className="item">
                             <Input
