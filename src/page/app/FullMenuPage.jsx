@@ -49,7 +49,7 @@ const CoffeeData = [
     price: 4500,
     type: "adejuice",
     favorites: false,
-    notsold: "미판매",
+    notsold: "판매중지",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const CoffeeData = [
     price: 5500,
     type: "noncoffee",
     favorites: true,
-    notsold: "미판매",
+    notsold: "품절",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ const CoffeeData = [
     price: 5500,
     type: "adejuice",
     favorites: false,
-    notsold: "미판매",
+    notsold: "판매중지",
   },
   {
     id: 8,

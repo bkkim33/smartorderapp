@@ -43,6 +43,7 @@ const CoffeeData = [
     price: 4500,
     type: "adejuice",
     favorites: false,
+    notsold: "판매중지",
   },
   {
     id: 6,
@@ -50,7 +51,8 @@ const CoffeeData = [
     image: require("../../images/item03.png"),
     price: 5500,
     type: "noncoffee",
-    favorites: false,
+    favorites: true,
+    notsold: "품절",
   },
   {
     id: 7,
@@ -59,6 +61,7 @@ const CoffeeData = [
     price: 5500,
     type: "adejuice",
     favorites: false,
+    notsold: "판매중지",
   },
   {
     id: 8,
@@ -77,7 +80,7 @@ const Favorites = CoffeeData.filter(
 
 function FavoritesMenuPage() {
   return (
-    <div className="coffeemenu pt_20">
+    <div className="coffeemenu mt_20">
       {Favorites?.length > 0 ? (
         <Card data={Favorites} />
       ) : (
