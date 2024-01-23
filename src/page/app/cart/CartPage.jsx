@@ -18,7 +18,7 @@ function CartPage({ isHotIce }) {
   // 지점 드롭다운
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // 지점 초기값
-  const [selectedLocation, setSelectedLocation] = useState("클라우드카페 역삼점");
+  const [selectedLocation, setSelectedLocation] = useState(null);
   // 지점 선택시 데이터
   const [locations, setLocations] = useState(initialLocations);
   const handleLocationChange = (location) => {
@@ -155,7 +155,8 @@ const navigate = useNavigate();
             <div className="align start">
               <Icons.Location width={20} height={20} fill="#495EEC" />
               <p className="location_text ml_5 ">
-                <b>{selectedLocation}</b>의 메뉴입니다.
+                <b>{selectedLocation ? selectedLocation : "주문 매장"}</b>
+                {selectedLocation ? "의 메뉴입니다." : "을 선택해주세요."}
               </p>
             </div>
             <Button
