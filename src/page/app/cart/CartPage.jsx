@@ -165,7 +165,7 @@ const navigate = useNavigate();
               line
               color="gray"
             >
-              변경
+              {selectedLocation ? "변경" : "선택"}
             </Button>
             {isDropdownOpen && (
               <ul className="location_dropdown">
