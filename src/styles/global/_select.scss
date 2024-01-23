@@ -3,6 +3,7 @@
     &_#{$value} {
       .select__control{
         height: #{$value}px;
+        padding: 0 15px;
       }
     }
   }
