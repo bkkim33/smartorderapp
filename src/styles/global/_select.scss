@@ -1,3 +1,14 @@
+@for $value from 0 through 100 {
+  .h{
+    &_#{$value} {
+      .select__control{
+        height: #{$value}px;
+      }
+    }
+  }
+      
+}
+
 .select {
   width: 100%;
   &.line {
@@ -14,6 +25,8 @@
       @include rounded(4px);
     }
   }
+  
+  
   &.allround{
     .select__control{
       @include rounded(16px);

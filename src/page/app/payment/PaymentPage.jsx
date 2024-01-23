@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../../layout/AppDefaultLayout";
 import MuiTooltip from "../../../components/MuiTooltip";
 import Tabs from "../../../components/Tabs";
+import Select from "../../../components/Select";
 import TextToggle from "../../../components/TextToggle";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
@@ -183,27 +184,6 @@ function PaymentPage() {
               </dl>
             </MuiTooltip>
           </div>
-          {/* <TextToggle
-            data={[
-              {
-                defaultActive: true,
-                id: 1,
-                option: null,
-                title: "본인픽업",
-              },
-              {
-                id: 2,
-                option: null,
-                title: "테이블수령",
-              },
-              {
-                id: 3,
-                option: null,
-                title: "배달요청",
-              },
-            ]}
-            type="linebox"
-          /> */}
           <Tabs
             type="linebox"
             TabsData={[
@@ -219,19 +199,29 @@ function PaymentPage() {
                 content: (
                   <div style={{ width: "100%" }}>
                     <div className="align gap_10 mt_15">
-                      <Input
-                        height="large"
-                        defaultValue=""
-                        placeholder="테이블 번호를 입력해 주세요."
-                      />
-                      <Button
-                        size="large"
-                        color="black"
-                        line
-                        onClick={() => {}}
+                      <div
+                        style={{
+                          width: "100%",
+                        }}
                       >
-                        입력
-                      </Button>
+                        <Select
+                          height={"h_50"}
+                          options={[
+                            {
+                              label: "1",
+                              value: "1",
+                            },
+                            {
+                              label: "2",
+                              value: "2",
+                            },
+                            {
+                              label: "3",
+                              value: "3",
+                            },
+                          ]}
+                        />
+                      </div>
                     </div>
                     <p className="mt_10 body1">
                       <strong>23</strong>번 테이블로 서빙해 드립니다.

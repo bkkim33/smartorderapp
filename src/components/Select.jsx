@@ -32,7 +32,7 @@ const Input = (props) => (
 );
 
 export function Select({ options, ...others }) {
-  const { round, maxwidth, minwidth, placeholder, disabled, multi, defaultValue } = others;
+  const { round, maxwidth, minwidth, placeholder, disabled, multi, defaultValue, height } = others;
   const [selectedOption, setSelectedOption] = useState(defaultValue || null);
     return (
       <div
@@ -47,7 +47,7 @@ export function Select({ options, ...others }) {
           components={{ Input }}
           isSearchable
           isMulti={multi}
-          className={`${"select"} ${round || ""}`}
+          className={`${"select"} ${round || ""} ${height || ""}`}
           classNamePrefix="select"
           placeholder={placeholder}
           defaultValue={selectedOption}
@@ -61,9 +61,9 @@ export function Select({ options, ...others }) {
               color:
                 selectedOption?.label === "품절"
                   ? "red"
-                  : "" || (selectedOption?.label === "판매중지")
+                  : "" || selectedOption?.label === "판매중지"
                   ? "orange"
-                  : "" || (selectedOption?.label === "판매중")
+                  : "" || selectedOption?.label === "판매중"
                   ? "green"
                   : "",
             }),
