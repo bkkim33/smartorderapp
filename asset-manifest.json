@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/smartorderapp/static/css/main.1ab2917f.css",
-    "main.js": "/smartorderapp/static/js/main.db4e7faf.js",
+    "main.css": "/smartorderapp/static/css/main.fe373f39.css",
+    "main.js": "/smartorderapp/static/js/main.23693a79.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
     "static/media/DID_bg_left.png": "/smartorderapp/static/media/DID_bg_left.423a3bc9b0b4ca66b976.png",
     "static/media/KDS_bg.png": "/smartorderapp/static/media/KDS_bg.cd045b309c89c43083a2.png",
@@ -25,18 +25,17 @@
     "static/media/item03.png": "/smartorderapp/static/media/item03.916f2bf1905e25d822b1.png",
     "static/media/item02.png": "/smartorderapp/static/media/item02.634b35fc7a464e91e6e6.png",
     "static/media/item04.png": "/smartorderapp/static/media/item04.1d1cefb271bb3b535528.png",
-    "static/media/coffee_img.png": "/smartorderapp/static/media/coffee_img.fc2eac7784ab1b9d354b.png",
     "static/media/item.png": "/smartorderapp/static/media/item.b4ff7835947426466099.png",
     "static/media/item01.png": "/smartorderapp/static/media/item01.c396075609bae8bceee3.png",
     "static/media/itemcoupon01.png": "/smartorderapp/static/media/itemcoupon01.825751d2b357dadabf83.png",
     "static/media/itemcoupon02.png": "/smartorderapp/static/media/itemcoupon02.5f65d2403492434e7905.png",
     "index.html": "/smartorderapp/index.html",
-    "main.1ab2917f.css.map": "/smartorderapp/static/css/main.1ab2917f.css.map",
-    "main.db4e7faf.js.map": "/smartorderapp/static/js/main.db4e7faf.js.map",
+    "main.fe373f39.css.map": "/smartorderapp/static/css/main.fe373f39.css.map",
+    "main.23693a79.js.map": "/smartorderapp/static/js/main.23693a79.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ab2917f.css",
-    "static/js/main.db4e7faf.js"
+    "static/css/main.fe373f39.css",
+    "static/js/main.23693a79.js"
   ]
 }
