@@ -147,12 +147,6 @@ function StoreReceiptModifyPage() {
                     <TableCell rowSpan={2}>테이블 수령</TableCell>
                     <TableCell>직원 서빙</TableCell>
                     <TableCell>
-                      {/* <Input
-                        width="440px"
-                        numericOnly={true}
-                        placeholder="서빙 직원 수"
-                        // defaultValue={4}
-                      /> */}
                     </TableCell>
                     <TableCell>
                       <FormGroup globalClass="align center">
@@ -178,7 +172,7 @@ function StoreReceiptModifyPage() {
                           className="item wrap"
                           style={{ width: "min-content" }}
                         >
-                          <div className="align center start">
+                          <div className="align top start">
                             <div className="item">
                               <Button
                                 color="gray"
@@ -196,33 +190,17 @@ function StoreReceiptModifyPage() {
                               </Button>
                             </div>
                             <div className="item">
-                              <Input width="395px" placeholder="로봇 명" />
+                              <Input width="300px" placeholder="로봇명" />
                             </div>
                             <div className="item">
-                              <FormGroup>
-                                <Checkbox
-                                  defaultChecked
-                                  name="contact00"
-                                  id="check1"
-                                  value="트레이1"
-                                  txt="트레이1"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check2"
-                                  value="트레이2"
-                                  txt="트레이2"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check3"
-                                  value="트레이3"
-                                  txt="트레이3"
-                                />
-                              </FormGroup>
+                              <Input
+                                width="150px"
+                                placeholder="트레이 수"
+                                numericOnly
+                              />
                             </div>
                           </div>
-                          <div className="align center start mt_10">
+                          <div className="align top start mt_10">
                             <div className="item">
                               <Button
                                 color="gray"
@@ -240,30 +218,14 @@ function StoreReceiptModifyPage() {
                               </Button>
                             </div>
                             <div className="item">
-                              <Input width="395px" placeholder="로봇 명" />
+                              <Input width="300px" placeholder="로봇명" />
                             </div>
                             <div className="item">
-                              <FormGroup>
-                                <Checkbox
-                                  defaultChecked
-                                  name="contact00"
-                                  id="check1"
-                                  value="트레이1"
-                                  txt="트레이1"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check2"
-                                  value="트레이2"
-                                  txt="트레이2"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check3"
-                                  value="트레이3"
-                                  txt="트레이3"
-                                />
-                              </FormGroup>
+                              <Input
+                                width="150px"
+                                placeholder="트레이 수"
+                                numericOnly
+                              />
                             </div>
                           </div>
                         </div>
@@ -302,80 +264,6 @@ function StoreReceiptModifyPage() {
                     <TableCell rowSpan={2}>배달</TableCell>
                     <TableCell>직원 배달</TableCell>
                     <TableCell className="left">
-                      <div className="align bottom start">
-                        <div
-                          className="item wrap"
-                          style={{ width: "min-content" }}
-                        >
-                          <div className="align center start">
-                            <div className="item">
-                              <Button
-                                color="gray"
-                                icon="Delete"
-                                line
-                                size="icon_s"
-                                txtColor="txtgray"
-                                type="pc"
-                                iconStyle={{
-                                  width: 14,
-                                  height: 14,
-                                }}
-                              >
-                                삭제
-                              </Button>
-                            </div>
-                            <div className="item">
-                              <Select
-                                minwidth="395px"
-                                maxwidth="395px"
-                                options={userOpt}
-                                defaultValue={userOpt[0]}
-                                placeholder="직원 선택"
-                              />
-                            </div>
-                          </div>
-                          <div className="align center start mt_10">
-                            <div className="item">
-                              <Button
-                                color="gray"
-                                icon="Delete"
-                                line
-                                size="icon_s"
-                                txtColor="txtgray"
-                                type="pc"
-                                iconStyle={{
-                                  width: 14,
-                                  height: 14,
-                                }}
-                              >
-                                삭제
-                              </Button>
-                            </div>
-                            <div className="item">
-                              <Select
-                                minwidth="395px"
-                                maxwidth="395px"
-                                options={userOpt}
-                                defaultValue={userOpt[1]}
-                                placeholder="직원 선택"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="item">
-                          <Button
-                            color="gray"
-                            icon="Plus"
-                            line
-                            size="icon_s"
-                            txtColor="txtgray"
-                            type="pc"
-                            onClick={() => {}}
-                          >
-                            옵션가 추가
-                          </Button>
-                        </div>
-                      </div>
                     </TableCell>
                     <TableCell>
                       <FormGroup globalClass="align center">
@@ -401,7 +289,7 @@ function StoreReceiptModifyPage() {
                           className="item wrap"
                           style={{ width: "min-content" }}
                         >
-                          <div className="align center start">
+                          <div className="align top start">
                             <div className="item">
                               <Button
                                 color="gray"
@@ -419,33 +307,17 @@ function StoreReceiptModifyPage() {
                               </Button>
                             </div>
                             <div className="item">
-                              <Input width="395px" placeholder="로봇 명" />
+                              <Input width="300px" placeholder="로봇명" />
                             </div>
                             <div className="item">
-                              <FormGroup>
-                                <Checkbox
-                                  defaultChecked
-                                  name="contact00"
-                                  id="check1"
-                                  value="트레이1"
-                                  txt="트레이1"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check2"
-                                  value="트레이2"
-                                  txt="트레이2"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check3"
-                                  value="트레이3"
-                                  txt="트레이3"
-                                />
-                              </FormGroup>
+                              <Input
+                                width="150px"
+                                placeholder="트레이 수"
+                                numericOnly
+                              />
                             </div>
                           </div>
-                          <div className="align center start mt_10">
+                          <div className="align top start mt_10">
                             <div className="item">
                               <Button
                                 color="gray"
@@ -463,30 +335,14 @@ function StoreReceiptModifyPage() {
                               </Button>
                             </div>
                             <div className="item">
-                              <Input width="395px" placeholder="로봇 명" />
+                              <Input width="300px" placeholder="로봇명" />
                             </div>
                             <div className="item">
-                              <FormGroup>
-                                <Checkbox
-                                  defaultChecked
-                                  name="contact00"
-                                  id="check1"
-                                  value="트레이1"
-                                  txt="트레이1"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check2"
-                                  value="트레이2"
-                                  txt="트레이2"
-                                />
-                                <Checkbox
-                                  name="contact00"
-                                  id="check3"
-                                  value="트레이3"
-                                  txt="트레이3"
-                                />
-                              </FormGroup>
+                              <Input
+                                width="150px"
+                                placeholder="트레이 수"
+                                numericOnly
+                              />
                             </div>
                           </div>
                         </div>
