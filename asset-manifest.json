@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/smartorderapp/static/css/main.fe3ebde1.css",
-    "main.js": "/smartorderapp/static/js/main.c36d4405.js",
+    "main.js": "/smartorderapp/static/js/main.e2fb007a.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
     "static/media/DID_bg_left.png": "/smartorderapp/static/media/DID_bg_left.423a3bc9b0b4ca66b976.png",
     "static/media/KDS_bg.png": "/smartorderapp/static/media/KDS_bg.cd045b309c89c43083a2.png",
@@ -31,11 +31,11 @@
     "static/media/itemcoupon02.png": "/smartorderapp/static/media/itemcoupon02.5f65d2403492434e7905.png",
     "index.html": "/smartorderapp/index.html",
     "main.fe3ebde1.css.map": "/smartorderapp/static/css/main.fe3ebde1.css.map",
-    "main.c36d4405.js.map": "/smartorderapp/static/js/main.c36d4405.js.map",
+    "main.e2fb007a.js.map": "/smartorderapp/static/js/main.e2fb007a.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe3ebde1.css",
-    "static/js/main.c36d4405.js"
+    "static/js/main.e2fb007a.js"
   ]
 }
