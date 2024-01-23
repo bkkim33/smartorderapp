@@ -8,6 +8,8 @@
       z-index: 100;
       img {
         width: 100%;
+        max-width: 150px;
+        margin: 20px 0 30px;
       }
       &.dimd{
         position: relative;

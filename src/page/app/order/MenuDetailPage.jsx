@@ -14,25 +14,25 @@ const ProductData = [
   {
     id: 1,
     title: "바닐라라떼1",
-    image: require("../../../images/coffee_img.png"),
+    image: require("../../../images/item01.png"),
     sales: true,
     salesname: "",
   },
   {
     id: 2,
     title: "바닐라라떼2",
-    image: require("../../../images/coffee_img.png"),
+    image: require("../../../images/item01.png"),
     sales: false,
     salesname: "품절",
   },
   {
     id: 3,
     title: "바닐라라떼3",
-    image: require("../../../images/coffee_img.png"),
+    image: require("../../../images/item01.png"),
     sales: false,
     salesname: "판매중지",
-  }
-]
+  },
+];
 
 function MenuDetailPage({QR}) {
   const [isOn, setIsOn] = useState(false);
