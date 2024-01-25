@@ -269,7 +269,7 @@
 }
 
 .kds_modal{
-  // display: none;
+  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -303,7 +303,9 @@
     }
   }
   &_pick{
-    padding: 90px 67px 50px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 75px;
   }
   &_tit{
     h3{
@@ -360,12 +362,13 @@
     }
   }
   &_list{
+    padding: 95px 67px;
+    flex: 1;
     ul{
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 20px;
       row-gap: 30px;
-      margin-top: 95px;
       li{
         position: relative;
         width: 100%;
@@ -409,6 +412,88 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  &_tab{
+    flex: 1;
+    padding: 65px 67px 50px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    > div{
+      display: flex;
+      flex: 1;
+    }
+    &_lft{
+      height: 100%;
+      flex-direction: column;
+      padding-left: 55px;
+      padding-right: 25px;
+      button{
+        width: 100%;
+        height: 115px;
+        font-size: 40px;
+        font-weight: 700;
+        color: rgba($color: #fff, $alpha: 0.7);
+        background-color: #788189;
+        border-radius: 18px;
+        &.active{
+          background-color: var(--point);
+          color: var(--c00);
+        }
+        &.disabled{
+         opacity: 0.2; 
+        }
+        & + button{
+          margin-top: 25px;
+        }
+      }
+    }
+    &_rgt{
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-right: 55px;
+      padding-left: 25px;
+      overflow-y: auto;
+      max-height: calc(100% - 120px);
+      &::-webkit-scrollbar-track {
+        width: 8px;
+        // border-radius: 5px;
+        background-color: #3E4B57;
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 4px;
+        background-color: #788189;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        width: 8px;
+        border: 8px solid #788189;
+        background-color: #788189;
+      }
+      button{
+        width: 100%;
+        height: 115px;
+        font-size: 40px;
+        font-weight: 700;
+        color: rgba($color: #fff, $alpha: 0.7);
+        border: 5px solid rgba($color: #fff, $alpha: 0.7);
+        border-radius: 18px;
+        &.active{
+          border-color: #00C0FF;
+          color: #00C0FF;
+        }
+        &.disabled{
+         opacity: 0.2; 
+        }
+        & + button{
+          margin-top: 25px;
         }
       }
     }
