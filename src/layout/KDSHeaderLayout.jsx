@@ -30,10 +30,16 @@ function HeaderLayout() {
             <span>제조현황</span>
           </Link>
         </li>
-        <li className="mt_20">
+        <li className="mt_30">
           <Link to="/kds/endorder">
             <Icons.KDSMenu2 width={25} height={25} />
             <span>제조완료</span>
+          </Link>
+        </li>
+        <li className="mt_30">
+          <Link to="/kds/main">
+            <Icons.KDSMenu3 width={25} height={25} />
+            <span>픽업현황</span>
           </Link>
         </li>
       </ul>

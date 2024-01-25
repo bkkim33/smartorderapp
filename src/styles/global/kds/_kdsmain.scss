@@ -303,7 +303,46 @@
     }
   }
   &_pick{
-    padding: 50px 75px;
+    padding: 90px 67px 50px;
+  }
+  &_tit{
+    h3{
+      color: var(--cff);
+      font-size: 50px;
+      font-weight: 800;
+      text-align: center;
+    }
+  }
+  &_picknum{
+    position: absolute;
+    top: 65px;
+    right: 67px;
+    width: 20%;
+    height: 100px;    
+    border-radius: 12px;
+    background-color: var(--cff);    
+    > button{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        color: var(--c00);
+        font-size: 60px;
+        font-weight: 700;
+        text-align: center;
+      }
+      & + button{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+        padding: 12px;
+        z-index: 5;
+      }
+    }
   }
   &_btn{
     display: flex;
@@ -317,6 +356,60 @@
       background: #656F79;
       & + button{
         background: #495EEC;
+      }
+    }
+  }
+  &_list{
+    ul{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+      row-gap: 30px;
+      margin-top: 95px;
+      li{
+        position: relative;
+        width: 100%;
+        height: 200px;
+        border-radius: 18px;
+        border: 2px dashed rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.3);
+        span {
+          position: absolute;
+          top: 15px;
+          left: 25px;
+          color: var(--cff);
+          font-size: 40px;
+          font-weight: 700;
+        }
+        &.active{
+          border: 5px solid #00C0FF;          
+          background: rgba(0, 192, 255, 0.2);
+          span {
+            color: #00C0FF;
+          }
+        }
+        .kds_modal_picknum{
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          background: none;
+          > button{
+            p {
+              padding-top: 25px;
+              color: #00C0FF;
+            }
+            & + button{
+              svg{
+                path{
+                  fill: #00C0FF;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
