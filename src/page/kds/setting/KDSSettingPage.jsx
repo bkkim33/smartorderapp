@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Layout from '../../../layout/KDSDefaultLayout'
 import KDSContentBox from "../../../layout/KDSContentBox";
 import Table from "../../../components/Table";
-import Input from "../../../components/Input"
-import Button from "../../../components/Button"
+// import Input from "../../../components/Input"
+// import Button from "../../../components/Button"
 
 function KDSSettingPage() {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ function KDSSettingPage() {
               globalClass="kds_tablebox"
               colgroup={
                 <>
-                  <col width="20%" />
+                  <col width="10%" />
                   <col width="auto" />
                 </>
               }
@@ -37,7 +37,8 @@ function KDSSettingPage() {
               </tr>
             </Table>
           </div>
-          <div className="kdssetting_box mt_80">
+          {/* SB v1.1 미사용 */}
+          {/* <div className="kdssetting_box mt_80">
             <h1 className="headline1 mb_20">KDS 계정</h1>
             <Table
               globalClass="kds_tablebox"
@@ -73,7 +74,7 @@ function KDSSettingPage() {
                 </td>
               </tr>
             </Table>
-          </div>
+          </div> */}
         </div>
       </KDSContentBox>
     </Layout>
