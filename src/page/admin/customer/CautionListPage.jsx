@@ -36,7 +36,7 @@ const numOpt = [
   { label: "50개씩 보기", value: "50개씩 보기" },
 ];
 
-function NoticeListPage() {
+function CautionListPage() {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
   const navigate = useNavigate();
@@ -47,22 +47,13 @@ function NoticeListPage() {
   const handleClose = () => {
     setOpen(false);
   };
-  
 
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">공지사항</h1>
+        <h1 className="headline2">유의사항</h1>
       </div>
       <ContentBox top>
-        <div>
-          <Select
-            minwidth="210px"
-            round="app"
-            placeholder="공개대상"
-            options={targetOpt}
-          />
-        </div>
         <div>
           <Select
             minwidth="210px"
@@ -161,7 +152,6 @@ function NoticeListPage() {
                 <col width="2%" />
                 <col width="5%" />
                 <col width="auto" />
-                <col width="12%" />
                 <col width="15%" />
                 <col width="12%" />
                 <col width="12%" />
@@ -173,7 +163,6 @@ function NoticeListPage() {
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>제목</TableCell>
-                  <TableCell>공개대상</TableCell>
                   <TableCell>등록일</TableCell>
                   <TableCell>노출여부</TableCell>
                   <TableCell>작성자</TableCell>
@@ -194,10 +183,9 @@ function NoticeListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      공지사항 제목입니다.
+                      유의사항 제목입니다.
                     </Button>
                   </TableCell>
-                  <TableCell>전체</TableCell>
                   <TableCell>2023. 10. 30</TableCell>
                   <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
@@ -216,10 +204,9 @@ function NoticeListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      공지사항 제목입니다.
+                      유의사항 제목입니다.
                     </Button>
                   </TableCell>
-                  <TableCell>임직원</TableCell>
                   <TableCell>2023. 10. 31</TableCell>
                   <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
@@ -240,10 +227,9 @@ function NoticeListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      공지사항 제목입니다.
+                      유의사항 제목입니다.
                     </Button>
                   </TableCell>
-                  <TableCell>방문객</TableCell>
                   <TableCell>2023. 10. 30</TableCell>
                   <TableCell>비노출</TableCell>
                   <TableCell>admin</TableCell>
@@ -264,10 +250,9 @@ function NoticeListPage() {
                       type="pc"
                       size="xsmall"
                     >
-                      공지사항 제목입니다.
+                      유의사항 제목입니다.
                     </Button>
                   </TableCell>
-                  <TableCell>전체</TableCell>
                   <TableCell>2023. 11. 01</TableCell>
                   <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
@@ -291,7 +276,6 @@ function NoticeListPage() {
                       데이터 확인중입니다
                     </Button>
                   </TableCell>
-                  <TableCell>전체</TableCell>
                   <TableCell>2023. 11. 02</TableCell>
                   <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
@@ -322,9 +306,8 @@ function NoticeListPage() {
           </>
         }
       />
-      
     </Layout>
   );
 }
 
-export default NoticeListPage;
+export default CautionListPage;

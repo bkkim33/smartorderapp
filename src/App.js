@@ -57,6 +57,11 @@ import QnaModify from "./page/admin/customer/QnaModifyPage";
 import AdminTerms from "./page/admin/customer/TermsListPage";
 import TermsRegister from "./page/admin/customer/TermsRegisterPage";
 import TermsModify from "./page/admin/customer/TermsModifyPage";
+// 유의사항 관리
+import AdminCaution from "./page/admin/customer/CautionListPage";
+// import CautionRegister from "./page/admin/customer/CautionRegisterPage";
+// import CautionModify from "./page/admin/customer/CautionModifyPage";
+
 // 매장별 설정관리
 
 import Store from "./page/admin/store/StoreListPage";
@@ -258,7 +263,6 @@ function App() {
         <Route path="/admin/order/history" element={<OrderHistoryList />} />
         {/* ADMIN 주문/매출 관리 - 매출 관리 */}
         <Route path="/admin/order/sales" element={<SalesList />} />
-
         {/* ADMIN 고객 지원 관리 - 공지사항 리스트 */}
         <Route path="/admin/customer/notice" element={<AdminNotice />} />
         {/* ADMIN 고객 지원 관리 - 공지사항 등록 */}
@@ -284,18 +288,26 @@ function App() {
           path="/admin/customer/terms/register"
           element={<TermsRegister />}
         />
+        {/* ADMIN 고객 지원 관리 - 유의사항 리스트 */}
+        <Route path="/admin/customer/caution" element={<AdminCaution />} />
+        {/* ADMIN 고객 지원 관리 - 유의사항 등록 */}
+        {/* <Route
+          path="/admin/customer/qna/register"
+          element={<CautionRegister />}
+        /> */}
+        {/* ADMIN 고객 지원 관리 - 유의사항 상세 */}
+        {/* <Route path="/admin/customer/qna/modify" element={<CautionModify />} /> */}
+
         {/* ADMIN 고객 지원 관리 - 이용약관 상세 */}
         <Route path="/admin/customer/terms/modify" element={<TermsModify />} />
         {/* ADMIN 매장별 설정관리 - 리스트 */}
         <Route path="/admin/store" element={<Store />} />
-
         {/* ADMIN 매장별 설정관리 - 매장관리 리스트 */}
         {/* <Route path="/admin/store/info" element={<StoreInfo />} /> */}
         {/* ADMIN 매장별 설정관리 - 매장관리 등록 */}
         <Route path="/admin/store/info/register" element={<StoreRegister />} />
         {/* ADMIN 매장별 설정관리 - 매장관리 상세 */}
         <Route path="/admin/store/info/modify" element={<StoreInfoModify />} />
-
         {/* ADMIN 매장별 설정관리 - 상품 수령방법 리스트 */}
         {/* <Route path="/admin/store/receipt" element={<StoreReceipt />} /> */}
         {/* ADMIN 매장별 설정관리 - 상품 수령방법 상세 */}
@@ -303,7 +315,6 @@ function App() {
           path="/admin/store/receipt/modify"
           element={<StoreReceiptModify />}
         />
-
         {/* ADMIN 매장별 설정관리 - 상품 전시관리 리스트 */}
         {/* <Route path="/admin/store/display" element={<StoreDisplay />} /> */}
         {/* ADMIN 매장별 설정관리 - 상품 전시관리 상세 */}
@@ -311,7 +322,6 @@ function App() {
           path="/admin/store/display/modify"
           element={<StoreDisplayModify />}
         />
-
         {/* ADMIN 사용자 관리 */}
         <Route path="/admin/user" element={<UserList />} />
         {/* ADMIN 계정/권한 관리 - 계정/권한 관리 리스트 */}

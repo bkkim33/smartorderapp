@@ -191,7 +191,7 @@ function QnaListPage() {
                   </TableCell>
                   <TableCell>전체</TableCell>
                   <TableCell>2023. 10. 30</TableCell>
-                  <TableCell>Y</TableCell>
+                  <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
@@ -213,7 +213,7 @@ function QnaListPage() {
                   </TableCell>
                   <TableCell>임직원</TableCell>
                   <TableCell>2023. 10. 31</TableCell>
-                  <TableCell>Y</TableCell>
+                  <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
@@ -235,8 +235,8 @@ function QnaListPage() {
                   </TableCell>
                   <TableCell>방문객</TableCell>
                   <TableCell>2023. 10. 30</TableCell>
-                  <TableCell>N</TableCell>
-                  <TableCell>user</TableCell>
+                  <TableCell>비노출</TableCell>
+                  <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
@@ -257,7 +257,7 @@ function QnaListPage() {
                   </TableCell>
                   <TableCell>전체</TableCell>
                   <TableCell>2023. 11. 01</TableCell>
-                  <TableCell>Y</TableCell>
+                  <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
@@ -279,7 +279,7 @@ function QnaListPage() {
                   </TableCell>
                   <TableCell>전체</TableCell>
                   <TableCell>2023. 11. 02</TableCell>
-                  <TableCell>Y</TableCell>
+                  <TableCell>노출</TableCell>
                   <TableCell>admin</TableCell>
                 </TableRow>
                 <TableRow>
