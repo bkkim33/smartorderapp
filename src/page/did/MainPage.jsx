@@ -2,15 +2,17 @@ import React from "react";
 import Layout from "../../layout/DIDDefaultLayout";
 import { Icons } from "../../components/Icon";
 import DIDContentBox from "../../layout/DIDContentBox";
-import LeftimgDefault from "../../images/DID_bg_left.png";
-import RightimgDefault from "../../images/DID_bg_right.png";
+import Openimg01 from "../../images/DID_main_open.png";
+import Closeimg01 from "../../images/DID_main_close.png";
 
 function MainPage() {
   return (
     <Layout>
+      {/* <DIDContentBox>
+        <img src={Openimg01} alt="오픈 이미지 01" />
+        <img src={Closeimg01} alt="마감 이미지 01" />
+      </DIDContentBox> */}
       <DIDContentBox left>
-        {/* 기본 */}
-        {/* <img src={LeftimgDefault} alt="기본 이미지" /> */}
         {/* 제조 완료 리스트 */}
         <div className="did_done">
           <h2>메뉴가 준비되었습니다.</h2>
@@ -42,26 +44,10 @@ function MainPage() {
             </li>
             <li>
               <span>7</span>
-              <p>202</p>
-            </li>
-            <li>
-              <span>8</span>
-              <p>203</p>
-            </li>
-            <li>
-              <span>9</span>
-              <p>204</p>
-            </li>
-            <li>
-              <span>10</span>
-              <p>205</p>
-            </li>
-            <li>
-              <span>11</span>
               <Icons.DIDCup />
             </li>
             <li>
-              <span>12</span>
+              <span>8</span>
               <Icons.DIDCup />
             </li>            
           </ul>
@@ -82,8 +68,6 @@ function MainPage() {
         </div> */}
       </DIDContentBox>
       <DIDContentBox right>
-        {/* 기본 */}
-        {/* <img src={RightimgDefault} alt="기본 이미지" /> */}
         {/* 픽업 번호 리스트 */}
         <div className="did_preparing">
           <h2>메뉴를 준비중입니다.</h2>

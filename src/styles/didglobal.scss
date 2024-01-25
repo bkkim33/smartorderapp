@@ -4,7 +4,8 @@
 .did_preparing{
   display: flex;
   flex-direction: column;
-  padding: 7.96vh 2.47vw;
+  padding: 12.04vh 2.47vw 6.85vh;
+  height: 100vh;
   h2{
     margin-bottom: 5vh;
     color: var(--cff);
@@ -13,15 +14,13 @@
     text-align: center;
   }
   ul{
-    display: flex;
-    flex-direction: column;
-    gap: 2.31vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.17vh;
     li{
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #656F79;
-      padding: 2.08vh 0;
       color: var(--cff);
       font-size: 6.48vh;
       font-weight: 700;
@@ -56,7 +55,8 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      height: 17.59vh;
+      height: 28.7vh;
+      border-radius: 2.31vh;
       background-color: var(--cff);
       span{
         position: absolute;
@@ -68,15 +68,15 @@
         letter-spacing: -0.05vw;
       }
       p{
-        color: var(--c00);
-        font-size: 7.41vh;
+        color: var(--blue);
+        font-size: 10.65vh;
         font-weight: 700;
         letter-spacing: -0.05vw;
       }
       svg{
-        width: 8.61vh;
-        height: 8.61vh;
-        opacity: 0.2;
+        path{
+          fill: #656F79;
+        }
       }
     }
   }
