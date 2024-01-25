@@ -31,7 +31,7 @@
 }
 
 .did_done{
-  padding: 7.96vh 2.34vw 11.11vh;
+  padding: 7.96vh 2.34vw 11.11vh; 
   h2{
     padding-bottom: 2.31vh;
     color: var(--c00);
@@ -111,6 +111,7 @@
   }
   &_num{
     padding-bottom: 4.17vw;
+    color: var(--blue);
     font-size: 27.78vh;
     font-weight: 700;
   }
@@ -124,7 +125,7 @@
         padding-top: 3.7vh;
         font-size: 7.41vh;
         font-weight: 400;
-        .blue{
+        span{
           font-weight: 700;
         }
       }

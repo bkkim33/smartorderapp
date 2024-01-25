@@ -14,7 +14,7 @@ function MainPage() {
       </DIDContentBox> */}
       <DIDContentBox left>
         {/* 제조 완료 리스트 */}
-        <div className="did_done">
+        {/* <div className="did_done">
           <h2>메뉴가 준비되었습니다.</h2>
           <p>주문 번호를 확인해 주세요.</p>
           <ul className="did_done_list">
@@ -51,9 +51,9 @@ function MainPage() {
               <Icons.DIDCup />
             </li>            
           </ul>
-        </div>
+        </div> */}
         {/* 제조 완료 팝업 */}
-        {/* <div className="did_done_popup">
+        <div className="did_done_popup">
           <div className="did_done_popup_tit">
             <Icons.DIDCup />
             <h2>주문번호</h2>
@@ -63,9 +63,9 @@ function MainPage() {
           </div>
           <div className="did_done_popup_desc">
             <p>메뉴가 준비되었습니다.</p>
-            <p><span className="blue">8번 픽업대</span>에서 픽업해 주세요.</p>
+            <p><span>8번 픽업대</span>에서 픽업해 주세요.</p>
           </div>
-        </div> */}
+        </div>
       </DIDContentBox>
       <DIDContentBox right>
         {/* 픽업 번호 리스트 */}
