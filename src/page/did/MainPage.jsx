@@ -3,14 +3,22 @@ import Layout from "../../layout/DIDDefaultLayout";
 import { Icons } from "../../components/Icon";
 import DIDContentBox from "../../layout/DIDContentBox";
 import Openimg01 from "../../images/DID_main_open.png";
+import Openimg02 from "../../images/DID_main_open01.png";
+import Openimg03 from "../../images/DID_main_open02.png";
 import Closeimg01 from "../../images/DID_main_close.png";
+import Closeimg02 from "../../images/DID_main_close01.png";
+import Closeimg03 from "../../images/DID_main_close02.png";
 
 function MainPage() {
   return (
     <Layout>
       {/* <DIDContentBox>
         <img src={Openimg01} alt="오픈 이미지 01" />
+        <img src={Openimg02} alt="오픈 이미지 02" />
+        <img src={Openimg03} alt="오픈 이미지 03" />
         <img src={Closeimg01} alt="마감 이미지 01" />
+        <img src={Closeimg02} alt="마감 이미지 02" />
+        <img src={Closeimg03} alt="마감 이미지 03" />
       </DIDContentBox> */}
       <DIDContentBox left>
         {/* 제조 완료 리스트 */}
