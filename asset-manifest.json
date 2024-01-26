@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/smartorderapp/static/css/main.a5e17016.css",
-    "main.js": "/smartorderapp/static/js/main.b4f98965.js",
+    "main.css": "/smartorderapp/static/css/main.675b6f8c.css",
+    "main.js": "/smartorderapp/static/js/main.f2e7f1e4.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
-    "static/media/DID_bg_left.png": "/smartorderapp/static/media/DID_bg_left.423a3bc9b0b4ca66b976.png",
+    "static/media/DID_main_open.png": "/smartorderapp/static/media/DID_main_open.31fd3c8257e98d8f208a.png",
+    "static/media/DID_main_close.png": "/smartorderapp/static/media/DID_main_close.3bb517e74768eab9c559.png",
     "static/media/KDS_bg.png": "/smartorderapp/static/media/KDS_bg.cd045b309c89c43083a2.png",
-    "static/media/DID_bg_right.png": "/smartorderapp/static/media/DID_bg_right.4a31957434a9c2170ad5.png",
     "static/media/main_img.gif": "/smartorderapp/static/media/main_img.83fe1e64226c08ba9f85.gif",
     "static/media/Pretendard-ExtraBold.woff": "/smartorderapp/static/media/Pretendard-ExtraBold.88651b953c5d967d1db9.woff",
     "static/media/Pretendard-Bold.woff": "/smartorderapp/static/media/Pretendard-Bold.dd56301118da9e158ce9.woff",
@@ -30,12 +30,12 @@
     "static/media/itemcoupon01.png": "/smartorderapp/static/media/itemcoupon01.825751d2b357dadabf83.png",
     "static/media/itemcoupon02.png": "/smartorderapp/static/media/itemcoupon02.5f65d2403492434e7905.png",
     "index.html": "/smartorderapp/index.html",
-    "main.a5e17016.css.map": "/smartorderapp/static/css/main.a5e17016.css.map",
-    "main.b4f98965.js.map": "/smartorderapp/static/js/main.b4f98965.js.map",
+    "main.675b6f8c.css.map": "/smartorderapp/static/css/main.675b6f8c.css.map",
+    "main.f2e7f1e4.js.map": "/smartorderapp/static/js/main.f2e7f1e4.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5e17016.css",
-    "static/js/main.b4f98965.js"
+    "static/css/main.675b6f8c.css",
+    "static/js/main.f2e7f1e4.js"
   ]
 }
