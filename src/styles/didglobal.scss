@@ -160,3 +160,153 @@
     }
   }
 }
+
+.didlogin{
+  display: flex;
+  flex-direction: column;
+  min-width: 26.02vw;
+  &_visual{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    svg{
+      width: 23.41vw;
+      height: 20.69vh;
+    }
+  }
+  &_content{
+    margin-top: 7.41vh;
+    width: 100%;
+  }
+  &_box{
+    position: relative;
+    .error_txt{
+      color: #ED5151;
+      font-size: 2.31vh;
+    }
+    &_input{
+      > div{
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: rgba($color: #fff, $alpha: 0.15);
+        border-radius: 0.83vh;
+        width: 100%;
+        padding: 1.56vh 10px;
+        & + div{
+          margin-top: 2.78vh;
+          border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        > div{
+          height: 4.97vh;
+        }
+      }
+      label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.98vw;
+        svg{
+          width: 1.30vw;
+          height: 2.31vh;
+        }
+      }
+      input{
+        font-size: 2.78vh;
+        color: #fff;
+        &::placeholder{
+          color: #fff;
+        }
+      }
+      .input_time__NYLmd{
+        position: absolute;
+        right: 10px;
+        color:#fff !important;
+      }
+      .adminlogin_input{
+        flex: 1;
+        padding: 0;
+      }
+    }
+  }
+  &_btn{
+    margin-top: 3.70vh;
+    height: 10.19vh;
+    border-radius: 0.83vh;
+    font-size: 4.17vh;
+    color: #000;
+    background-color: var(--point);
+    &:disabled{
+      color: var(--cbb) !important;
+      background-color: #3E4B57 !important;
+    }
+    &_blue{
+      position: absolute;
+      left: 100%;
+      top: 0;
+      min-width: 130px;
+      min-height: 65px;
+      margin-left: 15px;
+      border-radius: 6px;
+      font-size: 20px;
+      color: #fff;
+      background-color: var(--blue);
+    }
+  }
+  &_input{
+    span{
+      color: var(--cff) !important;
+      font-size: 2.50vh !important;
+    }
+  }
+  &_check{
+    &_box{
+      margin-top: 4.63vh;
+    }
+    align-items: center !important;
+    span{
+      background-color: transparent;
+      width: 4.77vh;
+      height: 4.77vh;
+      border-radius: 0.83vh;
+      border-width: 0.23vh;
+      & + span{
+        width: auto;
+        height: auto;
+        color: rgba(255,255,255,0.7);
+        margin-left: 1.85vh !important;
+        font-size: 2.50vh;
+      }
+    }
+    input{
+      &:checked + span{
+        border-color: #fff !important;
+        background-color: transparent;
+        width: 4.77vh;
+        height: 4.77vh;
+        border-radius: 0.83vh;
+        border-width: 0.23vh;
+        &:after{
+          width: 2.31vh;
+          height: 0.93vh;
+          border-color: #fff !important;
+          border: 0.37vh solid #fff;
+          border-top: 0;
+          border-right: 0;
+        }
+        & + span{
+          width: auto;
+          height: auto;
+          color: rgba(255,255,255,0.7);
+          margin-left: 1.85vh !important;
+          font-size: 2.50vh;
+        }
+      }
+    }
+  }
+  &_link{
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+  }
+}

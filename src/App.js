@@ -8,6 +8,7 @@ import KDSLoading from "./components/KDSLoading";
 // DID import
 import "./styles/didglobal.scss";
 import DIDMain from "./page/did/MainPage";
+import DIDLogin from "./page/did/login/DIDLoginPage";
 
 // KDS import
 import "./styles/kdsglobal.scss";
@@ -354,6 +355,7 @@ function App() {
       <Route>
         {/* DID 메인 */}
         <Route path="/did/main" element={<DIDMain />} />
+        <Route path="/did" element={<DIDLogin />} />
       </Route>
       {/* <Route path="/*" element={<Main />} /> */}
     </Routes>
