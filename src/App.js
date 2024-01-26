@@ -16,6 +16,8 @@ import KDSLogin from "./page/kds/login/KDSLoginPage";
 import KDSMailVerify from "./page/kds/login/KDSMailVerifyPage";
 // 제조완료
 import EndOrder from "./page/kds/endorder/EndOrderPage";
+// 픽업현황
+import Pick from "./page/kds/pick/PickPage";
 // 환경설정
 import KDSSetting from "./page/kds/setting/KDSSettingPage";
 // 비밀번호 변경
@@ -339,6 +341,8 @@ function App() {
         <Route path="/kds/mail" element={<KDSMailVerify />} />
         {/* KDS 제조완료 */}
         <Route path="/kds/endorder" element={<EndOrder />} />
+        {/* KDS 픽업현황 */}
+        <Route path="/kds/pick" element={<Pick />} />
         {/* KDS 환경설정 */}
         <Route path="/kds/setting" element={<KDSSetting />} />
         {/* KDS 비밀번호 변경 */}

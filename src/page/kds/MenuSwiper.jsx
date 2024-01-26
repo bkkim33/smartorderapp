@@ -40,7 +40,31 @@ function MenuSwiper({data}) {
       },
     },
   };
-
+  const [count, setCount] = useState(0);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    if (count === 1) {
+      setOpen("pick");
+    }
+    setCount(count + 1);
+  };
+  const handleOpen1 = () => {
+    if (count === 1) {
+      setOpen("serving");
+    }
+    setCount(count + 1);
+  };
+  const handleOpen2 = () => {
+    if (count === 1) {
+      setOpen("delivery");
+    }
+    setCount(count + 1);
+  };
+  const handleClose = () => {
+    setOpen(null);
+    setCount(0);
+  };
+  
   const [min, setMin] = useState(0);
   const [sec, setSec] = useState(0);
   const time = useRef(0);
@@ -68,7 +92,15 @@ function MenuSwiper({data}) {
           <SwiperSlide key={index} className={`${"kds_main_order"} `}>
             <div className={`${"kds_main_order_box"} `}>
               <button
-                // onDoubleClick
+                onClick={
+                  order.pickup === "P"
+                    ? handleOpen
+                    : "" | (order.pickup === "S")
+                    ? handleOpen1
+                    : "" | (order.pickup === "D")
+                    ? handleOpen2
+                    : ""
+                }
                 className={`${"kds_main_order_top"} ${
                   min > 2 ? "warning" : ""
                 } ${min > 4 ? "issue" : ""}`}
@@ -101,8 +133,8 @@ function MenuSwiper({data}) {
                         >
                           <div className="kds_main_opt_txt">
                             <span>{orderlist.opt}</span>
-                            <span className="num mt_2">
-                              <em>{orderlist.num}</em>잔
+                            <span className="num">
+                              <em>{orderlist.num}</em>
                             </span>
                           </div>
                           <div className="kds_main_opt_bg">
@@ -149,7 +181,7 @@ function MenuSwiper({data}) {
           className={`${"swiper-pagination"} ${"kds_main_order_swiper_pagination"}`}
         ></div>
       </Swiper>
-      <EndOrderModal />
+      <EndOrderModal open={open} handleClose={handleClose} />
     </>
   );
 

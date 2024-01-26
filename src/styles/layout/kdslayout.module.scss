@@ -210,7 +210,7 @@
     flex: 1;
     background-color: var(--cff);
     border-radius: 24px;
-    padding: 38px;
+    padding: 60px;
     @include shadow(0, 0, 33px, rgba(0,0,0,0.05));
     &_top,
     &_bottom{

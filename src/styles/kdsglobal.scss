@@ -7,6 +7,10 @@
 
 @import './global/kds/kdsmain';
 
+@import './global/kds/kdspick';
+
+@import './global/kds/kdssetting';
+
 .kds_btn{
   border-radius: 6px;
   background-color: #3E4B57;
@@ -42,4 +46,10 @@
     }
   }
 }
-@import './global/kds/kdssetting';
+
+.kds{
+  &_title{
+    font-size: 50px;
+  }
+}
+

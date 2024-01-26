@@ -37,7 +37,7 @@ function HeaderLayout() {
           </Link>
         </li>
         <li className="mt_30">
-          <Link to="/kds/main">
+          <Link to="/kds/pick">
             <Icons.KDSMenu3 width={25} height={25} />
             <span>픽업현황</span>
           </Link>

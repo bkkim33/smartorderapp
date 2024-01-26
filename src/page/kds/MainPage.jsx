@@ -36,6 +36,26 @@ const TopOrderData = [
     opt: "HOT",
     num: 3,
   },
+  {
+    product: "블루베리 요거트 스무디",
+    opt: "ETC",
+    num: 9,
+  },
+  {
+    product: "바닐라라떼",
+    opt: "HOT",
+    num: 3,
+  },
+  {
+    product: "블루베리 요거트 스무디",
+    opt: "ETC",
+    num: 9,
+  },
+  {
+    product: "바닐라라떼",
+    opt: "HOT",
+    num: 3,
+  },
 ];
 
 const OrderData = [
@@ -257,7 +277,7 @@ function MainPage() {
                         <div className="kds_main_opt_txt">
                           <span>{toporder.opt}</span>
                           <span className="num mt_3">
-                            <em>{toporder.num}</em>잔
+                            <em>{toporder.num}</em>
                           </span>
                         </div>
                         <div className="kds_main_opt_bg">

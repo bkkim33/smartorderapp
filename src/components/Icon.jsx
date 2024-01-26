@@ -1271,6 +1271,22 @@ const KDSDrag = ({ width = 13, height = 22, fill = "#3E4B57" }) => (
   </svg>
 );
 
+const KDSPickNum = ({ width = 50, height = 50, fill = "#3E4B57" }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      opacity="0.7"
+      d="M50 0C77.615 0 100 22.385 100 50C100 56.36 98.69 62.805 96.405 68.595L92.5 76.56C90.025 81.705 90.895 86.555 94.22 92.5C96.055 95.79 93.765 99.755 90 99.845C84.915 99.96 76.78 97.87 70.31 95.47C64.345 98.225 56.66 100 50 100C22.385 100 0 77.615 0 50C0 22.385 22.385 0 50 0Z"
+      fill={fill}
+    />
+  </svg>
+);
+
 export const Icons = {
   Logo,
   LogoIcon,
@@ -1331,4 +1347,5 @@ export const Icons = {
   KDSOrder,
   KDSMenu3,
   KDSDrag,
+  KDSPickNum,
 };

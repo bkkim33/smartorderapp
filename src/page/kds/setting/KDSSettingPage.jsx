@@ -11,14 +11,14 @@ function KDSSettingPage() {
   return (
     <Layout>
       <KDSContentBox>
-        <div className="kdssetting mt_56">
+        <div className="kdssetting">
           <div className="kdssetting_box">
-            <h1 className="headline1 mb_20">환경설정</h1>
+            <h1 className="kds_title mb_40">환경설정</h1>
             <Table
               globalClass="kds_tablebox"
               colgroup={
                 <>
-                  <col width="10%" />
+                  <col width="20%" />
                   <col width="auto" />
                 </>
               }
