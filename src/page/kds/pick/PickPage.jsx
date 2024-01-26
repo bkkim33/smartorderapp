@@ -101,28 +101,12 @@ function PickPage() {
                 <em>7</em>
                 <Icons.KDSPickNum />
               </span>
-              <div className="kds_pick_picknum">
-                <button>
-                  <p>116</p>
-                </button>
-                <button>
-                  <Icons.Delete width={30} height={30} fill="#707A83" />
-                </button>
-              </div>
             </li>
             <li>
               <span>
                 <em>8</em>
                 <Icons.KDSPickNum />
               </span>
-              <div className="kds_pick_picknum">
-                <button>
-                  <p>117</p>
-                </button>
-                <button>
-                  <Icons.Delete width={30} height={30} fill="#707A83" />
-                </button>
-              </div>
             </li>
           </ul>
         </div>
