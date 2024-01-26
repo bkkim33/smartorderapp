@@ -114,10 +114,15 @@ function PaymentPage() {
   const menuToggle = () => {
     setMenuOn(!menuOn);
   }
+  const [cautionOn, setCautionOn] = useState(true);
+  const cautionToggle = () => {
+    setCautionOn(!cautionOn);
+  };
+
   const [discountOn, setDiscountOn] = useState(true);
   const discountToggle = () => {
     setDiscountOn(!discountOn);
-  }
+  };
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -140,6 +145,7 @@ function PaymentPage() {
       (total = total + parseInt(currentvalue.price * currentvalue.amount)),
     0
   );
+
   return (
     <Layout Back Title="결제하기">
       <div className="payment">
@@ -298,7 +304,7 @@ function PaymentPage() {
                   <span>- 17,210</span> 원
                 </p>
               </div>
-              {discountOn ? (
+              {discountOn && (
                 <ul className="discount">
                   <li>
                     <p className="red_text">쿠폰할인</p>
@@ -325,8 +331,6 @@ function PaymentPage() {
                     </p>
                   </li>
                 </ul>
-              ) : (
-                ""
               )}
             </li>
           </ul>
@@ -338,14 +342,54 @@ function PaymentPage() {
           </div>
         </div>
         <hr />
-        <div className="inner">
-          <p className="headline4 mb_20">유의사항</p>
-          <ul className="bullet_list gray">
-            <li>유의사항 영역입니다.</li>
-            <li>유의사항 영역입니다.</li>
-            <li>유의사항 영역입니다.</li>
-          </ul>
+        <div className="inner payment_caution">
+          <p className="headline4 align">
+            유의사항
+            <button
+              className={`togglebtn ml_4 ${cautionOn ? "open" : ""}`}
+              onClick={cautionToggle}
+            >
+              <i className="arrow"></i>
+            </button>
+          </p>
+          {cautionOn && (
+            <>
+              <p className="body1 mt_20 mb_20">
+                아래 유의사항을 확인하였으며, 주문/결제에 동의합니다.
+              </p>
+              <ul>
+                <li>
+                  결제 완료와 동시에 매장으로 주문내용이 전송되며, 주문 변경 및
+                  취소가 불가합니다.
+                </li>
+                <li>
+                  일부 메뉴의 경우 매장 상황에 따라 주문이 불가능할 수 있습니다.
+                </li>
+                <li>
+                  주문 메뉴의 준비가 완료되었거나, 매장사정으로 주문이
+                  취소되었을 경우 안내를 위한 카카오 알림톡이 옵니다.
+                </li>
+                <li>
+                  카드 결제의 승인 취소는 카드사 사정에 따라 2~3일 및 그 이상의
+                  시일이 소요될 수 있습니다.
+                </li>
+                <li>
+                  주문하신 메뉴를 수령하지 않은 경우, 메뉴는 제조 완료 후
+                  30분까지 보관 후 폐기되며, 매장폐점시간에는 영업 종료 시
+                  폐기됩니다.
+                </li>
+                <li>
+                  매장의 메뉴 제조 완료 및 요청에도 불구하고 고객이 메뉴를
+                  미수령한 경우, 결제 취소 및 환불이 불가하고, 메뉴를 늦게
+                  픽업하여 메뉴 수령 당시 메뉴의 질이 떨어진 경우  메뉴 재
+                  제조가 불가합니다.
+                </li>
+              </ul>
+            </>
+          )}
+
         </div>
+
         <hr />
         <div className="inner">
           <Checkbox txt={"개인정보 수집 및 이용동의"} />
@@ -374,5 +418,6 @@ function PaymentPage() {
     </Layout>
   );
 }
+
 
 export default PaymentPage;
