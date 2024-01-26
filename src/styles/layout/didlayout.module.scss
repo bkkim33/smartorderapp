@@ -21,10 +21,12 @@
       position: relative;      
       background: #DAEE5F;
       flex: 1;
+      // display: none;
     }
     &_right{      
       width: 26.04vw;
       background: #3E4B57;
+      // display: none;
     }
   }
 }
