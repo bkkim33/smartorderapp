@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/smartorderapp/static/css/main.65011f56.css",
-    "main.js": "/smartorderapp/static/js/main.98ce6453.js",
+    "main.css": "/smartorderapp/static/css/main.fb40d923.css",
+    "main.js": "/smartorderapp/static/js/main.8da545a2.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
     "static/media/DID_main_open.png": "/smartorderapp/static/media/DID_main_open.31fd3c8257e98d8f208a.png",
+    "static/media/DID_main_close02.png": "/smartorderapp/static/media/DID_main_close02.ade55d98d8c6e1ac8896.png",
+    "static/media/DID_main_open01.png": "/smartorderapp/static/media/DID_main_open01.7fc156f7d8595f5b0040.png",
+    "static/media/DID_main_open02.png": "/smartorderapp/static/media/DID_main_open02.4dab2b2ba61bf70dac4d.png",
+    "static/media/DID_main_close01.png": "/smartorderapp/static/media/DID_main_close01.2cca7769f2285ad953e7.png",
     "static/media/DID_main_close.png": "/smartorderapp/static/media/DID_main_close.3bb517e74768eab9c559.png",
     "static/media/KDS_bg.png": "/smartorderapp/static/media/KDS_bg.cd045b309c89c43083a2.png",
     "static/media/main_img.gif": "/smartorderapp/static/media/main_img.83fe1e64226c08ba9f85.gif",
@@ -30,12 +34,12 @@
     "static/media/itemcoupon01.png": "/smartorderapp/static/media/itemcoupon01.825751d2b357dadabf83.png",
     "static/media/itemcoupon02.png": "/smartorderapp/static/media/itemcoupon02.5f65d2403492434e7905.png",
     "index.html": "/smartorderapp/index.html",
-    "main.65011f56.css.map": "/smartorderapp/static/css/main.65011f56.css.map",
-    "main.98ce6453.js.map": "/smartorderapp/static/js/main.98ce6453.js.map",
+    "main.fb40d923.css.map": "/smartorderapp/static/css/main.fb40d923.css.map",
+    "main.8da545a2.js.map": "/smartorderapp/static/js/main.8da545a2.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.65011f56.css",
-    "static/js/main.98ce6453.js"
+    "static/css/main.fb40d923.css",
+    "static/js/main.8da545a2.js"
   ]
 }
