@@ -32,7 +32,7 @@
 }
 
 .did_done{
-  padding: 7.96vh 2.34vw 11.11vh;
+  padding: 10.28vh 2.73vw 7.78vh;
   h2{
     padding-bottom: 2.31vh;
     color: var(--c00);
@@ -42,41 +42,70 @@
   }
   p{
     color: var(--c00);
-    font-size: 4.63vh;
+    font-size: 5.56vh;
     text-align: center;
   }
   &_list{
-    padding-top: 7.31vh;
+    padding-top: 6.02vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 1.04vw;
-    row-gap: 1.85vh;
+    column-gap: 1.30vw;
+    row-gap: 2.31vh;
     li{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: 28.70vh;
+      background-color: var(--cff);
+      border-radius: 2.31vh;
+      > p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10.65vh;
+        font-weight: bold;
+        letter-spacing: -0.12vw;
+        padding: 2.65vh 2.08vw;
+        color: #495EEC;
+        svg{
+          width: 8.61vh;
+          height: 8.61vh;
+          path{
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &_tit{
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      height: 17.59vh;
-      background-color: var(--cff);
+      padding: 2.31vh 1.30vw;
       span{
-        position: absolute;
-        left: 1.17vw;
-        top: 1.85vh;
-        color: var(--c55);
-        font-size: 4.17vh;
-        font-weight: 700;
-        letter-spacing: -0.05vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        em{
+          position: absolute;
+          color: var(--cff);
+          font-size: 5.56vh;
+          font-weight: 700;
+          letter-spacing: -0.05vw;
+        }
+        svg{
+          width: 8.15vh;
+          height: 8.15vh;
+          path{
+            opacity: 1;
+          }
+        }
       }
       p{
-        color: var(--c00);
-        font-size: 7.41vh;
-        font-weight: 700;
-        letter-spacing: -0.05vw;
-      }
-      svg{
-        width: 8.61vh;
-        height: 8.61vh;
-        opacity: 0.2;
+        margin-left: 1.04vw;
+        font-size: 4.63vh;
+        font-weight: 500;
+        color: #3E4B57;
       }
     }
   }

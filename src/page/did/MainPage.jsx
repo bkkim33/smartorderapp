@@ -17,53 +17,89 @@ function MainPage() {
           <p>주문 번호를 확인해 주세요.</p>
           <ul className="did_done_list">
             <li>
-              <span>1</span>
-              <p>D101</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>1</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>101</p>
             </li>
             <li>
-              <span>2</span>
-              <p>S102</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>2</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>102</p>
             </li>
             <li>
-              <span>3</span>
-              <p>107</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>3</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>103</p>
             </li>
             <li>
-              <span>4</span>
-              <p>108</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>4</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>104</p>
             </li>
             <li>
-              <span>5</span>
-              <p>109</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>5</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>105</p>
             </li>
             <li>
-              <span>6</span>
-              <p>201</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>6</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>106</p>
             </li>
             <li>
-              <span>7</span>
-              <p>202</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>7</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>
+                <Icons.DIDCup fill="#656F79" />
+              </p>
             </li>
             <li>
-              <span>8</span>
-              <p>203</p>
+              <div className="did_done_list_tit">
+                <span>
+                  <em>8</em>
+                  <Icons.KDSPickNum fill="#656F79" />
+                </span>
+                <p>픽업대</p>
+              </div>
+              <p>
+                <Icons.DIDCup fill="#656F79" />
+              </p>
             </li>
-            <li>
-              <span>9</span>
-              <p>204</p>
-            </li>
-            <li>
-              <span>10</span>
-              <p>205</p>
-            </li>
-            <li>
-              <span>11</span>
-              <Icons.DIDCup />
-            </li>
-            <li>
-              <span>12</span>
-              <Icons.DIDCup />
-            </li>            
           </ul>
         </div>
         {/* 제조 완료 팝업 */}
