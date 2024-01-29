@@ -51,16 +51,6 @@ function AccountCreate() {
           }
         >
           <tr>
-            <th className="required">소속</th>
-            <td className="left">
-              <Select
-                maxwidth="400px"
-                placeholder="소속 선택"
-                options={companyOpt}
-              />
-            </td>
-          </tr>
-          <tr>
             <th className="required">관리자명</th>
             <td className="left">
               <Input width="400px" onClick={() => {}} />
@@ -115,6 +105,16 @@ function AccountCreate() {
             <th className="required">어드민 권한</th>
             <td className="left">
               <Select maxwidth="400px" placeholder="선택" options={rightOpt} />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">소속</th>
+            <td className="left">
+              <Select
+                maxwidth="400px"
+                placeholder="소속 선택"
+                options={companyOpt}
+              />
             </td>
           </tr>
         </Table>

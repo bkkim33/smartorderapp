@@ -92,18 +92,18 @@ function AccountListPage() {
               <TableHead>
                 <TableRow>
                   <TableCell>No.</TableCell>
-                  <TableCell>소속</TableCell>
                   <TableCell>관리자 ID</TableCell>
                   <TableCell>이름</TableCell>
                   <TableCell>권한</TableCell>
+                  <TableCell>소속</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
                   <TableCell>1</TableCell>
-                  <TableCell>메가존클라우드</TableCell>
+
                   <TableCell>admin01</TableCell>
-                  <TableCell>이름</TableCell>
+                  <TableCell>홍길동1</TableCell>
                   <TableCell>
                     <Button
                       onClick={() => navigate("/admin/account/modify")}
@@ -116,12 +116,13 @@ function AccountListPage() {
                       카페서비스 관리자
                     </Button>
                   </TableCell>
+                  <TableCell>-</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>2</TableCell>
-                  <TableCell>클라우드카페</TableCell>
+
                   <TableCell>admin02</TableCell>
-                  <TableCell>010-***-1234</TableCell>
+                  <TableCell>홍길동2</TableCell>
                   <TableCell>
                     <Button
                       onClick={() => navigate("/admin/account/modify")}
@@ -134,10 +135,11 @@ function AccountListPage() {
                       매장 관리자
                     </Button>
                   </TableCell>
+                  <TableCell>클라우드카페</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>3</TableCell>
-                  <TableCell>클라우드카페</TableCell>
+
                   <TableCell>admin03</TableCell>
                   <TableCell>홍길동3</TableCell>
                   <TableCell>
@@ -152,10 +154,11 @@ function AccountListPage() {
                       매장 관리자
                     </Button>
                   </TableCell>
+                  <TableCell>클라우드9카페</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>4</TableCell>
-                  <TableCell>클라우드카페</TableCell>
+
                   <TableCell>admin04</TableCell>
                   <TableCell>홍길동4</TableCell>
                   <TableCell>
@@ -170,6 +173,7 @@ function AccountListPage() {
                       어드민 관리자
                     </Button>
                   </TableCell>
+                  <TableCell>클라우드카페</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell colSpan={5}>검색된 결과가 없습니다.</TableCell>

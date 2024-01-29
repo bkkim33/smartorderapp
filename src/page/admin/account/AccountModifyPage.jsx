@@ -8,6 +8,11 @@ import Select from "../../../components/Select";
 import Button from "../../../components/Button";
 import MuiAlert from "../../../components/MuiAlert";
 
+const companyOpt = [
+  { label: "메가존 법인소속명", value: "메가존 법인소속명" },
+  { label: "클라우드 카페 매장소속명", value: "클라우드 카페 매장소속명" },
+];
+
 const rightOpt = [
   { label: '카페서비스 관리자', value: '카페서비스 관리자' },
   { label: '매장 관리자', value: '매장 관리자' },
@@ -53,12 +58,6 @@ function AccountModify() {
           }
         >
           <tr>
-            <th className="required">소속</th>
-            <td className="left">
-              <p className="body0 color_t_99">클라우드 카페</p>
-            </td>
-          </tr>
-          <tr>
             <th className="required">관리자명</th>
             <td className="left">
               <p className="body0 color_t_99">홍길동</p>
@@ -91,6 +90,17 @@ function AccountModify() {
                 placeholder="선택"
                 defaultValue={rightOpt[0]}
                 options={rightOpt}
+              />
+            </td>
+          </tr>
+          <tr>
+            <th className="required">소속</th>
+            <td className="left">
+              <Select
+                maxwidth="350px"
+                placeholder="소속 선택"
+                options={companyOpt}
+                defaultValue={companyOpt[0]}
               />
             </td>
           </tr>
