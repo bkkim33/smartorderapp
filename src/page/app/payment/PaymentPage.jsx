@@ -186,7 +186,6 @@ function PaymentPage() {
               <dl className="mt_16">
                 <dt className="bold500">[배달 요청]</dt>
                 <dd className="mt_8">- 입력해 주신 곳으로 배달해 드립니다.</dd>
-                <dd className="mt_5">- 건물 외부로 배달은 불가합니다.</dd>
               </dl>
             </MuiTooltip>
           </div>
