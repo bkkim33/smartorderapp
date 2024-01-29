@@ -124,6 +124,16 @@ function SideMenuLayout({globalstyle}) {
                   <span>이용약관</span>
                 </Link>
               </li>
+              <li className={`${styles.menu_dep2}`}>
+                <Link
+                  to="/admin/customer/caution"
+                  className={` ${
+                    splitLocation[3] === "caution" ? styles.active : ""
+                  }`}
+                >
+                  <span>유의사항</span>
+                </Link>
+              </li>
             </ul>
           </li>
           <li

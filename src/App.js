@@ -61,9 +61,7 @@ import AdminTerms from "./page/admin/customer/TermsListPage";
 import TermsRegister from "./page/admin/customer/TermsRegisterPage";
 import TermsModify from "./page/admin/customer/TermsModifyPage";
 // 유의사항 관리
-import AdminCaution from "./page/admin/customer/CautionListPage";
-// import CautionRegister from "./page/admin/customer/CautionRegisterPage";
-// import CautionModify from "./page/admin/customer/CautionModifyPage";
+import AdminCaution from "./page/admin/customer/CautionPage";
 
 // 매장별 설정관리
 
@@ -291,15 +289,8 @@ function App() {
           path="/admin/customer/terms/register"
           element={<TermsRegister />}
         />
-        {/* ADMIN 고객 지원 관리 - 유의사항 리스트 */}
+        {/* ADMIN 고객 지원 관리 - 유의사항 */}
         <Route path="/admin/customer/caution" element={<AdminCaution />} />
-        {/* ADMIN 고객 지원 관리 - 유의사항 등록 */}
-        {/* <Route
-          path="/admin/customer/qna/register"
-          element={<CautionRegister />}
-        /> */}
-        {/* ADMIN 고객 지원 관리 - 유의사항 상세 */}
-        {/* <Route path="/admin/customer/qna/modify" element={<CautionModify />} /> */}
 
         {/* ADMIN 고객 지원 관리 - 이용약관 상세 */}
         <Route path="/admin/customer/terms/modify" element={<TermsModify />} />

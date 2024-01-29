@@ -27,8 +27,8 @@ Textarea.defaultProps = {
   Height: 50,
 };
 
-export function Textarea({ children, onClick,  ...others }) {
-  const [counter, setCounter] = useState("")
+export function Textarea({ children, onClick, ...others }) {
+  const [counter, setCounter] = useState(children);
   const {
     error,
     shape,
@@ -37,7 +37,7 @@ export function Textarea({ children, onClick,  ...others }) {
     maxLength,
     counton,
     globalClass,
-    Height
+    Height,
   } = others;
   const [focus, setFocus] = useState(false);
   const handleFocusOn = () => {
@@ -49,7 +49,7 @@ export function Textarea({ children, onClick,  ...others }) {
 
   const onTextareaHandler = (e) => {
     const value = e.target.value;
-    if(value.length <= maxLength){  
+    if (value.length <= maxLength) {
       setCounter(value);
     }
   };
