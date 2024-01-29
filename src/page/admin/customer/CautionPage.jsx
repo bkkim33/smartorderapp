@@ -93,7 +93,7 @@ function CautionPage() {
                   </TableCell>
                   <TableCell>No.</TableCell>
                   <TableCell>순서설정</TableCell>
-                  <TableCell>카테고리명</TableCell>
+                  <TableCell>유의사항 내용</TableCell>
                   <TableCell>노출여부</TableCell>
                 </TableRow>
               </TableHead>
