@@ -3,7 +3,11 @@ import Layout from "../../../layout/AppDefaultLayout";
 
 function NoticeDetailPage() {
   return (
-    <Layout Back Menu Title="공지사항">
+    <Layout
+      Back
+      Menu
+      Title="공지사항 상세"
+    >
       <div className="notice">
         <div className="inner">
           <div className="notice_title">
@@ -12,7 +16,10 @@ function NoticeDetailPage() {
           </div>
           <div className="notice_content">
             <p className="body0">
-              안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.
+              안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.
+              안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.
+              안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.
+              안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.
             </p>
           </div>
         </div>

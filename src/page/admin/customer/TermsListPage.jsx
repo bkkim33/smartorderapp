@@ -168,7 +168,7 @@ function TermsListPage() {
                   <TableCell>No.</TableCell>
                   <TableCell>제목</TableCell>
                   <TableCell>공개대상</TableCell>
-                  <TableCell>게시일</TableCell>
+                  <TableCell>시행일자</TableCell>
                   <TableCell>노출여부</TableCell>
                   <TableCell>작성자</TableCell>
                 </TableRow>

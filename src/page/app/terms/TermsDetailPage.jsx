@@ -13,14 +13,14 @@ import Layout from "../../../layout/AppDefaultLayout";
 //   },
 // ];
 
-function NoticeDetailPage() {
+function TermsDetailPage() {
   return (
-    <Layout Back Menu Title="약관1">
+    <Layout Back Menu Title="이용약관 상세">
       <div className="notice">
         <div className="inner">
           <div className="notice_title">
-            <p className="body0 pb_6">시행일자 : 2023.05.15</p>
-            {/* <Select options={termopt} defaultValue={termopt[0]} round="app" /> */}
+            <p className="body0 pb_6">약관 1</p>
+            <p className="color_t_99">2023-05-15 시행</p>
           </div>
           <div className="notice_content">
             <p className="body0">
@@ -36,4 +36,4 @@ function NoticeDetailPage() {
   );
 }
 
-export default NoticeDetailPage;
+export default TermsDetailPage;

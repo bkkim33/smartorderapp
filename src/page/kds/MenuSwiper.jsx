@@ -38,6 +38,10 @@ function MenuSwiper({data}) {
         slidesPerView: 9,
         spaceBetween: 10,
       },
+      2500: {
+        slidesPerView: 12,
+        spaceBetween: 10,
+      },
     },
   };
   const [count, setCount] = useState(0);
