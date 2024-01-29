@@ -327,7 +327,19 @@ function PaymentPage() {
                   <li>
                     <p className="red_text">임직원할인</p>
                     <p className="red_text">
-                      <span>8,210</span> 원
+                      <span>7,300</span> 원
+                    </p>
+                  </li>
+                  <li className="detail">
+                    <p>아메리카노 1잔</p>
+                    <p>
+                      <span>3,800</span> 원
+                    </p>
+                  </li>
+                  <li className="detail">
+                    <p>바닐라라떼 2잔</p>
+                    <p>
+                      <span>10,400</span> 원
                     </p>
                   </li>
                 </ul>
@@ -352,12 +364,12 @@ function PaymentPage() {
               <i className="arrow"></i>
             </button>
           </p>
+          <p className="body1 mt_20">
+            아래 유의사항을 확인하였으며, 주문/결제에 동의합니다.
+          </p>
           {cautionOn && (
             <>
-              <p className="body1 mt_20 mb_20">
-                아래 유의사항을 확인하였으며, 주문/결제에 동의합니다.
-              </p>
-              <ul>
+              <ul className="mt_20">
                 <li>
                   결제 완료와 동시에 매장으로 주문내용이 전송되며, 주문 변경 및
                   취소가 불가합니다.
@@ -381,13 +393,12 @@ function PaymentPage() {
                 <li>
                   매장의 메뉴 제조 완료 및 요청에도 불구하고 고객이 메뉴를
                   미수령한 경우, 결제 취소 및 환불이 불가하고, 메뉴를 늦게
-                  픽업하여 메뉴 수령 당시 메뉴의 질이 떨어진 경우 메뉴 재
-                  제조가 불가합니다.
+                  픽업하여 메뉴 수령 당시 메뉴의 질이 떨어진 경우 메뉴 재 제조가
+                  불가합니다.
                 </li>
               </ul>
             </>
           )}
-
         </div>
 
         <hr />
