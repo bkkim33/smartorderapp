@@ -352,11 +352,11 @@ function CautionPage() {
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
-                      <Radio name="contact012" id="radio012" value="노출">
+                      <Radio name="contact012" id="radio041" value="노출">
                         노출
                       </Radio>
                       <Radio
-                        name="contact012"
+                        name="contact044"
                         id="radio022"
                         value="비노출"
                         defaultChecked
@@ -420,11 +420,11 @@ function CautionPage() {
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
-                      <Radio name="contact012" id="radio012" value="노출">
+                      <Radio name="contact012" id="radio051" value="노출">
                         노출
                       </Radio>
                       <Radio
-                        name="contact012"
+                        name="contact055"
                         id="radio022"
                         value="비노출"
                         defaultChecked
@@ -489,12 +489,12 @@ function CautionPage() {
                   </TableCell>
                   <TableCell>
                     <FormGroup globalClass="align center">
-                      <Radio name="contact012" id="radio012" value="노출">
+                      <Radio name="contact012" id="radio061" value="노출">
                         노출
                       </Radio>
                       <Radio
                         name="contact012"
-                        id="radio022"
+                        id="radio066"
                         value="비노출"
                         defaultChecked
                       >
