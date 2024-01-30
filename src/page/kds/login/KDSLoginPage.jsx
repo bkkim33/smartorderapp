@@ -102,15 +102,6 @@ function KDSLoginPage() {
                   globalClass="kdslogin_check"
                 />
               </FormGroup>
-              <Button
-                none
-                onClick={() => {
-                  navigate("/kds/mail");
-                }}
-                globalClass="kdslogin_link"
-              >
-                비밀번호 찾기
-              </Button>
             </div>
           </div>
         </div>
