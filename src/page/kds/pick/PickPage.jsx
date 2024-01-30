@@ -73,44 +73,18 @@ function PickPage() {
                 <em>5</em>
                 <Icons.KDSPickNum />
               </span>
-              <div className="kds_pick_picknum">
-                <button>
-                  <p>114</p>
-                </button>
-                <button>
-                  <Icons.Delete width={30} height={30} fill="#707A83" />
-                </button>
-              </div>
             </li>
             <li>
               <span>
                 <em>6</em>
                 <Icons.KDSPickNum />
               </span>
-              <div className="kds_pick_picknum">
-                <button>
-                  <p>115</p>
-                </button>
-                <button>
-                  <Icons.Delete width={30} height={30} fill="#707A83" />
-                </button>
-              </div>
             </li>
-            <li>
-              <span>
-                <em>7</em>
-                <Icons.KDSPickNum />
-              </span>
-            </li>
-            <li>
-              <span>
-                <em>8</em>
-                <Icons.KDSPickNum />
-              </span>
-            </li>
+            <li className="none"></li>
+            <li className="none"></li>
           </ul>
         </div>
-        <div className="kds_pick_btn mt_55">
+        <div className="kds_pick_btn mt_30">
           <button>전체 초기화</button>
           <button>재호출</button>
           {/* <button className="disabled">재호출</button> */}

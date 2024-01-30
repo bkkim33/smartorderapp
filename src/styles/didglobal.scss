@@ -107,6 +107,12 @@
         color: #3E4B57;
       }
     }
+    &_none{
+      opacity: 0.5;
+      > p{
+        height: 100%;
+      }
+    }
   }
 }
 

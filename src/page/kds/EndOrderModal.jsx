@@ -4,7 +4,10 @@ import { Icons } from "../../components/Icon";
 function EndOrderModal({ open, handleClose }) {
 
   return (
-    <div className={`${"kds_modal"} ${open ? "open" : ""}`}>
+    <div
+      className={`${"kds_modal"} ${open ? "open" : ""}`}
+      onClick={handleClose}
+    >
       <div className={`${"kds_modal_box"} ${open ? "open" : ""}`}>
         <div
           className={`${"kds_modal_pick"} ${open === "pick" ? "active" : ""}`}
@@ -50,10 +53,10 @@ function EndOrderModal({ open, handleClose }) {
               <li>
                 <span>6</span>
               </li>
-              <li>
+              <li className="none">
                 <span>7</span>
               </li>
-              <li>
+              <li className="none">
                 <span>8</span>
               </li>
             </ul>
@@ -122,6 +125,7 @@ function EndOrderModal({ open, handleClose }) {
           </div>
         </div>
       </div>
+      <div className="kds_modal_dimd"></div>
     </div>
   );
 };

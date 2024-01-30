@@ -74,7 +74,9 @@ function MainPage() {
                 </span>
                 <p>픽업대</p>
               </div>
-              <p>105</p>
+              <p>
+                <Icons.DIDCup fill="#656F79" />
+              </p>
             </li>
             <li>
               <div className="did_done_list_tit">
@@ -84,28 +86,16 @@ function MainPage() {
                 </span>
                 <p>픽업대</p>
               </div>
-              <p>106</p>
-            </li>
-            <li>
-              <div className="did_done_list_tit">
-                <span>
-                  <em>7</em>
-                  <Icons.KDSPickNum fill="#656F79" />
-                </span>
-                <p>픽업대</p>
-              </div>
               <p>
                 <Icons.DIDCup fill="#656F79" />
               </p>
             </li>
-            <li>
-              <div className="did_done_list_tit">
-                <span>
-                  <em>8</em>
-                  <Icons.KDSPickNum fill="#656F79" />
-                </span>
-                <p>픽업대</p>
-              </div>
+            <li className="did_done_list_none">
+              <p>
+                <Icons.DIDCup fill="#656F79" />
+              </p>
+            </li>
+            <li className="did_done_list_none">
               <p>
                 <Icons.DIDCup fill="#656F79" />
               </p>

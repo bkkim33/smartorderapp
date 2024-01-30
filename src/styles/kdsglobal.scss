@@ -53,3 +53,12 @@
   }
 }
 
+
+
+@media (max-width: "1200px") {
+  .kds{
+    &_title{
+      font-size: 35px;
+    }
+  }
+}

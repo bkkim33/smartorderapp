@@ -39,7 +39,7 @@ function EndOrderPage() {
               <colgroup>
                 <col width="10%" />
                 <col width="12%" />
-                <col width="18%" />
+                <col width="17%" />
                 <col width="auto" />
                 <col width="18%" />
                 <col width="12%" />

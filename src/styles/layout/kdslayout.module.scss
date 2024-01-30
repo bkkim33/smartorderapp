@@ -245,3 +245,32 @@
     overflow-y: unset;
   }
 }
+
+@media (max-width: "1200px") {
+  .content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    padding: 16px 25px;
+    overflow: auto;
+    &.pdnone{
+      padding: 0;
+      .content_box{
+        &_top{
+          flex: none;
+          box-shadow: none;
+          background: transparent;
+          padding: 50px 35px 0;
+        }
+      }
+    }
+    &_box{
+      padding: 25px;
+      &_top,
+      &_bottom{
+        padding: 0;
+      }
+    }
+  }
+}
