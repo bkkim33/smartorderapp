@@ -21,8 +21,6 @@ import EndOrder from "./page/kds/endorder/EndOrderPage";
 import Pick from "./page/kds/pick/PickPage";
 // 환경설정
 import KDSSetting from "./page/kds/setting/KDSSettingPage";
-// 비밀번호 변경
-import KDSChangePW from "./page/kds/setting/KDSChangePWPage";
 // 제조현황
 import KDSMain from "./page/kds/MainPage";
 
@@ -338,7 +336,7 @@ function App() {
         {/* KDS 환경설정 */}
         <Route path="/kds/setting" element={<KDSSetting />} />
         {/* KDS 비밀번호 변경 */}
-        <Route path="/kds/setting/changepassword" element={<KDSChangePW />} />
+        {/* <Route path="/kds/setting/changepassword" element={<KDSChangePW />} /> */}
         {/* KDS 제조현황 */}
         <Route path="/kds/main" element={<KDSMain />} />
       </Route>

@@ -120,12 +120,12 @@ function StoreReceiptModifyPage() {
                   <TableRow>
                     <TableCell colSpan={2}>매장 픽업</TableCell>
                     <TableCell>
-                      <Input
+                      {/* <Input
                         width="440px"
                         numericOnly={true}
                         placeholder="픽업대 개수"
                         // defaultValue={4}
-                      />
+                      /> */}
                     </TableCell>
                     <TableCell>
                       <FormGroup globalClass="align center">

@@ -53,7 +53,7 @@ function EndOrderPage() {
                   <TableCell>주문내역</TableCell>
                   <TableCell>주문일시</TableCell>
                   <TableCell>수령방법</TableCell>
-                  <TableCell>결제금액</TableCell>
+                  <TableCell>총 결제금액</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
