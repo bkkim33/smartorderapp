@@ -66,7 +66,7 @@ function UserModifyPage() {
                   onClick={() => {}}
                   defaultValue="admin01@mz.co.kr"
                 />
-                <span className="required_lft red ml_10">ID를 입력하세요.</span>
+                <span className="required_lft red ml_10">ID를 입력해 주세요.</span>
               </div>
             </td>
           </tr>

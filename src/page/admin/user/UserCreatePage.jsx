@@ -59,7 +59,7 @@ function UserCreatePage() {
                   onClick={() => {}}
                   placeholder="ID를 입력해 주세요."
                 />
-                <span className="required_lft red ml_10">ID를 입력하세요.</span>
+                <span className="required_lft red ml_10">ID를 입력해 주세요.</span>
               </div>
             </td>
           </tr>
@@ -86,7 +86,7 @@ function UserCreatePage() {
                   width="400px"
                   onClick={() => {}}
                   phone="number"
-                  placeholder="핸드폰 번호 입력"
+                  placeholder="전화번호를 입력해 주세요."
                   maxLength={13}
                 />
                 <span className="required_lft red ml_10">
@@ -121,7 +121,7 @@ function UserCreatePage() {
                       <Select
                         maxwidth="400px"
                         minwidth="355px"
-                        placeholder="소속 선택"
+                        placeholder="소속"
                         options={companyOpt}
                       />
                     </div>
@@ -147,7 +147,7 @@ function UserCreatePage() {
                       <Select
                         maxwidth="400px"
                         minwidth="355px"
-                        placeholder="소속 선택"
+                        placeholder="소속"
                         options={companyOpt}
                       />
                     </div>
