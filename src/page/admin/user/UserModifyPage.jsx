@@ -46,7 +46,7 @@ function UserModifyPage() {
   return (
     <Layout>
       <div className="align mb_20">
-        <h1 className="headline2">권한 변경</h1>
+        <h1 className="headline2">고객 정보 수정</h1>
       </div>
       <ContentBox>
         <Table
