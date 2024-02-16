@@ -32,7 +32,7 @@ function HeaderLayout() {
           프로필
         </Button>
       </div>
-      <SideMenu globalstyle="mt_50" />
+      <SideMenu globalstyle="mt_25" />
     </header>
   );
 }

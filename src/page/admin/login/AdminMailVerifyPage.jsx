@@ -7,10 +7,6 @@ import Button from "../../../components/Button";
 
 function AdminMailVerifyPage() {
   const navigate = useNavigate();
-  const [certification, setCertification] = useState(false);
-  const certifications = () => {
-    setCertification(true);
-  };
   return (
     <Layout>
       <div className="adminlogin">
@@ -21,34 +17,24 @@ function AdminMailVerifyPage() {
         </div>
         <div className="adminlogin_content mt_30">
           <div className="adminlogin_box">
+            <p className="title2 mb_10">
+              <span>비밀번호를 변경할</span>
+              <span>이메일 주소를 입력해 주세요.</span>
+            </p>
             {/* <p className="title2 mb_10">비밀번호 찾으세요?</p> */}
             <div className="adminlogin_box_input align column ">
               <div>
                 <Input
-                  onClick={certifications}
-                  certification={certification}
-                  shape="none"
-                  globalClass="adminlogin_input"
-                  placeholder="이메일 입력"
-                  phone
-                  maxLength={13}
-                />
-              </div>
-              <div>
-                <Input
                   onClick={() => {}}
                   shape="none"
-                  globalClass="adminlogin_input"
-                  type="text"
-                  placeholder="인증번호 입력"
-                  timer={certification === true}
-                  disabled={certification === false}
+                  globalClass="login_input"
+                  placeholder="이메일 입력"
                 />
               </div>
             </div>
-            <div className="red required_lft mt_5 ml_5">
+            {/* <div className="red required_lft mt_5 ml_5">
               이메일 주소를 입력해주세요.
-            </div>
+            </div> */}
             {/* <div className="red required_lft mt_5 ml_5">
               이메일 형식이 올바르지 않습니다.
             </div>
@@ -60,14 +46,13 @@ function AdminMailVerifyPage() {
               <div>
                 <Button
                   onClick={() => {
-                    navigate("/admin");
+                    navigate("/admin/mail/info");
                   }}
-                  disabled={certification === false}
                   color="blue"
                   size="full"
                   type="pc"
                 >
-                  임시 비밀번호 전송
+                  비밀번호 변경
                 </Button>
               </div>
             </div>

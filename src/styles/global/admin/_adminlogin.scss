@@ -1,7 +1,7 @@
 .adminlogin{
   display: flex;
   flex-direction: column;
-  min-width: 350px;
+  min-width: 370px;
   &_visual{
     width: 100%;
     justify-content: center;
@@ -42,6 +42,26 @@
   }
   &_box{
     padding: 20px 20px 0;
+    .title2{
+      span{
+        display: block;
+        & + span{
+          margin-top: 5px;
+        }
+      }
+    }
+    &_info{
+      padding: 20px;
+      background-color: var(--point);
+      .title2{
+        span{
+          display: block;
+          & + span{
+            margin-top: 15px;
+          }
+        }
+      }
+    }
     &_input{
       background-color: var(--point);
       padding: 0 10px;

@@ -29,8 +29,12 @@ import KDSMain from "./page/kds/MainPage";
 import "./styles/adminglobal.scss";
 
 import AdminLogin from "./page/admin/login/AdminLoginPage";
-// 비밀번호 변경
+// 비밀번호 찾기
 import AdminMailVerify from "./page/admin/login/AdminMailVerifyPage";
+// 비밀번호 찾기 안내
+import AdminMailVerifyInfo from "./page/admin/login/AdminMailVerifyInfoPage";
+// 비밀번호 변경
+import AdminPassword from "./page/admin/password/AdminPasswordPage";
 
 // 프로필
 import Profile from "./page/admin/myprofile/Profile";
@@ -81,6 +85,9 @@ import StoreDisplayModify from "./page/admin/store/StoreDisplayModifyPage";
 
 // 사용자 관리
 import UserList from "./page/admin/user/UserListPage";
+import UserCreate from "./page/admin/user/UserCreatePage";
+import UserModify from "./page/admin/user/UserModifyPage";
+import Company from "./page/admin/user/CompanyPage";
 // 계정/권한 관리
 import AccountList from "./page/admin/account/AccountListPage";
 import AccountCreate from "./page/admin/account/AccountCreatePage";
@@ -100,6 +107,8 @@ import AppLogin from "./page/app/login/LoginPage";
 import AppQRLogin from "./page/app/login/QRLoginPage";
 // 메일인증 (임직원) : app
 import MailVerify from "./page/app/login/MailVerifyPage";
+// 비밀번호 찾기 안내
+import MailVerifyInfo from "./page/app/login/MailVerifyInfoPage";
 // 비밀번호 변경 (임직원) : app
 import Password from "./page/app/password/PasswordPage";
 // 메뉴상세 (공통) : app & mobile web
@@ -191,8 +200,10 @@ function App() {
       <Route>
         {/* APP로그인 */}
         <Route exact path="/" element={<AppLogin />} />
-        {/* APP 메일인증 */}
+        {/* APP 메일 */}
         <Route exact path="/mail" element={<MailVerify />} />
+        {/* APP 메일 안내 */}
+        <Route exact path="/mail/info" element={<MailVerifyInfo />} />
         {/* APP 비밀번호 변경 */}
         <Route exact path="/password" element={<Password />} />
         {/* APP 비밀번호 변경 */}
@@ -237,6 +248,10 @@ function App() {
         <Route path="/admin" element={<AdminLogin />} />
         {/* ADMIN 비밀번호 찾기 */}
         <Route path="/admin/mail" element={<AdminMailVerify />} />
+        {/* ADMIN 메일 안내 */}
+        <Route path="/admin/mail/info" element={<AdminMailVerifyInfo />} />
+        {/* ADMIN 메일 비밀번호 변경 */}
+        <Route path="/admin/password" element={<AdminPassword />} />
         {/* ADMIN 프로필 - 프로필 상세 */}
         <Route path="/admin/myprofile/profile" element={<Profile />} />
         {/* ADMIN 프로필 - 비밀번호 변경 */}
@@ -314,8 +329,14 @@ function App() {
           path="/admin/store/display/modify"
           element={<StoreDisplayModify />}
         />
-        {/* ADMIN 사용자 관리 */}
-        <Route path="/admin/user" element={<UserList />} />
+        {/* ADMIN 고객 관리 */}
+        <Route path="/admin/users/user" element={<UserList />} />
+        {/* ADMIN 고객 등록 */}
+        <Route path="/admin/users/user/create" element={<UserCreate />} />
+        {/* ADMIN 고객 상세 */}
+        <Route path="/admin/users/user/modify" element={<UserModify />} />
+        {/* ADMIN 소속 관리 */}
+        <Route path="/admin/users/company" element={<Company />} />
         {/* ADMIN 계정/권한 관리 - 계정/권한 관리 리스트 */}
         <Route path="/admin/account" element={<AccountList />} />
         {/* ADMIN 계정/권한 관리 - 계정/권한 관리 계정생성 */}

@@ -57,17 +57,6 @@ function AccountListPage() {
       </ContentBox>
       <ContentBox>
         <div className="align mb_12">
-          <div className="lft">
-            <Button
-              onClick={() => {}}
-              type="pc"
-              size="small"
-              color="point"
-              icon="Upload"
-            >
-              엑셀 업로드
-            </Button>
-          </div>
           <div className="rgt">
             <Button
               type="pc"

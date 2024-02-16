@@ -152,13 +152,38 @@ function SideMenuLayout({globalstyle}) {
           </li>
           <li
             className={`${styles.menu_dep1} ${
-              splitLocation[2] === "user" ? styles.menu_dep1_active : ""
+              splitLocation[2] === "users" ? styles.menu_dep1_active : ""
             }`}
           >
-            <Link to="/admin/user">
+            <p>
               <span>고객 관리</span>
-            </Link>
+            </p>
+            <ul className={`${styles.menu_dep2_wrap}`}>
+              <li className={`${styles.menu_dep2}`}>
+                <Link
+                  to="/admin/users/user"
+                  className={` ${
+                    splitLocation[3] === "user" ? styles.active : ""
+                  }
+                  `}
+                >
+                  <span>고객 관리</span>
+                </Link>
+              </li>
+              <li className={`${styles.menu_dep2}`}>
+                <Link
+                  to="/admin/users/company"
+                  className={` ${
+                    splitLocation[3] === "company" ? styles.active : ""
+                  }
+                  `}
+                >
+                  <span>소속 관리</span>
+                </Link>
+              </li>
+            </ul>
           </li>
+
           <li
             className={`${styles.menu_dep1} ${
               splitLocation[2] === "account" ? styles.menu_dep1_active : ""
