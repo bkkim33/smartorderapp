@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../../layout/AppLoginLayout";
-import MainimgDefult from "../../../images/main_img.gif";
+import MailimgDefult from "../../../images/mail_icon.gif";
 
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
@@ -31,7 +31,7 @@ function MailVerifyInfoPage() {
             </p>
           </div>
           <div className="rgt">
-            <img src={MainimgDefult} alt="유저 이미지" />
+            <img src={MailimgDefult} alt="유저 이미지" />
           </div>
         </div>
         <div className="login_info">

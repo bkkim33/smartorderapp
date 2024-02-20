@@ -75,7 +75,7 @@ function LoginPage() {
                   color="blue"
                   size="full"
                   onClick={() => {
-                    navigate("/password");
+                    navigate("/main");
                   }}                  
                 >
                   로그인
