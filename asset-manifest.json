@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/smartorderapp/static/css/main.91539108.css",
-    "main.js": "/smartorderapp/static/js/main.b1846721.js",
+    "main.js": "/smartorderapp/static/js/main.a5ca18b7.js",
     "static/js/787.50ddc6df.chunk.js": "/smartorderapp/static/js/787.50ddc6df.chunk.js",
     "static/media/DID_main_open.png": "/smartorderapp/static/media/DID_main_open.31fd3c8257e98d8f208a.png",
     "static/media/DID_main_close02.png": "/smartorderapp/static/media/DID_main_close02.ade55d98d8c6e1ac8896.png",
@@ -17,6 +17,7 @@
     "static/media/Pretendard-Medium.woff": "/smartorderapp/static/media/Pretendard-Medium.f0cc544dcc84cf9f03b3.woff",
     "static/media/Pretendard-Light.woff": "/smartorderapp/static/media/Pretendard-Light.d0646c81e7ffb919ebd1.woff",
     "static/media/Pretendard-Regular.woff": "/smartorderapp/static/media/Pretendard-Regular.21b4bbcb93a4b1214f7d.woff",
+    "static/media/mail_icon.gif": "/smartorderapp/static/media/mail_icon.cb45fb1f8fcec5c916df.gif",
     "static/media/Pretendard-ExtraBold.woff2": "/smartorderapp/static/media/Pretendard-ExtraBold.d96f7e46d4ca0cdd4912.woff2",
     "static/media/Pretendard-Bold.woff2": "/smartorderapp/static/media/Pretendard-Bold.14a8579db02dbe10e1c0.woff2",
     "static/media/Pretendard-SemiBold.woff2": "/smartorderapp/static/media/Pretendard-SemiBold.4eb0b2ea1a7a6cb1a342.woff2",
@@ -35,11 +36,11 @@
     "static/media/itemcoupon02.png": "/smartorderapp/static/media/itemcoupon02.5f65d2403492434e7905.png",
     "index.html": "/smartorderapp/index.html",
     "main.91539108.css.map": "/smartorderapp/static/css/main.91539108.css.map",
-    "main.b1846721.js.map": "/smartorderapp/static/js/main.b1846721.js.map",
+    "main.a5ca18b7.js.map": "/smartorderapp/static/js/main.a5ca18b7.js.map",
     "787.50ddc6df.chunk.js.map": "/smartorderapp/static/js/787.50ddc6df.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91539108.css",
-    "static/js/main.b1846721.js"
+    "static/js/main.a5ca18b7.js"
   ]
 }
