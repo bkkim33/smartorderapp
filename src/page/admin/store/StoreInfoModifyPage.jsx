@@ -28,6 +28,18 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
+const Opt = [
+  { label: "1", value: "1" },
+  { label: "2", value: "2" },
+  { label: "3", value: "4" },
+  { label: "4", value: "5" },
+  { label: "5", value: "5" },
+  { label: "6", value: "6" },
+  { label: "7", value: "7" },
+  { label: "8", value: "8" },
+];
+
+
 function StoreInfoModifyPage() {
   const navigate = useNavigate();
 
@@ -210,16 +222,12 @@ function StoreInfoModifyPage() {
             <th className="required">픽업대 수</th>
             <td>
               <div className="align start">
-                <Input
-                  type="text"
-                  placeholder="픽업대 수를 입력해 주세요."
-                  numericOnly={true}
-                  defaultValue={10}
-                  width="300px"
+                <Select
+                  minwidth="300px"
+                  placeholder="픽업대 수"
+                  options={Opt}
+                  defaultValue={Opt[7]}
                 />
-                <span className="required_lft red ml_10">
-                  숫자만 입력 가능합니다.
-                </span>
               </div>
             </td>
           </tr>
