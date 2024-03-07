@@ -3,8 +3,8 @@
 .alert{
   &_wrap{
     max-width: 380px;
-    margin: 0;
-    border-radius: 8px;
+    width: 100%;
+    margin: 0 20px;
   }
   &.minwidth{
     .alert_wrap{
@@ -30,10 +30,17 @@
     justify-content: center;
   }
   &_title{
-    margin-bottom: 14px;
+    margin-bottom: 2px;
     @include h3(var(--c11));
     text-align: center;
     line-height: 2.5rem;
+    span {
+      margin-top: 12px;
+      font-size: 1.5rem;
+      line-height: 1.2rem;
+      color: var(--c55);
+      font-weight: 400;
+    }
   }
   &_desc{
     @include body1(var(--c55));

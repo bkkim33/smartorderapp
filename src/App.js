@@ -110,7 +110,9 @@ import MailVerify from "./page/app/login/MailVerifyPage";
 // 비밀번호 찾기 안내
 import MailVerifyInfo from "./page/app/login/MailVerifyInfoPage";
 // 비밀번호 변경 (임직원) : app
-import Password from "./page/app/password/PasswordPage";
+import CustomerChangePassword from "./page/app/password/ChangePasswordPage";
+// 비밀번호 초기화 (임직원) : maill
+import ResetPassword from "./page/app/password/ResetPasswordPage";
 // 메뉴상세 (공통) : app & mobile web
 import MenuDetail from "./page/app/order/MenuDetailPage";
 // 장바구니 (공통) : app & mobile web
@@ -204,8 +206,10 @@ function App() {
         <Route exact path="/mail" element={<MailVerify />} />
         {/* APP 메일 안내 */}
         <Route exact path="/mail/info" element={<MailVerifyInfo />} />
+        {/* APP 메일 비밀번호 초기화 */}
+        <Route exact path="/reset-password" element={<ResetPassword />} />
         {/* APP 비밀번호 변경 */}
-        <Route exact path="/password" element={<Password />} />
+        <Route exact path="/change-password" element={<CustomerChangePassword />} />
         {/* APP 비밀번호 변경 */}
         <Route exact path="/" element={<AppLogin />} />
         {/* APP QR접근 로그인 */}

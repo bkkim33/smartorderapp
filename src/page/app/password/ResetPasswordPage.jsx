@@ -6,7 +6,7 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 import MuiAlert from "../../../components/MuiAlert";
 
-function PasswordPage() {
+function ResetPassword() {
 
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ function PasswordPage() {
             <p>
               <span className="headline0">
                 <strong>
-                  <em className="neon">새로운</em>
+                  새로운
                 </strong>
               </span>
               <span>
@@ -96,9 +96,9 @@ function PasswordPage() {
         onClose={handleClose}
         title={
           <>
-            비밀번호가 변경되었습니다.
-            <br /> 다시 로그인해주세요.{" "}
-          </>
+          비밀번호가 변경되었습니다.
+          <br /> <span className="sub-text">다시 로그인해주세요.</span>
+      </>
         }
         button={
           <>
@@ -118,4 +118,4 @@ function PasswordPage() {
   );
 }
 
-export default PasswordPage;
+export default ResetPassword;

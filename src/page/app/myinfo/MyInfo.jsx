@@ -90,7 +90,7 @@ function MyInfo() {
                 globalClass="password"
               />
               <Button
-                onClick={() => navigate("/password")}
+                onClick={() => navigate("/change-password")}
                 size="xxsmall"
                 line
                 color="gray"
