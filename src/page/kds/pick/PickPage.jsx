@@ -29,9 +29,10 @@ function PickPage() {
   const handleClose03 = () => {
     setOpen03(false);
   };
+
   return (
     <Layout>
-      <KDSContentBox>
+      <KDSContentBox pick>
         <h1 className="kds_title mb_40">픽업현황</h1>
         <div className="kds_pick_list">
           <ul>
@@ -45,7 +46,7 @@ function PickPage() {
                   <p>110</p>
                 </button>
                 <button onClick={handleOpen02}>
-                  <Icons.Delete width={30} height={30} fill="#00C0FF" />
+                <Icons.Delete width={30} height={30} fill="#00C0FF" />
                 </button>
               </div>
             </li>

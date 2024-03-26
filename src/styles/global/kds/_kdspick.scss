@@ -65,10 +65,13 @@
           border: 5px solid #00C0FF;          
           background: rgba(0, 192, 255, 0.2);
           span {
+            top: 10px;
+            left: 20px;
             color: #fff;
           }
           .kds_pick_picknum{
             > button{
+              padding: 20px 15px;
               p {
                 color: #00C0FF;
               }
@@ -128,6 +131,7 @@
         margin-left: 25px;
         color: var(--cff);
         background: #495EEC;
+        border: 5px solid #495EEC;
       }
     }
   }
@@ -138,5 +142,27 @@
     &_btn{
       margin-top: 25px !important;
     }
+  }
+}
+
+
+@media screen and (orientation: landscape) and (max-height: 768px) {
+  .kds_pick{
+    flex: 0;
+    &_list {
+      width: 100%;
+      display: flex;
+      flex: 0;
+      ul {
+        width: 100%;
+        justify-content: space-between;
+        column-gap: 0;
+        row-gap: 15px;
+        &::after {
+          content: none;
+        }
+      }
+    }
+
   }
 }

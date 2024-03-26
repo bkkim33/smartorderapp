@@ -62,3 +62,18 @@
     }
   }
 }
+
+@media screen and (orientation: landscape) and (max-height: 768px) {
+  .kds{
+    &_title{
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    &_pick_btn {
+      & button {
+      height: 80px;
+      font-size: 25px;
+      }
+    }
+  }
+}
